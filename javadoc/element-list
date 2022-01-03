@@ -1,0 +1,7 @@
+module:org.tquadrat.foundation.base
+org.tquadrat.foundation.annotation
+org.tquadrat.foundation.exception
+org.tquadrat.foundation.function
+org.tquadrat.foundation.function.tce
+org.tquadrat.foundation.lang
+org.tquadrat.foundation.lang.internal
