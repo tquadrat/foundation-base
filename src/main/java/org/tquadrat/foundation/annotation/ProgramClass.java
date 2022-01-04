@@ -38,12 +38,12 @@ import org.apiguardian.api.API;
  *  in some tools. This annotation allows to suppress these warnings.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProgramClass.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: ProgramClass.java 966 2022-01-04 22:28:49Z tquadrat $
  *
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: ProgramClass.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProgramClass.java 966 2022-01-04 22:28:49Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( SOURCE )

@@ -39,7 +39,7 @@ import org.apiguardian.api.API;
  *  need to be numbers according to the syntax rules for numerical values.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ClassVersion.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: ClassVersion.java 966 2022-01-04 22:28:49Z tquadrat $
  *  @since 0.0.5
  */
 @Documented
