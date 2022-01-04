@@ -20,10 +20,10 @@
  *  by the Foundation Library.
  */
 
-@API( status = STABLE, since = "0.0.1" )
+@API( status = INTERNAL, since = "0.0.1" )
 package org.tquadrat.foundation.lang.internal;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import static org.apiguardian.api.API.Status.INTERNAL;
 
 import org.apiguardian.api.API;
 
