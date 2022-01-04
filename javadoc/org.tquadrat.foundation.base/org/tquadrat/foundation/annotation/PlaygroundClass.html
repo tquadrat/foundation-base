@@ -78,12 +78,14 @@ loadScripts(document, 'script');</script>
 <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#SOURCE" title="class or interface in java.lang.annotation" class="external-link">SOURCE</a>)
 <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>)
-</span><span class="modifiers">public @interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PlaygroundClass.html#line-43">PlaygroundClass</a></span></div>
-<div class="block">This is the marker annotation for a &quot;Playground Class&quot;, a class
-  that is added to the test code to verify a certain concept, but that is
-  neither part of the tests nor of the product itself.<br>
-  <br>Such a class may hurt several inspection rules that have to followed
-  by otherwise &quot;regular&quot; classes.</div>
+</span><span class="modifiers">public @interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PlaygroundClass.html#line-45">PlaygroundClass</a></span></div>
+<div class="block"><p>This is the marker annotation for a &quot;Playground
+  Class&quot;, a class that is added to the test code to verify a certain
+  concept, but that is neither part of the tests nor of the product
+  itself.</p>
+  <p>Such a class may hurt several inspection rules that have to followed
+  by otherwise &quot;regular&quot; classes, and these inspections can be
+  switched off by applying this annotation.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>

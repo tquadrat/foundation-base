@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2018 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -14,15 +14,24 @@
  */
 
 /**
- *  TCE versions of the
+ *  <p>{@summary TCE versions of the
  *  {@linkplain java.lang.FunctionalInterface functional interfaces}
  *  in the package
  *  {@link java.util.function}
- *  and others. <br>
- *  <br>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
- *  <b>E</b>xception&quot;.
+ *  and others.}</p>
+ *  <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
+ *  <b>E</b>xception&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 
+@API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.function.tce;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
+
+/*
+ * End of File
+ */

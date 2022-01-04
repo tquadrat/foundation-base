@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,20 +28,19 @@ import java.lang.annotation.Target;
 import org.apiguardian.api.API;
 
 /**
- *  This annotation will be used to provide version information for each class
- *  in a project. It can provide both source code (SCCS) related version as
- *  well as release related (Build number and Release numbers).<br>
- *  <br>Keep in mind that neither
+ *  <p>{@summary This annotation will be used to provide version information
+ *  for each class in a project.} It can provide source code (SCCS) related
+ *  version information as well as release related information (Build number
+ *  and Release numbers).</p>
+ *  <p>Keep in mind that neither
  *  {@link #versionNumber()}
  *  nor
  *  {@link #buildNumber()}
- *  need to be numbers according to the syntax rules for numerical values.
+ *  need to be numbers according to the syntax rules for numerical values.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ClassVersion.java 820 2020-12-29 20:34:22Z tquadrat $
  *  @since 0.0.5
- *
- *  @UMLGraph.link
  */
 @Documented
 @Retention( RUNTIME )

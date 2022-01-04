@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -27,7 +27,12 @@
  *  but in some rare cases, it could be also a
  *  {@link java.lang.NullPointerException}.
  */
+@API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.exception;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

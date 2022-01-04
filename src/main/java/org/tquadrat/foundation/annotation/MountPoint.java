@@ -34,8 +34,6 @@ import org.apiguardian.api.API;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: MountPoint.java 820 2020-12-29 20:34:22Z tquadrat $
  *  @since 0.1.0
- *
- *  @UMLGraph.link
  */
 @ClassVersion( sourceVersion = "$Id: MountPoint.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )

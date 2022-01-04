@@ -1,8 +1,6 @@
-# tquadrat *Foundation Library*
-## `foundation-base`
-This library is the base for all the other stuff, although it is not much useful for other general purpose projects without the *[foundation-util](https://tquadrat.github.io/foundation-util)* library. But for some tools I worked, not all the stuff that is contained in *foundation-util* was not necessary or just to big, so I separated out some functionality into this library.
+This library is the base for all the other *Foundation* libraries, although it is not much useful for other general purpose projects without the *[foundation-util](https://tquadrat.github.io/foundation-util)* library. But for some tools I worked on, not all the stuff that is contained in *foundation-util* was necessary or it was just to big, so I separated out some functionality into this library.
 
-### Documentation
+# Documentation
 
  - [Javadoc Reference](https://tquadrat.github.io/foundation-base/javadoc/index.html)
  - Maven POM

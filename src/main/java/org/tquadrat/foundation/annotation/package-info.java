@@ -30,7 +30,12 @@
  *  can be configured to ignore some 'smells' when a class or method is
  *  annotated in some way.
  */
+@API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.annotation;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

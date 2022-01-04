@@ -28,7 +28,12 @@
  *  @UMLGraph.link
  */
 
+@API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.function;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

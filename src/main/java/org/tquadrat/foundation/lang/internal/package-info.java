@@ -16,10 +16,16 @@
  */
 
 /**
- *  The internal implementations of some general language extensions provided 
+ *  The internal implementations of some general language extensions provided
  *  by the Foundation Library.
  */
+
+@API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.lang.internal;
+
+import static org.apiguardian.api.API.Status.STABLE;
+
+import org.apiguardian.api.API;
 
 /*
  *  End of File

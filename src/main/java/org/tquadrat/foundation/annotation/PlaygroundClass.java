@@ -28,11 +28,13 @@ import java.lang.annotation.Target;
 import org.apiguardian.api.API;
 
 /**
- *  This is the marker annotation for a &quot;Playground Class&quot;, a class
- *  that is added to the test code to verify a certain concept, but that is
- *  neither part of the tests nor of the product itself.<br>
- *  <br>Such a class may hurt several inspection rules that have to followed
- *  by otherwise &quot;regular&quot; classes.
+ *  <p>{@summary This is the marker annotation for a &quot;Playground
+ *  Class&quot;}, a class that is added to the test code to verify a certain
+ *  concept, but that is neither part of the tests nor of the product
+ *  itself.</p>
+ *  <p>Such a class may hurt several inspection rules that have to followed
+ *  by otherwise &quot;regular&quot; classes, and these inspections can be
+ *  switched off by applying this annotation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: PlaygroundClass.java 820 2020-12-29 20:34:22Z tquadrat $

@@ -28,8 +28,8 @@ import java.lang.annotation.Target;
 import org.apiguardian.api.API;
 
 /**
- *  This is a marker annotation for a utility class.<br>
- *  <br>A utility class is a class that …
+ *  <p>{@summary This is a marker annotation for a utility class.}</p>
+ *  <p>A utility class is a class that …</p>
  *  <ul>
  *      <li>… is final</li>
  *      <li>… has only a private constructor that throws a
@@ -40,14 +40,13 @@ import org.apiguardian.api.API;
  *      <li>… has only static final attributes (constants) and therefore should
  *      not have any status</li>
  *  </ul>
- *  The class {@code org.tquadrat.foundation.testutil.TestBaseClass} for the
+ *  <p>The class {@code org.tquadrat.foundation.testutil.TestBaseClass} for the
  *  {@code org.tquadrat.foundation.testutil} module provides a method
- *  {@code validateAsStaticClass()} that tests most of these conditions.
+ *  {@code validateAsStaticClass()} that tests most of these conditions.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: UtilityClass.java 820 2020-12-29 20:34:22Z tquadrat $
  *
- *  @UMLGraph.link
  *  @since 0.1.0
  */
 @ClassVersion( sourceVersion = "$Id: UtilityClass.java 820 2020-12-29 20:34:22Z tquadrat $" )

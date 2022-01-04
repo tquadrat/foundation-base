@@ -28,14 +28,14 @@ import java.lang.annotation.Target;
 import org.apiguardian.api.API;
 
 /**
- *  This is the marker annotation for a &quot;Main&quot; class. That is a class
- *  that has a method<br>
+ *  <p>{@summary This is the marker annotation for a &quot;Main&quot; class.}
+ *  That is a class that has a method</p>
  *  <pre><code>    public static final void main( String... )</code></pre>
- *  <br>and is meant either as the starting point of a larger application or as
- *  a standalone program.<br>
- *  <br>Particular the latter will have often just static methods – like
+ *  <p>and is meant either as the starting point of a larger application or as
+ *  a standalone program.</p>
+ *  <p>Particular the latter will have often just static methods – like
  *  {@linkplain UtilityClass utility classes} – and therefore causes warnings
- *  in some tools. This annotation allows to suppress these warnings.
+ *  in some tools. This annotation allows to suppress these warnings.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ProgramClass.java 820 2020-12-29 20:34:22Z tquadrat $
