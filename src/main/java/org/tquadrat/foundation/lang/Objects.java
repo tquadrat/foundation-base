@@ -395,7 +395,7 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, a
-     *  customised
+     *  customized
      *  {@link IllegalArgumentException}
      *  is thrown.<br>
      *  <br>Unlike the method
@@ -436,7 +436,7 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, a
-     *  customised
+     *  customized
      *  {@link IllegalArgumentException}
      *  is thrown.<br>
      *  <br>Unlike the method
@@ -525,7 +525,7 @@ public final class Objects
 
     /**
      *  Checks that the specified object reference is not {@code null} and
-     *  throws a customised
+     *  throws a customized
      *  {@link NullPointerException}
      *  if it is.<br>
      *  <br>Unlike the method
@@ -738,7 +738,6 @@ public final class Objects
      *  @throws NullArgumentException   {@code optional} is {@code null}.
      *  @throws EmptyArgumentException   {@code optional} is empty.
      */
-    @SuppressWarnings( "OptionalAssignedToNull" )
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNotEmptyArgument( @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional<T> optional, final String name )
     {

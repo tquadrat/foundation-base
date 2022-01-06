@@ -50,8 +50,8 @@ import org.tquadrat.foundation.annotation.UtilityClass;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
 
 /**
- *  This class provides a bunch of commonly used constants. <br>
- *  <br>The constants are arranged into several categories.
+ *  <p>{@summary This class provides a bunch of commonly used constants.}</p>
+ *  <p>The constants are arranged into several categories.</p>
  *  <ul>
  *      <li>{@code EMPTY_*_ARRAY} constants: These constants are most useful in
  *      the context of the
@@ -103,6 +103,7 @@ public final class CommonConstants
     /**
      *  The non-breaking space character (&amp;#x00A0;/\u00A0).
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.5" )
     public static final char CHAR_NBSP = '\u00A0';
 
@@ -403,6 +404,7 @@ public final class CommonConstants
      *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
      *      call to {@code new []}.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @Deprecated( since = "0.1.0", forRemoval = true )
     @API( status = DEPRECATED, since = "0.0.5" )
     public static final int [] EMPTY_int_ARRAY = new int [0];
@@ -899,6 +901,7 @@ public final class CommonConstants
      *  should have the rights 544, while the folder and its sub-folders should
      *  have 755.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_ROOT_SYSTEM = "java.util.prefs.systemRoot";
 
@@ -908,6 +911,7 @@ public final class CommonConstants
      *  <br>If not set, the location is {@code ~/}, resulting to
      *  {@code ~/.java/.userPrefs/}.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_ROOT_USER = "java.util.prefs.userRoot";
 
@@ -917,6 +921,7 @@ public final class CommonConstants
      *  <br>If not set, the interval is 30 seconds. The minimum value is one
      *  second.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_SYNC = "java.util.prefs.syncInterval";
 
@@ -955,6 +960,7 @@ public final class CommonConstants
      *  The vested system property for the name of the {@code temp} folder that
      *  is used by the current user: {@value}.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.5" )
     public static final String PROPERTY_TEMPFOLDER = "java.io.tmpdir";
 
@@ -1124,9 +1130,10 @@ public final class CommonConstants
     public static final String XMLATTRIBUTE_IdRef = "idref";
 
     /**
-     *  The attribute name for the XML language attribute: {@value}.<br>
-     *  <br>This reserved attribute takes an ISO639 language identifier as
-     *  value. It indicates the language of the body of the element.
+     *  <p>{@summary The attribute name for the XML language attribute:
+     *  {@value}.}</p>
+     *  <p>This reserved attribute takes an ISO639 language identifier as
+     *  value. It indicates the language of the body of the element.</p>
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final String XMLATTRIBUTE_Language = "xml:lang";
@@ -1215,10 +1222,11 @@ public final class CommonConstants
     public static final String XMLATTRIBUTE_Version = "version";
 
     /**
-     *  The attribute name for the XML space attribute: {@value}.<br>
-     *  This reserved attribute indicates whether any whitespace inside the
+     *  <p>{@summary The attribute name for the XML space attribute:
+     *  {@value}.}</p>
+     *  <p>This reserved attribute indicates whether any whitespace inside the
      *  element is significant and should not be altered by the XML processor.
-     *  The attribute can take one of two enumerated values:
+     *  The attribute can take one of two enumerated values:</p>
      *  <dl>
      *      <dt>{@code preserve}</dt>
      *          <dd>The XML application preserves all whitespace (newlines,

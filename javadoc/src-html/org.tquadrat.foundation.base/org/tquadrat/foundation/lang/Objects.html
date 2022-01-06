@@ -408,7 +408,7 @@
 <span class="source-line-no">395</span><span id="line-395"></span>
 <span class="source-line-no">396</span><span id="line-396">    /**</span>
 <span class="source-line-no">397</span><span id="line-397">     *  Applies the given validation on the given value, and if that fails, a</span>
-<span class="source-line-no">398</span><span id="line-398">     *  customised</span>
+<span class="source-line-no">398</span><span id="line-398">     *  customized</span>
 <span class="source-line-no">399</span><span id="line-399">     *  {@link IllegalArgumentException}</span>
 <span class="source-line-no">400</span><span id="line-400">     *  is thrown.&lt;br&gt;</span>
 <span class="source-line-no">401</span><span id="line-401">     *  &lt;br&gt;Unlike the method</span>
@@ -449,7 +449,7 @@
 <span class="source-line-no">436</span><span id="line-436"></span>
 <span class="source-line-no">437</span><span id="line-437">    /**</span>
 <span class="source-line-no">438</span><span id="line-438">     *  Applies the given validation on the given value, and if that fails, a</span>
-<span class="source-line-no">439</span><span id="line-439">     *  customised</span>
+<span class="source-line-no">439</span><span id="line-439">     *  customized</span>
 <span class="source-line-no">440</span><span id="line-440">     *  {@link IllegalArgumentException}</span>
 <span class="source-line-no">441</span><span id="line-441">     *  is thrown.&lt;br&gt;</span>
 <span class="source-line-no">442</span><span id="line-442">     *  &lt;br&gt;Unlike the method</span>
@@ -538,7 +538,7 @@
 <span class="source-line-no">525</span><span id="line-525"></span>
 <span class="source-line-no">526</span><span id="line-526">    /**</span>
 <span class="source-line-no">527</span><span id="line-527">     *  Checks that the specified object reference is not {@code null} and</span>
-<span class="source-line-no">528</span><span id="line-528">     *  throws a customised</span>
+<span class="source-line-no">528</span><span id="line-528">     *  throws a customized</span>
 <span class="source-line-no">529</span><span id="line-529">     *  {@link NullPointerException}</span>
 <span class="source-line-no">530</span><span id="line-530">     *  if it is.&lt;br&gt;</span>
 <span class="source-line-no">531</span><span id="line-531">     *  &lt;br&gt;Unlike the method</span>
@@ -751,372 +751,371 @@
 <span class="source-line-no">738</span><span id="line-738">     *  @throws NullArgumentException   {@code optional} is {@code null}.</span>
 <span class="source-line-no">739</span><span id="line-739">     *  @throws EmptyArgumentException   {@code optional} is empty.</span>
 <span class="source-line-no">740</span><span id="line-740">     */</span>
-<span class="source-line-no">741</span><span id="line-741">    @SuppressWarnings( "OptionalAssignedToNull" )</span>
-<span class="source-line-no">742</span><span id="line-742">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">743</span><span id="line-743">    public static final &lt;T&gt; T requireNotEmptyArgument( @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional&lt;T&gt; optional, final String name )</span>
-<span class="source-line-no">744</span><span id="line-744">    {</span>
-<span class="source-line-no">745</span><span id="line-745">        if( isNull( name ) ) throw new NullArgumentException( "name" );</span>
-<span class="source-line-no">746</span><span id="line-746">        if( name.isEmpty() ) throw new EmptyArgumentException( "name" );</span>
-<span class="source-line-no">747</span><span id="line-747"></span>
-<span class="source-line-no">748</span><span id="line-748">        //---* Check for null *------------------------------------------------</span>
-<span class="source-line-no">749</span><span id="line-749">        if( isNull( optional ) ) throw new NullArgumentException( name );</span>
-<span class="source-line-no">750</span><span id="line-750">        final var retValue = optional.orElseThrow( () -&gt; new EmptyArgumentException( name ) );</span>
-<span class="source-line-no">751</span><span id="line-751"></span>
-<span class="source-line-no">752</span><span id="line-752">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">753</span><span id="line-753">        return retValue;</span>
-<span class="source-line-no">754</span><span id="line-754">    }   //  requireNotEmptyArgument()</span>
-<span class="source-line-no">755</span><span id="line-755"></span>
-<span class="source-line-no">756</span><span id="line-756">    /**</span>
-<span class="source-line-no">757</span><span id="line-757">     *  Returns the first argument if it is not {@code null}, otherwise it</span>
-<span class="source-line-no">758</span><span id="line-758">     *  returns the non-{@code null} second argument.&lt;br&gt;</span>
-<span class="source-line-no">759</span><span id="line-759">     *  &lt;br&gt;This implementation behaves different from that in</span>
-<span class="source-line-no">760</span><span id="line-760">     *  {@link java.util.Objects#requireNonNullElse(Object,Object)}</span>
-<span class="source-line-no">761</span><span id="line-761">     *  as it will always check that the default is not {@code null}.</span>
-<span class="source-line-no">762</span><span id="line-762">     *</span>
-<span class="source-line-no">763</span><span id="line-763">     *  @param &lt;T&gt;  The type of the references.</span>
-<span class="source-line-no">764</span><span id="line-764">     *  @param  obj An object reference.</span>
-<span class="source-line-no">765</span><span id="line-765">     *  @param  defaultObj  Another object reference to be returned if the</span>
-<span class="source-line-no">766</span><span id="line-766">     *      first argument is {@code null}.</span>
-<span class="source-line-no">767</span><span id="line-767">     *  @return The first argument if it is not {@code null}, otherwise the</span>
-<span class="source-line-no">768</span><span id="line-768">     *      second argument if it is not {@code null}.</span>
-<span class="source-line-no">769</span><span id="line-769">     *  @throws NullArgumentException   The {@code defaultObj} is {@code null}.</span>
-<span class="source-line-no">770</span><span id="line-770">     *</span>
-<span class="source-line-no">771</span><span id="line-771">     *  @see java.util.Objects#requireNonNullElse(Object, Object)</span>
-<span class="source-line-no">772</span><span id="line-772">     */</span>
-<span class="source-line-no">773</span><span id="line-773">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">774</span><span id="line-774">    public static final &lt;T&gt; T requireNonNullElse( final T obj, final T defaultObj ) throws NullArgumentException</span>
-<span class="source-line-no">775</span><span id="line-775">    {</span>
-<span class="source-line-no">776</span><span id="line-776">        return java.util.Objects.requireNonNullElse( obj, requireNonNullArgument( defaultObj, "defaultObj" ) );</span>
-<span class="source-line-no">777</span><span id="line-777">    }   //  requireNonNullElse()</span>
-<span class="source-line-no">778</span><span id="line-778"></span>
-<span class="source-line-no">779</span><span id="line-779">    /**</span>
-<span class="source-line-no">780</span><span id="line-780">     *  Returns the first argument if it is not {@code null}, otherwise it</span>
-<span class="source-line-no">781</span><span id="line-781">     *  returns the non-{@code null} value returned by</span>
-<span class="source-line-no">782</span><span id="line-782">     *  {@link Supplier#get() supplier.get()}.&lt;br&gt;</span>
-<span class="source-line-no">783</span><span id="line-783">     *  &lt;br&gt;This implementation behaves different from that in</span>
-<span class="source-line-no">784</span><span id="line-784">     *  {@link java.util.Objects#requireNonNullElseGet(Object,Supplier)}</span>
-<span class="source-line-no">785</span><span id="line-785">     *  as it will always check that the supplier is not {@code null}.</span>
-<span class="source-line-no">786</span><span id="line-786">     *</span>
-<span class="source-line-no">787</span><span id="line-787">     *  @param &lt;T&gt;  The type of the reference.</span>
-<span class="source-line-no">788</span><span id="line-788">     *  @param  obj An object reference.</span>
-<span class="source-line-no">789</span><span id="line-789">     *  @param  supplier    The supplier of a non-{@code null} object of type</span>
-<span class="source-line-no">790</span><span id="line-790">     *      {code T} to return if the first argument is {@code null}.</span>
-<span class="source-line-no">791</span><span id="line-791">     *  @return The first argument if it is not {@code null}, otherwise the</span>
-<span class="source-line-no">792</span><span id="line-792">     *      value returned by a call to {@code supplier.get()} if it is not</span>
-<span class="source-line-no">793</span><span id="line-793">     *      {@code null}.</span>
-<span class="source-line-no">794</span><span id="line-794">     *  @throws NullArgumentException   The {@code supplier} is {@code null}.</span>
-<span class="source-line-no">795</span><span id="line-795">     *  @throws NullPointerException    {@code obj} is {@code null} and the</span>
-<span class="source-line-no">796</span><span id="line-796">     *      return value of {@code supplier.get()} value is {@code null}, too.</span>
-<span class="source-line-no">797</span><span id="line-797">     */</span>
-<span class="source-line-no">798</span><span id="line-798">    @SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
-<span class="source-line-no">799</span><span id="line-799">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">800</span><span id="line-800">    public static final &lt;T&gt; T requireNonNullElseGet( final T obj, final Supplier&lt;? extends T&gt; supplier ) throws NullArgumentException, NullPointerException</span>
-<span class="source-line-no">801</span><span id="line-801">    {</span>
-<span class="source-line-no">802</span><span id="line-802">        return java.util.Objects.requireNonNullElseGet( obj, requireNonNullArgument( supplier, "supplier" ) );</span>
-<span class="source-line-no">803</span><span id="line-803">    }   //  requireNonNullElseGet()</span>
-<span class="source-line-no">804</span><span id="line-804"></span>
-<span class="source-line-no">805</span><span id="line-805">    /**</span>
-<span class="source-line-no">806</span><span id="line-806">     *  Applies the given validation on the given value, and if that fails, an</span>
-<span class="source-line-no">807</span><span id="line-807">     *  {@link ValidationException}</span>
-<span class="source-line-no">808</span><span id="line-808">     *  with a default message is thrown.</span>
-<span class="source-line-no">809</span><span id="line-809">     *</span>
-<span class="source-line-no">810</span><span id="line-810">     *  @param  &lt;T&gt; The type of the value to check.</span>
-<span class="source-line-no">811</span><span id="line-811">     *  @param  a   The value to check; can be {@code null}.</span>
-<span class="source-line-no">812</span><span id="line-812">     *  @param  name    The name of the argument; this is used for the error</span>
-<span class="source-line-no">813</span><span id="line-813">     *      message.</span>
-<span class="source-line-no">814</span><span id="line-814">     *  @param  validation  The validation</span>
-<span class="source-line-no">815</span><span id="line-815">     *  @return The value if the validation succeeds.</span>
-<span class="source-line-no">816</span><span id="line-816">     *  @throws ValidationException {@code a} failed the validation.</span>
-<span class="source-line-no">817</span><span id="line-817">     *  @throws NullArgumentException   {@code name} or {@code validation} is</span>
-<span class="source-line-no">818</span><span id="line-818">     *      {@code null}.</span>
-<span class="source-line-no">819</span><span id="line-819">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
-<span class="source-line-no">820</span><span id="line-820">     *</span>
-<span class="source-line-no">821</span><span id="line-821">     *  @since 0.1.0</span>
-<span class="source-line-no">822</span><span id="line-822">     */</span>
-<span class="source-line-no">823</span><span id="line-823">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">824</span><span id="line-824">    public static final &lt;T&gt; T requireValidArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation )</span>
-<span class="source-line-no">825</span><span id="line-825">    {</span>
-<span class="source-line-no">826</span><span id="line-826">        requireNotEmptyArgument( name, "name" );</span>
-<span class="source-line-no">827</span><span id="line-827"></span>
-<span class="source-line-no">828</span><span id="line-828">        if( !requireNonNullArgument( validation, "validation" ).test( a ) )</span>
-<span class="source-line-no">829</span><span id="line-829">        {</span>
-<span class="source-line-no">830</span><span id="line-830">            throw new ValidationException( format( "Validation failed for '%s'", name ) );</span>
-<span class="source-line-no">831</span><span id="line-831">        }</span>
-<span class="source-line-no">832</span><span id="line-832"></span>
-<span class="source-line-no">833</span><span id="line-833">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">834</span><span id="line-834">        return a;</span>
-<span class="source-line-no">835</span><span id="line-835">    }   //  requireValidArgument()</span>
-<span class="source-line-no">836</span><span id="line-836"></span>
-<span class="source-line-no">837</span><span id="line-837">    /**</span>
-<span class="source-line-no">838</span><span id="line-838">     *  Applies the given validation on the given value, and if that fails, an</span>
-<span class="source-line-no">839</span><span id="line-839">     *  {@link ValidationException}</span>
-<span class="source-line-no">840</span><span id="line-840">     *  is thrown. The message for the exception will be provided by the given</span>
-<span class="source-line-no">841</span><span id="line-841">     *  message supplier that takes the name of the argument as an argument.</span>
-<span class="source-line-no">842</span><span id="line-842">     *</span>
-<span class="source-line-no">843</span><span id="line-843">     *  @param  &lt;T&gt; The type of the value to check.</span>
-<span class="source-line-no">844</span><span id="line-844">     *  @param  a   The value to check; can be {@code null}.</span>
-<span class="source-line-no">845</span><span id="line-845">     *  @param  name    The name of the argument; this is used for the error</span>
-<span class="source-line-no">846</span><span id="line-846">     *      message.</span>
-<span class="source-line-no">847</span><span id="line-847">     *  @param  validation  The validation</span>
-<span class="source-line-no">848</span><span id="line-848">     *  @param  messageSupplier The function that generates the message for the</span>
-<span class="source-line-no">849</span><span id="line-849">     *      exception.</span>
-<span class="source-line-no">850</span><span id="line-850">     *  @return The value if the validation succeeds.</span>
-<span class="source-line-no">851</span><span id="line-851">     *  @throws ValidationException {@code a} failed the validation.</span>
-<span class="source-line-no">852</span><span id="line-852">     *  @throws NullArgumentException   {@code name}, {@code validation} or</span>
-<span class="source-line-no">853</span><span id="line-853">     *      {@code messageProvider} is {@code null}.</span>
-<span class="source-line-no">854</span><span id="line-854">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
-<span class="source-line-no">855</span><span id="line-855">     *</span>
-<span class="source-line-no">856</span><span id="line-856">     *  @since 0.1.0</span>
-<span class="source-line-no">857</span><span id="line-857">     */</span>
-<span class="source-line-no">858</span><span id="line-858">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">859</span><span id="line-859">    public static final &lt;T&gt; T requireValidArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation, final UnaryOperator&lt;String&gt; messageSupplier )</span>
-<span class="source-line-no">860</span><span id="line-860">    {</span>
-<span class="source-line-no">861</span><span id="line-861">        requireNotEmptyArgument( name, "name" );</span>
-<span class="source-line-no">862</span><span id="line-862">        requireNonNullArgument( messageSupplier, "messageSupplier" );</span>
-<span class="source-line-no">863</span><span id="line-863"></span>
-<span class="source-line-no">864</span><span id="line-864">        if( !requireNonNullArgument( validation, "validation" ).test( a ) )</span>
-<span class="source-line-no">865</span><span id="line-865">        {</span>
-<span class="source-line-no">866</span><span id="line-866">            throw new ValidationException( messageSupplier.apply( name ) );</span>
-<span class="source-line-no">867</span><span id="line-867">        }</span>
-<span class="source-line-no">868</span><span id="line-868"></span>
-<span class="source-line-no">869</span><span id="line-869">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">870</span><span id="line-870">        return a;</span>
-<span class="source-line-no">871</span><span id="line-871">    }   //  requireValidArgument()</span>
-<span class="source-line-no">872</span><span id="line-872"></span>
-<span class="source-line-no">873</span><span id="line-873">    /**</span>
-<span class="source-line-no">874</span><span id="line-874">     *  Applies the given validation on the given value (that may not be</span>
-<span class="source-line-no">875</span><span id="line-875">     *  {@code null}), and if that fails, an</span>
-<span class="source-line-no">876</span><span id="line-876">     *  {@link ValidationException}</span>
-<span class="source-line-no">877</span><span id="line-877">     *  with a default message is thrown.</span>
-<span class="source-line-no">878</span><span id="line-878">     *</span>
-<span class="source-line-no">879</span><span id="line-879">     *  @param  &lt;T&gt; The type of the value to check.</span>
-<span class="source-line-no">880</span><span id="line-880">     *  @param  a   The value to check.</span>
-<span class="source-line-no">881</span><span id="line-881">     *  @param  name    The name of the argument; this is used for the error</span>
-<span class="source-line-no">882</span><span id="line-882">     *      message.</span>
-<span class="source-line-no">883</span><span id="line-883">     *  @param  validation  The validation</span>
-<span class="source-line-no">884</span><span id="line-884">     *  @return The value if the validation succeeds.</span>
-<span class="source-line-no">885</span><span id="line-885">     *  @throws ValidationException {@code a} failed the validation.</span>
-<span class="source-line-no">886</span><span id="line-886">     *  @throws NullArgumentException   {@code a}, {@code name} or</span>
-<span class="source-line-no">887</span><span id="line-887">     *      {@code validation} is {@code null}.</span>
-<span class="source-line-no">888</span><span id="line-888">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
-<span class="source-line-no">889</span><span id="line-889">     *</span>
-<span class="source-line-no">890</span><span id="line-890">     *  @since 0.1.0</span>
-<span class="source-line-no">891</span><span id="line-891">     */</span>
-<span class="source-line-no">892</span><span id="line-892">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">893</span><span id="line-893">    public static final &lt;T&gt; T requireValidNonNullArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation )</span>
-<span class="source-line-no">894</span><span id="line-894">    {</span>
-<span class="source-line-no">895</span><span id="line-895">        requireNotEmptyArgument( name, "name" );</span>
-<span class="source-line-no">896</span><span id="line-896"></span>
-<span class="source-line-no">897</span><span id="line-897">        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )</span>
-<span class="source-line-no">898</span><span id="line-898">        {</span>
-<span class="source-line-no">899</span><span id="line-899">            throw new ValidationException( format( "Validation failed for '%s'", name ) );</span>
-<span class="source-line-no">900</span><span id="line-900">        }</span>
-<span class="source-line-no">901</span><span id="line-901"></span>
-<span class="source-line-no">902</span><span id="line-902">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">903</span><span id="line-903">        return a;</span>
-<span class="source-line-no">904</span><span id="line-904">    }   //  requireValidNonNullArgument()</span>
-<span class="source-line-no">905</span><span id="line-905"></span>
-<span class="source-line-no">906</span><span id="line-906">    /**</span>
-<span class="source-line-no">907</span><span id="line-907">     *  Applies the given validation on the given value (that may not be</span>
-<span class="source-line-no">908</span><span id="line-908">     *  {@code null}), and if that fails, an</span>
-<span class="source-line-no">909</span><span id="line-909">     *  {@link ValidationException}</span>
-<span class="source-line-no">910</span><span id="line-910">     *  is thrown. The message for the exception will be provided by the given</span>
-<span class="source-line-no">911</span><span id="line-911">     *  message supplier that takes the name of the argument as an argument.</span>
-<span class="source-line-no">912</span><span id="line-912">     *</span>
-<span class="source-line-no">913</span><span id="line-913">     *  @param  &lt;T&gt; The type of the value to check.</span>
-<span class="source-line-no">914</span><span id="line-914">     *  @param  a   The value to check.</span>
-<span class="source-line-no">915</span><span id="line-915">     *  @param  name    The name of the argument; this is used for the error</span>
-<span class="source-line-no">916</span><span id="line-916">     *      message.</span>
-<span class="source-line-no">917</span><span id="line-917">     *  @param  validation  The validation</span>
-<span class="source-line-no">918</span><span id="line-918">     *  @param  messageSupplier The function that generates the message for the</span>
-<span class="source-line-no">919</span><span id="line-919">     *      exception.</span>
-<span class="source-line-no">920</span><span id="line-920">     *  @return The value if the validation succeeds.</span>
-<span class="source-line-no">921</span><span id="line-921">     *  @throws ValidationException {@code a} failed the validation.</span>
-<span class="source-line-no">922</span><span id="line-922">     *  @throws NullArgumentException   {@code a}, {@code name},</span>
-<span class="source-line-no">923</span><span id="line-923">     *      {@code validation} or {@code messageProvider} is {@code null}.</span>
-<span class="source-line-no">924</span><span id="line-924">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
-<span class="source-line-no">925</span><span id="line-925">     *</span>
-<span class="source-line-no">926</span><span id="line-926">     *  @since 0.1.0</span>
-<span class="source-line-no">927</span><span id="line-927">     */</span>
-<span class="source-line-no">928</span><span id="line-928">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">929</span><span id="line-929">    public static final &lt;T&gt; T requireValidNonNullArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation, final UnaryOperator&lt;String&gt; messageSupplier )</span>
-<span class="source-line-no">930</span><span id="line-930">    {</span>
-<span class="source-line-no">931</span><span id="line-931">        requireNotEmptyArgument( name, "name" );</span>
-<span class="source-line-no">932</span><span id="line-932">        requireNonNullArgument( messageSupplier, "messageSupplier" );</span>
-<span class="source-line-no">933</span><span id="line-933"></span>
-<span class="source-line-no">934</span><span id="line-934">        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )</span>
-<span class="source-line-no">935</span><span id="line-935">        {</span>
-<span class="source-line-no">936</span><span id="line-936">            throw new ValidationException( messageSupplier.apply( name ) );</span>
-<span class="source-line-no">937</span><span id="line-937">        }</span>
-<span class="source-line-no">938</span><span id="line-938"></span>
-<span class="source-line-no">939</span><span id="line-939">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">940</span><span id="line-940">        return a;</span>
-<span class="source-line-no">941</span><span id="line-941">    }   //  requireValidNonNullArgument()</span>
-<span class="source-line-no">942</span><span id="line-942"></span>
-<span class="source-line-no">943</span><span id="line-943">    /**</span>
-<span class="source-line-no">944</span><span id="line-944">     *  Converts the given argument {@code object} into a</span>
-<span class="source-line-no">945</span><span id="line-945">     *  {@link String},</span>
-<span class="source-line-no">946</span><span id="line-946">     *  usually by calling its</span>
-<span class="source-line-no">947</span><span id="line-947">     *  {@link Object#toString() toString()}</span>
-<span class="source-line-no">948</span><span id="line-948">     *  method. If the value of the argument is {@code null}, the text</span>
-<span class="source-line-no">949</span><span id="line-949">     *  &amp;quot;{@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING null}&amp;quot;</span>
-<span class="source-line-no">950</span><span id="line-950">     *  will be returned instead. Arrays will be converted to a string through</span>
-<span class="source-line-no">951</span><span id="line-951">     *  calling the respective {@code toString()} method from</span>
-<span class="source-line-no">952</span><span id="line-952">     *  {@link java.util.Arrays}</span>
-<span class="source-line-no">953</span><span id="line-953">     *  (this distinguishes this implementation from</span>
-<span class="source-line-no">954</span><span id="line-954">     *  {link java.util.Objects#toString(Object, String)}).</span>
-<span class="source-line-no">955</span><span id="line-955">     *  Values of type</span>
-<span class="source-line-no">956</span><span id="line-956">     *  {@link java.util.Date} or</span>
-<span class="source-line-no">957</span><span id="line-957">     *  {@link java.util.Calendar}</span>
-<span class="source-line-no">958</span><span id="line-958">     *  will be translated based on the default locale - whatever that is.</span>
-<span class="source-line-no">959</span><span id="line-959">     *</span>
-<span class="source-line-no">960</span><span id="line-960">     *  @param  object  The object; may be {@code null}.</span>
-<span class="source-line-no">961</span><span id="line-961">     *  @return The object's string representation.</span>
-<span class="source-line-no">962</span><span id="line-962">     *</span>
-<span class="source-line-no">963</span><span id="line-963">     *  @see java.util.Arrays#toString(boolean[])</span>
-<span class="source-line-no">964</span><span id="line-964">     *  @see java.util.Arrays#toString(byte[])</span>
-<span class="source-line-no">965</span><span id="line-965">     *  @see java.util.Arrays#toString(char[])</span>
-<span class="source-line-no">966</span><span id="line-966">     *  @see java.util.Arrays#toString(double[])</span>
-<span class="source-line-no">967</span><span id="line-967">     *  @see java.util.Arrays#toString(float[])</span>
-<span class="source-line-no">968</span><span id="line-968">     *  @see java.util.Arrays#toString(int[])</span>
-<span class="source-line-no">969</span><span id="line-969">     *  @see java.util.Arrays#toString(long[])</span>
-<span class="source-line-no">970</span><span id="line-970">     *  @see java.util.Arrays#toString(Object[])</span>
-<span class="source-line-no">971</span><span id="line-971">     *  @see java.util.Arrays#toString(short[])</span>
-<span class="source-line-no">972</span><span id="line-972">     *  @see java.util.Arrays#deepToString(Object[])</span>
-<span class="source-line-no">973</span><span id="line-973">     *  @see java.util.Locale#getDefault()</span>
-<span class="source-line-no">974</span><span id="line-974">     *  @see org.tquadrat.foundation.lang.CommonConstants#NULL_STRING</span>
-<span class="source-line-no">975</span><span id="line-975">     */</span>
-<span class="source-line-no">976</span><span id="line-976">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">977</span><span id="line-977">    public static final String toString( final Object object )</span>
-<span class="source-line-no">978</span><span id="line-978">    {</span>
-<span class="source-line-no">979</span><span id="line-979">        return toString( object, NULL_STRING );</span>
-<span class="source-line-no">980</span><span id="line-980">    }   //  toString()</span>
-<span class="source-line-no">981</span><span id="line-981"></span>
-<span class="source-line-no">982</span><span id="line-982">    /**</span>
-<span class="source-line-no">983</span><span id="line-983">     *  Converts the given argument {@code object} into a</span>
-<span class="source-line-no">984</span><span id="line-984">     *  {@link String},</span>
-<span class="source-line-no">985</span><span id="line-985">     *  usually by calling its</span>
-<span class="source-line-no">986</span><span id="line-986">     *  {@link Object#toString() toString()}</span>
-<span class="source-line-no">987</span><span id="line-987">     *  method. If the value of the argument is {@code null}, the text</span>
-<span class="source-line-no">988</span><span id="line-988">     *  provided as the {@code nullDefault} argument will be returned instead.</span>
-<span class="source-line-no">989</span><span id="line-989">     *  Arrays will be converted to a string through calling the respective</span>
-<span class="source-line-no">990</span><span id="line-990">     *  {@code toString()} method from</span>
-<span class="source-line-no">991</span><span id="line-991">     *  {@link java.util.Arrays}</span>
-<span class="source-line-no">992</span><span id="line-992">     *  (this distinguishes this implementation from</span>
-<span class="source-line-no">993</span><span id="line-993">     *  {link java.util.Objects#toString(Object, String)}).</span>
-<span class="source-line-no">994</span><span id="line-994">     *  Values of type</span>
-<span class="source-line-no">995</span><span id="line-995">     *  {@link java.util.Date} or</span>
-<span class="source-line-no">996</span><span id="line-996">     *  {@link java.util.Calendar}</span>
-<span class="source-line-no">997</span><span id="line-997">     *  will be translated based on the default locale - whatever that is.</span>
-<span class="source-line-no">998</span><span id="line-998">     *</span>
-<span class="source-line-no">999</span><span id="line-999">     *  @param  object  The object; may be {@code null}.</span>
-<span class="source-line-no">1000</span><span id="line-1000">     *  @param  nullDefault The text that should be returned if {@code object}</span>
-<span class="source-line-no">1001</span><span id="line-1001">     *      is {@code null}.</span>
-<span class="source-line-no">1002</span><span id="line-1002">     *  @return The object's string representation.</span>
-<span class="source-line-no">1003</span><span id="line-1003">     *</span>
-<span class="source-line-no">1004</span><span id="line-1004">     *  @see java.util.Arrays#toString(boolean[])</span>
-<span class="source-line-no">1005</span><span id="line-1005">     *  @see java.util.Arrays#toString(byte[])</span>
-<span class="source-line-no">1006</span><span id="line-1006">     *  @see java.util.Arrays#toString(char[])</span>
-<span class="source-line-no">1007</span><span id="line-1007">     *  @see java.util.Arrays#toString(double[])</span>
-<span class="source-line-no">1008</span><span id="line-1008">     *  @see java.util.Arrays#toString(float[])</span>
-<span class="source-line-no">1009</span><span id="line-1009">     *  @see java.util.Arrays#toString(int[])</span>
-<span class="source-line-no">1010</span><span id="line-1010">     *  @see java.util.Arrays#toString(long[])</span>
-<span class="source-line-no">1011</span><span id="line-1011">     *  @see java.util.Arrays#toString(Object[])</span>
-<span class="source-line-no">1012</span><span id="line-1012">     *  @see java.util.Arrays#toString(short[])</span>
-<span class="source-line-no">1013</span><span id="line-1013">     *  @see java.util.Arrays#deepToString(Object[])</span>
-<span class="source-line-no">1014</span><span id="line-1014">     *  @see java.util.Locale#getDefault()</span>
-<span class="source-line-no">1015</span><span id="line-1015">     */</span>
-<span class="source-line-no">1016</span><span id="line-1016">    @SuppressWarnings( {"IfStatementWithTooManyBranches", "ChainOfInstanceofChecks"} )</span>
-<span class="source-line-no">1017</span><span id="line-1017">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">1018</span><span id="line-1018">    public static final String toString( final Object object, final String nullDefault )</span>
-<span class="source-line-no">1019</span><span id="line-1019">    {</span>
-<span class="source-line-no">1020</span><span id="line-1020">        var retValue = requireNonNullArgument( nullDefault, "nullDefault" );</span>
-<span class="source-line-no">1021</span><span id="line-1021">        if( nonNull( object ) )</span>
-<span class="source-line-no">1022</span><span id="line-1022">        {</span>
-<span class="source-line-no">1023</span><span id="line-1023">            final var objectClass = object.getClass();</span>
-<span class="source-line-no">1024</span><span id="line-1024">            if( objectClass.isArray() )</span>
-<span class="source-line-no">1025</span><span id="line-1025">            {</span>
-<span class="source-line-no">1026</span><span id="line-1026">                if( objectClass == byte [].class )</span>
-<span class="source-line-no">1027</span><span id="line-1027">                {</span>
-<span class="source-line-no">1028</span><span id="line-1028">                    retValue = Arrays.toString( (byte []) object );</span>
-<span class="source-line-no">1029</span><span id="line-1029">                }</span>
-<span class="source-line-no">1030</span><span id="line-1030">                else if( objectClass == short [].class )</span>
-<span class="source-line-no">1031</span><span id="line-1031">                {</span>
-<span class="source-line-no">1032</span><span id="line-1032">                    retValue = Arrays.toString( (short []) object );</span>
-<span class="source-line-no">1033</span><span id="line-1033">                }</span>
-<span class="source-line-no">1034</span><span id="line-1034">                else if( objectClass == int [].class )</span>
-<span class="source-line-no">1035</span><span id="line-1035">                {</span>
-<span class="source-line-no">1036</span><span id="line-1036">                    retValue = Arrays.toString( (int []) object );</span>
-<span class="source-line-no">1037</span><span id="line-1037">                }</span>
-<span class="source-line-no">1038</span><span id="line-1038">                else if( objectClass == long [].class )</span>
-<span class="source-line-no">1039</span><span id="line-1039">                {</span>
-<span class="source-line-no">1040</span><span id="line-1040">                    retValue = Arrays.toString( (long []) object );</span>
-<span class="source-line-no">1041</span><span id="line-1041">                }</span>
-<span class="source-line-no">1042</span><span id="line-1042">                else if( objectClass == char [].class )</span>
-<span class="source-line-no">1043</span><span id="line-1043">                {</span>
-<span class="source-line-no">1044</span><span id="line-1044">                    retValue = Arrays.toString( (char []) object );</span>
-<span class="source-line-no">1045</span><span id="line-1045">                }</span>
-<span class="source-line-no">1046</span><span id="line-1046">                else if( objectClass == float [].class )</span>
-<span class="source-line-no">1047</span><span id="line-1047">                {</span>
-<span class="source-line-no">1048</span><span id="line-1048">                    retValue = Arrays.toString( (float []) object );</span>
-<span class="source-line-no">1049</span><span id="line-1049">                }</span>
-<span class="source-line-no">1050</span><span id="line-1050">                else if( objectClass == double [].class )</span>
-<span class="source-line-no">1051</span><span id="line-1051">                {</span>
-<span class="source-line-no">1052</span><span id="line-1052">                    retValue = Arrays.toString( (double []) object );</span>
-<span class="source-line-no">1053</span><span id="line-1053">                }</span>
-<span class="source-line-no">1054</span><span id="line-1054">                else if( objectClass == boolean [].class )</span>
-<span class="source-line-no">1055</span><span id="line-1055">                {</span>
-<span class="source-line-no">1056</span><span id="line-1056">                    retValue = Arrays.toString( (boolean []) object );</span>
-<span class="source-line-no">1057</span><span id="line-1057">                }</span>
-<span class="source-line-no">1058</span><span id="line-1058">                else</span>
-<span class="source-line-no">1059</span><span id="line-1059">                {</span>
-<span class="source-line-no">1060</span><span id="line-1060">                    retValue = deepToString( (Object []) object );</span>
-<span class="source-line-no">1061</span><span id="line-1061">                }</span>
-<span class="source-line-no">1062</span><span id="line-1062">            }</span>
-<span class="source-line-no">1063</span><span id="line-1063">            else</span>
-<span class="source-line-no">1064</span><span id="line-1064">            {</span>
-<span class="source-line-no">1065</span><span id="line-1065">                retValue = object.toString();</span>
-<span class="source-line-no">1066</span><span id="line-1066">            }</span>
-<span class="source-line-no">1067</span><span id="line-1067">        }</span>
-<span class="source-line-no">1068</span><span id="line-1068"></span>
-<span class="source-line-no">1069</span><span id="line-1069">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">1070</span><span id="line-1070">        return retValue;</span>
-<span class="source-line-no">1071</span><span id="line-1071">    }   //  toString()</span>
-<span class="source-line-no">1072</span><span id="line-1072"></span>
-<span class="source-line-no">1073</span><span id="line-1073">    /**</span>
-<span class="source-line-no">1074</span><span id="line-1074">     *  Converts the given argument {@code object} into a</span>
-<span class="source-line-no">1075</span><span id="line-1075">     *  {@link String}</span>
-<span class="source-line-no">1076</span><span id="line-1076">     *  using the given instance of</span>
-<span class="source-line-no">1077</span><span id="line-1077">     *  {@link Stringer}.</span>
-<span class="source-line-no">1078</span><span id="line-1078">     *  If the value of the argument is {@code null}, the text</span>
-<span class="source-line-no">1079</span><span id="line-1079">     *  provided as the {@code nullDefault} argument will be returned instead.</span>
-<span class="source-line-no">1080</span><span id="line-1080">     *</span>
-<span class="source-line-no">1081</span><span id="line-1081">     *  @param  &lt;T&gt; The type of the object.</span>
-<span class="source-line-no">1082</span><span id="line-1082">     *  @param  object  The object; may be {@code null}.</span>
-<span class="source-line-no">1083</span><span id="line-1083">     *  @param  stringer    The method that is used to convert the given object</span>
-<span class="source-line-no">1084</span><span id="line-1084">     *      to a String.</span>
-<span class="source-line-no">1085</span><span id="line-1085">     *  @param  nullDefault The text that should be returned if {@code object}</span>
-<span class="source-line-no">1086</span><span id="line-1086">     *      is {@code null}.</span>
-<span class="source-line-no">1087</span><span id="line-1087">     *  @return The object's string representation.</span>
-<span class="source-line-no">1088</span><span id="line-1088">     *</span>
-<span class="source-line-no">1089</span><span id="line-1089">     *  @see Stringer</span>
-<span class="source-line-no">1090</span><span id="line-1090">     */</span>
-<span class="source-line-no">1091</span><span id="line-1091">    @API( status = STABLE, since = "0.0.5" )</span>
-<span class="source-line-no">1092</span><span id="line-1092">    public static final &lt;T&gt; String toString( final T object, final Stringer&lt;? super T&gt; stringer, final String nullDefault )</span>
-<span class="source-line-no">1093</span><span id="line-1093">    {</span>
-<span class="source-line-no">1094</span><span id="line-1094">        requireNonNullArgument( nullDefault, "nullDefault" );</span>
-<span class="source-line-no">1095</span><span id="line-1095"></span>
-<span class="source-line-no">1096</span><span id="line-1096">        final var retValue = nonNull( object ) ? requireNonNullArgument( stringer, "stringer" ).toString( object ) : nullDefault;</span>
-<span class="source-line-no">1097</span><span id="line-1097"></span>
-<span class="source-line-no">1098</span><span id="line-1098">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">1099</span><span id="line-1099">        return retValue;</span>
-<span class="source-line-no">1100</span><span id="line-1100">    }   //  toString()</span>
-<span class="source-line-no">1101</span><span id="line-1101">}</span>
-<span class="source-line-no">1102</span><span id="line-1102">//  class Objects</span>
-<span class="source-line-no">1103</span><span id="line-1103"></span>
-<span class="source-line-no">1104</span><span id="line-1104">/*</span>
-<span class="source-line-no">1105</span><span id="line-1105"> *  End of File</span>
-<span class="source-line-no">1106</span><span id="line-1106"> */</span>
+<span class="source-line-no">741</span><span id="line-741">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">742</span><span id="line-742">    public static final &lt;T&gt; T requireNotEmptyArgument( @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional&lt;T&gt; optional, final String name )</span>
+<span class="source-line-no">743</span><span id="line-743">    {</span>
+<span class="source-line-no">744</span><span id="line-744">        if( isNull( name ) ) throw new NullArgumentException( "name" );</span>
+<span class="source-line-no">745</span><span id="line-745">        if( name.isEmpty() ) throw new EmptyArgumentException( "name" );</span>
+<span class="source-line-no">746</span><span id="line-746"></span>
+<span class="source-line-no">747</span><span id="line-747">        //---* Check for null *------------------------------------------------</span>
+<span class="source-line-no">748</span><span id="line-748">        if( isNull( optional ) ) throw new NullArgumentException( name );</span>
+<span class="source-line-no">749</span><span id="line-749">        final var retValue = optional.orElseThrow( () -&gt; new EmptyArgumentException( name ) );</span>
+<span class="source-line-no">750</span><span id="line-750"></span>
+<span class="source-line-no">751</span><span id="line-751">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">752</span><span id="line-752">        return retValue;</span>
+<span class="source-line-no">753</span><span id="line-753">    }   //  requireNotEmptyArgument()</span>
+<span class="source-line-no">754</span><span id="line-754"></span>
+<span class="source-line-no">755</span><span id="line-755">    /**</span>
+<span class="source-line-no">756</span><span id="line-756">     *  Returns the first argument if it is not {@code null}, otherwise it</span>
+<span class="source-line-no">757</span><span id="line-757">     *  returns the non-{@code null} second argument.&lt;br&gt;</span>
+<span class="source-line-no">758</span><span id="line-758">     *  &lt;br&gt;This implementation behaves different from that in</span>
+<span class="source-line-no">759</span><span id="line-759">     *  {@link java.util.Objects#requireNonNullElse(Object,Object)}</span>
+<span class="source-line-no">760</span><span id="line-760">     *  as it will always check that the default is not {@code null}.</span>
+<span class="source-line-no">761</span><span id="line-761">     *</span>
+<span class="source-line-no">762</span><span id="line-762">     *  @param &lt;T&gt;  The type of the references.</span>
+<span class="source-line-no">763</span><span id="line-763">     *  @param  obj An object reference.</span>
+<span class="source-line-no">764</span><span id="line-764">     *  @param  defaultObj  Another object reference to be returned if the</span>
+<span class="source-line-no">765</span><span id="line-765">     *      first argument is {@code null}.</span>
+<span class="source-line-no">766</span><span id="line-766">     *  @return The first argument if it is not {@code null}, otherwise the</span>
+<span class="source-line-no">767</span><span id="line-767">     *      second argument if it is not {@code null}.</span>
+<span class="source-line-no">768</span><span id="line-768">     *  @throws NullArgumentException   The {@code defaultObj} is {@code null}.</span>
+<span class="source-line-no">769</span><span id="line-769">     *</span>
+<span class="source-line-no">770</span><span id="line-770">     *  @see java.util.Objects#requireNonNullElse(Object, Object)</span>
+<span class="source-line-no">771</span><span id="line-771">     */</span>
+<span class="source-line-no">772</span><span id="line-772">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">773</span><span id="line-773">    public static final &lt;T&gt; T requireNonNullElse( final T obj, final T defaultObj ) throws NullArgumentException</span>
+<span class="source-line-no">774</span><span id="line-774">    {</span>
+<span class="source-line-no">775</span><span id="line-775">        return java.util.Objects.requireNonNullElse( obj, requireNonNullArgument( defaultObj, "defaultObj" ) );</span>
+<span class="source-line-no">776</span><span id="line-776">    }   //  requireNonNullElse()</span>
+<span class="source-line-no">777</span><span id="line-777"></span>
+<span class="source-line-no">778</span><span id="line-778">    /**</span>
+<span class="source-line-no">779</span><span id="line-779">     *  Returns the first argument if it is not {@code null}, otherwise it</span>
+<span class="source-line-no">780</span><span id="line-780">     *  returns the non-{@code null} value returned by</span>
+<span class="source-line-no">781</span><span id="line-781">     *  {@link Supplier#get() supplier.get()}.&lt;br&gt;</span>
+<span class="source-line-no">782</span><span id="line-782">     *  &lt;br&gt;This implementation behaves different from that in</span>
+<span class="source-line-no">783</span><span id="line-783">     *  {@link java.util.Objects#requireNonNullElseGet(Object,Supplier)}</span>
+<span class="source-line-no">784</span><span id="line-784">     *  as it will always check that the supplier is not {@code null}.</span>
+<span class="source-line-no">785</span><span id="line-785">     *</span>
+<span class="source-line-no">786</span><span id="line-786">     *  @param &lt;T&gt;  The type of the reference.</span>
+<span class="source-line-no">787</span><span id="line-787">     *  @param  obj An object reference.</span>
+<span class="source-line-no">788</span><span id="line-788">     *  @param  supplier    The supplier of a non-{@code null} object of type</span>
+<span class="source-line-no">789</span><span id="line-789">     *      {code T} to return if the first argument is {@code null}.</span>
+<span class="source-line-no">790</span><span id="line-790">     *  @return The first argument if it is not {@code null}, otherwise the</span>
+<span class="source-line-no">791</span><span id="line-791">     *      value returned by a call to {@code supplier.get()} if it is not</span>
+<span class="source-line-no">792</span><span id="line-792">     *      {@code null}.</span>
+<span class="source-line-no">793</span><span id="line-793">     *  @throws NullArgumentException   The {@code supplier} is {@code null}.</span>
+<span class="source-line-no">794</span><span id="line-794">     *  @throws NullPointerException    {@code obj} is {@code null} and the</span>
+<span class="source-line-no">795</span><span id="line-795">     *      return value of {@code supplier.get()} value is {@code null}, too.</span>
+<span class="source-line-no">796</span><span id="line-796">     */</span>
+<span class="source-line-no">797</span><span id="line-797">    @SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
+<span class="source-line-no">798</span><span id="line-798">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">799</span><span id="line-799">    public static final &lt;T&gt; T requireNonNullElseGet( final T obj, final Supplier&lt;? extends T&gt; supplier ) throws NullArgumentException, NullPointerException</span>
+<span class="source-line-no">800</span><span id="line-800">    {</span>
+<span class="source-line-no">801</span><span id="line-801">        return java.util.Objects.requireNonNullElseGet( obj, requireNonNullArgument( supplier, "supplier" ) );</span>
+<span class="source-line-no">802</span><span id="line-802">    }   //  requireNonNullElseGet()</span>
+<span class="source-line-no">803</span><span id="line-803"></span>
+<span class="source-line-no">804</span><span id="line-804">    /**</span>
+<span class="source-line-no">805</span><span id="line-805">     *  Applies the given validation on the given value, and if that fails, an</span>
+<span class="source-line-no">806</span><span id="line-806">     *  {@link ValidationException}</span>
+<span class="source-line-no">807</span><span id="line-807">     *  with a default message is thrown.</span>
+<span class="source-line-no">808</span><span id="line-808">     *</span>
+<span class="source-line-no">809</span><span id="line-809">     *  @param  &lt;T&gt; The type of the value to check.</span>
+<span class="source-line-no">810</span><span id="line-810">     *  @param  a   The value to check; can be {@code null}.</span>
+<span class="source-line-no">811</span><span id="line-811">     *  @param  name    The name of the argument; this is used for the error</span>
+<span class="source-line-no">812</span><span id="line-812">     *      message.</span>
+<span class="source-line-no">813</span><span id="line-813">     *  @param  validation  The validation</span>
+<span class="source-line-no">814</span><span id="line-814">     *  @return The value if the validation succeeds.</span>
+<span class="source-line-no">815</span><span id="line-815">     *  @throws ValidationException {@code a} failed the validation.</span>
+<span class="source-line-no">816</span><span id="line-816">     *  @throws NullArgumentException   {@code name} or {@code validation} is</span>
+<span class="source-line-no">817</span><span id="line-817">     *      {@code null}.</span>
+<span class="source-line-no">818</span><span id="line-818">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
+<span class="source-line-no">819</span><span id="line-819">     *</span>
+<span class="source-line-no">820</span><span id="line-820">     *  @since 0.1.0</span>
+<span class="source-line-no">821</span><span id="line-821">     */</span>
+<span class="source-line-no">822</span><span id="line-822">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">823</span><span id="line-823">    public static final &lt;T&gt; T requireValidArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation )</span>
+<span class="source-line-no">824</span><span id="line-824">    {</span>
+<span class="source-line-no">825</span><span id="line-825">        requireNotEmptyArgument( name, "name" );</span>
+<span class="source-line-no">826</span><span id="line-826"></span>
+<span class="source-line-no">827</span><span id="line-827">        if( !requireNonNullArgument( validation, "validation" ).test( a ) )</span>
+<span class="source-line-no">828</span><span id="line-828">        {</span>
+<span class="source-line-no">829</span><span id="line-829">            throw new ValidationException( format( "Validation failed for '%s'", name ) );</span>
+<span class="source-line-no">830</span><span id="line-830">        }</span>
+<span class="source-line-no">831</span><span id="line-831"></span>
+<span class="source-line-no">832</span><span id="line-832">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">833</span><span id="line-833">        return a;</span>
+<span class="source-line-no">834</span><span id="line-834">    }   //  requireValidArgument()</span>
+<span class="source-line-no">835</span><span id="line-835"></span>
+<span class="source-line-no">836</span><span id="line-836">    /**</span>
+<span class="source-line-no">837</span><span id="line-837">     *  Applies the given validation on the given value, and if that fails, an</span>
+<span class="source-line-no">838</span><span id="line-838">     *  {@link ValidationException}</span>
+<span class="source-line-no">839</span><span id="line-839">     *  is thrown. The message for the exception will be provided by the given</span>
+<span class="source-line-no">840</span><span id="line-840">     *  message supplier that takes the name of the argument as an argument.</span>
+<span class="source-line-no">841</span><span id="line-841">     *</span>
+<span class="source-line-no">842</span><span id="line-842">     *  @param  &lt;T&gt; The type of the value to check.</span>
+<span class="source-line-no">843</span><span id="line-843">     *  @param  a   The value to check; can be {@code null}.</span>
+<span class="source-line-no">844</span><span id="line-844">     *  @param  name    The name of the argument; this is used for the error</span>
+<span class="source-line-no">845</span><span id="line-845">     *      message.</span>
+<span class="source-line-no">846</span><span id="line-846">     *  @param  validation  The validation</span>
+<span class="source-line-no">847</span><span id="line-847">     *  @param  messageSupplier The function that generates the message for the</span>
+<span class="source-line-no">848</span><span id="line-848">     *      exception.</span>
+<span class="source-line-no">849</span><span id="line-849">     *  @return The value if the validation succeeds.</span>
+<span class="source-line-no">850</span><span id="line-850">     *  @throws ValidationException {@code a} failed the validation.</span>
+<span class="source-line-no">851</span><span id="line-851">     *  @throws NullArgumentException   {@code name}, {@code validation} or</span>
+<span class="source-line-no">852</span><span id="line-852">     *      {@code messageProvider} is {@code null}.</span>
+<span class="source-line-no">853</span><span id="line-853">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
+<span class="source-line-no">854</span><span id="line-854">     *</span>
+<span class="source-line-no">855</span><span id="line-855">     *  @since 0.1.0</span>
+<span class="source-line-no">856</span><span id="line-856">     */</span>
+<span class="source-line-no">857</span><span id="line-857">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">858</span><span id="line-858">    public static final &lt;T&gt; T requireValidArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation, final UnaryOperator&lt;String&gt; messageSupplier )</span>
+<span class="source-line-no">859</span><span id="line-859">    {</span>
+<span class="source-line-no">860</span><span id="line-860">        requireNotEmptyArgument( name, "name" );</span>
+<span class="source-line-no">861</span><span id="line-861">        requireNonNullArgument( messageSupplier, "messageSupplier" );</span>
+<span class="source-line-no">862</span><span id="line-862"></span>
+<span class="source-line-no">863</span><span id="line-863">        if( !requireNonNullArgument( validation, "validation" ).test( a ) )</span>
+<span class="source-line-no">864</span><span id="line-864">        {</span>
+<span class="source-line-no">865</span><span id="line-865">            throw new ValidationException( messageSupplier.apply( name ) );</span>
+<span class="source-line-no">866</span><span id="line-866">        }</span>
+<span class="source-line-no">867</span><span id="line-867"></span>
+<span class="source-line-no">868</span><span id="line-868">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">869</span><span id="line-869">        return a;</span>
+<span class="source-line-no">870</span><span id="line-870">    }   //  requireValidArgument()</span>
+<span class="source-line-no">871</span><span id="line-871"></span>
+<span class="source-line-no">872</span><span id="line-872">    /**</span>
+<span class="source-line-no">873</span><span id="line-873">     *  Applies the given validation on the given value (that may not be</span>
+<span class="source-line-no">874</span><span id="line-874">     *  {@code null}), and if that fails, an</span>
+<span class="source-line-no">875</span><span id="line-875">     *  {@link ValidationException}</span>
+<span class="source-line-no">876</span><span id="line-876">     *  with a default message is thrown.</span>
+<span class="source-line-no">877</span><span id="line-877">     *</span>
+<span class="source-line-no">878</span><span id="line-878">     *  @param  &lt;T&gt; The type of the value to check.</span>
+<span class="source-line-no">879</span><span id="line-879">     *  @param  a   The value to check.</span>
+<span class="source-line-no">880</span><span id="line-880">     *  @param  name    The name of the argument; this is used for the error</span>
+<span class="source-line-no">881</span><span id="line-881">     *      message.</span>
+<span class="source-line-no">882</span><span id="line-882">     *  @param  validation  The validation</span>
+<span class="source-line-no">883</span><span id="line-883">     *  @return The value if the validation succeeds.</span>
+<span class="source-line-no">884</span><span id="line-884">     *  @throws ValidationException {@code a} failed the validation.</span>
+<span class="source-line-no">885</span><span id="line-885">     *  @throws NullArgumentException   {@code a}, {@code name} or</span>
+<span class="source-line-no">886</span><span id="line-886">     *      {@code validation} is {@code null}.</span>
+<span class="source-line-no">887</span><span id="line-887">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
+<span class="source-line-no">888</span><span id="line-888">     *</span>
+<span class="source-line-no">889</span><span id="line-889">     *  @since 0.1.0</span>
+<span class="source-line-no">890</span><span id="line-890">     */</span>
+<span class="source-line-no">891</span><span id="line-891">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">892</span><span id="line-892">    public static final &lt;T&gt; T requireValidNonNullArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation )</span>
+<span class="source-line-no">893</span><span id="line-893">    {</span>
+<span class="source-line-no">894</span><span id="line-894">        requireNotEmptyArgument( name, "name" );</span>
+<span class="source-line-no">895</span><span id="line-895"></span>
+<span class="source-line-no">896</span><span id="line-896">        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )</span>
+<span class="source-line-no">897</span><span id="line-897">        {</span>
+<span class="source-line-no">898</span><span id="line-898">            throw new ValidationException( format( "Validation failed for '%s'", name ) );</span>
+<span class="source-line-no">899</span><span id="line-899">        }</span>
+<span class="source-line-no">900</span><span id="line-900"></span>
+<span class="source-line-no">901</span><span id="line-901">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">902</span><span id="line-902">        return a;</span>
+<span class="source-line-no">903</span><span id="line-903">    }   //  requireValidNonNullArgument()</span>
+<span class="source-line-no">904</span><span id="line-904"></span>
+<span class="source-line-no">905</span><span id="line-905">    /**</span>
+<span class="source-line-no">906</span><span id="line-906">     *  Applies the given validation on the given value (that may not be</span>
+<span class="source-line-no">907</span><span id="line-907">     *  {@code null}), and if that fails, an</span>
+<span class="source-line-no">908</span><span id="line-908">     *  {@link ValidationException}</span>
+<span class="source-line-no">909</span><span id="line-909">     *  is thrown. The message for the exception will be provided by the given</span>
+<span class="source-line-no">910</span><span id="line-910">     *  message supplier that takes the name of the argument as an argument.</span>
+<span class="source-line-no">911</span><span id="line-911">     *</span>
+<span class="source-line-no">912</span><span id="line-912">     *  @param  &lt;T&gt; The type of the value to check.</span>
+<span class="source-line-no">913</span><span id="line-913">     *  @param  a   The value to check.</span>
+<span class="source-line-no">914</span><span id="line-914">     *  @param  name    The name of the argument; this is used for the error</span>
+<span class="source-line-no">915</span><span id="line-915">     *      message.</span>
+<span class="source-line-no">916</span><span id="line-916">     *  @param  validation  The validation</span>
+<span class="source-line-no">917</span><span id="line-917">     *  @param  messageSupplier The function that generates the message for the</span>
+<span class="source-line-no">918</span><span id="line-918">     *      exception.</span>
+<span class="source-line-no">919</span><span id="line-919">     *  @return The value if the validation succeeds.</span>
+<span class="source-line-no">920</span><span id="line-920">     *  @throws ValidationException {@code a} failed the validation.</span>
+<span class="source-line-no">921</span><span id="line-921">     *  @throws NullArgumentException   {@code a}, {@code name},</span>
+<span class="source-line-no">922</span><span id="line-922">     *      {@code validation} or {@code messageProvider} is {@code null}.</span>
+<span class="source-line-no">923</span><span id="line-923">     *  @throws EmptyArgumentException  {@code name} is the empty String.</span>
+<span class="source-line-no">924</span><span id="line-924">     *</span>
+<span class="source-line-no">925</span><span id="line-925">     *  @since 0.1.0</span>
+<span class="source-line-no">926</span><span id="line-926">     */</span>
+<span class="source-line-no">927</span><span id="line-927">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">928</span><span id="line-928">    public static final &lt;T&gt; T requireValidNonNullArgument( final T a, final String name, final Predicate&lt;? super T&gt; validation, final UnaryOperator&lt;String&gt; messageSupplier )</span>
+<span class="source-line-no">929</span><span id="line-929">    {</span>
+<span class="source-line-no">930</span><span id="line-930">        requireNotEmptyArgument( name, "name" );</span>
+<span class="source-line-no">931</span><span id="line-931">        requireNonNullArgument( messageSupplier, "messageSupplier" );</span>
+<span class="source-line-no">932</span><span id="line-932"></span>
+<span class="source-line-no">933</span><span id="line-933">        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )</span>
+<span class="source-line-no">934</span><span id="line-934">        {</span>
+<span class="source-line-no">935</span><span id="line-935">            throw new ValidationException( messageSupplier.apply( name ) );</span>
+<span class="source-line-no">936</span><span id="line-936">        }</span>
+<span class="source-line-no">937</span><span id="line-937"></span>
+<span class="source-line-no">938</span><span id="line-938">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">939</span><span id="line-939">        return a;</span>
+<span class="source-line-no">940</span><span id="line-940">    }   //  requireValidNonNullArgument()</span>
+<span class="source-line-no">941</span><span id="line-941"></span>
+<span class="source-line-no">942</span><span id="line-942">    /**</span>
+<span class="source-line-no">943</span><span id="line-943">     *  Converts the given argument {@code object} into a</span>
+<span class="source-line-no">944</span><span id="line-944">     *  {@link String},</span>
+<span class="source-line-no">945</span><span id="line-945">     *  usually by calling its</span>
+<span class="source-line-no">946</span><span id="line-946">     *  {@link Object#toString() toString()}</span>
+<span class="source-line-no">947</span><span id="line-947">     *  method. If the value of the argument is {@code null}, the text</span>
+<span class="source-line-no">948</span><span id="line-948">     *  &amp;quot;{@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING null}&amp;quot;</span>
+<span class="source-line-no">949</span><span id="line-949">     *  will be returned instead. Arrays will be converted to a string through</span>
+<span class="source-line-no">950</span><span id="line-950">     *  calling the respective {@code toString()} method from</span>
+<span class="source-line-no">951</span><span id="line-951">     *  {@link java.util.Arrays}</span>
+<span class="source-line-no">952</span><span id="line-952">     *  (this distinguishes this implementation from</span>
+<span class="source-line-no">953</span><span id="line-953">     *  {link java.util.Objects#toString(Object, String)}).</span>
+<span class="source-line-no">954</span><span id="line-954">     *  Values of type</span>
+<span class="source-line-no">955</span><span id="line-955">     *  {@link java.util.Date} or</span>
+<span class="source-line-no">956</span><span id="line-956">     *  {@link java.util.Calendar}</span>
+<span class="source-line-no">957</span><span id="line-957">     *  will be translated based on the default locale - whatever that is.</span>
+<span class="source-line-no">958</span><span id="line-958">     *</span>
+<span class="source-line-no">959</span><span id="line-959">     *  @param  object  The object; may be {@code null}.</span>
+<span class="source-line-no">960</span><span id="line-960">     *  @return The object's string representation.</span>
+<span class="source-line-no">961</span><span id="line-961">     *</span>
+<span class="source-line-no">962</span><span id="line-962">     *  @see java.util.Arrays#toString(boolean[])</span>
+<span class="source-line-no">963</span><span id="line-963">     *  @see java.util.Arrays#toString(byte[])</span>
+<span class="source-line-no">964</span><span id="line-964">     *  @see java.util.Arrays#toString(char[])</span>
+<span class="source-line-no">965</span><span id="line-965">     *  @see java.util.Arrays#toString(double[])</span>
+<span class="source-line-no">966</span><span id="line-966">     *  @see java.util.Arrays#toString(float[])</span>
+<span class="source-line-no">967</span><span id="line-967">     *  @see java.util.Arrays#toString(int[])</span>
+<span class="source-line-no">968</span><span id="line-968">     *  @see java.util.Arrays#toString(long[])</span>
+<span class="source-line-no">969</span><span id="line-969">     *  @see java.util.Arrays#toString(Object[])</span>
+<span class="source-line-no">970</span><span id="line-970">     *  @see java.util.Arrays#toString(short[])</span>
+<span class="source-line-no">971</span><span id="line-971">     *  @see java.util.Arrays#deepToString(Object[])</span>
+<span class="source-line-no">972</span><span id="line-972">     *  @see java.util.Locale#getDefault()</span>
+<span class="source-line-no">973</span><span id="line-973">     *  @see org.tquadrat.foundation.lang.CommonConstants#NULL_STRING</span>
+<span class="source-line-no">974</span><span id="line-974">     */</span>
+<span class="source-line-no">975</span><span id="line-975">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">976</span><span id="line-976">    public static final String toString( final Object object )</span>
+<span class="source-line-no">977</span><span id="line-977">    {</span>
+<span class="source-line-no">978</span><span id="line-978">        return toString( object, NULL_STRING );</span>
+<span class="source-line-no">979</span><span id="line-979">    }   //  toString()</span>
+<span class="source-line-no">980</span><span id="line-980"></span>
+<span class="source-line-no">981</span><span id="line-981">    /**</span>
+<span class="source-line-no">982</span><span id="line-982">     *  Converts the given argument {@code object} into a</span>
+<span class="source-line-no">983</span><span id="line-983">     *  {@link String},</span>
+<span class="source-line-no">984</span><span id="line-984">     *  usually by calling its</span>
+<span class="source-line-no">985</span><span id="line-985">     *  {@link Object#toString() toString()}</span>
+<span class="source-line-no">986</span><span id="line-986">     *  method. If the value of the argument is {@code null}, the text</span>
+<span class="source-line-no">987</span><span id="line-987">     *  provided as the {@code nullDefault} argument will be returned instead.</span>
+<span class="source-line-no">988</span><span id="line-988">     *  Arrays will be converted to a string through calling the respective</span>
+<span class="source-line-no">989</span><span id="line-989">     *  {@code toString()} method from</span>
+<span class="source-line-no">990</span><span id="line-990">     *  {@link java.util.Arrays}</span>
+<span class="source-line-no">991</span><span id="line-991">     *  (this distinguishes this implementation from</span>
+<span class="source-line-no">992</span><span id="line-992">     *  {link java.util.Objects#toString(Object, String)}).</span>
+<span class="source-line-no">993</span><span id="line-993">     *  Values of type</span>
+<span class="source-line-no">994</span><span id="line-994">     *  {@link java.util.Date} or</span>
+<span class="source-line-no">995</span><span id="line-995">     *  {@link java.util.Calendar}</span>
+<span class="source-line-no">996</span><span id="line-996">     *  will be translated based on the default locale - whatever that is.</span>
+<span class="source-line-no">997</span><span id="line-997">     *</span>
+<span class="source-line-no">998</span><span id="line-998">     *  @param  object  The object; may be {@code null}.</span>
+<span class="source-line-no">999</span><span id="line-999">     *  @param  nullDefault The text that should be returned if {@code object}</span>
+<span class="source-line-no">1000</span><span id="line-1000">     *      is {@code null}.</span>
+<span class="source-line-no">1001</span><span id="line-1001">     *  @return The object's string representation.</span>
+<span class="source-line-no">1002</span><span id="line-1002">     *</span>
+<span class="source-line-no">1003</span><span id="line-1003">     *  @see java.util.Arrays#toString(boolean[])</span>
+<span class="source-line-no">1004</span><span id="line-1004">     *  @see java.util.Arrays#toString(byte[])</span>
+<span class="source-line-no">1005</span><span id="line-1005">     *  @see java.util.Arrays#toString(char[])</span>
+<span class="source-line-no">1006</span><span id="line-1006">     *  @see java.util.Arrays#toString(double[])</span>
+<span class="source-line-no">1007</span><span id="line-1007">     *  @see java.util.Arrays#toString(float[])</span>
+<span class="source-line-no">1008</span><span id="line-1008">     *  @see java.util.Arrays#toString(int[])</span>
+<span class="source-line-no">1009</span><span id="line-1009">     *  @see java.util.Arrays#toString(long[])</span>
+<span class="source-line-no">1010</span><span id="line-1010">     *  @see java.util.Arrays#toString(Object[])</span>
+<span class="source-line-no">1011</span><span id="line-1011">     *  @see java.util.Arrays#toString(short[])</span>
+<span class="source-line-no">1012</span><span id="line-1012">     *  @see java.util.Arrays#deepToString(Object[])</span>
+<span class="source-line-no">1013</span><span id="line-1013">     *  @see java.util.Locale#getDefault()</span>
+<span class="source-line-no">1014</span><span id="line-1014">     */</span>
+<span class="source-line-no">1015</span><span id="line-1015">    @SuppressWarnings( {"IfStatementWithTooManyBranches", "ChainOfInstanceofChecks"} )</span>
+<span class="source-line-no">1016</span><span id="line-1016">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">1017</span><span id="line-1017">    public static final String toString( final Object object, final String nullDefault )</span>
+<span class="source-line-no">1018</span><span id="line-1018">    {</span>
+<span class="source-line-no">1019</span><span id="line-1019">        var retValue = requireNonNullArgument( nullDefault, "nullDefault" );</span>
+<span class="source-line-no">1020</span><span id="line-1020">        if( nonNull( object ) )</span>
+<span class="source-line-no">1021</span><span id="line-1021">        {</span>
+<span class="source-line-no">1022</span><span id="line-1022">            final var objectClass = object.getClass();</span>
+<span class="source-line-no">1023</span><span id="line-1023">            if( objectClass.isArray() )</span>
+<span class="source-line-no">1024</span><span id="line-1024">            {</span>
+<span class="source-line-no">1025</span><span id="line-1025">                if( objectClass == byte [].class )</span>
+<span class="source-line-no">1026</span><span id="line-1026">                {</span>
+<span class="source-line-no">1027</span><span id="line-1027">                    retValue = Arrays.toString( (byte []) object );</span>
+<span class="source-line-no">1028</span><span id="line-1028">                }</span>
+<span class="source-line-no">1029</span><span id="line-1029">                else if( objectClass == short [].class )</span>
+<span class="source-line-no">1030</span><span id="line-1030">                {</span>
+<span class="source-line-no">1031</span><span id="line-1031">                    retValue = Arrays.toString( (short []) object );</span>
+<span class="source-line-no">1032</span><span id="line-1032">                }</span>
+<span class="source-line-no">1033</span><span id="line-1033">                else if( objectClass == int [].class )</span>
+<span class="source-line-no">1034</span><span id="line-1034">                {</span>
+<span class="source-line-no">1035</span><span id="line-1035">                    retValue = Arrays.toString( (int []) object );</span>
+<span class="source-line-no">1036</span><span id="line-1036">                }</span>
+<span class="source-line-no">1037</span><span id="line-1037">                else if( objectClass == long [].class )</span>
+<span class="source-line-no">1038</span><span id="line-1038">                {</span>
+<span class="source-line-no">1039</span><span id="line-1039">                    retValue = Arrays.toString( (long []) object );</span>
+<span class="source-line-no">1040</span><span id="line-1040">                }</span>
+<span class="source-line-no">1041</span><span id="line-1041">                else if( objectClass == char [].class )</span>
+<span class="source-line-no">1042</span><span id="line-1042">                {</span>
+<span class="source-line-no">1043</span><span id="line-1043">                    retValue = Arrays.toString( (char []) object );</span>
+<span class="source-line-no">1044</span><span id="line-1044">                }</span>
+<span class="source-line-no">1045</span><span id="line-1045">                else if( objectClass == float [].class )</span>
+<span class="source-line-no">1046</span><span id="line-1046">                {</span>
+<span class="source-line-no">1047</span><span id="line-1047">                    retValue = Arrays.toString( (float []) object );</span>
+<span class="source-line-no">1048</span><span id="line-1048">                }</span>
+<span class="source-line-no">1049</span><span id="line-1049">                else if( objectClass == double [].class )</span>
+<span class="source-line-no">1050</span><span id="line-1050">                {</span>
+<span class="source-line-no">1051</span><span id="line-1051">                    retValue = Arrays.toString( (double []) object );</span>
+<span class="source-line-no">1052</span><span id="line-1052">                }</span>
+<span class="source-line-no">1053</span><span id="line-1053">                else if( objectClass == boolean [].class )</span>
+<span class="source-line-no">1054</span><span id="line-1054">                {</span>
+<span class="source-line-no">1055</span><span id="line-1055">                    retValue = Arrays.toString( (boolean []) object );</span>
+<span class="source-line-no">1056</span><span id="line-1056">                }</span>
+<span class="source-line-no">1057</span><span id="line-1057">                else</span>
+<span class="source-line-no">1058</span><span id="line-1058">                {</span>
+<span class="source-line-no">1059</span><span id="line-1059">                    retValue = deepToString( (Object []) object );</span>
+<span class="source-line-no">1060</span><span id="line-1060">                }</span>
+<span class="source-line-no">1061</span><span id="line-1061">            }</span>
+<span class="source-line-no">1062</span><span id="line-1062">            else</span>
+<span class="source-line-no">1063</span><span id="line-1063">            {</span>
+<span class="source-line-no">1064</span><span id="line-1064">                retValue = object.toString();</span>
+<span class="source-line-no">1065</span><span id="line-1065">            }</span>
+<span class="source-line-no">1066</span><span id="line-1066">        }</span>
+<span class="source-line-no">1067</span><span id="line-1067"></span>
+<span class="source-line-no">1068</span><span id="line-1068">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">1069</span><span id="line-1069">        return retValue;</span>
+<span class="source-line-no">1070</span><span id="line-1070">    }   //  toString()</span>
+<span class="source-line-no">1071</span><span id="line-1071"></span>
+<span class="source-line-no">1072</span><span id="line-1072">    /**</span>
+<span class="source-line-no">1073</span><span id="line-1073">     *  Converts the given argument {@code object} into a</span>
+<span class="source-line-no">1074</span><span id="line-1074">     *  {@link String}</span>
+<span class="source-line-no">1075</span><span id="line-1075">     *  using the given instance of</span>
+<span class="source-line-no">1076</span><span id="line-1076">     *  {@link Stringer}.</span>
+<span class="source-line-no">1077</span><span id="line-1077">     *  If the value of the argument is {@code null}, the text</span>
+<span class="source-line-no">1078</span><span id="line-1078">     *  provided as the {@code nullDefault} argument will be returned instead.</span>
+<span class="source-line-no">1079</span><span id="line-1079">     *</span>
+<span class="source-line-no">1080</span><span id="line-1080">     *  @param  &lt;T&gt; The type of the object.</span>
+<span class="source-line-no">1081</span><span id="line-1081">     *  @param  object  The object; may be {@code null}.</span>
+<span class="source-line-no">1082</span><span id="line-1082">     *  @param  stringer    The method that is used to convert the given object</span>
+<span class="source-line-no">1083</span><span id="line-1083">     *      to a String.</span>
+<span class="source-line-no">1084</span><span id="line-1084">     *  @param  nullDefault The text that should be returned if {@code object}</span>
+<span class="source-line-no">1085</span><span id="line-1085">     *      is {@code null}.</span>
+<span class="source-line-no">1086</span><span id="line-1086">     *  @return The object's string representation.</span>
+<span class="source-line-no">1087</span><span id="line-1087">     *</span>
+<span class="source-line-no">1088</span><span id="line-1088">     *  @see Stringer</span>
+<span class="source-line-no">1089</span><span id="line-1089">     */</span>
+<span class="source-line-no">1090</span><span id="line-1090">    @API( status = STABLE, since = "0.0.5" )</span>
+<span class="source-line-no">1091</span><span id="line-1091">    public static final &lt;T&gt; String toString( final T object, final Stringer&lt;? super T&gt; stringer, final String nullDefault )</span>
+<span class="source-line-no">1092</span><span id="line-1092">    {</span>
+<span class="source-line-no">1093</span><span id="line-1093">        requireNonNullArgument( nullDefault, "nullDefault" );</span>
+<span class="source-line-no">1094</span><span id="line-1094"></span>
+<span class="source-line-no">1095</span><span id="line-1095">        final var retValue = nonNull( object ) ? requireNonNullArgument( stringer, "stringer" ).toString( object ) : nullDefault;</span>
+<span class="source-line-no">1096</span><span id="line-1096"></span>
+<span class="source-line-no">1097</span><span id="line-1097">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">1098</span><span id="line-1098">        return retValue;</span>
+<span class="source-line-no">1099</span><span id="line-1099">    }   //  toString()</span>
+<span class="source-line-no">1100</span><span id="line-1100">}</span>
+<span class="source-line-no">1101</span><span id="line-1101">//  class Objects</span>
+<span class="source-line-no">1102</span><span id="line-1102"></span>
+<span class="source-line-no">1103</span><span id="line-1103">/*</span>
+<span class="source-line-no">1104</span><span id="line-1104"> *  End of File</span>
+<span class="source-line-no">1105</span><span id="line-1105"> */</span>
 
 
 

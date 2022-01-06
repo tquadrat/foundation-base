@@ -85,7 +85,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.tquadrat.foundation.lang.internal</a></div>
 <h1 title="Class LazyImpl" class="title">Class LazyImpl&lt;T&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">org.tquadrat.foundation.lang.internal.LazyImpl&lt;T&gt;</div>
 </div>
 <section class="class-description" id="class-description">
@@ -102,7 +102,7 @@ loadScripts(document, 'script');</script>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-65">LazyImpl</a>&lt;T&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;T&gt;</span></div>
 <div class="block">The implementation of the interface
   <a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang"><code>Lazy</code></a>.
@@ -167,12 +167,12 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="col-last even-row-color">
 <div class="block">An empty array of <code>Lazy</code> objects.</div>
 </div>
-<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#m_Lock" class="member-name-link">m_Lock</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The lock that protects the value creation.</div>
 </div>
-<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></div>
+<div class="col-first even-row-color"><code>private <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#m_Supplier" class="member-name-link">m_Supplier</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The supplier for the value of this <code>Lazy</code> instance.</div>
@@ -194,7 +194,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Supplier)" class="member-name-link">LazyImpl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;&nbsp;supplier)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Supplier)" class="member-name-link">LazyImpl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;&nbsp;supplier)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new <code>Lazy</code> instance.</div>
 </div>
@@ -202,7 +202,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="col-last odd-row-color">
 <div class="block">Creates a new <code>Lazy</code> instance that is already initialised.<br>
   <br>This allows to use <code>Lazy</code> instances also for
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
   objects, given that <code>T</code> is either cloneable itself or
   immutable.</div>
 </div>
@@ -221,7 +221,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
@@ -236,23 +236,23 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks whether this <code>Lazy</code> instance has been initialised already.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;X extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;<br><a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#orElseThrow(java.util.function.Supplier)" class="member-name-link">orElseThrow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;X extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;<br><a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#orElseThrow(java.util.function.Supplier)" class="member-name-link">orElseThrow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value or throws the exception that is created by the
   given
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
   when not yet initialised.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"></div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.tquadrat.foundation.lang.Lazy">Methods inherited from interface&nbsp;org.tquadrat.foundation.lang.<a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a></h3>
 <code><a href="../Lazy.html#getAsString()">getAsString</a>, <a href="../Lazy.html#getAsString(org.tquadrat.foundation.lang.Stringer)">getAsString</a>, <a href="../Lazy.html#ifPresent(java.util.function.Consumer)">ifPresent</a>, <a href="../Lazy.html#map(java.util.function.Function)">map</a></code></div>
@@ -277,9 +277,9 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="m_Lock">
 <h3>m_Lock</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-87">m_Lock</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-87">m_Lock</a></span></div>
 <div class="block">The lock that protects the value creation. It will be set to
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html#empty()" title="class or interface in java.util" class="external-link">empty</a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html#empty()" title="class or interface in java.util" class="external-link">empty</a>
   after
   <a href="#m_Value"><code>m_Value</code></a> is initialised.</div>
 </section>
@@ -287,7 +287,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="m_Supplier">
 <h3>m_Supplier</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-96">m_Supplier</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-96">m_Supplier</a></span></div>
 <div class="block">The supplier for the value of this <code>Lazy</code> instance. It will be
   set to <code>null</code> after
   <a href="#m_Value"><code>m_Value</code></a>
@@ -313,7 +313,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.function.Supplier)">
 <h3>LazyImpl</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-114">LazyImpl</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;&nbsp;supplier)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-114">LazyImpl</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;&nbsp;supplier)</span></div>
 <div class="block">Creates a new <code>Lazy</code> instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -329,7 +329,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-133">LazyImpl</a></span><wbr><span class="parameters">(<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&nbsp;value)</span></div>
 <div class="block">Creates a new <code>Lazy</code> instance that is already initialised.<br>
   <br>This allows to use <code>Lazy</code> instances also for
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
   objects, given that <code>T</code> is either cloneable itself or
   immutable.</div>
 <dl class="notes">
@@ -338,7 +338,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link"><code>Object.clone()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link"><code>Object.clone()</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -355,12 +355,12 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-146">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-146">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Lazy.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
 </section>
 </li>
@@ -385,7 +385,7 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <dt>Specified by:</dt>
 <dd><code><a href="../Lazy.html#hashCode()">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
 </section>
 </li>
@@ -409,18 +409,18 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="orElseThrow(java.util.function.Supplier)">
 <h3>orElseThrow</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;X extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</span>&nbsp;<span class="return-type"><a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-212">orElseThrow</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;X extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</span>&nbsp;<span class="return-type"><a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-212">orElseThrow</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</span>
                                     throws <span class="exceptions">X</span></div>
 <div class="block">Returns the value or throws the exception that is created by the
   given
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
   when not yet initialised.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Lazy.html#orElseThrow(java.util.function.Supplier)">orElseThrow</a></code>&nbsp;in interface&nbsp;<code><a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></dd>
 <dt>Type Parameters:</dt>
 <dd><code>X</code> - The type of the implementation of
-      <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.</dd>
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.</dd>
 <dt>Parameters:</dt>
 <dd><code>exceptionSupplier</code> - The supplier for the exception to throw
       when the instance was not yet initialised.</dd>
@@ -435,12 +435,12 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-224">toString</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-224">toString</a></span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Lazy.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
 </section>
 </li>

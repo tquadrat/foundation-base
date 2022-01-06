@@ -57,14 +57,8 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a> - Exception in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/package-summary.html">org.tquadrat.foundation.exception</a></dt>
 <dd>
-<div class="block">When a method that emits a checked exception is called inside a lambda
-  function, this has to be caught inside that function; it is not possible
-  to declare that exception for the method, as long as the underlying
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional interface</a>
-  have not done that already.<br>
-  <br>Unfortunately, the methods from the interfaces in the package
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/package-summary.html" class="external-link"><code>java.util.function</code></a>
-  do not declare any exception, for good reason.</div>
+<div class="block">A &quot;container&quot; exception for exception thrown within
+  lambda expressions.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html#%3Cinit%3E(java.lang.Exception)" class="member-name-link">LambdaContainerException(Exception)</a> - Constructor for exception org.tquadrat.foundation.exception.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a></dt>
 <dd>
@@ -97,7 +91,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates a new <code>Lazy</code> instance that is already initialised.<br>
   <br>This allows to use <code>Lazy</code> instances also for
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
   objects, given that <code>T</code> is either cloneable itself or
   immutable.</div>
 </dd>
@@ -119,17 +113,17 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#lock()" class="member-name-link">lock()</a> - Method in interface org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></dt>
 <dd>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html#lock()" class="member-name-link">lock()</a> - Method in class org.tquadrat.foundation.lang.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal">AutoLockImpl</a></dt>
 <dd>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html" class="type-name-link" title="interface in org.tquadrat.foundation.lang">LockExecutor</a> - Interface in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/package-summary.html">org.tquadrat.foundation.lang</a></dt>
@@ -148,17 +142,17 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#lockInterruptibly()" class="member-name-link">lockInterruptibly()</a> - Method in interface org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></dt>
 <dd>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html#lockInterruptibly()" class="member-name-link">lockInterruptibly()</a> - Method in class org.tquadrat.foundation.lang.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal">AutoLockImpl</a></dt>
 <dd>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </dd>
 </dl>

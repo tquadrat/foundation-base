@@ -32,12 +32,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  validation errors.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValidationException.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: ValidationException.java 975 2022-01-05 15:17:13Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ValidationException.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValidationException.java 975 2022-01-05 15:17:13Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class ValidationException extends IllegalArgumentException
 {
@@ -79,7 +79,7 @@ public class ValidationException extends IllegalArgumentException
      */
     public ValidationException( final String message )
     {
-        super( isNull( message ) && message.isEmpty() ? MSG_ValidationFailed : message );
+        super( isNull( message ) || message.isEmpty() ? MSG_ValidationFailed : message );
     }   //  ValidationException()
 
     /**
@@ -91,7 +91,7 @@ public class ValidationException extends IllegalArgumentException
      */
     public ValidationException( final String message, final Throwable cause )
     {
-        super( isNull( message ) && message.isEmpty() ? MSG_ValidationFailed : message, cause );
+        super( isNull( message ) || message.isEmpty() ? MSG_ValidationFailed : message, cause );
     }   //  ValidationException()
 
     /**

@@ -16,10 +16,10 @@
  */
 
 /**
- *  A collection of
+ *  <p>{@summary A collection of
  *  {@linkplain java.lang.Throwable Exceptions}
- *  that are defined for the Foundation library set. <br>
- *  <br>Unless otherwise stated, {@code null} argument values will cause
+ *  that are defined for the Foundation library set.}</p>
+ *  <p>Unless otherwise stated, {@code null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a

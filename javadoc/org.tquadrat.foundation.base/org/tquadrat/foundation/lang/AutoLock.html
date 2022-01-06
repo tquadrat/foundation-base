@@ -87,7 +87,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -98,7 +98,7 @@ loadScripts(document, 'script');</script>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-75">AutoLock</a></span><span class="extends-implements">
-extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span>
+extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span>
 <span class="permits">permits <a href="internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal">AutoLockImpl</a></span></div>
 <div class="block">A wrapper for locks that supports the <code>try-with-resources</code> feature
   of Java&nbsp;7. <br>
@@ -125,12 +125,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
   and
   <a href="#lockInterruptibly()"><code>lockInterruptibly()</code></a>
   of the interface
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>,
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>,
   but with a return value. Exposing other methods is not reasonable.<br>
   <br>Calling
   <a href="#close()"><code>close()</code></a>
   on the <code>AutoLock</code> instance or
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#unlock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock.unlock()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#unlock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock.unlock()</code></a>
   on the wrapped <code>Lock</code> object inside the <code>try</code> block may cause
   unpredictable effects.</div>
 <dl class="notes">
@@ -143,7 +143,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a></li>
 </ul>
 </dd>
 
@@ -221,13 +221,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Executes the given action after obtaining the lock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#execute(org.tquadrat.foundation.lang.Operation)" class="member-name-link">execute</a><wbr>(<a href="Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;? extends R&gt;&nbsp;operation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Executes the given operation after obtaining the lock, and returns its
   result.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#getLock()" class="member-name-link">getLock</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
@@ -236,7 +236,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
       <a href="#lock()"><code>lock()</code></a>.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getWrappedLockInstance()" class="member-name-link">getWrappedLockInstance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the wrapped lock.</div>
@@ -245,27 +245,27 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#lock()" class="member-name-link">lock</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#lockInterruptibly()" class="member-name-link">lockInterruptibly</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link">Condition</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link">Condition</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newCondition()" class="member-name-link">newCondition</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a new
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Condition</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Condition</code></a>
   instance that is bound to the instance of
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   that is wrapped by this <code>AutoLock</code> instance.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></code></div>
@@ -274,10 +274,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <div class="block">Creates a new <code>AutoLock</code> instance with an internal lock object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.concurrent.locks.Lock)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.concurrent.locks.Lock)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Creates a new <code>AutoLock</code> instance from the given
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 </div>
 </div>
@@ -315,7 +315,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-133">close</a></span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 </section>
 </li>
@@ -336,7 +336,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <li>
 <section class="detail" id="execute(org.tquadrat.foundation.lang.Operation)">
 <h3>execute</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-156">execute</a></span><wbr><span class="parameters">(<a href="Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;? extends R&gt;&nbsp;operation)</span>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-156">execute</a></span><wbr><span class="parameters">(<a href="Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;? extends R&gt;&nbsp;operation)</span>
                  throws <span class="exceptions"><a href="AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></span></div>
 <div class="block">Executes the given operation after obtaining the lock, and returns its
   result.</div>
@@ -347,7 +347,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <dd><code>operation</code> - The operation.</dd>
 <dt>Returns:</dt>
 <dd>An instance of
-      <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>
       that holds the result of the operation.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></code> - The operation failed for some
@@ -358,9 +358,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <li>
 <section class="detail" id="getLock()">
 <h3>getLock</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="0.1.0",
-            <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true)
-</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-170">getLock</a></span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="0.1.0",
+            <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true)
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-170">getLock</a></span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">The name <code>getLock()</code> might cause confusion as it is
       not obviously enough distinguished from
@@ -379,7 +379,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <li>
 <section class="detail" id="getWrappedLockInstance()">
 <h3>getWrappedLockInstance</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-178">getWrappedLockInstance</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-178">getWrappedLockInstance</a></span>()</div>
 <div class="block">Returns the wrapped lock.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -392,9 +392,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <h3>lock</h3>
 <div class="member-signature"><span class="return-type"><a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-189">lock</a></span>()</div>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lock()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lock()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -406,17 +406,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <section class="detail" id="lockInterruptibly()">
 <h3>lockInterruptibly</h3>
 <div class="member-signature"><span class="return-type"><a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-203">lockInterruptibly</a></span>()
-                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
 <div class="block">Calls
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#lockInterruptibly()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>lockInterruptibly()</code></a>
   on the wrapped
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The reference to this <code>AutoLock</code> instance.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - The current thread was interrupted while
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - The current thread was interrupted while
       acquiring the lock (and interruption of lock acquisition is
       supported).</dd>
 </dl>
@@ -425,22 +425,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <li>
 <section class="detail" id="newCondition()">
 <h3>newCondition</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link">Condition</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-218">newCondition</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link">Condition</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-218">newCondition</a></span>()</div>
 <div class="block">Returns a new
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Condition</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Condition.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Condition</code></a>
   instance that is bound to the instance of
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   that is wrapped by this <code>AutoLock</code> instance.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The new condition.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link">UnsupportedOperationException</a></code> - The wrapped lock's
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link">UnsupportedOperationException</a></code> - The wrapped lock's
       implementation does not support conditions.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html#newCondition()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock.newCondition()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html#newCondition()" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock.newCondition()</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -464,9 +464,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/ja
 <h3>of</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-236">of</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html#line-236">of</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</span></div>
 <div class="block">Creates a new <code>AutoLock</code> instance from the given
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><a href="#org.tquadrat.foundation.exception">org.tquadrat.foundation.exception</a></div>
 <div class="col-last even-row-color">
 <div class="block">A collection of
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Exceptions</a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Exceptions</a>
   that are defined for the Foundation library set.</div>
 </div>
 <div class="col-first odd-row-color"><a href="#org.tquadrat.foundation.function">org.tquadrat.foundation.function</a></div>
@@ -83,20 +83,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><a href="class-use/NullArgumentException.html#org.tquadrat.foundation.exception">NullArgumentException</a></div>
 <div class="col-last even-row-color">
 <div class="block">This is a specialized implementation for the
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that should be used instead of the latter in cases where <code>null</code> is
   provided as an illegal argument value.</div>
 </div>
 <div class="col-first odd-row-color"><a href="class-use/UnexpectedExceptionError.html#org.tquadrat.foundation.exception">UnexpectedExceptionError</a></div>
 <div class="col-last odd-row-color">
 <div class="block">This implementation of
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
   should be thrown in all cases where an unexpected exception was caught.</div>
 </div>
 <div class="col-first even-row-color"><a href="class-use/ValidationException.html#org.tquadrat.foundation.exception">ValidationException</a></div>
 <div class="col-last even-row-color">
 <div class="block">This is a specialized implementation for the
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that is meant as the root for a hierarchy of exceptions caused by
   validation errors.</div>
 </div>
@@ -111,14 +111,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><a href="class-use/LambdaContainerException.html#org.tquadrat.foundation.function">LambdaContainerException</a></div>
 <div class="col-last even-row-color">
-<div class="block">When a method that emits a checked exception is called inside a lambda
-  function, this has to be caught inside that function; it is not possible
-  to declare that exception for the method, as long as the underlying
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional interface</a>
-  have not done that already.<br>
-  <br>Unfortunately, the methods from the interfaces in the package
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/function/package-summary.html" class="external-link"><code>java.util.function</code></a>
-  do not declare any exception, for good reason.</div>
+<div class="block">A &quot;container&quot; exception for exception thrown within
+  lambda expressions.</div>
 </div>
 </div>
 </section>
@@ -132,16 +126,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><a href="class-use/EmptyArgumentException.html#org.tquadrat.foundation.lang">EmptyArgumentException</a></div>
 <div class="col-last even-row-color">
 <div class="block">This is a specialized implementation for the
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that should be used instead of the latter in cases where an empty String,
   array or
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>
   argument is provided as an illegal argument value.</div>
 </div>
 <div class="col-first odd-row-color"><a href="class-use/NullArgumentException.html#org.tquadrat.foundation.lang">NullArgumentException</a></div>
 <div class="col-last odd-row-color">
 <div class="block">This is a specialized implementation for the
-  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that should be used instead of the latter in cases where <code>null</code> is
   provided as an illegal argument value.</div>
 </div>

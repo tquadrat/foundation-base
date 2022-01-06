@@ -31,26 +31,30 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.function.Functions;
 
 /**
- *  When a method that emits a checked exception is called inside a lambda
- *  function, this has to be caught inside that function; it is not possible
- *  to declare that exception for the method, as long as the underlying
+ *  <p>{@summary A &quot;container&quot; exception for exception thrown within
+ *  lambda expressions.}</p>
+ *  <p>When a method that emits a checked exception is called inside a lambda
+ *  function, this has to be caught <i>inside</i> that function; it is not
+ *  possible to declare that exception for the method, as long as the
+ *  underlying
  *  {@linkplain FunctionalInterface functional interface}
- *  have not done that already.<br>
- *  <br>Unfortunately, the methods from the interfaces in the package
+ *  have not done that already.</p>
+ *  <p>Unfortunately, the methods from the interfaces in the package
  *  {@link java.util.function}
  *  do not declare any exception, for good reason. So the code below is not
- *  possible:
+ *  possible:</p>
  *  <pre><code>  &hellip;
  *  Appendable appendable = &hellip;
  *  Consumer appender = s -&gt; appendable.append( s );
  *  appender.accept( "&hellip;" );
  *  &hellip;</code></pre>
- *  because
+ *  <p>because
  *  {@link Appendable#append(CharSequence)}
  *  declares to throw an
- *  {@link java.io.IOException}.<br>
- *  <br>This class now is meant to wrap those exceptions and to allow them to
- *  bubble up to the caller:<pre><code>  &hellip;
+ *  {@link java.io.IOException}.</p>
+ *  <p>This class now is meant to wrap those exceptions and to allow them to
+ *  bubble up to the caller:</p>
+ *  <pre><code>  &hellip;
  *  Appendable appendable = &hellip;
  *  Consumer appender =
  *  {
@@ -73,7 +77,7 @@ import org.tquadrat.foundation.function.Functions;
  *    throw (IOException) e.getCause();
  *  }
  *  &hellip;</code></pre>
- *  When said above that the methods from the functional interfaces in the
+ *  <p>When said above that the methods from the functional interfaces in the
  *  {@code java.util.function} <i>unfortunately</i> do not declare any
  *  exception, this was only focused on their use with code that may emit
  *  checked exceptions. But in fact it is a good thing that the methods in
@@ -81,7 +85,7 @@ import org.tquadrat.foundation.function.Functions;
  *  any of the APIs that make use of these functional interfaces. And using the
  *  pattern above would be an alternative. Another would be the methods
  *  provided in the class
- *  {@link Functions}.
+ *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: LambdaContainerException.java 820 2020-12-29 20:34:22Z tquadrat $
