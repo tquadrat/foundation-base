@@ -35,13 +35,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  context.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: IllegalOperationException.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: IllegalOperationException.java 980 2022-01-06 15:29:19Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: IllegalOperationException.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: IllegalOperationException.java 980 2022-01-06 15:29:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class IllegalOperationException extends RuntimeException
 {
