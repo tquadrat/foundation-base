@@ -31,14 +31,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>This is a functional interface whose functional method is
  *  {@link #run()}.</p>
  *
- *  @version $Id: Action.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: Action.java 982 2022-01-08 09:40:32Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@SuppressWarnings( {"InnerClassOfInterface", "ProhibitedExceptionDeclared"} )
+@SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Action.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Action.java 982 2022-01-08 09:40:32Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Action
 {
