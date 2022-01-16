@@ -55,14 +55,14 @@ import org.tquadrat.foundation.lang.Objects;
  *  <p>{@link #toString()} do not force the initialisation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: LazyImpl.java 992 2022-01-16 19:51:31Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the value for this instance of {@code Lazy}.
  */
-@ClassVersion( sourceVersion = "$Id: LazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LazyImpl.java 992 2022-01-16 19:51:31Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class LazyImpl<T> implements Lazy<T>
 {
