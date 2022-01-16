@@ -8,7 +8,6 @@
 <meta name="description" content="declaration: module: org.tquadrat.foundation.base, package: org.tquadrat.foundation.lang, interface: Lazy">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="org.tquadrat.foundation.lang.Lazy interface">
-<meta name="keywords" content="EMPTY_Lazy_ARRAY">
 <meta name="keywords" content="equals()">
 <meta name="keywords" content="get()">
 <meta name="keywords" content="getAsString()">
@@ -60,13 +59,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -100,36 +99,37 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Lazy.java 820 2020-12-29 20:34:22Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-70">Lazy</a>&lt;T&gt;</span>
+</span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-71">Lazy</a>&lt;T&gt;</span>
 <span class="permits">permits <a href="internal/LazyImpl.html" title="class in org.tquadrat.foundation.lang.internal">LazyImpl</a>&lt;T&gt;</span></div>
-<div class="block">An instance of an implementation of this interface holds a value that will
-  be initialised by a call to the supplier (provided with the method
+<div class="block"><p>A holder for a lazy initialised object instance.</p>
+  <p>An instance of an implementation of this interface holds a value that
+  will be initialised by a call to the supplier (provided with the method
   <a href="#use(java.util.function.Supplier)"><code>use(Supplier)</code></a>)
   on a first call to
-  <a href="#get()"><code>get()</code></a>.
-  The methods
+  <a href="#get()"><code>get()</code></a>.</p>
+  <p>The methods
   <a href="#getAsString()"><code>getAsString()</code></a>
   and
   <a href="#getAsString(org.tquadrat.foundation.lang.Stringer)"><code>getAsString(Stringer)</code></a>
-  do call <code>get()</code> internally.<br>
-  <br>For special purposes, the method
+  do call <code>get()</code> internally.</p>
+  <p>For special purposes, the method
   <a href="#of(T)"><code>of(Object)</code></a>
-  creates an already initialised instance of <code>Lazy</code>.<br>
-  <br>Use
+  creates an already initialised instance of <code>Lazy</code>.</p>
+  <p>Use
   <a href="#isPresent()"><code>isPresent()</code></a>
-  to avoid unnecessary initialisation.<br>
-  <br>As a lazy initialisation makes the value unpredictable, it is necessary
+  to avoid unnecessary initialisation.</p>
+  <p>As a lazy initialisation makes the value unpredictable, it is necessary
   that the implementations of
   <a href="#equals(java.lang.Object)"><code>equals(Object)</code></a>
   and
   <a href="#hashCode()"><code>hashCode()</code></a>
-  do force the initialisation.<br>
-  <br><a href="#toString()"><code>toString()</code></a>
-  will not force the initialisation.<br>
-  <br>This interface is not feasible for the lazy initialisation of
+  do force the initialisation.</p>
+  <p><a href="#toString()"><code>toString()</code></a>
+  will not force the initialisation.</p>
+  <p>This interface is not feasible for the lazy initialisation of
   connections to resources of any kind, as these will usually throw (checked)
   exceptions when problems arise, and usually these should be handled on one
-  central location.</div>
+  central location.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
@@ -159,23 +159,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY_Lazy_ARRAY" class="member-name-link">EMPTY_Lazy_ARRAY</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">An empty array of <code>Lazy</code> objects.</div>
-</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -268,21 +251,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="EMPTY_Lazy_ARRAY">
-<h3>EMPTY_Lazy_ARRAY</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-81">EMPTY_Lazy_ARRAY</a></span></div>
-<div class="block">An empty array of <code>Lazy</code> objects.</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -291,7 +259,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-90">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-82">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
@@ -301,7 +269,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="get()">
 <h3>get</h3>
-<div class="member-signature"><span class="return-type"><a href="Lazy.html" title="type parameter in Lazy">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-98">get</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Lazy.html" title="type parameter in Lazy">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-90">get</a></span>()</div>
 <div class="block">Returns the value for this instance of <code>Lazy</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -312,7 +280,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getAsString()">
 <h3>getAsString</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-109">getAsString</a></span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-101">getAsString</a></span>()</div>
 <div class="block">Returns the value for this instance of <code>Lazy</code> as its String
   representation.<br>
   <br>Basically it will call the value's
@@ -327,7 +295,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getAsString(org.tquadrat.foundation.lang.Stringer)">
 <h3>getAsString</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-124">getAsString</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>&gt;&nbsp;stringer)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-116">getAsString</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>&gt;&nbsp;stringer)</span></div>
 <div class="block">Returns the value for this instance of <code>Lazy</code> as a String that is
   generated by the provided
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>.</div>
@@ -351,7 +319,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="hashCode()">
 <h3>hashCode</h3>
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-135">hashCode</a></span>()</div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-127">hashCode</a></span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
@@ -361,7 +329,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="ifPresent(java.util.function.Consumer)">
 <h3>ifPresent</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-146">ifPresent</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>&gt;&nbsp;consumer)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-138">ifPresent</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>&gt;&nbsp;consumer)</span></div>
 <div class="block">If this <code>Lazy</code> instance has been initialised already, the
   provided
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>
@@ -375,7 +343,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="isPresent()">
 <h3>isPresent</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-160">isPresent</a></span>()</div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-152">isPresent</a></span>()</div>
 <div class="block">Checks whether this <code>Lazy</code> instance has been initialised already.
   But even it was initialised,
   <a href="#get()"><code>get()</code></a>
@@ -390,7 +358,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="map(java.util.function.Function)">
 <h3>map</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-172">map</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>,<wbr>? extends R&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-164">map</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="Lazy.html" title="type parameter in Lazy">T</a>,<wbr>? extends R&gt;&nbsp;mapper)</span></div>
 <div class="block">If this instance of <code>Lazy</code> is initialised, the provided mapper
   function will be executed on the value.</div>
 <dl class="notes">
@@ -410,7 +378,7 @@ loadScripts(document, 'script');</script>
 <h3 id="of(java.lang.Object)">of</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-193">of</a></span><wbr><span class="parameters">(T&nbsp;value)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-185">of</a></span><wbr><span class="parameters">(T&nbsp;value)</span></div>
 <div class="block">Creates a new <code>Lazy</code> instance that is already initialised.<br>
   <br>This allows to use <code>Lazy</code> instances also for
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">cloneable</a>
@@ -435,7 +403,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="orElseThrow(java.util.function.Supplier)">
 <h3>orElseThrow</h3>
-<div class="member-signature"><span class="type-parameters">&lt;X extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="type parameter in Lazy">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-213">orElseThrow</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</span>
+<div class="member-signature"><span class="type-parameters">&lt;X extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="type parameter in Lazy">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-205">orElseThrow</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</span>
                              throws <span class="exceptions">X</span></div>
 <div class="block">Returns the value or throws the exception that is created by the
   given
@@ -459,7 +427,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-218">toString</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-210">toString</a></span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
@@ -471,7 +439,7 @@ loadScripts(document, 'script');</script>
 <h3>use</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-231">use</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;&nbsp;supplier)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#line-223">use</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;&nbsp;supplier)</span></div>
 <div class="block">Creates a new <code>Lazy</code> instance that uses the given supplier to
   initialise.</div>
 <dl class="notes">

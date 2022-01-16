@@ -33,26 +33,26 @@ import org.tquadrat.foundation.lang.Lazy;
 import org.tquadrat.foundation.lang.Objects;
 
 /**
- *  The implementation of the interface
- *  {@link Lazy}.
- *  An instance of this class holds a value that will be initialised by a call
- *  to the supplier (provided with the constructor
+ *  <p>{@summary The implementation of the interface
+ *  {@link Lazy}.}</p>
+ *  <p>An instance of this class holds a value that will be initialised by a
+ *  call to the supplier (provided with the constructor
  *  {@link #LazyImpl(Supplier)})
  *  on a first call to
- *  {@link #get()}.<br>
- *  <br>For special purposes, the constructor
+ *  {@link #get()}.</p>
+ *  <p>For special purposes, the constructor
  *  {@link #LazyImpl(Object)}
- *  creates an already initialised instance of {@code Lazy}.<br>
- *  <br>Use
+ *  creates an already initialised instance of {@code Lazy}.</p>
+ *  <p>Use
  *  {@link #isPresent()}
- *  to avoid unnecessary initialisation.<br>
- *  <br>As a lazy initialisation makes the value unpredictable, it is necessary
+ *  to avoid unnecessary initialisation.</p>
+ *  <p>As a lazy initialisation makes the value unpredictable, it is necessary
  *  that the implementations of
  *  {@link #equals(Object)}
  *  and
  *  {@link #hashCode()}
- *  force the initialisation.<br>
- *  <br>{@link #toString()} do not force the initialisation.
+ *  force the initialisation.</p>
+ *  <p>{@link #toString()} do not force the initialisation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: LazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $
@@ -66,15 +66,6 @@ import org.tquadrat.foundation.lang.Objects;
 @API( status = INTERNAL, since = "0.0.5" )
 public final class LazyImpl<T> implements Lazy<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Lazy} objects.
-     */
-    @SuppressWarnings( {"rawtypes", "StaticVariableOfConcreteClass"} )
-    public static final LazyImpl [] EMPTY_Lazy_ARRAY = new LazyImpl [0];
-
         /*------------*\
     ====** Attributes **=======================================================
         \*------------*/
@@ -111,20 +102,20 @@ public final class LazyImpl<T> implements Lazy<T>
      *      instance on the first call to
      *      {@link #get()}.
      */
-    @SuppressWarnings( "resource" )
     public LazyImpl( final Supplier<T> supplier )
     {
         m_Supplier = requireNonNullArgument( supplier, "supplier" );
         m_Lock = Optional.of( AutoLock.of() );
         m_Value = null;
-    }   //  Lazy()
+    }   //  LazyImpl()
 
     /**
-     *  Creates a new {@code Lazy} instance that is already initialised.<br>
-     *  <br>This allows to use {@code Lazy} instances also for
+     *  <p>{@summary Creates a new {@code Lazy} instance that is already
+     *  initialised.}</p>
+     *  <p>This allows to use {@code Lazy} instances also for
      *  {@linkplain java.lang.Cloneable cloneable}
      *  objects, given that {@code T} is either cloneable itself or
-     *  immutable.
+     *  immutable.</p>
      *
      *  @param  value   The value; can be {@code null}.
      *
@@ -135,7 +126,7 @@ public final class LazyImpl<T> implements Lazy<T>
         m_Supplier = null;
         m_Lock = Optional.empty();
         m_Value = value;
-    }   //  Lazy()
+    }   //  LazyImpl()
 
         /*---------*\
     ====** Methods **==========================================================
@@ -143,7 +134,6 @@ public final class LazyImpl<T> implements Lazy<T>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "rawtypes" )
     @Override
     public final boolean equals( final Object obj )
     {

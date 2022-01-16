@@ -30,34 +30,35 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.internal.LazyImpl;
 
 /**
- *  An instance of an implementation of this interface holds a value that will
- *  be initialised by a call to the supplier (provided with the method
+ *  <p>{@summary A holder for a lazy initialised object instance.}</p>
+ *  <p>An instance of an implementation of this interface holds a value that
+ *  will be initialised by a call to the supplier (provided with the method
  *  {@link #use(Supplier)})
  *  on a first call to
- *  {@link #get()}.
- *  The methods
+ *  {@link #get()}.</p>
+ *  <p>The methods
  *  {@link #getAsString()}
  *  and
  *  {@link #getAsString(Stringer)}
- *  do call {@code get()} internally.<br>
- *  <br>For special purposes, the method
+ *  do call {@code get()} internally.</p>
+ *  <p>For special purposes, the method
  *  {@link #of(Object)}
- *  creates an already initialised instance of {@code Lazy}.<br>
- *  <br>Use
+ *  creates an already initialised instance of {@code Lazy}.</p>
+ *  <p>Use
  *  {@link #isPresent()}
- *  to avoid unnecessary initialisation.<br>
- *  <br>As a lazy initialisation makes the value unpredictable, it is necessary
+ *  to avoid unnecessary initialisation.</p>
+ *  <p>As a lazy initialisation makes the value unpredictable, it is necessary
  *  that the implementations of
  *  {@link #equals(Object)}
  *  and
  *  {@link #hashCode()}
- *  do force the initialisation.<br>
- *  <br>{@link #toString()}
- *  will not force the initialisation.<br>
- *  <br>This interface is not feasible for the lazy initialisation of
+ *  do force the initialisation.</p>
+ *  <p>{@link #toString()}
+ *  will not force the initialisation.</p>
+ *  <p>This interface is not feasible for the lazy initialisation of
  *  connections to resources of any kind, as these will usually throw (checked)
  *  exceptions when problems arise, and usually these should be handled on one
- *  central location.
+ *  central location.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Lazy.java 820 2020-12-29 20:34:22Z tquadrat $
@@ -72,15 +73,6 @@ import org.tquadrat.foundation.lang.internal.LazyImpl;
 public sealed interface Lazy<T>
     permits org.tquadrat.foundation.lang.internal.LazyImpl
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Lazy} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final Lazy [] EMPTY_Lazy_ARRAY = new Lazy [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
