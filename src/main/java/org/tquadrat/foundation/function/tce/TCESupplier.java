@@ -41,25 +41,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of results supplied by this supplier.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCESupplier.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCESupplier.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCESupplier.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCESupplier.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCESupplier<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCESupplier} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCESupplier [] EMPTY_TCESupplier_ARRAY = new TCESupplier [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

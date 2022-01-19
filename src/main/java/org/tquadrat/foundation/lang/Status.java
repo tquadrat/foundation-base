@@ -53,7 +53,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -64,8 +64,8 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  errorCode   The error code; a value of {@code null} indicates a
  *      success.
  */
-@SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown", "hiding", "javadoc"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
+@ClassVersion( sourceVersion = "$Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {

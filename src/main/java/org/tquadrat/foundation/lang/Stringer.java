@@ -36,11 +36,11 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This interface defines a method to compose a String representation from
- *  arbitrary objects. <br>
- *  <br>It will also provide several convenience implementations for the
+ *  <p>{@summary This interface defines a method to compose a String
+ *  representation from arbitrary objects.}</p>
+ *  <p>It will also provide several convenience implementations for the
  *  interface that can be used with special argument types. Currently, these
- *  are
+ *  are</p>
  *  <ul>
  *  <li>{@link #OBJECT_STRINGER}
  *  as a catch-all</li>
@@ -72,33 +72,34 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  provides a sufficient implementation of
  *  {@link Object#toString()})</li>
  *  </ul>
- *  There are no explicit stringers for the classes from the {@code java.time}
+ *  <p>There are no explicit stringers for the classes from the {@code java.time}
  *  package as instances of these classes have sufficient implementations of
  *  {@link Object#toString()}
  *  and are therefore already well covered by
  *  {@link #OBJECT_STRINGER}. Same is true for the class
- *  {@link java.nio.file.Path}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #toString(Object)}.
+ *  {@link java.nio.file.Path}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #toString(Object)}.</p>
  *
- *  @note The method
- *      {@link #toString(Object)}
- *      will <i>never</i> return {@code null}; if called with a {@code null}
- *      argument, it will return the String "null" (see
- *      {@link CommonConstants#NULL_STRING}).
- *      This is different to
- *      {@link org.tquadrat.foundation.lang.StringConverter#toString(Object)}
- *      that return {@code null} for a {@code null} argument.
+ *  @note The method {@code toString(Object)} will <i>never</i> return
+ *      {@code null}; if called with a {@code null} argument, it will return
+ *      the String &quot;null&quot;.<br>
+ *      This is different to the behaviour of the {@code toString(Object)}
+ *      method of an implementation of {@code StringConverter} that returns
+ *      {@code null} for a {@code null} argument.
+ *
+ *  @see org.tquadrat.foundation.lang.StringConverter#toString(Object)
+ *  @see CommonConstants#NULL_STRING
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Stringer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the argument value.
  */
-@ClassVersion( sourceVersion = "$Id: Stringer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.1.0" )
 public interface Stringer<T>
@@ -107,28 +108,31 @@ public interface Stringer<T>
     ====** Constants **========================================================
         \*-----------*/
     /**
-     *  An implementation for
+     *  <p>{@summary An implementation of
      *  {@link Stringer}
-     *  that produces an output that looks like that from the default implementation of
-     *  {@link Object#toString()}:
-     *  it executes<pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.
+     *  that produces an output that looks like that from the default
+     *  implementation of
+     *  {@link Object#toString()}}:
+     *  it returns</p>
+     *  <pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.
      */
     @API( status = STABLE, since = "0.0.7" )
     public static final Stringer<? super Object> BASE_STRINGER = o -> isNull( o ) ? NULL_STRING : format( "%s@%x", o.getClass().getName(), o.hashCode() );
 
     /**
-     *  An implementation for
+     *  <p>{@summary An implementation of
      *  {@link Stringer}
-     *  for {@code byte} arrays.<br>
-     *  <br>The result looks like
-     *  this:<pre><code>byte [&lt;<i>length</i>&gt;]</code></pre>where
-     *  <code><i>length</i></code> is the array length of the given argument.
+     *  for {@code byte} arrays.}</p>
+     *  <p>The result looks like this:</p>
+     *  <pre><code>byte [&lt;<i>length</i>&gt;]</code></pre>
+     *  <p>where <code><i>length</i></code> is the array length of the given
+     *  argument.</p>
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final Stringer<byte []> BYTEARRAY_STRINGER = a -> isNull( a ) ? NULL_STRING : format( "byte [%d]", a.length );
 
     /**
-     *  An implementation for
+     *  An implementation of
      *  {@link Stringer}
      *  for instances of
      *  {@link Class}.
@@ -146,7 +150,7 @@ public interface Stringer<T>
     public static final Stringer<Object> DEFAULT_STRINGER = o -> isNull( o ) ? NULL_STRING : o.toString();
 
     /**
-     *  An implementation for
+     *  An implementation of
      *  {@link Stringer}
      *  for instances of
      *  {@link File}.
@@ -170,7 +174,7 @@ public interface Stringer<T>
     public static final Stringer<? super Object> OBJECT_STRINGER = o -> o instanceof Formattable ? format( "%s", o ) : Objects.toString( o );
 
     /**
-     *  An implementation for
+     *  An implementation of
      *  {@link Stringer}
      *  that returns the name of the object's class instead of a representation
      *  of the object's value.
@@ -179,10 +183,14 @@ public interface Stringer<T>
     public static final Stringer<? super Object> OBJECTCLASS_STRINGER = o -> isNull( o ) ? NULL_STRING : o.getClass().getName();
 
     /**
-     *  An implementation for
+     *  <p>{@summary An implementation of
      *  {@link Stringer}
      *  for instances of
-     *  {@link Optional}.
+     *  {@link Optional}.}</p>
+     *  <p>It returns basically the result of
+     *  {@link Objects#toString(Object,String)}
+     *  with the value of the {@code Optional} and the text
+     *  &quot;{@code [empty]}&quot; as the {@code nullDefault} arguments.</p>
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final Stringer<Optional<?>> OPTIONAL_STRINGER = o -> isNull( o ) ? NULL_STRING : format( "Optional: %s", o.map( v -> format( "%s = %s", v.getClass().getName(), OBJECT_STRINGER.toString( v ) ) ).orElse( "[empty]" ) );
@@ -220,16 +228,16 @@ public interface Stringer<T>
     @API( status = STABLE, since = "0.0.5" )
     public static <A> Function<A,String> asFunction( final Stringer<? super A> stringer )
     {
-        final Function<A,String> retValue = requireNonNullArgument( stringer, "stringer" )::toString;
+        final var retValue = (Function<A, String>) requireNonNullArgument( stringer, "stringer" )::toString;
 
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  asFunction()
 
     /**
-     *  Creates a {@code Stringer} for the given instance of
-     *  {@link StringConverter}.<br>
-     *  <br>A String converter cannot be used directly as a {@code Stringer}
+     *  <p>{@summary Creates a {@code Stringer} for the given instance of
+     *  {@link StringConverter}.}</p>
+     *  <p>A String converter cannot be used directly as a {@code Stringer}
      *  because {@code Stringer}'s
      *  {@link #toString(Object) toString()}
      *  method will never return {@code null} (in case the argument is
@@ -247,7 +255,7 @@ public interface Stringer<T>
     public static <A> Stringer<A> fromStringConverter( final StringConverter<? super A> stringConverter )
     {
         final var sc = requireNonNullArgument( stringConverter, "stringConverter" );
-        final Stringer<A> retValue = a -> nonNull( a ) ? sc.toString( a ) : NULL_STRING;
+        final var retValue = (Stringer<A>) a -> nonNull( a ) ? sc.toString( a ) : NULL_STRING;
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -262,7 +270,7 @@ public interface Stringer<T>
     @API( status = STABLE, since = "0.0.7" )
     public default Function<T,String> toFunction()
     {
-        final Function<T,String> retValue = this::toString;
+        final var retValue = (Function<T, String>) this::toString;
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -270,11 +278,11 @@ public interface Stringer<T>
 
     /**
      *  Returns a String representation of the given argument, or
-     *  {@code null} if the given {@code value} is {@code null}.
+     *  {@link CommonConstants#NULL_STRING "null"}
+     *  if the given {@code value} is {@code null}.
      *
      *  @param  value   The value.
      *  @return The String representation.
-     *  @throws NullPointerException    The given value is {@code null}.
      */
     public String toString( final T value );
 
@@ -288,7 +296,7 @@ public interface Stringer<T>
     @API( status = STABLE, since = "0.0.7" )
     public static <A> Stringer<A> wrapFunction( final Function<? super A, String> function )
     {
-        final Stringer<A> retValue = requireNonNullArgument( function, "function" )::apply;
+        final var retValue = (Stringer<A>) requireNonNullArgument( function, "function" )::apply;
 
         //---* Done *----------------------------------------------------------
         return retValue;

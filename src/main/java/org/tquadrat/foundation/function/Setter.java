@@ -24,17 +24,17 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The definition for a setter method.<br>
- *  <br>This is a
+ *  <p>{@summary The definition for a setter method.}</p>
+ *  <p>This is a
  *  {@linkplain java.lang.FunctionalInterface functional interface}
  *  whose functional method is
- *  {@link #set(Object)}.<br>
- *  <br>This interface does <i>not</i> extend the otherwise very similar
+ *  {@link #set(Object)}.</p>
+ *  <p>This interface does <i>not</i> extend the otherwise very similar
  *  interface
- *  {@link java.util.function.Consumer}.
+ *  {@link java.util.function.Consumer}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Setter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The value type.
@@ -42,19 +42,10 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Setter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface Setter<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Setter<T>} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final Setter [] EMPTY_Setter_ARRAY = new Setter [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

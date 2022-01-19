@@ -31,15 +31,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <C> The type of the error code.
  *
  *  @extauthor Thomas Thrien-thomas.thrien@tquadrat.org
- *  @version $Id:HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
+ *  @version $Id: ErrorHandler.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @see Status
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
-@ClassVersion( sourceVersion = "$Id: ErrorHandler.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ErrorHandler.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @FunctionalInterface
 public interface ErrorHandler<C>

@@ -8,13 +8,6 @@
 <meta name="description" content="declaration: module: org.tquadrat.foundation.base, package: org.tquadrat.foundation.function, class: Functions">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="org.tquadrat.foundation.function.Functions class">
-<meta name="keywords" content="EMPTY_BinaryOperator_ARRAY">
-<meta name="keywords" content="EMPTY_BiConsumer_ARRAY">
-<meta name="keywords" content="EMPTY_BiFunction_ARRAY">
-<meta name="keywords" content="EMPTY_Consumer_ARRAY">
-<meta name="keywords" content="EMPTY_Function_ARRAY">
-<meta name="keywords" content="EMPTY_Predicate_ARRAY">
-<meta name="keywords" content="EMPTY_Supplier_ARRAY">
 <meta name="keywords" content="wrapBiConsumer()">
 <meta name="keywords" content="wrapBiFunction()">
 <meta name="keywords" content="wrapBinaryOperator()">
@@ -64,13 +57,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -97,20 +90,22 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="annotations"><a href="../annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">@UtilityClass</a>
-<a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Functions.java 820 2020-12-29 20:34:22Z tquadrat $")
-</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-85">Functions</a></span>
+<a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Functions.java 993 2022-01-19 22:26:20Z tquadrat $")
+</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-87">Functions</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Some helper methods for the use with lambdas and functional interfaces.
+<div class="block"><p>Some helper methods for the use with lambdas and functional
+  interfaces.</p>
 
   <h2>TCE Wrapper</h2>
-  The methods of the
+  <p>The methods of the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional interfaces</a>
   in the package
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html" class="external-link"><code>java.util.function</code></a>
   do not declare any checked exceptions - for good reasons, of course. But
-  sometimes, it would be nice to have that capability.<br>
-  <br>Using the wrapper methods in this class, you can achieve that like
-  this:<pre><code>  &hellip;
+  sometimes, it would be nice to have that capability.</p>
+  <p>Using the wrapper methods in this class, you can achieve that like
+  this:</p>
+  <pre><code>  &hellip;
   import static org.tquadrat.foundation.function.Functions.*;
   &hellip;
 
@@ -129,13 +124,13 @@ loadScripts(document, 'script');</script>
     throw (IOException) e.getCause();
   }
   &hellip;</code></pre>
-  &quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
-  <b>E</b>xception&quot;.</div>
+  <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
+  <b>E</b>xception&quot;.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: Functions.java 820 2020-12-29 20:34:22Z tquadrat $</dd>
+<dd>$Id: Functions.java 993 2022-01-19 22:26:20Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 
@@ -160,67 +155,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY_BiConsumer_ARRAY" class="member-name-link">EMPTY_BiConsumer_ARRAY</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link"><code>BiConsumer</code></a>
-  objects.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#EMPTY_BiFunction_ARRAY" class="member-name-link">EMPTY_BiFunction_ARRAY</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link"><code>BiFunction</code></a>
-  objects.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY_BinaryOperator_ARRAY" class="member-name-link">EMPTY_BinaryOperator_ARRAY</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link"><code>BinaryOperator</code></a>
-  objects.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#EMPTY_Consumer_ARRAY" class="member-name-link">EMPTY_Consumer_ARRAY</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>
-  objects.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY_Function_ARRAY" class="member-name-link">EMPTY_Function_ARRAY</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
-  objects.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>[]</code></div>
-<div class="col-second odd-row-color"><code><a href="#EMPTY_Predicate_ARRAY" class="member-name-link">EMPTY_Predicate_ARRAY</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>
-  objects.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>[]</code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY_Supplier_ARRAY" class="member-name-link">EMPTY_Supplier_ARRAY</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
-  objects.</div>
-</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -378,91 +312,6 @@ R&gt;<br><a href="TriFunction.html" title="interface in org.tquadrat.foundation.
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="EMPTY_BinaryOperator_ARRAY">
-<h3>EMPTY_BinaryOperator_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-97">EMPTY_BinaryOperator_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link"><code>BinaryOperator</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_BiConsumer_ARRAY">
-<h3>EMPTY_BiConsumer_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-106">EMPTY_BiConsumer_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link"><code>BiConsumer</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_BiFunction_ARRAY">
-<h3>EMPTY_BiFunction_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-115">EMPTY_BiFunction_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link"><code>BiFunction</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_Consumer_ARRAY">
-<h3>EMPTY_Consumer_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-124">EMPTY_Consumer_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_Function_ARRAY">
-<h3>EMPTY_Function_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-133">EMPTY_Function_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_Predicate_ARRAY">
-<h3>EMPTY_Predicate_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-142">EMPTY_Predicate_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>
-  objects.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EMPTY_Supplier_ARRAY">
-<h3>EMPTY_Supplier_ARRAY</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-151">EMPTY_Supplier_ARRAY</a></span></div>
-<div class="block">An empty array of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
-  objects.</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -471,7 +320,7 @@ R&gt;<br><a href="TriFunction.html" title="interface in org.tquadrat.foundation.
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>Functions</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-161">Functions</a></span>()</div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-97">Functions</a></span>()</div>
 <div class="block">No instance allowed for this class.</div>
 </section>
 </li>
@@ -489,7 +338,7 @@ R&gt;<br><a href="TriFunction.html" title="interface in org.tquadrat.foundation.
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>
-T2&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-181">wrapBiConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiConsumer</a>&lt;? super T1,<wbr>? super T2&gt;&nbsp;consumer)</span></div>
+T2&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-117">wrapBiConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiConsumer</a>&lt;? super T1,<wbr>? super T2&gt;&nbsp;consumer)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBiConsumer</code></a>
   to an instance of
@@ -516,7 +365,7 @@ T2&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>
 T2,<wbr>
-R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-216">wrapBiFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;? super T1,<wbr>? super T2,<wbr>? extends R&gt;&nbsp;function)</span></div>
+R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-153">wrapBiFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;? super T1,<wbr>? super T2,<wbr>? extends R&gt;&nbsp;function)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBiFunction</code></a>
   to an instance of
@@ -542,7 +391,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>wrapBinaryOperator</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-249">wrapBinaryOperator</a></span><wbr><span class="parameters">(<a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce">TCEBinaryOperator</a>&lt;T&gt;&nbsp;function)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-187">wrapBinaryOperator</a></span><wbr><span class="parameters">(<a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce">TCEBinaryOperator</a>&lt;T&gt;&nbsp;function)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBinaryOperator</code></a>
   to an instance of
@@ -566,7 +415,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>wrapConsumer</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-282">wrapConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEConsumer</a>&lt;? super T&gt;&nbsp;consumer)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-221">wrapConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEConsumer</a>&lt;? super T&gt;&nbsp;consumer)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEConsumer</code></a>
   to an instance of
@@ -591,7 +440,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>
-R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-316">wrapFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super T,<wbr>? extends R&gt;&nbsp;function)</span></div>
+R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-256">wrapFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super T,<wbr>? extends R&gt;&nbsp;function)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEFunction</code></a>
   to an instance of
@@ -616,7 +465,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>wrapPredicate</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-349">wrapPredicate</a></span><wbr><span class="parameters">(<a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce">TCEPredicate</a>&lt;? super T&gt;&nbsp;predicate)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-290">wrapPredicate</a></span><wbr><span class="parameters">(<a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce">TCEPredicate</a>&lt;? super T&gt;&nbsp;predicate)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEPredicate</code></a>
   to an instance of
@@ -640,7 +489,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <h3>wrapSupplier</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-382">wrapSupplier</a></span><wbr><span class="parameters">(<a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce">TCESupplier</a>&lt;? extends T&gt;&nbsp;supplier)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-324">wrapSupplier</a></span><wbr><span class="parameters">(<a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce">TCESupplier</a>&lt;? extends T&gt;&nbsp;supplier)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCESupplier</code></a>
   to an instance of
@@ -667,7 +516,7 @@ R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>
 T2,<wbr>
 T3&gt;</span>
-<span class="return-type"><a href="TriConsumer.html" title="interface in org.tquadrat.foundation.function">TriConsumer</a>&lt;T1,<wbr>T2,<wbr>T3&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-417">wrapTriConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCETriConsumer</a>&lt;? super T1,<wbr>? super T2,<wbr>? super T3&gt;&nbsp;consumer)</span></div>
+<span class="return-type"><a href="TriConsumer.html" title="interface in org.tquadrat.foundation.function">TriConsumer</a>&lt;T1,<wbr>T2,<wbr>T3&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-360">wrapTriConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCETriConsumer</a>&lt;? super T1,<wbr>? super T2,<wbr>? super T3&gt;&nbsp;consumer)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCETriConsumer</code></a>
   to an instance of
@@ -697,7 +546,7 @@ T3&gt;</span>
 T2,<wbr>
 T3,<wbr>
 R&gt;</span>
-<span class="return-type"><a href="TriFunction.html" title="interface in org.tquadrat.foundation.function">TriFunction</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-453">wrapTriFunction</a></span><wbr><span class="parameters">(<a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;? super T1,<wbr>? super T2,<wbr>? super T3,<wbr>? extends R&gt;&nbsp;function)</span></div>
+<span class="return-type"><a href="TriFunction.html" title="interface in org.tquadrat.foundation.function">TriFunction</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-397">wrapTriFunction</a></span><wbr><span class="parameters">(<a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;? super T1,<wbr>? super T2,<wbr>? super T3,<wbr>? extends R&gt;&nbsp;function)</span></div>
 <div class="block">Wraps an instance of
   <a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCETriFunction</code></a>
   to an instance of

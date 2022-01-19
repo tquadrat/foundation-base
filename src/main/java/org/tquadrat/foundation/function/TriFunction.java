@@ -27,13 +27,13 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  Represents an operation that accepts three input arguments and produces a
- *  result. This is the three-arity specialisation of
- *  {@link java.util.function.Function}.<br>
- *  <br>This is a
+ *  <p>{@summary Represents an operation that accepts three input arguments and
+ *  produces a result.} This is the three-arity specialisation of
+ *  {@link java.util.function.Function}.</p>
+ *  <p>This is a
  *  {@linkplain java.lang.FunctionalInterface functional interface}
  *  whose functional method is
- *  {@link #apply(Object,Object,Object)}.
+ *  {@link #apply(Object,Object,Object)}.</p>
  *
  *  @param  <A> The type of the first argument to the function.
  *  @param  <B> The type of the second argument to the function.
@@ -44,25 +44,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.BiFunction
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TriFunction.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TriFunction.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TriFunction.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TriFunction.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface TriFunction<A,B,C,R>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TriFunction} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TriFunction [] EMPTY_TriFunction_ARRAY = new TriFunction [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -93,7 +84,8 @@ public interface TriFunction<A,B,C,R>
     @API( status = STABLE, since = "0.1.0" )
     public default <R1> TriFunction<A,B,C,R1> andThen( final Function<? super R, ? extends R1> after )
     {
-        final TriFunction<A,B,C,R1> retValue = (A a, B b, C c) -> requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final TriFunction<A,B,C,R1> retValue = ( A a, B b, C c) -> requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;

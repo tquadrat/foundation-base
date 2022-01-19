@@ -30,7 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  no result. This is the two-arity specialisation of
  *  {@link TCEConsumer}.
  *  Unlike most other functional interfaces, {@code BiConsumer} is expected to
- *  operate via side-effects.<br>
+ *  operate via side effects.<br>
  *  <br>Different from the method
  *  {@link java.util.function.BiConsumer#accept(Object,Object) BiConsumer.accept()}
  *  the method
@@ -44,26 +44,17 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T2> The type of the second argument to the operation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBiConsumer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCEBiConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBiConsumer<T1,T2>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEBiConsumer} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCEBiConsumer [] EMPTY_TCEBiConsumer_ARRAY = new TCEBiConsumer [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

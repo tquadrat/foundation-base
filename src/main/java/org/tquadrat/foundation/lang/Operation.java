@@ -35,14 +35,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @param  <R> The type of the operation's result.
  *
- *  @version $Id: Operation.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: Operation.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@SuppressWarnings( {"InnerClassOfInterface", "ProhibitedExceptionDeclared"} )
+@SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Operation.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Operation.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Operation<R>
 {

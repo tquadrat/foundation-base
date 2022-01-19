@@ -29,7 +29,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  that represents an operation upon two operands of the same type, producing
  *  a result of the same type as the operands. This is a specialisation of
  *  {@link java.util.function.BiFunction}
- *  for the case where the operands and the result are all of the same type.<br>
+ *  for the case where the operands and the result are all the same type.<br>
  *  <br>Different from the method
  *  {@link java.util.function.BinaryOperator#apply(Object, Object) BinaryOperator.apply()}
  *  the method
@@ -42,25 +42,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <T> The type of the operands and result of the operator.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBinaryOperator.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCEBinaryOperator.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBinaryOperator<T> extends TCEBiFunction<T,T,T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEBiFunction} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCEBinaryOperator [] EMPTY_TCEBinaryOperator_ARRAY = new TCEBinaryOperator [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

@@ -87,7 +87,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      this module, too.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverter.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The Object type for the conversion.
@@ -95,7 +95,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: StringConverter.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface StringConverter<T> extends Serializable
 {
@@ -105,11 +105,13 @@ public interface StringConverter<T> extends Serializable
     /**
      *  The name for the method that returns the subject classes: {@value}.
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     public static final String METHOD_NAME_GetSubjectClass = "getSubjectClass";
 
     /**
      *  The name for the method that returns the instance: {@value}.
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     public static final String METHOD_NAME_Provider = "provider";
 
         /*---------*\

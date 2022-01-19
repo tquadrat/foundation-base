@@ -26,45 +26,35 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  Represents a supplier of
+ *  <p>{@summary Represents a supplier of
  *  {@link Number}-valued
- *  results. This is the {@code Number}-producing specialisation of
- *  {@link java.util.function.Supplier}.<br>
- *  <br>There is no requirement that a distinct result is returned each time
- *  the supplier is invoked.<br>
- *  <br>This is a
+ *  results.} This is the {@code Number}-producing specialisation of
+ *  {@link java.util.function.Supplier}.</p>
+ *  <p>There is no requirement that a distinct result is returned each time the
+ *  supplier is invoked.</p>
+ *  <p>This is a
  *  {@linkplain java.lang.FunctionalInterface functional interface}
  *  whose functional method is
- *  {@link #getAsNumber()}.
+ *  {@link #getAsNumber()}.</p>
  *
  *  @see java.util.function.Supplier
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NumberSupplier.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: NumberSupplier.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface NumberSupplier extends Supplier<Number>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code NumberSupplier} objects.
-     */
-    public static final NumberSupplier [] EMPTY_NumberSupplier_ARRAY = new NumberSupplier [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
     /**
      *  {@inheritDoc}
-     *
-     *  @see java.util.function.Supplier#get()
      */
     @Override
     public default Number get() { return getAsNumber(); }

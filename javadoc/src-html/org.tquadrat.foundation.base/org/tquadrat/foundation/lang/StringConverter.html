@@ -100,7 +100,7 @@
 <span class="source-line-no">087</span><span id="line-87"> *      this module, too.</span>
 <span class="source-line-no">088</span><span id="line-88"> *</span>
 <span class="source-line-no">089</span><span id="line-89"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">090</span><span id="line-90"> *  @version $Id: StringConverter.java 980 2022-01-06 15:29:19Z tquadrat $</span>
+<span class="source-line-no">090</span><span id="line-90"> *  @version $Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $</span>
 <span class="source-line-no">091</span><span id="line-91"> *  @since 0.1.0</span>
 <span class="source-line-no">092</span><span id="line-92"> *</span>
 <span class="source-line-no">093</span><span id="line-93"> *  @param  &lt;T&gt; The Object type for the conversion.</span>
@@ -108,7 +108,7 @@
 <span class="source-line-no">095</span><span id="line-95"> *  @UMLGraph.link</span>
 <span class="source-line-no">096</span><span id="line-96"> */</span>
 <span class="source-line-no">097</span><span id="line-97">@SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )</span>
-<span class="source-line-no">098</span><span id="line-98">@ClassVersion( sourceVersion = "$Id: StringConverter.java 980 2022-01-06 15:29:19Z tquadrat $" )</span>
+<span class="source-line-no">098</span><span id="line-98">@ClassVersion( sourceVersion = "$Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $" )</span>
 <span class="source-line-no">099</span><span id="line-99">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">100</span><span id="line-100">public interface StringConverter&lt;T&gt; extends Serializable</span>
 <span class="source-line-no">101</span><span id="line-101">{</span>
@@ -118,102 +118,104 @@
 <span class="source-line-no">105</span><span id="line-105">    /**</span>
 <span class="source-line-no">106</span><span id="line-106">     *  The name for the method that returns the subject classes: {@value}.</span>
 <span class="source-line-no">107</span><span id="line-107">     */</span>
-<span class="source-line-no">108</span><span id="line-108">    public static final String METHOD_NAME_GetSubjectClass = "getSubjectClass";</span>
-<span class="source-line-no">109</span><span id="line-109"></span>
-<span class="source-line-no">110</span><span id="line-110">    /**</span>
-<span class="source-line-no">111</span><span id="line-111">     *  The name for the method that returns the instance: {@value}.</span>
-<span class="source-line-no">112</span><span id="line-112">     */</span>
-<span class="source-line-no">113</span><span id="line-113">    public static final String METHOD_NAME_Provider = "provider";</span>
-<span class="source-line-no">114</span><span id="line-114"></span>
-<span class="source-line-no">115</span><span id="line-115">        /*---------*\</span>
-<span class="source-line-no">116</span><span id="line-116">    ====** Methods **==========================================================</span>
-<span class="source-line-no">117</span><span id="line-117">        \*---------*/</span>
-<span class="source-line-no">118</span><span id="line-118">    /**</span>
-<span class="source-line-no">119</span><span id="line-119">     *  Returns an instance of {@code StringConverter} for the given</span>
-<span class="source-line-no">120</span><span id="line-120">     *  {@link Class}.</span>
-<span class="source-line-no">121</span><span id="line-121">     *  If there is no converter for the given type, or the type is</span>
-<span class="source-line-no">122</span><span id="line-122">     *  {@code null}, the return value is</span>
-<span class="source-line-no">123</span><span id="line-123">     *  {@link Optional#empty()}.</span>
-<span class="source-line-no">124</span><span id="line-124">     *</span>
-<span class="source-line-no">125</span><span id="line-125">     *  @param  &lt;C&gt; The class a converter is needed for.</span>
-<span class="source-line-no">126</span><span id="line-126">     *  @param  type    The instance of the class a converter is needed for.</span>
-<span class="source-line-no">127</span><span id="line-127">     *  @return An instance of</span>
-<span class="source-line-no">128</span><span id="line-128">     *      {@link Optional}</span>
-<span class="source-line-no">129</span><span id="line-129">     *      that holds the instance of {@code StringConverter}.</span>
-<span class="source-line-no">130</span><span id="line-130">     */</span>
-<span class="source-line-no">131</span><span id="line-131">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">132</span><span id="line-132">    public static &lt;C&gt; Optional&lt;StringConverter&lt;C&gt;&gt; forClass( final Class&lt;C&gt; type )</span>
-<span class="source-line-no">133</span><span id="line-133">    {</span>
-<span class="source-line-no">134</span><span id="line-134">        return retrieveConverterForClass( type );</span>
-<span class="source-line-no">135</span><span id="line-135">    }   //  forClass()</span>
-<span class="source-line-no">136</span><span id="line-136"></span>
-<span class="source-line-no">137</span><span id="line-137">    /**</span>
-<span class="source-line-no">138</span><span id="line-138">     *  Returns an instance of {@code StringConverter} for the given</span>
-<span class="source-line-no">139</span><span id="line-139">     *  {@link Enum} type.</span>
-<span class="source-line-no">140</span><span id="line-140">     *  If there is no converter for the given type in the registry, a new</span>
-<span class="source-line-no">141</span><span id="line-141">     *  instance of {@code StringConverter} will be created, based on a</span>
-<span class="source-line-no">142</span><span id="line-142">     *  default implementation.</span>
-<span class="source-line-no">143</span><span id="line-143">     *</span>
-<span class="source-line-no">144</span><span id="line-144">     *  @param  &lt;E&gt; The class a converter is needed for.</span>
-<span class="source-line-no">145</span><span id="line-145">     *  @param  type    The instance of the class a converter is needed for.</span>
-<span class="source-line-no">146</span><span id="line-146">     *  @return The requested instance of {@code StringConverter}.</span>
-<span class="source-line-no">147</span><span id="line-147">     */</span>
-<span class="source-line-no">148</span><span id="line-148">    @API( status = STABLE, since = "0.0.6" )</span>
-<span class="source-line-no">149</span><span id="line-149">    public static &lt;E extends Enum&lt;E&gt;&gt; StringConverter&lt;E&gt; forEnum( final Class&lt;E&gt; type )</span>
-<span class="source-line-no">150</span><span id="line-150">    {</span>
-<span class="source-line-no">151</span><span id="line-151">        return retrieveConverterForEnum( type );</span>
-<span class="source-line-no">152</span><span id="line-152">    }   //  forEnum()</span>
-<span class="source-line-no">153</span><span id="line-153"></span>
-<span class="source-line-no">154</span><span id="line-154">    /**</span>
-<span class="source-line-no">155</span><span id="line-155">     *  Converts the given String to an object instance.</span>
-<span class="source-line-no">156</span><span id="line-156">     *</span>
-<span class="source-line-no">157</span><span id="line-157">     *  @param  source  The String representation for the object instance;</span>
-<span class="source-line-no">158</span><span id="line-158">     *      can be {@code null}.</span>
-<span class="source-line-no">159</span><span id="line-159">     *  @return The resulting object instance; will be {@code null} if</span>
-<span class="source-line-no">160</span><span id="line-160">     *      {@code source} was already {@code null}.</span>
-<span class="source-line-no">161</span><span id="line-161">     *  @throws IllegalArgumentException    The format of the given String is</span>
-<span class="source-line-no">162</span><span id="line-162">     *      invalid and cannot be parsed into the object instance.</span>
-<span class="source-line-no">163</span><span id="line-163">     */</span>
-<span class="source-line-no">164</span><span id="line-164">    public T fromString( final CharSequence source ) throws IllegalArgumentException;</span>
-<span class="source-line-no">165</span><span id="line-165"></span>
-<span class="source-line-no">166</span><span id="line-166">    /**</span>
-<span class="source-line-no">167</span><span id="line-167">     *  Converts the given object instance to a String.</span>
-<span class="source-line-no">168</span><span id="line-168">     *</span>
-<span class="source-line-no">169</span><span id="line-169">     *  @note Even if an implementation of</span>
-<span class="source-line-no">170</span><span id="line-170">     *      {@link org.tquadrat.foundation.lang.Stringer}</span>
-<span class="source-line-no">171</span><span id="line-171">     *      might exist for {@code T}, it cannot be used to implement this</span>
-<span class="source-line-no">172</span><span id="line-172">     *      method;</span>
-<span class="source-line-no">173</span><span id="line-173">     *      {@link org.tquadrat.foundation.lang.Stringer#toString(Object)}</span>
-<span class="source-line-no">174</span><span id="line-174">     *      will never return {@code null} (if implemented accordingly), for a</span>
-<span class="source-line-no">175</span><span id="line-175">     *      {@code null} argument, it will return the String &amp;quot;null&amp;quot;.</span>
-<span class="source-line-no">176</span><span id="line-176">     *      That contradicts the contract for this method.</span>
-<span class="source-line-no">177</span><span id="line-177">     *</span>
-<span class="source-line-no">178</span><span id="line-178">     *  @param  source  The object to convert; can be {@code null}.</span>
-<span class="source-line-no">179</span><span id="line-179">     *  @return The resulting String; will be {@code null} if {@code source}</span>
-<span class="source-line-no">180</span><span id="line-180">     *      was already {@code null}.</span>
-<span class="source-line-no">181</span><span id="line-181">     */</span>
-<span class="source-line-no">182</span><span id="line-182">    public default String toString( final T source )</span>
-<span class="source-line-no">183</span><span id="line-183">    {</span>
-<span class="source-line-no">184</span><span id="line-184">        final var retValue = isNull( source ) ? null : source.toString();</span>
-<span class="source-line-no">185</span><span id="line-185"></span>
-<span class="source-line-no">186</span><span id="line-186">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">187</span><span id="line-187">        return retValue;</span>
-<span class="source-line-no">188</span><span id="line-188">    }   //  toString()</span>
-<span class="source-line-no">189</span><span id="line-189"></span>
-<span class="source-line-no">190</span><span id="line-190">    /**</span>
-<span class="source-line-no">191</span><span id="line-191">     *  Returns the classes for that an instance of {@code StringConverter} is</span>
-<span class="source-line-no">192</span><span id="line-192">     *  already registered,</span>
-<span class="source-line-no">193</span><span id="line-193">     *</span>
-<span class="source-line-no">194</span><span id="line-194">     *  @return The classes with a string converter.</span>
-<span class="source-line-no">195</span><span id="line-195">     */</span>
-<span class="source-line-no">196</span><span id="line-196">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">197</span><span id="line-197">    public static Collection&lt;Class&lt;?&gt;&gt; list() { return listInstances(); }</span>
-<span class="source-line-no">198</span><span id="line-198">}</span>
-<span class="source-line-no">199</span><span id="line-199">//  interface StringConverter</span>
-<span class="source-line-no">200</span><span id="line-200"></span>
-<span class="source-line-no">201</span><span id="line-201">/*</span>
-<span class="source-line-no">202</span><span id="line-202"> *  End of File</span>
-<span class="source-line-no">203</span><span id="line-203"> */</span>
+<span class="source-line-no">108</span><span id="line-108">    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )</span>
+<span class="source-line-no">109</span><span id="line-109">    public static final String METHOD_NAME_GetSubjectClass = "getSubjectClass";</span>
+<span class="source-line-no">110</span><span id="line-110"></span>
+<span class="source-line-no">111</span><span id="line-111">    /**</span>
+<span class="source-line-no">112</span><span id="line-112">     *  The name for the method that returns the instance: {@value}.</span>
+<span class="source-line-no">113</span><span id="line-113">     */</span>
+<span class="source-line-no">114</span><span id="line-114">    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )</span>
+<span class="source-line-no">115</span><span id="line-115">    public static final String METHOD_NAME_Provider = "provider";</span>
+<span class="source-line-no">116</span><span id="line-116"></span>
+<span class="source-line-no">117</span><span id="line-117">        /*---------*\</span>
+<span class="source-line-no">118</span><span id="line-118">    ====** Methods **==========================================================</span>
+<span class="source-line-no">119</span><span id="line-119">        \*---------*/</span>
+<span class="source-line-no">120</span><span id="line-120">    /**</span>
+<span class="source-line-no">121</span><span id="line-121">     *  Returns an instance of {@code StringConverter} for the given</span>
+<span class="source-line-no">122</span><span id="line-122">     *  {@link Class}.</span>
+<span class="source-line-no">123</span><span id="line-123">     *  If there is no converter for the given type, or the type is</span>
+<span class="source-line-no">124</span><span id="line-124">     *  {@code null}, the return value is</span>
+<span class="source-line-no">125</span><span id="line-125">     *  {@link Optional#empty()}.</span>
+<span class="source-line-no">126</span><span id="line-126">     *</span>
+<span class="source-line-no">127</span><span id="line-127">     *  @param  &lt;C&gt; The class a converter is needed for.</span>
+<span class="source-line-no">128</span><span id="line-128">     *  @param  type    The instance of the class a converter is needed for.</span>
+<span class="source-line-no">129</span><span id="line-129">     *  @return An instance of</span>
+<span class="source-line-no">130</span><span id="line-130">     *      {@link Optional}</span>
+<span class="source-line-no">131</span><span id="line-131">     *      that holds the instance of {@code StringConverter}.</span>
+<span class="source-line-no">132</span><span id="line-132">     */</span>
+<span class="source-line-no">133</span><span id="line-133">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">134</span><span id="line-134">    public static &lt;C&gt; Optional&lt;StringConverter&lt;C&gt;&gt; forClass( final Class&lt;C&gt; type )</span>
+<span class="source-line-no">135</span><span id="line-135">    {</span>
+<span class="source-line-no">136</span><span id="line-136">        return retrieveConverterForClass( type );</span>
+<span class="source-line-no">137</span><span id="line-137">    }   //  forClass()</span>
+<span class="source-line-no">138</span><span id="line-138"></span>
+<span class="source-line-no">139</span><span id="line-139">    /**</span>
+<span class="source-line-no">140</span><span id="line-140">     *  Returns an instance of {@code StringConverter} for the given</span>
+<span class="source-line-no">141</span><span id="line-141">     *  {@link Enum} type.</span>
+<span class="source-line-no">142</span><span id="line-142">     *  If there is no converter for the given type in the registry, a new</span>
+<span class="source-line-no">143</span><span id="line-143">     *  instance of {@code StringConverter} will be created, based on a</span>
+<span class="source-line-no">144</span><span id="line-144">     *  default implementation.</span>
+<span class="source-line-no">145</span><span id="line-145">     *</span>
+<span class="source-line-no">146</span><span id="line-146">     *  @param  &lt;E&gt; The class a converter is needed for.</span>
+<span class="source-line-no">147</span><span id="line-147">     *  @param  type    The instance of the class a converter is needed for.</span>
+<span class="source-line-no">148</span><span id="line-148">     *  @return The requested instance of {@code StringConverter}.</span>
+<span class="source-line-no">149</span><span id="line-149">     */</span>
+<span class="source-line-no">150</span><span id="line-150">    @API( status = STABLE, since = "0.0.6" )</span>
+<span class="source-line-no">151</span><span id="line-151">    public static &lt;E extends Enum&lt;E&gt;&gt; StringConverter&lt;E&gt; forEnum( final Class&lt;E&gt; type )</span>
+<span class="source-line-no">152</span><span id="line-152">    {</span>
+<span class="source-line-no">153</span><span id="line-153">        return retrieveConverterForEnum( type );</span>
+<span class="source-line-no">154</span><span id="line-154">    }   //  forEnum()</span>
+<span class="source-line-no">155</span><span id="line-155"></span>
+<span class="source-line-no">156</span><span id="line-156">    /**</span>
+<span class="source-line-no">157</span><span id="line-157">     *  Converts the given String to an object instance.</span>
+<span class="source-line-no">158</span><span id="line-158">     *</span>
+<span class="source-line-no">159</span><span id="line-159">     *  @param  source  The String representation for the object instance;</span>
+<span class="source-line-no">160</span><span id="line-160">     *      can be {@code null}.</span>
+<span class="source-line-no">161</span><span id="line-161">     *  @return The resulting object instance; will be {@code null} if</span>
+<span class="source-line-no">162</span><span id="line-162">     *      {@code source} was already {@code null}.</span>
+<span class="source-line-no">163</span><span id="line-163">     *  @throws IllegalArgumentException    The format of the given String is</span>
+<span class="source-line-no">164</span><span id="line-164">     *      invalid and cannot be parsed into the object instance.</span>
+<span class="source-line-no">165</span><span id="line-165">     */</span>
+<span class="source-line-no">166</span><span id="line-166">    public T fromString( final CharSequence source ) throws IllegalArgumentException;</span>
+<span class="source-line-no">167</span><span id="line-167"></span>
+<span class="source-line-no">168</span><span id="line-168">    /**</span>
+<span class="source-line-no">169</span><span id="line-169">     *  Converts the given object instance to a String.</span>
+<span class="source-line-no">170</span><span id="line-170">     *</span>
+<span class="source-line-no">171</span><span id="line-171">     *  @note Even if an implementation of</span>
+<span class="source-line-no">172</span><span id="line-172">     *      {@link org.tquadrat.foundation.lang.Stringer}</span>
+<span class="source-line-no">173</span><span id="line-173">     *      might exist for {@code T}, it cannot be used to implement this</span>
+<span class="source-line-no">174</span><span id="line-174">     *      method;</span>
+<span class="source-line-no">175</span><span id="line-175">     *      {@link org.tquadrat.foundation.lang.Stringer#toString(Object)}</span>
+<span class="source-line-no">176</span><span id="line-176">     *      will never return {@code null} (if implemented accordingly), for a</span>
+<span class="source-line-no">177</span><span id="line-177">     *      {@code null} argument, it will return the String &amp;quot;null&amp;quot;.</span>
+<span class="source-line-no">178</span><span id="line-178">     *      That contradicts the contract for this method.</span>
+<span class="source-line-no">179</span><span id="line-179">     *</span>
+<span class="source-line-no">180</span><span id="line-180">     *  @param  source  The object to convert; can be {@code null}.</span>
+<span class="source-line-no">181</span><span id="line-181">     *  @return The resulting String; will be {@code null} if {@code source}</span>
+<span class="source-line-no">182</span><span id="line-182">     *      was already {@code null}.</span>
+<span class="source-line-no">183</span><span id="line-183">     */</span>
+<span class="source-line-no">184</span><span id="line-184">    public default String toString( final T source )</span>
+<span class="source-line-no">185</span><span id="line-185">    {</span>
+<span class="source-line-no">186</span><span id="line-186">        final var retValue = isNull( source ) ? null : source.toString();</span>
+<span class="source-line-no">187</span><span id="line-187"></span>
+<span class="source-line-no">188</span><span id="line-188">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">189</span><span id="line-189">        return retValue;</span>
+<span class="source-line-no">190</span><span id="line-190">    }   //  toString()</span>
+<span class="source-line-no">191</span><span id="line-191"></span>
+<span class="source-line-no">192</span><span id="line-192">    /**</span>
+<span class="source-line-no">193</span><span id="line-193">     *  Returns the classes for that an instance of {@code StringConverter} is</span>
+<span class="source-line-no">194</span><span id="line-194">     *  already registered,</span>
+<span class="source-line-no">195</span><span id="line-195">     *</span>
+<span class="source-line-no">196</span><span id="line-196">     *  @return The classes with a string converter.</span>
+<span class="source-line-no">197</span><span id="line-197">     */</span>
+<span class="source-line-no">198</span><span id="line-198">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">199</span><span id="line-199">    public static Collection&lt;Class&lt;?&gt;&gt; list() { return listInstances(); }</span>
+<span class="source-line-no">200</span><span id="line-200">}</span>
+<span class="source-line-no">201</span><span id="line-201">//  interface StringConverter</span>
+<span class="source-line-no">202</span><span id="line-202"></span>
+<span class="source-line-no">203</span><span id="line-203">/*</span>
+<span class="source-line-no">204</span><span id="line-204"> *  End of File</span>
+<span class="source-line-no">205</span><span id="line-205"> */</span>
 
 
 

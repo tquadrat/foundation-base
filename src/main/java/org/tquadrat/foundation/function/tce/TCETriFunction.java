@@ -44,26 +44,17 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <R> The type of the result of the function.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCETriFunction.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCETriFunction.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCETriFunction<A,B,C,R>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEFunction} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCETriFunction [] EMPTY_TCETriFunction_ARRAY = new TCETriFunction [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -96,7 +87,8 @@ public interface TCETriFunction<A,B,C,R>
     @API( status = STABLE, since = "0.1.0" )
     public default <R1> TCETriFunction<A,B,C,R1> andThen( final TCEFunction<? super R, ? extends R1> after )
     {
-        final TCETriFunction<A,B,C,R1> retValue = (A a, B b, C c) -> requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final TCETriFunction<A,B,C,R1> retValue = ( A a, B b, C c) -> requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;

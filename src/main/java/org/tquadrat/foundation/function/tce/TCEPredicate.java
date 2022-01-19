@@ -39,25 +39,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the predicate.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEPredicate.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCEPredicate.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEPredicate<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEPredicate} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCEPredicate [] EMPTY_TCEPredicate_ARRAY = new TCEPredicate [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

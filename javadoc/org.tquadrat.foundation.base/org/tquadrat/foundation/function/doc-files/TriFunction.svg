@@ -148,8 +148,8 @@
                           x2='748.000'
                           y2='53.000'
                           class='separator'/>
-                    <text y='49.000'
-                          class='static final'>+ EMPTY_TriFunction_ARRAY:org.tquadrat.foundation.function.TriFunction[]</text>
+                    <text x='5.000'
+                          y='49.000'/>
                     <text x='5.000'
                           y='66.000'
                           class='abstract'>+ apply(a:A,b:B,c:C):R</text>

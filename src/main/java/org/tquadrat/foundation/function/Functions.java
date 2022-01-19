@@ -44,17 +44,19 @@ import org.tquadrat.foundation.function.tce.TCETriConsumer;
 import org.tquadrat.foundation.function.tce.TCETriFunction;
 
 /**
- *  Some helper methods for the use with lambdas and functional interfaces.
+ *  <p>{@summary Some helper methods for the use with lambdas and functional
+ *  interfaces.}</p>
  *
  *  <h2>TCE Wrapper</h2>
- *  The methods of the
+ *  <p>The methods of the
  *  {@linkplain java.lang.FunctionalInterface functional interfaces}
  *  in the package
  *  {@link java.util.function}
  *  do not declare any checked exceptions - for good reasons, of course. But
- *  sometimes, it would be nice to have that capability.<br>
- *  <br>Using the wrapper methods in this class, you can achieve that like
- *  this:<pre><code>  &hellip;
+ *  sometimes, it would be nice to have that capability.</p>
+ *  <p>Using the wrapper methods in this class, you can achieve that like
+ *  this:</p>
+ *  <pre><code>  &hellip;
  *  import static org.tquadrat.foundation.function.Functions.*;
  *  &hellip;
  *
@@ -73,85 +75,19 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *    throw (IOException) e.getCause();
  *  }
  *  &hellip;</code></pre>
- *  &quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
- *  <b>E</b>xception&quot;.
+ *  <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
+ *  <b>E</b>xception&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Functions.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Functions.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Functions.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Functions.java 993 2022-01-19 22:26:20Z tquadrat $" )
 public final class Functions
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of
-     *  {@link BinaryOperator}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final BinaryOperator [] EMPTY_BinaryOperator_ARRAY = new BinaryOperator [0];
-
-    /**
-     *  An empty array of
-     *  {@link BiConsumer}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final BiConsumer [] EMPTY_BiConsumer_ARRAY = new BiConsumer [0];
-
-    /**
-     *  An empty array of
-     *  {@link BiFunction}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final BiFunction [] EMPTY_BiFunction_ARRAY = new BiFunction [0];
-
-    /**
-     *  An empty array of
-     *  {@link Consumer}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final Consumer [] EMPTY_Consumer_ARRAY = new Consumer [0];
-
-    /**
-     *  An empty array of
-     *  {@link Function}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final Function [] EMPTY_Function_ARRAY = new Function [0];
-
-    /**
-     *  An empty array of
-     *  {@link Predicate}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final Predicate [] EMPTY_Predicate_ARRAY = new Predicate [0];
-
-    /**
-     *  An empty array of
-     *  {@link Supplier}
-     *  objects.
-     */
-    @API( status = STABLE, since = "0.0.5" )
-    @SuppressWarnings( "rawtypes" )
-    public static final Supplier [] EMPTY_Supplier_ARRAY = new Supplier [0];
-
         /*--------------*\
     ====** Constructors **=====================================================
         \*--------------*/
@@ -181,7 +117,8 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2> BiConsumer<T1,T2> wrapBiConsumer( final TCEBiConsumer<? super T1, ? super T2> consumer )
     {
-        final BiConsumer<T1,T2> retValue = (arg1, arg2) ->
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final BiConsumer<T1,T2> retValue = ( arg1, arg2) ->
         {
             try
             {
@@ -216,6 +153,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,R> BiFunction<T1,T2,R> wrapBiFunction( final TCEBiFunction<? super T1, ? super T2, ? extends R> function )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BiFunction<T1,T2,R> retValue = (arg1,arg2) ->
         {
             try
@@ -249,6 +187,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> BinaryOperator<T> wrapBinaryOperator( final TCEBinaryOperator<T> function )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BinaryOperator<T> retValue = (arg1,arg2) ->
         {
             try
@@ -282,6 +221,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Consumer<T> wrapConsumer( final TCEConsumer<? super T> consumer )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Consumer<T> retValue = arg ->
         {
             try
@@ -316,6 +256,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T,R> Function<T,R> wrapFunction( final TCEFunction<? super T, ? extends R> function )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Function<T,R> retValue = arg ->
         {
             try
@@ -349,6 +290,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Predicate<T> wrapPredicate( final TCEPredicate<? super T> predicate )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Predicate<T> retValue = arg ->
         {
             try
@@ -382,6 +324,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Supplier<T> wrapSupplier( final TCESupplier<? extends T> supplier )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Supplier<T> retValue = () ->
         {
             try
@@ -417,6 +360,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,T3> TriConsumer<T1,T2,T3> wrapTriConsumer( final TCETriConsumer<? super T1, ? super T2, ? super T3> consumer )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final TriConsumer<T1,T2,T3> retValue = (arg1, arg2, arg3) ->
         {
             try
@@ -453,6 +397,7 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,T3,R> TriFunction<T1,T2,T3,R> wrapTriFunction( final TCETriFunction<? super T1, ? super T2, ? super T3, ? extends R> function )
     {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final TriFunction<T1,T2,T3,R> retValue = (arg1, arg2, arg3) ->
         {
             try

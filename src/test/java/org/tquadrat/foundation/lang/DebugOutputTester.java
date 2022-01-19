@@ -19,8 +19,8 @@ package org.tquadrat.foundation.lang;
 
 import static java.lang.System.err;
 import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.DebugOutput.debugOutput;
-import static org.tquadrat.foundation.lang.DebugOutput.testOutput;
+import static org.tquadrat.foundation.lang.DebugOutput.ifDebug;
+import static org.tquadrat.foundation.lang.DebugOutput.ifTest;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -31,11 +31,11 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  Playing around with
  *  {@link DebugOutput}.
  *
- *  @version $Id: DebugOutputTester.java 992 2022-01-16 19:51:31Z tquadrat $
+ *  @version $Id: DebugOutputTester.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @PlaygroundClass
-@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 992 2022-01-16 19:51:31Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutputTester
 {
@@ -59,14 +59,14 @@ public final class DebugOutputTester
     {
         try
         {
-            debugOutput( $ -> "DebugOutput" );
-            testOutput( $ -> "TestOutput" );
+            ifDebug( $ -> "DebugOutput" );
+            ifTest( $ -> "TestOutput" );
 
-            debugOutput( () -> true, $ -> "DebugOutput" );
-            testOutput( () -> true, $ -> "TestOutput" );
+            ifDebug( () -> true, $ -> "DebugOutput" );
+            ifTest( () -> true, $ -> "TestOutput" );
 
-            debugOutput( true, "DebugOutput: %s, %s"::formatted, "value1", "value2" );
-            testOutput( true, "TestOutput: %s, %s"::formatted, "value1", "value2" );
+            ifDebug( true, "DebugOutput: %s, %s"::formatted, "value1", "value2" );
+            ifTest( true, "TestOutput: %s, %s"::formatted, "value1", "value2" );
         }
         catch( final Throwable t )
         {

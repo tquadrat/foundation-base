@@ -24,17 +24,17 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The definition for a getter method.<br>
- *  <br>This interface does <i>not</i> extend the otherwise very similar
+ *  <p>{@summary The definition for a getter method.}</p>
+ *  <p>This interface does <i>not</i> extend the otherwise very similar
  *  interface
- *  {@link java.util.function.Supplier}.<br>
- *  <br>This is a
+ *  {@link java.util.function.Supplier}.</p>
+ *  <p>This is a
  *  {@linkplain java.lang.FunctionalInterface functional interface}
  *  whose functional method is
- *  {@link #get()}.
+ *  {@link #get()}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Getter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: Getter.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The value type.
@@ -43,19 +43,10 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @SuppressWarnings( "InterfaceNeverImplemented" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Getter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Getter.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface Getter<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code Getter} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final Getter [] EMPTY_Getter_ARRAY = new Getter [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

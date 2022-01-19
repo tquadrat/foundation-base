@@ -41,25 +41,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <R> The type of the result of the function.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEFunction.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCEFunction.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEFunction.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEFunction.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEFunction<T,R>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEFunction} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCEFunction [] EMPTY_TCEFunction_ARRAY = new TCEFunction [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

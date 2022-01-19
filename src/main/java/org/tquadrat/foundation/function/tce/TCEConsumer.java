@@ -28,7 +28,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link java.util.function.Consumer}
  *  that represents an operation that accepts a single input argument and
  *  returns no result. Unlike most other functional interfaces,
- *  {@code Consumer} is expected to operate via side-effects.<br>
+ *  {@code Consumer} is expected to operate via side effects.<br>
  *  <br>Different from the method
  *  {@link java.util.function.Consumer#accept(Object) Consumer.accept()}
  *  the method
@@ -41,25 +41,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the operation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEConsumer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCEConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEConsumer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEConsumer<T>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCEConsumer} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCEConsumer [] EMPTY_TCEConsumer_ARRAY = new TCEConsumer [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

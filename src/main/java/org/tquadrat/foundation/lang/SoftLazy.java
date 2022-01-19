@@ -35,26 +35,17 @@ import org.tquadrat.foundation.lang.internal.SoftLazyImpl;
  *  {@code null}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SoftLazy.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: SoftLazy.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The type of the cached data.
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: SoftLazy.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SoftLazy.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface SoftLazy<T>
     permits org.tquadrat.foundation.lang.internal.SoftLazyImpl
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code SoftLazy} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final SoftLazy [] EMPTY_SoftLazy_ARRAY = new SoftLazy [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -75,7 +66,7 @@ public sealed interface SoftLazy<T>
     @SuppressWarnings( "ClassReferencesSubclass" )
     public static <D> SoftLazy<D> use( final Supplier<D> initializer )
     {
-        @SuppressWarnings( "TypeMayBeWeakened" ) final var retValue = new SoftLazyImpl<>( initializer );
+        final var retValue = new SoftLazyImpl<>( initializer );
 
         //---* Done *----------------------------------------------------------
         return retValue;

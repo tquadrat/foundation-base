@@ -55,12 +55,96 @@ loadScripts(document, 'script');</script>
 <a href="index-1.html">A</a>&nbsp;<a href="index-2.html">B</a>&nbsp;<a href="index-3.html">C</a>&nbsp;<a href="index-4.html">D</a>&nbsp;<a href="index-5.html">E</a>&nbsp;<a href="index-6.html">F</a>&nbsp;<a href="index-7.html">G</a>&nbsp;<a href="index-8.html">H</a>&nbsp;<a href="index-9.html">I</a>&nbsp;<a href="index-10.html">L</a>&nbsp;<a href="index-11.html">M</a>&nbsp;<a href="index-12.html">N</a>&nbsp;<a href="index-13.html">O</a>&nbsp;<a href="index-14.html">P</a>&nbsp;<a href="index-15.html">R</a>&nbsp;<a href="index-16.html">S</a>&nbsp;<a href="index-17.html">T</a>&nbsp;<a href="index-18.html">U</a>&nbsp;<a href="index-19.html">V</a>&nbsp;<a href="index-20.html">W</a>&nbsp;<a href="index-21.html">X</a>&nbsp;<a href="index-22.html">Z</a>&nbsp;<br><a href="../allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="../allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="../constant-values.html">Constant&nbsp;Field&nbsp;Values</a><span class="vertical-separator">|</span><a href="../serialized-form.html">Serialized&nbsp;Form</a>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifDebug(boolean,java.util.function.Function,java.lang.Object...)" class="member-name-link">ifDebug(boolean, Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_DEBUG">"isDebug"</a>
+  is set and the given condition resolves to <code>true</code>, execute the
+  given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifDebug(java.lang.Throwable)" class="member-name-link">ifDebug(Throwable)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_DEBUG">"isDebug"</a>
+  is set, a call to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html#printStackTrace(java.io.PrintStream)" title="class or interface in java.lang" class="external-link"><code>e.printStackTrace( out )</code></a>
+  is made.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifDebug(java.util.function.BooleanSupplier,java.util.function.Function,java.lang.Object...)" class="member-name-link">ifDebug(BooleanSupplier, Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_DEBUG">"isDebug"</a>
+  is set and the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link"><code>condition</code></a>
+  resolves to <code>true</code>, execute the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifDebug(java.util.function.Function,java.lang.Object...)" class="member-name-link">ifDebug(Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_DEBUG">"isDebug"</a>
+  is set, execute the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
+</dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html#ifPresent(java.util.function.Consumer)" class="member-name-link">ifPresent(Consumer&lt;? super T&gt;)</a> - Method in interface org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a></dt>
 <dd>
 <div class="block">If this <code>Lazy</code> instance has been initialised already, the
   provided
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>
   will be executed; otherwise nothing happens.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifTest(boolean,java.util.function.Function,java.lang.Object...)" class="member-name-link">ifTest(boolean, Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_TEST">"isTest"</a>
+  is set and the given condition resolves to <code>true</code>, execute the
+  given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifTest(java.lang.Throwable)" class="member-name-link">ifTest(Throwable)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_TEST">"isTest"</a>
+  is set, a call to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html#printStackTrace(java.io.PrintStream)" title="class or interface in java.lang" class="external-link"><code>e.printStackTrace( out )</code></a>
+  is made.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifTest(java.util.function.BooleanSupplier,java.util.function.Function,java.lang.Object...)" class="member-name-link">ifTest(BooleanSupplier, Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_TEST">"isTest"</a>
+  is set and the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BooleanSupplier.html" title="class or interface in java.util.function" class="external-link"><code>condition</code></a>
+  resolves to <code>true</code>, execute the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifTest(java.util.function.Function,java.lang.Object...)" class="member-name-link">ifTest(Function&lt;Object[], String&gt;, Object...)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">If the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link">System property</a>
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#PROPERTY_IS_TEST">"isTest"</a>
+  is set, execute the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
+  and write the result to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">IllegalOperationException</a> - Exception in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/package-summary.html">org.tquadrat.foundation.exception</a></dt>
 <dd>
@@ -133,6 +217,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns <code>true</code> if the provided reference is <code>null</code>
   otherwise returns <code>false</code>.</div>
 </dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#isDebug()" class="member-name-link">isDebug()</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">Returns the DEBUG flag.</div>
+</dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#isFailure()" class="member-name-link">isFailure()</a> - Method in record class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="class in org.tquadrat.foundation.lang">Status</a></dt>
 <dd>
 <div class="block">Returns whether this <code>Status</code> instance indicate a failure.</div>
@@ -172,6 +260,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#isSuccess()" class="member-name-link">isSuccess()</a> - Method in record class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="class in org.tquadrat.foundation.lang">Status</a></dt>
 <dd>
 <div class="block">Returns whether this <code>Status</code> instance indicate a success.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#isTest()" class="member-name-link">isTest()</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></dt>
+<dd>
+<div class="block">Returns the TEST flag.</div>
 </dd>
 </dl>
 <a href="index-1.html">A</a>&nbsp;<a href="index-2.html">B</a>&nbsp;<a href="index-3.html">C</a>&nbsp;<a href="index-4.html">D</a>&nbsp;<a href="index-5.html">E</a>&nbsp;<a href="index-6.html">F</a>&nbsp;<a href="index-7.html">G</a>&nbsp;<a href="index-8.html">H</a>&nbsp;<a href="index-9.html">I</a>&nbsp;<a href="index-10.html">L</a>&nbsp;<a href="index-11.html">M</a>&nbsp;<a href="index-12.html">N</a>&nbsp;<a href="index-13.html">O</a>&nbsp;<a href="index-14.html">P</a>&nbsp;<a href="index-15.html">R</a>&nbsp;<a href="index-16.html">S</a>&nbsp;<a href="index-17.html">T</a>&nbsp;<a href="index-18.html">U</a>&nbsp;<a href="index-19.html">V</a>&nbsp;<a href="index-20.html">W</a>&nbsp;<a href="index-21.html">X</a>&nbsp;<a href="index-22.html">Z</a>&nbsp;<br><a href="../allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="../allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="../constant-values.html">Constant&nbsp;Field&nbsp;Values</a><span class="vertical-separator">|</span><a href="../serialized-form.html">Serialized&nbsp;Form</a></main>

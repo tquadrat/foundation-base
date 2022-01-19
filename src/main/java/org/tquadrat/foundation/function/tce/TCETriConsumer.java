@@ -30,7 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  no result. This is the three-arity specialisation of
  *  {@link TCEConsumer}.
  *  Unlike most other functional interfaces, {@code TriConsumer} is expected to
- *  operate via side-effects.<br>
+ *  operate via side effects.<br>
  *  <br>Different from the method
  *  {@link org.tquadrat.foundation.function.TriConsumer#accept(Object,Object,Object) BiConsumer.accept()}
  *  the method
@@ -45,25 +45,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T3> The type of the third argument to the operation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCETriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TCETriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCETriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCETriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCETriConsumer<T1,T2,T3>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TCETriConsumer} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TCETriConsumer [] EMPTY_TCETriConsumer_ARRAY = new TCETriConsumer [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

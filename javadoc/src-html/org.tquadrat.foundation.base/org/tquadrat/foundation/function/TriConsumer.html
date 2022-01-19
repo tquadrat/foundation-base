@@ -38,15 +38,15 @@
 <span class="source-line-no">025</span><span id="line-25">import org.tquadrat.foundation.annotation.ClassVersion;</span>
 <span class="source-line-no">026</span><span id="line-26"></span>
 <span class="source-line-no">027</span><span id="line-27">/**</span>
-<span class="source-line-no">028</span><span id="line-28"> *  Represents an operation that accepts three input arguments and returns no</span>
-<span class="source-line-no">029</span><span id="line-29"> *  result. This is the three-arity specialisation of</span>
+<span class="source-line-no">028</span><span id="line-28"> *  &lt;p&gt;{@summary Represents an operation that accepts three input arguments and</span>
+<span class="source-line-no">029</span><span id="line-29"> *  returns no result.} This is the three-arity specialisation of</span>
 <span class="source-line-no">030</span><span id="line-30"> *  {@link java.util.function.Consumer}.</span>
 <span class="source-line-no">031</span><span id="line-31"> *  Unlike most other functional interfaces, {@code TriConsumer} is expected to</span>
-<span class="source-line-no">032</span><span id="line-32"> *  operate via side-effects.&lt;br&gt;</span>
-<span class="source-line-no">033</span><span id="line-33"> *  &lt;br&gt;This is a</span>
+<span class="source-line-no">032</span><span id="line-32"> *  operate via side effects.&lt;/p&gt;</span>
+<span class="source-line-no">033</span><span id="line-33"> *  &lt;p&gt;This is a</span>
 <span class="source-line-no">034</span><span id="line-34"> *  {@linkplain java.lang.FunctionalInterface functional interface}</span>
 <span class="source-line-no">035</span><span id="line-35"> *  whose functional method is</span>
-<span class="source-line-no">036</span><span id="line-36"> *  {@link #accept(Object,Object,Object)}.</span>
+<span class="source-line-no">036</span><span id="line-36"> *  {@link #accept(Object,Object,Object)}.&lt;/p&gt;</span>
 <span class="source-line-no">037</span><span id="line-37"> *</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @param  &lt;A&gt; The type of the first argument to the operation.</span>
 <span class="source-line-no">039</span><span id="line-39"> *  @param  &lt;B&gt; The type of the second argument to the operation.</span>
@@ -56,67 +56,61 @@
 <span class="source-line-no">043</span><span id="line-43"> *  @see java.util.function.BiConsumer</span>
 <span class="source-line-no">044</span><span id="line-44"> *</span>
 <span class="source-line-no">045</span><span id="line-45"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">046</span><span id="line-46"> *  @version $Id: TriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $</span>
+<span class="source-line-no">046</span><span id="line-46"> *  @version $Id: TriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $</span>
 <span class="source-line-no">047</span><span id="line-47"> *  @since 0.0.5</span>
 <span class="source-line-no">048</span><span id="line-48"> *</span>
 <span class="source-line-no">049</span><span id="line-49"> *  @UMLGraph.link</span>
 <span class="source-line-no">050</span><span id="line-50"> */</span>
-<span class="source-line-no">051</span><span id="line-51">@ClassVersion( sourceVersion = "$Id: TriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $" )</span>
+<span class="source-line-no">051</span><span id="line-51">@ClassVersion( sourceVersion = "$Id: TriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )</span>
 <span class="source-line-no">052</span><span id="line-52">@FunctionalInterface</span>
 <span class="source-line-no">053</span><span id="line-53">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">054</span><span id="line-54">public interface TriConsumer&lt;A,B,C&gt;</span>
 <span class="source-line-no">055</span><span id="line-55">{</span>
-<span class="source-line-no">056</span><span id="line-56">        /*-----------*\</span>
-<span class="source-line-no">057</span><span id="line-57">    ====** Constants **========================================================</span>
-<span class="source-line-no">058</span><span id="line-58">        \*-----------*/</span>
+<span class="source-line-no">056</span><span id="line-56">        /*---------*\</span>
+<span class="source-line-no">057</span><span id="line-57">    ====** Methods **==========================================================</span>
+<span class="source-line-no">058</span><span id="line-58">        \*---------*/</span>
 <span class="source-line-no">059</span><span id="line-59">    /**</span>
-<span class="source-line-no">060</span><span id="line-60">     *  An empty array of {@code TriConsumer} objects.</span>
-<span class="source-line-no">061</span><span id="line-61">     */</span>
-<span class="source-line-no">062</span><span id="line-62">    @SuppressWarnings( "rawtypes" )</span>
-<span class="source-line-no">063</span><span id="line-63">    public static final TriConsumer [] EMPTY_TriConsumer_ARRAY = new TriConsumer [0];</span>
-<span class="source-line-no">064</span><span id="line-64"></span>
-<span class="source-line-no">065</span><span id="line-65">        /*---------*\</span>
-<span class="source-line-no">066</span><span id="line-66">    ====** Methods **==========================================================</span>
-<span class="source-line-no">067</span><span id="line-67">        \*---------*/</span>
+<span class="source-line-no">060</span><span id="line-60">     *  Performs this operation on the given arguments.</span>
+<span class="source-line-no">061</span><span id="line-61">     *</span>
+<span class="source-line-no">062</span><span id="line-62">     *  @param  a   The first input argument.</span>
+<span class="source-line-no">063</span><span id="line-63">     *  @param  b   The second input argument.</span>
+<span class="source-line-no">064</span><span id="line-64">     *  @param  c   The third input argument.</span>
+<span class="source-line-no">065</span><span id="line-65">     */</span>
+<span class="source-line-no">066</span><span id="line-66">    public void accept( final A a, final B b, final C c );</span>
+<span class="source-line-no">067</span><span id="line-67"></span>
 <span class="source-line-no">068</span><span id="line-68">    /**</span>
-<span class="source-line-no">069</span><span id="line-69">     *  Performs this operation on the given arguments.</span>
-<span class="source-line-no">070</span><span id="line-70">     *</span>
-<span class="source-line-no">071</span><span id="line-71">     *  @param  a   The first input argument.</span>
-<span class="source-line-no">072</span><span id="line-72">     *  @param  b   The second input argument.</span>
-<span class="source-line-no">073</span><span id="line-73">     *  @param  c   The third input argument.</span>
-<span class="source-line-no">074</span><span id="line-74">     */</span>
-<span class="source-line-no">075</span><span id="line-75">    public void accept( final A a, final B b, final C c );</span>
-<span class="source-line-no">076</span><span id="line-76"></span>
-<span class="source-line-no">077</span><span id="line-77">    /**</span>
-<span class="source-line-no">078</span><span id="line-78">     *  Returns a composed {@code TriConsumer} that performs, in sequence,</span>
-<span class="source-line-no">079</span><span id="line-79">     *  this operation followed by the {@code after} operation. If performing</span>
-<span class="source-line-no">080</span><span id="line-80">     *  either operation throws an exception, it is relayed to the caller of</span>
-<span class="source-line-no">081</span><span id="line-81">     *  the composed operation. If performing this operation throws an</span>
-<span class="source-line-no">082</span><span id="line-82">     *  exception, the {@code after} operation will not be performed.</span>
-<span class="source-line-no">083</span><span id="line-83">     *</span>
-<span class="source-line-no">084</span><span id="line-84">     *  @param  after   The operation to perform after this operation.</span>
-<span class="source-line-no">085</span><span id="line-85">     *  @return A composed {@code TriConsumer} that performs in sequence this</span>
-<span class="source-line-no">086</span><span id="line-86">     *      operation followed by the {@code after} operation.</span>
-<span class="source-line-no">087</span><span id="line-87">     */</span>
-<span class="source-line-no">088</span><span id="line-88">    public default TriConsumer&lt;A,B,C&gt; andThen( final TriConsumer&lt;? super A,? super B,? super C&gt; after )</span>
-<span class="source-line-no">089</span><span id="line-89">    {</span>
-<span class="source-line-no">090</span><span id="line-90">        requireNonNullArgument( after, "after" );</span>
+<span class="source-line-no">069</span><span id="line-69">     *  &lt;p&gt;{@summary Returns a composed {@code TriConsumer} that performs, in</span>
+<span class="source-line-no">070</span><span id="line-70">     *  sequence, this operation followed by the {@code after} operation.} If</span>
+<span class="source-line-no">071</span><span id="line-71">     *  performing either operation throws an exception, it is relayed to the</span>
+<span class="source-line-no">072</span><span id="line-72">     *  caller of the composed operation. If performing this operation throws</span>
+<span class="source-line-no">073</span><span id="line-73">     *  an exception, the {@code after} operation will not be performed.&lt;/p&gt;</span>
+<span class="source-line-no">074</span><span id="line-74">     *  &lt;p&gt;Both {@code TriConsumer}s will be called with the same</span>
+<span class="source-line-no">075</span><span id="line-75">     *  arguments.&lt;/p&gt;</span>
+<span class="source-line-no">076</span><span id="line-76">     *</span>
+<span class="source-line-no">077</span><span id="line-77">     *  @param  after   The operation to perform after this operation.</span>
+<span class="source-line-no">078</span><span id="line-78">     *  @return A composed {@code TriConsumer} that performs in sequence this</span>
+<span class="source-line-no">079</span><span id="line-79">     *      operation followed by the {@code after} operation.</span>
+<span class="source-line-no">080</span><span id="line-80">     */</span>
+<span class="source-line-no">081</span><span id="line-81">    public default TriConsumer&lt;A,B,C&gt; andThen( final TriConsumer&lt;? super A,? super B,? super C&gt; after )</span>
+<span class="source-line-no">082</span><span id="line-82">    {</span>
+<span class="source-line-no">083</span><span id="line-83">        requireNonNullArgument( after, "after" );</span>
+<span class="source-line-no">084</span><span id="line-84"></span>
+<span class="source-line-no">085</span><span id="line-85">        @SuppressWarnings( "RedundantExplicitVariableType" )</span>
+<span class="source-line-no">086</span><span id="line-86">        final TriConsumer&lt;A,B,C&gt; retValue = ( a, b, c) -&gt;</span>
+<span class="source-line-no">087</span><span id="line-87">        {</span>
+<span class="source-line-no">088</span><span id="line-88">            accept(a, b, c);</span>
+<span class="source-line-no">089</span><span id="line-89">            after.accept(a, b, c );</span>
+<span class="source-line-no">090</span><span id="line-90">        };</span>
 <span class="source-line-no">091</span><span id="line-91"></span>
-<span class="source-line-no">092</span><span id="line-92">        final TriConsumer&lt;A,B,C&gt; retValue = (a,b,c) -&gt;</span>
-<span class="source-line-no">093</span><span id="line-93">        {</span>
-<span class="source-line-no">094</span><span id="line-94">            accept(a, b, c);</span>
-<span class="source-line-no">095</span><span id="line-95">            after.accept(a, b, c );</span>
-<span class="source-line-no">096</span><span id="line-96">        };</span>
+<span class="source-line-no">092</span><span id="line-92">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">093</span><span id="line-93">        return retValue;</span>
+<span class="source-line-no">094</span><span id="line-94">    }   //  andThen()</span>
+<span class="source-line-no">095</span><span id="line-95">}</span>
+<span class="source-line-no">096</span><span id="line-96">//  class TriConsumer</span>
 <span class="source-line-no">097</span><span id="line-97"></span>
-<span class="source-line-no">098</span><span id="line-98">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">099</span><span id="line-99">        return retValue;</span>
-<span class="source-line-no">100</span><span id="line-100">    }   //  andThen()</span>
-<span class="source-line-no">101</span><span id="line-101">}</span>
-<span class="source-line-no">102</span><span id="line-102">//  class TriConsumer</span>
-<span class="source-line-no">103</span><span id="line-103"></span>
-<span class="source-line-no">104</span><span id="line-104">/*</span>
-<span class="source-line-no">105</span><span id="line-105"> *  End of File</span>
-<span class="source-line-no">106</span><span id="line-106"> */</span>
+<span class="source-line-no">098</span><span id="line-98">/*</span>
+<span class="source-line-no">099</span><span id="line-99"> *  End of File</span>
+<span class="source-line-no">100</span><span id="line-100"> */</span>
 
 
 

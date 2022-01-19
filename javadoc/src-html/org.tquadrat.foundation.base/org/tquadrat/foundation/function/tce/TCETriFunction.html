@@ -57,69 +57,61 @@
 <span class="source-line-no">044</span><span id="line-44"> *  @param  &lt;R&gt; The type of the result of the function.</span>
 <span class="source-line-no">045</span><span id="line-45"> *</span>
 <span class="source-line-no">046</span><span id="line-46"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">047</span><span id="line-47"> *  @version $Id: TCETriFunction.java 820 2020-12-29 20:34:22Z tquadrat $</span>
+<span class="source-line-no">047</span><span id="line-47"> *  @version $Id: TCETriFunction.java 993 2022-01-19 22:26:20Z tquadrat $</span>
 <span class="source-line-no">048</span><span id="line-48"> *  @since 0.0.5</span>
 <span class="source-line-no">049</span><span id="line-49"> *</span>
 <span class="source-line-no">050</span><span id="line-50"> *  @UMLGraph.link</span>
 <span class="source-line-no">051</span><span id="line-51"> */</span>
 <span class="source-line-no">052</span><span id="line-52">@SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
 <span class="source-line-no">053</span><span id="line-53">@FunctionalInterface</span>
-<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 820 2020-12-29 20:34:22Z tquadrat $" )</span>
+<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 993 2022-01-19 22:26:20Z tquadrat $" )</span>
 <span class="source-line-no">055</span><span id="line-55">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">056</span><span id="line-56">public interface TCETriFunction&lt;A,B,C,R&gt;</span>
 <span class="source-line-no">057</span><span id="line-57">{</span>
-<span class="source-line-no">058</span><span id="line-58">        /*-----------*\</span>
-<span class="source-line-no">059</span><span id="line-59">    ====** Constants **========================================================</span>
-<span class="source-line-no">060</span><span id="line-60">        \*-----------*/</span>
+<span class="source-line-no">058</span><span id="line-58">        /*---------*\</span>
+<span class="source-line-no">059</span><span id="line-59">    ====** Methods **==========================================================</span>
+<span class="source-line-no">060</span><span id="line-60">        \*---------*/</span>
 <span class="source-line-no">061</span><span id="line-61">    /**</span>
-<span class="source-line-no">062</span><span id="line-62">     *  An empty array of {@code TCEFunction} objects.</span>
-<span class="source-line-no">063</span><span id="line-63">     */</span>
-<span class="source-line-no">064</span><span id="line-64">    @SuppressWarnings( "rawtypes" )</span>
-<span class="source-line-no">065</span><span id="line-65">    public static final TCETriFunction [] EMPTY_TCETriFunction_ARRAY = new TCETriFunction [0];</span>
-<span class="source-line-no">066</span><span id="line-66"></span>
-<span class="source-line-no">067</span><span id="line-67">        /*---------*\</span>
-<span class="source-line-no">068</span><span id="line-68">    ====** Methods **==========================================================</span>
-<span class="source-line-no">069</span><span id="line-69">        \*---------*/</span>
-<span class="source-line-no">070</span><span id="line-70">    /**</span>
-<span class="source-line-no">071</span><span id="line-71">     *  Applies this function to the given arguments.</span>
-<span class="source-line-no">072</span><span id="line-72">     *</span>
-<span class="source-line-no">073</span><span id="line-73">     *  @param  a   The first function argument.</span>
-<span class="source-line-no">074</span><span id="line-74">     *  @param  b   The second function argument.</span>
-<span class="source-line-no">075</span><span id="line-75">     *  @param  c   The third function argument.</span>
-<span class="source-line-no">076</span><span id="line-76">     *  @return The function result.</span>
-<span class="source-line-no">077</span><span id="line-77">     *  @throws Exception   Something went wrong.</span>
-<span class="source-line-no">078</span><span id="line-78">     */</span>
-<span class="source-line-no">079</span><span id="line-79">    @SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
-<span class="source-line-no">080</span><span id="line-80">    public R apply( A a, B b, C c ) throws Exception;</span>
-<span class="source-line-no">081</span><span id="line-81"></span>
-<span class="source-line-no">082</span><span id="line-82">    /**</span>
-<span class="source-line-no">083</span><span id="line-83">     *  Returns a composed function that first applies this function to its</span>
-<span class="source-line-no">084</span><span id="line-84">     *  input, and then applies the after function to the result. If evaluation</span>
-<span class="source-line-no">085</span><span id="line-85">     *  of either function throws an exception, it is relayed to the caller of</span>
-<span class="source-line-no">086</span><span id="line-86">     *  the composed function.</span>
-<span class="source-line-no">087</span><span id="line-87">     *</span>
-<span class="source-line-no">088</span><span id="line-88">     *  @param  &lt;R1&gt;    The type of the output of the {@code after} function,</span>
-<span class="source-line-no">089</span><span id="line-89">     *      and of the composed function.</span>
-<span class="source-line-no">090</span><span id="line-90">     *  @param  after   The function to apply after this function is applied.</span>
-<span class="source-line-no">091</span><span id="line-91">     *  @return A composed function that first applies this function and then</span>
-<span class="source-line-no">092</span><span id="line-92">     *      applies the {@code after} function.</span>
-<span class="source-line-no">093</span><span id="line-93">     *</span>
-<span class="source-line-no">094</span><span id="line-94">     *  @since 0.1.0</span>
-<span class="source-line-no">095</span><span id="line-95">     */</span>
-<span class="source-line-no">096</span><span id="line-96">    @API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">097</span><span id="line-97">    public default &lt;R1&gt; TCETriFunction&lt;A,B,C,R1&gt; andThen( final TCEFunction&lt;? super R, ? extends R1&gt; after )</span>
-<span class="source-line-no">098</span><span id="line-98">    {</span>
-<span class="source-line-no">099</span><span id="line-99">        final TCETriFunction&lt;A,B,C,R1&gt; retValue = (A a, B b, C c) -&gt; requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );</span>
-<span class="source-line-no">100</span><span id="line-100"></span>
-<span class="source-line-no">101</span><span id="line-101">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">102</span><span id="line-102">        return retValue;</span>
-<span class="source-line-no">103</span><span id="line-103">    }   //  andThem()</span>
-<span class="source-line-no">104</span><span id="line-104">}</span>
-<span class="source-line-no">105</span><span id="line-105">//  interface TCETriFunction</span>
-<span class="source-line-no">106</span><span id="line-106"></span>
-<span class="source-line-no">107</span><span id="line-107">/*</span>
-<span class="source-line-no">108</span><span id="line-108"> *  End of File</span>
-<span class="source-line-no">109</span><span id="line-109"> */</span>
+<span class="source-line-no">062</span><span id="line-62">     *  Applies this function to the given arguments.</span>
+<span class="source-line-no">063</span><span id="line-63">     *</span>
+<span class="source-line-no">064</span><span id="line-64">     *  @param  a   The first function argument.</span>
+<span class="source-line-no">065</span><span id="line-65">     *  @param  b   The second function argument.</span>
+<span class="source-line-no">066</span><span id="line-66">     *  @param  c   The third function argument.</span>
+<span class="source-line-no">067</span><span id="line-67">     *  @return The function result.</span>
+<span class="source-line-no">068</span><span id="line-68">     *  @throws Exception   Something went wrong.</span>
+<span class="source-line-no">069</span><span id="line-69">     */</span>
+<span class="source-line-no">070</span><span id="line-70">    @SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
+<span class="source-line-no">071</span><span id="line-71">    public R apply( A a, B b, C c ) throws Exception;</span>
+<span class="source-line-no">072</span><span id="line-72"></span>
+<span class="source-line-no">073</span><span id="line-73">    /**</span>
+<span class="source-line-no">074</span><span id="line-74">     *  Returns a composed function that first applies this function to its</span>
+<span class="source-line-no">075</span><span id="line-75">     *  input, and then applies the after function to the result. If evaluation</span>
+<span class="source-line-no">076</span><span id="line-76">     *  of either function throws an exception, it is relayed to the caller of</span>
+<span class="source-line-no">077</span><span id="line-77">     *  the composed function.</span>
+<span class="source-line-no">078</span><span id="line-78">     *</span>
+<span class="source-line-no">079</span><span id="line-79">     *  @param  &lt;R1&gt;    The type of the output of the {@code after} function,</span>
+<span class="source-line-no">080</span><span id="line-80">     *      and of the composed function.</span>
+<span class="source-line-no">081</span><span id="line-81">     *  @param  after   The function to apply after this function is applied.</span>
+<span class="source-line-no">082</span><span id="line-82">     *  @return A composed function that first applies this function and then</span>
+<span class="source-line-no">083</span><span id="line-83">     *      applies the {@code after} function.</span>
+<span class="source-line-no">084</span><span id="line-84">     *</span>
+<span class="source-line-no">085</span><span id="line-85">     *  @since 0.1.0</span>
+<span class="source-line-no">086</span><span id="line-86">     */</span>
+<span class="source-line-no">087</span><span id="line-87">    @API( status = STABLE, since = "0.1.0" )</span>
+<span class="source-line-no">088</span><span id="line-88">    public default &lt;R1&gt; TCETriFunction&lt;A,B,C,R1&gt; andThen( final TCEFunction&lt;? super R, ? extends R1&gt; after )</span>
+<span class="source-line-no">089</span><span id="line-89">    {</span>
+<span class="source-line-no">090</span><span id="line-90">        @SuppressWarnings( "RedundantExplicitVariableType" )</span>
+<span class="source-line-no">091</span><span id="line-91">        final TCETriFunction&lt;A,B,C,R1&gt; retValue = ( A a, B b, C c) -&gt; requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );</span>
+<span class="source-line-no">092</span><span id="line-92"></span>
+<span class="source-line-no">093</span><span id="line-93">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">094</span><span id="line-94">        return retValue;</span>
+<span class="source-line-no">095</span><span id="line-95">    }   //  andThem()</span>
+<span class="source-line-no">096</span><span id="line-96">}</span>
+<span class="source-line-no">097</span><span id="line-97">//  interface TCETriFunction</span>
+<span class="source-line-no">098</span><span id="line-98"></span>
+<span class="source-line-no">099</span><span id="line-99">/*</span>
+<span class="source-line-no">100</span><span id="line-100"> *  End of File</span>
+<span class="source-line-no">101</span><span id="line-101"> */</span>
 
 
 

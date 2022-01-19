@@ -25,15 +25,15 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  Represents an operation that accepts three input arguments and returns no
- *  result. This is the three-arity specialisation of
+ *  <p>{@summary Represents an operation that accepts three input arguments and
+ *  returns no result.} This is the three-arity specialisation of
  *  {@link java.util.function.Consumer}.
  *  Unlike most other functional interfaces, {@code TriConsumer} is expected to
- *  operate via side-effects.<br>
- *  <br>This is a
+ *  operate via side effects.</p>
+ *  <p>This is a
  *  {@linkplain java.lang.FunctionalInterface functional interface}
  *  whose functional method is
- *  {@link #accept(Object,Object,Object)}.
+ *  {@link #accept(Object,Object,Object)}.</p>
  *
  *  @param  <A> The type of the first argument to the operation.
  *  @param  <B> The type of the second argument to the operation.
@@ -43,25 +43,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.BiConsumer
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TriConsumer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface TriConsumer<A,B,C>
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code TriConsumer} objects.
-     */
-    @SuppressWarnings( "rawtypes" )
-    public static final TriConsumer [] EMPTY_TriConsumer_ARRAY = new TriConsumer [0];
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
@@ -75,11 +66,13 @@ public interface TriConsumer<A,B,C>
     public void accept( final A a, final B b, final C c );
 
     /**
-     *  Returns a composed {@code TriConsumer} that performs, in sequence,
-     *  this operation followed by the {@code after} operation. If performing
-     *  either operation throws an exception, it is relayed to the caller of
-     *  the composed operation. If performing this operation throws an
-     *  exception, the {@code after} operation will not be performed.
+     *  <p>{@summary Returns a composed {@code TriConsumer} that performs, in
+     *  sequence, this operation followed by the {@code after} operation.} If
+     *  performing either operation throws an exception, it is relayed to the
+     *  caller of the composed operation. If performing this operation throws
+     *  an exception, the {@code after} operation will not be performed.</p>
+     *  <p>Both {@code TriConsumer}s will be called with the same
+     *  arguments.</p>
      *
      *  @param  after   The operation to perform after this operation.
      *  @return A composed {@code TriConsumer} that performs in sequence this
@@ -89,7 +82,8 @@ public interface TriConsumer<A,B,C>
     {
         requireNonNullArgument( after, "after" );
 
-        final TriConsumer<A,B,C> retValue = (a,b,c) ->
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final TriConsumer<A,B,C> retValue = ( a, b, c) ->
         {
             accept(a, b, c);
             after.accept(a, b, c );

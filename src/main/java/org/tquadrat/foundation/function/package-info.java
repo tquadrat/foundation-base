@@ -16,16 +16,14 @@
  */
 
 /**
- *  Functional interfaces for the Foundation Library. <br>
- *  <br>Unless otherwise stated, {@code null} argument values will cause
- *  methods and constructors of all classes in this package to throw an
+ *  <p>{@summary Functional interfaces for the Foundation Library.}</p>
+ *  <p>Unless otherwise stated, {@code null} argument values will cause methods
+ *  and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a
  *  {@link org.tquadrat.foundation.exception.NullArgumentException},
  *  but in some rare cases, it could be also a
- *  {@link java.lang.NullPointerException}.
- *
- *  @UMLGraph.link
+ *  {@link java.lang.NullPointerException}.</p>
  */
 
 @API( status = STABLE, since = "0.0.1" )

@@ -65,14 +65,14 @@ import org.tquadrat.foundation.lang.internal.AutoLockImpl;
  *  unpredictable effects.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLock.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLock.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface AutoLock extends AutoCloseable
     permits org.tquadrat.foundation.lang.internal.AutoLockImpl
@@ -83,13 +83,13 @@ public sealed interface AutoLock extends AutoCloseable
     /**
      *  <p>{@summary This exception is thrown when an operation fails.} The
      *
-     *  @version $Id: AutoLock.java 944 2021-12-21 21:56:24Z tquadrat $
+     *  @version $Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: AutoLock.java 944 2021-12-21 21:56:24Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static final class ExecutionFailedException extends RuntimeException
     {
@@ -115,14 +115,6 @@ public sealed interface AutoLock extends AutoCloseable
          */
         public ExecutionFailedException( final Throwable cause ) { super( cause ); }
     }   //  class ExecutionFailedException
-
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  An empty array of {@code AutoLock} objects.
-     */
-    public static final AutoLock [] EMPTY_AUTOLOCK_ARRAY = new AutoLock [0];
 
         /*---------*\
     ====** Methods **==========================================================

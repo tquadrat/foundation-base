@@ -100,16 +100,16 @@ loadScripts(document, 'script');</script>
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Stringer.java 820 2020-12-29 20:34:22Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $")
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-101">Stringer</a>&lt;T&gt;</span></div>
-<div class="block">This interface defines a method to compose a String representation from
-  arbitrary objects. <br>
-  <br>It will also provide several convenience implementations for the
+</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-102">Stringer</a>&lt;T&gt;</span></div>
+<div class="block"><p>This interface defines a method to compose a String
+  representation from arbitrary objects.</p>
+  <p>It will also provide several convenience implementations for the
   interface that can be used with special argument types. Currently, these
-  are
+  are</p>
   <ul>
   <li><a href="#OBJECT_STRINGER"><code>OBJECT_STRINGER</code></a>
   as a catch-all</li>
@@ -141,35 +141,40 @@ loadScripts(document, 'script');</script>
   provides a sufficient implementation of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a>)</li>
   </ul>
-  There are no explicit stringers for the classes from the <code>java.time</code>
+  <p>There are no explicit stringers for the classes from the <code>java.time</code>
   package as instances of these classes have sufficient implementations of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a>
   and are therefore already well covered by
   <a href="#OBJECT_STRINGER"><code>OBJECT_STRINGER</code></a>. Same is true for the class
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a>.<br>
-  <br>This is a functional interface whose functional method is
-  <a href="#toString(T)"><code>toString(Object)</code></a>.</div>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a>.</p>
+  <p>This is a functional interface whose functional method is
+  <a href="#toString(T)"><code>toString(Object)</code></a>.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Note:</span></dt>
 <dd>
 <ul>
-<li>The method
-      
-      will <i>never</i> return <code>null</code>; if called with a <code>null</code>
-      argument, it will return the String "null" (see
-      ).
-      This is different to
-      
-      that return <code>null</code> for a <code>null</code> argument.</li>
+<li>The method <code>toString(Object)</code> will <i>never</i> return
+      <code>null</code>; if called with a <code>null</code> argument, it will return
+      the String &quot;null&quot;.<br>
+      This is different to the behaviour of the <code>toString(Object)</code>
+      method of an implementation of <code>StringConverter</code> that returns
+      <code>null</code> for a <code>null</code> argument.</li>
 </ul>
 </dd>
 
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: Stringer.java 820 2020-12-29 20:34:22Z tquadrat $</dd>
+<dd>$Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="StringConverter.html#toString(T)"><code>StringConverter.toString(Object)</code></a></li>
+<li><a href="CommonConstants.html#NULL_STRING"><code>CommonConstants.NULL_STRING</code></a></li>
+</ul>
+</dd>
 
 <dt>
     <span class='simpleTagLabel'>UML Diagram</span>
@@ -204,25 +209,23 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#BASE_STRINGER" class="member-name-link">BASE_STRINGER</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
-  that produces an output that looks like that from the default implementation of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a>:
-  it executes</div>
+  that produces an output that looks like that from the default
+  implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a></div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;byte[]&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#BYTEARRAY_STRINGER" class="member-name-link">BYTEARRAY_STRINGER</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
-  for <code>byte</code> arrays.<br>
-  <br>The result looks like
-  this:</div>
+  for <code>byte</code> arrays.</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#CLASS_STRINGER" class="member-name-link">CLASS_STRINGER</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a>.</div>
@@ -238,7 +241,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#FILEOBJECT_STRINGER" class="member-name-link">FILEOBJECT_STRINGER</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link"><code>File</code></a>.</div>
@@ -258,7 +261,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#OBJECTCLASS_STRINGER" class="member-name-link">OBJECTCLASS_STRINGER</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   that returns the name of the object's class instead of a representation
   of the object's value.</div>
@@ -266,7 +269,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#OPTIONAL_STRINGER" class="member-name-link">OPTIONAL_STRINGER</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">An implementation for
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>.</div>
@@ -311,16 +314,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#fromStringConverter(org.tquadrat.foundation.lang.StringConverter)" class="member-name-link">fromStringConverter</a><wbr>(<a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;? super A&gt;&nbsp;stringConverter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Creates a <code>Stringer</code> for the given instance of
-  <a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>.<br>
-  <br>A String converter cannot be used directly as a <code>Stringer</code>
-  because <code>Stringer</code>'s
-  <a href="#toString(T)"><code>toString()</code></a>
-  method will never return <code>null</code> (in case the argument is
-  <code>null</code>, it returns the
-  <a href="CommonConstants.html#NULL_STRING"><code>NULL_STRING</code></a>),
-  while
-  <a href="StringConverter.html#toString(T)"><code>StringConverter.toString()</code></a>
-  returns <code>null</code> for a <code>null</code> argument.</div>
+  <a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Stringer.html" title="type parameter in Stringer">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#toFunction()" class="member-name-link">toFunction</a>()</code></div>
@@ -332,7 +326,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString(T)" class="member-name-link">toString</a><wbr>(<a href="Stringer.html" title="type parameter in Stringer">T</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a String representation of the given argument, or
-  <code>null</code> if the given <code>value</code> is <code>null</code>.</div>
+  <a href="CommonConstants.html#NULL_STRING"><code>"null"</code></a>
+  if the given <code>value</code> is <code>null</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;A&gt;&nbsp;<a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;A&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#wrapFunction(java.util.function.Function)" class="member-name-link">wrapFunction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super A,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;function)</code></div>
@@ -358,12 +353,14 @@ loadScripts(document, 'script');</script>
 <h3>BASE_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.7")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-116">BASE_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-119">BASE_STRINGER</a></span></div>
+<div class="block"><p>An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
-  that produces an output that looks like that from the default implementation of
+  that produces an output that looks like that from the default
+  implementation of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a>:
-  it executes<pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.</div>
+  it returns</p>
+  <pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.</div>
 </section>
 </li>
 <li>
@@ -371,13 +368,14 @@ loadScripts(document, 'script');</script>
 <h3>BYTEARRAY_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;byte[]&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-127">BYTEARRAY_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;byte[]&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-131">BYTEARRAY_STRINGER</a></span></div>
+<div class="block"><p>An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
-  for <code>byte</code> arrays.<br>
-  <br>The result looks like
-  this:<pre><code>byte [&lt;<i>length</i>&gt;]</code></pre>where
-  <code><i>length</i></code> is the array length of the given argument.</div>
+  for <code>byte</code> arrays.</p>
+  <p>The result looks like this:</p>
+  <pre><code>byte [&lt;<i>length</i>&gt;]</code></pre>
+  <p>where <code><i>length</i></code> is the array length of the given
+  argument.</p></div>
 </section>
 </li>
 <li>
@@ -385,8 +383,8 @@ loadScripts(document, 'script');</script>
 <h3>CLASS_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-136">CLASS_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-140">CLASS_STRINGER</a></span></div>
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a>.</div>
@@ -397,7 +395,7 @@ loadScripts(document, 'script');</script>
 <h3>DEFAULT_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-145">DEFAULT_STRINGER</a></span></div>
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-149">DEFAULT_STRINGER</a></span></div>
 <div class="block">A generic
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   implementation that delegates to
@@ -409,8 +407,8 @@ loadScripts(document, 'script');</script>
 <h3>FILEOBJECT_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-154">FILEOBJECT_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-158">FILEOBJECT_STRINGER</a></span></div>
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link"><code>File</code></a>.</div>
@@ -421,7 +419,7 @@ loadScripts(document, 'script');</script>
 <h3>OBJECT_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-169">OBJECT_STRINGER</a></span></div>
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-173">OBJECT_STRINGER</a></span></div>
 <div class="block">A
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   implementation that calls
@@ -445,8 +443,8 @@ loadScripts(document, 'script');</script>
 <h3>OBJECTCLASS_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-178">OBJECTCLASS_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-182">OBJECTCLASS_STRINGER</a></span></div>
+<div class="block">An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   that returns the name of the object's class instead of a representation
   of the object's value.</div>
@@ -457,11 +455,15 @@ loadScripts(document, 'script');</script>
 <h3>OPTIONAL_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-187">OPTIONAL_STRINGER</a></span></div>
-<div class="block">An implementation for
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-195">OPTIONAL_STRINGER</a></span></div>
+<div class="block"><p>An implementation of
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>.</div>
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>.</p>
+  <p>It returns basically the result of
+  <a href="Objects.html#toString(java.lang.Object,java.lang.String)"><code>Objects.toString(Object,String)</code></a>
+  with the value of the <code>Optional</code> and the text
+  &quot;<code>[empty]</code>&quot; as the <code>nullDefault</code> arguments.</p></div>
 </section>
 </li>
 <li>
@@ -469,7 +471,7 @@ loadScripts(document, 'script');</script>
 <h3>STRING_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-196">STRING_STRINGER</a></span></div>
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-204">STRING_STRINGER</a></span></div>
 <div class="block">An implementation for
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
@@ -481,7 +483,7 @@ loadScripts(document, 'script');</script>
 <h3>URL_STRINGER</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-205">URL_STRINGER</a></span></div>
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-213">URL_STRINGER</a></span></div>
 <div class="block">An implementation for
   <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang"><code>Stringer</code></a>
   for instances of
@@ -501,7 +503,7 @@ loadScripts(document, 'script');</script>
 <h3>asFunction</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;A,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-219">asFunction</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super A&gt;&nbsp;stringer)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;A,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-227">asFunction</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super A&gt;&nbsp;stringer)</span></div>
 <div class="block">Returns the given <code>Stringer</code> as an instance of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>.</div>
 <dl class="notes">
@@ -519,10 +521,10 @@ loadScripts(document, 'script');</script>
 <h3>fromStringConverter</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.7")
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;A&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-246">fromStringConverter</a></span><wbr><span class="parameters">(<a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;? super A&gt;&nbsp;stringConverter)</span></div>
-<div class="block">Creates a <code>Stringer</code> for the given instance of
-  <a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>.<br>
-  <br>A String converter cannot be used directly as a <code>Stringer</code>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;A&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-254">fromStringConverter</a></span><wbr><span class="parameters">(<a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;? super A&gt;&nbsp;stringConverter)</span></div>
+<div class="block"><p>Creates a <code>Stringer</code> for the given instance of
+  <a href="StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>.</p>
+  <p>A String converter cannot be used directly as a <code>Stringer</code>
   because <code>Stringer</code>'s
   <a href="#toString(T)"><code>toString()</code></a>
   method will never return <code>null</code> (in case the argument is
@@ -546,7 +548,7 @@ loadScripts(document, 'script');</script>
 <h3>toFunction</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.7")
-</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Stringer.html" title="type parameter in Stringer">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-262">toFunction</a></span>()</div>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Stringer.html" title="type parameter in Stringer">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-270">toFunction</a></span>()</div>
 <div class="block">Returns this <code>Stringer</code> instance as an instance of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>.</div>
 <dl class="notes">
@@ -558,16 +560,15 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toString(T)">
 <h3 id="toString(java.lang.Object)">toString</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-279">toString</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="type parameter in Stringer">T</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-287">toString</a></span><wbr><span class="parameters">(<a href="Stringer.html" title="type parameter in Stringer">T</a>&nbsp;value)</span></div>
 <div class="block">Returns a String representation of the given argument, or
-  <code>null</code> if the given <code>value</code> is <code>null</code>.</div>
+  <a href="CommonConstants.html#NULL_STRING"><code>"null"</code></a>
+  if the given <code>value</code> is <code>null</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - The value.</dd>
 <dt>Returns:</dt>
 <dd>The String representation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - The given value is <code>null</code>.</dd>
 </dl>
 </section>
 </li>
@@ -576,7 +577,7 @@ loadScripts(document, 'script');</script>
 <h3>wrapFunction</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.7")
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;A&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-288">wrapFunction</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super A,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;function)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type"><a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;A&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#line-296">wrapFunction</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super A,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;function)</span></div>
 <div class="block">Wraps a function that returns a String to an argument stringer.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>

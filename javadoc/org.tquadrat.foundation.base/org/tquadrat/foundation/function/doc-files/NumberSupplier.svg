@@ -6,7 +6,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='528.000'
+     width='252.000'
      height='393.000'>
     <defs>
         <style><![CDATA[
@@ -119,7 +119,7 @@
         <clipPath id='ID000001'>
             <rect class='focusClass'
                   height='73.000'
-                  width='478.000'
+                  width='202.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
@@ -129,27 +129,27 @@
                    clip-path='url(#ID000001)'>
                     <rect x='0.000'
                           y='0.000'
-                          width='478.000'
+                          width='202.000'
                           height='73.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='28.000'
-                          x2='478.000'
+                          x2='202.000'
                           y2='28.000'
                           class='separator'/>
-                    <text x='212.600'
+                    <text x='74.600'
                           y='13.000'
                           class='stereotype'>&#xAB;Interface&#xBB;</text>
-                    <text x='197.000'
+                    <text x='59.000'
                           y='24.000'
                           class='abstract'>NumberSupplier</text>
                     <line x1='0.000'
                           y1='45.000'
-                          x2='478.000'
+                          x2='202.000'
                           y2='45.000'
                           class='separator'/>
-                    <text y='41.000'
-                          class='static final'>+ EMPTY_NumberSupplier_ARRAY:org.tquadrat.foundation.function.NumberSupplier[]</text>
+                    <text x='5.000'
+                          y='41.000'/>
                     <text x='5.000'
                           y='58.000'>&#x2A22; get():java.lang.Number</text>
                     <text x='5.000'
@@ -215,9 +215,9 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M264.000,195.000 c0.000,-85.000,-12.500,0.000,-12.500,-85.000 v-15'
+          d='M126.000,195.000 c0.000,-85.000,-12.500,0.000,-12.500,-85.000 v-15'
           marker-end='url(#inheritance)'/>
-    <use x='213.500'
+    <use x='75.500'
          y='25.000'
          xlink:href='#java.util.function.Supplier'/>
     <use x='25.000'
