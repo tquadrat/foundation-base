@@ -16,7 +16,11 @@
 <script type="text/javascript" src="../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="module-declaration-page">
-<script type="text/javascript">var pathtoroot = "../";
+<script type="text/javascript">var evenRowColor = "even-row-color";
+var oddRowColor = "odd-row-color";
+var tableTab = "table-tab";
+var activeTableTab = "active-table-tab";
+var pathtoroot = "../";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -87,8 +91,9 @@ loadScripts(document, 'script');</script>
 <!-- ============ PACKAGES SUMMARY =========== -->
 <h2>Packages</h2>
 <div id="package-summary-table">
-<div class="caption"><span>Exports</span></div>
-<div class="summary-table three-column-summary">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="package-summary-table-tab0" role="tab" aria-selected="true" aria-controls="package-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('package-summary-table', 'package-summary-table', 3)" class="active-table-tab">All Packages</button><button id="package-summary-table-tab1" role="tab" aria-selected="false" aria-controls="package-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('package-summary-table', 'package-summary-table-tab1', 3)" class="table-tab">Exports</button><button id="package-summary-table-tab3" role="tab" aria-selected="false" aria-controls="package-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('package-summary-table', 'package-summary-table-tab3', 3)" class="table-tab">Concealed</button></div>
+<div id="package-summary-table.tabpanel" role="tabpanel">
+<div class="summary-table three-column-summary" aria-labelledby="package-summary-table-tab0">
 <div class="table-header col-first">Package</div>
 <div class="table-header col-second">Exported To Modules</div>
 <div class="table-header col-last">Description</div>
@@ -132,6 +137,18 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color package-summary-table package-summary-table-tab1">
 <div class="block">The internal implementations of some general language extensions provided
   by the Foundation Library.</div>
+</div>
+<div class="col-first even-row-color package-summary-table package-summary-table-tab1"><a href="org/tquadrat/foundation/stream/package-summary.html">org.tquadrat.foundation.stream</a></div>
+<div class="col-second even-row-color package-summary-table package-summary-table-tab1">All Modules</div>
+<div class="col-last even-row-color package-summary-table package-summary-table-tab1">
+<div class="block">The code in this package was originally written by Dominic Fox and provided
+  in the package <code>com.codepoetics.protonpack</code>.</div>
+</div>
+<div class="col-first odd-row-color package-summary-table package-summary-table-tab3"><a href="org/tquadrat/foundation/stream/internal/package-summary.html">org.tquadrat.foundation.stream.internal</a></div>
+<div class="col-second odd-row-color package-summary-table package-summary-table-tab3">None</div>
+<div class="col-last odd-row-color package-summary-table package-summary-table-tab3">
+<div class="block">The internal classes for the stream extensions.</div>
+</div>
 </div>
 </div>
 </div>

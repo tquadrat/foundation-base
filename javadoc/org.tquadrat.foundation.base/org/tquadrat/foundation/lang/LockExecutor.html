@@ -86,10 +86,25 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: LockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-38">LockExecutor</a></span>
+</span><span class="modifiers">public sealed interface </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-48">LockExecutor</a></span>
 <span class="permits">permits <a href="internal/LockExecutorImpl.html" title="class in org.tquadrat.foundation.lang.internal">LockExecutorImpl</a></span></div>
-<div class="block">Allows to execute an operation with an obtained lock.</div>
+<div class="block"><p>Allows to execute an operation with an obtained lock.</p>
+  <p>Use this class like below:</p>
+  <pre><code>  …
+  final var lock = new ReentrantLock();
+  final var executor = LockExecutor.of( lock );
+  …
+  executor.execute( () -> doSomething() );
+  …</code></pre></div>
 <dl class="notes">
+<dt><span class="simpleTagLabel">Note:</span></dt>
+<dd>
+<ul>
+<li>If your program is using <code>AutoLock</code>, you should use the
+      corresponding methods from there.</li>
+</ul>
+</dd>
+
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
@@ -170,7 +185,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="execute(org.tquadrat.foundation.lang.Action)">
 <h3>execute</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-53">execute</a></span><wbr><span class="parameters">(<a href="Action.html" title="interface in org.tquadrat.foundation.lang">Action</a>&nbsp;action)</span>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-63">execute</a></span><wbr><span class="parameters">(<a href="Action.html" title="interface in org.tquadrat.foundation.lang">Action</a>&nbsp;action)</span>
       throws <span class="exceptions"><a href="AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></span></div>
 <div class="block">Executes the given action.</div>
 <dl class="notes">
@@ -185,7 +200,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="execute(org.tquadrat.foundation.lang.Operation)">
 <h3>execute</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-66">execute</a></span><wbr><span class="parameters">(<a href="Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;R&gt;&nbsp;operation)</span>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-76">execute</a></span><wbr><span class="parameters">(<a href="Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;R&gt;&nbsp;operation)</span>
                  throws <span class="exceptions"><a href="AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></span></div>
 <div class="block">Executes the given operation.</div>
 <dl class="notes">
@@ -208,7 +223,7 @@ loadScripts(document, 'script');</script>
 <h3>of</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LockExecutor.html" title="interface in org.tquadrat.foundation.lang">LockExecutor</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-76">of</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LockExecutor.html" title="interface in org.tquadrat.foundation.lang">LockExecutor</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-86">of</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link">Lock</a>&nbsp;lock)</span></div>
 <div class="block">Creates a new <code>LockExecutor</code> from the given
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/Lock.html" title="class or interface in java.util.concurrent.locks" class="external-link"><code>Lock</code></a>
   instance.</div>
@@ -225,7 +240,7 @@ loadScripts(document, 'script');</script>
 <h3>of</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LockExecutor.html" title="interface in org.tquadrat.foundation.lang">LockExecutor</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-93">of</a></span><wbr><span class="parameters">(<a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&nbsp;lock)</span></div>
+</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LockExecutor.html" title="interface in org.tquadrat.foundation.lang">LockExecutor</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html#line-103">of</a></span><wbr><span class="parameters">(<a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a>&nbsp;lock)</span></div>
 <div class="block">Creates a new <code>LockExecutor</code> from the given
   <a href="AutoLock.html" title="interface in org.tquadrat.foundation.lang"><code>AutoLock</code></a>
   instance.</div>

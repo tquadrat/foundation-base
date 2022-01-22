@@ -28,7 +28,17 @@ import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
 import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
 
 /**
- *  Allows to execute an operation with an obtained lock.
+ *  <p>{@summary Allows to execute an operation with an obtained lock.}</p>
+ *  <p>Use this class like below:</p>
+ *  <pre><code>  …
+ *  final var lock = new ReentrantLock();
+ *  final var executor = LockExecutor.of( lock );
+ *  …
+ *  executor.execute( () -> doSomething() );
+ *  …</code></pre>
+ *
+ *  @note   If your program is using {@code AutoLock}, you should use the
+ *      corresponding methods from there.
  *
  *  @version $Id: LockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org

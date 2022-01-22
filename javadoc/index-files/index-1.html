@@ -79,6 +79,37 @@ loadScripts(document, 'script');</script>
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Action.html#run()"><code>Action.run()</code></a>
   method that allows to throw an exception.</div>
 </dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html#aggregate(java.util.stream.Stream,int)" class="member-name-link">aggregate(Stream&lt;T&gt;, int)</a> - Static method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html" title="class in org.tquadrat.foundation.stream">StreamUtils</a></dt>
+<dd>
+<div class="block">Aggregates items from the source stream into a list of items with fixed
+  size.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html#aggregate(java.util.stream.Stream,java.util.function.BiPredicate)" class="member-name-link">aggregate(Stream&lt;T&gt;, BiPredicate&lt;? super T, ? super T&gt;)</a> - Static method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html" title="class in org.tquadrat.foundation.stream">StreamUtils</a></dt>
+<dd>
+<div class="block">Aggregates items from source stream into list of items while supplied
+  predicate is <code>true</code> when evaluated on previous and current
+  item.<br>
+  <br>Can by seen as streaming alternative to
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#groupingBy(java.util.function.Function)" title="class or interface in java.util.stream" class="external-link"><code>Collectors.groupingBy()</code></a>
+  when source stream is sorted by key.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html#aggregateOnListCondition(java.util.stream.Stream,java.util.function.BiPredicate)" class="member-name-link">aggregateOnListCondition(Stream&lt;T&gt;, BiPredicate&lt;List&lt;T&gt;, T&gt;)</a> - Static method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html" title="class in org.tquadrat.foundation.stream">StreamUtils</a></dt>
+<dd>
+<div class="block">Aggregates items from source stream.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">AggregatingSpliterator</a>&lt;<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html" title="type parameter in AggregatingSpliterator">I</a>&gt; - Class in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/package-summary.html">org.tquadrat.foundation.stream.internal</a></dt>
+<dd>
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that aggregates the elements of the stream based on a provided
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html#%3Cinit%3E(java.util.Spliterator,java.util.function.BiPredicate)" class="member-name-link">AggregatingSpliterator(Spliterator&lt;I&gt;, BiPredicate&lt;List&lt;I&gt;, I&gt;)</a> - Constructor for class org.tquadrat.foundation.stream.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">AggregatingSpliterator</a></dt>
+<dd>
+<div class="block">Creates a new <code>AggregatingSpliterator</code> instance.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html#allMatch(java.util.function.Predicate)" class="member-name-link">allMatch(Predicate&lt;? super Map.Entry&lt;K, V&gt;&gt;)</a> - Method in class org.tquadrat.foundation.stream.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a></dt>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html#allMatch(java.util.function.Predicate)" class="member-name-link">allMatch(Predicate&lt;? super T&gt;)</a> - Method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html" title="class in org.tquadrat.foundation.stream">StreamAdapter</a></dt>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/function/TriFunction.html#andThen(java.util.function.Function)" class="member-name-link">andThen(Function&lt;? super R, ? extends R1&gt;)</a> - Method in interface org.tquadrat.foundation.function.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/function/TriFunction.html" title="interface in org.tquadrat.foundation.function">TriFunction</a></dt>
 <dd>
 <div class="block">Returns a composed function that first applies this function to its
@@ -94,6 +125,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns a composed <code>TriConsumer</code> that performs, in
   sequence, this operation followed by the <code>after</code> operation.</div>
 </dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html#anyMatch(java.util.function.Predicate)" class="member-name-link">anyMatch(Predicate&lt;? super Map.Entry&lt;K, V&gt;&gt;)</a> - Method in class org.tquadrat.foundation.stream.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a></dt>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html#anyMatch(java.util.function.Predicate)" class="member-name-link">anyMatch(Predicate&lt;? super T&gt;)</a> - Method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html" title="class in org.tquadrat.foundation.stream">StreamAdapter</a></dt>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ApplicationError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">ApplicationError</a> - Error in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/package-summary.html">org.tquadrat.foundation.exception</a></dt>
 <dd>
 <div class="block">Use the application error to signal the abort of an application.<br>
@@ -138,6 +171,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Applies this function to the given argument.</div>
 </dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selector.html#apply(T%5B%5D)" class="member-name-link">apply(T[])</a> - Method in interface org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selector.html" title="interface in org.tquadrat.foundation.stream">Selector</a></dt>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBiFunction.html#apply(T1,T2)" class="member-name-link">apply(T1, T2)</a> - Method in interface org.tquadrat.foundation.function.tce.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a></dt>
 <dd>
 <div class="block">Applies this function to the given arguments.</div>
@@ -149,6 +183,11 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html#ASCII" class="member-name-link">ASCII</a> - Static variable in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html" title="class in org.tquadrat.foundation.lang">CommonConstants</a></dt>
 <dd>
 <div class="block">The reference to the ASCII character set.</div>
+</dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Pair.html#asEntry()" class="member-name-link">asEntry()</a> - Method in record class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Pair.html" title="class in org.tquadrat.foundation.lang">Pair</a></dt>
+<dd>
+<div class="block">Returns this instance of <code>Pair</code> as an instance of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.Entry.html" title="class or interface in java.util" class="external-link"><code>Map.Entry</code></a>.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html#asFunction(org.tquadrat.foundation.lang.Stringer)" class="member-name-link">asFunction(Stringer&lt;? super A&gt;)</a> - Static method in interface org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a></dt>
 <dd>

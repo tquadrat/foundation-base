@@ -1,0 +1,642 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='991.000'
+     height='1877.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='513.000'
+                  width='916.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.stream.StreamAdapter'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='916.000'
+                          height='513.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='25.000'
+                          x2='916.000'
+                          y2='25.000'
+                          class='separator'/>
+                    <text x='419.000'
+                          y='21.000'>StreamAdapter</text>
+                    <line x1='0.000'
+                          y1='42.000'
+                          x2='916.000'
+                          y2='42.000'
+                          class='separator'/>
+                    <text y='38.000'
+                          class='final'>- m_Wrapped:java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='55.000'>+ StreamAdapter(wrapped:java.util.stream.Stream&lt;T&gt;)</text>
+                    <text x='5.000'
+                          y='66.000'>+ allMatch(predicate:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='77.000'>+ anyMatch(predicate:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='88.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='99.000'>+ collect(collector:java.util.stream.Collector&lt;? super T,A,R&gt;):R</text>
+                    <text x='5.000'
+                          y='110.000'>+ collect(supplier:java.util.function.Supplier&lt;R&gt;,accumulator:java.util.function.BiConsumer&lt;R,? super T&gt;,combiner:java.util.function.BiConsumer&lt;R,R&gt;):R</text>
+                    <text x='5.000'
+                          y='121.000'>+ count():long</text>
+                    <text x='5.000'
+                          y='132.000'>+ distinct():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='143.000'>+ dropWhile(predicate:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='154.000'>+ filter(predicate:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='165.000'>+ findAny():java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='176.000'>+ findFirst():java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='187.000'>+ flatMap(mapper:java.util.function.Function&lt;? super T,? extends java.util.stream.Stream&lt;? extends R&gt;&gt;):java.util.stream.Stream&lt;R&gt;</text>
+                    <text x='5.000'
+                          y='198.000'>+ flatMapToDouble(mapper:java.util.function.Function&lt;? super T,? extends java.util.stream.DoubleStream&gt;):java.util.stream.DoubleStream</text>
+                    <text x='5.000'
+                          y='209.000'>+ flatMapToInt(mapper:java.util.function.Function&lt;? super T,? extends java.util.stream.IntStream&gt;):java.util.stream.IntStream</text>
+                    <text x='5.000'
+                          y='220.000'>+ flatMapToLong(mapper:java.util.function.Function&lt;? super T,? extends java.util.stream.LongStream&gt;):java.util.stream.LongStream</text>
+                    <text x='5.000'
+                          y='231.000'>+ forEach(action:java.util.function.Consumer&lt;? super T&gt;):void</text>
+                    <text x='5.000'
+                          y='242.000'>+ forEachOrdered(action:java.util.function.Consumer&lt;? super T&gt;):void</text>
+                    <text x='5.000'
+                          y='253.000'>+ isParallel():boolean</text>
+                    <text x='5.000'
+                          y='264.000'>+ iterator():java.util.Iterator&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='275.000'>+ limit(maxSize:long):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='286.000'>+ map(mapper:java.util.function.Function&lt;? super T,? extends R&gt;):java.util.stream.Stream&lt;R&gt;</text>
+                    <text x='5.000'
+                          y='297.000'>+ mapToDouble(mapper:java.util.function.ToDoubleFunction&lt;? super T&gt;):java.util.stream.DoubleStream</text>
+                    <text x='5.000'
+                          y='308.000'>+ mapToInt(mapper:java.util.function.ToIntFunction&lt;? super T&gt;):java.util.stream.IntStream</text>
+                    <text x='5.000'
+                          y='319.000'>+ mapToLong(mapper:java.util.function.ToLongFunction&lt;? super T&gt;):java.util.stream.LongStream</text>
+                    <text x='5.000'
+                          y='330.000'>+ max(comparator:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='341.000'>+ min(comparator:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='352.000'>+ noneMatch(predicate:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='363.000'>+ onClose(closeHandler:java.lang.Runnable):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='374.000'>+ parallel():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='385.000'>+ peek(action:java.util.function.Consumer&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='396.000'>+ reduce(accumulator:java.util.function.BinaryOperator&lt;T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='407.000'>+ reduce(identity:T,accumulator:java.util.function.BinaryOperator&lt;T&gt;):T</text>
+                    <text x='5.000'
+                          y='418.000'>+ reduce(identity:U,accumulator:java.util.function.BiFunction&lt;U,? super T,U&gt;,combiner:java.util.function.BinaryOperator&lt;U&gt;):U</text>
+                    <text x='5.000'
+                          y='429.000'>+ sequential():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='440.000'>+ skip(n:long):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='451.000'>+ sorted():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='462.000'>+ sorted(comparator:java.util.Comparator&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='473.000'>+ spliterator():java.util.Spliterator&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='484.000'>+ takeWhile(predicate:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='495.000'>+ toArray():java.lang.Object[]</text>
+                    <text x='5.000'
+                          y='506.000'>+ toArray(generator:java.util.function.IntFunction&lt;A[]&gt;):A[]</text>
+                    <text x='5.000'
+                          y='517.000'>+ unordered():java.util.stream.Stream&lt;T&gt;</text>
+                </g>
+                <g transform='translate(891.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='focusClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='579.000'
+                  width='832.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='java.util.stream.Stream'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='832.000'
+                          height='579.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='832.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='389.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='398.000'
+                          y='32.000'
+                          class='abstract'>Stream</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='832.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='49.000'/>
+                    <text x='5.000'
+                          y='66.000'
+                          class='abstract'>+ filter(arg0:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='77.000'
+                          class='abstract'>+ map(arg0:java.util.function.Function&lt;? super T,? extends R&gt;):java.util.stream.Stream&lt;R&gt;</text>
+                    <text x='5.000'
+                          y='88.000'
+                          class='abstract'>+ mapToInt(arg0:java.util.function.ToIntFunction&lt;? super T&gt;):java.util.stream.IntStream</text>
+                    <text x='5.000'
+                          y='99.000'
+                          class='abstract'>+ mapToLong(arg0:java.util.function.ToLongFunction&lt;? super T&gt;):java.util.stream.LongStream</text>
+                    <text x='5.000'
+                          y='110.000'
+                          class='abstract'>+ mapToDouble(arg0:java.util.function.ToDoubleFunction&lt;? super T&gt;):java.util.stream.DoubleStream</text>
+                    <text x='5.000'
+                          y='121.000'
+                          class='abstract'>+ flatMap(arg0:java.util.function.Function&lt;? super T,? extends java.util.stream.Stream&lt;? extends R&gt;&gt;):java.util.stream.Stream&lt;R&gt;</text>
+                    <text x='5.000'
+                          y='132.000'
+                          class='abstract'>+ flatMapToInt(arg0:java.util.function.Function&lt;? super T,? extends java.util.stream.IntStream&gt;):java.util.stream.IntStream</text>
+                    <text x='5.000'
+                          y='143.000'
+                          class='abstract'>+ flatMapToLong(arg0:java.util.function.Function&lt;? super T,? extends java.util.stream.LongStream&gt;):java.util.stream.LongStream</text>
+                    <text x='5.000'
+                          y='154.000'
+                          class='abstract'>+ flatMapToDouble(arg0:java.util.function.Function&lt;? super T,? extends java.util.stream.DoubleStream&gt;):java.util.stream.DoubleStream</text>
+                    <text x='5.000'
+                          y='165.000'>&#x2A22; mapMulti(arg0:java.util.function.BiConsumer&lt;? super T,? super java.util.function.Consumer&lt;R&gt;&gt;):java.util.stream.Stream&lt;R&gt;</text>
+                    <text x='5.000'
+                          y='176.000'>&#x2A22; mapMultiToInt(arg0:java.util.function.BiConsumer&lt;? super T,? super java.util.function.IntConsumer&gt;):java.util.stream.IntStream</text>
+                    <text x='5.000'
+                          y='187.000'>&#x2A22; mapMultiToLong(arg0:java.util.function.BiConsumer&lt;? super T,? super java.util.function.LongConsumer&gt;):java.util.stream.LongStream</text>
+                    <text x='5.000'
+                          y='198.000'>&#x2A22; mapMultiToDouble(arg0:java.util.function.BiConsumer&lt;? super T,? super java.util.function.DoubleConsumer&gt;):java.util.stream.DoubleStream</text>
+                    <text x='5.000'
+                          y='209.000'
+                          class='abstract'>+ distinct():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='220.000'
+                          class='abstract'>+ sorted():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='231.000'
+                          class='abstract'>+ sorted(arg0:java.util.Comparator&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='242.000'
+                          class='abstract'>+ peek(arg0:java.util.function.Consumer&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='253.000'
+                          class='abstract'>+ limit(arg0:long):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='264.000'
+                          class='abstract'>+ skip(arg0:long):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='275.000'>&#x2A22; takeWhile(arg0:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='286.000'>&#x2A22; dropWhile(arg0:java.util.function.Predicate&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='297.000'
+                          class='abstract'>+ forEach(arg0:java.util.function.Consumer&lt;? super T&gt;):void</text>
+                    <text x='5.000'
+                          y='308.000'
+                          class='abstract'>+ forEachOrdered(arg0:java.util.function.Consumer&lt;? super T&gt;):void</text>
+                    <text x='5.000'
+                          y='319.000'
+                          class='abstract'>+ toArray():java.lang.Object[]</text>
+                    <text x='5.000'
+                          y='330.000'
+                          class='abstract'>+ toArray(arg0:java.util.function.IntFunction&lt;A[]&gt;):A[]</text>
+                    <text x='5.000'
+                          y='341.000'
+                          class='abstract'>+ reduce(arg0:T,arg1:java.util.function.BinaryOperator&lt;T&gt;):T</text>
+                    <text x='5.000'
+                          y='352.000'
+                          class='abstract'>+ reduce(arg0:java.util.function.BinaryOperator&lt;T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='363.000'
+                          class='abstract'>+ reduce(arg0:U,arg1:java.util.function.BiFunction&lt;U,? super T,U&gt;,arg2:java.util.function.BinaryOperator&lt;U&gt;):U</text>
+                    <text x='5.000'
+                          y='374.000'
+                          class='abstract'>+ collect(arg0:java.util.function.Supplier&lt;R&gt;,arg1:java.util.function.BiConsumer&lt;R,? super T&gt;,arg2:java.util.function.BiConsumer&lt;R,R&gt;):R</text>
+                    <text x='5.000'
+                          y='385.000'
+                          class='abstract'>+ collect(arg0:java.util.stream.Collector&lt;? super T,A,R&gt;):R</text>
+                    <text x='5.000'
+                          y='396.000'>&#x2A22; toList():java.util.List&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='407.000'
+                          class='abstract'>+ min(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='418.000'
+                          class='abstract'>+ max(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='429.000'
+                          class='abstract'>+ count():long</text>
+                    <text x='5.000'
+                          y='440.000'
+                          class='abstract'>+ anyMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='451.000'
+                          class='abstract'>+ allMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='462.000'
+                          class='abstract'>+ noneMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                    <text x='5.000'
+                          y='473.000'
+                          class='abstract'>+ findFirst():java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='484.000'
+                          class='abstract'>+ findAny():java.util.Optional&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='495.000'
+                          class='abstract static'>+ builder():java.util.stream.Stream.Builder&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='506.000'
+                          class='abstract static'>+ empty():java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='517.000'
+                          class='abstract static'>+ of(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='528.000'
+                          class='abstract static'>+ ofNullable(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='539.000'
+                          class='abstract static'>+ of(arg0:T&#x2026;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='550.000'
+                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='561.000'
+                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.Predicate&lt;? super T&gt;,arg2:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='572.000'
+                          class='abstract static'>+ generate(arg0:java.util.function.Supplier&lt;? extends T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='583.000'
+                          class='abstract static'>+ concat(arg0:java.util.stream.Stream&lt;? extends T&gt;,arg1:java.util.stream.Stream&lt;? extends T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                </g>
+                <g transform='translate(807.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='externalClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='139.000'
+                  width='250.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='java.util.stream.BaseStream'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='250.000'
+                          height='139.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='36.000'
+                          x2='250.000'
+                          y2='36.000'
+                          class='separator'/>
+                    <text x='98.600'
+                          y='21.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='95.000'
+                          y='32.000'
+                          class='abstract'>BaseStream</text>
+                    <line x1='0.000'
+                          y1='53.000'
+                          x2='250.000'
+                          y2='53.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='49.000'/>
+                    <text x='5.000'
+                          y='66.000'
+                          class='abstract'>+ iterator():java.util.Iterator&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='77.000'
+                          class='abstract'>+ spliterator():java.util.Spliterator&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='88.000'
+                          class='abstract'>+ isParallel():boolean</text>
+                    <text x='5.000'
+                          y='99.000'
+                          class='abstract'>+ sequential():S</text>
+                    <text x='5.000'
+                          y='110.000'
+                          class='abstract'>+ parallel():S</text>
+                    <text x='5.000'
+                          y='121.000'
+                          class='abstract'>+ unordered():S</text>
+                    <text x='5.000'
+                          y='132.000'
+                          class='abstract'>+ onClose(arg0:java.lang.Runnable):S</text>
+                    <text x='5.000'
+                          y='143.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+                <g transform='translate(225.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='externalClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>T,S</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.AutoCloseable'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='8.000'
+                          y='24.000'
+                          class='abstract'>AutoCloseable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M508.000,1239.000 c0.000,-1027.000,-260.250,0.000,-260.250,-1027.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M458.000,1239.000 c0.000,-93.000,25.000,0.000,25.000,-93.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M483.000,552.000 L483.000,444.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M483.000,305.000 c0.000,-203.000,260.250,0.000,260.250,-203.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='125.750'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='696.250'
+         y='25.000'
+         xlink:href='#java.lang.AutoCloseable'/>
+    <use x='358.000'
+         y='297.000'
+         xlink:href='#java.util.stream.BaseStream'/>
+    <use x='67.000'
+         y='544.000'
+         xlink:href='#java.util.stream.Stream'/>
+    <use x='25.000'
+         y='1231.000'
+         xlink:href='#org.tquadrat.foundation.stream.StreamAdapter'/>
+</svg>

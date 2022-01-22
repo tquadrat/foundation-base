@@ -91,6 +91,15 @@ loadScripts(document, 'script');</script>
 <div class="block">The internal implementations of some general language extensions provided
   by the Foundation Library.</div>
 </div>
+<div class="col-first even-row-color"><a href="#org.tquadrat.foundation.stream">org.tquadrat.foundation.stream</a></div>
+<div class="col-last even-row-color">
+<div class="block">The code in this package was originally written by Dominic Fox and provided
+  in the package <code>com.codepoetics.protonpack</code>.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.tquadrat.foundation.stream.internal">org.tquadrat.foundation.stream.internal</a></div>
+<div class="col-last odd-row-color">
+<div class="block">The internal classes for the stream extensions.</div>
+</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -442,9 +451,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Allows to execute an operation with an obtained lock.</div>
 </div>
-<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../lang/Objects.html" class="type-name-link" title="class in org.tquadrat.foundation.lang">Objects</a></code></div>
+<div class="col-first odd-row-color"><code>final record&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../lang/NameValuePair.html" class="type-name-link" title="class in org.tquadrat.foundation.lang">NameValuePair</a>&lt;V&gt;</code></div>
 <div class="col-last odd-row-color">
+<div class="block">An implementation of a name-value-pair.</div>
+</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../lang/Objects.html" class="type-name-link" title="class in org.tquadrat.foundation.lang">Objects</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">This class consists of several utility methods working on
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>
   instances, similar to those on
@@ -452,14 +466,19 @@ loadScripts(document, 'script');</script>
   or
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html" title="class or interface in java.util" class="external-link"><code>Collections</code></a>.</div>
 </div>
-<div class="col-first even-row-color"><code>interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../lang/Operation.html" class="type-name-link" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;R&gt;</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../lang/Operation.html" class="type-name-link" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;R&gt;</code></div>
+<div class="col-last odd-row-color">
 <div class="block">A variant of the interface
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
   with a
   <a href="../../lang/Operation.html#get()"><code>Operation.get()</code></a>
   method that allows to throw an exception.</div>
+</div>
+<div class="col-first even-row-color"><code>final record&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../lang/Pair.html" class="type-name-link" title="class in org.tquadrat.foundation.lang">Pair</a>&lt;L,<wbr>R&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">The implementation of a tupel.</div>
 </div>
 <div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="../../lang/SoftLazy.html" class="type-name-link" title="interface in org.tquadrat.foundation.lang">SoftLazy</a>&lt;T&gt;</code></div>
@@ -549,6 +568,124 @@ loadScripts(document, 'script');</script>
 <div class="block">The implementation for the
   <a href="../../lang/StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>
   service methods.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.tquadrat.foundation.stream">
+<h2>Uses of <a href="../ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a> in <a href="../../stream/package-summary.html">org.tquadrat.foundation.stream</a></h2>
+<div class="caption"><span>Classes in <a href="../../stream/package-summary.html">org.tquadrat.foundation.stream</a> with annotations of type <a href="../ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/Indexed.html" class="type-name-link" title="class in org.tquadrat.foundation.stream">Indexed</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">A value combined with an index, indicating its position in an ordered
+  sequence.</div>
+</div>
+<div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/MapStream.html" class="type-name-link" title="interface in org.tquadrat.foundation.stream">MapStream</a>&lt;K,<wbr>V&gt;</code></div>
+<div class="col-last odd-row-color">
+<div class="block">A stream of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.Entry.html" title="class or interface in java.util" class="external-link"><code>Map.Entry&lt;K,V&gt;</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><code>interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/Selector.html" class="type-name-link" title="interface in org.tquadrat.foundation.stream">Selector</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">A selector function takes an array of values and returns the respective
+  array index for the selected value.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/Selectors.html" class="type-name-link" title="class in org.tquadrat.foundation.stream">Selectors</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Some useful implementations of the
+  <a href="../../stream/Selector.html" title="interface in org.tquadrat.foundation.stream"><code>Selector</code></a>
+  interface.</div>
+</div>
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/StreamAdapter.html" class="type-name-link" title="class in org.tquadrat.foundation.stream">StreamAdapter</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">This class allows to intercept the calls to the methods of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/StreamUtils.html" class="type-name-link" title="class in org.tquadrat.foundation.stream">StreamUtils</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Utility class providing static methods for performing various operations on
+  Streams.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.tquadrat.foundation.stream.internal">
+<h2>Uses of <a href="../ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a> in <a href="../../stream/internal/package-summary.html">org.tquadrat.foundation.stream.internal</a></h2>
+<div class="caption"><span>Classes in <a href="../../stream/internal/package-summary.html">org.tquadrat.foundation.stream.internal</a> with annotations of type <a href="../ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/internal/AggregatingSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">AggregatingSpliterator</a>&lt;I&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that aggregates the elements of the stream based on a provided
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/internal/DefaultMapStream.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a>&lt;K,<wbr>V&gt;</code></div>
+<div class="col-last odd-row-color">
+<div class="block">The default implementation for
+  <a href="../../stream/MapStream.html" title="interface in org.tquadrat.foundation.stream"><code>MapStream</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/internal/InterleavingSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">InterleavingSpliterator</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">A selector function takes an array of values and returns the respective
+  array index for the selected value.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/internal/MergingSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">MergingSpliterator</a>&lt;T,<wbr>O&gt;</code></div>
+<div class="col-last odd-row-color">
+<div class="block">An implementation of
+  [@link Spliterator}
+  that merges streams.</div>
+</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/internal/SkipUntilSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">SkipUntilSpliterator</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">An implementation of
+  [@link Spliterator}
+  that skips elements on the stream that do not match the provided condition.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/internal/TakeWhileSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">TakeWhileSpliterator</a>&lt;T&gt;</code></div>
+<div class="col-last odd-row-color">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that takes elements from a stream while the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>
+  returns <code>true</code>.</div>
+</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../stream/internal/UnfoldSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">UnfoldSpliterator</a>&lt;T&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that which takes a seed value and applies a generator to create the next
+  value, feeding each new value back into the generator to create subsequent
+  values.</div>
+</div>
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../stream/internal/ZippingSpliterator.html" class="type-name-link" title="class in org.tquadrat.foundation.stream.internal">ZippingSpliterator</a>&lt;L,<wbr>R,<wbr>O&gt;</code></div>
+<div class="col-last odd-row-color">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that zips two streams into one.</div>
 </div>
 </div>
 </section>

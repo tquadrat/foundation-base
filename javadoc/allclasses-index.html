@@ -70,30 +70,37 @@ loadScripts(document, 'script');</script>
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Action.html#run()"><code>Action.run()</code></a>
   method that allows to throw an exception.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ApplicationError.html" title="class in org.tquadrat.foundation.exception">ApplicationError</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">AggregatingSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/AggregatingSpliterator.html" title="type parameter in AggregatingSpliterator">I</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that aggregates the elements of the stream based on a provided
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ApplicationError.html" title="class in org.tquadrat.foundation.exception">ApplicationError</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block">Use the application error to signal the abort of an application.<br>
   <br>This implementation of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
   allows to set a flag that indicates whether this instance was already
   logged or not.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.html" title="interface in org.tquadrat.foundation.lang">AutoLock</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A wrapper for locks that supports the <code>try-with-resources</code> feature
   of Java&nbsp;7.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/AutoLock.ExecutionFailedException.html" title="class in org.tquadrat.foundation.lang">AutoLock.ExecutionFailedException</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block">This exception is thrown when an operation fails.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal">AutoLockImpl</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal">AutoLockImpl</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The implementation of
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/AutoLockImpl.html" title="class in org.tquadrat.foundation.lang.internal"><code>AutoLockImpl</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/CharSequenceTooLongException.html" title="class in org.tquadrat.foundation.exception">CharSequenceTooLongException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/CharSequenceTooLongException.html" title="class in org.tquadrat.foundation.exception">CharSequenceTooLongException</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block">This is a specialized implementation for the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that should be used instead of the latter in cases where a
@@ -101,21 +108,21 @@ loadScripts(document, 'script');</script>
   provided as a method argument is too long according to some external
   constraints, like the column definition of a database.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab7">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">ClassVersion</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab7">
 <div class="block">This annotation will be used to provide version information
   for each class in a project.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html" title="class in org.tquadrat.foundation.lang">CommonConstants</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/CommonConstants.html" title="class in org.tquadrat.foundation.lang">CommonConstants</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class provides a bunch of commonly used constants.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html" title="class in org.tquadrat.foundation.lang">DebugOutput</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Some functions for DEBUG and TEST output to the console.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="class in org.tquadrat.foundation.lang.internal">DefaultEnumStringConverter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a> extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="class in org.tquadrat.foundation.lang.internal">DefaultEnumStringConverter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a> extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The default implementation of
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>
   for types that are derived from
@@ -125,6 +132,11 @@ loadScripts(document, 'script');</script>
   provided here uses
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html#getEnumConstants()" title="class or interface in java.lang" class="external-link"><code>Class.getEnumConstants()</code></a>
   to find the <code>enum</code> value:</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="type parameter in DefaultMapStream">K</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="type parameter in DefaultMapStream">V</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The default implementation for
+  <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/MapStream.html" title="interface in org.tquadrat.foundation.stream"><code>MapStream</code></a>.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab5">
@@ -178,6 +190,16 @@ loadScripts(document, 'script');</script>
   should be thrown in all cases where an exception was caught that seemed to
   be impossible to be thrown.</div>
 </div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Indexed.html" title="class in org.tquadrat.foundation.stream">Indexed</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Indexed.html" title="type parameter in Indexed">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A value combined with an index, indicating its position in an ordered
+  sequence.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/InterleavingSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">InterleavingSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/InterleavingSpliterator.html" title="type parameter in InterleavingSpliterator">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A selector function takes an array of values and returns the respective
+  array index for the selected value.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block">A &quot;container&quot; exception for exception thrown within
@@ -201,26 +223,41 @@ loadScripts(document, 'script');</script>
 <div class="block">The implementation of
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/LockExecutor.html" title="interface in org.tquadrat.foundation.lang"><code>LockExecutor</code></a>.</div>
 </div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/MapStream.html" title="interface in org.tquadrat.foundation.stream">MapStream</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/MapStream.html" title="type parameter in MapStream">K</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/MapStream.html" title="type parameter in MapStream">V</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">A stream of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.Entry.html" title="class or interface in java.util" class="external-link"><code>Map.Entry&lt;K,V&gt;</code></a>.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/MergingSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">MergingSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/MergingSpliterator.html" title="type parameter in MergingSpliterator">T</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/MergingSpliterator.html" title="type parameter in MergingSpliterator">O</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  [@link Spliterator}
+  that merges streams.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/MountPoint.html" title="annotation interface in org.tquadrat.foundation.annotation">MountPoint</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab7">
 <div class="block">The marker annotation for methods that are meant to be overwritten in child
   classes.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/NameValuePair.html" title="class in org.tquadrat.foundation.lang">NameValuePair</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/NameValuePair.html" title="type parameter in NameValuePair">V</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">An implementation of a name-value-pair.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
 <div class="block">This is a specialized implementation for the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that should be used instead of the latter in cases where <code>null</code> is
   provided as an illegal argument value.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/NumberSupplier.html" title="interface in org.tquadrat.foundation.function">NumberSupplier</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/NumberSupplier.html" title="interface in org.tquadrat.foundation.function">NumberSupplier</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Represents a supplier of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link"><code>Number</code></a>-valued
   results.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class consists of several utility methods working on
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>
   instances, similar to those on
@@ -228,13 +265,17 @@ loadScripts(document, 'script');</script>
   or
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html" title="class or interface in java.util" class="external-link"><code>Collections</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Operation.html" title="type parameter in Operation">R</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Operation.html" title="interface in org.tquadrat.foundation.lang">Operation</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Operation.html" title="type parameter in Operation">R</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A variant of the interface
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
   with a
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Operation.html#get()"><code>Operation.get()</code></a>
   method that allows to throw an exception.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Pair.html" title="class in org.tquadrat.foundation.lang">Pair</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Pair.html" title="type parameter in Pair">L</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Pair.html" title="type parameter in Pair">R</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">The implementation of a tupel.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/PlaygroundClass.html" title="annotation interface in org.tquadrat.foundation.annotation">PlaygroundClass</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab7">
@@ -257,6 +298,17 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab7">
 <div class="block">Associates a property name to a method.</div>
 </div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selector.html" title="interface in org.tquadrat.foundation.stream">Selector</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selector.html" title="type parameter in Selector">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">A selector function takes an array of values and returns the respective
+  array index for the selected value.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selectors.html" title="class in org.tquadrat.foundation.stream">Selectors</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Some useful implementations of the
+  <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Selector.html" title="interface in org.tquadrat.foundation.stream"><code>Selector</code></a>
+  interface.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/Setter.html" title="interface in org.tquadrat.foundation.function">Setter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/Setter.html" title="type parameter in Setter">T</a>&gt;</div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">The definition for a setter method.</div>
@@ -268,38 +320,62 @@ loadScripts(document, 'script');</script>
   that uses a shared instance of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html" title="class or interface in java.util" class="external-link"><code>Formatter</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/SoftLazy.html" title="interface in org.tquadrat.foundation.lang">SoftLazy</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/SoftLazy.html" title="type parameter in SoftLazy">T</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/SkipUntilSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">SkipUntilSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/SkipUntilSpliterator.html" title="type parameter in SkipUntilSpliterator">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  [@link Spliterator}
+  that skips elements on the stream that do not match the provided condition.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/SoftLazy.html" title="interface in org.tquadrat.foundation.lang">SoftLazy</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/SoftLazy.html" title="type parameter in SoftLazy">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Instances of the class <code>SoftLazy</code> allow to lazy load data that may be
   needed more than once, but not permanently.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SoftLazyImpl.html" title="class in org.tquadrat.foundation.lang.internal">SoftLazyImpl</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SoftLazyImpl.html" title="type parameter in SoftLazyImpl">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SoftLazyImpl.html" title="class in org.tquadrat.foundation.lang.internal">SoftLazyImpl</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SoftLazyImpl.html" title="type parameter in SoftLazyImpl">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The implementation for the
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/SoftLazy.html" title="interface in org.tquadrat.foundation.lang"><code>SoftLazy</code></a>
   interface.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="class in org.tquadrat.foundation.lang">Status</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="type parameter in Status">V</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="type parameter in Status">C</a>&gt;</div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="class in org.tquadrat.foundation.lang">Status</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="type parameter in Status">V</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html" title="type parameter in Status">C</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
 <div class="block">Instances of this record are meant to be used as the return values for
   methods that should either return a proper result, or an error code.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="type parameter in StringConverter">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html" title="class in org.tquadrat.foundation.stream">StreamAdapter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html" title="type parameter in StreamAdapter">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This class allows to intercept the calls to the methods of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamUtils.html" title="class in org.tquadrat.foundation.stream">StreamUtils</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Utility class providing static methods for performing various operations on
+  Streams.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="type parameter in StringConverter">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Defines the conversion between Strings and object instances,
   where the concrete behaviour is defined by the implementation of the
   interface.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/StringConverterService.html" title="class in org.tquadrat.foundation.lang.internal">StringConverterService</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/StringConverterService.html" title="class in org.tquadrat.foundation.lang.internal">StringConverterService</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The implementation for the
   <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/StringConverter.html" title="interface in org.tquadrat.foundation.lang"><code>StringConverter</code></a>
   service methods.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html" title="type parameter in Stringer">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Stringer.html" title="type parameter in Stringer">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">This interface defines a method to compose a String
   representation from arbitrary objects.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/TakeWhileSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">TakeWhileSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/TakeWhileSpliterator.html" title="type parameter in TakeWhileSpliterator">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that takes elements from a stream while the given
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>
+  returns <code>true</code>.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiConsumer</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBiConsumer.html" title="type parameter in TCEBiConsumer">T1</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBiConsumer.html" title="type parameter in TCEBiConsumer">T2</a>&gt;</div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
@@ -386,23 +462,37 @@ loadScripts(document, 'script');</script>
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
   should be thrown in all cases where an unexpected exception was caught.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnsupportedEnumError.html" title="class in org.tquadrat.foundation.exception">UnsupportedEnumError</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/UnfoldSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">UnfoldSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/UnfoldSpliterator.html" title="type parameter in UnfoldSpliterator">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that which takes a seed value and applies a generator to create the next
+  value, feeding each new value back into the generator to create subsequent
+  values.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnsupportedEnumError.html" title="class in org.tquadrat.foundation.exception">UnsupportedEnumError</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block">This is a specialized implementation for
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
   that is to be thrown especially from the <code>default</code> branch of a
   <code>switch</code> statement that uses an <code>enum</code> type as selector.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">UtilityClass</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab7">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab7"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">UtilityClass</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab7">
 <div class="block">This is a marker annotation for a utility class.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
 <div class="block">This is a specialized implementation for the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
   that is meant as the root for a hierarchy of exceptions caused by
   validation errors.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/ZippingSpliterator.html" title="class in org.tquadrat.foundation.stream.internal">ZippingSpliterator</a>&lt;<a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/ZippingSpliterator.html" title="type parameter in ZippingSpliterator">L</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/ZippingSpliterator.html" title="type parameter in ZippingSpliterator">R</a>,<wbr><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/ZippingSpliterator.html" title="type parameter in ZippingSpliterator">O</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An implementation of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Spliterator.html" title="class or interface in java.util" class="external-link"><code>Spliterator</code></a>
+  that zips two streams into one.</div>
 </div>
 </div>
 </div>

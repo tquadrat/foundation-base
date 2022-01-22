@@ -26,7 +26,6 @@
  *
  *  @todo task.list
  */
-@SuppressWarnings( {"rawtypes", "javadoc"} )
 module org.tquadrat.foundation.base
 {
     requires java.base;
@@ -38,6 +37,7 @@ module org.tquadrat.foundation.base
     exports org.tquadrat.foundation.function;
     exports org.tquadrat.foundation.function.tce;
     exports org.tquadrat.foundation.lang;
+    exports org.tquadrat.foundation.stream;
 
     uses org.tquadrat.foundation.lang.StringConverter;
 
