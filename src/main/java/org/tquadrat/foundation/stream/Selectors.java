@@ -47,13 +47,13 @@ import org.tquadrat.foundation.lang.Objects;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Selectors.java 635 2020-02-04 12:08:02Z tquadrat $
+ *  @version $Id: Selectors.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Selectors.java 635 2020-02-04 12:08:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Selectors.java 995 2022-01-23 01:09:35Z tquadrat $" )
 public final class Selectors
 {
         /*--------------*\

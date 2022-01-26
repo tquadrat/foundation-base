@@ -39,7 +39,7 @@ import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.stream.MapStream;
 
-@ClassVersion( sourceVersion = "$Id: MapStreamTest.java 682 2020-03-21 19:20:31Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MapStreamTest.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @DisplayName( "com.codepoetics.protonpack.MapStreamTest" )
 public class MapStreamTest
 {

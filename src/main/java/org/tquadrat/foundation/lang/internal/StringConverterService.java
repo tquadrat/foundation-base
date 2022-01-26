@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  service methods.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverterService.java 897 2021-04-06 21:34:01Z tquadrat $
+ *  @version $Id: StringConverterService.java 997 2022-01-26 14:55:05Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StringConverterService.java 897 2021-04-06 21:34:01Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverterService.java 997 2022-01-26 14:55:05Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class StringConverterService
@@ -93,7 +93,6 @@ public final class StringConverterService
     public static final Map<Class<?>,StringConverter<?>> loadConverters()
     {
         final var moduleLayer = StringConverter.class.getModule().getLayer();
-        @SuppressWarnings( "rawtypes" )
         final var converters = isNull( moduleLayer )
             ? ServiceLoader.load( StringConverter.class )
             : ServiceLoader.load( moduleLayer, StringConverter.class );
@@ -173,9 +172,9 @@ public final class StringConverterService
     }   //  retrieveConverterForEnum()
 
     /**
-     *  Determines the key class for the given instance of
-     *  {@link StringConverter}.
-     *  The subject class is the target type for a call to
+     *  <p>{@summary Determines the key class for the given instance of
+     *  {@link StringConverter}.}</p>
+     *  <p>The subject class is the target type for a call to
      *  {@link StringConverter#fromString(CharSequence) fromString()},
      *  and usually this is also the type of the argument for
      *  {@link StringConverter#toString(Object) toString(T)};
@@ -183,7 +182,7 @@ public final class StringConverterService
      *  reflection. For that case, some implementation of
      *  {@code StringConverter} provides an optional method
      *  {@code public Class<?> getSubjectClass()} that returns the respective
-     *  class.
+     *  class.</p>
      *
       * @param  converter   The converter instance.
      *  @return The subject class.

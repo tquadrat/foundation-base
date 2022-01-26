@@ -64,12 +64,12 @@ import org.tquadrat.foundation.stream.MapStream;
  *
  *  @author Alexis Cartier (alexcrt)
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultMapStream.java 635 2020-02-04 12:08:02Z tquadrat $
+ *  @version $Id: DefaultMapStream.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultMapStream.java 635 2020-02-04 12:08:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultMapStream.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class DefaultMapStream<K,V> implements MapStream<K,V>
 {

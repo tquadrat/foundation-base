@@ -46,14 +46,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AggregatingSpliterator.java 635 2020-02-04 12:08:02Z tquadrat $
+ *  @version $Id: AggregatingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <I> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 635 2020-02-04 12:08:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public class AggregatingSpliterator<I> implements Spliterator<List<I>>
 {

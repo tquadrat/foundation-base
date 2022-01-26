@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  left    The left value of the pair.
  *  @param  right   The right value of the pair.
  *
- *  @version $Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
+ *  @version $Id: Pair.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Pair.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Pair<L,R>( L left, R right )
 {

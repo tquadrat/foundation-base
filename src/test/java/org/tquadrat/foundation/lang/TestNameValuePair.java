@@ -42,11 +42,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Tests for the class
  *  {@link NameValuePair}.
  *
- *  @version $Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
+ *  @version $Id: TestNameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestNameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.TestNameValuePair" )
 public class TestNameValuePair extends TestBaseClass

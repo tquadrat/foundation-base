@@ -49,14 +49,14 @@ import org.tquadrat.foundation.stream.Selector;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: InterleavingSpliterator.java 635 2020-02-04 12:08:02Z tquadrat $
+ *  @version $Id: InterleavingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the values to select from.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 635 2020-02-04 12:08:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class InterleavingSpliterator<T> implements Spliterator<T>
 {

@@ -19,14 +19,17 @@ package org.tquadrat.foundation.lang;
 
 import static java.lang.Boolean.getBoolean;
 import static java.lang.System.out;
+import static java.lang.Thread.currentThread;
 import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
 import java.io.PrintStream;
+import java.util.Optional;
 import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -39,13 +42,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: DebugOutput.java 997 2022-01-26 14:55:05Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 997 2022-01-26 14:55:05Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {
@@ -168,6 +171,50 @@ public final class DebugOutput
     public static final void debugOutput( final Throwable e ) { ifDebug( e ); }
 
     /**
+     *  <p>{@summary This method will find the caller for the method that is
+     *  identified by its name and class, and returns the appropriate stack
+     *  trace element.}</p>
+     *  <p>The return value is
+     *  {@linkplain Optional#empty() empty}
+     *  when the provided method is not on the stack trace.</p>
+     *
+     *  @param  methodName  The name of the method that we need the caller for.
+     *  @param  owningClass The class for the called method.
+     *  @return An instance of
+     *      {@link Optional}
+     *      that holds the stack trace element for the caller.
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    public static final Optional<StackTraceElement> findCaller( final String methodName, final Class<?> owningClass )
+    {
+        requireNotEmptyArgument( methodName, "methodName" );
+        final var className = requireNonNullArgument( owningClass, "owningClass" ).getName();
+
+        //---* Retrieve the stack *--------------------------------------------
+        final var stackTraceElements = currentThread().getStackTrace();
+        final var len = stackTraceElements.length;
+
+        //---* Search the stack *----------------------------------------------
+        Optional<StackTraceElement> retValue = Optional.empty();
+        FindLoop: for( var i = 0; (i < len) && retValue.isEmpty(); ++i )
+        {
+            /*
+             * This loop searches the stack until it will find the entry for
+             * that matches that for the provided arguments on it. It assumes
+             * then that the next entry on the stack will belong to the caller
+             * for this method.
+             */
+            if( className.equals( stackTraceElements [i].getClassName() ) && methodName.equals( stackTraceElements [i].getMethodName() ) )
+            {
+                if( i + 1 < len ) retValue = Optional.of( stackTraceElements [i + 1] );
+            }
+        }   //  FindLoop:
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  findCaller()
+
+    /**
      *  If the
      *  {@linkplain System#getProperty(String) System property}
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
@@ -185,7 +232,12 @@ public final class DebugOutput
         if( m_IsDebug )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "DEBUG: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifDebug", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "DEBUG: %s%n", message ) );
+            }
         }
     }   //  ifDebug()
 
@@ -210,7 +262,12 @@ public final class DebugOutput
         if( m_IsDebug && requireNonNullArgument( condition, "condition" ).getAsBoolean() )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "DEBUG: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifDebug", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "DEBUG: %s%n", message ) );
+            }
         }
     }   //  debugOutput()
 
@@ -234,7 +291,12 @@ public final class DebugOutput
         if( m_IsDebug && condition )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "DEBUG: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifDebug", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "DEBUG: %s%n", message ) );
+            }
         }
     }   //  ifDebug()
 
@@ -277,7 +339,12 @@ public final class DebugOutput
         if( m_IsTest )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "TEST_: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifTest", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "TEST: %s%n", message ) );
+            }
         }
     }   //  ifTest()
 
@@ -302,7 +369,12 @@ public final class DebugOutput
         if( m_IsDebug && requireNonNullArgument( condition, "condition" ).getAsBoolean() )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "TEST_: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifTest", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "TEST: %s%n", message ) );
+            }
         }
     }   //  ifTest()
 
@@ -326,7 +398,12 @@ public final class DebugOutput
         if( m_IsDebug && condition )
         {
             final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
-            if( nonNull( message ) && !message.isBlank() ) out.printf( "TEST_: %s%n", message );
+            if( nonNull( message ) && !message.isBlank() )
+            {
+                findCaller( "ifTest", DebugOutput.class )
+                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> out.printf( "TEST: %s%n", message ) );
+            }
         }
     }   //  ifTest()
 
@@ -346,7 +423,7 @@ public final class DebugOutput
     {
         if( m_IsDebug && nonNull( e ) )
         {
-            out.print( "TEST_: " );
+            out.print( "TEST: " );
             e.printStackTrace( out );
         }
     }   //  ifTest()

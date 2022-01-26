@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.stream.StreamUtils;
 
-@ClassVersion( sourceVersion = "$Id: AggregateTest.java 635 2020-02-04 12:08:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AggregateTest.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @DisplayName( "com.codepoetics.protonpack.AggregateTest" )
 public class AggregateTest
 {

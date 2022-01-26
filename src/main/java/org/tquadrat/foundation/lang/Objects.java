@@ -60,13 +60,13 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  name from {@code java.util.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $" )
 @UtilityClass
 public final class Objects
 {
@@ -318,14 +318,36 @@ public final class Objects
     public static final boolean isNull( final Object obj ) { return java.util.Objects.isNull( obj ); }
 
     /**
-     *  Returns {@code true} if the provided reference is not {@code null},
-     *  otherwise returns {@code false}.<br>
-     *  <br>This method exists to be used as a
+     *  <p>{@summary Maps (converts) the given object instance by applying the provided mapper if the
+     *  instance is not {@code null}.}</p>
+     *  <p>The mapper function will not be called at all if the given instance is
+     *  {@code null}.</p>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  <R> The type of the result.
+     *  @param  o   The object to map; can be {@code null}.
+     *  @param  mapper  The mapping function.
+     *  @return The result of the mapping, or {@code null} if the given object
+     *      instance was already {@code null}.
+     */
+    public static final <T,R> R mapNonNull( final T o, final Function<T,R> mapper )
+    {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final R retValue = nonNull( o ) ? requireNonNullArgument( mapper, "mapper" ).apply( o ) : null;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapNonNull()
+
+    /**
+     *  <p>{@summary Returns {@code true} if the provided reference is not
+     *  {@code null}, otherwise returns {@code false}.}</p>
+     *  <p>This method exists to be used as a
      *  {@link java.util.function.Predicate},
-     *  {@code filter(Objects::nonNull)}<br>
-     *  <br>Calls
+     *  {@code filter(Objects::nonNull)}</p>
+     *  <p>Calls
      *  {@link java.util.Objects#nonNull(Object)}
-     *  internally.
+     *  internally.</p>
      *
      *  @param  obj A reference to be checked against {@code null}
      *  @return {@code false} if the provided reference is {@code null},

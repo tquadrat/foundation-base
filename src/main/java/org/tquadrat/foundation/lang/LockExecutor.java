@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
  *  @note   If your program is using {@code AutoLock}, you should use the
  *      corresponding methods from there.
  *
- *  @version $Id: LockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: LockExecutor.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutor.java 995 2022-01-23 01:09:35Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface LockExecutor
     permits LockExecutorImpl
