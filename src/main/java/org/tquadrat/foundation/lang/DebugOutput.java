@@ -27,7 +27,9 @@ import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Optional;
 import java.util.function.BooleanSupplier;
@@ -42,16 +44,24 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 997 2022-01-26 14:55:05Z tquadrat $
+ *  @version $Id: DebugOutput.java 1005 2022-02-03 12:40:52Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 997 2022-01-26 14:55:05Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1005 2022-02-03 12:40:52Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {
+        /*------------*\
+    ====** Attributes **=======================================================
+        \*------------*/
+    /**
+     *  The printer.
+     */
+    private static Printer m_Printer = out::printf;
+
         /*------------------------*\
     ====** Static Initialisations **===========================================
         \*------------------------*/
@@ -218,13 +228,39 @@ public final class DebugOutput
      *  If the
      *  {@linkplain System#getProperty(String) System property}
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set, execute the given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  is set, call the specified
+     *  {@link Printer}
+     *  to write the given message.
+     *
+     *  @param  message The message; it is a format as defined for
+     *      {@link java.util.Formatter}.
+     *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    public static final void ifDebug( final String message, final Object... args )
+    {
+        if( m_IsDebug && nonNull( message ) && !message.isBlank() )
+        {
+            findCaller( "ifDebug", DebugOutput.class )
+                .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", format( message, args ), c ),
+                    () -> m_Printer.printf( "DEBUG: %s%n", format( message, args ) ) );
+        }
+    }   //  ifDebug()
+
+    /**
+     *  If the
+     *  {@linkplain System#getProperty(String) System property}
+     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
+     *  is set, call the specified
+     *  {@link Printer}
+     *  to write the given message.
      *
      *  @param  supplier    The {@code Function} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final Function<Object [],String> supplier, final Object... args )
@@ -235,8 +271,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "DEBUG: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
     }   //  ifDebug()
@@ -249,12 +285,15 @@ public final class DebugOutput
      *  {@link BooleanSupplier condition}
      *  resolves to {@code true}, execute the given
      *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  and call the specified
+     *  {@link Printer}
+     *  to write result.
      *
      *  @param  condition   Only if {@code true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
@@ -265,8 +304,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "DEBUG: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
     }   //  debugOutput()
@@ -278,12 +317,15 @@ public final class DebugOutput
      *  is set and the given condition resolves to {@code true}, execute the
      *  given
      *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  and call the specified
+     *  {@link Printer}
+     *  to write the result.
      *
      *  @param  condition   Only if {@code true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final boolean condition, final Function<Object [],String> supplier, final Object... args )
@@ -294,8 +336,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "DEBUG: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
     }   //  ifDebug()
@@ -305,19 +347,48 @@ public final class DebugOutput
      *  {@linkplain System#getProperty(String) System property}
      *  {@value CommonConstants#PROPERTY_IS_DEBUG}
      *  is set, a call to
-     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace( out )}
+     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace()}
      *  is made.}</p>
-     *  <p>Use this to get a view to an otherwise ignored exception.</p>
+     *  <p>Use this to provide a view to an otherwise ignored exception.</p>
      *
      *  @param  e   The exception.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final Throwable e )
     {
         if( m_IsDebug && nonNull( e ) )
         {
-            out.print( "DEBUG: " );
-            e.printStackTrace( out );
+            m_Printer.print( "DEBUG: " );
+            final var bos = new ByteArrayOutputStream();
+            e.printStackTrace( new PrintStream( bos ) );
+            m_Printer.println( bos.toString() );
+        }
+    }   //  ifDebug()
+
+    /**
+     *  If the
+     *  {@linkplain System#getProperty(String) System property}
+     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
+     *  is set, call the specified
+     *  {@link Printer}
+     *  to write the given message.
+     *
+     *  @param  message The message; it is a format as defined for
+     *      {@link java.util.Formatter}.
+     *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    public static final void ifTest( final String message, final Object... args )
+    {
+        if( m_IsTest && nonNull( message ) && !message.isBlank() )
+        {
+            findCaller( "ifTest", DebugOutput.class )
+                .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", format( message, args ), c ),
+                    () -> m_Printer.printf( "TEST: %s%n", format( message, args ) ) );
         }
     }   //  ifDebug()
 
@@ -327,11 +398,14 @@ public final class DebugOutput
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
      *  is set, execute the given
      *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  and call the specified
+     *  {@link Printer}
+     *  to write the result.
      *
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final Function<Object [],String> supplier, final Object... args )
@@ -342,8 +416,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "TEST: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }
     }   //  ifTest()
@@ -356,12 +430,15 @@ public final class DebugOutput
      *  {@link BooleanSupplier condition}
      *  resolves to {@code true}, execute the given
      *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  and call the specified
+     *  {@link Printer}
+     *  to write the result.
      *
      *  @param  condition   Only if {@code true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
@@ -372,8 +449,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "TEST: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }
     }   //  ifTest()
@@ -385,12 +462,15 @@ public final class DebugOutput
      *  is set and the given condition resolves to {@code true}, execute the
      *  given
      *  {@link Supplier}
-     *  and write the result to
-     *  {@link System#out System.out}.
+     *  and call the specified
+     *  {@link Printer}
+     *  to write the result.
      *
      *  @param  condition   Only if {@code true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final boolean condition, final Function<Object [],String> supplier, final Object... args )
@@ -401,8 +481,8 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> out.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
-                        () -> out.printf( "TEST: %s%n", message ) );
+                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                        () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }
     }   //  ifTest()
@@ -412,19 +492,23 @@ public final class DebugOutput
      *  {@linkplain System#getProperty(String) System property}
      *  {@value CommonConstants#PROPERTY_IS_TEST}
      *  is set, a call to
-     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace( out )}
+     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace()}
      *  is made.}</p>
      *  <p>Use this to get a view to an otherwise ignored exception.</p>
      *
      *  @param  e   The exception.
+     *
+     *  @see #setPrinter(Printer)
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final Throwable e )
     {
         if( m_IsDebug && nonNull( e ) )
         {
-            out.print( "TEST: " );
-            e.printStackTrace( out );
+            m_Printer.print( "TEST: " );
+            final var bos = new ByteArrayOutputStream();
+            e.printStackTrace( new PrintStream( bos ) );
+            m_Printer.println( bos.toString() );
         }
     }   //  ifTest()
 
@@ -445,6 +529,20 @@ public final class DebugOutput
      *  @see CommonConstants#PROPERTY_IS_TEST
      */
     public static final boolean isTest() { return m_IsTest; }
+
+    /**
+     *  <p>{@summary Assigns the
+     *  {@link Printer}
+     *  for the DEBUG/TEST output.}</p>
+     *  <p>The default implementation writes to
+     *  {@link System#out}.</p>
+     *
+     *  @param  printer The printer
+     */
+    public static final void setPrinter( final Printer printer )
+    {
+        m_Printer = requireNonNullArgument( printer, "printer" );
+    }   //  setPrinter()
 
     /**
      *  If the
@@ -518,7 +616,7 @@ public final class DebugOutput
      *  is set, a call to
      *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace( out )}
      *  is made.}</p>
-     *  <p>Use this to get a view to an otherwise ignored exception.</p>
+     *  <p>Use this to provide a view to an otherwise ignored exception.</p>
      *
      *  @param  e   The exception.
      *
