@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='462.000'
-     height='1969.000'>
+     height='1980.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='1547.000'
+                  height='1558.000'
                   width='412.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='412.000'
-                          height='1547.000'
+                          height='1558.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -140,9 +140,9 @@
                     <text x='161.000'
                           y='13.000'>CommonConstants</text>
                     <line x1='0.000'
-                          y1='1530.000'
+                          y1='1541.000'
                           x2='412.000'
-                          y2='1530.000'
+                          y2='1541.000'
                           class='separator'/>
                     <text y='30.000'
                           class='static final'>+ CHAR_ELLIPSIS:char</text>
@@ -407,19 +407,21 @@
                     <text y='1460.000'
                           class='static final'>+ NOT_FOUND:int</text>
                     <text y='1471.000'
-                          class='static final'>+ NULL_CHAR:char</text>
+                          class='static final'>+ NUL:java.lang.String</text>
                     <text y='1482.000'
-                          class='static final'>+ NULL_STRING:java.lang.String</text>
+                          class='static final'>+ NULL_CHAR:char</text>
                     <text y='1493.000'
-                          class='static final'>+ THOUSANDS_SEPARATOR:char</text>
+                          class='static final'>+ NULL_STRING:java.lang.String</text>
                     <text y='1504.000'
-                          class='static final'>+ UNKNOWN_STRING:java.lang.String</text>
+                          class='static final'>+ THOUSANDS_SEPARATOR:char</text>
                     <text y='1515.000'
-                          class='static final'>+ IS_NULL:java.util.function.Predicate&lt;? extends java.lang.Object&gt;</text>
+                          class='static final'>+ UNKNOWN_STRING:java.lang.String</text>
                     <text y='1526.000'
+                          class='static final'>+ IS_NULL:java.util.function.Predicate&lt;? extends java.lang.Object&gt;</text>
+                    <text y='1537.000'
                           class='static final'>+ NON_NULL:java.util.function.Predicate&lt;? extends java.lang.Object&gt;</text>
                     <text x='5.000'
-                          y='1543.000'>- CommonConstants()</text>
+                          y='1554.000'>- CommonConstants()</text>
                 </g>
             </g>
         </symbol>

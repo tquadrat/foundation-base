@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -53,10 +53,6 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  <p>{@summary This class provides a bunch of commonly used constants.}</p>
  *  <p>The constants are arranged into several categories.</p>
  *  <ul>
- *      <li>{@code EMPTY_*_ARRAY} constants: These constants are most useful in
- *      the context of the
- *      {@link java.util.Collection#toArray(Object[]) toArray()} methods of the
- *      various collection implementations.</li>
  *      <li>Physical constants like gravity and speed of light.</li>
  *      <li>XML constants, like often used names for entities and
  *      attributes.</li>
@@ -65,13 +61,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: CommonConstants.java 1010 2022-02-05 19:28:36Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyFields" )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1010 2022-02-05 19:28:36Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -404,7 +400,6 @@ public final class CommonConstants
      *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
      *      call to {@code new []}.
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @Deprecated( since = "0.1.0", forRemoval = true )
     @API( status = DEPRECATED, since = "0.0.5" )
     public static final int [] EMPTY_int_ARRAY = new int [0];
@@ -901,7 +896,6 @@ public final class CommonConstants
      *  should have the rights 544, while the folder and its sub-folders should
      *  have 755.
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_ROOT_SYSTEM = "java.util.prefs.systemRoot";
 
@@ -911,7 +905,6 @@ public final class CommonConstants
      *  <br>If not set, the location is {@code ~/}, resulting to
      *  {@code ~/.java/.userPrefs/}.
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_ROOT_USER = "java.util.prefs.userRoot";
 
@@ -921,7 +914,6 @@ public final class CommonConstants
      *  <br>If not set, the interval is 30 seconds. The minimum value is one
      *  second.
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_PREFS_SYNC = "java.util.prefs.syncInterval";
 
@@ -960,7 +952,6 @@ public final class CommonConstants
      *  The vested system property for the name of the {@code temp} folder that
      *  is used by the current user: {@value}.
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.5" )
     public static final String PROPERTY_TEMPFOLDER = "java.io.tmpdir";
 
@@ -1358,6 +1349,13 @@ public final class CommonConstants
     public static final int NOT_FOUND = -1;
 
     /**
+     *  A String containing only {@code NUL} (the
+     *  {@link #NULL_CHAR}).
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    public static final String NUL;
+
+    /**
      *  The null character.
      */
     @API( status = STABLE, since = "0.0.5" )
@@ -1416,6 +1414,7 @@ public final class CommonConstants
         EMPTY_STRING = "";
         EMPTY_CHARSEQUENCE = EMPTY_STRING;
         NULL_CHAR = '\u0000';
+        NUL = Character.toString( NULL_CHAR );
 
         /*
          * The cast is required because if omitted, String.valueOf( char [] ) would
