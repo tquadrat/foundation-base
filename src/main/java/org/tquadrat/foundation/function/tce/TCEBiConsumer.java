@@ -24,34 +24,34 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
+ *  <p>{@summary The TCE version of the interface
  *  {@link java.util.function.BiConsumer}
  *  that represents an operation that accepts two input arguments and returns
- *  no result. This is the two-arity specialisation of
- *  {@link TCEConsumer}.
- *  Unlike most other functional interfaces, {@code BiConsumer} is expected to
- *  operate via side effects.<br>
- *  <br>Different from the method
+ *  no result.} This is the two-arity specialisation of
+ *  {@link TCEConsumer}.</p>
+ *  <p>Unlike most other functional interfaces, {@code BiConsumer} is expected
+ *  to operate via side effects.</p>
+ *  <p>Different from the method
  *  {@link java.util.function.BiConsumer#accept(Object,Object) BiConsumer.accept()}
  *  the method
  *  {@link #accept(Object,Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #accept(Object,Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #accept(Object,Object)}.</p>
  *
  *  @param <T1> The type of the first argument to the operation.
  *  @param <T2> The type of the second argument to the operation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBiConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TCEBiConsumer.java 1020 2022-02-27 21:26:03Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 1020 2022-02-27 21:26:03Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBiConsumer<T1,T2>
 {
