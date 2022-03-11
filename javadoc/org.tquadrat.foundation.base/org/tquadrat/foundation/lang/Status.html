@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
       success.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">public record </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#line-67">Status</a>&lt;V,<wbr>C&gt;</span>(<a href="Status.html" title="type parameter in Status">V</a>&nbsp;result, <a href="Status.html" title="type parameter in Status">C</a>&nbsp;errorCode)
@@ -133,7 +133,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $</dd>
+<dd>$Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 
@@ -337,7 +337,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getOrElse(org.tquadrat.foundation.lang.ErrorHandler)">
 <h3>getOrElse</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Status.html" title="type parameter in Status">V</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#line-84">getOrElse</a></span><wbr><span class="parameters">(<a href="ErrorHandler.html" title="interface in org.tquadrat.foundation.lang">ErrorHandler</a>&lt;? super <a href="Status.html" title="type parameter in Status">C</a>&gt;&nbsp;errorHandler)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></span></div>
 <div class="block">Returns the result in case of a success, otherwise executes the given
   error handler and throws the exception determined by it.</div>
 <dl class="notes">
@@ -346,8 +346,8 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>The result.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - Any exception that is determined by the error
-      handler.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - Any exception that is determined by the
+      error handler.</dd>
 </dl>
 </section>
 </li>
@@ -418,7 +418,7 @@ loadScripts(document, 'script');</script>
 <h3>onSuccess</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#line-156">onSuccess</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="Status.html" title="type parameter in Status">V</a>&gt;&nbsp;action,
  <a href="ErrorHandler.html" title="interface in org.tquadrat.foundation.lang">ErrorHandler</a>&lt;? super <a href="Status.html" title="type parameter in Status">C</a>&gt;&nbsp;errorHandler)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></span></div>
 <div class="block">Performs the given action on success, otherwise throws the exception
   determined by the error handler.</div>
 <dl class="notes">
@@ -426,8 +426,8 @@ loadScripts(document, 'script');</script>
 <dd><code>action</code> - The action.</dd>
 <dd><code>errorHandler</code> - The error handler.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - Any exception that is determined by the error
-      handler.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - Any exception that is determined by the
+      error handler.</dd>
 </dl>
 </section>
 </li>
@@ -436,7 +436,7 @@ loadScripts(document, 'script');</script>
 <h3>onSuccess</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#line-176">onSuccess</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="Status.html" title="type parameter in Status">V</a>,<wbr>R&gt;&nbsp;conversion,
  <a href="ErrorHandler.html" title="interface in org.tquadrat.foundation.lang">ErrorHandler</a>&lt;? super <a href="Status.html" title="type parameter in Status">C</a>&gt;&nbsp;errorHandler)</span>
-                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></span></div>
 <div class="block">Performs the given conversion on success, otherwise throws the
   exception determined by the error handler.</div>
 <dl class="notes">
@@ -448,8 +448,8 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>The converted result.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code> - Any exception that is determined by the error
-      handler.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></code> - Any exception that is determined by the
+      error handler.</dd>
 </dl>
 </section>
 </li>

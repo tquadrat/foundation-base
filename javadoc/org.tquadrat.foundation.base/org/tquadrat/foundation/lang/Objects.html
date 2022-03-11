@@ -23,6 +23,7 @@
 <meta name="keywords" content="require()">
 <meta name="keywords" content="requireNonNull()">
 <meta name="keywords" content="requireNonNullArgument()">
+<meta name="keywords" content="requireNotBlankArgument()">
 <meta name="keywords" content="requireNotEmptyArgument()">
 <meta name="keywords" content="requireNonNullElse()">
 <meta name="keywords" content="requireNonNullElseGet()">
@@ -101,9 +102,9 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $")
-<a href="../annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">@UtilityClass</a>
-</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-68">Objects</a></span>
+<div class="type-signature"><span class="annotations"><a href="../annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">@UtilityClass</a>
+<a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $")
+</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-69">Objects</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">This class consists of several utility methods working on
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a>
@@ -121,7 +122,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $</dd>
+<dd>$Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 
@@ -262,9 +263,8 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#deepEquals(java.lang.Object,java.lang.Object)" class="member-name-link">deepEquals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns <code>true</code> if the arguments are deeply equal to each other
-  and <code>false</code> otherwise.<br>
-  <br>Two <code>null</code> values are deeply equal.</div>
+<div class="block">Returns <code>true</code> if the arguments are deeply equal to
+  each other and <code>false</code> otherwise.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#equals(java.lang.Object,java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
@@ -436,10 +436,23 @@ R&gt;&nbsp;R</code></div>
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNullElseGet(T,java.util.function.Supplier)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNullElseGet(Object,Supplier)</code></a>
   as it will always check that the supplier is not <code>null</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireNotEmptyArgument(java.util.Optional,java.lang.String)" class="member-name-link">requireNotEmptyArgument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&nbsp;optional,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&gt;<br>T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireNotBlankArgument(T,java.lang.String)" class="member-name-link">requireNotBlankArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Checks if the given String argument <code>a</code> is
+  <code>null</code>, empty or blank and throws a
+  <a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
+  if it is <code>null</code>, an
+  <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
+  if it is empty, or a
+  <a href="../exception/BlankArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>BlankArgumentException</code></a>
+  if it is blank.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireNotEmptyArgument(java.util.Optional,java.lang.String)" class="member-name-link">requireNotEmptyArgument</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&nbsp;optional,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Checks if the given argument <code>a</code> of type
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>
   is <code>null</code> or empty and
@@ -453,92 +466,59 @@ R&gt;&nbsp;R</code></div>
   <a href="#requireNotEmptyArgument(T,java.lang.String)"><code>requireNotEmptyArgument(Object,String)</code></a>
   with an instance of <code>Optional</code> as the argument to test.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireNotEmptyArgument(T,java.lang.String)" class="member-name-link">requireNotEmptyArgument</a><wbr>(T&nbsp;a,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireNotEmptyArgument(T,java.lang.String)" class="member-name-link">requireNotEmptyArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Checks if the given argument <code>a</code> is <code>null</code> or empty and
-  throws a
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Checks if the given argument <code>a</code> is <code>null</code> or
+  empty and throws a
   <a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
-  if it is <code>null</code>, or a
+  if it is <code>null</code>, or an
   <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
-  if it is empty.<br>
-  <br>Strings, arrays,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>s, and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a>s
-  will be checked on being empty; this includes instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link"><code>StringBuilder</code></a>,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html" title="class or interface in java.lang" class="external-link"><code>StringBuffer</code></a>,
-  and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link"><code>CharSequence</code></a>.<br>
-  <br>For an instance of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
-  the presence of a value is checked in order to determine whether it is
-  empty or not.<br>
-  <br>Because the interface
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link"><code>Enumeration</code></a>
-  does not provide an API for the check on emptiness
-  (<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html#hasMoreElements()" title="class or interface in java.util" class="external-link"><code>hasMoreElements()</code></a>
-  will return <code>false</code> after all elements have been taken from
-  the <code>Enumeration</code> instance), the result for arguments of this
-  type has to be taken with caution.<br>
-  <br>For instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
-  this method will only check for <code>null</code> (like
-  <a href="#requireNonNullArgument(T,java.lang.String)"><code>requireNonNullArgument(Object,String)</code></a>.</div>
+  if it is empty.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;a,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the given validation on the given value, and if that fails, an
   <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   with a default message is thrown.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;a,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the given validation on the given value, and if that fails, an
   <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   is thrown.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidNonNullArgument</a><wbr>(T&nbsp;a,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidNonNullArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the given validation on the given value (that may not be
   <code>null</code>), and if that fails, an
   <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   with a default message is thrown.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidNonNullArgument</a><wbr>(T&nbsp;a,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidNonNullArgument</a><wbr>(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the given validation on the given value (that may not be
   <code>null</code>), and if that fails, an
   <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   is thrown.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(java.lang.Object)" class="member-name-link">toString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts the given argument <code>object</code> into a
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
-  usually by calling its
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>toString()</code></a>
-  method.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(java.lang.Object,java.lang.String)" class="member-name-link">toString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullDefault)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(java.lang.Object)" class="member-name-link">toString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts the given argument <code>object</code> into a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
@@ -546,11 +526,21 @@ R&gt;&nbsp;R</code></div>
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>toString()</code></a>
   method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(T,org.tquadrat.foundation.lang.Stringer,java.lang.String)" class="member-name-link">toString</a><wbr>(T&nbsp;object,
- <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super T&gt;&nbsp;stringer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(java.lang.Object,java.lang.String)" class="member-name-link">toString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullDefault)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Converts the given argument <code>object</code> into a
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
+  usually by calling its
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>toString()</code></a>
+  method.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#toString(T,org.tquadrat.foundation.lang.Stringer,java.lang.String)" class="member-name-link">toString</a><wbr>(T&nbsp;object,
+ <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super T&gt;&nbsp;stringer,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullDefault)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts the given argument <code>object</code> into a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>
   using the given instance of
@@ -576,7 +566,7 @@ R&gt;&nbsp;R</code></div>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>Objects</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-79">Objects</a></span>()</div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-80">Objects</a></span>()</div>
 <div class="block">No instance allowed for this class.</div>
 </section>
 </li>
@@ -593,7 +583,7 @@ R&gt;&nbsp;R</code></div>
 <h3>checkFromIndexSize</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-109">checkFromIndexSize</a></span><wbr><span class="parameters">(int&nbsp;fromIndex,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-110">checkFromIndexSize</a></span><wbr><span class="parameters">(int&nbsp;fromIndex,
  int&nbsp;size,
  int&nbsp;length)</span></div>
 <div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive) to
@@ -630,7 +620,7 @@ R&gt;&nbsp;R</code></div>
 <h3>checkFromToIndex</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-136">checkFromToIndex</a></span><wbr><span class="parameters">(int&nbsp;fromIndex,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-137">checkFromToIndex</a></span><wbr><span class="parameters">(int&nbsp;fromIndex,
  int&nbsp;toIndex,
  int&nbsp;length)</span></div>
 <div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive) to
@@ -666,7 +656,7 @@ R&gt;&nbsp;R</code></div>
 <h3>checkIndex</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-159">checkIndex</a></span><wbr><span class="parameters">(int&nbsp;index,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-160">checkIndex</a></span><wbr><span class="parameters">(int&nbsp;index,
  int&nbsp;length)</span></div>
 <div class="block">Checks if the <code>index</code> is within the bounds of the range from
   <code>0</code> (inclusive) to <code>length</code> (exclusive).<br>
@@ -695,7 +685,7 @@ R&gt;&nbsp;R</code></div>
 <li>
 <section class="detail" id="checkState(boolean,java.util.function.Supplier)">
 <h3>checkState</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-181">checkState</a></span><wbr><span class="parameters">(boolean&nbsp;condition,
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-182">checkState</a></span><wbr><span class="parameters">(boolean&nbsp;condition,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;E&gt;&nbsp;exception)</span>
                                                    throws <span class="exceptions">E</span></div>
 <div class="block"><p>Throws the exception provided by the given supplier if the
@@ -726,7 +716,7 @@ R&gt;&nbsp;R</code></div>
 <h3 id="compare(java.lang.Object,java.lang.Object,java.util.Comparator)">compare</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-211">compare</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-212">compare</a></span><wbr><span class="parameters">(T&nbsp;a,
  T&nbsp;b,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html" title="class or interface in java.util" class="external-link">Comparator</a>&lt;? super T&gt;&nbsp;comparator)</span>
                              throws <span class="exceptions"><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></span></div>
@@ -769,20 +759,20 @@ R&gt;&nbsp;R</code></div>
 <h3>deepEquals</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-242">deepEquals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-243">deepEquals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;b)</span></div>
-<div class="block">Returns <code>true</code> if the arguments are deeply equal to each other
-  and <code>false</code> otherwise.<br>
-  <br>Two <code>null</code> values are deeply equal. If both arguments are
+<div class="block"><p>Returns <code>true</code> if the arguments are deeply equal to
+  each other and <code>false</code> otherwise.</p>
+  <p>Two <code>null</code> values are deeply equal. If both arguments are
   arrays, the algorithm in
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#deepEquals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)" title="class or interface in java.util" class="external-link"><code>Arrays.deepEquals()</code></a>
   is used to determine equality. Otherwise, equality is determined by
   using the
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>equals()</code></a>
-  method of the first argument.<br>
-  <br>Calls
+  method of the first argument.</p>
+  <p>Calls
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#deepEquals(java.lang.Object,java.lang.Object)" title="class or interface in java.util" class="external-link"><code>Objects.deepEquals(Object, Object)</code></a>
-  internally.</div>
+  internally.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>a</code> - An object.</dd>
@@ -805,7 +795,7 @@ R&gt;&nbsp;R</code></div>
 <h3>equals</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-264">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-266">equals</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;b)</span></div>
 <div class="block">Returns <code>true</code> if the arguments are equal to each other and
   <code>false</code> otherwise.<br>
@@ -838,7 +828,7 @@ R&gt;&nbsp;R</code></div>
 <h3>hash</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-281">hash</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-283">hash</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</span></div>
 <div class="block">Generates a hash code for a sequence of input values. The hash code is
   generated as if all the input values were placed into an array, and
   that array were hashed by calling
@@ -865,7 +855,7 @@ R&gt;&nbsp;R</code></div>
 <h3>hashCode</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-297">hashCode</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-299">hashCode</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
 <div class="block">Returns the hash code of a non-<code>null</code> argument and 0 for
   a <code>null</code> argument.<br>
   <br>Calls
@@ -891,7 +881,7 @@ R&gt;&nbsp;R</code></div>
 <h3>isNull</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-317">isNull</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-319">isNull</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <div class="block">Returns <code>true</code> if the provided reference is <code>null</code>,
   otherwise returns <code>false</code>.<br>
   <br>This method exists to be used as a
@@ -920,7 +910,7 @@ R&gt;&nbsp;R</code></div>
 <section class="detail" id="mapNonNull(T,java.util.function.Function)">
 <h3 id="mapNonNull(java.lang.Object,java.util.function.Function)">mapNonNull</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>
-R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-333">mapNonNull</a></span><wbr><span class="parameters">(T&nbsp;o,
+R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-335">mapNonNull</a></span><wbr><span class="parameters">(T&nbsp;o,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;&nbsp;mapper)</span></div>
 <div class="block"><p>Maps (converts) the given object instance by applying the provided mapper if the
   instance is not <code>null</code>.</p>
@@ -944,7 +934,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3>nonNull</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-359">nonNull</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-361">nonNull</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</span></div>
 <div class="block"><p>Returns <code>true</code> if the provided reference is not
   <code>null</code>, otherwise returns <code>false</code>.</p>
   <p>This method exists to be used as a
@@ -974,7 +964,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="require(java.lang.Object,java.util.function.Predicate)">require</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-375">require</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-378">require</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span>
                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <div class="block">Applies the given validation on the given value, and if that fails, an
@@ -1000,7 +990,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="require(java.lang.Object,java.lang.String,java.util.function.Predicate)">require</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-404">require</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-407">require</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span>
                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a>,
@@ -1032,7 +1022,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="require(java.lang.Object,java.util.function.Supplier,java.util.function.Predicate)">require</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-443">require</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-446">require</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span>
                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
@@ -1071,7 +1061,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="require(java.lang.Object,java.util.function.Function,java.util.function.Predicate)">require</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-493">require</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-496">require</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super T,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span>
                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
@@ -1123,7 +1113,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNull(java.lang.Object)">requireNonNull</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-522">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-525">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a)</span></div>
 <div class="block">Checks if the given value <code>a</code> is <code>null</code> and throws a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link"><code>NullPointerException</code></a>
   if it is <code>null</code>.<br>
@@ -1147,7 +1137,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNull(java.lang.Object,java.lang.String)">requireNonNull</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-542">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-545">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span>
                                   throws <span class="exceptions"><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a>,
 <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></span></div>
@@ -1178,7 +1168,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNull(java.lang.Object,java.util.function.Supplier)">requireNonNull</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-572">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-575">requireNonNull</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
 <div class="block">Checks that the specified object reference is not <code>null</code> and
   throws a customized
@@ -1214,7 +1204,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNullArgument(java.lang.Object,java.lang.String)">requireNonNullArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-587">requireNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-590">requireNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <div class="block">Checks if the given argument <code>a</code> is <code>null</code> and throws a
   <a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
@@ -1238,7 +1228,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNullArgument(java.lang.Object,java.lang.Object,java.lang.String,java.lang.String)">requireNonNullArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.7")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-615">requireNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-618">requireNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;otherArg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;otherName)</span></div>
@@ -1265,49 +1255,20 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 </section>
 </li>
 <li>
-<section class="detail" id="requireNotEmptyArgument(T,java.lang.String)">
-<h3 id="requireNotEmptyArgument(java.lang.Object,java.lang.String)">requireNotEmptyArgument</h3>
+<section class="detail" id="requireNotBlankArgument(T,java.lang.String)">
+<h3 id="requireNotBlankArgument(java.lang.CharSequence,java.lang.String)">requireNotBlankArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-678">requireNotEmptyArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-655">requireNotBlankArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-<div class="block">Checks if the given argument <code>a</code> is <code>null</code> or empty and
-  throws a
+<div class="block"><p>Checks if the given String argument <code>a</code> is
+  <code>null</code>, empty or blank and throws a
   <a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
-  if it is <code>null</code>, or a
+  if it is <code>null</code>, an
   <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
-  if it is empty.<br>
-  <br>Strings, arrays,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>s, and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a>s
-  will be checked on being empty; this includes instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link"><code>StringBuilder</code></a>,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html" title="class or interface in java.lang" class="external-link"><code>StringBuffer</code></a>,
-  and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link"><code>CharSequence</code></a>.<br>
-  <br>For an instance of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
-  the presence of a value is checked in order to determine whether it is
-  empty or not.<br>
-  <br>Because the interface
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link"><code>Enumeration</code></a>
-  does not provide an API for the check on emptiness
-  (<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html#hasMoreElements()" title="class or interface in java.util" class="external-link"><code>hasMoreElements()</code></a>
-  will return <code>false</code> after all elements have been taken from
-  the <code>Enumeration</code> instance), the result for arguments of this
-  type has to be taken with caution.<br>
-  <br>For instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
-  this method will only check for <code>null</code> (like
-  <a href="#requireNonNullArgument(T,java.lang.String)"><code>requireNonNullArgument(Object,String)</code></a>.
-  This is because any operation on the stream would render it unusable
-  for later processing.<br>
-  <br>In case the argument is of type
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
-  this method behaves different from
-  <a href="#requireNotEmptyArgument(java.util.Optional,java.lang.String)"><code>requireNotEmptyArgument(Optional,String)</code></a>;
-  this one will return the <code>Optional</code> instance, while the other
-  method will return its contents.</div>
+  if it is empty, or a
+  <a href="../exception/BlankArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>BlankArgumentException</code></a>
+  if it is blank.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><code>T</code> - The type of the argument to check.</dd>
@@ -1316,7 +1277,80 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <dd><code>name</code> - The name of the argument; this is used for the error
       message.</dd>
 <dt>Returns:</dt>
-<dd>The argument if it is not <code>null</code>.</dd>
+<dd>The argument if it is not <code>null</code>, empty or blank.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>a</code> is <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>a</code> is empty.</dd>
+<dd><code><a href="../exception/BlankArgumentException.html" title="class in org.tquadrat.foundation.exception">BlankArgumentException</a></code> - <code>a</code> is blank.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#isBlank()" title="class or interface in java.lang" class="external-link"><code>String.isBlank()</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireNotEmptyArgument(T,java.lang.String)">
+<h3 id="requireNotEmptyArgument(java.lang.Object,java.lang.String)">requireNotEmptyArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-735">requireNotEmptyArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block"><p>Checks if the given argument <code>a</code> is <code>null</code> or
+  empty and throws a
+  <a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
+  if it is <code>null</code>, or an
+  <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
+  if it is empty.</p>
+  <p>Strings, arrays, instances of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a> and
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a>
+  as well as instances of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link"><code>StringBuilder</code></a>,
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html" title="class or interface in java.lang" class="external-link"><code>StringBuffer</code></a>,
+  and
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link"><code>CharSequence</code></a>
+  will be checked on being empty.</p>
+  <p>For an instance of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
+  the presence of a value is checked in order to determine whether the
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a> is empty or not.</p>
+  <p>Because the interface
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link"><code>Enumeration</code></a>
+  does not provide an API for the check on emptiness
+  (<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html#hasMoreElements()" title="class or interface in java.util" class="external-link"><code>hasMoreElements()</code></a>
+  will return <code>false</code> after all elements have been taken from
+  the <code>Enumeration</code> instance), the result for arguments of this
+  type has to be taken with caution.</p>
+  <p>For instances of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
+  this method will only check for <code>null</code> (like
+  <a href="#requireNonNullArgument(T,java.lang.String)"><code>requireNonNullArgument(Object,String)</code></a>.
+  This is because any operation on the stream itself would render it
+  unusable for later processing.</p>
+  <p>In case the argument is of type
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
+  this method behaves different from
+  <a href="#requireNotEmptyArgument(java.util.Optional,java.lang.String)"><code>requireNotEmptyArgument(Optional,String)</code></a>;
+  this one will return the <code>Optional</code> instance, while the other
+  method will return the contents of the <code>Optional</code>.</p>
+  <p>This method will not work properly for instances of
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/StringJoiner.html" title="class or interface in java.util" class="external-link"><code>StringJoiner</code></a>, because its method
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/StringJoiner.html#length()" title="class or interface in java.util" class="external-link"><code>length()</code></a>
+  will not return 0 when a prefix, suffix, or an
+  &quot;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/StringJoiner.html#setEmptyValue(java.lang.CharSequence)" title="class or interface in java.util" class="external-link">empty value</a>&quot;
+  was provided.</p></div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - The type of the argument to check.</dd>
+<dt>Parameters:</dt>
+<dd><code>a</code> - The argument to check; may be <code>null</code>.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dt>Returns:</dt>
+<dd>The argument if it is not <code>null</code> or empty.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>a</code> is <code>null</code>.</dd>
 <dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>a</code> is empty.</dd>
@@ -1328,7 +1362,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3>requireNotEmptyArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-763">requireNotEmptyArgument</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&nbsp;optional,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-826">requireNotEmptyArgument</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;&nbsp;optional,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <div class="block">Checks if the given argument <code>a</code> of type
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>
@@ -1351,7 +1385,10 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
       message.</dd>
 <dt>Returns:</dt>
 <dd>The value of the argument if <code>optional</code> is not
-      <code>null</code>.</dd>
+      <code>null</code>
+      and not
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html#empty()" title="class or interface in java.util" class="external-link">empty</a>. This could be the empty
+      string!</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>optional</code> is <code>null</code>.</dd>
 <dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>optional</code> is empty.</dd>
@@ -1363,7 +1400,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNullElse(java.lang.Object,java.lang.Object)">requireNonNullElse</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-794">requireNonNullElse</a></span><wbr><span class="parameters">(T&nbsp;obj,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-857">requireNonNullElse</a></span><wbr><span class="parameters">(T&nbsp;obj,
  T&nbsp;defaultObj)</span>
                                       throws <span class="exceptions"><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></span></div>
 <div class="block">Returns the first argument if it is not <code>null</code>, otherwise it
@@ -1397,7 +1434,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireNonNullElseGet(java.lang.Object,java.util.function.Supplier)">requireNonNullElseGet</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-819">requireNonNullElseGet</a></span><wbr><span class="parameters">(T&nbsp;obj,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-882">requireNonNullElseGet</a></span><wbr><span class="parameters">(T&nbsp;obj,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends T&gt;&nbsp;supplier)</span>
                                          throws <span class="exceptions"><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
@@ -1430,7 +1467,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireValidArgument(java.lang.Object,java.lang.String,java.util.function.Predicate)">requireValidArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-844">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-907">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span></div>
 <div class="block">Applies the given validation on the given value, and if that fails, an
@@ -1461,7 +1498,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireValidArgument(java.lang.Object,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)">requireValidArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-879">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-942">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
@@ -1496,7 +1533,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireValidNonNullArgument(java.lang.Object,java.lang.String,java.util.function.Predicate)">requireValidNonNullArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-913">requireValidNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-976">requireValidNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span></div>
 <div class="block">Applies the given validation on the given value (that may not be
@@ -1528,7 +1565,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireValidNonNullArgument(java.lang.Object,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)">requireValidNonNullArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-949">requireValidNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1012">requireValidNonNullArgument</a></span><wbr><span class="parameters">(T&nbsp;a,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
@@ -1564,7 +1601,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3>toString</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-997">toString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1060">toString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
 <div class="block">Converts the given argument <code>object</code> into a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
   usually by calling its
@@ -1610,7 +1647,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3>toString</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1037">toString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1100">toString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullDefault)</span></div>
 <div class="block">Converts the given argument <code>object</code> into a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
@@ -1658,7 +1695,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="toString(java.lang.Object,org.tquadrat.foundation.lang.Stringer,java.lang.String)">toString</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1112">toString</a></span><wbr><span class="parameters">(T&nbsp;object,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1175">toString</a></span><wbr><span class="parameters">(T&nbsp;object,
  <a href="Stringer.html" title="interface in org.tquadrat.foundation.lang">Stringer</a>&lt;? super T&gt;&nbsp;stringer,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullDefault)</span></div>
 <div class="block">Converts the given argument <code>object</code> into a

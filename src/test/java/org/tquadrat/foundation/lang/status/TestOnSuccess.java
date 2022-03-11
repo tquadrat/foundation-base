@@ -52,7 +52,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version TestIsFailure: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "TestIsFailure: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.status.TestOnSuccess" )
 public class TestOnSuccess extends TestBaseClass
@@ -69,14 +68,12 @@ public class TestOnSuccess extends TestBaseClass
     {
         skipThreadTest();
 
-        skipThreadTest();
-
         final var target = new ArrayList<String>();
 
         final var errorCode = new ValidationException();
         final var result = "result";
 
-        final Consumer<String> action = target::add;
+        final var action = (Consumer<String>) target::add;
 
         var candidate = new Status<String,Throwable>( null, errorCode );
         assertNotNull( candidate.errorCode() );
@@ -110,13 +107,13 @@ public class TestOnSuccess extends TestBaseClass
         final var target = new ArrayList<String>();
 
         final var errorCode = new ValidationException();
-        final Class<? extends Throwable> expectedException = errorCode.getClass();
+        final Class<? extends RuntimeException> expectedException = errorCode.getClass();
         final var result = "result";
 
-        final Consumer<String> action = target::add;
-        final ErrorHandler<Throwable> errorHandler = e -> e;
+        final var action = (Consumer<String>) target::add;
+        final var errorHandler = (ErrorHandler<RuntimeException>) e -> e;
 
-        var candidate = new Status<String,Throwable>( null, errorCode );
+        var candidate = new Status<String,RuntimeException>( null, errorCode );
         assertNotNull( candidate.errorCode() );
         assertTrue( candidate.isFailure() );
 
@@ -159,10 +156,10 @@ public class TestOnSuccess extends TestBaseClass
         final var result = "result";
         final var expected = result.toUpperCase( ROOT );
 
-        final Function<String,String> conversion = s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
-        final ErrorHandler<Throwable> errorHandler = e -> e;
+        final var conversion = (Function<String, String>) s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
+        final var errorHandler = (ErrorHandler<RuntimeException>) e -> e;
 
-        var candidate = new Status<String,Throwable>( null, errorCode );
+        var candidate = new Status<String,RuntimeException>( null, errorCode );
         assertNotNull( candidate.errorCode() );
         assertTrue( candidate.isFailure() );
 
@@ -210,11 +207,11 @@ public class TestOnSuccess extends TestBaseClass
         final var errorCode = new ValidationException();
         final var result = "result";
 
-        final Consumer<String> action = s -> { /* Does nothing */ };
-        final Function<String,String> conversion = s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
-        final ErrorHandler<Throwable> errorHandler = e -> e;
+        final var action = (Consumer<String>) s -> { /* Does nothing */ };
+        final var conversion = (Function<String, String>) s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
+        final var errorHandler = (ErrorHandler<RuntimeException>) e -> e;
 
-        var candidate = new Status<String,Throwable>( null, errorCode );
+        var candidate = new Status<String,RuntimeException>( null, errorCode );
         assertNotNull( candidate.errorCode() );
         assertTrue( candidate.isFailure() );
 

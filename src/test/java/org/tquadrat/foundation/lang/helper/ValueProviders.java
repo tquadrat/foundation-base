@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -33,6 +33,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -40,11 +42,11 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 /**
  *  The value providers for the unit tests in the base module.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueProviders.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @version $Id: ValueProviders.java 1025 2022-03-11 16:26:00Z tquadrat $
  */
 @SuppressWarnings( {"UtilityClassWithoutPrivateConstructor", "UtilityClass", "UtilityClassCanBeEnum", "unused"} )
-@ClassVersion( sourceVersion = "$Id: ValueProviders.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 public final class ValueProviders
 {
         /*-----------*\
@@ -97,6 +99,43 @@ public final class ValueProviders
      *  The argument provider for the methods that test on empty; provides
      *  empty arguments.
      *
+     *  @return A stream of values that are not {@code null} and not empty, but
+     *      blank.
+     *
+     *  @see org.tquadrat.foundation.lang.objects.TestRequireNotBlankArgument#testRequireNotBlankArgument1WithBlankArgument(CharSequence)
+     */
+    static final Stream<CharSequence> blankTestArgumentProvider()
+    {
+        final var builder = Stream.<CharSequence>builder();
+        final var value = IntStream.rangeClosed( 0, Character.MAX_CODE_POINT )
+            .filter( Character::isValidCodePoint )
+            .filter( Character::isWhitespace )
+            .mapToObj( Character::toString )
+            .collect( Collectors.joining() );
+        builder.add( value );
+        builder.add( new StringBuilder( value ) );
+        builder.add( new StringBuffer( value ) );
+
+        IntStream.rangeClosed( 0, Character.MAX_CODE_POINT )
+            .filter( Character::isValidCodePoint )
+            .filter( Character::isWhitespace )
+            .mapToObj( Character::toString )
+            .forEach( s ->
+            {
+                builder.add( s );
+                builder.add( new StringBuilder( s ) );
+                builder.add( new StringBuffer( s ) );
+            });
+        final var retValue = builder.build();
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  blankTestArgumentProvider()
+
+    /**
+     *  The argument provider for the methods that test on empty; provides
+     *  empty arguments.
+     *
      *  @return A stream of values that are not {@code null}, but empty.
      *
      *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotEmptyArgument1WithEmptyArgument(Object)
@@ -107,17 +146,17 @@ public final class ValueProviders
          *  WARNING! With this test, String arrays do not work!!
          */
         return Stream.of
-        (
-            EMPTY_STRING,
-            new StringBuilder(),
-            new StringBuffer(),
-            EMPTY_boolean_ARRAY,
-            emptyList(),
-            emptyMap(),
-            emptySet(),
-            emptyEnumeration(),
-            Optional.empty()
-        );
+            (
+                EMPTY_STRING,
+                new StringBuilder(),
+                new StringBuffer(),
+                EMPTY_boolean_ARRAY,
+                emptyList(),
+                emptyMap(),
+                emptySet(),
+                emptyEnumeration(),
+                Optional.empty()
+            );
     }   //  emptyTestArgumentProvider()
 
     /**
@@ -151,6 +190,30 @@ public final class ValueProviders
     }   //  indexArgumentProvider()
 
     /**
+     *  The argument provider for the methods that test on blank; provides
+     *  not blank, not empty arguments.
+     *
+     *  @return A stream of values that are not {@code null}, not empty and not blank.
+     *
+     *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotBlankArgument1(CharSequence)
+     */
+    static final Stream<CharSequence> notBlankTestArgumentProvider()
+    {
+        /*
+         *  WARNING! With this test, Object arrays do not work!!
+         */
+        return Stream.of
+        (
+            NULL_STRING,
+            "String",
+            new StringBuilder().append( TRUE ),
+            new StringBuilder().append( NULL_STRING ),
+            new StringBuffer().append( TRUE ),
+            new StringBuffer().append( NULL_STRING )
+        );
+    }   //  notBlankTestArgumentProvider()
+
+    /**
      *  The argument provider for the methods that test on empty; provides
      *  not empty arguments.
      *
@@ -165,22 +228,22 @@ public final class ValueProviders
          *  WARNING! With this test, Object arrays do not work!!
          */
         return Stream.of
-        (
-            NULL_STRING,
-            "String",
-            " ",
-            new StringBuilder().append( TRUE ),
-            new StringBuilder().append( NULL_STRING ),
-            new StringBuffer().append( TRUE ),
-            new StringBuffer().append( NULL_STRING ),
-            new boolean [] {true, false},
-            List.of( NULL_STRING, EMPTY_STRING ),
-            Set.of( EMPTY_STRING, NULL_STRING ),
-            Map.of( "key", "value" ),
-            enumeration( List.of( NULL_STRING, EMPTY_STRING ) ),
-            Optional.of( EMPTY_STRING ),
-            Optional.of( NULL_STRING )
-        );
+            (
+                NULL_STRING,
+                "String",
+                " ",
+                new StringBuilder().append( TRUE ),
+                new StringBuilder().append( NULL_STRING ),
+                new StringBuffer().append( TRUE ),
+                new StringBuffer().append( NULL_STRING ),
+                new boolean [] {true, false},
+                List.of( NULL_STRING, EMPTY_STRING ),
+                Set.of( EMPTY_STRING, NULL_STRING ),
+                Map.of( "key", "value" ),
+                enumeration( List.of( NULL_STRING, EMPTY_STRING ) ),
+                Optional.of( EMPTY_STRING ),
+                Optional.of( NULL_STRING )
+            );
     }   //  notEmptyTestArgumentProvider()
 
     /**

@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='1116.000'
-     height='825.000'>
+     height='836.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='403.000'
+                  height='414.000'
                   width='1066.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='1066.000'
-                          height='403.000'
+                          height='414.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -213,36 +213,39 @@
                           class='static'>+ requireNonNullArgument(arg:T,otherArg:java.lang.Object,name:java.lang.String,otherName:java.lang.String):T</text>
                     <text x='5.000'
                           y='289.000'
-                          class='static'>+ requireNotEmptyArgument(a:T,name:java.lang.String):T</text>
+                          class='static'>+ requireNotBlankArgument(a:T,name:java.lang.String):T</text>
                     <text x='5.000'
                           y='300.000'
-                          class='static'>+ requireNotEmptyArgument(optional:java.util.Optional&lt;T&gt;,name:java.lang.String):T</text>
+                          class='static'>+ requireNotEmptyArgument(a:T,name:java.lang.String):T</text>
                     <text x='5.000'
                           y='311.000'
-                          class='static'>+ requireNonNullElse(obj:T,defaultObj:T):T</text>
+                          class='static'>+ requireNotEmptyArgument(optional:java.util.Optional&lt;T&gt;,name:java.lang.String):T</text>
                     <text x='5.000'
                           y='322.000'
-                          class='static'>+ requireNonNullElseGet(obj:T,supplier:java.util.function.Supplier&lt;? extends T&gt;):T</text>
+                          class='static'>+ requireNonNullElse(obj:T,defaultObj:T):T</text>
                     <text x='5.000'
                           y='333.000'
-                          class='static'>+ requireValidArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                          class='static'>+ requireNonNullElseGet(obj:T,supplier:java.util.function.Supplier&lt;? extends T&gt;):T</text>
                     <text x='5.000'
                           y='344.000'
-                          class='static'>+ requireValidArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                          class='static'>+ requireValidArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
                     <text x='5.000'
                           y='355.000'
-                          class='static'>+ requireValidNonNullArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                          class='static'>+ requireValidArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
                     <text x='5.000'
                           y='366.000'
-                          class='static'>+ requireValidNonNullArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                          class='static'>+ requireValidNonNullArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
                     <text x='5.000'
                           y='377.000'
-                          class='static'>+ toString(object:java.lang.Object):java.lang.String</text>
+                          class='static'>+ requireValidNonNullArgument(a:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
                     <text x='5.000'
                           y='388.000'
-                          class='static'>+ toString(object:java.lang.Object,nullDefault:java.lang.String):java.lang.String</text>
+                          class='static'>+ toString(object:java.lang.Object):java.lang.String</text>
                     <text x='5.000'
                           y='399.000'
+                          class='static'>+ toString(object:java.lang.Object,nullDefault:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='410.000'
                           class='static'>+ toString(object:T,stringer:org.tquadrat.foundation.lang.Stringer&lt;? super T&gt;,nullDefault:java.lang.String):java.lang.String</text>
                 </g>
             </g>

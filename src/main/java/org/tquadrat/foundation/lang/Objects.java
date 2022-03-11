@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -40,6 +40,7 @@ import java.util.function.UnaryOperator;
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.BlankArgumentException;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
@@ -60,14 +61,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  name from {@code java.util.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $
+ *  @version $Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 997 2022-01-26 14:55:05Z tquadrat $" )
 @UtilityClass
+@SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -218,18 +219,18 @@ public final class Objects
     }   //  compare()
 
     /**
-     *  Returns {@code true} if the arguments are deeply equal to each other
-     *  and {@code false} otherwise.<br>
-     *  <br>Two {@code null} values are deeply equal. If both arguments are
+     *  <p>{@summary Returns {@code true} if the arguments are deeply equal to
+     *  each other and {@code false} otherwise.}</p>
+     *  <p>Two {@code null} values are deeply equal. If both arguments are
      *  arrays, the algorithm in
      *  {@link Arrays#deepEquals(Object[], Object[]) Arrays.deepEquals()}
      *  is used to determine equality. Otherwise, equality is determined by
      *  using the
      *  {@link Object#equals(Object) equals()}
-     *  method of the first argument.<br>
-     *  <br>Calls
+     *  method of the first argument.</p>
+     *  <p>Calls
      *  {@link java.util.Objects#deepEquals(Object, Object)}
-     *  internally.
+     *  internally.</p>
      *
      *  @param  a   An object.
      *  @param  b   An object to be compared with {@code a} for deep equality.
@@ -239,6 +240,7 @@ public final class Objects
      *  @see Arrays#deepEquals(Object[], Object[])
      *  @see Objects#equals(Object, Object)
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean deepEquals( final Object a, final Object b ) { return java.util.Objects.deepEquals( a, b ); }
 
@@ -356,6 +358,7 @@ public final class Objects
      *  @see java.util.function.Predicate
      *  @see org.tquadrat.foundation.lang.CommonConstants#NON_NULL
      */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean nonNull( final Object obj ) { return java.util.Objects.nonNull( obj ); }
 
@@ -629,49 +632,103 @@ public final class Objects
     }   //  requireNonNullArgument()
 
     /**
-     *  Checks if the given argument {@code a} is {@code null} or empty and
-     *  throws a
+     *  <p>{@summary Checks if the given String argument {@code a} is
+     *  {@code null}, empty or blank and throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}, or a
+     *  if it is {@code null}, an
      *  {@link EmptyArgumentException}
-     *  if it is empty.<br>
-     *  <br>Strings, arrays,
-     *  {@link java.util.Collection}s, and
-     *  {@link java.util.Map}s
-     *  will be checked on being empty; this includes instances of
-     *  {@link java.lang.StringBuilder},
-     *  {@link java.lang.StringBuffer},
-     *  and
-     *  {@link java.lang.CharSequence}.<br>
-     *  <br>For an instance of
-     *  {@link java.util.Optional},
-     *  the presence of a value is checked in order to determine whether it is
-     *  empty or not.<br>
-     *  <br>Because the interface
-     *  {@link java.util.Enumeration}
-     *  does not provide an API for the check on emptiness
-     *  ({@link java.util.Enumeration#hasMoreElements() hasMoreElements()}
-     *  will return {@code false} after all elements have been taken from
-     *  the {@code Enumeration} instance), the result for arguments of this
-     *  type has to be taken with caution.<br>
-     *  <br>For instances of
-     *  {@link java.util.stream.Stream},
-     *  this method will only check for {@code null} (like
-     *  {@link #requireNonNullArgument(Object,String)}.
-     *  This is because any operation on the stream would render it unusable
-     *  for later processing.<br>
-     *  <br>In case the argument is of type
-     *  {@link Optional},
-     *  this method behaves different from
-     *  {@link #requireNotEmptyArgument(Optional,String)};
-     *  this one will return the {@code Optional} instance, while the other
-     *  method will return its contents.
+     *  if it is empty, or a
+     *  {@link BlankArgumentException}
+     *  if it is blank.}</p>
      *
      *  @param  <T> The type of the argument to check.
      *  @param  a   The argument to check; may be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
-     *  @return The argument if it is not {@code null}.
+     *  @return The argument if it is not {@code null}, empty or blank.
+     *  @throws NullArgumentException   {@code a} is {@code null}.
+     *  @throws EmptyArgumentException   {@code a} is empty.
+     *  @throws BlankArgumentException   {@code a} is blank.
+     *
+     *  @see    String#isBlank()
+     */
+    @API( status = STABLE, since = "0.1.0" )
+    public static final <T extends CharSequence> T requireNotBlankArgument( final T a, final String name )
+    {
+        if( isNull( name ) ) throw new NullArgumentException( "name" );
+        if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+
+        switch( a )
+        {
+            case null -> throw new NullArgumentException( name );
+            //noinspection QuestionableName
+            case String string ->
+            {
+                if( string.isEmpty() ) throw new EmptyArgumentException( name );
+                if( string.isBlank() ) throw new BlankArgumentException( name );
+            }
+            case CharSequence charSequence ->
+            {
+                if( charSequence.isEmpty() ) throw new EmptyArgumentException( name );
+                if( charSequence.toString().isBlank() ) throw new BlankArgumentException( name );
+            }
+        }
+
+        //---* Done *----------------------------------------------------------
+        return a;
+    }   //  requireNotEmptyArgument()
+
+    /**
+     *  <p>{@summary Checks if the given argument {@code a} is {@code null} or
+     *  empty and throws a
+     *  {@link NullArgumentException}
+     *  if it is {@code null}, or an
+     *  {@link EmptyArgumentException}
+     *  if it is empty.}</p>
+     *  <p>Strings, arrays, instances of
+     *  {@link java.util.Collection} and
+     *  {@link java.util.Map}
+     *  as well as instances of
+     *  {@link java.lang.StringBuilder},
+     *  {@link java.lang.StringBuffer},
+     *  and
+     *  {@link java.lang.CharSequence}
+     *  will be checked on being empty.</p>
+     *  <p>For an instance of
+     *  {@link java.util.Optional},
+     *  the presence of a value is checked in order to determine whether the
+     *  {@link Optional} is empty or not.</p>
+     *  <p>Because the interface
+     *  {@link java.util.Enumeration}
+     *  does not provide an API for the check on emptiness
+     *  ({@link java.util.Enumeration#hasMoreElements() hasMoreElements()}
+     *  will return {@code false} after all elements have been taken from
+     *  the {@code Enumeration} instance), the result for arguments of this
+     *  type has to be taken with caution.</p>
+     *  <p>For instances of
+     *  {@link java.util.stream.Stream},
+     *  this method will only check for {@code null} (like
+     *  {@link #requireNonNullArgument(Object,String)}.
+     *  This is because any operation on the stream itself would render it
+     *  unusable for later processing.</p>
+     *  <p>In case the argument is of type
+     *  {@link Optional},
+     *  this method behaves different from
+     *  {@link #requireNotEmptyArgument(Optional,String)};
+     *  this one will return the {@code Optional} instance, while the other
+     *  method will return the contents of the {@code Optional}.</p>
+     *  <p>This method will not work properly for instances of
+     *  {@link java.util.StringJoiner}, because its method
+     *  {@link java.util.StringJoiner#length() length()}
+     *  will not return 0 when a prefix, suffix, or an
+     *  &quot;{@linkplain java.util.StringJoiner#setEmptyValue(CharSequence) empty value}&quot;
+     *  was provided.</p>
+     *
+     *  @param  <T> The type of the argument to check.
+     *  @param  a   The argument to check; may be {@code null}.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @return The argument if it is not {@code null} or empty.
      *  @throws NullArgumentException   {@code a} is {@code null}.
      *  @throws EmptyArgumentException   {@code a} is empty.
      */
@@ -681,56 +738,59 @@ public final class Objects
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
 
-        //---* Check for null *------------------------------------------------
-        if( isNull( a ) ) throw new NullArgumentException( name );
-
-        //---* Check the type *------------------------------------------------
-        //noinspection IfStatementWithTooManyBranches
-        if( a instanceof CharSequence charSequence )
+        switch( a )
         {
-            if( charSequence.isEmpty() ) throw new EmptyArgumentException( name );
-        }
-        else if( a.getClass().isArray() )
-        {
-            if( Array.getLength( a ) == 0 ) throw new EmptyArgumentException( name );
-        }
-        else if( a instanceof Collection<?> collection )
-        {
-            if( collection.isEmpty() ) throw new EmptyArgumentException( name );
-        }
-        else if( a instanceof Map<?,?> )
-        {
-            if( ((Map<?,?>) a).isEmpty() ) throw new EmptyArgumentException( name );
-        }
-        else if( a instanceof Enumeration<?> )
-        {
-            /*
-             * The funny thing with an Enumeration is that it could have been
-             * not empty in the beginning, but it may be empty (= having no
-             * more elements) now.
-             * The good thing is that Enumeration.hasMoreElements() will not
-             * change the state of the Enumeration - at least it should not do
-             * so.
-             */
-            if( !((Enumeration<?>) a).hasMoreElements() ) throw new EmptyArgumentException( name );
-        }
-        else if( a instanceof Optional<?> optional)
-        {
-            /*
-             * This is different from the behaviour of
-             * requireNotEmptyArgument(Optional,String) as the Optional will be
-             * returned here.
-             */
-            if( optional.isEmpty() ) throw new EmptyArgumentException( name );
-        }
-        else
-        {
-            /*
-             * Other data types are not further processed; in particular,
-             * instances of Stream cannot be checked on being empty. This is
-             * because any operation on the Stream itself will change its state
-             * and may make the Stream unusable.
-             */
+            case null -> throw new NullArgumentException( name );
+            case CharSequence charSequence ->
+            {
+                if( charSequence.isEmpty() ) throw new EmptyArgumentException( name );
+            }
+            case Collection<?> collection ->
+            {
+                if( collection.isEmpty() ) throw new EmptyArgumentException( name );
+            }
+            case Map<?,?> map ->
+            {
+                if( map.isEmpty() ) throw new EmptyArgumentException( name );
+            }
+            case Enumeration<?> enumeration ->
+            {
+                /*
+                 * The funny thing with an Enumeration is that it could have been
+                 * not empty in the beginning, but it may be empty (= having no
+                 * more elements) now.
+                 * The good thing is that Enumeration.hasMoreElements() will not
+                 * change the state of the Enumeration - at least it should not do
+                 * so.
+                 */
+                if( !enumeration.hasMoreElements() ) throw new EmptyArgumentException( name );
+            }
+            case Optional<?> optional ->
+            {
+                /*
+                 * This is different from the behaviour of
+                 * requireNotEmptyArgument(Optional,String) as the Optional
+                 * will be returned here.
+                 */
+                if( optional.isEmpty() ) throw new EmptyArgumentException( name );
+            }
+            default ->
+            {
+                if( a.getClass().isArray() )
+                {
+                    if( Array.getLength( a ) == 0 ) throw new EmptyArgumentException( name );
+                }
+                else
+                {
+                    /*
+                     * Other data types are not further processed; in
+                     * particular, instances of Stream cannot be checked on
+                     * being empty. This is because any operation on the Stream
+                     * itself will change its state and may make the Stream
+                     * unusable.
+                     */
+                }
+            }
         }
 
         //---* Done *----------------------------------------------------------
@@ -756,7 +816,10 @@ public final class Objects
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @return The value of the argument if {@code optional} is not
-     *      {@code null}.
+     *      {@code null}
+     *      and not
+     *      {@linkplain Optional#empty() empty}. This could be the empty
+     *      string!
      *  @throws NullArgumentException   {@code optional} is {@code null}.
      *  @throws EmptyArgumentException   {@code optional} is empty.
      */

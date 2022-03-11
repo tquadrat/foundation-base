@@ -159,6 +159,17 @@ loadScripts(document, 'script');</script>
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNullElseGet(T,java.util.function.Supplier)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNullElseGet(Object,Supplier)</code></a>
   as it will always check that the supplier is not <code>null</code>.</div>
 </dd>
+<dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotBlankArgument(T,java.lang.String)" class="member-name-link">requireNotBlankArgument(T, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
+<dd>
+<div class="block">Checks if the given String argument <code>a</code> is
+  <code>null</code>, empty or blank and throws a
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
+  if it is <code>null</code>, an
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
+  if it is empty, or a
+  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/BlankArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>BlankArgumentException</code></a>
+  if it is blank.</div>
+</dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotEmptyArgument(java.util.Optional,java.lang.String)" class="member-name-link">requireNotEmptyArgument(Optional&lt;T&gt;, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
 <div class="block">Checks if the given argument <code>a</code> of type
@@ -176,35 +187,12 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotEmptyArgument(T,java.lang.String)" class="member-name-link">requireNotEmptyArgument(T, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the given argument <code>a</code> is <code>null</code> or empty and
-  throws a
+<div class="block">Checks if the given argument <code>a</code> is <code>null</code> or
+  empty and throws a
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
-  if it is <code>null</code>, or a
+  if it is <code>null</code>, or an
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
-  if it is empty.<br>
-  <br>Strings, arrays,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>s, and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a>s
-  will be checked on being empty; this includes instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html" title="class or interface in java.lang" class="external-link"><code>StringBuilder</code></a>,
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html" title="class or interface in java.lang" class="external-link"><code>StringBuffer</code></a>,
-  and
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link"><code>CharSequence</code></a>.<br>
-  <br>For an instance of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>,
-  the presence of a value is checked in order to determine whether it is
-  empty or not.<br>
-  <br>Because the interface
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link"><code>Enumeration</code></a>
-  does not provide an API for the check on emptiness
-  (<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Enumeration.html#hasMoreElements()" title="class or interface in java.util" class="external-link"><code>hasMoreElements()</code></a>
-  will return <code>false</code> after all elements have been taken from
-  the <code>Enumeration</code> instance), the result for arguments of this
-  type has to be taken with caution.<br>
-  <br>For instances of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
-  this method will only check for <code>null</code> (like
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNullArgument(T,java.lang.String)"><code>Objects.requireNonNullArgument(Object,String)</code></a>.</div>
+  if it is empty.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireValidArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidArgument(T, String, Predicate&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>

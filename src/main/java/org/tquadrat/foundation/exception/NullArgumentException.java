@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,15 +34,15 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullArgumentException.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: NullArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class NullArgumentException extends ValidationException
-    permits EmptyArgumentException
+    permits BlankArgumentException, EmptyArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================

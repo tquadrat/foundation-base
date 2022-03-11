@@ -53,7 +53,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -65,7 +65,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -78,10 +78,10 @@ public record Status<V,C>( V result, C errorCode )
      *
      *  @param  errorHandler    The error handler.
      *  @return The result.
-     *  @throws Throwable   Any exception that is determined by the error
-     *      handler.
+     *  @throws RuntimeException    Any exception that is determined by the
+     *      error handler.
      */
-    public final V getOrElse( final ErrorHandler<? super C> errorHandler ) throws Throwable
+    public final V getOrElse( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         requireNonNullArgument( errorHandler, "errorHandler" );
 
@@ -150,10 +150,10 @@ public record Status<V,C>( V result, C errorCode )
      *
      *  @param  action  The action.
      *  @param  errorHandler    The error handler.
-     *  @throws Throwable   Any exception that is determined by the error
-     *      handler.
+     *  @throws RuntimeException    Any exception that is determined by the
+     *      error handler.
      */
-    public final void onSuccess( final Consumer<? super V> action, final ErrorHandler<? super C> errorHandler ) throws Throwable
+    public final void onSuccess( final Consumer<? super V> action, final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         requireNonNullArgument( action, "action" );
         requireNonNullArgument( errorHandler, "errorHandler" );
@@ -170,10 +170,10 @@ public record Status<V,C>( V result, C errorCode )
      *  @param  conversion  The conversion.
      *  @param  errorHandler    The error handler.
      *  @return The converted result.
-     *  @throws Throwable   Any exception that is determined by the error
-     *      handler.
+     *  @throws RuntimeException    Any exception that is determined by the
+     *      error handler.
      */
-    public final <R> R onSuccess( final Function<? super V,R> conversion, final ErrorHandler<? super C> errorHandler ) throws Throwable
+    public final <R> R onSuccess( final Function<? super V,R> conversion, final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         requireNonNullArgument( conversion, "conversion" );
         requireNonNullArgument( errorHandler, "errorHandler" );

@@ -31,14 +31,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <C> The type of the error code.
  *
  *  @extauthor Thomas Thrien-thomas.thrien@tquadrat.org
- *  @version $Id: ErrorHandler.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: ErrorHandler.java 1025 2022-03-11 16:26:00Z tquadrat $
  *  @since 0.1.0
  *
  *  @see Status
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ErrorHandler.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ErrorHandler.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @FunctionalInterface
 public interface ErrorHandler<C>
@@ -53,7 +53,7 @@ public interface ErrorHandler<C>
      *  @return The exception that was determined based on the given error
      *      code.
      */
-    public Throwable handleError( final C errorCode );
+    public RuntimeException handleError( final C errorCode );
 }
 //  interface ErrorHandler
 

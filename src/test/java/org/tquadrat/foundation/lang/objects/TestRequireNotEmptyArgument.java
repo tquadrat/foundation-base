@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2022 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -21,6 +21,7 @@ package org.tquadrat.foundation.lang.objects;
 import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
@@ -45,12 +46,12 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  The tests for the methods
  *  {@link org.tquadrat.foundation.lang.Objects#requireNotEmptyArgument(Object, String)}
  *  and
- *  {@link org.tquadrat.foundation.lang.Objects#requireNotEmptyArgument(Optional, String)}
+ *  {@link org.tquadrat.foundation.lang.Objects#requireNotEmptyArgument(Optional, String)}.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequireNotEmptyArgument.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @version $Id: TestRequireNotEmptyArgument.java 1025 2022-03-11 16:26:00Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestRequireNotEmptyArgument.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequireNotEmptyArgument.java 1025 2022-03-11 16:26:00Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument" )
 public class TestRequireNotEmptyArgument extends TestBaseClass
 {
@@ -298,26 +299,18 @@ public class TestRequireNotEmptyArgument extends TestBaseClass
      *  Test method for
      *  {@link Objects#requireNotEmptyArgument(Object,String)}.
      */
+    @SuppressWarnings( "SpellCheckingInspection" )
     @Test
     final void testRequireNotEmptyArgumentWithStringArrayArgument()
     {
         skipThreadTest();
 
-        final Class<? extends Throwable> expectedException = EmptyArgumentException.class;
-        try
-        {
-            requireNotEmptyArgument( EMPTY_String_ARRAY, "message" );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
+        final var name = "XXmessageXX";
+        final var exception = assertThrows( EmptyArgumentException.class, () -> requireNotEmptyArgument( EMPTY_String_ARRAY, name ) );
+        assertTrue( exception.getMessage().contains( name ) );
 
-        final String [] candidate = {NULL_STRING, EMPTY_STRING, "value"};
-        assertTrue( Arrays.deepEquals( candidate, requireNotEmptyArgument( candidate, "message" ) ) );
+        final var candidate = new String[] {NULL_STRING, EMPTY_STRING, "value"};
+        assertTrue( Arrays.deepEquals( candidate, requireNotEmptyArgument( candidate, name ) ) );
     }   //  testRequireNotEmptyArgumentWithStringArrayArgument()
 }
 //  class TestRequireNotEmptyArgument

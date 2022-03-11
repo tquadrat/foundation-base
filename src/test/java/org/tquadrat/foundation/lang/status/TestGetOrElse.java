@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2022 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -21,6 +21,7 @@ import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
@@ -38,10 +39,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Some tests for
  *  {@link Status#getOrElse(ErrorHandler)}.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version TestIsFailure: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "TestIsFailure: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.status.TestGetOrElse" )
 public class TestGetOrElse extends TestBaseClass
@@ -59,9 +59,9 @@ public class TestGetOrElse extends TestBaseClass
         skipThreadTest();
 
         final var errorCode = new ValidationException();
-        final Class<? extends Throwable> expectedException = errorCode.getClass();
+        final Class<? extends RuntimeException> expectedException = errorCode.getClass();
 
-        final var candidate = new Status<String,Throwable>( null, errorCode );
+        final var candidate = new Status<String,RuntimeException>( null, errorCode );
         assertNotNull( candidate.errorCode() );
         assertTrue( candidate.isFailure() );
 
@@ -89,7 +89,7 @@ public class TestGetOrElse extends TestBaseClass
         skipThreadTest();
 
         final var expected = "result";
-        final var candidate = new Status<String,Throwable>( expected,null );
+        final var candidate = new Status<String,RuntimeException>( expected,null );
         assertNull( candidate.errorCode() );
         assertTrue( candidate.isSuccess() );
 
@@ -112,43 +112,19 @@ public class TestGetOrElse extends TestBaseClass
     {
         skipThreadTest();
 
-        final Class<? extends Throwable> expectedException = NullArgumentException.class;
-
         final var errorCode = new ValidationException();
 
-        var candidate = new Status<String,Throwable>( null, errorCode );
-        assertNotNull( candidate.errorCode() );
-        assertTrue( candidate.isFailure() );
+        final var candidate1 = new Status<String,RuntimeException>( null, errorCode );
+        assertNotNull( candidate1.errorCode() );
+        assertTrue( candidate1.isFailure() );
 
-        try
-        {
-            candidate.getOrElse( null );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            if( !isExpectedException ) t.printStackTrace( out );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
+        assertThrows( NullArgumentException.class, () -> candidate1.getOrElse( null ) );
 
-        candidate = new Status<>( "result", null );
-        assertNull( candidate.errorCode() );
-        assertTrue( candidate.isSuccess() );
+        final var candidate2 = new Status<>( "result", null );
+        assertNull( candidate2.errorCode() );
+        assertTrue( candidate2.isSuccess() );
 
-        try
-        {
-            candidate.getOrElse( null );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            if( !isExpectedException ) t.printStackTrace( out );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
+        assertThrows( NullArgumentException.class, () -> candidate2.getOrElse( null ) );
     }   //  testGetOrElseWithNullArgument()
 }
 //  class TestGetOrElse
