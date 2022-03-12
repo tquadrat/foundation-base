@@ -113,40 +113,15 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#checkFromIndexSize(int,int,int)" class="member-name-link">checkFromIndexSize(int, int, int)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive) to
-  <code>fromIndex + size</code> (exclusive) is within the bounds of range from
-  <code>0</code> (inclusive) to <code>length</code> (exclusive).<br>
-  <br>The sub-range is defined to be out-of-bounds if any of the
-  following inequalities is true:
-  
-    <code>fromIndex &lt; 0</code>
-    <code>size &lt; 0</code>
-    <code>fromIndex + size &gt; length</code>, taking into account integer
-    overflow
-    <code>length &lt; 0</code>, which is implied from the former
-    inequalities
-  
-  Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#checkFromIndexSize(long,long,long)" title="class or interface in java.util" class="external-link"><code>Objects.checkFromIndexSize(int, int, int)</code></a>
-  internally.</div>
+<div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive)
+  to <code>fromIndex + size</code> (exclusive) is within the bounds of range
+  from <code>0</code> (inclusive) to <code>length</code> (exclusive).</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#checkFromToIndex(int,int,int)" class="member-name-link">checkFromToIndex(int, int, int)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive) to
-  <code>toIndex</code> (exclusive) is within the bounds of range from
-  <code>0</code> (inclusive) to <code>length</code> (exclusive).<br>
-  <br>The sub-range is defined to be out-of-bounds if any of the
-  following inequalities is true:
-  
-    <code>fromIndex &lt; 0</code>
-    <code>fromIndex &gt; toIndex</code>
-    <code>toIndex &gt; length</code>
-    <code>length &lt; 0</code>, which is implied from the former
-    inequalities
-  
-  Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#checkFromToIndex(long,long,long)" title="class or interface in java.util" class="external-link"><code>Objects.checkFromToIndex(int, int, int)</code></a>
-  internally.</div>
+<div class="block">Checks if the sub-range from <code>fromIndex</code> (inclusive)
+  to <code>toIndex</code> (exclusive) is within the bounds of range from
+  <code>0</code> (inclusive) to <code>length</code> (exclusive).</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html#checkIfExpected(java.lang.Class...)" class="member-name-link">checkIfExpected(Class&lt;? extends Exception&gt;...)</a> - Method in exception org.tquadrat.foundation.exception.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a></dt>
 <dd>
@@ -162,19 +137,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#checkIndex(int,int)" class="member-name-link">checkIndex(int, int)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the <code>index</code> is within the bounds of the range from
-  <code>0</code> (inclusive) to <code>length</code> (exclusive).<br>
-  <br>The <code>index</code> is defined to be out-of-bounds if any of the
-  following inequalities is true:
-  
-    <code>index &lt; 0</code>
-    <code>index &gt;= length</code>
-    <code>length &lt; 0</code>, which is implied from the former
-    inequalities
-  
-  Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#checkIndex(long,long)" title="class or interface in java.util" class="external-link"><code>Objects.checkIndex(int, int)</code></a>
-  internally.</div>
+<div class="block">Checks if the <code>index</code> is within the bounds of the
+  range from <code>0</code> (inclusive) to <code>length</code> (exclusive).</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/CharSequenceTooLongException.html#checkLength(int)" class="member-name-link">checkLength(int)</a> - Static method in exception org.tquadrat.foundation.exception.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/CharSequenceTooLongException.html" title="class in org.tquadrat.foundation.exception">CharSequenceTooLongException</a></dt>
 <dd>
@@ -227,16 +191,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#compare(T,T,java.util.Comparator)" class="member-name-link">compare(T, T, Comparator&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Returns 0 if the arguments are identical and <code>c.compare(a, b)</code>
-  otherwise.<br>
-  <br>Consequently, if both arguments are <code>null</code>, 0 is
-  returned.<br>
-  <br>Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#compare(T,T,java.util.Comparator)" title="class or interface in java.util" class="external-link"><code>Objects.compare(Object, Object, Comparator)</code></a>
-  internally, but different from that method, this implementation will
-  throw a
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
-  in case the <code>comparator</code> is <code>null</code>.</div>
+<div class="block">Returns 0 if the arguments are identical and
+  <code>comparator.compare(a, b)</code> otherwise.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html#count()" class="member-name-link">count()</a> - Method in class org.tquadrat.foundation.stream.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a></dt>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html#count()" class="member-name-link">count()</a> - Method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/StreamAdapter.html" title="class in org.tquadrat.foundation.stream">StreamAdapter</a></dt>

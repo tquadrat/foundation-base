@@ -56,19 +56,19 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  <br>The class was originally inspired by the class of the same name that
  *  was finally introduced with the Java&nbsp;7 release; some of its methods
  *  will delegate to
- *  {@link java.util.Objects}.
+ *  {@link java.util.Objects java.util.Objects}.
  *  others will extend the functionality of the methods with the same
  *  name from {@code java.util.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: Objects.java 1027 2022-03-12 07:52:04Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1027 2022-03-12 07:52:04Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -83,11 +83,11 @@ public final class Objects
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Checks if the sub-range from {@code fromIndex} (inclusive) to
-     *  {@code fromIndex + size} (exclusive) is within the bounds of range from
-     *  {@code 0} (inclusive) to {@code length} (exclusive).<br>
-     *  <br>The sub-range is defined to be out-of-bounds if any of the
-     *  following inequalities is true:
+     *  <p>{@summary Checks if the sub-range from {@code fromIndex} (inclusive)
+     *  to {@code fromIndex + size} (exclusive) is within the bounds of range
+     *  from {@code 0} (inclusive) to {@code length} (exclusive).}</p>
+     *  <p>The sub-range is defined to be out-of-bounds if any of the following
+     *  inequalities is true:</p>
      *  <ul>
      *    <li>{@code fromIndex < 0}</li>
      *    <li>{@code size < 0}</li>
@@ -96,9 +96,9 @@ public final class Objects
      *    <li>{@code length < 0}, which is implied from the former
      *    inequalities</li>
      *  </ul>
-     *  Calls
-     *  {@link java.util.Objects#checkFromIndexSize(int, int, int)}
-     *  internally.
+     *  <p>Calls
+     *  {@link java.util.Objects#checkFromIndexSize(int,int,int) java.util.Objects.checkFromIndexSize(int,int,int)}
+     *  internally.</p>
      *
      *  @param  fromIndex   The lower-bound (inclusive) of the sub-interval.
      *  @param  size    The size of the sub-range.
@@ -111,11 +111,11 @@ public final class Objects
     public static final int checkFromIndexSize( final int fromIndex, final int size, final int length ) { return java.util.Objects.checkFromIndexSize( fromIndex, size, length ); }
 
     /**
-     *  Checks if the sub-range from {@code fromIndex} (inclusive) to
-     *  {@code toIndex} (exclusive) is within the bounds of range from
-     *  {@code 0} (inclusive) to {@code length} (exclusive).<br>
-     *  <br>The sub-range is defined to be out-of-bounds if any of the
-     *  following inequalities is true:
+     *  <p>{@summary Checks if the sub-range from {@code fromIndex} (inclusive)
+     *  to {@code toIndex} (exclusive) is within the bounds of range from
+     *  {@code 0} (inclusive) to {@code length} (exclusive).}</p>
+     *  <p>The sub-range is defined to be out-of-bounds if any of the following
+     *  inequalities is true:</p>
      *  <ul>
      *    <li>{@code fromIndex < 0}</li>
      *    <li>{@code fromIndex > toIndex}</li>
@@ -123,9 +123,9 @@ public final class Objects
      *    <li>{@code length < 0}, which is implied from the former
      *    inequalities</li>
      *  </ul>
-     *  Calls
-     *  {@link java.util.Objects#checkFromToIndex(int, int, int)}
-     *  internally.
+     *  <p>Calls
+     *  {@link java.util.Objects#checkFromToIndex(int,int,int) java.util.Objects.checkFromToIndex(int,int,int)}
+     *  internally.</p>
      *
      *  @param  fromIndex   The lower-bound (inclusive) of the sub-range.
      *  @param  toIndex The upper-bound (exclusive) of the sub-range.
@@ -138,19 +138,19 @@ public final class Objects
     public static final int checkFromToIndex( final int fromIndex, final int toIndex, final int length ) { return java.util.Objects.checkFromToIndex( fromIndex, toIndex, length ); }
 
     /**
-     *  Checks if the {@code index} is within the bounds of the range from
-     *  {@code 0} (inclusive) to {@code length} (exclusive).<br>
-     *  <br>The {@code index} is defined to be out-of-bounds if any of the
-     *  following inequalities is true:
+     *  <p>{@summary Checks if the {@code index} is within the bounds of the
+     *  range from {@code 0} (inclusive) to {@code length} (exclusive).}</p>
+     *  <p>The {@code index} is defined to be out-of-bounds if any of the
+     *  following inequalities is true:</p>
      *  <ul>
      *    <li>{@code index < 0}</li>
      *    <li>{@code index >= length}</li>
      *    <li>{@code length < 0}, which is implied from the former
      *    inequalities</li>
      *  </ul>
-     *  Calls
-     *  {@link java.util.Objects#checkIndex(int, int)}
-     *  internally.
+     *  <p>Calls
+     *  {@link java.util.Objects#checkIndex(int,int) java.util.Objects.checkIndex(int,int)}
+     *  internally.</p>
      *
      *  @param  index   The index.
      *  @param  length  The upper-bound (exclusive) of the range.
@@ -184,17 +184,17 @@ public final class Objects
     {
         if( !condition ) throw requireNonNullArgument( exception, "exception" ).get();
     }   //  checkState()
+
     /**
-     *  Returns 0 if the arguments are identical and {@code c.compare(a, b)}
-     *  otherwise.<br>
-     *  <br>Consequently, if both arguments are {@code null}, 0 is
-     *  returned.<br>
-     *  <br>Calls
-     *  {@link java.util.Objects#compare(Object, Object, Comparator)}
+     *  <p>{@summary Returns 0 if the arguments are identical and
+     *  {@code comparator.compare(a, b)} otherwise.}</p>
+     *  <p>Consequently, if both arguments are {@code null}, 0 is returned.</p>
+     *  <p>Calls
+     *  {@link java.util.Objects#compare(Object,Object,Comparator) java.util.Objects#compare()}
      *  internally, but different from that method, this implementation will
      *  throw a
      *  {@link NullArgumentException}
-     *  in case the {@code comparator} is {@code null}.
+     *  in case the {@code comparator} is {@code null}.</p>
      *
      *  @param  <T> The type of the objects being compared.
      *  @param  a   An object.
@@ -229,7 +229,7 @@ public final class Objects
      *  {@link Object#equals(Object) equals()}
      *  method of the first argument.</p>
      *  <p>Calls
-     *  {@link java.util.Objects#deepEquals(Object, Object)}
+     *  {@link java.util.Objects#deepEquals(Object,Object) java.util.Objects#deepEquals()}
      *  internally.</p>
      *
      *  @param  a   An object.
@@ -237,91 +237,91 @@ public final class Objects
      *  @return {@code true} if the arguments are deeply equal to each other
      *      and {@code false} otherwise.
      *
-     *  @see Arrays#deepEquals(Object[], Object[])
-     *  @see Objects#equals(Object, Object)
+     *  @see    Arrays#deepEquals(Object[],Object[])
+     *  @see    Objects#equals(Object,Object)
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean deepEquals( final Object a, final Object b ) { return java.util.Objects.deepEquals( a, b ); }
 
     /**
-     *  Returns {@code true} if the arguments are equal to each other and
-     *  {@code false} otherwise.<br>
-     *  <br> Consequently, if both arguments are {@code null}, {@code true} is
+     *  <p>{@summary Returns {@code true} if the arguments are equal to each
+     *  other and {@code false} otherwise.}</p>
+     *  <p> Consequently, if both arguments are {@code null}, {@code true} is
      *  returned and if exactly one argument is {@code null}, {@code false} is
      *  returned.  Otherwise, equality is determined by using the
      *  {@link Object#equals(Object) equals()}
-     *  method of the first argument.<br>
-     *  <br>Calls
+     *  method of the first argument.</p>
+     *  <p>Calls
      *  {@link java.util.Objects#equals(Object, Object)}
-     *  internally.
+     *  internally.</p>
      *
      *  @param  a   An object.
      *  @param  b   An object to be compared with {@code a} for equality.
      *  @return {@code true} if the arguments are equal to each other and
      *      {@code false} otherwise.
      *
-     *  @see Object#equals(Object)
+     *  @see    Object#equals(Object)
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean equals( final Object a, final Object b ) { return java.util.Objects.equals( a, b ); }
 
     /**
-     *  Generates a hash code for a sequence of input values. The hash code is
-     *  generated as if all the input values were placed into an array, and
-     *  that array were hashed by calling
-     *  {@link Arrays#hashCode(Object[])}.<br>
-     *  <br>Calls
-     *  {@link java.util.Arrays#hashCode(Object[])}
-     *  internally.
+     *  <p>{@summary Generates a hash code for a sequence of input values.} The
+     *  hash code is generated as if all the input values were placed into an
+     *  array, and that array is hashed by calling
+     *  {@link Arrays#hashCode(Object[])}.</p>
+     *  <p>Calls
+     *  {@link java.util.Arrays#hashCode(Object[]) java.util.Arrays.hashCode()}
+     *  internally.</p>
      *
      *  @param  values  The values to be hashed.
      *  @return A hash value of the sequence of input values.
      *
-     *  @see List#hashCode
+     *  @see    List#hashCode
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int hash( final Object... values ) { return Arrays.hashCode( values ); }
 
     /**
-     *  Returns the hash code of a non-{@code null} argument and 0 for
-     *  a {@code null} argument.<br>
-     *  <br>Calls
-     *  {@link java.util.Objects#hashCode(Object)}
-     *  internally.
+     *  <p>{@summary Returns the hash code of a non-{@code null} argument and 0
+     *  for a {@code null} argument.}</p>
+     *  <p>Calls
+     *  {@link java.util.Objects#hashCode(Object) java.util.Objects.hashCode(Object)}
+     *  internally.</p>
      *
      *  @param o   An object.
      *  @return The hash code of an argument that is not {@code null}, and 0
      *      for a {@code null} argument,
      *
-     *  @see Object#hashCode
+     *  @see    Object#hashCode
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int hashCode( final Object o ) { return java.util.Objects.hashCode( o ); }
 
     /**
-     *  Returns {@code true} if the provided reference is {@code null},
-     *  otherwise returns {@code false}.<br>
-     *  <br>This method exists to be used as a
+     *  <p>{@summary Returns {@code true} if the provided reference is
+     *  {@code null}, otherwise returns {@code false}.}</p>
+     *  <p>This method can be used as a
      *  {@link java.util.function.Predicate},
-     *  {@code filter(Objects::isNull)}.<br>
-     *  <br>Calls
-     *  {@link java.util.Objects#isNull(Object)}
-     *  internally.
+     *  {@code filter(Objects::isNull)}.</p>
+     *  <p>Calls
+     *  {@link java.util.Objects#isNull(Object) java.util.Objects.isNull()}
+     *  internally.</p>
      *
      *  @param  obj A reference to be checked against {@code null}.
      *  @return {@code true} if the provided reference is {@code null},
      *      otherwise {@code false}
      *
-     *  @see java.util.function.Predicate
-     *  @see org.tquadrat.foundation.lang.CommonConstants#IS_NULL
+     *  @see    java.util.function.Predicate
+     *  @see    org.tquadrat.foundation.lang.CommonConstants#IS_NULL
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean isNull( final Object obj ) { return java.util.Objects.isNull( obj ); }
 
     /**
-     *  <p>{@summary Maps (converts) the given object instance by applying the provided mapper if the
-     *  instance is not {@code null}.}</p>
+     *  <p>{@summary Maps (converts) the given object instance by applying the
+     *  provided mapper if the instance is not {@code null}.}</p>
      *  <p>The mapper function will not be called at all if the given instance is
      *  {@code null}.</p>
      *
@@ -348,7 +348,7 @@ public final class Objects
      *  {@link java.util.function.Predicate},
      *  {@code filter(Objects::nonNull)}</p>
      *  <p>Calls
-     *  {@link java.util.Objects#nonNull(Object)}
+     *  {@link java.util.Objects#nonNull(Object) java.util.Objects.nonNull()}
      *  internally.</p>
      *
      *  @param  obj A reference to be checked against {@code null}
@@ -419,24 +419,24 @@ public final class Objects
     }   //  require()
 
     /**
-     *  Applies the given validation on the given value, and if that fails, a
-     *  customized
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a customized
      *  {@link IllegalArgumentException}
-     *  is thrown.<br>
-     *  <br>Unlike the method
+     *  is thrown.}</p>
+     *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
-     *  this method allows creation of the message to be deferred until after
-     *  the validation was performed. While this may confer a performance
-     *  advantage in the success case, when deciding to call this method care
-     *  should be taken that the costs of creating the message supplier are
-     *  less than the cost of just creating the String message directly.
+     *  this method allows to defer the creation of the message until after the
+     *  validation was performed (and failed). While this may confer a
+     *  performance advantage in the success case, some care  should be taken
+     *  that the costs the creation of the message supplier are less than the
+     *  cost of just creating the String message directly.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check; can be {@code null}.
      *  @param  messageSupplier The supplier of the detail message to be used
      *      in the event that an {@code IllegalArgumentException} is thrown. If
      *      {@code null} or if it returns {@code null}, no detail message is
-     *      provided.
+     *      provided to the exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws IllegalArgumentException    {@code a} failed the validation.
@@ -460,26 +460,25 @@ public final class Objects
     }   //  require()
 
     /**
-     *  Applies the given validation on the given value, and if that fails, a
-     *  customized
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a customized
      *  {@link IllegalArgumentException}
-     *  is thrown.<br>
-     *  <br>Unlike the method
+     *  is thrown.}</p>
+     *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
-     *  this method allows creation of the message to be deferred until after
-     *  the validation was performed. While this may confer a performance
-     *  advantage in the success case, when deciding to call this method care
-     *  should be taken that the costs of creating the message supplier are
-     *  less than the cost of just creating the String message directly.
-     *
-     *  @note This implementation is different from
-     *      {@link #requireNonNull(Object, Supplier)}
-     *      as it takes an instance of
-     *      {@link Function}
-     *      for the {@code messageSupplier}. That function is called with
-     *      {@code a} as the argument; this allows to add the invalid value to
-     *      the exception message. The provided function must accept
-     *      {@code null} as a valid argument.
+     *  this method allows to defer the creation of the message until after the
+     *  validation was performed (and failed). While this may confer a
+     *  performance advantage in the success case, some care  should be taken
+     *  that the costs the creation of the message supplier are less than the
+     *  cost of just creating the String message directly.</p>
+     *  <p>This implementation is different from
+     *  {@link #requireNonNull(Object, Supplier)}
+     *  as it takes an instance of
+     *  {@link Function}
+     *  for the {@code messageSupplier}. That function is called with {@code a}
+     *  as the argument; this allows to add the invalid value to the exception
+     *  detail message. The provided message supplier function must accept
+     *  {@code null} as a valid argument.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check; can be {@code null}.
@@ -510,12 +509,13 @@ public final class Objects
     }   //  require()
 
     /**
-     *  Checks if the given value {@code a} is {@code null} and throws a
+     *  <p>{@summary Checks if the given value {@code a} is {@code null} and
+     *  throws a
      *  {@link NullPointerException}
-     *  if it is {@code null}.<br>
-     *  <br>Calls
-     *  {@link java.util.Objects#requireNonNull(Object)}
-     *  internally.
+     *  if it is {@code null}.}</p>
+     *  <p>Calls
+     *  {@link java.util.Objects#requireNonNull(Object) java.util.Objects.requireNonNull(Object)}
+     *  internally.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check.
@@ -526,13 +526,14 @@ public final class Objects
     public static final <T> T requireNonNull( final T a ) { return java.util.Objects.requireNonNull( a ); }
 
     /**
-     *  Checks if the given value {@code a} is {@code null} and throws a
+     *  <p>{@summary Checks if the given value {@code a} is {@code null} and
+     *  throws a
      *  {@link NullPointerException}
-     *  with the specified message if it is {@code null}.<br>
-     *  <br>Calls
-     *  {@link java.util.Objects#requireNonNull(Object, String)}
+     *  with the specified message if it is {@code null}.}</p>
+     *  <p>Calls
+     *  {@link java.util.Objects#requireNonNull(Object,String) java.util.Objects#requireNonNull(Object,String)}
      *  internally, but requires that the given {@code message} is not
-     *  {@code null} or empty.
+     *  {@code null} or empty.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check.
@@ -549,20 +550,20 @@ public final class Objects
     }   //  requireNonNull()
 
     /**
-     *  Checks that the specified object reference is not {@code null} and
-     *  throws a customized
+     *  <p>{@summary Checks that the specified object reference is not
+     *  {@code null} and throws a customized
      *  {@link NullPointerException}
-     *  if it is.<br>
-     *  <br>Unlike the method
+     *  if it is.}</p>
+     *  <p>Unlike the method
      *  {@link #requireNonNull(Object, String)},
-     *  this method allows creation of the message to be deferred until after
-     *  the null check is made. While this may confer a performance advantage
-     *  in the non-null case, when deciding to call this method care should be
+     *  this method allows to defer the creation of the message until after the
+     *  null check failed. While this may confer a performance advantage in the
+     *  non-{@code null} case, when deciding to call this method care should be
      *  taken that the costs of creating the message supplier are less than the
-     *  cost of just creating the String message directly.<br>
-     *  <br>Calls
+     *  cost of just creating the String message directly.</p>
+     *  <p>Calls
      *  {@link java.util.Objects#requireNonNull(Object, Supplier)}
-     *  internally.
+     *  internally.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check.
@@ -573,7 +574,7 @@ public final class Objects
      *  @throws NullPointerException    {@code A} is {@code null}
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull(final T a, final Supplier<String> messageSupplier) { return java.util.Objects.requireNonNull( a, messageSupplier ); }
+    public static final <T> T requireNonNull( final T a, final Supplier<String> messageSupplier) { return java.util.Objects.requireNonNull( a, messageSupplier ); }
 
     /**
      *  Checks if the given argument {@code a} is {@code null} and throws a
@@ -599,10 +600,10 @@ public final class Objects
     }   //  requireNonNullArgument()
 
     /**
-     *  Checks if not both of the given arguments {@code a} and
+     *  <p>{@summary Checks if not both of the given arguments {@code a} and
      *  {@code other} are {@code null} and throws a
      *  {@link NullArgumentException}
-     *  if both are {@code null}. Otherwise, it returns {@code a}.
+     *  if both are {@code null}.} Otherwise, it returns {@code a}.</p>
      *
      *  @param  <T> The type of the first argument to check.
      *  @param  arg The first argument to check; it will be returned in case of
@@ -798,18 +799,19 @@ public final class Objects
     }   //  requireNotEmptyArgument()
 
     /**
-     *  Checks if the given argument {@code a} of type
+     *  <p>{@summary Checks if the given argument {@code a} of type
      *  {@link Optional}
-     *  is {@code null} or empty and
-     *  throws a
+     *  is {@code null} or
+     *  {@linkplain Optional#empty() empty}
+     *  and throws a
      *  {@link NullArgumentException}
      *  if it is {@code null}, or a
      *  {@link EmptyArgumentException}
-     *  if it is empty.<br>
-     *  <br>Otherwise it returns the value of the {@code Optional}.<br>
-     *  <br>This is different from the behaviour of
+     *  if it is empty.}</p>
+     *  <p>Otherwise it returns the value of the {@code Optional}.</p>
+     *  <p>This is different from the behaviour of
      *  {@link #requireNotEmptyArgument(Object,String)}
-     *  with an instance of {@code Optional} as the argument to test.
+     *  with an instance of {@code Optional} as the argument to test.</p>
      *
      *  @param  <T> The type of the given {@code Optional} to check.
      *  @param  optional    The argument to check; can be {@code null}.
@@ -838,11 +840,11 @@ public final class Objects
     }   //  requireNotEmptyArgument()
 
     /**
-     *  Returns the first argument if it is not {@code null}, otherwise it
-     *  returns the non-{@code null} second argument.<br>
-     *  <br>This implementation behaves different from that in
-     *  {@link java.util.Objects#requireNonNullElse(Object,Object)}
-     *  as it will always check that the default is not {@code null}.
+     *  <p>{@summary Returns the first argument if it is not {@code null},
+     *  otherwise it returns the non-{@code null} second argument.}</p>
+     *  <p>This implementation behaves different from that in
+     *  {@link java.util.Objects#requireNonNullElse(Object,Object) java.util.Objects.requireNonNullElse(Object,Object)}
+     *  as it will always check that the default is not {@code null}.</p>
      *
      *  @param <T>  The type of the references.
      *  @param  obj An object reference.
@@ -852,7 +854,7 @@ public final class Objects
      *      second argument if it is not {@code null}.
      *  @throws NullArgumentException   The {@code defaultObj} is {@code null}.
      *
-     *  @see java.util.Objects#requireNonNullElse(Object, Object)
+     *  @see    java.util.Objects#requireNonNullElse(Object, Object)
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNonNullElse( final T obj, final T defaultObj ) throws NullArgumentException
@@ -861,12 +863,15 @@ public final class Objects
     }   //  requireNonNullElse()
 
     /**
-     *  Returns the first argument if it is not {@code null}, otherwise it
-     *  returns the non-{@code null} value returned by
-     *  {@link Supplier#get() supplier.get()}.<br>
-     *  <br>This implementation behaves different from that in
-     *  {@link java.util.Objects#requireNonNullElseGet(Object,Supplier)}
-     *  as it will always check that the supplier is not {@code null}.
+     *  <p>{@summary Returns the first argument if it is not {@code null},
+     *  otherwise it returns the non-{@code null} value returned by
+     *  {@link Supplier#get() supplier.get()}.}</p>
+     *  <p>This implementation behaves different from that in
+     *  {@link java.util.Objects#requireNonNullElseGet(Object,Supplier) java.util.Objects.requireNonNullElseGet(Object,Supplier)}
+     *  as it will always check that the supplier is not {@code null}.</p>
+     *
+     *  @note   Although the provided {@code Supplier} may not be {@code null},
+     *      it may <i>return</i> {@code null}.
      *
      *  @param <T>  The type of the reference.
      *  @param  obj An object reference.
@@ -919,10 +924,12 @@ public final class Objects
     }   //  requireValidArgument()
 
     /**
-     *  Applies the given validation on the given value, and if that fails, an
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, an
      *  {@link ValidationException}
-     *  is thrown. The message for the exception will be provided by the given
-     *  message supplier that takes the name of the argument as an argument.
+     *  is thrown.} The message for the exception will be provided by the given
+     *  message supplier that takes the name of the argument as an
+     *  argument.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check; can be {@code null}.
@@ -955,7 +962,7 @@ public final class Objects
     }   //  requireValidArgument()
 
     /**
-     *  Applies the given validation on the given value (that may not be
+     *  Applies the given validation on the given value (that must not be
      *  {@code null}), and if that fails, an
      *  {@link ValidationException}
      *  with a default message is thrown.
@@ -988,11 +995,12 @@ public final class Objects
     }   //  requireValidNonNullArgument()
 
     /**
-     *  Applies the given validation on the given value (that may not be
-     *  {@code null}), and if that fails, an
+     *  <p>{@summary Applies the given validation on the given value (that must
+     *  not be {@code null}), and if that fails, a
      *  {@link ValidationException}
-     *  is thrown. The message for the exception will be provided by the given
-     *  message supplier that takes the name of the argument as an argument.
+     *  is thrown.} The message for the exception will be provided by the given
+     *  message supplier that takes the name of the argument as an
+     *  argument.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  a   The value to check.
@@ -1025,17 +1033,17 @@ public final class Objects
     }   //  requireValidNonNullArgument()
 
     /**
-     *  Converts the given argument {@code object} into a
+     *  <p>{@summary Converts the given argument {@code object} into a
      *  {@link String},
      *  usually by calling its
      *  {@link Object#toString() toString()}
-     *  method. If the value of the argument is {@code null}, the text
+     *  method.} If the value of the argument is {@code null}, the text
      *  &quot;{@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING null}&quot;
-     *  will be returned instead. Arrays will be converted to a string through
+     *  will be returned instead. Arrays will be converted to a String through
      *  calling the respective {@code toString()} method from
      *  {@link java.util.Arrays}
      *  (this distinguishes this implementation from
-     *  {link java.util.Objects#toString(Object, String)}).
+     *  {link java.util.Objects#toString(Object, String) java.util.Objects.toString()}).
      *  Values of type
      *  {@link java.util.Date} or
      *  {@link java.util.Calendar}
@@ -1064,21 +1072,24 @@ public final class Objects
     }   //  toString()
 
     /**
-     *  Converts the given argument {@code object} into a
+     *  <p>{@summary Converts the given argument {@code object} into a
      *  {@link String},
      *  usually by calling its
      *  {@link Object#toString() toString()}
-     *  method. If the value of the argument is {@code null}, the text
-     *  provided as the {@code nullDefault} argument will be returned instead.
-     *  Arrays will be converted to a string through calling the respective
+     *  method.} If the value of the argument is {@code null}, the text
+     *  provided as the {@code nullDefault} argument will be returned
+     *  instead.</p>
+     *  <p>Arrays will be converted to a string through calling the respective
      *  {@code toString()} method from
      *  {@link java.util.Arrays}
      *  (this distinguishes this implementation from
-     *  {link java.util.Objects#toString(Object, String)}).
-     *  Values of type
+     *  {link java.util.Objects#toString(Object,String) java.util.Objects.toString(Object,String)}).</p>
+     *  <p>Values of type
      *  {@link java.util.Date} or
      *  {@link java.util.Calendar}
-     *  will be translated based on the default locale - whatever that is.
+     *  will be translated based on the
+     *  {@link java.util.Locale#getDefault() default locale}
+     *  – whatever that is.</p>
      *
      *  @param  object  The object; may be {@code null}.
      *  @param  nullDefault The text that should be returned if {@code object}
@@ -1155,12 +1166,13 @@ public final class Objects
     }   //  toString()
 
     /**
-     *  Converts the given argument {@code object} into a
+     *  <p>{@summary Converts the given argument {@code object} into a
      *  {@link String}
      *  using the given instance of
-     *  {@link Stringer}.
+     *  {@link Stringer}.}
      *  If the value of the argument is {@code null}, the text
-     *  provided as the {@code nullDefault} argument will be returned instead.
+     *  provided as the {@code nullDefault} argument will be returned
+     *  instead.</p>
      *
      *  @param  <T> The type of the object.
      *  @param  object  The object; may be {@code null}.
@@ -1170,7 +1182,7 @@ public final class Objects
      *      is {@code null}.
      *  @return The object's string representation.
      *
-     *  @see Stringer
+     *  @see    Stringer
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> String toString( final T object, final Stringer<? super T> stringer, final String nullDefault )

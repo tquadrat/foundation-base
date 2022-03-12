@@ -73,14 +73,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#require(T,java.util.function.Function,java.util.function.Predicate)" class="member-name-link">require(T, Function&lt;? super T, String&gt;, Predicate&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Applies the given validation on the given value, and if that fails, a
-  customized
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a customized
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
-  is thrown.<br>
-  <br>Unlike the method
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#require(T,java.lang.String,java.util.function.Predicate)"><code>Objects.require(Object,String,Predicate)</code></a>,
-  this method allows creation of the message to be deferred until after
-  the validation was performed.</div>
+  is thrown.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#require(T,java.util.function.Predicate)" class="member-name-link">require(T, Predicate&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
@@ -90,44 +86,31 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#require(T,java.util.function.Supplier,java.util.function.Predicate)" class="member-name-link">require(T, Supplier&lt;String&gt;, Predicate&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Applies the given validation on the given value, and if that fails, a
-  customized
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a customized
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
-  is thrown.<br>
-  <br>Unlike the method
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#require(T,java.lang.String,java.util.function.Predicate)"><code>Objects.require(Object,String,Predicate)</code></a>,
-  this method allows creation of the message to be deferred until after
-  the validation was performed.</div>
+  is thrown.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNull(T)" class="member-name-link">requireNonNull(T)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the given value <code>a</code> is <code>null</code> and throws a
+<div class="block">Checks if the given value <code>a</code> is <code>null</code> and
+  throws a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link"><code>NullPointerException</code></a>
-  if it is <code>null</code>.<br>
-  <br>Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNull(T)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNull(Object)</code></a>
-  internally.</div>
+  if it is <code>null</code>.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNull(T,java.lang.String)" class="member-name-link">requireNonNull(T, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks if the given value <code>a</code> is <code>null</code> and throws a
+<div class="block">Checks if the given value <code>a</code> is <code>null</code> and
+  throws a
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link"><code>NullPointerException</code></a>
-  with the specified message if it is <code>null</code>.<br>
-  <br>Calls
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNull(T,java.lang.String)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNull(Object, String)</code></a>
-  internally, but requires that the given <code>message</code> is not
-  <code>null</code> or empty.</div>
+  with the specified message if it is <code>null</code>.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNull(T,java.util.function.Supplier)" class="member-name-link">requireNonNull(T, Supplier&lt;String&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Checks that the specified object reference is not <code>null</code> and
-  throws a customized
+<div class="block">Checks that the specified object reference is not
+  <code>null</code> and throws a customized
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link"><code>NullPointerException</code></a>
-  if it is.<br>
-  <br>Unlike the method
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNull(T,java.lang.String)"><code>Objects.requireNonNull(Object, String)</code></a>,
-  this method allows creation of the message to be deferred until after
-  the null check is made.</div>
+  if it is.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNullArgument(T,java.lang.Object,java.lang.String,java.lang.String)" class="member-name-link">requireNonNullArgument(T, Object, String, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
@@ -144,20 +127,14 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNullElse(T,T)" class="member-name-link">requireNonNullElse(T, T)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Returns the first argument if it is not <code>null</code>, otherwise it
-  returns the non-<code>null</code> second argument.<br>
-  <br>This implementation behaves different from that in
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNullElse(T,T)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNullElse(Object,Object)</code></a>
-  as it will always check that the default is not <code>null</code>.</div>
+<div class="block">Returns the first argument if it is not <code>null</code>,
+  otherwise it returns the non-<code>null</code> second argument.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNonNullElseGet(T,java.util.function.Supplier)" class="member-name-link">requireNonNullElseGet(T, Supplier&lt;? extends T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Returns the first argument if it is not <code>null</code>, otherwise it
-  returns the non-<code>null</code> value returned by
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html#get()" title="class or interface in java.util.function" class="external-link"><code>supplier.get()</code></a>.<br>
-  <br>This implementation behaves different from that in
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#requireNonNullElseGet(T,java.util.function.Supplier)" title="class or interface in java.util" class="external-link"><code>Objects.requireNonNullElseGet(Object,Supplier)</code></a>
-  as it will always check that the supplier is not <code>null</code>.</div>
+<div class="block">Returns the first argument if it is not <code>null</code>,
+  otherwise it returns the non-<code>null</code> value returned by
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html#get()" title="class or interface in java.util.function" class="external-link"><code>supplier.get()</code></a>.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotBlankArgument(T,java.lang.String)" class="member-name-link">requireNotBlankArgument(T, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
@@ -174,16 +151,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Checks if the given argument <code>a</code> of type
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>
-  is <code>null</code> or empty and
-  throws a
+  is <code>null</code> or
+  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html#empty()" title="class or interface in java.util" class="external-link">empty</a>
+  and throws a
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>NullArgumentException</code></a>
   if it is <code>null</code>, or a
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
-  if it is empty.<br>
-  <br>Otherwise it returns the value of the <code>Optional</code>.<br>
-  <br>This is different from the behaviour of
-  <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotEmptyArgument(T,java.lang.String)"><code>Objects.requireNotEmptyArgument(Object,String)</code></a>
-  with an instance of <code>Optional</code> as the argument to test.</div>
+  if it is empty.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireNotEmptyArgument(T,java.lang.String)" class="member-name-link">requireNotEmptyArgument(T, String)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
@@ -202,21 +176,22 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireValidArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument(T, String, Predicate&lt;? super T&gt;, UnaryOperator&lt;String&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Applies the given validation on the given value, and if that fails, an
+<div class="block">Applies the given validation on the given value, and if
+  that fails, an
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   is thrown.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidNonNullArgument(T, String, Predicate&lt;? super T&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Applies the given validation on the given value (that may not be
+<div class="block">Applies the given validation on the given value (that must not be
   <code>null</code>), and if that fails, an
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   with a default message is thrown.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#requireValidNonNullArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidNonNullArgument(T, String, Predicate&lt;? super T&gt;, UnaryOperator&lt;String&gt;)</a> - Static method in class org.tquadrat.foundation.lang.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html" title="class in org.tquadrat.foundation.lang">Objects</a></dt>
 <dd>
-<div class="block">Applies the given validation on the given value (that may not be
-  <code>null</code>), and if that fails, an
+<div class="block">Applies the given validation on the given value (that must
+  not be <code>null</code>), and if that fails, a
   <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
   is thrown.</div>
 </dd>
