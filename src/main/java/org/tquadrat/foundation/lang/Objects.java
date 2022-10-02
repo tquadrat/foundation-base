@@ -61,14 +61,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  name from {@code java.util.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1027 2022-03-12 07:52:04Z tquadrat $
+ *  @version $Id: Objects.java 1032 2022-04-10 17:27:44Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1027 2022-03-12 07:52:04Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1032 2022-04-10 17:27:44Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -733,6 +733,7 @@ public final class Objects
      *  @throws NullArgumentException   {@code a} is {@code null}.
      *  @throws EmptyArgumentException   {@code a} is empty.
      */
+    @SuppressWarnings( "OverlyComplexMethod" )
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNotEmptyArgument( final T a, final String name )
     {
@@ -741,6 +742,11 @@ public final class Objects
 
         switch( a )
         {
+            /*
+             * When using guarding expressions, the code would not get better
+             * to read and to understand, as the positive cases will be handled
+             * all by the default case.
+             */
             case null -> throw new NullArgumentException( name );
             case CharSequence charSequence ->
             {
@@ -925,7 +931,7 @@ public final class Objects
 
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
-     *  that fails, an
+     *  that fails, a
      *  {@link ValidationException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
@@ -1108,7 +1114,7 @@ public final class Objects
      *  @see java.util.Arrays#deepToString(Object[])
      *  @see java.util.Locale#getDefault()
      */
-    @SuppressWarnings( {"IfStatementWithTooManyBranches", "ChainOfInstanceofChecks"} )
+    @SuppressWarnings( {"IfStatementWithTooManyBranches", "ChainOfInstanceofChecks", "OverlyComplexMethod"} )
     @API( status = STABLE, since = "0.0.5" )
     public static final String toString( final Object object, final String nullDefault )
     {

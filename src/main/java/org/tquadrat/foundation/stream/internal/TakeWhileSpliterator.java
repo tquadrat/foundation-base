@@ -45,14 +45,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TakeWhileSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: TakeWhileSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class TakeWhileSpliterator<T> implements Spliterator<T>
 {
@@ -98,6 +98,7 @@ public final class TakeWhileSpliterator<T> implements Spliterator<T>
     @Override
     public final int characteristics()
     {
+        @SuppressWarnings( "ConstantExpression" )
         final var retValue = m_Source.characteristics() & ~SIZED;
 
         //---* Done *----------------------------------------------------------
@@ -136,6 +137,7 @@ public final class TakeWhileSpliterator<T> implements Spliterator<T>
         final var retValue = m_ConditionHolds
             && m_Source.tryAdvance( e ->
             {
+                //noinspection NestedAssignment
                 if( (m_ConditionHolds = m_Condition.test( e )) == true )
                 {
                     action.accept( e );

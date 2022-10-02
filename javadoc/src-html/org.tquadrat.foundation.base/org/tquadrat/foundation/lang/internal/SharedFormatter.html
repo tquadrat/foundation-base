@@ -49,12 +49,12 @@
 <span class="source-line-no">036</span><span id="line-36"> *  {@link java.util.Formatter}.</span>
 <span class="source-line-no">037</span><span id="line-37"> *</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">039</span><span id="line-39"> *  @version $Id: SharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $</span>
+<span class="source-line-no">039</span><span id="line-39"> *  @version $Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $</span>
 <span class="source-line-no">040</span><span id="line-40"> *  @since 0.1.0</span>
 <span class="source-line-no">041</span><span id="line-41"> *</span>
 <span class="source-line-no">042</span><span id="line-42"> *  @UMLGraph.link</span>
 <span class="source-line-no">043</span><span id="line-43"> */</span>
-<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $" )</span>
+<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $" )</span>
 <span class="source-line-no">045</span><span id="line-45">@API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">046</span><span id="line-46">@UtilityClass</span>
 <span class="source-line-no">047</span><span id="line-47">public final class SharedFormatter</span>
@@ -87,115 +87,115 @@
 <span class="source-line-no">074</span><span id="line-74">    static</span>
 <span class="source-line-no">075</span><span id="line-75">    {</span>
 <span class="source-line-no">076</span><span id="line-76">        //---* The cached Formatter instance *---------------------------------</span>
-<span class="source-line-no">077</span><span id="line-77">        final Supplier&lt;Formatter&gt; initializer = () -&gt; new Formatter( new StringBuilder( FORMAT_INITIAL_BUFFERSIZE ), Locale.getDefault( Locale.Category.FORMAT ) );</span>
-<span class="source-line-no">078</span><span id="line-78">        //noinspection RedundantTypeArguments</span>
-<span class="source-line-no">079</span><span id="line-79">        m_Formatter = ThreadLocal.&lt;Formatter&gt;withInitial( initializer );</span>
-<span class="source-line-no">080</span><span id="line-80">    }</span>
-<span class="source-line-no">081</span><span id="line-81"></span>
-<span class="source-line-no">082</span><span id="line-82">        /*--------------*\</span>
-<span class="source-line-no">083</span><span id="line-83">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">084</span><span id="line-84">        \*--------------*/</span>
-<span class="source-line-no">085</span><span id="line-85">    /**</span>
-<span class="source-line-no">086</span><span id="line-86">     *  No instance of this class is allowed.</span>
-<span class="source-line-no">087</span><span id="line-87">     */</span>
-<span class="source-line-no">088</span><span id="line-88">    private SharedFormatter() { throw new PrivateConstructorForStaticClassCalledError( SharedFormatter.class ); }</span>
-<span class="source-line-no">089</span><span id="line-89"></span>
-<span class="source-line-no">090</span><span id="line-90">        /*---------*\</span>
-<span class="source-line-no">091</span><span id="line-91">    ====** Methods **==========================================================</span>
-<span class="source-line-no">092</span><span id="line-92">        \*---------*/</span>
-<span class="source-line-no">093</span><span id="line-93">    /**</span>
-<span class="source-line-no">094</span><span id="line-94">     *  Returns a formatted String using the specified format String and</span>
-<span class="source-line-no">095</span><span id="line-95">     *  arguments.&lt;br&gt;</span>
-<span class="source-line-no">096</span><span id="line-96">     *  &lt;br&gt;The implementation uses internally the</span>
-<span class="source-line-no">097</span><span id="line-97">     *  {@link Locale}</span>
-<span class="source-line-no">098</span><span id="line-98">     *  that is returned by</span>
-<span class="source-line-no">099</span><span id="line-99">     *  {@link java.util.Locale#getDefault() Locale.getDefault()}.&lt;br&gt;</span>
-<span class="source-line-no">100</span><span id="line-100">     *  &lt;br&gt;This method is meant as a replacement for the method</span>
-<span class="source-line-no">101</span><span id="line-101">     *  {@link java.lang.String#format(String, Object...)};</span>
-<span class="source-line-no">102</span><span id="line-102">     *  that implementation always uses a new instance of</span>
-<span class="source-line-no">103</span><span id="line-103">     *  {@link Formatter}</span>
-<span class="source-line-no">104</span><span id="line-104">     *  for each invocation. The implementation here uses a cached instance</span>
-<span class="source-line-no">105</span><span id="line-105">     *  instead, and as {@code Formatter} is not inherently thread-safe, this</span>
-<span class="source-line-no">106</span><span id="line-106">     *  cached instance is created and stored per thread, therefore no</span>
-<span class="source-line-no">107</span><span id="line-107">     *  synchronisation is needed.&lt;br&gt;</span>
-<span class="source-line-no">108</span><span id="line-108">     *  &lt;br&gt;This implementation is about as twice as fast as</span>
-<span class="source-line-no">109</span><span id="line-109">     *  {@code java.lang.String.format()}.</span>
-<span class="source-line-no">110</span><span id="line-110">     *</span>
-<span class="source-line-no">111</span><span id="line-111">     *  @param  format  A format String with the syntax as described for the</span>
-<span class="source-line-no">112</span><span id="line-112">     *      {@link Formatter}</span>
-<span class="source-line-no">113</span><span id="line-113">     *      class.</span>
-<span class="source-line-no">114</span><span id="line-114">     *  @param  args    The arguments referenced by the format specifiers in</span>
-<span class="source-line-no">115</span><span id="line-115">     *      the {@code format} String. If there are more arguments than format</span>
-<span class="source-line-no">116</span><span id="line-116">     *      specifiers, the extra arguments are ignored. The number of</span>
-<span class="source-line-no">117</span><span id="line-117">     *      arguments is variable and may be zero. The maximum number of</span>
-<span class="source-line-no">118</span><span id="line-118">     *      arguments is limited by the maximum dimension of a Java array as</span>
-<span class="source-line-no">119</span><span id="line-119">     *      defined by &lt;cite&gt;The Java&amp;trade; Virtual Machine</span>
-<span class="source-line-no">120</span><span id="line-120">     *      Specification&lt;/cite&gt;. The behaviour on a {@code null} argument</span>
-<span class="source-line-no">121</span><span id="line-121">     *      depends on the conversion.</span>
-<span class="source-line-no">122</span><span id="line-122">     *  @throws IllegalFormatException A format string contains an illegal</span>
-<span class="source-line-no">123</span><span id="line-123">     *      syntax, a format specifier that is incompatible with the given</span>
-<span class="source-line-no">124</span><span id="line-124">     *      arguments, insufficient arguments given the format string, or other</span>
-<span class="source-line-no">125</span><span id="line-125">     *      illegal conditions occurred. For specification of all possible</span>
-<span class="source-line-no">126</span><span id="line-126">     *      formatting errors, see the &amp;quot;Details&amp;quot; section of the</span>
-<span class="source-line-no">127</span><span id="line-127">     *      {@code Formatter} class specification.</span>
-<span class="source-line-no">128</span><span id="line-128">     *  @return A formatted String.</span>
-<span class="source-line-no">129</span><span id="line-129">     *</span>
-<span class="source-line-no">130</span><span id="line-130">     *  @see  java.util.Formatter</span>
-<span class="source-line-no">131</span><span id="line-131">     *</span>
-<span class="source-line-no">132</span><span id="line-132">     *  @since 0.1.0</span>
-<span class="source-line-no">133</span><span id="line-133">     */</span>
-<span class="source-line-no">134</span><span id="line-134">    @API( status = INTERNAL, since = "0.1.0" )</span>
-<span class="source-line-no">135</span><span id="line-135">    public static final String format( final String format, final Object... args ) throws IllegalFormatException</span>
-<span class="source-line-no">136</span><span id="line-136">    {</span>
-<span class="source-line-no">137</span><span id="line-137">        return format( Locale.getDefault( Locale.Category.FORMAT ), format, args );</span>
-<span class="source-line-no">138</span><span id="line-138">    }   //  format()</span>
-<span class="source-line-no">139</span><span id="line-139"></span>
-<span class="source-line-no">140</span><span id="line-140">    /**</span>
-<span class="source-line-no">141</span><span id="line-141">     *  Returns a formatted String using the specified</span>
-<span class="source-line-no">142</span><span id="line-142">     *  {@link Locale},</span>
-<span class="source-line-no">143</span><span id="line-143">     *  format String, and arguments.&lt;br&gt;</span>
-<span class="source-line-no">144</span><span id="line-144">     *  &lt;br&gt;This method is meant as a replacement for the method</span>
-<span class="source-line-no">145</span><span id="line-145">     *  {@link java.lang.String#format(String, Object...)};</span>
-<span class="source-line-no">146</span><span id="line-146">     *  that implementation always uses a new instance of</span>
-<span class="source-line-no">147</span><span id="line-147">     *  {@link Formatter}</span>
-<span class="source-line-no">148</span><span id="line-148">     *  for each invocation. The implementation here uses a cached instance</span>
-<span class="source-line-no">149</span><span id="line-149">     *  instead, and as {@code Formatter} is not inherently thread-safe, this</span>
-<span class="source-line-no">150</span><span id="line-150">     *  cached instance is created and stored per thread, therefore no</span>
-<span class="source-line-no">151</span><span id="line-151">     *  synchronisation is needed.&lt;br&gt;</span>
-<span class="source-line-no">152</span><span id="line-152">     *  &lt;br&gt;The performance gain for this implementation is not that impressive</span>
-<span class="source-line-no">153</span><span id="line-153">     *  when compared with that of</span>
-<span class="source-line-no">154</span><span id="line-154">     *  {@link #format(String, Object...)},</span>
-<span class="source-line-no">155</span><span id="line-155">     *  but still in the 10% range.</span>
-<span class="source-line-no">156</span><span id="line-156">     *  {@code java.lang.String.format()}.</span>
-<span class="source-line-no">157</span><span id="line-157">     *</span>
-<span class="source-line-no">158</span><span id="line-158">     *  @param  locale  The</span>
-<span class="source-line-no">159</span><span id="line-159">     *      {@link Locale}</span>
-<span class="source-line-no">160</span><span id="line-160">     *      that will be applied during formatting. If {@code locale} is</span>
-<span class="source-line-no">161</span><span id="line-161">     *      {@code null} then no localisation is applied.</span>
-<span class="source-line-no">162</span><span id="line-162">     *  @param  format  A format String with the syntax as described for the</span>
-<span class="source-line-no">163</span><span id="line-163">     *      {@link Formatter}</span>
-<span class="source-line-no">164</span><span id="line-164">     *      class.</span>
-<span class="source-line-no">165</span><span id="line-165">     *  @param  args    The arguments referenced by the format specifiers in</span>
-<span class="source-line-no">166</span><span id="line-166">     *      the {@code format} String. If there are more arguments than format</span>
-<span class="source-line-no">167</span><span id="line-167">     *      specifiers, the extra arguments are ignored. The number of</span>
-<span class="source-line-no">168</span><span id="line-168">     *      arguments is variable and may be zero. The maximum number of</span>
-<span class="source-line-no">169</span><span id="line-169">     *      arguments is limited by the maximum dimension of a Java array as</span>
-<span class="source-line-no">170</span><span id="line-170">     *      defined by &lt;cite&gt;The Java&amp;trade; Virtual Machine</span>
-<span class="source-line-no">171</span><span id="line-171">     *      Specification&lt;/cite&gt;. The behaviour on a {@code null} argument</span>
-<span class="source-line-no">172</span><span id="line-172">     *      depends on the conversion.</span>
-<span class="source-line-no">173</span><span id="line-173">     *  @throws IllegalFormatException A format string contains an illegal</span>
-<span class="source-line-no">174</span><span id="line-174">     *      syntax, a format specifier that is incompatible with the given</span>
-<span class="source-line-no">175</span><span id="line-175">     *      arguments, insufficient arguments given the format string, or other</span>
-<span class="source-line-no">176</span><span id="line-176">     *      illegal conditions occurred. For specification of all possible</span>
-<span class="source-line-no">177</span><span id="line-177">     *      formatting errors, see the &amp;quot;Details&amp;quot; section of the</span>
-<span class="source-line-no">178</span><span id="line-178">     *      {@code Formatter} class specification.</span>
-<span class="source-line-no">179</span><span id="line-179">     *  @return A formatted String.</span>
-<span class="source-line-no">180</span><span id="line-180">     *</span>
-<span class="source-line-no">181</span><span id="line-181">     *  @see  java.util.Formatter</span>
-<span class="source-line-no">182</span><span id="line-182">     *</span>
-<span class="source-line-no">183</span><span id="line-183">     *  @since 0.1.0</span>
-<span class="source-line-no">184</span><span id="line-184">     */</span>
-<span class="source-line-no">185</span><span id="line-185">    @SuppressWarnings( "resource" )</span>
+<span class="source-line-no">077</span><span id="line-77">        @SuppressWarnings( "RedundantExplicitVariableType" )</span>
+<span class="source-line-no">078</span><span id="line-78">        final Supplier&lt;Formatter&gt; initializer = () -&gt; new Formatter( new StringBuilder( FORMAT_INITIAL_BUFFERSIZE ), Locale.getDefault( Locale.Category.FORMAT ) );</span>
+<span class="source-line-no">079</span><span id="line-79">        //noinspection RedundantTypeArguments</span>
+<span class="source-line-no">080</span><span id="line-80">        m_Formatter = ThreadLocal.&lt;Formatter&gt;withInitial( initializer );</span>
+<span class="source-line-no">081</span><span id="line-81">    }</span>
+<span class="source-line-no">082</span><span id="line-82"></span>
+<span class="source-line-no">083</span><span id="line-83">        /*--------------*\</span>
+<span class="source-line-no">084</span><span id="line-84">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">085</span><span id="line-85">        \*--------------*/</span>
+<span class="source-line-no">086</span><span id="line-86">    /**</span>
+<span class="source-line-no">087</span><span id="line-87">     *  No instance of this class is allowed.</span>
+<span class="source-line-no">088</span><span id="line-88">     */</span>
+<span class="source-line-no">089</span><span id="line-89">    private SharedFormatter() { throw new PrivateConstructorForStaticClassCalledError( SharedFormatter.class ); }</span>
+<span class="source-line-no">090</span><span id="line-90"></span>
+<span class="source-line-no">091</span><span id="line-91">        /*---------*\</span>
+<span class="source-line-no">092</span><span id="line-92">    ====** Methods **==========================================================</span>
+<span class="source-line-no">093</span><span id="line-93">        \*---------*/</span>
+<span class="source-line-no">094</span><span id="line-94">    /**</span>
+<span class="source-line-no">095</span><span id="line-95">     *  Returns a formatted String using the specified format String and</span>
+<span class="source-line-no">096</span><span id="line-96">     *  arguments.&lt;br&gt;</span>
+<span class="source-line-no">097</span><span id="line-97">     *  &lt;br&gt;The implementation uses internally the</span>
+<span class="source-line-no">098</span><span id="line-98">     *  {@link Locale}</span>
+<span class="source-line-no">099</span><span id="line-99">     *  that is returned by</span>
+<span class="source-line-no">100</span><span id="line-100">     *  {@link java.util.Locale#getDefault() Locale.getDefault()}.&lt;br&gt;</span>
+<span class="source-line-no">101</span><span id="line-101">     *  &lt;br&gt;This method is meant as a replacement for the method</span>
+<span class="source-line-no">102</span><span id="line-102">     *  {@link java.lang.String#format(String, Object...)};</span>
+<span class="source-line-no">103</span><span id="line-103">     *  that implementation always uses a new instance of</span>
+<span class="source-line-no">104</span><span id="line-104">     *  {@link Formatter}</span>
+<span class="source-line-no">105</span><span id="line-105">     *  for each invocation. The implementation here uses a cached instance</span>
+<span class="source-line-no">106</span><span id="line-106">     *  instead, and as {@code Formatter} is not inherently thread-safe, this</span>
+<span class="source-line-no">107</span><span id="line-107">     *  cached instance is created and stored per thread, therefore no</span>
+<span class="source-line-no">108</span><span id="line-108">     *  synchronisation is needed.&lt;br&gt;</span>
+<span class="source-line-no">109</span><span id="line-109">     *  &lt;br&gt;This implementation is about as twice as fast as</span>
+<span class="source-line-no">110</span><span id="line-110">     *  {@code java.lang.String.format()}.</span>
+<span class="source-line-no">111</span><span id="line-111">     *</span>
+<span class="source-line-no">112</span><span id="line-112">     *  @param  format  A format String with the syntax as described for the</span>
+<span class="source-line-no">113</span><span id="line-113">     *      {@link Formatter}</span>
+<span class="source-line-no">114</span><span id="line-114">     *      class.</span>
+<span class="source-line-no">115</span><span id="line-115">     *  @param  args    The arguments referenced by the format specifiers in</span>
+<span class="source-line-no">116</span><span id="line-116">     *      the {@code format} String. If there are more arguments than format</span>
+<span class="source-line-no">117</span><span id="line-117">     *      specifiers, the extra arguments are ignored. The number of</span>
+<span class="source-line-no">118</span><span id="line-118">     *      arguments is variable and may be zero. The maximum number of</span>
+<span class="source-line-no">119</span><span id="line-119">     *      arguments is limited by the maximum dimension of a Java array as</span>
+<span class="source-line-no">120</span><span id="line-120">     *      defined by &lt;cite&gt;The Java&amp;trade; Virtual Machine</span>
+<span class="source-line-no">121</span><span id="line-121">     *      Specification&lt;/cite&gt;. The behaviour on a {@code null} argument</span>
+<span class="source-line-no">122</span><span id="line-122">     *      depends on the conversion.</span>
+<span class="source-line-no">123</span><span id="line-123">     *  @throws IllegalFormatException A format string contains an illegal</span>
+<span class="source-line-no">124</span><span id="line-124">     *      syntax, a format specifier that is incompatible with the given</span>
+<span class="source-line-no">125</span><span id="line-125">     *      arguments, insufficient arguments given the format string, or other</span>
+<span class="source-line-no">126</span><span id="line-126">     *      illegal conditions occurred. For specification of all possible</span>
+<span class="source-line-no">127</span><span id="line-127">     *      formatting errors, see the &amp;quot;Details&amp;quot; section of the</span>
+<span class="source-line-no">128</span><span id="line-128">     *      {@code Formatter} class specification.</span>
+<span class="source-line-no">129</span><span id="line-129">     *  @return A formatted String.</span>
+<span class="source-line-no">130</span><span id="line-130">     *</span>
+<span class="source-line-no">131</span><span id="line-131">     *  @see  java.util.Formatter</span>
+<span class="source-line-no">132</span><span id="line-132">     *</span>
+<span class="source-line-no">133</span><span id="line-133">     *  @since 0.1.0</span>
+<span class="source-line-no">134</span><span id="line-134">     */</span>
+<span class="source-line-no">135</span><span id="line-135">    @API( status = INTERNAL, since = "0.1.0" )</span>
+<span class="source-line-no">136</span><span id="line-136">    public static final String format( final String format, final Object... args ) throws IllegalFormatException</span>
+<span class="source-line-no">137</span><span id="line-137">    {</span>
+<span class="source-line-no">138</span><span id="line-138">        return format( Locale.getDefault( Locale.Category.FORMAT ), format, args );</span>
+<span class="source-line-no">139</span><span id="line-139">    }   //  format()</span>
+<span class="source-line-no">140</span><span id="line-140"></span>
+<span class="source-line-no">141</span><span id="line-141">    /**</span>
+<span class="source-line-no">142</span><span id="line-142">     *  Returns a formatted String using the specified</span>
+<span class="source-line-no">143</span><span id="line-143">     *  {@link Locale},</span>
+<span class="source-line-no">144</span><span id="line-144">     *  format String, and arguments.&lt;br&gt;</span>
+<span class="source-line-no">145</span><span id="line-145">     *  &lt;br&gt;This method is meant as a replacement for the method</span>
+<span class="source-line-no">146</span><span id="line-146">     *  {@link java.lang.String#format(String, Object...)};</span>
+<span class="source-line-no">147</span><span id="line-147">     *  that implementation always uses a new instance of</span>
+<span class="source-line-no">148</span><span id="line-148">     *  {@link Formatter}</span>
+<span class="source-line-no">149</span><span id="line-149">     *  for each invocation. The implementation here uses a cached instance</span>
+<span class="source-line-no">150</span><span id="line-150">     *  instead, and as {@code Formatter} is not inherently thread-safe, this</span>
+<span class="source-line-no">151</span><span id="line-151">     *  cached instance is created and stored per thread, therefore no</span>
+<span class="source-line-no">152</span><span id="line-152">     *  synchronisation is needed.&lt;br&gt;</span>
+<span class="source-line-no">153</span><span id="line-153">     *  &lt;br&gt;The performance gain for this implementation is not that impressive</span>
+<span class="source-line-no">154</span><span id="line-154">     *  when compared with that of</span>
+<span class="source-line-no">155</span><span id="line-155">     *  {@link #format(String, Object...)},</span>
+<span class="source-line-no">156</span><span id="line-156">     *  but still in the 10% range.</span>
+<span class="source-line-no">157</span><span id="line-157">     *  {@code java.lang.String.format()}.</span>
+<span class="source-line-no">158</span><span id="line-158">     *</span>
+<span class="source-line-no">159</span><span id="line-159">     *  @param  locale  The</span>
+<span class="source-line-no">160</span><span id="line-160">     *      {@link Locale}</span>
+<span class="source-line-no">161</span><span id="line-161">     *      that will be applied during formatting. If {@code locale} is</span>
+<span class="source-line-no">162</span><span id="line-162">     *      {@code null} then no localisation is applied.</span>
+<span class="source-line-no">163</span><span id="line-163">     *  @param  format  A format String with the syntax as described for the</span>
+<span class="source-line-no">164</span><span id="line-164">     *      {@link Formatter}</span>
+<span class="source-line-no">165</span><span id="line-165">     *      class.</span>
+<span class="source-line-no">166</span><span id="line-166">     *  @param  args    The arguments referenced by the format specifiers in</span>
+<span class="source-line-no">167</span><span id="line-167">     *      the {@code format} String. If there are more arguments than format</span>
+<span class="source-line-no">168</span><span id="line-168">     *      specifiers, the extra arguments are ignored. The number of</span>
+<span class="source-line-no">169</span><span id="line-169">     *      arguments is variable and may be zero. The maximum number of</span>
+<span class="source-line-no">170</span><span id="line-170">     *      arguments is limited by the maximum dimension of a Java array as</span>
+<span class="source-line-no">171</span><span id="line-171">     *      defined by &lt;cite&gt;The Java&amp;trade; Virtual Machine</span>
+<span class="source-line-no">172</span><span id="line-172">     *      Specification&lt;/cite&gt;. The behaviour on a {@code null} argument</span>
+<span class="source-line-no">173</span><span id="line-173">     *      depends on the conversion.</span>
+<span class="source-line-no">174</span><span id="line-174">     *  @throws IllegalFormatException A format string contains an illegal</span>
+<span class="source-line-no">175</span><span id="line-175">     *      syntax, a format specifier that is incompatible with the given</span>
+<span class="source-line-no">176</span><span id="line-176">     *      arguments, insufficient arguments given the format string, or other</span>
+<span class="source-line-no">177</span><span id="line-177">     *      illegal conditions occurred. For specification of all possible</span>
+<span class="source-line-no">178</span><span id="line-178">     *      formatting errors, see the &amp;quot;Details&amp;quot; section of the</span>
+<span class="source-line-no">179</span><span id="line-179">     *      {@code Formatter} class specification.</span>
+<span class="source-line-no">180</span><span id="line-180">     *  @return A formatted String.</span>
+<span class="source-line-no">181</span><span id="line-181">     *</span>
+<span class="source-line-no">182</span><span id="line-182">     *  @see  java.util.Formatter</span>
+<span class="source-line-no">183</span><span id="line-183">     *</span>
+<span class="source-line-no">184</span><span id="line-184">     *  @since 0.1.0</span>
+<span class="source-line-no">185</span><span id="line-185">     */</span>
 <span class="source-line-no">186</span><span id="line-186">    @API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">187</span><span id="line-187">    public static final String format( final Locale locale, final String format, final Object... args ) throws IllegalFormatException</span>
 <span class="source-line-no">188</span><span id="line-188">    {</span>

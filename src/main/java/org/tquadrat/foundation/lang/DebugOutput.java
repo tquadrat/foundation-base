@@ -44,13 +44,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 1005 2022-02-03 12:40:52Z tquadrat $
+ *  @version $Id: DebugOutput.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {
@@ -60,6 +60,7 @@ public final class DebugOutput
     /**
      *  The printer.
      */
+    @SuppressWarnings( "UseOfSystemOutOrSystemErr" )
     private static Printer m_Printer = out::printf;
 
         /*------------------------*\

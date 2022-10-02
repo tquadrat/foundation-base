@@ -47,13 +47,13 @@ import org.tquadrat.foundation.lang.Objects;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Selectors.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: Selectors.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Selectors.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Selectors.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 public final class Selectors
 {
         /*--------------*\
@@ -81,12 +81,13 @@ public final class Selectors
     @API( status = STABLE, since = "0.0.7" )
     public static <T> Selector<T> roundRobin()
     {
+        @SuppressWarnings( "AnonymousInnerClass" )
         final Selector<T> retValue = new Selector<>()
         {
             /**
              *  The start index.
              */
-            private int startIndex = 0;
+            private int m_StartIndex = 0;
 
             /**
              *  {@inheritDoc}
@@ -94,21 +95,22 @@ public final class Selectors
              *  @return The array index of the selected value, or {@code null}
              *      if all values in the provided array are {@code null}.
              */
+            @SuppressWarnings( "MethodWithMultipleReturnPoints" )
             @Override
             public final Integer apply( final T [] options )
             {
-                var result = startIndex;
+                var result = m_StartIndex;
                 while( isNull( options [result] ) )
                 {
                     result = (result + 1) % options.length;
-                    if( (result == startIndex) && isNull( options [result] ) )
+                    if( (result == m_StartIndex) && isNull( options [result] ) )
                     {
                         //---* All values in options are null *----------------
                         return null;
                     }
                 }
 
-                startIndex = (result + 1) % options.length;
+                m_StartIndex = (result + 1) % options.length;
                 return Integer.valueOf( result );
             }   //  apply()
         };
@@ -187,12 +189,13 @@ public final class Selectors
     {
         requireNonNullArgument( comparator, "comparator" );
 
+        @SuppressWarnings( "AnonymousInnerClass" )
         final Selector<T> retValue = new Selector<>()
         {
             /**
              *  The start index.
              */
-            private int startIndex = 0;
+            private int m_StartIndex = 0;
 
             /**
              *  {@inheritDoc}
@@ -209,13 +212,13 @@ public final class Selectors
                     .min( comparator )
                     .get();
 
-                var result = startIndex;
+                var result = m_StartIndex;
                 while( isNull( options [result] ) || (comparator.compare( smallest, options [result] ) != 0) )
                 {
                     result = (result + 1) % options.length;
                 }
 
-                startIndex = (result + 1) % options.length;
+                m_StartIndex = (result + 1) % options.length;
                 return result;
             }   //  apply()
         };

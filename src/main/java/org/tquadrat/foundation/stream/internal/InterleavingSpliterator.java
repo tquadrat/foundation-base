@@ -49,14 +49,14 @@ import org.tquadrat.foundation.stream.Selector;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: InterleavingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: InterleavingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the values to select from.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class InterleavingSpliterator<T> implements Spliterator<T>
 {
@@ -109,6 +109,7 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
     @Override
     public final int characteristics()
     {
+        @SuppressWarnings( "ConstantExpression" )
         final var retValue = NONNULL & ORDERED & IMMUTABLE;
 
         //---* Done *----------------------------------------------------------
@@ -153,6 +154,7 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
      */
     public static final <T> Spliterator<T> interleaving( final Spliterator<T> [] spliterators, final Selector<T> selector )
     {
+        @SuppressWarnings( "OverlyLongLambda" )
         final var bufferedValues = (Supplier<T[]>) () ->
         {
             @SuppressWarnings( {"unchecked", "SuspiciousArrayCast"} )

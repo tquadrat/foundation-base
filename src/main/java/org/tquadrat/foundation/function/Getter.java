@@ -34,16 +34,15 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link #get()}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Getter.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The value type.
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "InterfaceNeverImplemented" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Getter.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface Getter<T>
 {

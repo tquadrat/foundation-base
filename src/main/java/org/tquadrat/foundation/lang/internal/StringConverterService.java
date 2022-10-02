@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  service methods.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverterService.java 997 2022-01-26 14:55:05Z tquadrat $
+ *  @version $Id: StringConverterService.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StringConverterService.java 997 2022-01-26 14:55:05Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class StringConverterService
@@ -107,7 +107,7 @@ public final class StringConverterService
                 final var providerMethod = c.getClass().getMethod( METHOD_NAME_Provider );
                 converter = (StringConverter<?>) providerMethod.invoke( null );
             }
-            catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException e )
+            catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored )
             {
                 converter = c;
             }
@@ -199,7 +199,7 @@ public final class StringConverterService
                 final var getSubjectClassMethod = converterClass.getMethod( METHOD_NAME_GetSubjectClass );
                 retValue = (Collection<Class<?>>) getSubjectClassMethod.invoke( converter );
             }
-            catch( @SuppressWarnings( "unused" ) final NoSuchMethodException e )
+            catch( final NoSuchMethodException ignored )
             {
                 final var fromStringMethod = converterClass.getMethod( "fromString", CharSequence.class );
                 retValue = List.of( fromStringMethod.getReturnType() );

@@ -34,12 +34,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  left    The left value of the pair.
  *  @param  right   The right value of the pair.
  *
- *  @version $Id: Pair.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: Pair.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@SuppressWarnings( "NewClassNamingConvention" )
+@ClassVersion( sourceVersion = "$Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Pair<L,R>( L left, R right )
 {
@@ -61,6 +62,7 @@ public record Pair<L,R>( L left, R right )
      */
     public final Map.Entry<L,R> asEntry()
     {
+        @SuppressWarnings( "AnonymousInnerClass" )
         final var retValue = new Entry<L,R>()
         {
             /**

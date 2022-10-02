@@ -48,13 +48,13 @@
 <span class="source-line-no">035</span><span id="line-35"> *  interface.</span>
 <span class="source-line-no">036</span><span id="line-36"> *</span>
 <span class="source-line-no">037</span><span id="line-37"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">038</span><span id="line-38"> *  @version $Id: SoftLazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $</span>
+<span class="source-line-no">038</span><span id="line-38"> *  @version $Id: SoftLazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $</span>
 <span class="source-line-no">039</span><span id="line-39"> *  @since 0.1.0</span>
 <span class="source-line-no">040</span><span id="line-40"> *</span>
 <span class="source-line-no">041</span><span id="line-41"> *  @param  &lt;T&gt; The type of the cached data.</span>
 <span class="source-line-no">042</span><span id="line-42"> */</span>
 <span class="source-line-no">043</span><span id="line-43">@API( status = INTERNAL, since = "0.1.0" )</span>
-<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: SoftLazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $" )</span>
+<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: SoftLazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $" )</span>
 <span class="source-line-no">045</span><span id="line-45">public final class SoftLazyImpl&lt;T&gt; implements SoftLazy&lt;T&gt;</span>
 <span class="source-line-no">046</span><span id="line-46">{</span>
 <span class="source-line-no">047</span><span id="line-47">        /*-----------*\</span>
@@ -63,7 +63,7 @@
 <span class="source-line-no">050</span><span id="line-50">    /**</span>
 <span class="source-line-no">051</span><span id="line-51">     *  An empty array of {@code SoftLazyImpl&lt;T&gt;} objects.</span>
 <span class="source-line-no">052</span><span id="line-52">     */</span>
-<span class="source-line-no">053</span><span id="line-53">    @SuppressWarnings( {"rawtypes", "StaticVariableOfConcreteClass"} )</span>
+<span class="source-line-no">053</span><span id="line-53">    @SuppressWarnings( "rawtypes" )</span>
 <span class="source-line-no">054</span><span id="line-54">    public static final SoftLazyImpl [] EMPTY_SoftLazyImpl_ARRAY = new SoftLazyImpl [0];</span>
 <span class="source-line-no">055</span><span id="line-55"></span>
 <span class="source-line-no">056</span><span id="line-56">        /*------------*\</span>

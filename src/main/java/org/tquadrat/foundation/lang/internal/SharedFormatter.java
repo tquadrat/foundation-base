@@ -36,12 +36,12 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  {@link java.util.Formatter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class SharedFormatter
@@ -74,6 +74,7 @@ public final class SharedFormatter
     static
     {
         //---* The cached Formatter instance *---------------------------------
+        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Supplier<Formatter> initializer = () -> new Formatter( new StringBuilder( FORMAT_INITIAL_BUFFERSIZE ), Locale.getDefault( Locale.Category.FORMAT ) );
         //noinspection RedundantTypeArguments
         m_Formatter = ThreadLocal.<Formatter>withInitial( initializer );
@@ -182,7 +183,6 @@ public final class SharedFormatter
      *
      *  @since 0.1.0
      */
-    @SuppressWarnings( "resource" )
     @API( status = INTERNAL, since = "0.1.0" )
     public static final String format( final Locale locale, final String format, final Object... args ) throws IllegalFormatException
     {

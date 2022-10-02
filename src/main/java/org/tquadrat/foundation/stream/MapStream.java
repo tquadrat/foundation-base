@@ -61,13 +61,13 @@ import org.tquadrat.foundation.stream.internal.DefaultMapStream;
  *
  *  @author Alexis Cartier (alexcrt)
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MapStream.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: MapStream.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: MapStream.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MapStream.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.7" )
 public interface MapStream<K,V> extends Stream<Entry<K,V>>
 {
@@ -334,6 +334,7 @@ public interface MapStream<K,V> extends Stream<Entry<K,V>>
      *  @param  value3  The third value.
      *  @return A new {@code MapStream<K,V>}.
      */
+    @SuppressWarnings( "MethodWithTooManyParameters" )
     @API( status = STABLE, since = "0.0.4" )
     public static <K,V> MapStream<K,V> of( final K key1, final V value1, final K key2, final V value2, final K key3, final V value3 )
     {
@@ -363,6 +364,7 @@ public interface MapStream<K,V> extends Stream<Entry<K,V>>
      *  @param  value4  The third value.
      *  @return A new {@code MapStream<K,V>}.
      */
+    @SuppressWarnings( "MethodWithTooManyParameters" )
     @API( status = STABLE, since = "0.0.4" )
     public static <K,V> MapStream<K,V> of( final K key1, final V value1, final K key2, final V value2, final K key3, final V value3, final K key4, final V value4 )
     {
@@ -395,6 +397,7 @@ public interface MapStream<K,V> extends Stream<Entry<K,V>>
      *  @param  value5  The third value.
      *  @return A new {@code MapStream<K,V>}.
      */
+    @SuppressWarnings( "MethodWithTooManyParameters" )
     @API( status = STABLE, since = "0.0.4" )
     public static <K,V> MapStream<K,V> of( final K key1, final V value1, final K key2, final V value2, final K key3, final V value3, final K key4, final V value4, final K key5, final V value5 )
     {

@@ -60,7 +60,7 @@
 <span class="source-line-no">047</span><span id="line-47"> *</span>
 <span class="source-line-no">048</span><span id="line-48"> *  @author Dominic Fox</span>
 <span class="source-line-no">049</span><span id="line-49"> *  @modified Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">050</span><span id="line-50"> *  @version $Id: MergingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $</span>
+<span class="source-line-no">050</span><span id="line-50"> *  @version $Id: MergingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $</span>
 <span class="source-line-no">051</span><span id="line-51"> *  @since 0.0.7</span>
 <span class="source-line-no">052</span><span id="line-52"> *</span>
 <span class="source-line-no">053</span><span id="line-53"> *  @param  &lt;T&gt; The type over which the merged streams stream.</span>
@@ -69,7 +69,7 @@
 <span class="source-line-no">056</span><span id="line-56"> *</span>
 <span class="source-line-no">057</span><span id="line-57"> *  @UMLGraph.link</span>
 <span class="source-line-no">058</span><span id="line-58"> */</span>
-<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )</span>
+<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )</span>
 <span class="source-line-no">060</span><span id="line-60">@API( status = INTERNAL, since = "0.0.7" )</span>
 <span class="source-line-no">061</span><span id="line-61">public final class MergingSpliterator&lt;T,O&gt; implements Spliterator&lt;O&gt;</span>
 <span class="source-line-no">062</span><span id="line-62">{</span>
@@ -119,81 +119,82 @@
 <span class="source-line-no">106</span><span id="line-106">    @Override</span>
 <span class="source-line-no">107</span><span id="line-107">    public final int characteristics()</span>
 <span class="source-line-no">108</span><span id="line-108">    {</span>
-<span class="source-line-no">109</span><span id="line-109">        final var retValue = NONNULL &amp; ORDERED &amp; IMMUTABLE;</span>
-<span class="source-line-no">110</span><span id="line-110"></span>
-<span class="source-line-no">111</span><span id="line-111">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">112</span><span id="line-112">        return retValue;</span>
-<span class="source-line-no">113</span><span id="line-113">    }   //  characteristics()</span>
-<span class="source-line-no">114</span><span id="line-114"></span>
-<span class="source-line-no">115</span><span id="line-115">    /**</span>
-<span class="source-line-no">116</span><span id="line-116">     *  {@inheritDoc}</span>
-<span class="source-line-no">117</span><span id="line-117">     */</span>
-<span class="source-line-no">118</span><span id="line-118">    @Override</span>
-<span class="source-line-no">119</span><span id="line-119">    public final long estimateSize()</span>
-<span class="source-line-no">120</span><span id="line-120">    {</span>
-<span class="source-line-no">121</span><span id="line-121">        final long retValue = Stream.of( m_Sources )</span>
-<span class="source-line-no">122</span><span id="line-122">            .map( Spliterator::estimateSize )</span>
-<span class="source-line-no">123</span><span id="line-123">            .max( Long::compare )</span>
-<span class="source-line-no">124</span><span id="line-124">            .orElse( 0L );</span>
-<span class="source-line-no">125</span><span id="line-125"></span>
-<span class="source-line-no">126</span><span id="line-126">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">127</span><span id="line-127">        return retValue;</span>
-<span class="source-line-no">128</span><span id="line-128">    }   //  estimateSize()</span>
-<span class="source-line-no">129</span><span id="line-129"></span>
-<span class="source-line-no">130</span><span id="line-130">    /**</span>
-<span class="source-line-no">131</span><span id="line-131">     *  Factory method for instances of {@code MergingSpliterator}.</span>
-<span class="source-line-no">132</span><span id="line-132">     *</span>
-<span class="source-line-no">133</span><span id="line-133">     *  @param  &lt;O&gt; The type of the elements in the resulting spliterator.</span>
-<span class="source-line-no">134</span><span id="line-134">     *  @param  &lt;T&gt; The type of the elements in the source spliterators.</span>
-<span class="source-line-no">135</span><span id="line-135">     *  @param  sources The sources.</span>
-<span class="source-line-no">136</span><span id="line-136">     *  @param  unitSupplier    Supplies the initial &amp;quot;zero&amp;quot; or</span>
-<span class="source-line-no">137</span><span id="line-137">     *      &amp;quot;unit&amp;quot; value for the accumulator.</span>
-<span class="source-line-no">138</span><span id="line-138">     *  @param  merger  Merges each item from the collection of values taken</span>
-<span class="source-line-no">139</span><span id="line-139">     *      from the source streams into the accumulator value.</span>
-<span class="source-line-no">140</span><span id="line-140">     *  @return The new instance.</span>
-<span class="source-line-no">141</span><span id="line-141">     */</span>
-<span class="source-line-no">142</span><span id="line-142">    public static final &lt;T,O&gt; Spliterator&lt;O&gt; merging( final Spliterator&lt;T&gt; [] sources, final Supplier&lt;O&gt; unitSupplier, final BiFunction&lt;O,T,O&gt; merger )</span>
-<span class="source-line-no">143</span><span id="line-143">    {</span>
-<span class="source-line-no">144</span><span id="line-144">        final Spliterator&lt;O&gt; retValue = new MergingSpliterator&lt;&gt;( sources, unitSupplier, merger );</span>
-<span class="source-line-no">145</span><span id="line-145"></span>
-<span class="source-line-no">146</span><span id="line-146">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">147</span><span id="line-147">        return retValue;</span>
-<span class="source-line-no">148</span><span id="line-148">    }   //  merging()</span>
-<span class="source-line-no">149</span><span id="line-149"></span>
-<span class="source-line-no">150</span><span id="line-150">    /**</span>
-<span class="source-line-no">151</span><span id="line-151">     *  {@inheritDoc}</span>
-<span class="source-line-no">152</span><span id="line-152">     */</span>
-<span class="source-line-no">153</span><span id="line-153">    @Override</span>
-<span class="source-line-no">154</span><span id="line-154">    public final boolean tryAdvance( final Consumer&lt;? super O&gt; action )</span>
-<span class="source-line-no">155</span><span id="line-155">    {</span>
-<span class="source-line-no">156</span><span id="line-156">        final List&lt;T&gt; mergeables = new ArrayList&lt;&gt;( m_Sources.length );</span>
-<span class="source-line-no">157</span><span id="line-157">        Stream.of( m_Sources )</span>
-<span class="source-line-no">158</span><span id="line-158">            .forEach( s -&gt; s.tryAdvance( mergeables::add ) );</span>
-<span class="source-line-no">159</span><span id="line-159"></span>
-<span class="source-line-no">160</span><span id="line-160">        final var retValue = !mergeables.isEmpty();</span>
-<span class="source-line-no">161</span><span id="line-161">        if( retValue )</span>
-<span class="source-line-no">162</span><span id="line-162">        {</span>
-<span class="source-line-no">163</span><span id="line-163">            final var unit = m_UnitSupplier.get();</span>
-<span class="source-line-no">164</span><span id="line-164"></span>
-<span class="source-line-no">165</span><span id="line-165">            //---* We never do this in parallel, so fuck it *------------------</span>
-<span class="source-line-no">166</span><span id="line-166">            action.accept( mergeables.stream().reduce( unit, m_Merger, (l1,l2) -&gt; l1 ) );</span>
-<span class="source-line-no">167</span><span id="line-167">        }</span>
-<span class="source-line-no">168</span><span id="line-168"></span>
-<span class="source-line-no">169</span><span id="line-169">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">170</span><span id="line-170">        return retValue;</span>
-<span class="source-line-no">171</span><span id="line-171">    }   //  tryAdvance()</span>
-<span class="source-line-no">172</span><span id="line-172"></span>
-<span class="source-line-no">173</span><span id="line-173">    /**</span>
-<span class="source-line-no">174</span><span id="line-174">     *  {@inheritDoc}</span>
-<span class="source-line-no">175</span><span id="line-175">     */</span>
-<span class="source-line-no">176</span><span id="line-176">    @Override</span>
-<span class="source-line-no">177</span><span id="line-177">    public final Spliterator&lt;O&gt; trySplit() { return null; }</span>
-<span class="source-line-no">178</span><span id="line-178">}</span>
-<span class="source-line-no">179</span><span id="line-179">//  class MergingSpliterator</span>
-<span class="source-line-no">180</span><span id="line-180"></span>
-<span class="source-line-no">181</span><span id="line-181">/*</span>
-<span class="source-line-no">182</span><span id="line-182"> *  End of File</span>
-<span class="source-line-no">183</span><span id="line-183"> */</span>
+<span class="source-line-no">109</span><span id="line-109">        @SuppressWarnings( "ConstantExpression" )</span>
+<span class="source-line-no">110</span><span id="line-110">        final var retValue = NONNULL &amp; ORDERED &amp; IMMUTABLE;</span>
+<span class="source-line-no">111</span><span id="line-111"></span>
+<span class="source-line-no">112</span><span id="line-112">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">113</span><span id="line-113">        return retValue;</span>
+<span class="source-line-no">114</span><span id="line-114">    }   //  characteristics()</span>
+<span class="source-line-no">115</span><span id="line-115"></span>
+<span class="source-line-no">116</span><span id="line-116">    /**</span>
+<span class="source-line-no">117</span><span id="line-117">     *  {@inheritDoc}</span>
+<span class="source-line-no">118</span><span id="line-118">     */</span>
+<span class="source-line-no">119</span><span id="line-119">    @Override</span>
+<span class="source-line-no">120</span><span id="line-120">    public final long estimateSize()</span>
+<span class="source-line-no">121</span><span id="line-121">    {</span>
+<span class="source-line-no">122</span><span id="line-122">        final long retValue = Stream.of( m_Sources )</span>
+<span class="source-line-no">123</span><span id="line-123">            .map( Spliterator::estimateSize )</span>
+<span class="source-line-no">124</span><span id="line-124">            .max( Long::compare )</span>
+<span class="source-line-no">125</span><span id="line-125">            .orElse( 0L );</span>
+<span class="source-line-no">126</span><span id="line-126"></span>
+<span class="source-line-no">127</span><span id="line-127">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">128</span><span id="line-128">        return retValue;</span>
+<span class="source-line-no">129</span><span id="line-129">    }   //  estimateSize()</span>
+<span class="source-line-no">130</span><span id="line-130"></span>
+<span class="source-line-no">131</span><span id="line-131">    /**</span>
+<span class="source-line-no">132</span><span id="line-132">     *  Factory method for instances of {@code MergingSpliterator}.</span>
+<span class="source-line-no">133</span><span id="line-133">     *</span>
+<span class="source-line-no">134</span><span id="line-134">     *  @param  &lt;O&gt; The type of the elements in the resulting spliterator.</span>
+<span class="source-line-no">135</span><span id="line-135">     *  @param  &lt;T&gt; The type of the elements in the source spliterators.</span>
+<span class="source-line-no">136</span><span id="line-136">     *  @param  sources The sources.</span>
+<span class="source-line-no">137</span><span id="line-137">     *  @param  unitSupplier    Supplies the initial &amp;quot;zero&amp;quot; or</span>
+<span class="source-line-no">138</span><span id="line-138">     *      &amp;quot;unit&amp;quot; value for the accumulator.</span>
+<span class="source-line-no">139</span><span id="line-139">     *  @param  merger  Merges each item from the collection of values taken</span>
+<span class="source-line-no">140</span><span id="line-140">     *      from the source streams into the accumulator value.</span>
+<span class="source-line-no">141</span><span id="line-141">     *  @return The new instance.</span>
+<span class="source-line-no">142</span><span id="line-142">     */</span>
+<span class="source-line-no">143</span><span id="line-143">    public static final &lt;T,O&gt; Spliterator&lt;O&gt; merging( final Spliterator&lt;T&gt; [] sources, final Supplier&lt;O&gt; unitSupplier, final BiFunction&lt;O,T,O&gt; merger )</span>
+<span class="source-line-no">144</span><span id="line-144">    {</span>
+<span class="source-line-no">145</span><span id="line-145">        final Spliterator&lt;O&gt; retValue = new MergingSpliterator&lt;&gt;( sources, unitSupplier, merger );</span>
+<span class="source-line-no">146</span><span id="line-146"></span>
+<span class="source-line-no">147</span><span id="line-147">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">148</span><span id="line-148">        return retValue;</span>
+<span class="source-line-no">149</span><span id="line-149">    }   //  merging()</span>
+<span class="source-line-no">150</span><span id="line-150"></span>
+<span class="source-line-no">151</span><span id="line-151">    /**</span>
+<span class="source-line-no">152</span><span id="line-152">     *  {@inheritDoc}</span>
+<span class="source-line-no">153</span><span id="line-153">     */</span>
+<span class="source-line-no">154</span><span id="line-154">    @Override</span>
+<span class="source-line-no">155</span><span id="line-155">    public final boolean tryAdvance( final Consumer&lt;? super O&gt; action )</span>
+<span class="source-line-no">156</span><span id="line-156">    {</span>
+<span class="source-line-no">157</span><span id="line-157">        final List&lt;T&gt; mergeables = new ArrayList&lt;&gt;( m_Sources.length );</span>
+<span class="source-line-no">158</span><span id="line-158">        Stream.of( m_Sources )</span>
+<span class="source-line-no">159</span><span id="line-159">            .forEach( s -&gt; s.tryAdvance( mergeables::add ) );</span>
+<span class="source-line-no">160</span><span id="line-160"></span>
+<span class="source-line-no">161</span><span id="line-161">        final var retValue = !mergeables.isEmpty();</span>
+<span class="source-line-no">162</span><span id="line-162">        if( retValue )</span>
+<span class="source-line-no">163</span><span id="line-163">        {</span>
+<span class="source-line-no">164</span><span id="line-164">            final var unit = m_UnitSupplier.get();</span>
+<span class="source-line-no">165</span><span id="line-165"></span>
+<span class="source-line-no">166</span><span id="line-166">            //---* We never do this in parallel, so fuck it *------------------</span>
+<span class="source-line-no">167</span><span id="line-167">            action.accept( mergeables.stream().reduce( unit, m_Merger, (l1,l2) -&gt; l1 ) );</span>
+<span class="source-line-no">168</span><span id="line-168">        }</span>
+<span class="source-line-no">169</span><span id="line-169"></span>
+<span class="source-line-no">170</span><span id="line-170">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">171</span><span id="line-171">        return retValue;</span>
+<span class="source-line-no">172</span><span id="line-172">    }   //  tryAdvance()</span>
+<span class="source-line-no">173</span><span id="line-173"></span>
+<span class="source-line-no">174</span><span id="line-174">    /**</span>
+<span class="source-line-no">175</span><span id="line-175">     *  {@inheritDoc}</span>
+<span class="source-line-no">176</span><span id="line-176">     */</span>
+<span class="source-line-no">177</span><span id="line-177">    @Override</span>
+<span class="source-line-no">178</span><span id="line-178">    public final Spliterator&lt;O&gt; trySplit() { return null; }</span>
+<span class="source-line-no">179</span><span id="line-179">}</span>
+<span class="source-line-no">180</span><span id="line-180">//  class MergingSpliterator</span>
+<span class="source-line-no">181</span><span id="line-181"></span>
+<span class="source-line-no">182</span><span id="line-182">/*</span>
+<span class="source-line-no">183</span><span id="line-183"> *  End of File</span>
+<span class="source-line-no">184</span><span id="line-184"> */</span>
 
 
 

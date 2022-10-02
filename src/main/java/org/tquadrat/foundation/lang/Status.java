@@ -53,7 +53,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: Status.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -65,7 +65,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -86,10 +86,9 @@ public record Status<V,C>( V result, C errorCode )
         requireNonNullArgument( errorHandler, "errorHandler" );
 
         if( isFailure() ) throw errorHandler.handleError( errorCode );
-        final var retValue = result;
 
         //---* Done *----------------------------------------------------------
-        return retValue;
+        return result;
     }   //  getOrElse()
 
     /**

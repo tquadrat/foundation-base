@@ -46,14 +46,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AggregatingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: AggregatingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <I> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public class AggregatingSpliterator<I> implements Spliterator<List<I>>
 {
@@ -99,6 +99,7 @@ public class AggregatingSpliterator<I> implements Spliterator<List<I>>
     @Override
     public final int characteristics()
     {
+        @SuppressWarnings( "ConstantExpression" )
         final var retValue = m_Source.characteristics() & ~SIZED & ~CONCURRENT;
 
         //---* Done *----------------------------------------------------------
@@ -128,6 +129,7 @@ public class AggregatingSpliterator<I> implements Spliterator<List<I>>
     @Override
     public final boolean tryAdvance( final Consumer<? super List<I>> action )
     {
+        @SuppressWarnings( "OverlyLongLambda" )
         final var retValue = m_Source.tryAdvance( currentElement ->
         {
             if( !isSameSlide( currentElement ) )

@@ -37,14 +37,14 @@ import org.tquadrat.foundation.lang.Operation;
  *  {@link AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLockImpl.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: AutoLockImpl.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class AutoLockImpl implements AutoLock
 {
@@ -90,7 +90,7 @@ public final class AutoLockImpl implements AutoLock
         {
             m_Lock.unlock();
         }
-        catch( @SuppressWarnings( "unused" ) final IllegalMonitorStateException e ) { /* Deliberately ignored */ }
+        catch( final IllegalMonitorStateException ignored ) { /* Deliberately ignored */ }
     }   //  close()
 
     /**
@@ -142,6 +142,7 @@ public final class AutoLockImpl implements AutoLock
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "LockAcquiredButNotSafelyReleased" )
     @Override
     public final AutoLock lock()
     {
@@ -154,6 +155,7 @@ public final class AutoLockImpl implements AutoLock
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "LockAcquiredButNotSafelyReleased" )
     @Override
     public final AutoLock lockInterruptibly() throws InterruptedException
     {

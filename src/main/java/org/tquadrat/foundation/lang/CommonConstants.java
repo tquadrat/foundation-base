@@ -61,13 +61,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1010 2022-02-05 19:28:36Z tquadrat $
+ *  @version $Id: CommonConstants.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "ClassWithTooManyFields" )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1010 2022-02-05 19:28:36Z tquadrat $" )
+@SuppressWarnings( {"ClassWithTooManyFields", "UnnecessaryUnicodeEscape"} )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -765,6 +765,26 @@ public final class CommonConstants
      */
     @API( status = STABLE, since = "0.0.6" )
     public static final String PROPERTY_FILE_ENCODING = "file.encoding";
+
+    /**
+     *  <p>{@summary The system property providing the flag that indicates
+     *  whether the program is running in a headless mode, meaining that is
+     *  does not have any kind of a graphical user interface: {@value}.}</p>
+     *  <p>Instead of checking the property directly, a call to
+     *  {@code java.awt.GraphicsEnvironment#isHeadless()} will return the same
+     *  result, but it would require to add the module {@code java.desktop} to
+     *  the dependencies of the current module.</p>
+     *  <p>JavaFX does not have a headless mode as such (although there are
+     *  several solutions for headless testing of JavaFX applications), but
+     *  this flag can still be used to decide whether a JavaFX can run or not:
+     *  basically, AWT, Swing and JavaFX need the same resources, a keyboard, a
+     *  mouse and a graphical display.</p>
+     *
+     *  @see <a href="https://www.oracle.com/technical-resources/articles/javase/headless.html">Using Headless Mode in the Java SE Platform</a>
+     */
+    @SuppressWarnings( "JavadocReference" )
+    @API( status = STABLE, since = "0.1.0" )
+    public static final String PROPERTY_HEADLESS = "java.awt.headless";
 
     /**
      *  The system property that is used to enable the debug mode: {@value}.

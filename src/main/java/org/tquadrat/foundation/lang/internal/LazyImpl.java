@@ -55,14 +55,14 @@ import org.tquadrat.foundation.lang.Objects;
  *  <p>{@link #toString()} do not force the initialisation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LazyImpl.java 992 2022-01-16 19:51:31Z tquadrat $
+ *  @version $Id: LazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the value for this instance of {@code Lazy}.
  */
-@ClassVersion( sourceVersion = "$Id: LazyImpl.java 992 2022-01-16 19:51:31Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class LazyImpl<T> implements Lazy<T>
 {
@@ -157,6 +157,7 @@ public final class LazyImpl<T> implements Lazy<T>
     /**
      *  {@inheritDoc}
      */
+    @SuppressWarnings( "OverlyLongLambda" )
     @Override
     public final T get()
     {

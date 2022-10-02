@@ -41,7 +41,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Selector.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: Selector.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the values to select from.
@@ -49,7 +49,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Selector.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Selector.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.7" )
 public interface Selector<T> extends Function<T [],Integer>
 {
@@ -59,7 +59,6 @@ public interface Selector<T> extends Function<T [],Integer>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "AbstractMethodOverridesAbstractMethod" )
     @Override
     Integer apply( T [] t );
 }

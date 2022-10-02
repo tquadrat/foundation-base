@@ -35,13 +35,13 @@ import org.tquadrat.foundation.lang.SoftLazy;
  *  interface.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SoftLazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $
+ *  @version $Id: SoftLazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The type of the cached data.
  */
 @API( status = INTERNAL, since = "0.1.0" )
-@ClassVersion( sourceVersion = "$Id: SoftLazyImpl.java 840 2021-01-10 21:37:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SoftLazyImpl.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 public final class SoftLazyImpl<T> implements SoftLazy<T>
 {
         /*-----------*\
@@ -50,7 +50,7 @@ public final class SoftLazyImpl<T> implements SoftLazy<T>
     /**
      *  An empty array of {@code SoftLazyImpl<T>} objects.
      */
-    @SuppressWarnings( {"rawtypes", "StaticVariableOfConcreteClass"} )
+    @SuppressWarnings( "rawtypes" )
     public static final SoftLazyImpl [] EMPTY_SoftLazyImpl_ARRAY = new SoftLazyImpl [0];
 
         /*------------*\

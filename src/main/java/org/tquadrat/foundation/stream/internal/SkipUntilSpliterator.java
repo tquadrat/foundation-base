@@ -43,14 +43,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SkipUntilSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: SkipUntilSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type over which the given streams stream.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: SkipUntilSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SkipUntilSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class SkipUntilSpliterator<T> implements Spliterator<T>
 {
@@ -115,6 +115,7 @@ public final class SkipUntilSpliterator<T> implements Spliterator<T>
     @Override
     public final int characteristics()
     {
+        @SuppressWarnings( "ConstantExpression" )
         final var retValue = m_Source.characteristics() & ~SIZED;
 
         //---* Done *----------------------------------------------------------
@@ -158,6 +159,7 @@ public final class SkipUntilSpliterator<T> implements Spliterator<T>
         {
             while( !m_ConditionMet && m_Source.tryAdvance( e ->
             {
+                //noinspection NestedAssignment
                 if( (m_ConditionMet = m_Condition.test( e )) == true )
                 {
                     action.accept( e );

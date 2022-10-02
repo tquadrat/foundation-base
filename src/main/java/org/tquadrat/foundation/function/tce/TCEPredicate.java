@@ -39,13 +39,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the predicate.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEPredicate.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TCEPredicate.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEPredicate<T>
 {
@@ -60,7 +60,7 @@ public interface TCEPredicate<T>
      *      otherwise {@code false}.
      *  @throws Exception   Something went wrong.
      */
-    @SuppressWarnings( "ProhibitedExceptionDeclared" )
+    @SuppressWarnings( {"ProhibitedExceptionDeclared", "BooleanMethodNameMustStartWithQuestion"} )
     public boolean test( T arg ) throws Exception;
 }
 //  interface TCEPredicate

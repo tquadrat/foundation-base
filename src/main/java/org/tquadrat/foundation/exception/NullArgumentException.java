@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: NullArgumentException.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class NullArgumentException extends ValidationException
     permits BlankArgumentException, EmptyArgumentException
@@ -70,6 +70,7 @@ public sealed class NullArgumentException extends ValidationException
      *      {@code null}; if {@code null} or the empty String, a
      *      default message is used that does not use the name of the argument.
      */
+    @SuppressWarnings( "ParameterNameDiffersFromOverriddenParameter" )
     public NullArgumentException( final String argName )
     {
         this( argName, "Argument '%1$s' must not be null", "Argument must not be null" );

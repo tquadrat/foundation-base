@@ -88,13 +88,13 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed class LambdaContainerException extends RuntimeException
     /*
@@ -110,7 +110,7 @@ public sealed class LambdaContainerException extends RuntimeException
      *  The exception that is thrown when the container holds an unexpected
      *  exception.
      */
-    private class UnexpectedException extends RuntimeException
+    private final class UnexpectedException extends RuntimeException
     {
             /*------------------------*\
         ====** Static Initialisations **=======================================
@@ -234,7 +234,7 @@ public sealed class LambdaContainerException extends RuntimeException
      *      {@link UnexpectedException} that is thrown when the contained
      *      Exception was not expected.
      */
-    @SuppressWarnings( "ProhibitedExceptionDeclared" )
+    @SuppressWarnings( {"ProhibitedExceptionDeclared", "OverlyBroadThrowsClause"} )
     public final <T> T getCheckedCause( final Class<T> exceptionType ) throws RuntimeException
     {
         final var cause = getCause();

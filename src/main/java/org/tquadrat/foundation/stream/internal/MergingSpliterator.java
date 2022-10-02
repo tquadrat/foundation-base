@@ -47,7 +47,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MergingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: MergingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type over which the merged streams stream.
@@ -56,7 +56,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class MergingSpliterator<T,O> implements Spliterator<O>
 {
@@ -106,6 +106,7 @@ public final class MergingSpliterator<T,O> implements Spliterator<O>
     @Override
     public final int characteristics()
     {
+        @SuppressWarnings( "ConstantExpression" )
         final var retValue = NONNULL & ORDERED & IMMUTABLE;
 
         //---* Done *----------------------------------------------------------
