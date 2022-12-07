@@ -32,16 +32,23 @@ import org.apiguardian.api.API;
  *  classes.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MountPoint.java 966 2022-01-04 22:28:49Z tquadrat $
+ *  @version $Id: MountPoint.java 1035 2022-12-07 15:09:56Z tquadrat $
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: MountPoint.java 966 2022-01-04 22:28:49Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MountPoint.java 1035 2022-12-07 15:09:56Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( SOURCE )
 @Target( METHOD )
 public @interface MountPoint
-{ /* empty */ }
+{ /* empty */
+    /**
+     *  Optionally provides a short description on how to use this mount-point.
+     *
+     *  @return The description of the mount point.
+     */
+    String value() default "";
+}
 //  @interface MountPoint
 
 /*
