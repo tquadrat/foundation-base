@@ -225,7 +225,8 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPresent()" class="member-name-link">isPresent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Checks whether this <code>Lazy</code> instance has been initialised already.</div>
+<div class="block">Checks whether this <code>Lazy</code> instance has been
+  initialised already.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;X extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;<br><a href="LazyImpl.html" title="type parameter in LazyImpl">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#orElseThrow(java.util.function.Supplier)" class="member-name-link">orElseThrow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends X&gt;&nbsp;exceptionSupplier)</code></div>
@@ -378,10 +379,10 @@ implements <a href="../Lazy.html" title="interface in org.tquadrat.foundation.la
 <section class="detail" id="isPresent()">
 <h3>isPresent</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/LazyImpl.html#line-197">isPresent</a></span>()</div>
-<div class="block">Checks whether this <code>Lazy</code> instance has been initialised already.
-  But even it was initialised,
+<div class="block"><p>Checks whether this <code>Lazy</code> instance has been
+  initialised already. But even it was initialised,
   <a href="../Lazy.html#get()"><code>Lazy.get()</code></a>
-  may still return <code>null</code>.</div>
+  may still return <code>null</code>.</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Lazy.html#isPresent()">isPresent</a></code>&nbsp;in interface&nbsp;<code><a href="../Lazy.html" title="interface in org.tquadrat.foundation.lang">Lazy</a>&lt;<a href="LazyImpl.html" title="type parameter in LazyImpl">T</a>&gt;</code></dd>

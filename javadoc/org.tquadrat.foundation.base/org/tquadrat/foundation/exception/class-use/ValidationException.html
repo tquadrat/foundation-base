@@ -141,6 +141,61 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#require(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">require</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with the specified message is thrown.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#require(T,java.util.function.Function,java.util.function.Predicate)" class="member-name-link">require</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super T,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a customized
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first even-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#require(T,java.util.function.Predicate)" class="member-name-link">require</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#require(T,java.util.function.Supplier,java.util.function.Predicate)" class="member-name-link">require</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a customized
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first even-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#requireNonNull(T,java.lang.String)" class="member-name-link">requireNonNull</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Checks if the given value <code>obj</code> is <code>null</code> and
+  throws a
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with the specified message if it is <code>null</code>.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">Objects.</span><code><a href="../../lang/Objects.html#requireNonNull(T,java.util.function.Supplier)" class="member-name-link">requireNonNull</a><wbr>(T&nbsp;obj,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Checks that the specified object reference is not
+  <code>null</code> and throws a customized
+  <a href="../ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  if it is.</div>
+</div>
 <div class="col-first even-row-color"><code><a href="../../lang/ThreadFactoryBuilder.html" title="interface in org.tquadrat.foundation.lang">ThreadFactoryBuilder</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ThreadFactoryBuilder.</span><code><a href="../../lang/ThreadFactoryBuilder.html#setPriority(int)" class="member-name-link">setPriority</a><wbr>(int&nbsp;priority)</code></div>
 <div class="col-last even-row-color">

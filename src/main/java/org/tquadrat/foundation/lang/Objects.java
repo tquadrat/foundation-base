@@ -27,6 +27,7 @@ import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.List;
@@ -47,18 +48,23 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 import org.tquadrat.foundation.exception.ValidationException;
 
 /**
- *  This class consists of several utility methods working on
+ *  <p>{@summary This class consists of several utility methods working on
  *  {@link Object}
  *  instances, similar to those on
- *  {@link java.util.Arrays}
+ *  {@link Arrays}
  *  or
- *  {@link java.util.Collections}. <br>
- *  <br>The class was originally inspired by the class of the same name that
+ *  {@link Collections}.}</p>
+ *  <p>The class was originally inspired by the class of the same name that
  *  was finally introduced with the Java&nbsp;7 release; some of its methods
  *  will delegate to
- *  {@link java.util.Objects java.util.Objects}.
+ *  {@link java.util.Objects java.util.Objects},
  *  others will extend the functionality of the methods with the same
- *  name from {@code java.util.Objects}.
+ *  name from {@code java.util.Objects}.</p>
+ *  <p>If a method from {@code java.util.Objects} would throw a
+ *  {@link NullPointerException},
+ *  the method with the same name from this class would throw a
+ *  {@link ValidationException}
+ *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Objects.java 1032 2022-04-10 17:27:44Z tquadrat $
@@ -108,7 +114,13 @@ public final class Objects
      *  @throws IndexOutOfBoundsException   The sub-range is out-of-bounds.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final int checkFromIndexSize( final int fromIndex, final int size, final int length ) { return java.util.Objects.checkFromIndexSize( fromIndex, size, length ); }
+    public static final int checkFromIndexSize( final int fromIndex, final int size, final int length )
+    {
+        final var retValue = java.util.Objects.checkFromIndexSize( fromIndex, size, length );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  checkFromIndexSize()
 
     /**
      *  <p>{@summary Checks if the sub-range from {@code fromIndex} (inclusive)
@@ -135,7 +147,13 @@ public final class Objects
      *  @throws IndexOutOfBoundsException   The sub-range is out-of-bounds.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final int checkFromToIndex( final int fromIndex, final int toIndex, final int length ) { return java.util.Objects.checkFromToIndex( fromIndex, toIndex, length ); }
+    public static final int checkFromToIndex( final int fromIndex, final int toIndex, final int length )
+    {
+        final var retValue = java.util.Objects.checkFromToIndex( fromIndex, toIndex, length );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  checkFromToIndex()
 
     /**
      *  <p>{@summary Checks if the {@code index} is within the bounds of the
@@ -158,7 +176,13 @@ public final class Objects
      *  @throws IndexOutOfBoundsException   The {@code index} is out-of-bounds.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final int checkIndex( final int index, final int length ) { return java.util.Objects.checkIndex( index, length ); }
+    public static final int checkIndex( final int index, final int length )
+    {
+        final var retValue = java.util.Objects.checkIndex( index, length );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  checkIndex()
 
     /**
      *  <p>{@summary Throws the exception provided by the given supplier if the
@@ -171,7 +195,10 @@ public final class Objects
      *      throw new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; );
      *  }
      *  …</code></pre>
-     *  <p>that may be easier to read that the {@code if} statement.</p>
+     *  <p>that may be easier to read than the {@code if} statement:</p>
+     *  <pre><code>  …
+     *  checkState( !&lt;<i>condition</i>&gt;, () -> new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; ) );
+     *  …</code></pre>
      *
      *  @param  <E> The type of the exception that is thrown in case the
      *      condition is not met.
@@ -322,20 +349,46 @@ public final class Objects
     /**
      *  <p>{@summary Maps (converts) the given object instance by applying the
      *  provided mapper if the instance is not {@code null}.}</p>
-     *  <p>The mapper function will not be called at all if the given instance is
-     *  {@code null}.</p>
+     *  <p>The mapper function will not be called at all if the given instance
+     *  is {@code null}.</p>
      *
      *  @param  <T> The type of the object to map.
      *  @param  <R> The type of the result.
      *  @param  o   The object to map; can be {@code null}.
      *  @param  mapper  The mapping function.
      *  @return The result of the mapping, or {@code null} if the given object
-     *      instance was already {@code null}.
+     *      instance was already {@code null}. Keep in mind that the result of
+     *      the mapping can be {@code null}!
      */
-    public static final <T,R> R mapNonNull( final T o, final Function<T,R> mapper )
+    public static final <T,R> R mapNonNull( final T o, final Function<T,? extends R> mapper )
     {
         @SuppressWarnings( "RedundantExplicitVariableType" )
         final R retValue = nonNull( o ) ? requireNonNullArgument( mapper, "mapper" ).apply( o ) : null;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapNonNull()
+
+    /**
+     *  <p>{@summary Maps (converts) the given object instance by applying the
+     *  provided mapper if the instance is not {@code null} or returns the
+     *  given default value.}</p>
+     *  <p>The mapper function will not be called at all if the given instance
+     *  is {@code null}.</p>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  <R> The type of the result.
+     *  @param  o   The object to map; can be {@code null}.
+     *  @param  mapper  The mapping function.
+     *  @param  defaultValue    The default value; can be {@code null}.
+     *  @return The result of the mapping, or the default value if the given
+     *      object instance is {@code null}. Keep in mind that the result of
+     *      the mapping can be {@code null}!
+     */
+    public static final <T,R> R mapNonNull( final T o, final Function<T,? extends R> mapper, final R defaultValue )
+    {
+        @SuppressWarnings( "RedundantExplicitVariableType" )
+        final R retValue = nonNull( o ) ? requireNonNullArgument( mapper, "mapper" ).apply( o ) : defaultValue;
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -364,105 +417,106 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link IllegalArgumentException}
+     *  {@link ValidationException}
      *  is thrown.
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@code null}.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws IllegalArgumentException    {@code a} failed the validation.
+     *  @throws ValidationException {@code obj} failed the validation.
      *
      *  @since 0.1.0
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T a, final Predicate<? super T> validation ) throws IllegalArgumentException
+    public static final <T> T require( final T obj, final Predicate<? super T> validation ) throws ValidationException
     {
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
-            throw new IllegalArgumentException();
+            throw new ValidationException();
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return obj;
     }   //  require()
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link IllegalArgumentException}
+     *  {@link ValidationException}
      *  with the specified message is thrown.
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@code null}.
      *  @param  message The message that is set to the thrown exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws IllegalArgumentException    {@code a} failed the validation.
+     *  @throws ValidationException {@code obj} failed the validation.
      *  @throws NullArgumentException   {@code message} is {@code null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T a, final String message, final Predicate<? super T> validation ) throws IllegalArgumentException, NullArgumentException, EmptyArgumentException
+    public static final <T> T require( final T obj, final String message, final Predicate<? super T> validation ) throws ValidationException, NullArgumentException, EmptyArgumentException
     {
         requireNotEmptyArgument( message, "message" );
 
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
-            throw new IllegalArgumentException( message );
+            throw new ValidationException( message );
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return obj;
     }   //  require()
 
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a customized
-     *  {@link IllegalArgumentException}
+     *  {@link ValidationException}
      *  is thrown.}</p>
      *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
      *  this method allows to defer the creation of the message until after the
      *  validation was performed (and failed). While this may confer a
-     *  performance advantage in the success case, some care  should be taken
-     *  that the costs the creation of the message supplier are less than the
-     *  cost of just creating the String message directly.</p>
+     *  performance advantage in the success case, some care should be taken
+     *  that the costs for the creation of the message supplier are less than
+     *  the cost of just creating the String message directly.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@code null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that an {@code IllegalArgumentException} is thrown. If
+     *      in the event that an {@code ValidationException} is thrown. If
      *      {@code null} or if it returns {@code null}, no detail message is
      *      provided to the exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws IllegalArgumentException    {@code a} failed the validation.
+     *  @throws NullArgumentException   The validation is {@code null}.
+     *  @throws ValidationException {@code obk} failed the validation.
      *
      *  @since 0.1.0
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T a, final Supplier<String> messageSupplier, final Predicate<? super T> validation ) throws IllegalArgumentException
+    public static final <T> T require( final T obj, final Supplier<String> messageSupplier, final Predicate<? super T> validation ) throws ValidationException
     {
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
             final var exception = nonNull( messageSupplier )
-                ? new IllegalArgumentException( messageSupplier.get() )
-                : new IllegalArgumentException();
+                ? new ValidationException( messageSupplier.get() )
+                : new ValidationException();
             throw exception;
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return obj;
     }   //  require()
 
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a customized
-     *  {@link IllegalArgumentException}
+     *  {@link ValidationException}
      *  is thrown.}</p>
      *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
@@ -475,106 +529,124 @@ public final class Objects
      *  {@link #requireNonNull(Object, Supplier)}
      *  as it takes an instance of
      *  {@link Function}
-     *  for the {@code messageSupplier}. That function is called with {@code a}
-     *  as the argument; this allows to add the invalid value to the exception
-     *  detail message. The provided message supplier function must accept
-     *  {@code null} as a valid argument.</p>
+     *  for the {@code messageSupplier}. That function is called with
+     *  {@code obj} as the argument; this allows to add the invalid value to
+     *  the exception detail message. The provided message supplier function
+     *  must accept {@code null} as a valid argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@code null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that an {@code IllegalArgumentException} is thrown. If
+     *      in the event that an {@code ValidationException} is thrown. If
      *      {@code null} or if it returns {@code null}, no detail message is
      *      provided.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws IllegalArgumentException    {@code a} failed the validation.
+     *  @throws NullArgumentException   The validation is {@code null}.
+     *  @throws ValidationException {@code obj} failed the validation.
      *
      *  @since 0.1.0
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T a, final Function<? super T,String> messageSupplier, final Predicate<? super T> validation ) throws IllegalArgumentException
+    public static final <T> T require( final T obj, final Function<? super T,String> messageSupplier, final Predicate<? super T> validation ) throws ValidationException
     {
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
             final var exception = nonNull( messageSupplier )
-                ? new IllegalArgumentException( messageSupplier.apply( a ) )
-                : new IllegalArgumentException();
+                ? new ValidationException( messageSupplier.apply( obj ) )
+                : new NullArgumentException();
             throw exception;
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return obj;
     }   //  require()
 
     /**
-     *  <p>{@summary Checks if the given value {@code a} is {@code null} and
+     *  <p>{@summary Checks if the given value {@code obj} is {@code null} and
      *  throws a
-     *  {@link NullPointerException}
+     *  {@link NullArgumentException}
      *  if it is {@code null}.}</p>
-     *  <p>Calls
-     *  {@link java.util.Objects#requireNonNull(Object) java.util.Objects.requireNonNull(Object)}
-     *  internally.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check.
+     *  @param  obj The value to check.
      *  @return The value if it is not {@code null}.
-     *  @throws NullPointerException   {@code a} is {@code null}.
+     *  @throws NullArgumentException   {@code obj} is {@code null}.
+     *
+     *  @see java.util.Objects#requireNonNull(Object)
      */
+    @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull( final T a ) { return java.util.Objects.requireNonNull( a ); }
+    public static final <T> T requireNonNull( final T obj ) throws NullArgumentException
+    {
+        if( isNull( obj ) ) throw new NullArgumentException();
+
+        //---* Done *----------------------------------------------------------
+        return obj;
+    }   //  requireNonNull()
 
     /**
-     *  <p>{@summary Checks if the given value {@code a} is {@code null} and
+     *  <p>{@summary Checks if the given value {@code obj} is {@code null} and
      *  throws a
-     *  {@link NullPointerException}
+     *  {@link ValidationException}
      *  with the specified message if it is {@code null}.}</p>
-     *  <p>Calls
-     *  {@link java.util.Objects#requireNonNull(Object,String) java.util.Objects#requireNonNull(Object,String)}
-     *  internally, but requires that the given {@code message} is not
-     *  {@code null} or empty.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check.
+     *  @param  obj The value to check.
      *  @param  message The message that is set to the thrown exception.
      *  @return The value if it is not {@code null}.
-     *  @throws NullPointerException    {@code a} is {@code null}.
      *  @throws NullArgumentException   {@code message} is {@code null}.
+     *  @throws NullArgumentException   {@code obj} is {@code null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
+     *
+     *  @see java.util.Objects#requireNonNull(Object,String)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull( final T a, final String message ) throws NullArgumentException, EmptyArgumentException
+    public static final <T> T requireNonNull( final T obj, final String message ) throws ValidationException, NullArgumentException, EmptyArgumentException
     {
-        return java.util.Objects.requireNonNull( a, requireNotEmptyArgument( message, "message" ) );
+        requireNotEmptyArgument( message, "message" );
+        if( isNull( obj ) ) throw new ValidationException( message );
+
+        //---* Done *----------------------------------------------------------
+        return obj;
     }   //  requireNonNull()
 
     /**
      *  <p>{@summary Checks that the specified object reference is not
      *  {@code null} and throws a customized
-     *  {@link NullPointerException}
+     *  {@link ValidationException}
      *  if it is.}</p>
      *  <p>Unlike the method
-     *  {@link #requireNonNull(Object, String)},
+     *  {@link #requireNonNull(Object,String)},
      *  this method allows to defer the creation of the message until after the
      *  null check failed. While this may confer a performance advantage in the
      *  non-{@code null} case, when deciding to call this method care should be
      *  taken that the costs of creating the message supplier are less than the
      *  cost of just creating the String message directly.</p>
-     *  <p>Calls
-     *  {@link java.util.Objects#requireNonNull(Object, Supplier)}
-     *  internally.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check.
+     *  @param  obj The value to check.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that a {@code NullPointerException} is thrown. If
+     *      in the event that a {@code NullArgumentException} is thrown. If
      *      {@code null}, no detail message is provided.
      *  @return The value if it is not {@code null}.
-     *  @throws NullPointerException    {@code A} is {@code null}
+     *  @throws ValidationException    {@code obj} is {@code null}
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull( final T a, final Supplier<String> messageSupplier) { return java.util.Objects.requireNonNull( a, messageSupplier ); }
+    public static final <T> T requireNonNull( final T obj, final Supplier<String> messageSupplier) throws ValidationException
+    {
+        if( isNull( obj ) )
+        {
+            final var message = nonNull( messageSupplier ) ? messageSupplier.get() : null;
+            @SuppressWarnings( "NewExceptionWithoutArguments" )
+            final var exception = isNull( message ) ? new NullArgumentException() : new ValidationException( message );
+            throw exception;
+        }
+
+        //---* Done *----------------------------------------------------------
+        return obj;
+    }   //  requireNonNull()
 
     /**
      *  Checks if the given argument {@code a} is {@code null} and throws a
@@ -582,28 +654,28 @@ public final class Objects
      *  if it is {@code null}.
      *
      *  @param  <T> The type of the argument to check.
-     *  @param  a   The argument to check.
+     *  @param  arg The argument to check.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @return The argument if it is not {@code null}.
-     *  @throws NullArgumentException   {@code a} is {@code null}.
+     *  @throws NullArgumentException   {@code arg} is {@code null}.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNullArgument( final T a, final String name )
+    public static final <T> T requireNonNullArgument( final T arg, final String name )
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
-        if( isNull( a ) ) throw new NullArgumentException( name );
+        if( isNull( arg ) ) throw new NullArgumentException( name );
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireNonNullArgument()
 
     /**
-     *  <p>{@summary Checks if not both of the given arguments {@code a} and
-     *  {@code other} are {@code null} and throws a
+     *  <p>{@summary Checks if not both of the given arguments {@code arg} and
+     *  {@code otherArg} are {@code null} and throws a
      *  {@link NullArgumentException}
-     *  if both are {@code null}.} Otherwise, it returns {@code a}.</p>
+     *  if both are {@code null}.} Otherwise, it returns {@code arg}.</p>
      *
      *  @param  <T> The type of the first argument to check.
      *  @param  arg The first argument to check; it will be returned in case of
@@ -633,7 +705,7 @@ public final class Objects
     }   //  requireNonNullArgument()
 
     /**
-     *  <p>{@summary Checks if the given String argument {@code a} is
+     *  <p>{@summary Checks if the given String argument {@code arg} is
      *  {@code null}, empty or blank and throws a
      *  {@link NullArgumentException}
      *  if it is {@code null}, an
@@ -643,23 +715,23 @@ public final class Objects
      *  if it is blank.}</p>
      *
      *  @param  <T> The type of the argument to check.
-     *  @param  a   The argument to check; may be {@code null}.
+     *  @param  arg The argument to check; may be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @return The argument if it is not {@code null}, empty or blank.
-     *  @throws NullArgumentException   {@code a} is {@code null}.
-     *  @throws EmptyArgumentException   {@code a} is empty.
-     *  @throws BlankArgumentException   {@code a} is blank.
+     *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *  @throws EmptyArgumentException   {@code arg} is empty.
+     *  @throws BlankArgumentException   {@code arg} is blank.
      *
      *  @see    String#isBlank()
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T extends CharSequence> T requireNotBlankArgument( final T a, final String name )
+    public static final <T extends CharSequence> T requireNotBlankArgument( final T arg, final String name )
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
 
-        switch( a )
+        switch( arg )
         {
             case null -> throw new NullArgumentException( name );
             //noinspection QuestionableName
@@ -676,11 +748,11 @@ public final class Objects
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireNotEmptyArgument()
 
     /**
-     *  <p>{@summary Checks if the given argument {@code a} is {@code null} or
+     *  <p>{@summary Checks if the given argument {@code arg} is {@code null} or
      *  empty and throws a
      *  {@link NullArgumentException}
      *  if it is {@code null}, or an
@@ -726,21 +798,21 @@ public final class Objects
      *  was provided.</p>
      *
      *  @param  <T> The type of the argument to check.
-     *  @param  a   The argument to check; may be {@code null}.
+     *  @param  arg The argument to check; may be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @return The argument if it is not {@code null} or empty.
-     *  @throws NullArgumentException   {@code a} is {@code null}.
-     *  @throws EmptyArgumentException   {@code a} is empty.
+     *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *  @throws EmptyArgumentException   {@code arg} is empty.
      */
     @SuppressWarnings( "OverlyComplexMethod" )
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNotEmptyArgument( final T a, final String name )
+    public static final <T> T requireNotEmptyArgument( final T arg, final String name )
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
 
-        switch( a )
+        switch( arg )
         {
             /*
              * When using guarding expressions, the code would not get better
@@ -763,12 +835,12 @@ public final class Objects
             case Enumeration<?> enumeration ->
             {
                 /*
-                 * The funny thing with an Enumeration is that it could have been
-                 * not empty in the beginning, but it may be empty (= having no
-                 * more elements) now.
-                 * The good thing is that Enumeration.hasMoreElements() will not
-                 * change the state of the Enumeration - at least it should not do
-                 * so.
+                 * The funny thing with an Enumeration is that it could have
+                 * been not empty in the beginning, but it may be empty
+                 * (= having no more elements) now.
+                 * The good thing is that Enumeration.hasMoreElements() will
+                 * not change the state of the Enumeration - at least it should
+                 * not do so.
                  */
                 if( !enumeration.hasMoreElements() ) throw new EmptyArgumentException( name );
             }
@@ -783,9 +855,9 @@ public final class Objects
             }
             default ->
             {
-                if( a.getClass().isArray() )
+                if( arg.getClass().isArray() )
                 {
-                    if( Array.getLength( a ) == 0 ) throw new EmptyArgumentException( name );
+                    if( Array.getLength( arg ) == 0 ) throw new EmptyArgumentException( name );
                 }
                 else
                 {
@@ -801,11 +873,11 @@ public final class Objects
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireNotEmptyArgument()
 
     /**
-     *  <p>{@summary Checks if the given argument {@code a} of type
+     *  <p>{@summary Checks if the given argument {@code optional} of type
      *  {@link Optional}
      *  is {@code null} or
      *  {@linkplain Optional#empty() empty}
@@ -903,12 +975,12 @@ public final class Objects
      *  with a default message is thrown.
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  arg The value to check; can be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code a} failed the validation.
+     *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
      *      {@code null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -916,17 +988,17 @@ public final class Objects
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T requireValidArgument( final T a, final String name, final Predicate<? super T> validation )
+    public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation )
     {
         requireNotEmptyArgument( name, "name" );
 
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( format( "Validation failed for '%s'", name ) );
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireValidArgument()
 
     /**
@@ -938,14 +1010,14 @@ public final class Objects
      *  argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check; can be {@code null}.
+     *  @param  arg The value to check; can be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code a} failed the validation.
+     *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@code null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -953,51 +1025,52 @@ public final class Objects
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T requireValidArgument( final T a, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
+    public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotEmptyArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
-        if( !requireNonNullArgument( validation, "validation" ).test( a ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireValidArgument()
 
     /**
-     *  Applies the given validation on the given value (that must not be
-     *  {@code null}), and if that fails, an
+     *  <p>{@summary Applies the given validation on the given value (that must
+     *  not be {@code null}), and if that fails, an
      *  {@link ValidationException}
-     *  with a default message is thrown.
+     *  with a default message is thrown.}</p>
+     *  <p>If the value is {@code null}, the validation is never triggered.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check.
+     *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code a} failed the validation.
-     *  @throws NullArgumentException   {@code a}, {@code name} or
+     *  @throws NullArgumentException   {@code arg}, {@code name} or
      *      {@code validation} is {@code null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T requireValidNonNullArgument( final T a, final String name, final Predicate<? super T> validation )
+    public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation )
     {
         requireNotEmptyArgument( name, "name" );
 
-        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
             throw new ValidationException( format( "Validation failed for '%s'", name ) );
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireValidNonNullArgument()
 
     /**
@@ -1009,33 +1082,33 @@ public final class Objects
      *  argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  a   The value to check.
+     *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code a} failed the validation.
-     *  @throws NullArgumentException   {@code a}, {@code name},
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code arg}, {@code name},
      *      {@code validation} or {@code messageProvider} is {@code null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T requireValidNonNullArgument( final T a, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
+    public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotEmptyArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
-        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( a, "name" ) ) )
+        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
-        return a;
+        return arg;
     }   //  requireValidNonNullArgument()
 
     /**
@@ -1172,7 +1245,7 @@ public final class Objects
     }   //  toString()
 
     /**
-     *  <p>{@summary Converts the given argument {@code object} into a
+     *  <p>{@summary Converts the given argument into a
      *  {@link String}
      *  using the given instance of
      *  {@link Stringer}.}
@@ -1181,7 +1254,7 @@ public final class Objects
      *  instead.</p>
      *
      *  @param  <T> The type of the object.
-     *  @param  object  The object; may be {@code null}.
+     *  @param  value   The object; may be {@code null}.
      *  @param  stringer    The method that is used to convert the given object
      *      to a String.
      *  @param  nullDefault The text that should be returned if {@code object}
@@ -1191,11 +1264,11 @@ public final class Objects
      *  @see    Stringer
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> String toString( final T object, final Stringer<? super T> stringer, final String nullDefault )
+    public static final <T> String toString( final T value, final Stringer<? super T> stringer, final String nullDefault )
     {
         requireNonNullArgument( nullDefault, "nullDefault" );
 
-        final var retValue = nonNull( object ) ? requireNonNullArgument( stringer, "stringer" ).toString( object ) : nullDefault;
+        final var retValue = nonNull( value ) ? requireNonNullArgument( stringer, "stringer" ).toString( value ) : nullDefault;
 
         //---* Done *----------------------------------------------------------
         return retValue;

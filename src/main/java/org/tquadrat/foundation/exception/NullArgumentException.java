@@ -93,9 +93,10 @@ public sealed class NullArgumentException extends ValidationException
     }   //  NullArgumentException()
 
     /**
-     *  Creates a new instance of {@code NullArgumentException}.<br>
-     *  <br>This constructor was introduced for the
-     *  {@link EmptyArgumentException}.
+     *  <p>{@summary Creates a new instance of
+     *  {@code NullArgumentException}.}</p>
+     *  <p>This constructor was introduced for the
+     *  {@link EmptyArgumentException}.</p>
      *
      *  @param  argName The name of the argument whose value was provided as
      *      {@code null}; if {@code null} or the empty String, a

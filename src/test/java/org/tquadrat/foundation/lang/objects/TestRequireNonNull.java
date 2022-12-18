@@ -19,8 +19,8 @@
 package org.tquadrat.foundation.lang.objects;
 
 import static java.lang.String.format;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
@@ -35,6 +35,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
@@ -64,18 +65,7 @@ public class TestRequireNonNull extends TestBaseClass
     {
         skipThreadTest();
 
-        final Class<? extends Throwable> expectedException = NullPointerException.class;
-        try
-        {
-            requireNonNull( null );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
+        assertThrows( ValidationException.class, () -> requireNonNull( null ) );
     }   //  testRequireNonNull()
 
     /**
@@ -103,19 +93,7 @@ public class TestRequireNonNull extends TestBaseClass
         skipThreadTest();
 
         final var message = "message";
-        final Class<? extends Throwable> expectedException = NullPointerException.class;
-        try
-        {
-            requireNonNull( null, message );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            assertEquals( t.getMessage(), message );
-        }
+        assertThrows( ValidationException.class, () -> requireNonNull( null, message ) );
     }   //  testRequireNonNullWithMessage()
 
     /**
@@ -188,44 +166,9 @@ public class TestRequireNonNull extends TestBaseClass
     {
         skipThreadTest();
 
-        final Class<? extends Throwable> expectedException = NullPointerException.class;
-        try
-        {
-            requireNonNull( null, () -> "message" );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
-
-        try
-        {
-            //---* supplier is allowed to be null *----------------------------
-            requireNonNull( null, (Supplier<String>) null );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
-
-        try
-        {
-            //---* supplier is allowed to return null *------------------------
-            requireNonNull( null, () -> null );
-            fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-        }
-        catch( final AssertionError e ) { throw e; }
-        catch( final Throwable t )
-        {
-            final var isExpectedException = expectedException.isInstance( t );
-            assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-        }
+        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> "message" ) );
+        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> "message" ) );
+        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> null ) );
     }   //  testRequireNonNullWithSupplier()
 
     /**

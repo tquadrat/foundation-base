@@ -91,11 +91,11 @@ public sealed interface Lazy<T>
     public T get();
 
     /**
-     *  Returns the value for this instance of {@code Lazy} as its String
-     *  representation.<br>
-     *  <br>Basically it will call the value's
+     *  <p>{@summary Returns the value for this instance of {@code Lazy} as its
+     *  String representation.}</p>
+     *  <p>Basically it will call the value's
      *  {@link Object#toString() toString()}
-     *  method.
+     *  method.</p>
      *
      *  @return The value as String.
      */
@@ -116,7 +116,8 @@ public sealed interface Lazy<T>
      */
     public default String getAsString( final Stringer<? super T> stringer )
     {
-        final var retValue = requireNonNullArgument( stringer, "stringer" ).toString( get() );
+        final var retValue = requireNonNullArgument( stringer, "stringer" )
+            .toString( get() );
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -142,10 +143,10 @@ public sealed interface Lazy<T>
     }   //  ifPresent()
 
     /**
-     *  Checks whether this {@code Lazy} instance has been initialised already.
-     *  But even it was initialised,
+     *  <p>{@summary Checks whether this {@code Lazy} instance has been
+     *  initialised already.} But even it was initialised,
      *  {@link #get()}
-     *  may still return {@code null}.
+     *  may still return {@code null}.</p>
      *
      *  @return {@code true} if the instance was initialised, {@code false}
      *      otherwise.
@@ -171,11 +172,12 @@ public sealed interface Lazy<T>
     }   //  map()
 
     /**
-     *  Creates a new {@code Lazy} instance that is already initialised.<br>
-     *  <br>This allows to use {@code Lazy} instances also for
+     *  <p>{@summary Creates a new {@code Lazy} instance that is already
+     *  initialised.}</p>
+     *  <p>This allows to use {@code Lazy} instances also for
      *  {@linkplain java.lang.Cloneable cloneable}
      *  objects, given that {@code T} is either cloneable itself or
-     *  immutable.
+     *  immutable.</p>
      *
      *  @param  <T> The type of the value for the new instance of {@code Lazy}.
      *  @param  value   The value; can be {@code null}.
