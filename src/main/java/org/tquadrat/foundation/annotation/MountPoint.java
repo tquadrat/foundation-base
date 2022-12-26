@@ -41,7 +41,7 @@ import org.apiguardian.api.API;
 @Retention( SOURCE )
 @Target( METHOD )
 public @interface MountPoint
-{ /* empty */
+{
     /**
      *  Optionally provides a short description on how to use this mount-point.
      *

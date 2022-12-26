@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullArgumentException.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: NullArgumentException.java 1041 2022-12-18 22:14:52Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1041 2022-12-18 22:14:52Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class NullArgumentException extends ValidationException
     permits BlankArgumentException, EmptyArgumentException

@@ -61,7 +61,7 @@ import org.tquadrat.foundation.lang.internal.LazyImpl;
  *  central location.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Lazy.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: Lazy.java 1041 2022-12-18 22:14:52Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
@@ -69,7 +69,7 @@ import org.tquadrat.foundation.lang.internal.LazyImpl;
  *  @param  <T> The type of the value for this instance of {@code Lazy}.
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Lazy.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Lazy.java 1041 2022-12-18 22:14:52Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface Lazy<T>
     permits org.tquadrat.foundation.lang.internal.LazyImpl

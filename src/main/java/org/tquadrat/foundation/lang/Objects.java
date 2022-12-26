@@ -67,14 +67,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1032 2022-04-10 17:27:44Z tquadrat $
+ *  @version $Id: Objects.java 1041 2022-12-18 22:14:52Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1032 2022-04-10 17:27:44Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1041 2022-12-18 22:14:52Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -749,7 +749,7 @@ public final class Objects
 
         //---* Done *----------------------------------------------------------
         return arg;
-    }   //  requireNotEmptyArgument()
+    }   //  requireNotBlankArgument()
 
     /**
      *  <p>{@summary Checks if the given argument {@code arg} is {@code null} or

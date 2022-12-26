@@ -47,9 +47,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#requireNonNull(Object, Supplier)}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequireNonNull.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestRequireNonNull.java 1041 2022-12-18 22:14:52Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestRequireNonNull.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequireNonNull.java 1041 2022-12-18 22:14:52Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireNonNull" )
 public class TestRequireNonNull extends TestBaseClass
 {
