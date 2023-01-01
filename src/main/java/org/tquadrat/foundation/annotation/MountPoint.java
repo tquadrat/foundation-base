@@ -32,10 +32,10 @@ import org.apiguardian.api.API;
  *  classes.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MountPoint.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: MountPoint.java 1042 2022-12-26 14:05:06Z tquadrat $
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: MountPoint.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MountPoint.java 1042 2022-12-26 14:05:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( SOURCE )

@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='1128.000'
-     height='847.000'>
+     height='913.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='425.000'
+                  height='491.000'
                   width='1078.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='1078.000'
-                          height='425.000'
+                          height='491.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -231,24 +231,42 @@
                           class='static'>+ requireNonNullElseGet(obj:T,supplier:java.util.function.Supplier&lt;? extends T&gt;):T</text>
                     <text x='5.000'
                           y='355.000'
-                          class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                          class='static'>+ requireValidArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate):double</text>
                     <text x='5.000'
                           y='366.000'
-                          class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                          class='static'>+ requireValidArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):double</text>
                     <text x='5.000'
                           y='377.000'
-                          class='static'>+ requireValidNonNullArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                          class='static'>+ requireValidArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate):int</text>
                     <text x='5.000'
                           y='388.000'
-                          class='static'>+ requireValidNonNullArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                          class='static'>+ requireValidArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):int</text>
                     <text x='5.000'
                           y='399.000'
-                          class='static'>+ toString(object:java.lang.Object):java.lang.String</text>
+                          class='static'>+ requireValidArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate):long</text>
                     <text x='5.000'
                           y='410.000'
-                          class='static'>+ toString(object:java.lang.Object,nullDefault:java.lang.String):java.lang.String</text>
+                          class='static'>+ requireValidArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):long</text>
                     <text x='5.000'
                           y='421.000'
+                          class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                    <text x='5.000'
+                          y='432.000'
+                          class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                    <text x='5.000'
+                          y='443.000'
+                          class='static'>+ requireValidNonNullArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
+                    <text x='5.000'
+                          y='454.000'
+                          class='static'>+ requireValidNonNullArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                    <text x='5.000'
+                          y='465.000'
+                          class='static'>+ toString(object:java.lang.Object):java.lang.String</text>
+                    <text x='5.000'
+                          y='476.000'
+                          class='static'>+ toString(object:java.lang.Object,nullDefault:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='487.000'
                           class='static'>+ toString(value:T,stringer:org.tquadrat.foundation.lang.Stringer&lt;? super T&gt;,nullDefault:java.lang.String):java.lang.String</text>
                 </g>
             </g>
