@@ -977,210 +977,6 @@ public final class Objects
      *  {@link ValidationException}
      *  with a default message is thrown.
      *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final double requireValidArgument( final double arg, final String name, final DoublePredicate validation )
-    {
-        requireNotEmptyArgument( name, "name" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  <p>{@summary Applies the given validation on the given value, and if
-     *  that fails, a
-     *  {@link ValidationException}
-     *  is thrown.} The message for the exception will be provided by the given
-     *  message supplier that takes the name of the argument as an
-     *  argument.</p>
-     *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @param  messageSupplier The function that generates the message for the
-     *      exception.
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final double requireValidArgument( final double arg, final String name, final DoublePredicate validation, final UnaryOperator<String> messageSupplier )
-    {
-        requireNotEmptyArgument( name, "name" );
-        requireNonNullArgument( messageSupplier, "messageSupplier" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( messageSupplier.apply( name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
-     *  with a default message is thrown.
-     *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final int requireValidArgument( final int arg, final String name, final IntPredicate validation )
-    {
-        requireNotEmptyArgument( name, "name" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  <p>{@summary Applies the given validation on the given value, and if
-     *  that fails, a
-     *  {@link ValidationException}
-     *  is thrown.} The message for the exception will be provided by the given
-     *  message supplier that takes the name of the argument as an
-     *  argument.</p>
-     *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @param  messageSupplier The function that generates the message for the
-     *      exception.
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final int requireValidArgument( final int arg, final String name, final IntPredicate validation, final UnaryOperator<String> messageSupplier )
-    {
-        requireNotEmptyArgument( name, "name" );
-        requireNonNullArgument( messageSupplier, "messageSupplier" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( messageSupplier.apply( name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
-     *  with a default message is thrown.
-     *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final long requireValidArgument( final long arg, final String name, final LongPredicate validation )
-    {
-        requireNotEmptyArgument( name, "name" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  <p>{@summary Applies the given validation on the given value, and if
-     *  that fails, a
-     *  {@link ValidationException}
-     *  is thrown.} The message for the exception will be provided by the given
-     *  message supplier that takes the name of the argument as an
-     *  argument.</p>
-     *
-     *  @param  arg The value to check.
-     *  @param  name    The name of the argument; this is used for the error
-     *      message.
-     *  @param  validation  The validation
-     *  @param  messageSupplier The function that generates the message for the
-     *      exception.
-     *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
-     *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
-     *  @throws EmptyArgumentException  {@code name} is the empty String.
-     *
-     *  @since 0.2.0
-     */
-    @API( status = STABLE, since = "0.2.0" )
-    public static final long requireValidArgument( final long arg, final String name, final LongPredicate validation, final UnaryOperator<String> messageSupplier )
-    {
-        requireNotEmptyArgument( name, "name" );
-        requireNonNullArgument( messageSupplier, "messageSupplier" );
-
-        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
-        {
-            throw new ValidationException( messageSupplier.apply( name ) );
-        }
-
-        //---* Done *----------------------------------------------------------
-        return arg;
-    }   //  requireValidArgument()
-
-    /**
-     *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
-     *  with a default message is thrown.
-     *
      *  @param  <T> The type of the value to check.
      *  @param  arg The value to check; can be {@code null}.
      *  @param  name    The name of the argument; this is used for the error
@@ -1245,6 +1041,210 @@ public final class Objects
         //---* Done *----------------------------------------------------------
         return arg;
     }   //  requireValidArgument()
+
+    /**
+     *  Applies the given validation on the given value, and if that fails, an
+     *  {@link ValidationException}
+     *  with a default message is thrown.
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name} or {@code validation} is
+     *      {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation )
+    {
+        requireNotEmptyArgument( name, "name" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidDoubleArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  message supplier that takes the name of the argument as an
+     *  argument.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final UnaryOperator<String> messageSupplier )
+    {
+        requireNotEmptyArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidDoubleArgument()
+
+    /**
+     *  Applies the given validation on the given value, and if that fails, an
+     *  {@link ValidationException}
+     *  with a default message is thrown.
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name} or {@code validation} is
+     *      {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation )
+    {
+        requireNotEmptyArgument( name, "name" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidIntegerArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  message supplier that takes the name of the argument as an
+     *  argument.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final UnaryOperator<String> messageSupplier )
+    {
+        requireNotEmptyArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidIntegerArgument()
+
+    /**
+     *  Applies the given validation on the given value, and if that fails, an
+     *  {@link ValidationException}
+     *  with a default message is thrown.
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name} or {@code validation} is
+     *      {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation )
+    {
+        requireNotEmptyArgument( name, "name" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidLongArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  message supplier that takes the name of the argument as an
+     *  argument.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.2.0
+     */
+    @API( status = STABLE, since = "0.2.0" )
+    public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final UnaryOperator<String> messageSupplier )
+    {
+        requireNotEmptyArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidLongArgument()
 
     /**
      *  <p>{@summary Applies the given validation on the given value (that must

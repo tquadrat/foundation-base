@@ -28,6 +28,9 @@
 <meta name="keywords" content="requireNonNullElse()">
 <meta name="keywords" content="requireNonNullElseGet()">
 <meta name="keywords" content="requireValidArgument()">
+<meta name="keywords" content="requireValidDoubleArgument()">
+<meta name="keywords" content="requireValidIntegerArgument()">
+<meta name="keywords" content="requireValidLongArgument()">
 <meta name="keywords" content="requireValidNonNullArgument()">
 <meta name="keywords" content="toString()">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
@@ -410,66 +413,6 @@ R&gt;&nbsp;R</code></div>
   <a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception"><code>EmptyArgumentException</code></a>
   if it is empty.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(double,java.lang.String,java.util.function.DoublePredicate)" class="member-name-link">requireValidArgument</a><wbr>(double&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(double,java.lang.String,java.util.function.DoublePredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(double&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(int,java.lang.String,java.util.function.IntPredicate)" class="member-name-link">requireValidArgument</a><wbr>(int&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(int,java.lang.String,java.util.function.IntPredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(int&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(long,java.lang.String,java.util.function.LongPredicate)" class="member-name-link">requireValidArgument</a><wbr>(long&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(long,java.lang.String,java.util.function.LongPredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(long&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final &lt;T&gt;&nbsp;T</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;arg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
@@ -483,6 +426,66 @@ R&gt;&nbsp;R</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidArgument(T,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidArgument</a><wbr>(T&nbsp;arg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidDoubleArgument(double,java.lang.String,java.util.function.DoublePredicate)" class="member-name-link">requireValidDoubleArgument</a><wbr>(double&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidDoubleArgument(double,java.lang.String,java.util.function.DoublePredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidDoubleArgument</a><wbr>(double&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidIntegerArgument(int,java.lang.String,java.util.function.IntPredicate)" class="member-name-link">requireValidIntegerArgument</a><wbr>(int&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidIntegerArgument(int,java.lang.String,java.util.function.IntPredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidIntegerArgument</a><wbr>(int&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidLongArgument(long,java.lang.String,java.util.function.LongPredicate)" class="member-name-link">requireValidLongArgument</a><wbr>(long&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requireValidLongArgument(long,java.lang.String,java.util.function.LongPredicate,java.util.function.UnaryOperator)" class="member-name-link">requireValidLongArgument</a><wbr>(long&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Applies the given validation on the given value, and if
@@ -1500,203 +1503,11 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 </section>
 </li>
 <li>
-<section class="detail" id="requireValidArgument(double,java.lang.String,java.util.function.DoublePredicate)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-992">requireValidArgument</a></span><wbr><span class="parameters">(double&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation)</span></div>
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
-      <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="requireValidArgument(double,java.lang.String,java.util.function.DoublePredicate,java.util.function.UnaryOperator)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1028">requireValidArgument</a></span><wbr><span class="parameters">(double&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
-<div class="block"><p>Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown. The message for the exception will be provided by the given
-  message supplier that takes the name of the argument as an
-  argument.</p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dd><code>messageSupplier</code> - The function that generates the message for the
-      exception.</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
-      <code>messageProvider</code> is <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="requireValidArgument(int,java.lang.String,java.util.function.IntPredicate)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1060">requireValidArgument</a></span><wbr><span class="parameters">(int&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation)</span></div>
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
-      <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="requireValidArgument(int,java.lang.String,java.util.function.IntPredicate,java.util.function.UnaryOperator)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1096">requireValidArgument</a></span><wbr><span class="parameters">(int&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
-<div class="block"><p>Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown. The message for the exception will be provided by the given
-  message supplier that takes the name of the argument as an
-  argument.</p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dd><code>messageSupplier</code> - The function that generates the message for the
-      exception.</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
-      <code>messageProvider</code> is <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="requireValidArgument(long,java.lang.String,java.util.function.LongPredicate)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1128">requireValidArgument</a></span><wbr><span class="parameters">(long&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation)</span></div>
-<div class="block">Applies the given validation on the given value, and if that fails, an
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  with a default message is thrown.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
-      <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="requireValidArgument(long,java.lang.String,java.util.function.LongPredicate,java.util.function.UnaryOperator)">
-<h3>requireValidArgument</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1164">requireValidArgument</a></span><wbr><span class="parameters">(long&nbsp;arg,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
-<div class="block"><p>Applies the given validation on the given value, and if
-  that fails, a
-  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
-  is thrown. The message for the exception will be provided by the given
-  message supplier that takes the name of the argument as an
-  argument.</p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>arg</code> - The value to check.</dd>
-<dd><code>name</code> - The name of the argument; this is used for the error
-      message.</dd>
-<dd><code>validation</code> - The validation</dd>
-<dd><code>messageSupplier</code> - The function that generates the message for the
-      exception.</dd>
-<dt>Returns:</dt>
-<dd>The value if the validation succeeds.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
-<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
-      <code>messageProvider</code> is <code>null</code>.</dd>
-<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
-<dt>Since:</dt>
-<dd>0.2.0</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="requireValidArgument(T,java.lang.String,java.util.function.Predicate)">
 <h3 id="requireValidArgument(java.lang.Object,java.lang.String,java.util.function.Predicate)">requireValidArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1197">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-993">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation)</span></div>
 <div class="block">Applies the given validation on the given value, and if that fails, an
@@ -1727,7 +1538,7 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <h3 id="requireValidArgument(java.lang.Object,java.lang.String,java.util.function.Predicate,java.util.function.UnaryOperator)">requireValidArgument</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1234">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1030">requireValidArgument</a></span><wbr><span class="parameters">(T&nbsp;arg,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super T&gt;&nbsp;validation,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
@@ -1756,6 +1567,198 @@ R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-n
 <dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidDoubleArgument(double,java.lang.String,java.util.function.DoublePredicate)">
+<h3>requireValidDoubleArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1062">requireValidDoubleArgument</a></span><wbr><span class="parameters">(double&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation)</span></div>
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
+      <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidDoubleArgument(double,java.lang.String,java.util.function.DoublePredicate,java.util.function.UnaryOperator)">
+<h3>requireValidDoubleArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1098">requireValidDoubleArgument</a></span><wbr><span class="parameters">(double&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/DoublePredicate.html" title="class or interface in java.util.function" class="external-link">DoublePredicate</a>&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
+<div class="block"><p>Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown. The message for the exception will be provided by the given
+  message supplier that takes the name of the argument as an
+  argument.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dd><code>messageSupplier</code> - The function that generates the message for the
+      exception.</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
+      <code>messageProvider</code> is <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidIntegerArgument(int,java.lang.String,java.util.function.IntPredicate)">
+<h3>requireValidIntegerArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1130">requireValidIntegerArgument</a></span><wbr><span class="parameters">(int&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation)</span></div>
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
+      <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidIntegerArgument(int,java.lang.String,java.util.function.IntPredicate,java.util.function.UnaryOperator)">
+<h3>requireValidIntegerArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1166">requireValidIntegerArgument</a></span><wbr><span class="parameters">(int&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/IntPredicate.html" title="class or interface in java.util.function" class="external-link">IntPredicate</a>&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
+<div class="block"><p>Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown. The message for the exception will be provided by the given
+  message supplier that takes the name of the argument as an
+  argument.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dd><code>messageSupplier</code> - The function that generates the message for the
+      exception.</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
+      <code>messageProvider</code> is <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidLongArgument(long,java.lang.String,java.util.function.LongPredicate)">
+<h3>requireValidLongArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1198">requireValidLongArgument</a></span><wbr><span class="parameters">(long&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation)</span></div>
+<div class="block">Applies the given validation on the given value, and if that fails, an
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  with a default message is thrown.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code> or <code>validation</code> is
+      <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="requireValidLongArgument(long,java.lang.String,java.util.function.LongPredicate,java.util.function.UnaryOperator)">
+<h3>requireValidLongArgument</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.2.0")
+</span><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Objects.html#line-1234">requireValidLongArgument</a></span><wbr><span class="parameters">(long&nbsp;arg,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/LongPredicate.html" title="class or interface in java.util.function" class="external-link">LongPredicate</a>&nbsp;validation,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;messageSupplier)</span></div>
+<div class="block"><p>Applies the given validation on the given value, and if
+  that fails, a
+  <a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception"><code>ValidationException</code></a>
+  is thrown. The message for the exception will be provided by the given
+  message supplier that takes the name of the argument as an
+  argument.</p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arg</code> - The value to check.</dd>
+<dd><code>name</code> - The name of the argument; this is used for the error
+      message.</dd>
+<dd><code>validation</code> - The validation</dd>
+<dd><code>messageSupplier</code> - The function that generates the message for the
+      exception.</dd>
+<dt>Returns:</dt>
+<dd>The value if the validation succeeds.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></code> - <code>arg</code> failed the validation.</dd>
+<dd><code><a href="../exception/NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code> - <code>name</code>, <code>validation</code> or
+      <code>messageProvider</code> is <code>null</code>.</dd>
+<dd><code><a href="../exception/EmptyArgumentException.html" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code> - <code>name</code> is the empty String.</dd>
+<dt>Since:</dt>
+<dd>0.2.0</dd>
 </dl>
 </section>
 </li>

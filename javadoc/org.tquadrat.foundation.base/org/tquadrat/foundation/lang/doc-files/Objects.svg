@@ -6,7 +6,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='1128.000'
+     width='1152.000'
      height='913.000'>
     <defs>
         <style><![CDATA[
@@ -119,7 +119,7 @@
         <clipPath id='ID000001'>
             <rect class='focusClass'
                   height='491.000'
-                  width='1078.000'
+                  width='1102.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
@@ -129,19 +129,19 @@
                    clip-path='url(#ID000001)'>
                     <rect x='0.000'
                           y='0.000'
-                          width='1078.000'
+                          width='1102.000'
                           height='491.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
-                          x2='1078.000'
+                          x2='1102.000'
                           y2='17.000'
                           class='separator'/>
-                    <text x='518.000'
+                    <text x='530.000'
                           y='13.000'>Objects</text>
                     <line x1='0.000'
                           y1='34.000'
-                          x2='1078.000'
+                          x2='1102.000'
                           y2='34.000'
                           class='separator'/>
                     <text x='5.000'
@@ -231,28 +231,28 @@
                           class='static'>+ requireNonNullElseGet(obj:T,supplier:java.util.function.Supplier&lt;? extends T&gt;):T</text>
                     <text x='5.000'
                           y='355.000'
-                          class='static'>+ requireValidArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate):double</text>
-                    <text x='5.000'
-                          y='366.000'
-                          class='static'>+ requireValidArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):double</text>
-                    <text x='5.000'
-                          y='377.000'
-                          class='static'>+ requireValidArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate):int</text>
-                    <text x='5.000'
-                          y='388.000'
-                          class='static'>+ requireValidArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):int</text>
-                    <text x='5.000'
-                          y='399.000'
-                          class='static'>+ requireValidArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate):long</text>
-                    <text x='5.000'
-                          y='410.000'
-                          class='static'>+ requireValidArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):long</text>
-                    <text x='5.000'
-                          y='421.000'
                           class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
                     <text x='5.000'
-                          y='432.000'
+                          y='366.000'
                           class='static'>+ requireValidArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):T</text>
+                    <text x='5.000'
+                          y='377.000'
+                          class='static'>+ requireValidDoubleArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate):double</text>
+                    <text x='5.000'
+                          y='388.000'
+                          class='static'>+ requireValidDoubleArgument(arg:double,name:java.lang.String,validation:java.util.function.DoublePredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):double</text>
+                    <text x='5.000'
+                          y='399.000'
+                          class='static'>+ requireValidIntegerArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate):int</text>
+                    <text x='5.000'
+                          y='410.000'
+                          class='static'>+ requireValidIntegerArgument(arg:int,name:java.lang.String,validation:java.util.function.IntPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):int</text>
+                    <text x='5.000'
+                          y='421.000'
+                          class='static'>+ requireValidLongArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate):long</text>
+                    <text x='5.000'
+                          y='432.000'
+                          class='static'>+ requireValidLongArgument(arg:long,name:java.lang.String,validation:java.util.function.LongPredicate,messageSupplier:java.util.function.UnaryOperator&lt;java.lang.String&gt;):long</text>
                     <text x='5.000'
                           y='443.000'
                           class='static'>+ requireValidNonNullArgument(arg:T,name:java.lang.String,validation:java.util.function.Predicate&lt;? super T&gt;):T</text>
@@ -329,9 +329,9 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M564.000,297.000 L564.000,197.000'
+          d='M576.000,297.000 L576.000,197.000'
           marker-end='url(#inheritance)'/>
-    <use x='442.000'
+    <use x='454.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
     <use x='25.000'
