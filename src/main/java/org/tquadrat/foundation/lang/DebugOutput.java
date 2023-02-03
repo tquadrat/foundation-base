@@ -20,6 +20,7 @@ package org.tquadrat.foundation.lang;
 import static java.lang.Boolean.getBoolean;
 import static java.lang.System.out;
 import static java.lang.Thread.currentThread;
+import static java.nio.charset.Charset.defaultCharset;
 import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
@@ -239,6 +240,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final String message, final Object... args )
     {
@@ -263,6 +265,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final Function<Object [],String> supplier, final Object... args )
     {
@@ -296,6 +299,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -328,6 +332,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final boolean condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -363,7 +368,7 @@ public final class DebugOutput
         {
             m_Printer.print( "DEBUG: " );
             final var bos = new ByteArrayOutputStream();
-            e.printStackTrace( new PrintStream( bos ) );
+            e.printStackTrace( new PrintStream( bos, true, defaultCharset() ) );
             m_Printer.println( bos.toString() );
         }
     }   //  ifDebug()
@@ -382,6 +387,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final String message, final Object... args )
     {
@@ -408,6 +414,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final Function<Object [],String> supplier, final Object... args )
     {
@@ -441,6 +448,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -473,6 +481,7 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
+    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final boolean condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -508,7 +517,7 @@ public final class DebugOutput
         {
             m_Printer.print( "TEST: " );
             final var bos = new ByteArrayOutputStream();
-            e.printStackTrace( new PrintStream( bos ) );
+            e.printStackTrace( new PrintStream( bos, true, defaultCharset() ) );
             m_Printer.println( bos.toString() );
         }
     }   //  ifTest()

@@ -29,6 +29,11 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 /**
  *  An implementation of a name-value-pair.
  *
+ *  @param  <V> The type of the value.
+ *  @param  name    The name; may not be {@code null}, and it may not be
+ *      empty.
+ *  @param  value   The value; can be {@code null}.
+ *
  *  @version $Id: NameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
