@@ -80,8 +80,27 @@ public record Status<V,C>( V result, C errorCode )
      *  @return The result.
      *  @throws RuntimeException    Any exception that is determined by the
      *      error handler.
+     *
+     *  @deprecated Was replaced by
+     *      {@link #getOrElseThrow(ErrorHandler)}
+     *      because of the misleading name.
      */
+    @Deprecated( since = "0.2.0", forRemoval = true )
     public final V getOrElse( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
+    {
+        return getOrElseThrow( errorHandler );
+    }   //  getOrElse()
+
+    /**
+     *  Returns the result in case of a success, otherwise executes the given
+     *  error handler and throws the exception determined by it.
+     *
+     *  @param  errorHandler    The error handler.
+     *  @return The result.
+     *  @throws RuntimeException    Any exception that is determined by the
+     *      error handler.
+     */
+    public final V getOrElseThrow( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         requireNonNullArgument( errorHandler, "errorHandler" );
 
@@ -89,7 +108,7 @@ public record Status<V,C>( V result, C errorCode )
 
         //---* Done *----------------------------------------------------------
         return result;
-    }   //  getOrElse()
+    }   //  getOrElseThrow()
 
     /**
      *  Returns whether this {@code Status} instance indicate a failure.

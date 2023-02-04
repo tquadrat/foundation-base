@@ -37,7 +37,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
 
 /**
  *  Some tests for
- *  {@link Status#getOrElse(ErrorHandler)}.
+ *  {@link Status#getOrElseThrow(ErrorHandler)}.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version TestIsFailure: HexUtils.java 747 2020-12-01 12:40:38Z tquadrat $
@@ -51,7 +51,7 @@ public class TestGetOrElse extends TestBaseClass
         \*---------*/
     /**
      *  Some tests for
-     *  {@link Status#getOrElse(ErrorHandler)}.
+     *  {@link Status#getOrElseThrow(ErrorHandler)}.
      */
     @Test
     final void testGetOrElseFailure()
@@ -67,7 +67,7 @@ public class TestGetOrElse extends TestBaseClass
 
         try
         {
-            candidate.getOrElse( e -> e );
+            candidate.getOrElseThrow( e -> e );
             fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
         }
         catch( final AssertionError e ) { throw e; }
@@ -81,7 +81,7 @@ public class TestGetOrElse extends TestBaseClass
 
     /**
      *  Some tests for
-     *  {@link Status#getOrElse(ErrorHandler)}.
+     *  {@link Status#getOrElseThrow(ErrorHandler)}.
      */
     @Test
     final void testGetOrElseSuccess()
@@ -95,7 +95,7 @@ public class TestGetOrElse extends TestBaseClass
 
         try
         {
-            assertEquals( expected, candidate.getOrElse( e -> e ) );
+            assertEquals( expected, candidate.getOrElseThrow( e -> e ) );
         }
         catch( final Throwable t )
         {
@@ -105,7 +105,7 @@ public class TestGetOrElse extends TestBaseClass
 
     /**
      *  Some tests for
-     *  {@link Status#getOrElse(ErrorHandler)}.
+     *  {@link Status#getOrElseThrow(ErrorHandler)}.
      */
     @Test
     final void testGetOrElseWithNullArgument()
@@ -118,13 +118,13 @@ public class TestGetOrElse extends TestBaseClass
         assertNotNull( candidate1.errorCode() );
         assertTrue( candidate1.isFailure() );
 
-        assertThrows( NullArgumentException.class, () -> candidate1.getOrElse( null ) );
+        assertThrows( NullArgumentException.class, () -> candidate1.getOrElseThrow( null ) );
 
         final var candidate2 = new Status<>( "result", null );
         assertNull( candidate2.errorCode() );
         assertTrue( candidate2.isSuccess() );
 
-        assertThrows( NullArgumentException.class, () -> candidate2.getOrElse( null ) );
+        assertThrows( NullArgumentException.class, () -> candidate2.getOrElseThrow( null ) );
     }   //  testGetOrElseWithNullArgument()
 }
 //  class TestGetOrElse
