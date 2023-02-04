@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -45,13 +45,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: DebugOutput.java 1044 2023-02-04 09:58:19Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1044 2023-02-04 09:58:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {

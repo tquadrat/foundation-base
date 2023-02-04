@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang;
 
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
@@ -53,7 +54,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: Status.java 1044 2023-02-04 09:58:19Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -65,7 +66,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1044 2023-02-04 09:58:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -85,7 +86,8 @@ public record Status<V,C>( V result, C errorCode )
      *      {@link #getOrElseThrow(ErrorHandler)}
      *      because of the misleading name.
      */
-    @Deprecated( since = "0.2.0", forRemoval = true )
+    @Deprecated( since = "0.2.1", forRemoval = true )
+    @API( status = DEPRECATED, since = "0.2.1" )
     public final V getOrElse( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         return getOrElseThrow( errorHandler );
@@ -99,7 +101,10 @@ public record Status<V,C>( V result, C errorCode )
      *  @return The result.
      *  @throws RuntimeException    Any exception that is determined by the
      *      error handler.
+     *
+     *  @since 0.2.1
      */
+    @API( status = STABLE, since = "0.2.1" )
     public final V getOrElseThrow( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
     {
         requireNonNullArgument( errorHandler, "errorHandler" );

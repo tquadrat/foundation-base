@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      empty.
  *  @param  value   The value; can be {@code null}.
  *
- *  @version $Id: NameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: NameValuePair.java 1044 2023-02-04 09:58:19Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: NameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1044 2023-02-04 09:58:19Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record NameValuePair<V>( String name, V value )
 {
