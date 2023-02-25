@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -30,9 +30,10 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.internal.AutoLockImpl;
 
 /**
- *  A wrapper for locks that supports the {@code try-with-resources} feature
- *  of Java&nbsp;7. <br>
- *  <br>Instead of<pre><code>  m_Lock.lock();
+ *  <p>{@summary A wrapper for locks that supports the
+ *  {@code try-with-resources} feature of Java&nbsp;7.}</p>
+ *  <p>Instead of</p>
+ *  <div class="source-container"><pre>  m_Lock.lock();
  *  try
  *  {
  *      &hellip;
@@ -40,39 +41,41 @@ import org.tquadrat.foundation.lang.internal.AutoLockImpl;
  *  finally
  *  {
  *      m_Lock.unlock();
- *  }</code></pre>you can write now<pre><code>  AutoLock m_AutoLock = new AutoLock( m_Lock );
+ *  }</pre></div>
+ *  <p>you can write now</p>
+ *  <div class="source-container"><pre>  private final AutoLock m_AutoLock = AutoLock.of();
  *
  *  &hellip;
  *
- *  try( AutoLock l = m_AutoLock.lock() )
+ *  try( final var ignored = m_AutoLock.lock() )
  *  {
  *      &hellip;
- *  }</code></pre>
- *  The creation of the local reference to the wrapper object means some
- *  overhead but in very most scenarios this is negligible.<br>
- *  <br>{@code AutoLock} will only expose the methods
+ *  }</pre></div>
+ *  <p>The creation of the local reference to the wrapper object means some
+ *  overhead but in very most scenarios this is negligible.</p>
+ *  <p>{@code AutoLock} will only expose the methods
  *  {@link #lock()}
  *  and
  *  {@link #lockInterruptibly()}
  *  of the interface
  *  {@link java.util.concurrent.locks.Lock Lock},
- *  but with a return value. Exposing other methods is not reasonable.<br>
- *  <br>Calling
+ *  but with a return value. Exposing other methods is not reasonable.</p>
+ *  <p>Calling
  *  {@link #close()}
  *  on the {@code AutoLock} instance or
  *  {@link Lock#unlock()}
  *  on the wrapped {@code Lock} object inside the {@code try} block may cause
- *  unpredictable effects.
+ *  unpredictable effects.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface AutoLock extends AutoCloseable
     permits org.tquadrat.foundation.lang.internal.AutoLockImpl
@@ -83,13 +86,13 @@ public sealed interface AutoLock extends AutoCloseable
     /**
      *  <p>{@summary This exception is thrown when an operation fails.} The
      *
-     *  @version $Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $
+     *  @version $Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: AutoLock.java 993 2022-01-19 22:26:20Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static final class ExecutionFailedException extends RuntimeException
     {

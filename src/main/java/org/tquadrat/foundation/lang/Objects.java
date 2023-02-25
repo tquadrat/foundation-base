@@ -70,14 +70,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1043 2023-01-01 11:27:56Z tquadrat $
+ *  @version $Id: Objects.java 1048 2023-02-18 00:22:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1043 2023-01-01 11:27:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1048 2023-02-18 00:22:43Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -490,7 +490,7 @@ public final class Objects
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check; can be {@code null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that an {@code ValidationException} is thrown. If
+     *      in the event that {@code ValidationException} is thrown. If
      *      {@code null} or if it returns {@code null}, no detail message is
      *      provided to the exception.
      *  @param  validation  The validation
@@ -540,7 +540,7 @@ public final class Objects
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check; can be {@code null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that an {@code ValidationException} is thrown. If
+     *      in the event that a {@code ValidationException} is thrown. If
      *      {@code null} or if it returns {@code null}, no detail message is
      *      provided.
      *  @param  validation  The validation

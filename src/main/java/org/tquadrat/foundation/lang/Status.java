@@ -54,7 +54,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1044 2023-02-04 09:58:19Z tquadrat $
+ *  @version $Id: Status.java 1045 2023-02-07 23:09:17Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -66,7 +66,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1044 2023-02-04 09:58:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1045 2023-02-07 23:09:17Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -116,7 +116,7 @@ public record Status<V,C>( V result, C errorCode )
     }   //  getOrElseThrow()
 
     /**
-     *  Returns whether this {@code Status} instance indicate a failure.
+     *  Returns whether this {@code Status} instance indicates a failure.
      *
      *  @return {@code true} if the status indicates a failure, {@code false}
      *      otherwise.
@@ -124,7 +124,7 @@ public record Status<V,C>( V result, C errorCode )
     public final boolean isFailure() { return nonNull( errorCode ); }
 
     /**
-     *  Returns whether this {@code Status} instance indicate a success.
+     *  Returns whether this {@code Status} instance indicates a success.
      *
      *  @return {@code true} if the status indicates a success, {@code false}
      *      otherwise.
@@ -133,14 +133,16 @@ public record Status<V,C>( V result, C errorCode )
 
     /**
      *  Performs the given conversion on success, otherwise returns
-     *  {@code null}.
+     *  {@link Optional#empty()}.
      *
      *  @param  <R> The type of the conversion result.
      *  @param  conversion  The conversion.
      *  @return An instance of
      *      {@link Optional}
      *      that holds the converted result in case of a success, or it will
-     *      be empty otherwise.
+     *      be
+     *      {@linkplain Optional#empty() empty}
+     *      otherwise.
      *
      *  @note As the result can be {@code null}, too (or the result of the
      *      conversion is {@code null}, an empty return value does not
