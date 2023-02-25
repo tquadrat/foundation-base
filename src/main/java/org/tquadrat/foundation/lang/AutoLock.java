@@ -68,14 +68,14 @@ import org.tquadrat.foundation.lang.internal.AutoLockImpl;
  *  unpredictable effects.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $
+ *  @version $Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface AutoLock extends AutoCloseable
     permits org.tquadrat.foundation.lang.internal.AutoLockImpl
@@ -86,13 +86,13 @@ public sealed interface AutoLock extends AutoCloseable
     /**
      *  <p>{@summary This exception is thrown when an operation fails.} The
      *
-     *  @version $Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $
+     *  @version $Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1046 2023-02-10 15:44:45Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static final class ExecutionFailedException extends RuntimeException
     {
