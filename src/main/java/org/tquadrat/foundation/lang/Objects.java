@@ -350,6 +350,28 @@ public final class Objects
     public static final boolean isNull( final Object obj ) { return java.util.Objects.isNull( obj ); }
 
     /**
+     *  <p>{@summary Provides a replacement value if the given value is
+     *  {@code null}.}</p>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  o   The object to map; can be {@code null}.
+     *  @param  supplier    The supplier for the replacement function.
+     *  @return The provided object if that is not {@code null}, or the result
+     *      from the supplier method. Keep in mind that this result can be
+     *      {@code null}!
+     */
+    @API( status = STABLE, since = "0.2.2" )
+    public static final <T> T mapFromNull( final T o, final Supplier<? extends T> supplier )
+    {
+        final var retValue = isNull( o )
+            ? requireNonNullArgument( supplier, "supplier" ).get()
+            : o;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapFromNull()
+
+    /**
      *  <p>{@summary Maps (converts) the given object instance by applying the
      *  provided mapper if the instance is not {@code null}.}</p>
      *  <p>The mapper function will not be called at all if the given instance
