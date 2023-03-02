@@ -17,17 +17,24 @@
 
 package org.tquadrat.foundation.scratch;
 
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.function.BiFunction;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 
 /**
  *  Comment
@@ -47,6 +54,49 @@ public class MyClass
         \*---------------*/
     public static class Data{}
     public static class ProcessContext{}
+
+    public record PersonId( String id ) implements Cloneable, Comparable<PersonId>
+    {
+            /*--------------*\
+        ====** Constructors **===========================================
+            \*--------------*/
+        public PersonId { requireValidArgument( id, "id", this::validate ); }
+
+            /*---------*\
+        ====** Methods **================================================
+            \*---------*/
+        @Override
+        public final PersonId clone()
+        {
+            final PersonId retValue;
+            try
+            {
+                retValue = (PersonId) super.clone();
+            }
+            catch( final CloneNotSupportedException e )
+            {
+                throw new UnexpectedExceptionError( e );
+            }
+
+            //---* Done *----------------------------------------------------------
+            return retValue;
+        }   //  clone()
+
+        @Override
+        public final int compareTo( final PersonId o )
+        {
+            return id.compareTo( o.id );
+        }   //  compareTo()
+
+        @Override
+        public final String toString() { return id; }
+
+        private final boolean validate( final String id )
+        {
+            return true;
+        }   //  validate()
+    }
+//  record PersonId
 
     @FunctionalInterface
     public interface DataSupplier
@@ -145,6 +195,32 @@ public class MyClass
         //---* Done *------------------------------------------------
         return retValue;
     }   //  formatData()
+
+    public final void aMethod( final String... args )
+    {
+        args [0] = "NewValue";
+        final var c1 = args.clone();
+
+        final var c2 = new String [args.length];
+        System.arraycopy( args, 0, c2, 0, args.length );
+
+        final var c3 = Arrays.copyOf( args, args.length );
+
+        final var c4 = Arrays.stream( args ).toArray( String []::new );
+
+        final var strings = List.of( "eins", "zwei", "drei", "vier" );
+        final var result = strings.stream()
+            .collect( groupingBy( s -> s, counting() ) )
+            .entrySet()
+            .stream()
+            .max( Map.Entry.comparingByValue() )
+            .map( Map.Entry::getKey );
+    }   //  aMethod()
+
+//    public final void aMethod( final String [] args )
+//    {
+//        args [0] = "NewValue";
+//    }   //  aMethod()
 
     /**
      *  Obtains the input data from somewhere; the default

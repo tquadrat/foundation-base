@@ -53,10 +53,9 @@ public record NameValuePair<V>( String name, V value )
      *      empty.
      *  @param  value   The value; can be {@code null}.
      */
-    public NameValuePair( final String name, final V value )
+    public NameValuePair
     {
-        this.name = requireNotEmptyArgument( name, "name" );
-        this.value = value;
+        requireNotEmptyArgument( name, "name" );
     }   //  NameValuePair()
 
     /**
