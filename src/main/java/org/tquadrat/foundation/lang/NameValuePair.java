@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      empty.
  *  @param  value   The value; can be {@code null}.
  *
- *  @version $Id: NameValuePair.java 1044 2023-02-04 09:58:19Z tquadrat $
+ *  @version $Id: NameValuePair.java 1052 2023-03-06 06:30:36Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1044 2023-02-04 09:58:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1052 2023-03-06 06:30:36Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record NameValuePair<V>( String name, V value )
 {

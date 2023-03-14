@@ -40,12 +40,12 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  Comment
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MyClass.java 1049 2023-02-25 19:13:40Z tquadrat $
+ *  @version $Id: MyClass.java 1052 2023-03-06 06:30:36Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MyClass.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MyClass.java 1052 2023-03-06 06:30:36Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class MyClass
 {

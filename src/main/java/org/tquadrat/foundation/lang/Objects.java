@@ -70,14 +70,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1051 2023-02-26 19:14:46Z tquadrat $
+ *  @version $Id: Objects.java 1052 2023-03-06 06:30:36Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1051 2023-02-26 19:14:46Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1052 2023-03-06 06:30:36Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -227,8 +227,8 @@ public final class Objects
      *  in case the {@code comparator} is {@code null}.</p>
      *
      *  @param  <T> The type of the objects being compared.
-     *  @param  a   An object.
-     *  @param  b   An object to be compared with {@code a}.
+     *  @param  object  An object.
+     *  @param  other   Another object to be compared with the first object.
      *  @param  comparator  The
      *      {@link Comparator}
      *      to compare the first two arguments.
@@ -240,9 +240,9 @@ public final class Objects
      *  @see Comparator
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> int compare( final T a, final T b, final Comparator<? super T> comparator ) throws NullArgumentException
+    public static final <T> int compare( final T object, final T other, final Comparator<? super T> comparator ) throws NullArgumentException
     {
-        final var retValue = a == b ? 0 : signum( java.util.Objects.compare( a, b, requireNonNullArgument( comparator, "comparator" ) ) );
+        final var retValue = object == other ? 0 : signum( java.util.Objects.compare( object, other, requireNonNullArgument( comparator, "comparator" ) ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -262,8 +262,9 @@ public final class Objects
      *  {@link java.util.Objects#deepEquals(Object,Object) java.util.Objects#deepEquals()}
      *  internally.</p>
      *
-     *  @param  a   An object.
-     *  @param  b   An object to be compared with {@code a} for deep equality.
+     *  @param  object  An object.
+     *  @param  other   Another object to be compared with the first object for
+     *      deep equality.
      *  @return {@code true} if the arguments are deeply equal to each other
      *      and {@code false} otherwise.
      *
@@ -272,7 +273,7 @@ public final class Objects
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
-    public static final boolean deepEquals( final Object a, final Object b ) { return java.util.Objects.deepEquals( a, b ); }
+    public static final boolean deepEquals( final Object object, final Object other ) { return java.util.Objects.deepEquals( object, other ); }
 
     /**
      *  <p>{@summary Returns {@code true} if the arguments are equal to each
@@ -286,15 +287,16 @@ public final class Objects
      *  {@link java.util.Objects#equals(Object, Object)}
      *  internally.</p>
      *
-     *  @param  a   An object.
-     *  @param  b   An object to be compared with {@code a} for equality.
+     *  @param  object  An object.
+     *  @param  other   Another object to be compared with the first one for
+     *      equality.
      *  @return {@code true} if the arguments are equal to each other and
      *      {@code false} otherwise.
      *
      *  @see    Object#equals(Object)
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final boolean equals( final Object a, final Object b ) { return java.util.Objects.equals( a, b ); }
+    public static final boolean equals( final Object object, final Object other ) { return java.util.Objects.equals( object, other ); }
 
     /**
      *  <p>{@summary Generates a hash code for a sequence of input values.} The

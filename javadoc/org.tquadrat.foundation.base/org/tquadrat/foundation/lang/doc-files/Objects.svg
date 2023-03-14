@@ -162,13 +162,13 @@
                           class='static'>+ checkState(condition:boolean,exception:java.util.function.Supplier&lt;E&gt;):void</text>
                     <text x='5.000'
                           y='102.000'
-                          class='static'>+ compare(a:T,b:T,comparator:java.util.Comparator&lt;? super T&gt;):int</text>
+                          class='static'>+ compare(object:T,other:T,comparator:java.util.Comparator&lt;? super T&gt;):int</text>
                     <text x='5.000'
                           y='113.000'
-                          class='static'>+ deepEquals(a:java.lang.Object,b:java.lang.Object):boolean</text>
+                          class='static'>+ deepEquals(object:java.lang.Object,other:java.lang.Object):boolean</text>
                     <text x='5.000'
                           y='124.000'
-                          class='static'>+ equals(a:java.lang.Object,b:java.lang.Object):boolean</text>
+                          class='static'>+ equals(object:java.lang.Object,other:java.lang.Object):boolean</text>
                     <text x='5.000'
                           y='135.000'
                           class='static'>+ hash(values:java.lang.Object&#x2026;):int</text>
