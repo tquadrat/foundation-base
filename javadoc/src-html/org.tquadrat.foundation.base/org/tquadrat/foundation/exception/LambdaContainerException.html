@@ -109,7 +109,7 @@
 <span class="source-line-no">096</span><span id="line-96">@SuppressWarnings( "removal" )</span>
 <span class="source-line-no">097</span><span id="line-97">@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $" )</span>
 <span class="source-line-no">098</span><span id="line-98">@API( status = STABLE, since = "0.1.0" )</span>
-<span class="source-line-no">099</span><span id="line-99">public sealed class LambdaContainerException extends RuntimeException</span>
+<span class="source-line-no">099</span><span id="line-99">public sealed class LambdaContainerException extends CheckedExceptionWrapper</span>
 <span class="source-line-no">100</span><span id="line-100">    /*</span>
 <span class="source-line-no">101</span><span id="line-101">     *  LambdaContainerException will allow to be extended by the deprecated</span>
 <span class="source-line-no">102</span><span id="line-102">     *  ExceptionContainer until that class is finally removed.</span>
@@ -181,7 +181,7 @@
 <span class="source-line-no">168</span><span id="line-168">     */</span>
 <span class="source-line-no">169</span><span id="line-169">    public LambdaContainerException( final Exception e )</span>
 <span class="source-line-no">170</span><span id="line-170">    {</span>
-<span class="source-line-no">171</span><span id="line-171">        super( null, requireNonNullArgument( e, "e" ) );</span>
+<span class="source-line-no">171</span><span id="line-171">        super( requireNonNullArgument( e, "e" ) );</span>
 <span class="source-line-no">172</span><span id="line-172">    }   //  LambdaContainerException()</span>
 <span class="source-line-no">173</span><span id="line-173"></span>
 <span class="source-line-no">174</span><span id="line-174">        /*---------*\</span>

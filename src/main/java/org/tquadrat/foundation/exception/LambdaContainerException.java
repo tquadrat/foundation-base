@@ -96,7 +96,7 @@ import org.tquadrat.foundation.function.Functions;
 @SuppressWarnings( "removal" )
 @ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
-public sealed class LambdaContainerException extends RuntimeException
+public sealed class LambdaContainerException extends CheckedExceptionWrapper
     /*
      *  LambdaContainerException will allow to be extended by the deprecated
      *  ExceptionContainer until that class is finally removed.
@@ -168,7 +168,7 @@ public sealed class LambdaContainerException extends RuntimeException
      */
     public LambdaContainerException( final Exception e )
     {
-        super( null, requireNonNullArgument( e, "e" ) );
+        super( requireNonNullArgument( e, "e" ) );
     }   //  LambdaContainerException()
 
         /*---------*\
