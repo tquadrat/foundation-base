@@ -31,13 +31,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link RuntimeException}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: CheckedExceptionWrapper.java 1055 2023-05-01 14:45:07Z tquadrat $
  *  @since 0.2.3
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ExceptionClassNameDoesntEndWithException" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CheckedExceptionWrapper.java 1055 2023-05-01 14:45:07Z tquadrat $" )
 @API( status = STABLE, since = "0.2.3" )
 public sealed class CheckedExceptionWrapper extends RuntimeException
     permits LambdaContainerException
