@@ -105,7 +105,6 @@ public final class Indexed<T> implements Map.Entry<Long,T>, Serializable
      *  @param  value   The value indexed.
      *  @return The indexed value.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     public static <T> Indexed<T> index( final long index, final T value )
     {
         final var retValue = new Indexed<>( index, value );

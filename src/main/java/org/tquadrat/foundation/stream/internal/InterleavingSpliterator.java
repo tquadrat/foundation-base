@@ -122,7 +122,7 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
     @Override
     public final long estimateSize()
     {
-        final var retValue = Stream.of( m_Spliterators ).anyMatch( s -> s.estimateSize() == Long.MAX_VALUE )
+        final var retValue = Stream.of( m_Spliterators ).anyMatch( spliterator -> spliterator.estimateSize() == Long.MAX_VALUE )
             ? Long.MAX_VALUE
             : Stream.of( m_Spliterators ).mapToLong( Spliterator::estimateSize ).sum();
 
@@ -136,7 +136,7 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
     @Override
     public final long getExactSizeIfKnown()
     {
-        final var retValue = Stream.of( m_Spliterators ).allMatch( s -> s.hasCharacteristics( Spliterator.SIZED ) )
+        final var retValue = Stream.of( m_Spliterators ).allMatch( spliterator -> spliterator.hasCharacteristics( Spliterator.SIZED ) )
             ? Stream.of( m_Spliterators ).mapToLong( Spliterator::getExactSizeIfKnown ).sum()
             : -1;
 
@@ -154,7 +154,6 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
      */
     public static final <T> Spliterator<T> interleaving( final Spliterator<T> [] spliterators, final Selector<T> selector )
     {
-        @SuppressWarnings( "OverlyLongLambda" )
         final var bufferedValues = (Supplier<T[]>) () ->
         {
             @SuppressWarnings( {"unchecked", "SuspiciousArrayCast"} )

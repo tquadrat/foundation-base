@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -140,7 +140,7 @@ public final class LazyImpl<T> implements Lazy<T>
         var retValue = this == obj;
         if( !retValue && nonNull( obj ) )
         {
-            if( obj instanceof Lazy other )
+            if( obj instanceof final Lazy<?> other )
             {
                 retValue = get().equals( other.get() );
             }
@@ -157,13 +157,12 @@ public final class LazyImpl<T> implements Lazy<T>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "OverlyLongLambda" )
     @Override
     public final T get()
     {
-        m_Lock.ifPresent( l ->
+        m_Lock.ifPresent( lck ->
         {
-            try( @SuppressWarnings( "unused" ) final var lock = l.lock() )
+            try( @SuppressWarnings( "unused" ) final var lock = lck.lock() )
             {
                 /*
                  * When the lock is present, the supplier must have been not

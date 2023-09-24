@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.exception;
 
+import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.Serial;
 
@@ -70,7 +70,6 @@ public sealed class NullArgumentException extends ValidationException
      *      {@code null}; if {@code null} or the empty String, a
      *      default message is used that does not use the name of the argument.
      */
-    @SuppressWarnings( "ParameterNameDiffersFromOverriddenParameter" )
     public NullArgumentException( final String argName )
     {
         this( argName, "Argument '%1$s' must not be null", "Argument must not be null" );
@@ -89,7 +88,7 @@ public sealed class NullArgumentException extends ValidationException
     @API( status = STABLE, since = "0.0.7" )
     public NullArgumentException( final String argName1, final String argName2 )
     {
-        this( format( "'%s' and '%s'", argName1, argName2 ), "%s are both null", EMPTY_STRING );
+        this( "'%s' and '%s'".formatted( argName1, argName2 ), "%s are both null", EMPTY_STRING );
     }   //  NullArgumentException()
 
     /**

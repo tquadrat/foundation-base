@@ -28,7 +28,6 @@ package org.tquadrat.foundation.stream;
 
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,7 +137,7 @@ public final class StreamUtils
     {
         if( size <= 0 )
         {
-            throw new ValidationException( format( "Positive value expected for the size; it is %1$d", size ) );
+            throw new ValidationException( "Positive value expected for the size; it is %1$d".formatted( size ) );
         }
 
         final var retValue = StreamSupport.stream( new AggregatingSpliterator<>( requireNonNullArgument( source, "source" ).spliterator(), (a,e) -> a.size() < size ), false );
@@ -304,10 +303,10 @@ public final class StreamUtils
     @SafeVarargs
     public static <T> Stream<List<T>> mergeToList( final Stream<T>... streams )
     {
-        final Stream<List<T>> retValue = merge( ArrayList::new, (l,x) ->
+        final Stream<List<T>> retValue = merge( ArrayList::new, (list,x) ->
         {
-            l.add( x );
-            return l;
+            list.add( x );
+            return list;
         }, streams );
 
         //---* Done *----------------------------------------------------------

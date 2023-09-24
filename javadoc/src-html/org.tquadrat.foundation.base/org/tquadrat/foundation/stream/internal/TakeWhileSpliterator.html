@@ -132,46 +132,45 @@
 <span class="source-line-no">119</span><span id="line-119">     *  @param  condition   The condition for the new instance.</span>
 <span class="source-line-no">120</span><span id="line-120">     *  @return The new instance.</span>
 <span class="source-line-no">121</span><span id="line-121">     */</span>
-<span class="source-line-no">122</span><span id="line-122">    @SuppressWarnings( "UseOfConcreteClass" )</span>
-<span class="source-line-no">123</span><span id="line-123">    public static final &lt;T&gt; TakeWhileSpliterator&lt;T&gt; over( final Spliterator&lt;T&gt; source, final Predicate&lt;T&gt; condition )</span>
-<span class="source-line-no">124</span><span id="line-124">    {</span>
-<span class="source-line-no">125</span><span id="line-125">        final var retValue = new TakeWhileSpliterator&lt;&gt;( source, condition );</span>
-<span class="source-line-no">126</span><span id="line-126"></span>
-<span class="source-line-no">127</span><span id="line-127">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">128</span><span id="line-128">        return retValue;</span>
-<span class="source-line-no">129</span><span id="line-129">    }   //  over()</span>
-<span class="source-line-no">130</span><span id="line-130"></span>
-<span class="source-line-no">131</span><span id="line-131">    /**</span>
-<span class="source-line-no">132</span><span id="line-132">     *  {@inheritDoc}</span>
-<span class="source-line-no">133</span><span id="line-133">     */</span>
-<span class="source-line-no">134</span><span id="line-134">    @Override</span>
-<span class="source-line-no">135</span><span id="line-135">    public final boolean tryAdvance( final Consumer&lt;? super T&gt; action )</span>
-<span class="source-line-no">136</span><span id="line-136">    {</span>
-<span class="source-line-no">137</span><span id="line-137">        final var retValue = m_ConditionHolds</span>
-<span class="source-line-no">138</span><span id="line-138">            &amp;&amp; m_Source.tryAdvance( e -&gt;</span>
-<span class="source-line-no">139</span><span id="line-139">            {</span>
-<span class="source-line-no">140</span><span id="line-140">                //noinspection NestedAssignment</span>
-<span class="source-line-no">141</span><span id="line-141">                if( (m_ConditionHolds = m_Condition.test( e )) == true )</span>
-<span class="source-line-no">142</span><span id="line-142">                {</span>
-<span class="source-line-no">143</span><span id="line-143">                    action.accept( e );</span>
-<span class="source-line-no">144</span><span id="line-144">                }</span>
-<span class="source-line-no">145</span><span id="line-145">            });</span>
-<span class="source-line-no">146</span><span id="line-146"></span>
-<span class="source-line-no">147</span><span id="line-147">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">148</span><span id="line-148">        return retValue;</span>
-<span class="source-line-no">149</span><span id="line-149">    }   //  tryAdvance()</span>
-<span class="source-line-no">150</span><span id="line-150"></span>
-<span class="source-line-no">151</span><span id="line-151">    /**</span>
-<span class="source-line-no">152</span><span id="line-152">     *  {@inheritDoc}</span>
-<span class="source-line-no">153</span><span id="line-153">     */</span>
-<span class="source-line-no">154</span><span id="line-154">    @Override</span>
-<span class="source-line-no">155</span><span id="line-155">    public final Spliterator&lt;T&gt; trySplit(){ return null; }</span>
-<span class="source-line-no">156</span><span id="line-156">}</span>
-<span class="source-line-no">157</span><span id="line-157">//  class TakeWhileSpliterator</span>
-<span class="source-line-no">158</span><span id="line-158"></span>
-<span class="source-line-no">159</span><span id="line-159">/*</span>
-<span class="source-line-no">160</span><span id="line-160"> *  End of File</span>
-<span class="source-line-no">161</span><span id="line-161"> */</span>
+<span class="source-line-no">122</span><span id="line-122">    public static final &lt;T&gt; TakeWhileSpliterator&lt;T&gt; over( final Spliterator&lt;T&gt; source, final Predicate&lt;T&gt; condition )</span>
+<span class="source-line-no">123</span><span id="line-123">    {</span>
+<span class="source-line-no">124</span><span id="line-124">        final var retValue = new TakeWhileSpliterator&lt;&gt;( source, condition );</span>
+<span class="source-line-no">125</span><span id="line-125"></span>
+<span class="source-line-no">126</span><span id="line-126">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">127</span><span id="line-127">        return retValue;</span>
+<span class="source-line-no">128</span><span id="line-128">    }   //  over()</span>
+<span class="source-line-no">129</span><span id="line-129"></span>
+<span class="source-line-no">130</span><span id="line-130">    /**</span>
+<span class="source-line-no">131</span><span id="line-131">     *  {@inheritDoc}</span>
+<span class="source-line-no">132</span><span id="line-132">     */</span>
+<span class="source-line-no">133</span><span id="line-133">    @Override</span>
+<span class="source-line-no">134</span><span id="line-134">    public final boolean tryAdvance( final Consumer&lt;? super T&gt; action )</span>
+<span class="source-line-no">135</span><span id="line-135">    {</span>
+<span class="source-line-no">136</span><span id="line-136">        final var retValue = m_ConditionHolds</span>
+<span class="source-line-no">137</span><span id="line-137">            &amp;&amp; m_Source.tryAdvance( e -&gt;</span>
+<span class="source-line-no">138</span><span id="line-138">            {</span>
+<span class="source-line-no">139</span><span id="line-139">                //noinspection NestedAssignment</span>
+<span class="source-line-no">140</span><span id="line-140">                if( (m_ConditionHolds = m_Condition.test( e )) == true )</span>
+<span class="source-line-no">141</span><span id="line-141">                {</span>
+<span class="source-line-no">142</span><span id="line-142">                    action.accept( e );</span>
+<span class="source-line-no">143</span><span id="line-143">                }</span>
+<span class="source-line-no">144</span><span id="line-144">            });</span>
+<span class="source-line-no">145</span><span id="line-145"></span>
+<span class="source-line-no">146</span><span id="line-146">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">147</span><span id="line-147">        return retValue;</span>
+<span class="source-line-no">148</span><span id="line-148">    }   //  tryAdvance()</span>
+<span class="source-line-no">149</span><span id="line-149"></span>
+<span class="source-line-no">150</span><span id="line-150">    /**</span>
+<span class="source-line-no">151</span><span id="line-151">     *  {@inheritDoc}</span>
+<span class="source-line-no">152</span><span id="line-152">     */</span>
+<span class="source-line-no">153</span><span id="line-153">    @Override</span>
+<span class="source-line-no">154</span><span id="line-154">    public final Spliterator&lt;T&gt; trySplit(){ return null; }</span>
+<span class="source-line-no">155</span><span id="line-155">}</span>
+<span class="source-line-no">156</span><span id="line-156">//  class TakeWhileSpliterator</span>
+<span class="source-line-no">157</span><span id="line-157"></span>
+<span class="source-line-no">158</span><span id="line-158">/*</span>
+<span class="source-line-no">159</span><span id="line-159"> *  End of File</span>
+<span class="source-line-no">160</span><span id="line-160"> */</span>
 
 
 

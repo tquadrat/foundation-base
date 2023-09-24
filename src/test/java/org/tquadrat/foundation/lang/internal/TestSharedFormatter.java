@@ -43,10 +43,12 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TestSharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *
+ *  @deprecated
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "$Id: TestSharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.internal.TestSharedFormatter" )
+@Deprecated( since = "0.3.0", forRemoval = true )
 public class TestSharedFormatter extends TestBaseClass
 {
         /*---------*\
@@ -90,6 +92,7 @@ public class TestSharedFormatter extends TestBaseClass
      *  with
      *  {@link SharedFormatter#format(String,Object...)}.
      */
+    @SuppressWarnings( {"TestMethodWithoutAssertion", "IgnoredJUnitTest"} )
     @Test
     @Disabled
     final void testFormat1Performance()
@@ -133,6 +136,7 @@ public class TestSharedFormatter extends TestBaseClass
      *  with
      *  {@link SharedFormatter#format(Locale,String, Object...)}.
      */
+    @SuppressWarnings( {"TestMethodWithoutAssertion", "IgnoredJUnitTest"} )
     @Test
     @Disabled
     final void testFormat2Performance()

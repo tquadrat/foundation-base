@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -19,7 +19,6 @@ package org.tquadrat.foundation.exception;
 
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.Serial;
 
@@ -66,7 +65,7 @@ public final class CharSequenceTooLongException extends ValidationException
      */
     public CharSequenceTooLongException( final String argName, final int maxLength )
     {
-        super( format( "The text for argument '%1$s' is too long; the maximum length is %2$d characters", requireNotEmptyArgument( argName, "argName" ), checkLength( maxLength ) ) );
+        super( "The text for argument '%1$s' is too long; the maximum length is %2$d characters".formatted( requireNotEmptyArgument( argName, "argName" ), checkLength( maxLength ) ) );
     }   //  CharSequenceTooLongException()
 
     /**
@@ -76,7 +75,7 @@ public final class CharSequenceTooLongException extends ValidationException
      */
     public CharSequenceTooLongException( final int maxLength )
     {
-        super( format( "The text is too long; the maximum length is %d characters", checkLength( maxLength ) ) );
+        super( "The text is too long; the maximum length is %d characters".formatted( checkLength( maxLength ) ) );
     }   //  CharSequenceTooLongException()
 
         /*---------*\
@@ -91,7 +90,7 @@ public final class CharSequenceTooLongException extends ValidationException
      */
     private static int checkLength( final int maxLength ) throws ValidationException
     {
-        if( maxLength <= 0 ) throw new ValidationException( format( "The given maximum length is 0 or less than 0: %d", maxLength ) );
+        if( maxLength <= 0 ) throw new ValidationException( "The given maximum length is 0 or less than 0: %d".formatted( maxLength ) );
 
         //---* Done *----------------------------------------------------------
         return maxLength;

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -61,14 +61,14 @@ public interface TCETriFunction<A,B,C,R>
     /**
      *  Applies this function to the given arguments.
      *
-     *  @param  a   The first function argument.
-     *  @param  b   The second function argument.
-     *  @param  c   The third function argument.
+     *  @param  firstArgument   The first function argument.
+     *  @param  secondArgument  The second function argument.
+     *  @param  thirdArgument   The third function argument.
      *  @return The function result.
      *  @throws Exception   Something went wrong.
      */
     @SuppressWarnings( "ProhibitedExceptionDeclared" )
-    public R apply( A a, B b, C c ) throws Exception;
+    public R apply( final A firstArgument, final B secondArgument, final C thirdArgument ) throws Exception;
 
     /**
      *  Returns a composed function that first applies this function to its
@@ -87,8 +87,8 @@ public interface TCETriFunction<A,B,C,R>
     @API( status = STABLE, since = "0.1.0" )
     public default <R1> TCETriFunction<A,B,C,R1> andThen( final TCEFunction<? super R, ? extends R1> after )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
-        final TCETriFunction<A,B,C,R1> retValue = ( A a, B b, C c) -> requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );
+        final TCETriFunction<A,B,C,R1> retValue = ( A firstArgument, B secondArgument, C thirdArgument ) -> requireNonNullArgument( after, "after" )
+            .apply( apply( firstArgument, secondArgument, thirdArgument ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;

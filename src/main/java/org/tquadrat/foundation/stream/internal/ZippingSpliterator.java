@@ -127,10 +127,10 @@ public final class ZippingSpliterator<L,R,O> implements Spliterator<O>
     public final boolean tryAdvance( final Consumer<? super O> action )
     {
         m_RightHadNext = false;
-        final var leftHadNext = m_Lefts.tryAdvance( l ->
-                m_Rights.tryAdvance( r -> {
+        final var leftHadNext = m_Lefts.tryAdvance( left ->
+                m_Rights.tryAdvance( right -> {
                     m_RightHadNext = true;
-                    action.accept( m_Combiner.apply( l, r ) );
+                    action.accept( m_Combiner.apply( left, right ) );
                 } ) );
         final var retValue = leftHadNext && m_RightHadNext;
 

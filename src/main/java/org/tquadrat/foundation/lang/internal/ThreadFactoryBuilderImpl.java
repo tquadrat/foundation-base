@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -23,7 +23,6 @@ import static java.lang.Thread.UncaughtExceptionHandler;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.util.StringJoiner;
 import java.util.concurrent.ThreadFactory;
@@ -191,15 +190,15 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         @Override
         public final String toString()
         {
-            final var buffer = new StringJoiner( ", ", format( "%s[", getClass().getName() ), "]" )
-                .add( format( "ContextClassLoader='%s'", Objects.toString( m_ContextClassLoader ) ) )
-                .add( format( "InheritThreadLocals=%b", m_InheritThreadLocals ) )
-                .add( format( "IsDaemon=%b", m_IsDaemon ) )
-                .add( format( "NameFactory='%s' (returns \"%s\")", Objects.toString( m_NameFactory ), m_NameFactory.apply( 1 ) ) )
-                .add( format( "Priority=%d", m_Priority ) )
-                .add( format( "StackSize=%d byte", m_StackSize ) )
-                .add( format( "ThreadGroup='%s' (name: %s)", Objects.toString( m_ThreadGroup ), nonNull( m_ThreadGroup ) ? m_ThreadGroup.getName() : "n/a" ) )
-                .add( format( "UncaughtExceptionHandler='%s'", Objects.toString( m_UncaughtExceptionHandler ) ) );
+            final var buffer = new StringJoiner( ", ", "%s[".formatted(  getClass().getName() ), "]" )
+                .add( "ContextClassLoader='%s'".formatted(  Objects.toString( m_ContextClassLoader ) ) )
+                .add( "InheritThreadLocals=%b".formatted(  m_InheritThreadLocals ) )
+                .add( "IsDaemon=%b".formatted(  m_IsDaemon ) )
+                .add( "NameFactory='%s' (returns \"%s\")".formatted(  Objects.toString( m_NameFactory ), m_NameFactory.apply( 1 ) ) )
+                .add( "Priority=%d".formatted(  m_Priority ) )
+                .add( "StackSize=%d byte".formatted(  m_StackSize ) )
+                .add( "ThreadGroup='%s' (name: %s)".formatted(  Objects.toString( m_ThreadGroup ), nonNull( m_ThreadGroup ) ? m_ThreadGroup.getName() : "n/a" ) )
+                .add( "UncaughtExceptionHandler='%s'".formatted(  Objects.toString( m_UncaughtExceptionHandler ) ) );
 
             //---* Compose the return value *--------------------------------------
             final var retValue = buffer.toString();
@@ -237,7 +236,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  The factory method for the thread names. The default returns
      *  &quot;{@code Thread-#}&quot;, where &quot;#&quot; stands for a counter.
      */
-    private IntFunction<String> m_NameFactory = c -> format( "Thread-%d", c );
+    private IntFunction<String> m_NameFactory = "Thread-%d"::formatted;
 
     /**
      *  The priority for the new threads. The default value of -1 indicates
@@ -288,7 +287,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setContextClassLoader( final ClassLoader contextClassLoader )
     {
@@ -301,7 +299,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setInheritThreadLocals( final boolean flag )
     {
@@ -314,7 +311,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setDaemon( final boolean flag )
     {
@@ -327,7 +323,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setNameFactory( final IntFunction<String> nameFactory )
     {
@@ -340,13 +335,13 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setPriority( final int priority ) throws ValidationException
     {
         if( (priority != -1) && !((MIN_PRIORITY <= priority) && (priority <= MAX_PRIORITY)) )
         {
-            throw new ValidationException( format( "Priority value '%3$d' is invalid; it has to be -1, or in the range from %1$d to %2$d, included", MIN_PRIORITY, MAX_PRIORITY, priority ) );
+            throw new ValidationException( "Priority value '%3$d' is invalid; it has to be -1, or in the range from %1$d to %2$d, included"
+                .formatted( MIN_PRIORITY, MAX_PRIORITY, priority ) );
         }
         m_Priority = priority;
 
@@ -357,7 +352,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setStackSize( final long stackSize )
     {
@@ -371,7 +365,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setThreadGroup( final ThreadGroup threadGroup )
     {
@@ -384,7 +377,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     @Override
     public final ThreadFactoryBuilderImpl setUncaughtExceptionHandler( final UncaughtExceptionHandler uncaughtExceptionHandler )
     {
@@ -400,15 +392,15 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     @Override
     public final String toString()
     {
-        final var buffer = new StringJoiner( ", ", format( "%s[", getClass().getName() ), "]" )
-            .add( format( "ContextClassLoader='%s'", Objects.toString( m_ContextClassLoader ) ) )
-            .add( format( "InheritThreadLocals=%b", m_InheritThreadLocals ) )
-            .add( format( "IsDaemon=%b", m_IsDaemon ) )
-            .add( format( "NameFactory='%s' (returns \"%s\")", Objects.toString( m_NameFactory ), m_NameFactory.apply( 1 ) ) )
-            .add( format( "Priority=%d", m_Priority ) )
-            .add( format( "StackSize=%d byte", m_StackSize ) )
-            .add( format( "ThreadGroup='%s' (name: %s)", Objects.toString( m_ThreadGroup ), nonNull( m_ThreadGroup ) ? m_ThreadGroup.getName() : "n/a" ) )
-            .add( format( "UncaughtExceptionHandler='%s'", Objects.toString( m_UncaughtExceptionHandler ) ) );
+        final var buffer = new StringJoiner( ", ", "%s[".formatted(  getClass().getName() ), "]" )
+            .add( "ContextClassLoader='%s'".formatted(  Objects.toString( m_ContextClassLoader ) ) )
+            .add( "InheritThreadLocals=%b".formatted(  m_InheritThreadLocals ) )
+            .add( "IsDaemon=%b".formatted(  m_IsDaemon ) )
+            .add( "NameFactory='%s' (returns \"%s\")".formatted(  Objects.toString( m_NameFactory ), m_NameFactory.apply( 1 ) ) )
+            .add( "Priority=%d".formatted(  m_Priority ) )
+            .add( "StackSize=%d byte".formatted(  m_StackSize ) )
+            .add( "ThreadGroup='%s' (name: %s)".formatted(  Objects.toString( m_ThreadGroup ), nonNull( m_ThreadGroup ) ? m_ThreadGroup.getName() : "n/a" ) )
+            .add( "UncaughtExceptionHandler='%s'".formatted(  Objects.toString( m_UncaughtExceptionHandler ) ) );
 
         //---* Compose the return value *--------------------------------------
         final var retValue = buffer.toString();

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -40,7 +40,6 @@ import org.tquadrat.foundation.lang.internal.SoftLazyImpl;
  *
  *  @param  <T> The type of the cached data.
  */
-@SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
 @ClassVersion( sourceVersion = "$Id: SoftLazy.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface SoftLazy<T>

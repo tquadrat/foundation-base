@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -99,22 +99,22 @@ public final class StringConverterService
 
         final Map<Class<?>,StringConverter<?>> retValue = new HashMap<>();
 
-        for( final StringConverter<?> c : converters )
+        for( final StringConverter<?> converter : converters )
         {
-            StringConverter<?> converter;
+            StringConverter<?> effectiveConverter;
             try
             {
-                final var providerMethod = c.getClass().getMethod( METHOD_NAME_Provider );
-                converter = (StringConverter<?>) providerMethod.invoke( null );
+                final var providerMethod = converter.getClass().getMethod( METHOD_NAME_Provider );
+                effectiveConverter = (StringConverter<?>) providerMethod.invoke( null );
             }
             catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored )
             {
-                converter = c;
+                effectiveConverter = converter;
             }
 
-            for( final var subjectClass : retrieveSubjectClasses( converter ) )
+            for( final var subjectClass : retrieveSubjectClasses( effectiveConverter ) )
             {
-                retValue.put( subjectClass, converter );
+                retValue.put( subjectClass, effectiveConverter );
             }
         }
 

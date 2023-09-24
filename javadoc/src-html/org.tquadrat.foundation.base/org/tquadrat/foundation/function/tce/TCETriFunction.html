@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -74,14 +74,14 @@
 <span class="source-line-no">061</span><span id="line-61">    /**</span>
 <span class="source-line-no">062</span><span id="line-62">     *  Applies this function to the given arguments.</span>
 <span class="source-line-no">063</span><span id="line-63">     *</span>
-<span class="source-line-no">064</span><span id="line-64">     *  @param  a   The first function argument.</span>
-<span class="source-line-no">065</span><span id="line-65">     *  @param  b   The second function argument.</span>
-<span class="source-line-no">066</span><span id="line-66">     *  @param  c   The third function argument.</span>
+<span class="source-line-no">064</span><span id="line-64">     *  @param  firstArgument   The first function argument.</span>
+<span class="source-line-no">065</span><span id="line-65">     *  @param  secondArgument  The second function argument.</span>
+<span class="source-line-no">066</span><span id="line-66">     *  @param  thirdArgument   The third function argument.</span>
 <span class="source-line-no">067</span><span id="line-67">     *  @return The function result.</span>
 <span class="source-line-no">068</span><span id="line-68">     *  @throws Exception   Something went wrong.</span>
 <span class="source-line-no">069</span><span id="line-69">     */</span>
 <span class="source-line-no">070</span><span id="line-70">    @SuppressWarnings( "ProhibitedExceptionDeclared" )</span>
-<span class="source-line-no">071</span><span id="line-71">    public R apply( A a, B b, C c ) throws Exception;</span>
+<span class="source-line-no">071</span><span id="line-71">    public R apply( final A firstArgument, final B secondArgument, final C thirdArgument ) throws Exception;</span>
 <span class="source-line-no">072</span><span id="line-72"></span>
 <span class="source-line-no">073</span><span id="line-73">    /**</span>
 <span class="source-line-no">074</span><span id="line-74">     *  Returns a composed function that first applies this function to its</span>
@@ -100,8 +100,8 @@
 <span class="source-line-no">087</span><span id="line-87">    @API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">088</span><span id="line-88">    public default &lt;R1&gt; TCETriFunction&lt;A,B,C,R1&gt; andThen( final TCEFunction&lt;? super R, ? extends R1&gt; after )</span>
 <span class="source-line-no">089</span><span id="line-89">    {</span>
-<span class="source-line-no">090</span><span id="line-90">        @SuppressWarnings( "RedundantExplicitVariableType" )</span>
-<span class="source-line-no">091</span><span id="line-91">        final TCETriFunction&lt;A,B,C,R1&gt; retValue = ( A a, B b, C c) -&gt; requireNonNullArgument( after, "after" ).apply( apply( a, b, c ) );</span>
+<span class="source-line-no">090</span><span id="line-90">        final TCETriFunction&lt;A,B,C,R1&gt; retValue = ( A firstArgument, B secondArgument, C thirdArgument ) -&gt; requireNonNullArgument( after, "after" )</span>
+<span class="source-line-no">091</span><span id="line-91">            .apply( apply( firstArgument, secondArgument, thirdArgument ) );</span>
 <span class="source-line-no">092</span><span id="line-92"></span>
 <span class="source-line-no">093</span><span id="line-93">        //---* Done *----------------------------------------------------------</span>
 <span class="source-line-no">094</span><span id="line-94">        return retValue;</span>

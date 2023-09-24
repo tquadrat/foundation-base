@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang.internal;
 
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.INTERNAL;
 
 import java.util.Formatter;
@@ -40,9 +41,18 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  @since 0.1.0
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated Java 21 introduces Virtual Threads, and those invalidate any
+ *      enhancement that can be achieved by a cached
+ *      {@link Formatter}.
+ *      In addition, the introduction of
+ *      {@link String#formatted(Object...)}
+ *      provides an elegant API that is not usable with the cached
+ *      {@code Formatter} instance.
  */
+@Deprecated( since = "0.3.0", forRemoval = true )
 @ClassVersion( sourceVersion = "$Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
-@API( status = INTERNAL, since = "0.1.0" )
+@API( status = DEPRECATED, since = "0.3.0" )
 @UtilityClass
 public final class SharedFormatter
 {
@@ -74,7 +84,6 @@ public final class SharedFormatter
     static
     {
         //---* The cached Formatter instance *---------------------------------
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Supplier<Formatter> initializer = () -> new Formatter( new StringBuilder( FORMAT_INITIAL_BUFFERSIZE ), Locale.getDefault( Locale.Category.FORMAT ) );
         //noinspection RedundantTypeArguments
         m_Formatter = ThreadLocal.<Formatter>withInitial( initializer );

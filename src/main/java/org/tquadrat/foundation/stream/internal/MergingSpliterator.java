@@ -156,7 +156,7 @@ public final class MergingSpliterator<T,O> implements Spliterator<O>
     {
         final List<T> mergeables = new ArrayList<>( m_Sources.length );
         Stream.of( m_Sources )
-            .forEach( s -> s.tryAdvance( mergeables::add ) );
+            .forEach( spliterator -> spliterator.tryAdvance( mergeables::add ) );
 
         final var retValue = !mergeables.isEmpty();
         if( retValue )

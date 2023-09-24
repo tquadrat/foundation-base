@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -72,11 +72,11 @@
 <span class="source-line-no">059</span><span id="line-59">    /**</span>
 <span class="source-line-no">060</span><span id="line-60">     *  Performs this operation on the given arguments.</span>
 <span class="source-line-no">061</span><span id="line-61">     *</span>
-<span class="source-line-no">062</span><span id="line-62">     *  @param  a   The first input argument.</span>
-<span class="source-line-no">063</span><span id="line-63">     *  @param  b   The second input argument.</span>
-<span class="source-line-no">064</span><span id="line-64">     *  @param  c   The third input argument.</span>
+<span class="source-line-no">062</span><span id="line-62">     *  @param  firstInput  The first input argument.</span>
+<span class="source-line-no">063</span><span id="line-63">     *  @param  secondInput The second input argument.</span>
+<span class="source-line-no">064</span><span id="line-64">     *  @param  thirdInput  The third input argument.</span>
 <span class="source-line-no">065</span><span id="line-65">     */</span>
-<span class="source-line-no">066</span><span id="line-66">    public void accept( final A a, final B b, final C c );</span>
+<span class="source-line-no">066</span><span id="line-66">    public void accept( final A firstInput, final B secondInput, final C thirdInput );</span>
 <span class="source-line-no">067</span><span id="line-67"></span>
 <span class="source-line-no">068</span><span id="line-68">    /**</span>
 <span class="source-line-no">069</span><span id="line-69">     *  &lt;p&gt;{@summary Returns a composed {@code TriConsumer} that performs, in</span>
@@ -95,22 +95,21 @@
 <span class="source-line-no">082</span><span id="line-82">    {</span>
 <span class="source-line-no">083</span><span id="line-83">        requireNonNullArgument( after, "after" );</span>
 <span class="source-line-no">084</span><span id="line-84"></span>
-<span class="source-line-no">085</span><span id="line-85">        @SuppressWarnings( "RedundantExplicitVariableType" )</span>
-<span class="source-line-no">086</span><span id="line-86">        final TriConsumer&lt;A,B,C&gt; retValue = ( a, b, c) -&gt;</span>
-<span class="source-line-no">087</span><span id="line-87">        {</span>
-<span class="source-line-no">088</span><span id="line-88">            accept(a, b, c);</span>
-<span class="source-line-no">089</span><span id="line-89">            after.accept(a, b, c );</span>
-<span class="source-line-no">090</span><span id="line-90">        };</span>
-<span class="source-line-no">091</span><span id="line-91"></span>
-<span class="source-line-no">092</span><span id="line-92">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">093</span><span id="line-93">        return retValue;</span>
-<span class="source-line-no">094</span><span id="line-94">    }   //  andThen()</span>
-<span class="source-line-no">095</span><span id="line-95">}</span>
-<span class="source-line-no">096</span><span id="line-96">//  class TriConsumer</span>
-<span class="source-line-no">097</span><span id="line-97"></span>
-<span class="source-line-no">098</span><span id="line-98">/*</span>
-<span class="source-line-no">099</span><span id="line-99"> *  End of File</span>
-<span class="source-line-no">100</span><span id="line-100"> */</span>
+<span class="source-line-no">085</span><span id="line-85">        final TriConsumer&lt;A,B,C&gt; retValue = ( firstInput, secondInput, thirdInput ) -&gt;</span>
+<span class="source-line-no">086</span><span id="line-86">        {</span>
+<span class="source-line-no">087</span><span id="line-87">            accept( firstInput, secondInput, thirdInput );</span>
+<span class="source-line-no">088</span><span id="line-88">            after.accept( firstInput, secondInput, thirdInput );</span>
+<span class="source-line-no">089</span><span id="line-89">        };</span>
+<span class="source-line-no">090</span><span id="line-90"></span>
+<span class="source-line-no">091</span><span id="line-91">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">092</span><span id="line-92">        return retValue;</span>
+<span class="source-line-no">093</span><span id="line-93">    }   //  andThen()</span>
+<span class="source-line-no">094</span><span id="line-94">}</span>
+<span class="source-line-no">095</span><span id="line-95">//  class TriConsumer</span>
+<span class="source-line-no">096</span><span id="line-96"></span>
+<span class="source-line-no">097</span><span id="line-97">/*</span>
+<span class="source-line-no">098</span><span id="line-98"> *  End of File</span>
+<span class="source-line-no">099</span><span id="line-99"> */</span>
 
 
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,13 +18,13 @@
 
 package org.tquadrat.foundation.lang;
 
+import static java.lang.String.format;
 import static java.util.function.Function.identity;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.File;
 import java.net.URL;
@@ -117,7 +117,7 @@ public interface Stringer<T>
      *  <pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.
      */
     @API( status = STABLE, since = "0.0.7" )
-    public static final Stringer<? super Object> BASE_STRINGER = o -> isNull( o ) ? NULL_STRING : format( "%s@%x", o.getClass().getName(), o.hashCode() );
+    public static final Stringer<? super Object> BASE_STRINGER = o -> isNull( o ) ? NULL_STRING : "%s@%x".formatted( o.getClass().getName(), o.hashCode() );
 
     /**
      *  <p>{@summary An implementation of
@@ -129,7 +129,7 @@ public interface Stringer<T>
      *  argument.</p>
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final Stringer<byte []> BYTEARRAY_STRINGER = a -> isNull( a ) ? NULL_STRING : format( "byte [%d]", a.length );
+    public static final Stringer<byte []> BYTEARRAY_STRINGER = a -> isNull( a ) ? NULL_STRING : "byte [%d]".formatted( a.length );
 
     /**
      *  An implementation of
@@ -156,13 +156,13 @@ public interface Stringer<T>
      *  {@link File}.
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final Stringer<File> FILEOBJECT_STRINGER = f -> isNull( f ) ? NULL_STRING : f.getAbsolutePath();
+    public static final Stringer<File> FILEOBJECT_STRINGER = file -> isNull( file ) ? NULL_STRING : file.getAbsolutePath();
 
     /**
      *  A
      *  {@link Stringer}
      *  implementation that calls
-     *  {@link org.tquadrat.foundation.lang.internal.SharedFormatter#format(String, Object...) StringUtils.format( "%s", o )}
+     *  {@link String#format(String, Object...) String.format( "%s", o )}
      *  for an object {@code o} if that implements the interface
      *  {@link Formattable},
      *  otherwise it delegates to
@@ -193,7 +193,7 @@ public interface Stringer<T>
      *  &quot;{@code [empty]}&quot; as the {@code nullDefault} arguments.</p>
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final Stringer<Optional<?>> OPTIONAL_STRINGER = o -> isNull( o ) ? NULL_STRING : format( "Optional: %s", o.map( v -> format( "%s = %s", v.getClass().getName(), OBJECT_STRINGER.toString( v ) ) ).orElse( "[empty]" ) );
+    public static final Stringer<Optional<?>> OPTIONAL_STRINGER = o -> isNull( o ) ? NULL_STRING : "Optional: %s".formatted( o.map( v -> "%s = %s".formatted( v.getClass().getName(), OBJECT_STRINGER.toString( v ) ) ).orElse( "[empty]" ) );
 
     /**
      *  An implementation for

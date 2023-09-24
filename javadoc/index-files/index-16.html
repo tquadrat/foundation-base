@@ -191,13 +191,19 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Indexed.html#setValue(T)" class="member-name-link">setValue(T)</a> - Method in class org.tquadrat.foundation.stream.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/Indexed.html" title="class in org.tquadrat.foundation.stream">Indexed</a></dt>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SharedFormatter.html" class="type-name-link" title="class in org.tquadrat.foundation.lang.internal">SharedFormatter</a> - Class in <a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/package-summary.html">org.tquadrat.foundation.lang.internal</a></dt>
 <dd>
-<div class="block">This class provides an implementation of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format(java.util.Locale,java.lang.String,java.lang.Object...)" title="class or interface in java.lang" class="external-link"><code>String.format()</code></a>
-  that uses a shared instance of
-  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html" title="class or interface in java.util" class="external-link"><code>Formatter</code></a>.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Java 21 introduces Virtual Threads, and those invalidate any
+      enhancement that can be achieved by a cached
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html" title="class or interface in java.util" class="external-link"><code>Formatter</code></a>.
+      In addition, the introduction of
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...)" title="class or interface in java.lang" class="external-link"><code>String.formatted(Object...)</code></a>
+      provides an elegant API that is not usable with the cached
+      <code>Formatter</code> instance.</div>
+</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SharedFormatter.html#%3Cinit%3E()" class="member-name-link">SharedFormatter()</a> - Constructor for class org.tquadrat.foundation.lang.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SharedFormatter.html" title="class in org.tquadrat.foundation.lang.internal">SharedFormatter</a></dt>
 <dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
 <div class="block">No instance of this class is allowed.</div>
 </dd>
 <dt><a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html#skip(long)" class="member-name-link">skip(long)</a> - Method in class org.tquadrat.foundation.stream.internal.<a href="../org.tquadrat.foundation.base/org/tquadrat/foundation/stream/internal/DefaultMapStream.html" title="class in org.tquadrat.foundation.stream.internal">DefaultMapStream</a></dt>

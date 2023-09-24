@@ -60,6 +60,7 @@ import org.tquadrat.foundation.stream.internal.DefaultMapStream;
  *  @param  <V> The type of the map values.
  *
  *  @author Alexis Cartier (alexcrt)
+ *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: MapStream.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.7
@@ -182,7 +183,7 @@ public interface MapStream<K,V> extends Stream<Entry<K,V>>
      *  {@inheritDoc}
      */
     @Override
-    public MapStream<K,V> limit( long n );
+    public MapStream<K,V> limit( final long limit );
 
     /**
      *  Returns a stream consisting of the results of applying the given
@@ -478,7 +479,7 @@ public interface MapStream<K,V> extends Stream<Entry<K,V>>
     @SafeVarargs
     public static <K,V> MapStream<K,V> ofMaps( final Map<K,V>... maps )
     {
-        final MapStream<K,V> retValue = new DefaultMapStream<>( Stream.of( maps ).flatMap( m -> m.entrySet().stream() ) );
+        final MapStream<K,V> retValue = new DefaultMapStream<>( Stream.of( maps ).flatMap( map -> map.entrySet().stream() ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;

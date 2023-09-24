@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -392,7 +392,7 @@ public final class CommonConstants
     public static final Instant [] EMPTY_Instant_ARRAY = new Instant [0];
 
     /**
-     *  An empty array of ints.
+     *  An empty array of {@code int} values.
      *
      *  @deprecated The empty arrays were created to optimize the use of the
      *      method {@code toArray(Object[])} of the collection types. This got
@@ -768,7 +768,7 @@ public final class CommonConstants
 
     /**
      *  <p>{@summary The system property providing the flag that indicates
-     *  whether the program is running in a headless mode, meaining that is
+     *  whether the program is running in a headless mode, meaning that is
      *  does not have any kind of a graphical user interface: {@value}.}</p>
      *  <p>Instead of checking the property directly, a call to
      *  {@code java.awt.GraphicsEnvironment#isHeadless()} will return the same
@@ -782,7 +782,6 @@ public final class CommonConstants
      *
      *  @see <a href="https://www.oracle.com/technical-resources/articles/javase/headless.html">Using Headless Mode in the Java SE Platform</a>
      */
-    @SuppressWarnings( "JavadocReference" )
     @API( status = STABLE, since = "0.1.0" )
     public static final String PROPERTY_HEADLESS = "java.awt.headless";
 

@@ -129,7 +129,6 @@ public class AggregatingSpliterator<I> implements Spliterator<List<I>>
     @Override
     public final boolean tryAdvance( final Consumer<? super List<I>> action )
     {
-        @SuppressWarnings( "OverlyLongLambda" )
         final var retValue = m_Source.tryAdvance( currentElement ->
         {
             if( !isSameSlide( currentElement ) )

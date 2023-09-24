@@ -63,6 +63,7 @@ import org.tquadrat.foundation.stream.MapStream;
  *  @param  <V> The type of the map values.
  *
  *  @author Alexis Cartier (alexcrt)
+ *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: DefaultMapStream.java 995 2022-01-23 01:09:35Z tquadrat $
  *  @since 0.0.7
@@ -351,7 +352,6 @@ public final class DefaultMapStream<K,V> implements MapStream<K,V>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "SuspiciousToArrayCall" )
     @Override
     public final <A> A [] toArray( final IntFunction<A []> generator ) { return m_Delegate.toArray( generator ); }
 

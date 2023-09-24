@@ -118,7 +118,6 @@ public final class UnfoldSpliterator<T> implements Spliterator<T>
      *  @param  generator   The generator.
      *  @return The new instance.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     public static final <T> UnfoldSpliterator<T> over( final T seed, final Function<T,Optional<T>> generator )
     {
         final var retValue = new UnfoldSpliterator<>( seed, generator );

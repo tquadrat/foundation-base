@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,12 +18,12 @@
 
 package org.tquadrat.foundation.lang.internal;
 
+import static java.lang.String.format;
 import static java.util.Arrays.stream;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.Serial;
 import java.util.Collection;

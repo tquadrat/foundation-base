@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -117,7 +117,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2> BiConsumer<T1,T2> wrapBiConsumer( final TCEBiConsumer<? super T1, ? super T2> consumer )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BiConsumer<T1,T2> retValue = ( arg1, arg2) ->
         {
             try
@@ -153,7 +152,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,R> BiFunction<T1,T2,R> wrapBiFunction( final TCEBiFunction<? super T1, ? super T2, ? extends R> function )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BiFunction<T1,T2,R> retValue = (arg1,arg2) ->
         {
             try
@@ -187,7 +185,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> BinaryOperator<T> wrapBinaryOperator( final TCEBinaryOperator<T> function )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final BinaryOperator<T> retValue = (arg1,arg2) ->
         {
             try
@@ -221,7 +218,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Consumer<T> wrapConsumer( final TCEConsumer<? super T> consumer )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Consumer<T> retValue = arg ->
         {
             try
@@ -256,7 +252,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T,R> Function<T,R> wrapFunction( final TCEFunction<? super T, ? extends R> function )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Function<T,R> retValue = arg ->
         {
             try
@@ -290,7 +285,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Predicate<T> wrapPredicate( final TCEPredicate<? super T> predicate )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Predicate<T> retValue = arg ->
         {
             try
@@ -324,7 +318,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> Supplier<T> wrapSupplier( final TCESupplier<? extends T> supplier )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final Supplier<T> retValue = () ->
         {
             try
@@ -360,7 +353,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,T3> TriConsumer<T1,T2,T3> wrapTriConsumer( final TCETriConsumer<? super T1, ? super T2, ? super T3> consumer )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final TriConsumer<T1,T2,T3> retValue = (arg1, arg2, arg3) ->
         {
             try
@@ -397,7 +389,6 @@ public final class Functions
     @API( status = STABLE, since = "0.0.5" )
     public static final <T1,T2,T3,R> TriFunction<T1,T2,T3,R> wrapTriFunction( final TCETriFunction<? super T1, ? super T2, ? super T3, ? extends R> function )
     {
-        @SuppressWarnings( "RedundantExplicitVariableType" )
         final TriFunction<T1,T2,T3,R> retValue = (arg1, arg2, arg3) ->
         {
             try

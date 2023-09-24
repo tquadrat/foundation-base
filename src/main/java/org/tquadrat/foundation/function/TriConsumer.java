@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -59,11 +59,11 @@ public interface TriConsumer<A,B,C>
     /**
      *  Performs this operation on the given arguments.
      *
-     *  @param  a   The first input argument.
-     *  @param  b   The second input argument.
-     *  @param  c   The third input argument.
+     *  @param  firstInput  The first input argument.
+     *  @param  secondInput The second input argument.
+     *  @param  thirdInput  The third input argument.
      */
-    public void accept( final A a, final B b, final C c );
+    public void accept( final A firstInput, final B secondInput, final C thirdInput );
 
     /**
      *  <p>{@summary Returns a composed {@code TriConsumer} that performs, in
@@ -82,11 +82,10 @@ public interface TriConsumer<A,B,C>
     {
         requireNonNullArgument( after, "after" );
 
-        @SuppressWarnings( "RedundantExplicitVariableType" )
-        final TriConsumer<A,B,C> retValue = ( a, b, c) ->
+        final TriConsumer<A,B,C> retValue = ( firstInput, secondInput, thirdInput ) ->
         {
-            accept(a, b, c);
-            after.accept(a, b, c );
+            accept( firstInput, secondInput, thirdInput );
+            after.accept( firstInput, secondInput, thirdInput );
         };
 
         //---* Done *----------------------------------------------------------

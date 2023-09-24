@@ -152,7 +152,7 @@
                           y='49.000'/>
                     <text x='5.000'
                           y='66.000'
-                          class='abstract'>+ apply(a:A,b:B,c:C):R</text>
+                          class='abstract'>+ apply(firstArgument:A,secondArgument:B,thirdArgument:C):R</text>
                     <text x='5.000'
                           y='77.000'>&#x2A22; andThen(after:java.util.function.Function&lt;? super R,? extends R1&gt;):org.tquadrat.foundation.function.TriFunction&lt;A,B,C,R1&gt;</text>
                 </g>

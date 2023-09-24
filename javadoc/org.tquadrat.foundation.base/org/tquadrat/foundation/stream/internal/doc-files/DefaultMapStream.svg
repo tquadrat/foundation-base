@@ -358,7 +358,7 @@
                           y='154.000'>&#x2A22; inverseMapping():org.tquadrat.foundation.stream.MapStream&lt;V,K&gt;</text>
                     <text x='5.000'
                           y='165.000'
-                          class='abstract'>+ limit(n:long):org.tquadrat.foundation.stream.MapStream&lt;K,V&gt;</text>
+                          class='abstract'>+ limit(limit:long):org.tquadrat.foundation.stream.MapStream&lt;K,V&gt;</text>
                     <text x='5.000'
                           y='176.000'>&#x2A22; map(mapper:java.util.function.BiFunction&lt;K,V,? extends R&gt;):java.util.stream.Stream&lt;R&gt;</text>
                     <text x='5.000'

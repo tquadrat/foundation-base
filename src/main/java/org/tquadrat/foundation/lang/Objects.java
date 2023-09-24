@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -22,7 +22,6 @@ import static java.lang.Integer.signum;
 import static java.util.Arrays.deepToString;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -762,12 +761,12 @@ public final class Objects
         {
             case null -> throw new NullArgumentException( name );
             //noinspection QuestionableName
-            case String string ->
+            case final String string ->
             {
                 if( string.isEmpty() ) throw new EmptyArgumentException( name );
                 if( string.isBlank() ) throw new BlankArgumentException( name );
             }
-            case CharSequence charSequence ->
+            case final CharSequence charSequence ->
             {
                 if( charSequence.isEmpty() ) throw new EmptyArgumentException( name );
                 if( charSequence.toString().isBlank() ) throw new BlankArgumentException( name );
@@ -847,19 +846,19 @@ public final class Objects
              * all by the default case.
              */
             case null -> throw new NullArgumentException( name );
-            case CharSequence charSequence ->
+            case final CharSequence charSequence ->
             {
                 if( charSequence.isEmpty() ) throw new EmptyArgumentException( name );
             }
-            case Collection<?> collection ->
+            case final Collection<?> collection ->
             {
                 if( collection.isEmpty() ) throw new EmptyArgumentException( name );
             }
-            case Map<?,?> map ->
+            case final Map<?,?> map ->
             {
                 if( map.isEmpty() ) throw new EmptyArgumentException( name );
             }
-            case Enumeration<?> enumeration ->
+            case final Enumeration<?> enumeration ->
             {
                 /*
                  * The funny thing with an Enumeration is that it could have
@@ -871,7 +870,7 @@ public final class Objects
                  */
                 if( !enumeration.hasMoreElements() ) throw new EmptyArgumentException( name );
             }
-            case Optional<?> optional ->
+            case final Optional<?> optional ->
             {
                 /*
                  * This is different from the behaviour of
@@ -1021,7 +1020,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1090,7 +1089,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1158,7 +1157,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1226,7 +1225,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1297,7 +1296,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
-            throw new ValidationException( format( "Validation failed for '%s'", name ) );
+            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------

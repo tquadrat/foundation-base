@@ -140,10 +140,10 @@
 <span class="source-line-no">127</span><span id="line-127">    public final boolean tryAdvance( final Consumer&lt;? super O&gt; action )</span>
 <span class="source-line-no">128</span><span id="line-128">    {</span>
 <span class="source-line-no">129</span><span id="line-129">        m_RightHadNext = false;</span>
-<span class="source-line-no">130</span><span id="line-130">        final var leftHadNext = m_Lefts.tryAdvance( l -&gt;</span>
-<span class="source-line-no">131</span><span id="line-131">                m_Rights.tryAdvance( r -&gt; {</span>
+<span class="source-line-no">130</span><span id="line-130">        final var leftHadNext = m_Lefts.tryAdvance( left -&gt;</span>
+<span class="source-line-no">131</span><span id="line-131">                m_Rights.tryAdvance( right -&gt; {</span>
 <span class="source-line-no">132</span><span id="line-132">                    m_RightHadNext = true;</span>
-<span class="source-line-no">133</span><span id="line-133">                    action.accept( m_Combiner.apply( l, r ) );</span>
+<span class="source-line-no">133</span><span id="line-133">                    action.accept( m_Combiner.apply( left, right ) );</span>
 <span class="source-line-no">134</span><span id="line-134">                } ) );</span>
 <span class="source-line-no">135</span><span id="line-135">        final var retValue = leftHadNext &amp;&amp; m_RightHadNext;</span>
 <span class="source-line-no">136</span><span id="line-136"></span>

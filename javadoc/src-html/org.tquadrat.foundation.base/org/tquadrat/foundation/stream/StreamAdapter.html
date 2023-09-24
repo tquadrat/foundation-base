@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> * Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -382,23 +382,22 @@
 <span class="source-line-no">369</span><span id="line-369">    /**</span>
 <span class="source-line-no">370</span><span id="line-370">     *  {@inheritDoc}</span>
 <span class="source-line-no">371</span><span id="line-371">     */</span>
-<span class="source-line-no">372</span><span id="line-372">    @SuppressWarnings( "SuspiciousToArrayCall" )</span>
-<span class="source-line-no">373</span><span id="line-373">    @MountPoint</span>
-<span class="source-line-no">374</span><span id="line-374">    @Override</span>
-<span class="source-line-no">375</span><span id="line-375">    public &lt;A&gt; A [] toArray( final IntFunction&lt;A []&gt; generator ) { return m_Wrapped.toArray( generator ); }</span>
-<span class="source-line-no">376</span><span id="line-376"></span>
-<span class="source-line-no">377</span><span id="line-377">    /**</span>
-<span class="source-line-no">378</span><span id="line-378">     *  {@inheritDoc}</span>
-<span class="source-line-no">379</span><span id="line-379">     */</span>
-<span class="source-line-no">380</span><span id="line-380">    @MountPoint</span>
-<span class="source-line-no">381</span><span id="line-381">    @Override</span>
-<span class="source-line-no">382</span><span id="line-382">    public Stream&lt;T&gt; unordered() { return m_Wrapped.unordered(); }</span>
-<span class="source-line-no">383</span><span id="line-383">}</span>
-<span class="source-line-no">384</span><span id="line-384">//  class StreamAdapter</span>
-<span class="source-line-no">385</span><span id="line-385"></span>
-<span class="source-line-no">386</span><span id="line-386">/*</span>
-<span class="source-line-no">387</span><span id="line-387"> *  End of File</span>
-<span class="source-line-no">388</span><span id="line-388"> */</span>
+<span class="source-line-no">372</span><span id="line-372">    @MountPoint</span>
+<span class="source-line-no">373</span><span id="line-373">    @Override</span>
+<span class="source-line-no">374</span><span id="line-374">    public &lt;A&gt; A [] toArray( final IntFunction&lt;A []&gt; generator ) { return m_Wrapped.toArray( generator ); }</span>
+<span class="source-line-no">375</span><span id="line-375"></span>
+<span class="source-line-no">376</span><span id="line-376">    /**</span>
+<span class="source-line-no">377</span><span id="line-377">     *  {@inheritDoc}</span>
+<span class="source-line-no">378</span><span id="line-378">     */</span>
+<span class="source-line-no">379</span><span id="line-379">    @MountPoint</span>
+<span class="source-line-no">380</span><span id="line-380">    @Override</span>
+<span class="source-line-no">381</span><span id="line-381">    public Stream&lt;T&gt; unordered() { return m_Wrapped.unordered(); }</span>
+<span class="source-line-no">382</span><span id="line-382">}</span>
+<span class="source-line-no">383</span><span id="line-383">//  class StreamAdapter</span>
+<span class="source-line-no">384</span><span id="line-384"></span>
+<span class="source-line-no">385</span><span id="line-385">/*</span>
+<span class="source-line-no">386</span><span id="line-386"> *  End of File</span>
+<span class="source-line-no">387</span><span id="line-387"> */</span>
 
 
 

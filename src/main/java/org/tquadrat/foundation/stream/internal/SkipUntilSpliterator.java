@@ -100,7 +100,6 @@ public final class SkipUntilSpliterator<T> implements Spliterator<T>
      *      stream.
      *  @return The instance.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     public static final <T> SkipUntilSpliterator<T> over( final Spliterator<T> source, final Predicate<T> condition )
     {
         final var retValue = new SkipUntilSpliterator<>( source, condition );

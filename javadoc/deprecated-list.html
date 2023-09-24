@@ -54,6 +54,7 @@ loadScripts(document, 'script');</script>
 <h2 title="Contents">Contents</h2>
 <ul>
 <li><a href="#for-removal">Terminally Deprecated</a></li>
+<li><a href="#class">Classes</a></li>
 <li><a href="#exception">Exceptions</a></li>
 <li><a href="#field">Fields</a></li>
 <li><a href="#method">Methods</a></li>
@@ -430,11 +431,42 @@ loadScripts(document, 'script');</script>
       <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/DebugOutput.html#ifTest(java.util.function.Function,java.lang.Object...)"><code>DebugOutput.ifTest(Function, Object...)</code></a>
       instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#getOrElse(org.tquadrat.foundation.lang.ErrorHandler)">org.tquadrat.foundation.lang.Status.getOrElse<wbr>(ErrorHandler&lt;? super C&gt;)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SharedFormatter.html" title="class in org.tquadrat.foundation.lang.internal">org.tquadrat.foundation.lang.internal.SharedFormatter</a></div>
 <div class="col-last even-row-color">
+<div class="deprecation-comment">Java 21 introduces Virtual Threads, and those invalidate any
+      enhancement that can be achieved by a cached
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html" title="class or interface in java.util" class="external-link"><code>Formatter</code></a>.
+      In addition, the introduction of
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...)" title="class or interface in java.lang" class="external-link"><code>String.formatted(Object...)</code></a>
+      provides an elegant API that is not usable with the cached
+      <code>Formatter</code> instance.</div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#getOrElse(org.tquadrat.foundation.lang.ErrorHandler)">org.tquadrat.foundation.lang.Status.getOrElse<wbr>(ErrorHandler&lt;? super C&gt;)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Was replaced by
       <a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/Status.html#getOrElseThrow(org.tquadrat.foundation.lang.ErrorHandler)"><code>Status.getOrElseThrow(ErrorHandler)</code></a>
       because of the misleading name.</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<ul class="block-list">
+<li>
+<div id="class">
+<div class="caption"><span>Deprecated Classes</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-summary-item-name even-row-color"><a href="org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/SharedFormatter.html" title="class in org.tquadrat.foundation.lang.internal">org.tquadrat.foundation.lang.internal.SharedFormatter</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">Java 21 introduces Virtual Threads, and those invalidate any
+      enhancement that can be achieved by a cached
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html" title="class or interface in java.util" class="external-link"><code>Formatter</code></a>.
+      In addition, the introduction of
+      <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...)" title="class or interface in java.lang" class="external-link"><code>String.formatted(Object...)</code></a>
+      provides an elegant API that is not usable with the cached
+      <code>Formatter</code> instance.</div>
 </div>
 </div>
 </div>

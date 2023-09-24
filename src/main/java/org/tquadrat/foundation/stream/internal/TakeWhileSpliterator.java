@@ -119,7 +119,6 @@ public final class TakeWhileSpliterator<T> implements Spliterator<T>
      *  @param  condition   The condition for the new instance.
      *  @return The new instance.
      */
-    @SuppressWarnings( "UseOfConcreteClass" )
     public static final <T> TakeWhileSpliterator<T> over( final Spliterator<T> source, final Predicate<T> condition )
     {
         final var retValue = new TakeWhileSpliterator<>( source, condition );

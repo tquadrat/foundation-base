@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -112,22 +112,22 @@
 <span class="source-line-no">099</span><span id="line-99"></span>
 <span class="source-line-no">100</span><span id="line-100">        final Map&lt;Class&lt;?&gt;,StringConverter&lt;?&gt;&gt; retValue = new HashMap&lt;&gt;();</span>
 <span class="source-line-no">101</span><span id="line-101"></span>
-<span class="source-line-no">102</span><span id="line-102">        for( final StringConverter&lt;?&gt; c : converters )</span>
+<span class="source-line-no">102</span><span id="line-102">        for( final StringConverter&lt;?&gt; converter : converters )</span>
 <span class="source-line-no">103</span><span id="line-103">        {</span>
-<span class="source-line-no">104</span><span id="line-104">            StringConverter&lt;?&gt; converter;</span>
+<span class="source-line-no">104</span><span id="line-104">            StringConverter&lt;?&gt; effectiveConverter;</span>
 <span class="source-line-no">105</span><span id="line-105">            try</span>
 <span class="source-line-no">106</span><span id="line-106">            {</span>
-<span class="source-line-no">107</span><span id="line-107">                final var providerMethod = c.getClass().getMethod( METHOD_NAME_Provider );</span>
-<span class="source-line-no">108</span><span id="line-108">                converter = (StringConverter&lt;?&gt;) providerMethod.invoke( null );</span>
+<span class="source-line-no">107</span><span id="line-107">                final var providerMethod = converter.getClass().getMethod( METHOD_NAME_Provider );</span>
+<span class="source-line-no">108</span><span id="line-108">                effectiveConverter = (StringConverter&lt;?&gt;) providerMethod.invoke( null );</span>
 <span class="source-line-no">109</span><span id="line-109">            }</span>
 <span class="source-line-no">110</span><span id="line-110">            catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored )</span>
 <span class="source-line-no">111</span><span id="line-111">            {</span>
-<span class="source-line-no">112</span><span id="line-112">                converter = c;</span>
+<span class="source-line-no">112</span><span id="line-112">                effectiveConverter = converter;</span>
 <span class="source-line-no">113</span><span id="line-113">            }</span>
 <span class="source-line-no">114</span><span id="line-114"></span>
-<span class="source-line-no">115</span><span id="line-115">            for( final var subjectClass : retrieveSubjectClasses( converter ) )</span>
+<span class="source-line-no">115</span><span id="line-115">            for( final var subjectClass : retrieveSubjectClasses( effectiveConverter ) )</span>
 <span class="source-line-no">116</span><span id="line-116">            {</span>
-<span class="source-line-no">117</span><span id="line-117">                retValue.put( subjectClass, converter );</span>
+<span class="source-line-no">117</span><span id="line-117">                retValue.put( subjectClass, effectiveConverter );</span>
 <span class="source-line-no">118</span><span id="line-118">            }</span>
 <span class="source-line-no">119</span><span id="line-119">        }</span>
 <span class="source-line-no">120</span><span id="line-120"></span>

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2023 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -369,7 +369,6 @@ public class StreamAdapter<T> implements Stream<T>
     /**
      *  {@inheritDoc}
      */
-    @SuppressWarnings( "SuspiciousToArrayCall" )
     @MountPoint
     @Override
     public <A> A [] toArray( final IntFunction<A []> generator ) { return m_Wrapped.toArray( generator ); }
