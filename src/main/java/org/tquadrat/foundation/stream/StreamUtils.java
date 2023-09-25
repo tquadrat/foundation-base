@@ -63,13 +63,13 @@ import org.tquadrat.foundation.stream.internal.ZippingSpliterator;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamUtils.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: StreamUtils.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: StreamUtils.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 public final class StreamUtils
 {
         /*--------------*\

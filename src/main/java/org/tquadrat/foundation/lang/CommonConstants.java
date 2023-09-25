@@ -61,13 +61,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1033 2022-10-02 13:14:39Z tquadrat $
+ *  @version $Id: CommonConstants.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"ClassWithTooManyFields", "UnnecessaryUnicodeEscape"} )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1033 2022-10-02 13:14:39Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {

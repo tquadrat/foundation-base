@@ -37,7 +37,7 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  {@link java.util.Formatter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: SharedFormatter.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -51,7 +51,7 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *      {@code Formatter} instance.
  */
 @Deprecated( since = "0.3.0", forRemoval = true )
-@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SharedFormatter.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = DEPRECATED, since = "0.3.0" )
 @UtilityClass
 public final class SharedFormatter

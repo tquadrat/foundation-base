@@ -43,7 +43,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ZippingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: ZippingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <L> The type over which the &quot;left&quot; stream is streaming.
@@ -54,7 +54,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ZippingSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ZippingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class ZippingSpliterator<L,R,O> implements Spliterator<O>
 {

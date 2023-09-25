@@ -35,12 +35,12 @@ import org.tquadrat.foundation.lang.internal.SoftLazyImpl;
  *  {@code null}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SoftLazy.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: SoftLazy.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The type of the cached data.
  */
-@ClassVersion( sourceVersion = "$Id: SoftLazy.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SoftLazy.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface SoftLazy<T>
     permits org.tquadrat.foundation.lang.internal.SoftLazyImpl

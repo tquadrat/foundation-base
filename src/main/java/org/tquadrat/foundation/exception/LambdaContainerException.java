@@ -87,13 +87,13 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1055 2023-05-01 14:45:07Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1055 2023-05-01 14:45:07Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed class LambdaContainerException extends CheckedExceptionWrapper
     /*

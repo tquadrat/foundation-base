@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.ThreadFactoryBuilder;
  *  {@link ThreadFactoryBuilder}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilderImpl.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
 {
@@ -57,12 +57,12 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  {@link ThreadFactoryBuilder}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ThreadFactoryBuilderImpl.java 1035 2022-12-07 15:09:56Z tquadrat $
+     *  @version $Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     private static final class ThreadFactoryImpl implements ThreadFactory
     {

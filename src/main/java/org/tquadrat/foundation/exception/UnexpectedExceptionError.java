@@ -60,12 +60,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  }</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnexpectedExceptionError.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class UnexpectedExceptionError extends AssertionError
     permits ImpossibleExceptionError

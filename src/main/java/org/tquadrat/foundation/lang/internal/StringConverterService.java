@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  service methods.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverterService.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: StringConverterService.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class StringConverterService

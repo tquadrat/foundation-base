@@ -42,11 +42,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.SharedFormatter}
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestSharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestSharedFormatter.java 1060 2023-09-24 19:21:40Z tquadrat $
  *
  *  @deprecated
  */
-@ClassVersion( sourceVersion = "$Id: TestSharedFormatter.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestSharedFormatter.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.internal.TestSharedFormatter" )
 @Deprecated( since = "0.3.0", forRemoval = true )
 public class TestSharedFormatter extends TestBaseClass

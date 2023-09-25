@@ -45,14 +45,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TakeWhileSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: TakeWhileSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class TakeWhileSpliterator<T> implements Spliterator<T>
 {

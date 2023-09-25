@@ -92,14 +92,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see CommonConstants#NULL_STRING
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: Stringer.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the argument value.
  */
-@ClassVersion( sourceVersion = "$Id: Stringer.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Stringer.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.1.0" )
 public interface Stringer<T>

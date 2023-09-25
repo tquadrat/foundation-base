@@ -51,14 +51,14 @@ import org.tquadrat.foundation.annotation.MountPoint;
  *  delegate to the wrapped stream.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamAdapter.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: StreamAdapter.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream's elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StreamAdapter.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamAdapter.java 1060 2023-09-24 19:21:40Z tquadrat $" )
 @API( status = STABLE, since = "0.0.7" )
 public class StreamAdapter<T> implements Stream<T>
 {
