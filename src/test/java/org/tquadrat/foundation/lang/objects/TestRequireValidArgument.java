@@ -53,7 +53,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "$Id: TestRequireValidArgument.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireValidArgument" )
@@ -122,7 +121,7 @@ public class TestRequireValidArgument extends TestBaseClass
 
         final var candidate = "candidate";
         final Predicate<String> predicate = s -> isNull( s ) || "valid".equals( s );
-        final String name = EMPTY_STRING;
+        final var name = EMPTY_STRING;
 
         final Class<? extends Throwable> expectedException = EmptyArgumentException.class;
 
@@ -180,7 +179,7 @@ public class TestRequireValidArgument extends TestBaseClass
 
         final var candidate = "candidate";
         final Predicate<String> predicate = null;
-        final String name = "name";
+        final var name = "name";
 
         final Class<? extends Throwable> expectedException = NullArgumentException.class;
 

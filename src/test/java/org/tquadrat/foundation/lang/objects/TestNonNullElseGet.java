@@ -88,10 +88,10 @@ public class TestNonNullElseGet extends TestBaseClass
         }
 
         expected = defaultValue;
-        assertEquals( requireNonNullElseGet( null, () -> defaultValue ), expected );
+        assertEquals( expected, requireNonNullElseGet( null, () -> defaultValue ) );
 
         expected = "value";
-        assertEquals( requireNonNullElseGet( expected, () -> defaultValue ), expected );
+        assertEquals( expected, requireNonNullElseGet( expected, () -> defaultValue ) );
     }   //  testRequireNonNullElseGet()
 }
 //  class TestNonNullElseGet

@@ -79,8 +79,8 @@ public class TestToString extends TestBaseClass
         final var floats = new float [] { 1.1f, 2.2f, 3.3f };
         assertEquals( Arrays.toString( floats ), Objects.toString( floats ) );
 
-        final var ints = new int [] { 1, 2, 3 };
-        assertEquals( Arrays.toString( ints ), Objects.toString( ints ) );
+        final var integers = new int [] { 1, 2, 3 };
+        assertEquals( Arrays.toString( integers ), Objects.toString( integers ) );
 
         final var longs = new long [] {1L, 2L, 3L};
         assertEquals( Arrays.toString( longs ), Objects.toString( longs ) );
@@ -121,7 +121,7 @@ public class TestToString extends TestBaseClass
     {
         skipThreadTest();
 
-        assertEquals( Objects.toString( null ), NULL_STRING );
+        assertEquals( NULL_STRING, Objects.toString( null ) );
     }   //  testToStringNull()
 
     /**
@@ -134,7 +134,7 @@ public class TestToString extends TestBaseClass
         skipThreadTest();
 
         final var nullString = "nullString";
-        assertEquals( Objects.toString( null, nullString ), nullString );
+        assertEquals( nullString, Objects.toString( null, nullString ) );
     }   //  testToStringNullString()
 
     /**
@@ -233,7 +233,7 @@ public class TestToString extends TestBaseClass
             assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
         }
 
-        assertEquals( Objects.toString( null, stringer, nullString ), nullString );
+        assertEquals( nullString, Objects.toString( null, stringer, nullString ) );
 
         final var now = Instant.now();
         assertEquals( now.toString(), Objects.toString( now, stringer, nullString ) );

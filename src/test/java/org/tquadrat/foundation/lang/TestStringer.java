@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -31,7 +32,6 @@ import static org.tquadrat.foundation.lang.Stringer.OPTIONAL_STRINGER;
 import static org.tquadrat.foundation.lang.Stringer.STRING_STRINGER;
 import static org.tquadrat.foundation.lang.Stringer.URL_STRINGER;
 import static org.tquadrat.foundation.lang.Stringer.asFunction;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.File;
 import java.time.Instant;
@@ -154,10 +154,11 @@ public class TestStringer extends TestBaseClass
             assertEquals( expected, actual );
 
             value = null;
+            //noinspection OptionalOfNullableMisuse
             candidate = Optional.ofNullable( value );
             expected = "Optional: [empty]";
             actual = Objects.toString( candidate, OPTIONAL_STRINGER, NULL_STRING );
-            assertEquals( actual, expected );
+            assertEquals( expected, actual );
         }
 
         {
@@ -167,6 +168,7 @@ public class TestStringer extends TestBaseClass
             assertEquals( expected, actual );
         }
 
+        //noinspection UnnecessaryCodeBlock
         {
             final var candidate = new File( "." ).getAbsoluteFile().getCanonicalFile().toURI().toURL();
             expected = candidate.toExternalForm();

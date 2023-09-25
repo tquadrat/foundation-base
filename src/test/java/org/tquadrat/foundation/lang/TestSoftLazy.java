@@ -17,11 +17,11 @@
 
 package org.tquadrat.foundation.lang;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.util.ArrayList;
 import java.util.List;

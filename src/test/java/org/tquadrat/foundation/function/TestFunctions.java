@@ -33,7 +33,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TestFunctions.java 993 2022-01-19 22:26:20Z tquadrat $
  */
-@SuppressWarnings( {"OverlyCoupledClass","MisorderedAssertEqualsArguments"} )
 @ClassVersion( sourceVersion = "$Id: TestFunctions.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.function.TestFunctions" )
 public class TestFunctions extends TestBaseClass

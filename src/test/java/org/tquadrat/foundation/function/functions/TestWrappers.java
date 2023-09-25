@@ -61,7 +61,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TestWrappers.java 820 2020-12-29 20:34:22Z tquadrat $
  */
-@SuppressWarnings( {"OverlyCoupledClass","MisorderedAssertEqualsArguments"} )
 @ClassVersion( sourceVersion = "$Id: TestWrappers.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.function.functions.TestWrappers" )
 public class TestWrappers extends TestBaseClass

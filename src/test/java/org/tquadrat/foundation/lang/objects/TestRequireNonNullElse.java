@@ -69,10 +69,10 @@ public class TestRequireNonNullElse extends TestBaseClass
         }
 
         expected = "default";
-        assertEquals( requireNonNullElse( null, expected ), expected );
+        assertEquals( expected, requireNonNullElse( null, expected ) );
 
         expected = "value";
-        assertEquals( requireNonNullElse( expected, "default" ), expected );
+        assertEquals( expected, requireNonNullElse( expected, "default" ) );
     }   //  testRequireNonNullElse()
 }
 //  class TestRequireNonNullElse

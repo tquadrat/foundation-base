@@ -69,7 +69,7 @@ public class TestHashCode extends TestBaseClass
         skipThreadTest();
 
         assertEquals( java.util.Objects.hashCode( null ), Objects.hashCode( null ) );
-        assertEquals( Objects.hashCode( null ), 0 );
+        assertEquals( 0, Objects.hashCode( null ) );
     }   //  testHashCode()
 }
 //  class TestHashCode

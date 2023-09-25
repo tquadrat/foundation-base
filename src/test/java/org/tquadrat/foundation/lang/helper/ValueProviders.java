@@ -78,7 +78,7 @@ public final class ValueProviders
     public static final float [] EMPTY_float_ARRAY = new float [0];
 
     /**
-     *  An empty array of ints.
+     *  An empty array of integer values.
      */
     public static final int [] EMPTY_int_ARRAY = new int [0];
 

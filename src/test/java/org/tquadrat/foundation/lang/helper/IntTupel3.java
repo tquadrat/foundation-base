@@ -29,7 +29,6 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: IntTupel3.java 820 2020-12-29 20:34:22Z tquadrat $
  */
-@SuppressWarnings( {"hiding", "javadoc"} )
 @ClassVersion( sourceVersion = "$Id: IntTupel3.java 820 2020-12-29 20:34:22Z tquadrat $" )
 public record IntTupel3( int v1, int v2, int v3 )
 { /* Empty block */ }

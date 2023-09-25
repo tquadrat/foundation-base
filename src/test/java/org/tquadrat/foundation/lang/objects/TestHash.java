@@ -55,12 +55,12 @@ public class TestHash extends TestBaseClass
 
         Object [] candidate = null;
         var expected = Arrays.hashCode( candidate );
-        assertEquals( expected, 0 );
+        assertEquals( 0, expected );
         assertEquals( expected, hash( candidate ) );
 
         candidate = new String [] {null};
         expected = Arrays.hashCode( candidate );
-        assertEquals( expected, 31 );
+        assertEquals( 31, expected );
         assertEquals( expected, hash( candidate ) );
         assertTrue( hash( "eins", "zwei", "drei" ) != expected );
     }   //  testHash()

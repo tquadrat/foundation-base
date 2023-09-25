@@ -17,9 +17,9 @@
 
 package org.tquadrat.foundation.scratch;
 
+import static java.lang.String.format;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireValidDoubleArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 

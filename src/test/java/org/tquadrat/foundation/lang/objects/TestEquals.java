@@ -51,10 +51,10 @@ public class TestEquals extends TestBaseClass
     {
         skipThreadTest();
 
-        assertEquals( Objects.equals( EMPTY_STRING, EMPTY_STRING ), EMPTY_STRING.equals( EMPTY_STRING ) );
-        assertEquals( Objects.equals( EMPTY_STRING, NULL_STRING ), EMPTY_STRING.equals( NULL_STRING ) );
-        final String candidate = "null";
-        assertEquals( Objects.equals( NULL_STRING, candidate ), NULL_STRING.equals( candidate ) );
+        assertEquals( EMPTY_STRING.equals( EMPTY_STRING ), Objects.equals( EMPTY_STRING, EMPTY_STRING ) );
+        assertEquals( EMPTY_STRING.equals( NULL_STRING ), Objects.equals( EMPTY_STRING, NULL_STRING ) );
+        final var candidate = "null";
+        assertEquals( NULL_STRING.equals( candidate ), Objects.equals( NULL_STRING, candidate ) );
     }   //  testEquals()
 }
 //  class TestEquals

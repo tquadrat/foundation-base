@@ -60,7 +60,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "$Id: TestRequire.java 820 2020-12-29 20:34:22Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequire" )

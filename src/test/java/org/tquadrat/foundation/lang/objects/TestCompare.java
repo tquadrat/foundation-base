@@ -56,7 +56,7 @@ public class TestCompare extends TestBaseClass
     {
         skipThreadTest();
 
-        assertEquals( compare( "string", "String", CASE_INSENSITIVE_ORDER ), 0 );
+        assertEquals( 0, compare( "string", "String", CASE_INSENSITIVE_ORDER ) );
         assertEquals( compare( "string", "String", CASE_INSENSITIVE_ORDER ), java.util.Objects.compare( "string", "String", CASE_INSENSITIVE_ORDER ) );
     }   //  testCompare()
 
@@ -77,7 +77,7 @@ public class TestCompare extends TestBaseClass
         catch( final AssertionError e ) { throw e; }
         catch( final Throwable t )
         {
-            final boolean isExpectedException = expectedException.isInstance( t );
+            final var isExpectedException = expectedException.isInstance( t );
             assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
         }
     }   //  testNullComparator()

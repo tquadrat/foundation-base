@@ -59,9 +59,9 @@ public class TestCheckFromIndexSize extends TestBaseClass
     {
         skipThreadTest();
 
-        final int fromIndex = arguments.v1();
-        final int size = arguments.v2();
-        final int length = arguments .v3();
+        final var fromIndex = arguments.v1();
+        final var size = arguments.v2();
+        final var length = arguments .v3();
 
         if( (fromIndex < 0) || (size < 0) || ((fromIndex + size) > length) || (length < 0) )
         {
@@ -74,7 +74,7 @@ public class TestCheckFromIndexSize extends TestBaseClass
             catch( final AssertionError e ) { throw e; }
             catch( final Throwable t )
             {
-                final boolean isExpectedException = expectedException.isInstance( t );
+                final var isExpectedException = expectedException.isInstance( t );
                 assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
             }
         }
