@@ -46,9 +46,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#toString(Object,String)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestToString.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: TestToString.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestToString.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestToString.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestToString" )
 public class TestToString extends TestBaseClass
 {

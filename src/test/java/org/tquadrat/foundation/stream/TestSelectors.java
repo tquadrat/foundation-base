@@ -41,7 +41,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
-@ClassVersion( sourceVersion = "$Id: TestSelectors.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestSelectors.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.stream.TestSelectors" )
 public class TestSelectors extends TestBaseClass
 {

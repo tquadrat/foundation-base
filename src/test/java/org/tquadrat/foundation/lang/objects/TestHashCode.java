@@ -33,9 +33,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#hashCode(Object)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestHashCode.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestHashCode.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestHashCode.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestHashCode.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestHashCode" )
 public class TestHashCode extends TestBaseClass
 {

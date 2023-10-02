@@ -48,12 +48,12 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequireValidArgument.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestRequireValidArgument.java 1061 2023-09-25 16:32:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TestRequireValidArgument.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequireValidArgument.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireValidArgument" )
 public class TestRequireValidArgument extends TestBaseClass

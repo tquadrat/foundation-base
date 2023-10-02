@@ -49,11 +49,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Stringer}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestStringer.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestStringer.java 1061 2023-09-25 16:32:43Z tquadrat $
  *
  *  @see org.tquadrat.foundation.lang.Objects#toString(Object, Stringer, String)
  */
-@ClassVersion( sourceVersion = "$Id: TestStringer.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestStringer.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestStringer" )
 public class TestStringer extends TestBaseClass
 {

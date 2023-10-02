@@ -31,9 +31,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link Functions}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestFunctions.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TestFunctions.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestFunctions.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestFunctions.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.function.TestFunctions" )
 public class TestFunctions extends TestBaseClass
 {

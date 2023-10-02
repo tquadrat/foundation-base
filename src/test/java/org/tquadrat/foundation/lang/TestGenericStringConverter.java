@@ -43,9 +43,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link GenericStringConverter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestGenericStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $
+ *  @version $Id: TestGenericStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestGenericStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestGenericStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestGenericStringConverter" )
 public class TestGenericStringConverter extends TestBaseClass
 {

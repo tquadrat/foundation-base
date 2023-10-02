@@ -43,10 +43,10 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  The value providers for the unit tests in the base module.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueProviders.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: ValueProviders.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
 @SuppressWarnings( {"UtilityClassWithoutPrivateConstructor", "UtilityClass", "UtilityClassCanBeEnum", "unused"} )
-@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 public final class ValueProviders
 {
         /*-----------*\

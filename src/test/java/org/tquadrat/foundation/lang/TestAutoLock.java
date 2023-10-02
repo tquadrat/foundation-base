@@ -45,10 +45,10 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAutoLock.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: TestAutoLock.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
 {

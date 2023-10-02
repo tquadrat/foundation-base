@@ -27,9 +27,9 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  v3  The third value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: IntTupel3.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: IntTupel3.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: IntTupel3.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: IntTupel3.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 public record IntTupel3( int v1, int v2, int v3 )
 { /* Empty block */ }
 //  record IntTupel3

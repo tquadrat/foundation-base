@@ -59,9 +59,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link Functions}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestWrappers.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestWrappers.java 1061 2023-09-25 16:32:43Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestWrappers.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestWrappers.java 1061 2023-09-25 16:32:43Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.function.functions.TestWrappers" )
 public class TestWrappers extends TestBaseClass
 {
