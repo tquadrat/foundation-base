@@ -18,6 +18,7 @@
 package org.tquadrat.foundation.lang;
 
 import static java.lang.Boolean.getBoolean;
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.lang.Thread.currentThread;
 import static java.nio.charset.Charset.defaultCharset;
@@ -28,7 +29,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -240,14 +240,13 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final String message, final Object... args )
     {
         if( m_IsDebug && nonNull( message ) && !message.isBlank() )
         {
             findCaller( "ifDebug", DebugOutput.class )
-                .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", format( message, args ), c ),
+                .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", format( message, args ), stackTraceElement.toString() ),
                     () -> m_Printer.printf( "DEBUG: %s%n", format( message, args ) ) );
         }
     }   //  ifDebug()
@@ -265,17 +264,17 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final Function<Object [],String> supplier, final Object... args )
     {
         if( m_IsDebug )
         {
-            final var message = requireNonNullArgument( supplier, "supplier" ).apply( requireNonNullArgument( args, "args" ) );
+            final var message = requireNonNullArgument( supplier, "supplier" )
+                .apply( requireNonNullArgument( args, "args" ) );
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
@@ -299,7 +298,6 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -309,7 +307,7 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
@@ -332,7 +330,6 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifDebug( final boolean condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -342,7 +339,7 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifDebug", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "DEBUG - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "DEBUG: %s%n", message ) );
             }
         }
@@ -387,14 +384,13 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final String message, final Object... args )
     {
         if( m_IsTest && nonNull( message ) && !message.isBlank() )
         {
             findCaller( "ifTest", DebugOutput.class )
-                .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", format( message, args ), c ),
+                .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "TEST - %2$s: %1$s%n", format( message, args ), stackTraceElement ),
                     () -> m_Printer.printf( "TEST: %s%n", format( message, args ) ) );
         }
     }   //  ifDebug()
@@ -414,7 +410,6 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final Function<Object [],String> supplier, final Object... args )
     {
@@ -424,7 +419,7 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }
@@ -448,7 +443,6 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -458,7 +452,7 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }
@@ -481,7 +475,6 @@ public final class DebugOutput
      *
      *  @see #setPrinter(Printer)
      */
-    @SuppressWarnings( "StandardVariableNames" )
     @API( status = STABLE, since = "0.1.0" )
     public static final void ifTest( final boolean condition, final Function<Object [],String> supplier, final Object... args )
     {
@@ -491,7 +484,7 @@ public final class DebugOutput
             if( nonNull( message ) && !message.isBlank() )
             {
                 findCaller( "ifTest", DebugOutput.class )
-                    .ifPresentOrElse( c -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, c.toString() ),
+                    .ifPresentOrElse( stackTraceElement -> m_Printer.printf( "TEST - %2$s: %1$s%n", message, stackTraceElement.toString() ),
                         () -> m_Printer.printf( "TEST: %s%n", message ) );
             }
         }

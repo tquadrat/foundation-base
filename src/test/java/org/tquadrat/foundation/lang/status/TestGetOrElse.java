@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang.status;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -24,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

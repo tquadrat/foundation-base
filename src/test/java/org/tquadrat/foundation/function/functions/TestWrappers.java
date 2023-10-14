@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.function.functions;
 
+import static java.lang.String.format;
 import static java.util.Objects.nonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -32,7 +33,6 @@ import static org.tquadrat.foundation.function.Functions.wrapSupplier;
 import static org.tquadrat.foundation.function.Functions.wrapTriConsumer;
 import static org.tquadrat.foundation.function.Functions.wrapTriFunction;
 import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 import static org.tquadrat.foundation.testutil.TestUtils.isNotEmptyOrBlank;
 
 import java.time.Instant;

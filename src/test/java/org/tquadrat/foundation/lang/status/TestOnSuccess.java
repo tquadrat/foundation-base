@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang.status;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.util.Locale.ROOT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
