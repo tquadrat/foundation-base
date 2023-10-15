@@ -1,1 +1,1 @@
-tagSearchIndex = [{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();
+tagSearchIndex = [{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Serialized Form","h":"","u":"serialized-form.html"},{"l":"TCE Wrapper","h":"class org.tquadrat.foundation.function.Functions","d":"Section","u":"org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#tce-wrapper-heading"}];updateSearchResults();

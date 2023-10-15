@@ -45,13 +45,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 1044 2023-02-04 09:58:19Z tquadrat $
+ *  @version $Id: DebugOutput.java 1077 2023-10-14 23:00:23Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1044 2023-02-04 09:58:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1077 2023-10-14 23:00:23Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {

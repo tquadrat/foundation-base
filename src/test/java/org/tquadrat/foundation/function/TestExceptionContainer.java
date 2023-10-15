@@ -43,7 +43,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link ExceptionContainer}
  */
 @SuppressWarnings( {"ThrowableNotThrown", "removal"} )
-@ClassVersion( sourceVersion = "$Id: TestExceptionContainer.java 793 2020-12-19 10:51:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestExceptionContainer.java 1077 2023-10-14 23:00:23Z tquadrat $" )
 public class TestExceptionContainer extends TestBaseClass
 {
         /*---------*\
