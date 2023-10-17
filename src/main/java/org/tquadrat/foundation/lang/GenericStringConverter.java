@@ -51,11 +51,15 @@ public class GenericStringConverter<T> implements StringConverter<T>
         \*------------*/
     /**
      *  The parser.
+     *
+     *  @serial
      */
     private final Function<CharSequence,T> m_Parser;
 
     /**
      *  The stringer.
+     *
+     *  @serial
      */
     private final Stringer<T> m_Stringer;
 

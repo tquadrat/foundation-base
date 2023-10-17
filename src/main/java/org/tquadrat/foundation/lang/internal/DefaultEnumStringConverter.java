@@ -82,6 +82,8 @@ public class DefaultEnumStringConverter<T extends Enum<T>> implements StringConv
         \*------------*/
     /**
      *  The data type of the property to set.
+     *
+     *  @serial
      */
     private final Class<T> m_EnumType;
 

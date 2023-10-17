@@ -51,6 +51,8 @@ public class ApplicationError extends Error
     /**
      *  A flag that indicates if the causing exception or the error condition
      *  was already logged.
+     *
+     *  @serial
      */
     private boolean m_IsAlreadyLogged = false;
 

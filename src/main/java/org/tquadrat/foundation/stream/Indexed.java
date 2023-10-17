@@ -59,11 +59,15 @@ public final class Indexed<T> implements Map.Entry<Long,T>, Serializable
         \*------------*/
     /**
      *  The index.
+     *
+     *  @serial
      */
     private final long m_Index;
 
     /**
      *  The value.
+     *
+     *  @serial
      */
     private T m_Value;
 
