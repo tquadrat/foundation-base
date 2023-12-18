@@ -35,13 +35,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  logged or not. The flag is honoured by some methods in Foundation Logging.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ApplicationError.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: ApplicationError.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class ApplicationError extends Error
 {

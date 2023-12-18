@@ -37,12 +37,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <T> The Object type for the conversion.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: GenericStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $
+ *  @version $Id: GenericStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.0.6
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: GenericStringConverter.java 897 2021-04-06 21:34:01Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: GenericStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.6" )
 public class GenericStringConverter<T> implements StringConverter<T>
 {

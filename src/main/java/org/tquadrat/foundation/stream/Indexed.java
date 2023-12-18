@@ -45,12 +45,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Indexed.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: Indexed.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Indexed.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Indexed.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.7" )
 public final class Indexed<T> implements Map.Entry<Long,T>, Serializable
 {

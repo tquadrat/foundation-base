@@ -59,12 +59,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *      implementation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultEnumStringConverter.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public class DefaultEnumStringConverter<T extends Enum<T>> implements StringConverter<T>
 {
