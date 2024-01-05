@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='624.000'
-     height='712.000'>
+     height='701.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='161.000'
+                  height='150.000'
                   width='574.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='574.000'
-                          height='161.000'
+                          height='150.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='28.000'
@@ -160,24 +160,22 @@
                           y='80.000'
                           class='abstract'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;? extends R&gt;):java.util.Optional&lt;R&gt;</text>
                     <text x='5.000'
-                          y='91.000'>&#x2A22; getLock():java.util.concurrent.locks.Lock</text>
-                    <text x='5.000'
-                          y='102.000'
+                          y='91.000'
                           class='abstract'>+ getWrappedLockInstance():java.util.concurrent.locks.Lock</text>
                     <text x='5.000'
-                          y='113.000'
+                          y='102.000'
                           class='abstract'>+ lock():org.tquadrat.foundation.lang.AutoLock</text>
                     <text x='5.000'
-                          y='124.000'
+                          y='113.000'
                           class='abstract'>+ lockInterruptibly():org.tquadrat.foundation.lang.AutoLock</text>
                     <text x='5.000'
-                          y='135.000'
+                          y='124.000'
                           class='abstract'>+ newCondition():java.util.concurrent.locks.Condition</text>
                     <text x='5.000'
-                          y='146.000'
+                          y='135.000'
                           class='abstract static'>+ of():org.tquadrat.foundation.lang.AutoLock</text>
                     <text x='5.000'
-                          y='157.000'
+                          y='146.000'
                           class='abstract static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.AutoLock</text>
                 </g>
             </g>
@@ -273,7 +271,7 @@
         </symbol>
     </defs>
     <path class='implementation'
-          d='M312.000,448.000 L312.000,348.000'
+          d='M312.000,437.000 L312.000,337.000'
           marker-end='url(#implementation)'/>
     <path class='inheritance'
           d='M312.000,187.000 L312.000,87.000'
@@ -285,6 +283,6 @@
          y='187.000'
          xlink:href='#org.tquadrat.foundation.lang.AutoLock'/>
     <use x='25.000'
-         y='448.000'
+         y='437.000'
          xlink:href='#org.tquadrat.foundation.lang.internal.AutoLockImpl'/>
 </svg>

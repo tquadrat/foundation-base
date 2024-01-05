@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -22,7 +22,6 @@ import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.lang.Thread.currentThread;
 import static java.nio.charset.Charset.defaultCharset;
-import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_DEBUG;
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_IS_TEST;
@@ -45,13 +44,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 1077 2023-10-14 23:00:23Z tquadrat $
+ *  @version $Id: DebugOutput.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1077 2023-10-14 23:00:23Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {
@@ -98,90 +97,6 @@ public final class DebugOutput
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set, execute the given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  supplier    The {@code Function} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifDebug(Function, Object...)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void debugOutput( final Function<Object [],String> supplier, final Object... args ) { ifDebug( supplier, args ); }
-
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set and the given
-     *  {@link BooleanSupplier condition}
-     *  resolves to {@code true}, execute the given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  condition   Only if {@code true}, there will be an output.
-     *  @param  supplier    The {@code Supplier} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifDebug(BooleanSupplier, Function, Object...)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void debugOutput( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args ) { ifDebug( condition, supplier, args ); }
-
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set and the given condition resolves to {@code true}, execute the
-     *  given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  condition   Only if {@code true}, there will be an output.
-     *  @param  supplier    The {@code Supplier} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifDebug(boolean, Function, Object...)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void debugOutput( final boolean condition, final Function<Object [],String> supplier, final Object... args ) { ifDebug( condition, supplier, args ); }
-
-    /**
-     *  <p>{@summary If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set, a call to
-     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace( out )}
-     *  is made.}</p>
-     *  <p>Use this to get a view to an otherwise ignored exception.</p>
-     *
-     *  @param  e   The exception.
-     *
-     *  @deprecated Use
-     *      {@link #ifDebug(Throwable)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void debugOutput( final Throwable e ) { ifDebug( e ); }
-
     /**
      *  <p>{@summary This method will find the caller for the method that is
      *  identified by its name and class, and returns the appropriate stack
@@ -546,90 +461,6 @@ public final class DebugOutput
     {
         m_Printer = requireNonNullArgument( printer, "printer" );
     }   //  setPrinter()
-
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
-     *  is set, execute the given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  supplier    The {@code Supplier} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifTest(Function, Object...)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void testOutput( final Function<Object [],String> supplier, final Object... args ) { ifTest( supplier, args ); }
-
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
-     *  is set and the given
-     *  {@link BooleanSupplier condition}
-     *  resolves to {@code true}, execute the given
-     *  {@link Function}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  condition   Only if {@code true}, there will be an output.
-     *  @param  supplier    The {@code Supplier} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifTest(BooleanSupplier, Function, Object...)}  }
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void testOutput( final BooleanSupplier condition, final Function<Object [],String> supplier, final Object... args ) { ifTest( condition, supplier, args ); }
-
-    /**
-     *  If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
-     *  is set and the given condition resolves to {@code true}, execute the
-     *  given
-     *  {@link Supplier}
-     *  and write the result to
-     *  {@link System#out System.out}.
-     *
-     *  @param  condition   Only if {@code true}, there will be an output.
-     *  @param  supplier    The {@code Supplier} for the output.
-     *  @param  args    Optional argument for the {@code supplier}.
-     *
-     *  @deprecated Use
-     *      {@link #ifTest(boolean, Function, Object...)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void testOutput( final boolean condition, final Function<Object [],String> supplier, final Object... args ) { ifTest( condition, supplier, args ); }
-
-    /**
-     *  <p>{@summary If the
-     *  {@linkplain System#getProperty(String) System property}
-     *  {@value CommonConstants#PROPERTY_IS_TEST}
-     *  is set, a call to
-     *  {@link Throwable#printStackTrace(PrintStream) e.printStackTrace( out )}
-     *  is made.}</p>
-     *  <p>Use this to provide a view to an otherwise ignored exception.</p>
-     *
-     *  @param  e   The exception.
-     *
-     *  @deprecated Use
-     *      {@link #ifTest(Throwable)}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.1.0" )
-    public static final void testOutput( final Throwable e ) { ifTest( e ); }
 }
 //  class DebugOutput
 

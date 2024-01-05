@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -31,9 +31,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link Functions}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestFunctions.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestFunctions.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestFunctions.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestFunctions.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.function.TestFunctions" )
 public class TestFunctions extends TestBaseClass
 {
@@ -57,12 +57,12 @@ public class TestFunctions extends TestBaseClass
         assertEquals( Integer.MAX_VALUE, supplier.get() );
         assertEquals( Integer.MAX_VALUE, supplier.getAsNumber() );
 
-        final Setter<String> setter = s -> {/* Does nothing */};
+        final Setter<String> setter = _ -> {/* Does nothing */};
         setter.set( NULL_STRING );
 
-        final TriConsumer<Integer,Integer,Integer> consumer = ( v1, v2, v3) -> {/* Does nothing */};
+        final TriConsumer<Integer,Integer,Integer> consumer = ( _, _, _) -> {/* Does nothing */};
         consumer.accept( 1, 2, 3 );
-        consumer.andThen( (v1, v2, v3) -> {/* Does nothing */} ).accept( 1, 2, 3 );
+        consumer.andThen( (_, _, _) -> {/* Does nothing */} ).accept( 1, 2, 3 );
 
         final TriFunction<Integer,Integer,Integer,Integer> function = ( v1, v2, v3) -> v1 + v2 + v3;
         assertEquals( 6, function.apply( 1, 2, 3 ).intValue() );

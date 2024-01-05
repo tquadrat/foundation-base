@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.lang.status;
 
+import static java.lang.String.format;
 import static java.lang.System.out;
 import static java.util.Locale.ROOT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +27,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.util.function.Function;
 
@@ -83,7 +83,7 @@ public class TestMap extends TestBaseClass
 
         final var candidate = new Status<String,Throwable>( "result",null );
         assertNotNull( candidate.result() );
-        final var expected = candidate.result().toUpperCase();
+        final var expected = candidate.result().toUpperCase( ROOT );
         assertNull( candidate.errorCode() );
         assertTrue( candidate.isSuccess() );
 

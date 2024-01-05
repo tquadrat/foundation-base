@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,11 +34,11 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  Playing around with
  *  {@link DebugOutput}.
  *
- *  @version $Id: DebugOutputTester.java 997 2022-01-26 14:55:05Z tquadrat $
+ *  @version $Id: DebugOutputTester.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @PlaygroundClass
-@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 997 2022-01-26 14:55:05Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutputTester
 {
@@ -65,11 +65,11 @@ public final class DebugOutputTester
             out.printf( "isDebug: %b%n", isDebug() );
             out.printf( "isTest : %b%n", isTest() );
 
-            ifDebug( $ -> "DebugOutput" );
-            ifTest( $ -> "TestOutput" );
+            ifDebug( _ -> "DebugOutput" );
+            ifTest( _ -> "TestOutput" );
 
-            ifDebug( () -> true, $ -> "DebugOutput" );
-            ifTest( () -> true, $ -> "TestOutput" );
+            ifDebug( () -> true, _ -> "DebugOutput" );
+            ifTest( () -> true, _ -> "TestOutput" );
 
             ifDebug( true, "DebugOutput: %s, %s"::formatted, "value1", "value2" );
             ifTest( true, "TestOutput: %s, %s"::formatted, "value1", "value2" );

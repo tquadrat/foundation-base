@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -87,20 +87,15 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
-public sealed class LambdaContainerException extends CheckedExceptionWrapper
-    /*
-     *  LambdaContainerException will allow to be extended by the deprecated
-     *  ExceptionContainer until that class is finally removed.
-     */
-    permits org.tquadrat.foundation.function.ExceptionContainer
+public final class LambdaContainerException extends CheckedExceptionWrapper
 {
         /*---------------*\
     ====** Inner Classes **====================================================

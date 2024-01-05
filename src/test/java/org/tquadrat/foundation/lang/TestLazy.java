@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -47,9 +47,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.LazyImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestLazy.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestLazy.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestLazy.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestLazy.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.util.TestLazy" )
 public class TestLazy extends TestBaseClass
 {
@@ -72,10 +72,10 @@ public class TestLazy extends TestBaseClass
         assertTrue( l1.isPresent() );
         l1.ifPresent( Assertions::assertNull );
         assertNull( l1.get() );
-        assertEquals( l1.getAsString(), NULL_STRING );
+        assertEquals( NULL_STRING, l1.getAsString() );
         mapResult = l1.map( Objects::toString );
         assertTrue( mapResult.isPresent() );
-        assertEquals( mapResult.get(), NULL_STRING );
+        assertEquals( NULL_STRING, mapResult.get() );
 
         final var list = List.of( "eins", "zwei", "drei" );
         final var l2 = Lazy.of( list );
@@ -107,7 +107,7 @@ public class TestLazy extends TestBaseClass
         assertNotNull( lazy );
         assertFalse( lazy.isPresent() );
 
-        lazy.ifPresent( l -> fail( "Should not be called" ) );
+        lazy.ifPresent( _ -> fail( "Should not be called" ) );
 
         final Class<? extends Throwable> expectedException = IllegalStateException.class;
         try

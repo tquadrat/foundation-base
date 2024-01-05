@@ -40,9 +40,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  will not identify an empty array as empty.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: BugHunt_20201230_001.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: BugHunt_20201230_001.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: BugHunt_20201230_001.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: BugHunt_20201230_001.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.BugHunt_20201230_001" )
 public class BugHunt_20201230_001 extends TestBaseClass
 {
@@ -75,6 +75,7 @@ public class BugHunt_20201230_001 extends TestBaseClass
             assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
         }
 
+        //noinspection ZeroLengthArrayAllocation
         candidate = new Boolean [0];
         try
         {

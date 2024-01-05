@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -36,9 +36,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#checkIndex(int, int)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCheckIndex.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestCheckIndex.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCheckIndex.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCheckIndex.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestCheckIndex" )
 public class TestCheckIndex extends TestBaseClass
 {
@@ -59,8 +59,8 @@ public class TestCheckIndex extends TestBaseClass
     {
         skipThreadTest();
 
-        final int index = arguments.v1();
-        final int length = arguments .v3();
+        final var index = arguments.v1();
+        final var length = arguments .v3();
 
         if( (index < 0) || (index >= length) || (length < 0) )
         {
@@ -73,7 +73,7 @@ public class TestCheckIndex extends TestBaseClass
             catch( final AssertionError e ) { throw e; }
             catch( final Throwable t )
             {
-                final boolean isExpectedException = expectedException.isInstance( t );
+                final var isExpectedException = expectedException.isInstance( t );
                 assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
             }
         }

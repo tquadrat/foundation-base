@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,9 +17,9 @@
 
 package org.tquadrat.foundation.lang;
 
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,10 +39,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.LockExecutorImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestLockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: TestLockExecutor.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestLockExecutor.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestLockExecutor.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestLockExecutor" )
 public class TestLockExecutor extends TestBaseClass
 {
@@ -74,14 +73,13 @@ public class TestLockExecutor extends TestBaseClass
         candidate.execute( inputStream::close );
 
         final Throwable e = assertThrows( ExecutionFailedException.class, () -> candidate.execute( inputStream::readAllBytes ) );
-        assertTrue( e.getCause() instanceof IOException );
+        assertInstanceOf( IOException.class, e.getCause() );
     }   //  testExecute()
 
     /**
      *  Tests for the method
      *  {@link AutoLock#of(java.util.concurrent.locks.Lock)}.
      */
-    @SuppressWarnings( "resource" )
     @Test
     final void testExecuteWithNullArgument()
     {
@@ -103,7 +101,6 @@ public class TestLockExecutor extends TestBaseClass
      *  Tests for the method
      *  {@link AutoLock#of(java.util.concurrent.locks.Lock)}.
      */
-    @SuppressWarnings( "resource" )
     @Test
     final void testOfWithNullArgument()
     {

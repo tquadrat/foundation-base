@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,10 +17,10 @@
 
 package org.tquadrat.foundation.exception.lambdacontainerexception;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.internal.SharedFormatter.format;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -42,7 +42,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  */
 @SuppressWarnings( "ThrowableNotThrown" )
 @DisplayName( "org.tquadrat.foundation.exception.lambdacontainerexception.TestCheckIfExpected" )
-@ClassVersion( sourceVersion = "$Id: TestCheckIfExpected.java 793 2020-12-19 10:51:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCheckIfExpected.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 public class TestCheckIfExpected extends TestBaseClass
 {
         /*---------*\

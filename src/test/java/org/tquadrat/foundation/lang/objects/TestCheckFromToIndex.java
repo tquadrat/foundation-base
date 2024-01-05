@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -36,9 +36,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#checkFromToIndex(int, int, int)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCheckFromToIndex.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestCheckFromToIndex.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCheckFromToIndex.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCheckFromToIndex.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestCheckFromToIndex" )
 public class TestCheckFromToIndex extends TestBaseClass
 {
@@ -59,9 +59,9 @@ public class TestCheckFromToIndex extends TestBaseClass
     {
         skipThreadTest();
 
-        final int fromIndex = arguments.v1();
-        final int toIndex = arguments.v2();
-        final int length = arguments .v3();
+        final var fromIndex = arguments.v1();
+        final var toIndex = arguments.v2();
+        final var length = arguments .v3();
 
         if( (fromIndex < 0) || (fromIndex > toIndex) || (toIndex > length) || (length < 0) )
         {
@@ -74,7 +74,7 @@ public class TestCheckFromToIndex extends TestBaseClass
             catch( final AssertionError e ) { throw e; }
             catch( final Throwable t )
             {
-                final boolean isExpectedException = expectedException.isInstance( t );
+                final var isExpectedException = expectedException.isInstance( t );
                 assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
             }
         }

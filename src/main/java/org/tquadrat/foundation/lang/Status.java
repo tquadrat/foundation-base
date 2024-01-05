@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,7 +17,6 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
@@ -54,7 +53,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1045 2023-02-07 23:09:17Z tquadrat $
+ *  @version $Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -66,33 +65,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1045 2023-02-07 23:09:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
-    /**
-     *  Returns the result in case of a success, otherwise executes the given
-     *  error handler and throws the exception determined by it.
-     *
-     *  @param  errorHandler    The error handler.
-     *  @return The result.
-     *  @throws RuntimeException    Any exception that is determined by the
-     *      error handler.
-     *
-     *  @deprecated Was replaced by
-     *      {@link #getOrElseThrow(ErrorHandler)}
-     *      because of the misleading name.
-     */
-    @Deprecated( since = "0.2.1", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.2.1" )
-    public final V getOrElse( final ErrorHandler<? super C> errorHandler ) throws RuntimeException
-    {
-        return getOrElseThrow( errorHandler );
-    }   //  getOrElse()
-
     /**
      *  Returns the result in case of a success, otherwise executes the given
      *  error handler and throws the exception determined by it.

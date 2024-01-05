@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -34,12 +34,12 @@ import org.tquadrat.foundation.exception.UnsupportedEnumError;
  *  @param  data    The result data.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1049 2023-02-25 19:13:40Z tquadrat $
+ *  @version $Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Status.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status( ResultCode resultCode, Optional<Data> data )
 {
@@ -53,6 +53,7 @@ public record Status( ResultCode resultCode, Optional<Data> data )
     }
     //  enum ResultCode
 
+    @SuppressWarnings( {"EmptyClass", "NewClassNamingConvention"} )
     public static class Data {}
 
         /*-----------*\
@@ -66,12 +67,12 @@ public record Status( ResultCode resultCode, Optional<Data> data )
         /*--------------*\
     ====** Constructors **=====================================================
         \*--------------*/
-    public Status( final ResultCode rc, final Data d )
+    public Status( final ResultCode rc, final Data dataArg )
     {
-        this( rc, Optional.ofNullable( d ) );
+        this( rc, Optional.ofNullable( dataArg ) );
     }   //  Status()
 
-    public Status( final ResultCode resultCode, final Optional<Data> data )
+    public Status( final ResultCode resultCode, @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional<Data> data )
     {
         this.resultCode = requireNonNullArgument( resultCode, "resultCode" );
         this.data = requireNonNullArgument( data, "data" );
@@ -86,6 +87,7 @@ public record Status( ResultCode resultCode, Optional<Data> data )
         while( proceed )
         {
             final var status = new Status( SUCCESS, new Data() );
+            //noinspection SwitchStatementWithTooFewBranches
             switch( status.resultCode() )
             {
                 case NO_DATA -> proceed = false;

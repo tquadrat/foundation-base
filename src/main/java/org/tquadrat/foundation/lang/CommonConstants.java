@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,32 +17,18 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.System.getProperty;
-import static org.apiguardian.api.API.Status.DEPRECATED;
+import static java.lang.System.lineSeparator;
 import static org.apiguardian.api.API.Status.STABLE;
 
-import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.net.InetAddress;
-import java.net.URI;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.time.Instant;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 import java.util.PropertyResourceBundle;
 import java.util.TimeZone;
-import java.util.UUID;
 import java.util.function.Predicate;
-import java.util.regex.Pattern;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -61,13 +47,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: CommonConstants.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( {"ClassWithTooManyFields", "UnnecessaryUnicodeEscape"} )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@SuppressWarnings( {"UnnecessaryUnicodeEscape"} )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -118,426 +104,6 @@ public final class CommonConstants
 
     //---* Empty Array Constants *---------------------------------------------
     /**
-     *  An empty array of {@code boolean}s.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final boolean [] EMPTY_boolean_ARRAY =  new boolean [0];
-
-    /**
-     *  An empty array of
-     *  {@link Boolean}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Boolean [] EMPTY_Boolean_ARRAY = new Boolean [0];
-
-    /**
-     *  An empty array of {@code byte}s.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final byte [] EMPTY_byte_ARRAY = new byte [0];
-
-    /**
-     *  An empty array of
-     *  {@link Byte}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Byte [] EMPTY_Byte_ARRAY = new Byte [0];
-
-    /**
-     *  An empty array of {@code char}s.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final char [] EMPTY_char_ARRAY = new char [0];
-
-    /**
-     *  An empty array of
-     *  {@link Character}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Character [] EMPTY_Character_ARRAY = new Character [0];
-
-    /**
-     *  An empty array of
-     *  {@link CharSequence}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final CharSequence [] EMPTY_CharSequence_ARRAY = new CharSequence [0];
-
-    /**
-     *  An empty array of
-     *  {@link Class}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Class<?> [] EMPTY_Class_ARRAY = new Class<?> [0];
-
-    /**
-     *  An empty array of
-     *  {@link Comparable}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Comparable<?> [] EMPTY_Comparable_ARRAY = new Comparable<?> [0];
-
-    /**
-     *  An empty array of
-     *  {@link java.util.Date}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @SuppressWarnings( "UseOfObsoleteDateTimeApi" )
-    @API( status = STABLE, since = "0.0.5" )
-    public static final Date [] EMPTY_Date_ARRAY = new Date [0];
-
-    /**
-     *  An empty array of {@code double}s.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final double [] EMPTY_double_ARRAY = new double [0];
-
-    /**
-     *  An empty array of
-     *  {@link Double}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Double [] EMPTY_Double_ARRAY = new Double [0];
-
-    /**
-     *  An empty array of
-     *  {@link Exception}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Exception [] EMPTY_Exception_ARRAY = new Exception [0];
-
-    /**
-     *  An empty array of
-     *  {@link Field}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Field [] EMPTY_Field_ARRAY = new Field [0];
-
-    /**
-     *  An empty array of
-     *  {@link File}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final File [] EMPTY_File_ARRAY = new File [0];
-
-    /**
-     *  An empty array of {@code float}s.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final float [] EMPTY_float_ARRAY = new float [0];
-
-    /**
-     *  An empty array of
-     *  {@link Float}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Float [] EMPTY_Float_ARRAY = new Float [0];
-
-    /**
-     *  An empty array of InetAddress objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final InetAddress [] EMPTY_InetAddress_ARRAY = new InetAddress [0];
-
-    /**
-     *  An empty array of
-     *  {@link Instant}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Instant [] EMPTY_Instant_ARRAY = new Instant [0];
-
-    /**
-     *  An empty array of {@code int} values.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final int [] EMPTY_int_ARRAY = new int [0];
-
-    /**
-     *  An empty array of
-     *  {@link Integer}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Integer [] EMPTY_Integer_ARRAY = new Integer [0];
-
-    /**
-     *  An empty array of
-     *  {@link List}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final List<?> [] EMPTY_List_ARRAY = new List<?> [0];
-
-    /**
-     *  An empty array of
-     *  {@link Locale}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Locale [] EMPTY_Locale_ARRAY = new Locale [0];
-
-    /**
-     *  An empty array of {@code long} elements.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final long [] EMPTY_long_ARRAY = new long [0];
-
-    /**
-     *  An empty array of
-     *  {@link Long}
-     *   objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Long [] EMPTY_Long_ARRAY = new Long [0];
-
-    /**
-     *  An empty array of
-     *  {@link Map}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Map<?,?> [] EMPTY_Map_ARRAY = new Map<?,?> [0];
-
-    /**
-     *  An empty array of
-     *  {@link java.util.Map.Entry}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Map.Entry<?,?> [] EMPTY_MapEntry_ARRAY = new Map.Entry<?,?> [0];
-
-    /**
-     *  An empty array of
-     *  {@link Method}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Method [] EMPTY_Method_ARRAY = new Method [0];
-
-    /**
-     *  An empty array of
-     *  {@link Number}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Number [] EMPTY_Number_ARRAY = new Number [0];
-
-    /**
      *  An empty array of
      *  {@link Object}
      *  objects.
@@ -547,129 +113,11 @@ public final class CommonConstants
 
     /**
      *  An empty array of
-     *  {@link Pattern}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Pattern [] EMPTY_Pattern_ARRAY = new Pattern [0];
-
-    /**
-     *  An empty array of {@code short}.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final short [] EMPTY_short_ARRAY = new short [0];
-
-    /**
-     *  An empty array of
-     *  {@link Short}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Short [] EMPTY_Short_ARRAY = new Short [0];
-
-    /**
-     *  An empty array of
-     *  {@link StackTraceElement}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final StackTraceElement [] EMPTY_StackTraceElement_ARRAY = new StackTraceElement [0];
-
-    /**
-     *  An empty array of
      *  {@link String}
      *  instances.
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final String [] EMPTY_String_ARRAY = new String [0];
-
-    /**
-     *  An empty array of
-     *  {@link Throwable}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final Throwable [] EMPTY_Throwable_ARRAY = new Throwable [0];
-
-    /**
-     *  An empty array of
-     *  {@link URI}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final URI [] EMPTY_URI_ARRAY = new URI [0];
-
-    /**
-     *  An empty array of
-     *  {@link URL}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final URL [] EMPTY_URL_ARRAY = new URL [0];
-
-    /**
-     *  An empty array of
-     *  {@link UUID}
-     *  objects.
-     *
-     *  @deprecated The empty arrays were created to optimize the use of the
-     *      method {@code toArray(Object[])} of the collection types. This got
-     *      obsolete when Java&nbsp;11 introduced the method
-     *      {@code toArray(IntFunction)}; the {@code IntFunction} could be the
-     *      call to {@code new []}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final UUID [] EMPTY_UUID_ARRAY = new UUID [0];
 
     //---* Numerical constants that are not in Math *--------------------------
     /**
@@ -745,19 +193,6 @@ public final class CommonConstants
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final String PROPERTY_CPUARCHITECTURE = "os.arch";
-
-    /**
-     *  The optional system property for enabling java mail session debug:
-     *  {@value}.<br>
-     *  <br>This flag will not be recognised automatically. Refer to the
-     *  documentation of {@code javax.mail.Session}.
-     *
-     *  @deprecated Replaced by
-     *      {@link #PROPERTY_MAIL_SESSION_DEBUG}.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    @API( status = DEPRECATED, since = "0.0.5" )
-    public static final String PROPERTY_ENABLE_JAVA_MAIL_SESSION_DEBUG = "javax.mail.Session.debug";
 
     /**
      *  The vested system property for the file encoding used by the JVM:
@@ -1423,7 +858,7 @@ public final class CommonConstants
     //---* Initialise ... *----------------------------------------------------
     static
     {
-        CR = getProperty( PROPERTY_LINE_SEPARATOR );
+        CR = lineSeparator();
 
         final var format = (DecimalFormat) NumberFormat.getInstance();
         final var symbols = format.getDecimalFormatSymbols();

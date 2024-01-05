@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -207,7 +207,7 @@ public class TestOnSuccess extends TestBaseClass
         final var errorCode = new ValidationException();
         final var result = "result";
 
-        final var action = (Consumer<String>) s -> { /* Does nothing */ };
+        final var action = (Consumer<String>) _ -> { /* Does nothing */ };
         final var conversion = (Function<String, String>) s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
         final var errorHandler = (ErrorHandler<RuntimeException>) e -> e;
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -21,6 +21,7 @@ import static java.lang.String.format;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -45,10 +46,10 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAutoLock.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
 @SuppressWarnings( "MisorderedAssertEqualsArguments" )
-@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
 {
@@ -70,7 +71,6 @@ public class TestAutoLock extends TestBaseClass
 
         final var sourceLock = new ReentrantLock();
 
-        @SuppressWarnings( "resource" )
         final var lock = AutoLock.of( sourceLock );
         assertNotNull( lock );
 
@@ -78,10 +78,10 @@ public class TestAutoLock extends TestBaseClass
         {
             assertNotNull( localLock );
 
-            final var l = localLock.getWrappedLockInstance();
-            assertNotNull( l );
-            assertEquals( sourceLock, l );
-            assertSame( sourceLock, l );
+            final var wrappedLockInstance = localLock.getWrappedLockInstance();
+            assertNotNull( wrappedLockInstance );
+            assertEquals( sourceLock, wrappedLockInstance );
+            assertSame( sourceLock, wrappedLockInstance );
 
             assertEquals( sourceLock.getHoldCount(), 1 );
             assertTrue( sourceLock.isHeldByCurrentThread() );
@@ -96,16 +96,16 @@ public class TestAutoLock extends TestBaseClass
         {
             assertNotNull( localLock );
 
-            final var l = localLock.getWrappedLockInstance();
-            assertNotNull( l );
-            assertEquals( sourceLock, l );
-            assertSame( sourceLock, l );
+            final var wrappedLockInstance = localLock.getWrappedLockInstance();
+            assertNotNull( wrappedLockInstance );
+            assertEquals( sourceLock, wrappedLockInstance );
+            assertSame( sourceLock, wrappedLockInstance );
 
             assertEquals( sourceLock.getHoldCount(), 1 );
             assertTrue( sourceLock.isHeldByCurrentThread() );
             assertTrue( sourceLock.isLocked() );
         }
-        catch( @SuppressWarnings( "unused" ) final InterruptedException e ) { /* Deliberately ignored */ }
+        catch( @SuppressWarnings( "unused" ) final InterruptedException _ ) { /* Deliberately ignored */ }
 
         assertEquals( sourceLock.getHoldCount(), 0 );
         assertFalse( sourceLock.isHeldByCurrentThread() );
@@ -141,7 +141,7 @@ public class TestAutoLock extends TestBaseClass
         candidate.execute( inputStream::close );
 
         final Throwable e = assertThrows( ExecutionFailedException.class, () -> candidate.execute( inputStream::readAllBytes ) );
-        assertTrue( e.getCause() instanceof IOException );
+        assertInstanceOf( IOException.class, e.getCause() );
     }   //  testExecute()
 
     /**

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -43,9 +43,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link GenericStringConverter}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestGenericStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestGenericStringConverter.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestGenericStringConverter.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestGenericStringConverter.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestGenericStringConverter" )
 public class TestGenericStringConverter extends TestBaseClass
 {
@@ -61,7 +61,7 @@ public class TestGenericStringConverter extends TestBaseClass
     {
         skipThreadTest();
 
-        final var candidate = new GenericStringConverter<>( s -> isNull( s ) ? null : Month.valueOf( s.toString() ), Month::toString );
+        final var candidate = new GenericStringConverter<>( charSequence -> isNull( charSequence ) ? null : Month.valueOf( charSequence.toString() ), Month::toString );
         assertNotNull( candidate );
 
         assertNull( candidate.fromString( null ) );
@@ -127,7 +127,7 @@ public class TestGenericStringConverter extends TestBaseClass
     {
         skipThreadTest();
 
-        final var candidate = new GenericStringConverter<>( s -> isNull( s ) ? null : Month.valueOf( s.toString() ), Month::toString );
+        final var candidate = new GenericStringConverter<>( charSequence -> isNull( charSequence ) ? null : Month.valueOf( charSequence.toString() ), Month::toString );
         assertNotNull( candidate );
 
         assertEquals( value, candidate.fromString( candidate.toString( value ) ) );

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.scratch;
 
+import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static org.apiguardian.api.API.Status.STABLE;
@@ -40,19 +41,21 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  Comment
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MyClass.java 1052 2023-03-06 06:30:36Z tquadrat $
+ *  @version $Id: MyClass.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MyClass.java 1052 2023-03-06 06:30:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MyClass.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class MyClass
 {
         /*---------------*\
     ====** Inner Classes **====================================================
         \*---------------*/
+    @SuppressWarnings( "NewClassNamingConvention" )
     public static class Data{}
+    @SuppressWarnings( "EmptyClass" )
     public static class ProcessContext{}
 
     public record PersonId( String id ) implements Cloneable, Comparable<PersonId>
@@ -91,7 +94,7 @@ public class MyClass
         @Override
         public final String toString() { return id; }
 
-        private final boolean validate( final String id )
+        private final boolean validate( @SuppressWarnings( "ParameterHidesMemberVariable" ) final String id )
         {
             return true;
         }   //  validate()
@@ -199,28 +202,28 @@ public class MyClass
     public final void aMethod( final String... args )
     {
         args [0] = "NewValue";
+        @SuppressWarnings( "unused" )
         final var c1 = args.clone();
 
+        @SuppressWarnings( "MismatchedReadAndWriteOfArray" )
         final var c2 = new String [args.length];
         System.arraycopy( args, 0, c2, 0, args.length );
 
+        @SuppressWarnings( "unused" )
         final var c3 = Arrays.copyOf( args, args.length );
 
+        @SuppressWarnings( "unused" )
         final var c4 = Arrays.stream( args ).toArray( String []::new );
 
         final var strings = List.of( "eins", "zwei", "drei", "vier" );
+        @SuppressWarnings( "unused" )
         final var result = strings.stream()
-            .collect( groupingBy( s -> s, counting() ) )
+            .collect( groupingBy( identity(), counting() ) )
             .entrySet()
             .stream()
             .max( Map.Entry.comparingByValue() )
             .map( Map.Entry::getKey );
     }   //  aMethod()
-
-//    public final void aMethod( final String [] args )
-//    {
-//        args [0] = "NewValue";
-//    }   //  aMethod()
 
     /**
      *  Obtains the input data from somewhere; the default
@@ -276,10 +279,10 @@ public class MyClass
      *  {@link Data}
      *  instance.
      *
-     *  @param  inputStream The input stream.
+     *  @param  ignoredInputStream The input stream.
      *  @return The data.
      */
-    private final Data readStream( final InputStream inputStream )
+    private final Data readStream( final InputStream ignoredInputStream )
     {
         final var retValue = new Data();
 
@@ -291,10 +294,10 @@ public class MyClass
      *  Validates the input data.
      *
      *  @param  data    The input data.
-     *  @param  context The process context.
+     *  @param  ignoredContext The process context.
      *  @throws IllegalArgumentException  The input data is invalid.
      */
-    private final void validateData( final Data data, final ProcessContext context )
+    private final void validateData( final Data data, final ProcessContext ignoredContext )
     {
         if( /* data is not valid */isNull( data ) ) throw new IllegalArgumentException();
     }   //  validateData()

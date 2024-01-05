@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -42,11 +42,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Tests for the class
  *  {@link NameValuePair}.
  *
- *  @version $Id: TestNameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $
+ *  @version $Id: TestNameValuePair.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: TestNameValuePair.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestNameValuePair.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.TestNameValuePair" )
 public class TestNameValuePair extends TestBaseClass

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -34,9 +34,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDeepEquals.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: TestDeepEquals.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestDeepEquals.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDeepEquals.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestDeepEquals" )
 public class TestDeepEquals extends TestBaseClass
 {
@@ -55,9 +55,9 @@ public class TestDeepEquals extends TestBaseClass
     {
         skipThreadTest();
 
-        final int [] expected = { 0, 0, 0 };
+        final var expected = new int[] {0, 0, 0};
 
-        final int [] array = {value.v1(), value.v2(), value.v3()};
+        final var array = new int[] {value.v1(), value.v2(), value.v3()};
 
         assertEquals( deepEquals( expected, array ), java.util.Objects.deepEquals( expected, array ) );
         assertEquals( deepEquals( array, array ), java.util.Objects.deepEquals( array, array ) );

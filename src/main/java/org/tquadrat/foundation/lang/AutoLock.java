@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -68,14 +68,14 @@ import org.tquadrat.foundation.lang.internal.AutoLockImpl;
  *  unpredictable effects.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $
+ *  @version $Id: AutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface AutoLock extends AutoCloseable
     permits org.tquadrat.foundation.lang.internal.AutoLockImpl
@@ -86,13 +86,13 @@ public sealed interface AutoLock extends AutoCloseable
     /**
      *  <p>{@summary This exception is thrown when an operation fails.} The
      *
-     *  @version $Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $
+     *  @version $Id: AutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1049 2023-02-25 19:13:40Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static final class ExecutionFailedException extends RuntimeException
     {
@@ -149,21 +149,6 @@ public sealed interface AutoLock extends AutoCloseable
      *      reason.
      */
     public <R> Optional<R> execute( final Operation<? extends R> operation ) throws ExecutionFailedException;
-
-    /**
-     *  Returns the wrapped lock.
-     *
-     *  @return The wrapped lock.
-     *
-     *  @deprecated The name {@code getLock()} might cause confusion as it is
-     *      not obviously enough distinguished from
-     *      {@link #lock()}.
-     *      Therefore, it was decided to rename it. Use
-     *      {@link #getWrappedLockInstance()}
-     *      instead.
-     */
-    @Deprecated( since = "0.1.0", forRemoval = true )
-    public default Lock getLock() { return getWrappedLockInstance(); }
 
     /**
      *  Returns the wrapped lock.

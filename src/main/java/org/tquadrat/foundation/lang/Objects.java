@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -69,14 +69,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: Objects.java 1085 2024-01-05 16:23:28Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1085 2024-01-05 16:23:28Z tquadrat $" )
 public final class Objects
 {
         /*--------------*\
@@ -197,9 +197,10 @@ public final class Objects
      *      throw new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; );
      *  }
      *  …</code></pre>
-     *  <p>that may be easier to read than the {@code if} statement:</p>
+     *  <p>Code using this method may be easier to read than the {@code if}
+     *  statement above:</p>
      *  <pre><code>  …
-     *  checkState( !&lt;<i>condition</i>&gt;, () -> new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; ) );
+     *  checkState( &lt;<i>condition</i>&gt;, () -> new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; ) );
      *  …</code></pre>
      *
      *  @param  <E> The type of the exception that is thrown in case the
@@ -760,7 +761,6 @@ public final class Objects
         switch( arg )
         {
             case null -> throw new NullArgumentException( name );
-            //noinspection QuestionableName
             case final String string ->
             {
                 if( string.isEmpty() ) throw new EmptyArgumentException( name );

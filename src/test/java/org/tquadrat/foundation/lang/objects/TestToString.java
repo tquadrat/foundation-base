@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -46,9 +46,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#toString(Object,String)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestToString.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestToString.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestToString.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestToString.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestToString" )
 public class TestToString extends TestBaseClass
 {
@@ -102,6 +102,7 @@ public class TestToString extends TestBaseClass
         candidate = EMPTY_String_ARRAY;
         assertEquals( Arrays.toString( candidate ), Objects.toString( candidate ) );
 
+        //noinspection ZeroLengthArrayAllocation
         candidate = new Integer [0];
         assertEquals( Arrays.toString( candidate ), Objects.toString( candidate ) );
 
