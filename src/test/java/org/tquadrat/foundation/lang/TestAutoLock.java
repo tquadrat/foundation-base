@@ -48,7 +48,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
@@ -83,12 +82,12 @@ public class TestAutoLock extends TestBaseClass
             assertEquals( sourceLock, wrappedLockInstance );
             assertSame( sourceLock, wrappedLockInstance );
 
-            assertEquals( sourceLock.getHoldCount(), 1 );
+            assertEquals( 1, sourceLock.getHoldCount() );
             assertTrue( sourceLock.isHeldByCurrentThread() );
             assertTrue( sourceLock.isLocked() );
         }
 
-        assertEquals( sourceLock.getHoldCount(), 0 );
+        assertEquals( 0, sourceLock.getHoldCount() );
         assertFalse( sourceLock.isHeldByCurrentThread() );
         assertFalse( sourceLock.isLocked() );
 
@@ -101,13 +100,13 @@ public class TestAutoLock extends TestBaseClass
             assertEquals( sourceLock, wrappedLockInstance );
             assertSame( sourceLock, wrappedLockInstance );
 
-            assertEquals( sourceLock.getHoldCount(), 1 );
+            assertEquals( 1, sourceLock.getHoldCount() );
             assertTrue( sourceLock.isHeldByCurrentThread() );
             assertTrue( sourceLock.isLocked() );
         }
         catch( @SuppressWarnings( "unused" ) final InterruptedException _ ) { /* Deliberately ignored */ }
 
-        assertEquals( sourceLock.getHoldCount(), 0 );
+        assertEquals( 0, sourceLock.getHoldCount() );
         assertFalse( sourceLock.isHeldByCurrentThread() );
         assertFalse( sourceLock.isLocked() );
 
@@ -122,7 +121,31 @@ public class TestAutoLock extends TestBaseClass
 
     /**
      *  Tests for the method
-     *  {@link AutoLock#of(java.util.concurrent.locks.Lock)}.
+     *  {@link AutoLock#evaluate(Constraint)}.
+     */
+    @SuppressWarnings( {"resource", "MismatchedQueryAndUpdateOfStringBuilder"} )
+    @Test
+    final void testEvaluate()
+    {
+        skipThreadTest();
+
+        final var candidate = AutoLock.of();
+
+        final var buffer = new StringBuilder();
+
+        assertTrue( candidate.evaluate( buffer::isEmpty ) );
+        assertFalse( candidate.evaluate( () -> !buffer.isEmpty() ) );
+
+        buffer.append( "Something" );
+        assertFalse( candidate.evaluate( buffer::isEmpty ) );
+        assertTrue( candidate.evaluate( () -> !buffer.isEmpty() ) );
+    }   //  testExecute()
+
+    /**
+     *  Tests for the methods
+     *  {@link AutoLock#execute(Operation)}
+     *  and
+     *  {@link AutoLock#execute(Action)}.
      */
     @SuppressWarnings( "resource" )
     @Test
@@ -136,6 +159,8 @@ public class TestAutoLock extends TestBaseClass
 
         final var result = candidate.execute( inputStream::readAllBytes );
         assertNotNull( result );
+        assertTrue( result.isPresent() );
+        assertEquals( 0, result.get().length );
 
         //---* Close the stream, causing the exception below … *---------------
         candidate.execute( inputStream::close );
@@ -145,8 +170,11 @@ public class TestAutoLock extends TestBaseClass
     }   //  testExecute()
 
     /**
-     *  Tests for the method
-     *  {@link AutoLock#of(java.util.concurrent.locks.Lock)}.
+     *  Tests for the methods
+     *  {@link AutoLock#evaluate(Constraint)},
+     *  {@link AutoLock#execute(Operation)}
+     *  and
+     *  {@link AutoLock#execute(Action)}.
      */
     @SuppressWarnings( "resource" )
     @Test
@@ -156,7 +184,10 @@ public class TestAutoLock extends TestBaseClass
 
         final var candidate = AutoLock.of();
 
-        final Class<? extends Throwable> expectedException = NullArgumentException.class;
+        final var expectedException = NullArgumentException.class;
+
+        final Constraint constraint = null;
+        assertThrows( expectedException, () -> candidate.evaluate( constraint ) );
 
         final Action action = null;
         assertThrows( expectedException, () -> candidate.execute( action ) );

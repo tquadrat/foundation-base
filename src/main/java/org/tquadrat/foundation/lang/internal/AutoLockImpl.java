@@ -22,7 +22,6 @@ import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.Optional;
-import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -31,6 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.Action;
 import org.tquadrat.foundation.lang.AutoLock;
 import org.tquadrat.foundation.lang.Operation;
+import org.tquadrat.foundation.lang.Constraint;
 
 /**
  *  The implementation of
@@ -94,6 +94,28 @@ public final class AutoLockImpl implements AutoLock
     }   //  close()
 
     /**
+     *  {@inheritDoc}
+     */
+    @SuppressWarnings( "OverlyBroadCatchBlock" )
+    @Override
+    public final boolean evaluate( final Constraint constraint ) throws ExecutionFailedException
+    {
+        requireNonNullArgument( constraint, "condition" );
+        final boolean retValue;
+        try( final var ignore = lock() )
+        {
+            retValue = constraint.evaluate();
+        }
+        catch( final Throwable t )
+        {
+            throw new ExecutionFailedException( t );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  evaluate()
+
+    /**
      * {@inheritDoc}
      */
     @SuppressWarnings( "OverlyBroadCatchBlock" )
@@ -116,13 +138,13 @@ public final class AutoLockImpl implements AutoLock
      */
     @SuppressWarnings( "OverlyBroadCatchBlock" )
     @Override
-    public <R> Optional<R> execute( final Operation<? extends R> operation ) throws ExecutionFailedException
+    public <R> Optional<R> execute( final Operation<? extends R> verification ) throws ExecutionFailedException
     {
-        requireNonNullArgument( operation, "operation" );
+        requireNonNullArgument( verification, "operation" );
         final Optional<R> retValue;
         try( final var ignore = lock() )
         {
-            retValue = Optional.ofNullable( operation.get() );
+            retValue = Optional.ofNullable( verification.get() );
         }
         catch( final Throwable t )
         {
@@ -169,7 +191,7 @@ public final class AutoLockImpl implements AutoLock
      *  {@inheritDoc}
      */
     @Override
-    public final Condition newCondition() { return m_Lock.newCondition(); }
+    public final java.util.concurrent.locks.Condition newCondition() { return m_Lock.newCondition(); }
 }
 //  class AutoLock
 

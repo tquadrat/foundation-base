@@ -30,6 +30,7 @@ import org.tquadrat.foundation.lang.AutoLock;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
 import org.tquadrat.foundation.lang.LockExecutor;
 import org.tquadrat.foundation.lang.Operation;
+import org.tquadrat.foundation.lang.Constraint;
 
 /**
  *  The implementation of
@@ -68,6 +69,18 @@ public final class LockExecutorImpl implements LockExecutor
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean evaluate( final Constraint constraint ) throws ExecutionFailedException
+    {
+        final var retValue = m_Lock.evaluate( constraint );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  execute()
+
     /**
      * {@inheritDoc}
      */

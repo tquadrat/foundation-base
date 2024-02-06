@@ -129,6 +129,19 @@ public sealed interface AutoLock extends AutoCloseable
     public void close();
 
     /**
+     *  Evaluates the given
+     *  {@link Constraint}
+     *  after obtaining the lock, and returns its result.
+     *
+     *  @param  constraint    The constraint
+     *  @return The evaluation result.
+     *  @throws ExecutionFailedException    The evaluation failed for some
+     *      reason.
+     */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
+    public boolean evaluate( final Constraint constraint ) throws ExecutionFailedException;
+
+    /**
      *  Executes the given action after obtaining the lock.
      *
      *  @param  action  The action.

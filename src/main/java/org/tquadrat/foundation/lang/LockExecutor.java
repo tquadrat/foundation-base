@@ -54,6 +54,17 @@ public sealed interface LockExecutor
     ====** Methods **==========================================================
         \*---------*/
     /**
+     *  Evaluates the given condition.
+     *
+     *  @param  constraint  The constraint.
+     *  @return The result of the evaluation of the condition.
+     *  @throws ExecutionFailedException    The evaluation failed for some
+     *      reason.
+     */
+    @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
+    public boolean evaluate( final Constraint constraint ) throws ExecutionFailedException;
+
+    /**
      *  Executes the given action.
      *
      *  @param  action  The action.

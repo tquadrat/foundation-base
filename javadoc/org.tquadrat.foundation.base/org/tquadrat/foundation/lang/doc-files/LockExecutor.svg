@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='600.000'
-     height='440.000'>
+     height='462.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='95.000'
+                  height='106.000'
                   width='550.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='550.000'
-                          height='95.000'
+                          height='106.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='28.000'
@@ -152,22 +152,25 @@
                           y='41.000'/>
                     <text x='5.000'
                           y='58.000'
-                          class='abstract'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
+                          class='abstract'>+ evaluate(constraint:org.tquadrat.foundation.lang.Constraint):boolean</text>
                     <text x='5.000'
                           y='69.000'
-                          class='abstract'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;R&gt;):java.util.Optional&lt;R&gt;</text>
+                          class='abstract'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
                     <text x='5.000'
                           y='80.000'
-                          class='abstract static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.LockExecutor</text>
+                          class='abstract'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;R&gt;):java.util.Optional&lt;R&gt;</text>
                     <text x='5.000'
                           y='91.000'
+                          class='abstract static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.LockExecutor</text>
+                    <text x='5.000'
+                          y='102.000'
                           class='abstract static'>+ of(lock:org.tquadrat.foundation.lang.AutoLock):org.tquadrat.foundation.lang.LockExecutor</text>
                 </g>
             </g>
         </symbol>
         <clipPath id='ID000002'>
             <rect class='otherClass'
-                  height='95.000'
+                  height='106.000'
                   width='550.000'
                   x='0.000'
                   y='0.000'/>
@@ -178,7 +181,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='550.000'
-                          height='95.000'
+                          height='106.000'
                           class='otherClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -197,26 +200,28 @@
                     <text x='5.000'
                           y='47.000'>- LockExecutorImpl(lock:org.tquadrat.foundation.lang.AutoLock)</text>
                     <text x='5.000'
-                          y='58.000'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
+                          y='58.000'>+ evaluate(constraint:org.tquadrat.foundation.lang.Constraint):boolean</text>
                     <text x='5.000'
-                          y='69.000'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;T&gt;):java.util.Optional&lt;T&gt;</text>
+                          y='69.000'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
                     <text x='5.000'
-                          y='80.000'
-                          class='static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.LockExecutor</text>
+                          y='80.000'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;T&gt;):java.util.Optional&lt;T&gt;</text>
                     <text x='5.000'
                           y='91.000'
+                          class='static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.LockExecutor</text>
+                    <text x='5.000'
+                          y='102.000'
                           class='static'>+ of(lock:org.tquadrat.foundation.lang.AutoLock):org.tquadrat.foundation.lang.LockExecutor</text>
                 </g>
             </g>
         </symbol>
     </defs>
     <path class='implementation'
-          d='M300.000,220.000 L300.000,120.000'
+          d='M300.000,231.000 L300.000,131.000'
           marker-end='url(#implementation)'/>
     <use x='25.000'
          y='25.000'
          xlink:href='#org.tquadrat.foundation.lang.LockExecutor'/>
     <use x='25.000'
-         y='220.000'
+         y='231.000'
          xlink:href='#org.tquadrat.foundation.lang.internal.LockExecutorImpl'/>
 </svg>
