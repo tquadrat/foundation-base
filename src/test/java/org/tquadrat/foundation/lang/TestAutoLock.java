@@ -46,9 +46,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestAutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
 {

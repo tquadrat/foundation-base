@@ -29,14 +29,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link Exception}
  *  in case of an error}.</p>
  *
- *  @version $Id: Operation.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: Constraint.java 1097 2024-02-06 20:10:12Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.4.1
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Operation.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Constraint.java 1097 2024-02-06 20:10:12Z tquadrat $" )
 @API( status = STABLE, since = "0.4.1" )
 public interface Constraint
 {

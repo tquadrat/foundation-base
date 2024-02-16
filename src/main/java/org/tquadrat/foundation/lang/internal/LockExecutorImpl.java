@@ -28,20 +28,20 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.Action;
 import org.tquadrat.foundation.lang.AutoLock;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
+import org.tquadrat.foundation.lang.Constraint;
 import org.tquadrat.foundation.lang.LockExecutor;
 import org.tquadrat.foundation.lang.Operation;
-import org.tquadrat.foundation.lang.Constraint;
 
 /**
  *  The implementation of
  *  {@link LockExecutor}.
  *
- *  @version $Id: LockExecutorImpl.java 944 2021-12-21 21:56:24Z tquadrat $
+ *  @version $Id: LockExecutorImpl.java 1097 2024-02-06 20:10:12Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 944 2021-12-21 21:56:24Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1097 2024-02-06 20:10:12Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class LockExecutorImpl implements LockExecutor
 {

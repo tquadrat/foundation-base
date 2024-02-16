@@ -22,6 +22,7 @@ import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.Optional;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -29,22 +30,22 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.Action;
 import org.tquadrat.foundation.lang.AutoLock;
-import org.tquadrat.foundation.lang.Operation;
 import org.tquadrat.foundation.lang.Constraint;
+import org.tquadrat.foundation.lang.Operation;
 
 /**
  *  The implementation of
  *  {@link AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLockImpl.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: AutoLockImpl.java 1096 2024-02-06 20:09:55Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1096 2024-02-06 20:09:55Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class AutoLockImpl implements AutoLock
 {
@@ -191,7 +192,7 @@ public final class AutoLockImpl implements AutoLock
      *  {@inheritDoc}
      */
     @Override
-    public final java.util.concurrent.locks.Condition newCondition() { return m_Lock.newCondition(); }
+    public final Condition newCondition() { return m_Lock.newCondition(); }
 }
 //  class AutoLock
 
