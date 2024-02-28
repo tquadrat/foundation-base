@@ -70,13 +70,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Objects.java 1085 2024-01-05 16:23:28Z tquadrat $
- *  @since 0.1.0
+ *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
 @ClassVersion( sourceVersion = "$Id: Objects.java 1085 2024-01-05 16:23:28Z tquadrat $" )
+@API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {
         /*--------------*\
@@ -114,6 +115,8 @@ public final class Objects
      *  @return The {@code fromIndex} if the sub-range is within bounds of the
      *      range.
      *  @throws IndexOutOfBoundsException   The sub-range is out-of-bounds.
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int checkFromIndexSize( final int fromIndex, final int size, final int length )
@@ -147,6 +150,8 @@ public final class Objects
      *  @return The {@code fromIndex} if the sub-range is within bounds of the
      *      range.
      *  @throws IndexOutOfBoundsException   The sub-range is out-of-bounds.
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int checkFromToIndex( final int fromIndex, final int toIndex, final int length )
@@ -176,6 +181,8 @@ public final class Objects
      *  @param  length  The upper-bound (exclusive) of the range.
      *  @return The {@code index} if it is within bounds of the range.
      *  @throws IndexOutOfBoundsException   The {@code index} is out-of-bounds.
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int checkIndex( final int index, final int length )
@@ -238,6 +245,8 @@ public final class Objects
      *
      *  @see Comparable
      *  @see Comparator
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> int compare( final T object, final T other, final Comparator<? super T> comparator ) throws NullArgumentException
@@ -270,6 +279,8 @@ public final class Objects
      *
      *  @see    Arrays#deepEquals(Object[],Object[])
      *  @see    Objects#equals(Object,Object)
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
@@ -294,6 +305,8 @@ public final class Objects
      *      {@code false} otherwise.
      *
      *  @see    Object#equals(Object)
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean equals( final Object object, final Object other ) { return java.util.Objects.equals( object, other ); }
@@ -311,6 +324,8 @@ public final class Objects
      *  @return A hash value of the sequence of input values.
      *
      *  @see    List#hashCode
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int hash( final Object... values ) { return Arrays.hashCode( values ); }
@@ -327,6 +342,8 @@ public final class Objects
      *      for a {@code null} argument,
      *
      *  @see    Object#hashCode
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final int hashCode( final Object o ) { return java.util.Objects.hashCode( o ); }
@@ -347,6 +364,8 @@ public final class Objects
      *
      *  @see    java.util.function.Predicate
      *  @see    org.tquadrat.foundation.lang.CommonConstants#IS_NULL
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final boolean isNull( final Object obj ) { return java.util.Objects.isNull( obj ); }
@@ -354,20 +373,57 @@ public final class Objects
     /**
      *  <p>{@summary Provides a replacement value if the given value is
      *  {@code null}.}</p>
+     *  <p>This is basically a shortcut to</p>
+     *  <pre><code>Optional.ofNullable( value ).orElseGet( supplier )</code></pre>
      *
      *  @param  <T> The type of the object to map.
-     *  @param  o   The object to map; can be {@code null}.
+     *  @param  value   The object to map; can be {@code null} (obviously).
      *  @param  supplier    The supplier for the replacement function.
      *  @return The provided object if that is not {@code null}, or the result
      *      from the supplier method. Keep in mind that this result can be
      *      {@code null}!
+     *
+     *  @see Optional
+     *  @see Optional#orElseGet(Supplier)
+     *
+     *  @since 0.2.2
      */
     @API( status = STABLE, since = "0.2.2" )
-    public static final <T> T mapFromNull( final T o, final Supplier<? extends T> supplier )
+    public static final <T> T mapFromNull( final T value, final Supplier<? extends T> supplier )
     {
-        final var retValue = isNull( o )
-            ? requireNonNullArgument( supplier, "supplier" ).get()
-            : o;
+        requireNonNullArgument( supplier, "supplier" );
+        final var retValue = isNull( value )
+            ? supplier.get()
+            : value;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapFromNull()
+
+    /**
+     *  <p>{@summary Provides a replacement value if the given value is
+     *  {@code null}.}</p>
+     *  <p>This is basically a shortcut to</p>
+     *  <pre><code>Optional.ofNullable( value ).orElse( replacement )</code></pre>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  value   The object to map; can be {@code null}.
+     *  @param  replacement  The replacement value; it may not be {@code null}.
+     *  @return The provided object if that is not {@code null}, or the
+     *      replacement value.
+     *
+     *  @see Optional
+     *  @see Optional#orElse(Object)
+     *
+     *  @since 0.4.2
+     */
+    @API( status = STABLE, since = "0.4.2" )
+    public static final <T> T mapFromNull( final T value, final T replacement )
+    {
+        requireNonNullArgument( replacement, "replacement" );
+        final var retValue = isNull( value )
+                             ? replacement
+                             : value;
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -437,6 +493,8 @@ public final class Objects
      *
      *  @see java.util.function.Predicate
      *  @see org.tquadrat.foundation.lang.CommonConstants#NON_NULL
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( "BooleanMethodNameMustStartWithQuestion" )
     @API( status = STABLE, since = "0.0.5" )
@@ -602,6 +660,8 @@ public final class Objects
      *  @throws NullArgumentException   {@code obj} is {@code null}.
      *
      *  @see java.util.Objects#requireNonNull(Object)
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.0.5" )
@@ -628,6 +688,8 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @see java.util.Objects#requireNonNull(Object,String)
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNonNull( final T obj, final String message ) throws ValidationException, NullArgumentException, EmptyArgumentException
@@ -659,6 +721,8 @@ public final class Objects
      *      {@code null}, no detail message is provided.
      *  @return The value if it is not {@code null}.
      *  @throws ValidationException    {@code obj} is {@code null}
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNonNull( final T obj, final Supplier<String> messageSupplier) throws ValidationException
@@ -686,6 +750,8 @@ public final class Objects
      *      message.
      *  @return The argument if it is not {@code null}.
      *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNonNullArgument( final T arg, final String name )
@@ -714,6 +780,8 @@ public final class Objects
      *      the error message.
      *  @return The first argument, even that might be {@code null}.
      *  @throws NullArgumentException   Both arguments are {@code null}.
+     *
+     *  @since 0.0.7
      */
     @API( status = STABLE, since = "0.0.7" )
     public static final <T> T requireNonNullArgument( final T arg, final Object otherArg, final String name, final String otherName )
@@ -751,6 +819,8 @@ public final class Objects
      *  @throws BlankArgumentException   {@code arg} is blank.
      *
      *  @see    String#isBlank()
+     *
+     *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
     public static final <T extends CharSequence> T requireNotBlankArgument( final T arg, final String name )
@@ -830,6 +900,8 @@ public final class Objects
      *  @return The argument if it is not {@code null} or empty.
      *  @throws NullArgumentException   {@code arg} is {@code null}.
      *  @throws EmptyArgumentException   {@code arg} is empty.
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( "OverlyComplexMethod" )
     @API( status = STABLE, since = "0.0.5" )
@@ -928,6 +1000,8 @@ public final class Objects
      *      string!
      *  @throws NullArgumentException   {@code optional} is {@code null}.
      *  @throws EmptyArgumentException   {@code optional} is empty.
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNotEmptyArgument( @SuppressWarnings( "OptionalUsedAsFieldOrParameterType" ) final Optional<T> optional, final String name )
@@ -959,6 +1033,8 @@ public final class Objects
      *  @throws NullArgumentException   The {@code defaultObj} is {@code null}.
      *
      *  @see    java.util.Objects#requireNonNullElse(Object, Object)
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> T requireNonNullElse( final T obj, final T defaultObj ) throws NullArgumentException
@@ -987,6 +1063,8 @@ public final class Objects
      *  @throws NullArgumentException   The {@code supplier} is {@code null}.
      *  @throws NullPointerException    {@code obj} is {@code null} and the
      *      return value of {@code supplier.get()} value is {@code null}, too.
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( "ProhibitedExceptionDeclared" )
     @API( status = STABLE, since = "0.0.5" )
@@ -1373,6 +1451,8 @@ public final class Objects
      *  @see java.util.Arrays#deepToString(Object[])
      *  @see java.util.Locale#getDefault()
      *  @see org.tquadrat.foundation.lang.CommonConstants#NULL_STRING
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final String toString( final Object object )
@@ -1416,6 +1496,8 @@ public final class Objects
      *  @see java.util.Arrays#toString(short[])
      *  @see java.util.Arrays#deepToString(Object[])
      *  @see java.util.Locale#getDefault()
+     *
+     *  @since 0.0.5
      */
     @SuppressWarnings( {"IfStatementWithTooManyBranches", "ChainOfInstanceofChecks", "OverlyComplexMethod"} )
     @API( status = STABLE, since = "0.0.5" )
@@ -1492,6 +1574,8 @@ public final class Objects
      *  @return The object's string representation.
      *
      *  @see    Stringer
+     *
+     *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final <T> String toString( final T value, final Stringer<? super T> stringer, final String nullDefault )
