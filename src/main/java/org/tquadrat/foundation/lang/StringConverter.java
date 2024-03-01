@@ -82,12 +82,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@code StringConverter} provides a method
  *      {@code public Collection<Class<?>> getSubjectClass()} that returns the
  *      respective classes.<br>
- *      This is definitely required, when the concrete implementation is
- *      derived from an abstract class; this abstract class must be visible for
- *      this module, too.
+ *      This is definitely required, when the concrete implementation of the
+ *      string converter is derived from an abstract base class; this abstract
+ *      class must be visible for this module, too.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: StringConverter.java 1107 2024-03-01 15:33:11Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The Object type for the conversion.
@@ -95,7 +95,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: StringConverter.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverter.java 1107 2024-03-01 15:33:11Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface StringConverter<T> extends Serializable
 {
