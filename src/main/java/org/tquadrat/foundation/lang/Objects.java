@@ -683,8 +683,8 @@ public final class Objects
      *  @param  obj The value to check.
      *  @param  message The message that is set to the thrown exception.
      *  @return The value if it is not {@code null}.
-     *  @throws NullArgumentException   {@code message} is {@code null}.
-     *  @throws NullArgumentException   {@code obj} is {@code null}.
+     *  @throws NullArgumentException   {@code message} or {@code obj} is
+     *      {@code null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @see java.util.Objects#requireNonNull(Object,String)
@@ -758,6 +758,7 @@ public final class Objects
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+        if( name.isBlank() ) throw new BlankArgumentException( "name" );
         if( isNull( arg ) ) throw new NullArgumentException( name );
 
         //---* Done *----------------------------------------------------------
@@ -788,8 +789,10 @@ public final class Objects
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+        if( name.isBlank() ) throw new BlankArgumentException( "name" );
         if( isNull( otherName ) ) throw new NullArgumentException( "otherName" );
         if( otherName.isEmpty() ) throw new EmptyArgumentException( "otherName" );
+        if( otherName.isBlank() ) throw new BlankArgumentException( "otherName" );
         if( isNull( arg ) && isNull( otherArg ) )
         {
             throw new NullArgumentException( name, otherName );
@@ -827,6 +830,7 @@ public final class Objects
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+        if( name.isBlank() ) throw new BlankArgumentException( "name" );
 
         switch( arg )
         {
@@ -909,6 +913,7 @@ public final class Objects
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+        if( name.isBlank() ) throw new BlankArgumentException( "name" );
 
         switch( arg )
         {
@@ -1008,6 +1013,7 @@ public final class Objects
     {
         if( isNull( name ) ) throw new NullArgumentException( "name" );
         if( name.isEmpty() ) throw new EmptyArgumentException( "name" );
+        if( name.isBlank() ) throw new BlankArgumentException( "name" );
 
         //---* Check for null *------------------------------------------------
         if( isNull( optional ) ) throw new NullArgumentException( name );
@@ -1094,7 +1100,7 @@ public final class Objects
     @API( status = STABLE, since = "0.1.0" )
     public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
@@ -1131,7 +1137,7 @@ public final class Objects
     @API( status = STABLE, since = "0.1.0" )
     public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
@@ -1163,7 +1169,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
@@ -1199,7 +1205,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final UnaryOperator<String> messageSupplier )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
@@ -1231,7 +1237,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
@@ -1267,7 +1273,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final UnaryOperator<String> messageSupplier )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
@@ -1299,7 +1305,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
@@ -1335,7 +1341,7 @@ public final class Objects
     @API( status = STABLE, since = "0.2.0" )
     public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final UnaryOperator<String> messageSupplier )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
@@ -1370,7 +1376,7 @@ public final class Objects
     @API( status = STABLE, since = "0.1.0" )
     public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
@@ -1407,7 +1413,7 @@ public final class Objects
     @API( status = STABLE, since = "0.1.0" )
     public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
-        requireNotEmptyArgument( name, "name" );
+        requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
