@@ -69,14 +69,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1106 2024-02-29 00:10:53Z tquadrat $
+ *  @version $Id: Objects.java 1109 2024-03-02 04:59:57Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1106 2024-02-29 00:10:53Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1109 2024-03-02 04:59:57Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {
