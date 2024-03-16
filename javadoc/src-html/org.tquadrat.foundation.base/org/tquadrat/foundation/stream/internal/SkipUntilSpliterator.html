@@ -39,31 +39,31 @@
 <span class="source-line-no">026</span><span id="line-26"></span>
 <span class="source-line-no">027</span><span id="line-27">package org.tquadrat.foundation.stream.internal;</span>
 <span class="source-line-no">028</span><span id="line-28"></span>
-<span class="source-line-no">029</span><span id="line-29">import static org.apiguardian.api.API.Status.INTERNAL;</span>
-<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">029</span><span id="line-29">import org.apiguardian.api.API;</span>
+<span class="source-line-no">030</span><span id="line-30">import org.tquadrat.foundation.annotation.ClassVersion;</span>
 <span class="source-line-no">031</span><span id="line-31"></span>
 <span class="source-line-no">032</span><span id="line-32">import java.util.Spliterator;</span>
 <span class="source-line-no">033</span><span id="line-33">import java.util.function.Consumer;</span>
 <span class="source-line-no">034</span><span id="line-34">import java.util.function.Predicate;</span>
 <span class="source-line-no">035</span><span id="line-35"></span>
-<span class="source-line-no">036</span><span id="line-36">import org.apiguardian.api.API;</span>
-<span class="source-line-no">037</span><span id="line-37">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">036</span><span id="line-36">import static org.apiguardian.api.API.Status.INTERNAL;</span>
+<span class="source-line-no">037</span><span id="line-37">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
 <span class="source-line-no">038</span><span id="line-38"></span>
 <span class="source-line-no">039</span><span id="line-39">/**</span>
 <span class="source-line-no">040</span><span id="line-40"> *  An implementation of</span>
-<span class="source-line-no">041</span><span id="line-41"> *  [@link Spliterator}</span>
+<span class="source-line-no">041</span><span id="line-41"> *  {@link Spliterator}</span>
 <span class="source-line-no">042</span><span id="line-42"> *  that skips elements on the stream that do not match the provided condition.</span>
 <span class="source-line-no">043</span><span id="line-43"> *</span>
 <span class="source-line-no">044</span><span id="line-44"> *  @author Dominic Fox</span>
 <span class="source-line-no">045</span><span id="line-45"> *  @modified Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">046</span><span id="line-46"> *  @version $Id: SkipUntilSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $</span>
+<span class="source-line-no">046</span><span id="line-46"> *  @version $Id: SkipUntilSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $</span>
 <span class="source-line-no">047</span><span id="line-47"> *  @since 0.0.7</span>
 <span class="source-line-no">048</span><span id="line-48"> *</span>
 <span class="source-line-no">049</span><span id="line-49"> *  @param  &lt;T&gt; The type over which the given streams stream.</span>
 <span class="source-line-no">050</span><span id="line-50"> *</span>
 <span class="source-line-no">051</span><span id="line-51"> *  @UMLGraph.link</span>
 <span class="source-line-no">052</span><span id="line-52"> */</span>
-<span class="source-line-no">053</span><span id="line-53">@ClassVersion( sourceVersion = "$Id: SkipUntilSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )</span>
+<span class="source-line-no">053</span><span id="line-53">@ClassVersion( sourceVersion = "$Id: SkipUntilSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $" )</span>
 <span class="source-line-no">054</span><span id="line-54">@API( status = INTERNAL, since = "0.0.7" )</span>
 <span class="source-line-no">055</span><span id="line-55">public final class SkipUntilSpliterator&lt;T&gt; implements Spliterator&lt;T&gt;</span>
 <span class="source-line-no">056</span><span id="line-56">{</span>
@@ -171,7 +171,7 @@
 <span class="source-line-no">158</span><span id="line-158">        {</span>
 <span class="source-line-no">159</span><span id="line-159">            while( !m_ConditionMet &amp;&amp; m_Source.tryAdvance( e -&gt;</span>
 <span class="source-line-no">160</span><span id="line-160">            {</span>
-<span class="source-line-no">161</span><span id="line-161">                //noinspection NestedAssignment</span>
+<span class="source-line-no">161</span><span id="line-161">                //noinspection NestedAssignment,PointlessBooleanExpression</span>
 <span class="source-line-no">162</span><span id="line-162">                if( (m_ConditionMet = m_Condition.test( e )) == true )</span>
 <span class="source-line-no">163</span><span id="line-163">                {</span>
 <span class="source-line-no">164</span><span id="line-164">                    action.accept( e );</span>

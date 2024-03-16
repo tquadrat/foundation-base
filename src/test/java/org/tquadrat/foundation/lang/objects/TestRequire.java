@@ -17,24 +17,6 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.require;
-
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 import org.apiguardian.api.API;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,6 +25,18 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.testutil.TestBaseClass;
+
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.require;
 
 /**
  *  Some tests for the methods
@@ -55,12 +49,12 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequire.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestRequire.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TestRequire.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequire.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequire" )
 public class TestRequire extends TestBaseClass
@@ -296,6 +290,7 @@ public class TestRequire extends TestBaseClass
 
         final var candidate = "candidate";
         final Predicate<String> predicate = s -> isNull( s ) || "valid".equals( s );
+        @SuppressWarnings("UnnecessaryLocalVariable")
         final var message = EMPTY_STRING;
 
         final Class<? extends Throwable> expectedException = EmptyArgumentException.class;

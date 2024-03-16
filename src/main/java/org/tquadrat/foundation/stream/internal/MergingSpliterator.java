@@ -26,8 +26,8 @@
 
 package org.tquadrat.foundation.stream.internal;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,17 +37,17 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  An implementation of
- *  [@link Spliterator}
+ *  {@link Spliterator}
  *  that merges streams.
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MergingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: MergingSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type over which the merged streams stream.
@@ -56,7 +56,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class MergingSpliterator<T,O> implements Spliterator<O>
 {

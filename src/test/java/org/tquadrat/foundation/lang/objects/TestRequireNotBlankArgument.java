@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,14 +18,6 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,14 +28,19 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
+
 /**
  *  The tests for the method
- *  {@link org.tquadrat.foundation.lang.Objects#TestRequireNotBlankArgument(Object, String)}.
+ *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequireNotBlankArgument.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: TestRequireNotBlankArgument.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestRequireNotBlankArgument.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequireNotBlankArgument.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireNotBlankArgument" )
 public class TestRequireNotBlankArgument extends TestBaseClass
 {
@@ -52,7 +49,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
        \*---------*/
     /**
      *  Test method for
-     *  {@link Objects#TestRequireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      *
      *  @param  candidate   The value for the test.
      */
@@ -70,7 +67,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
 
     /**
      *  Test method for
-     *  {@link Objects#requireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      *
      *  @param  candidate   The value for the test.
      */
@@ -85,7 +82,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
 
     /**
      *  Test method for
-     *  {@link Objects#requireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      *
      *  @param  candidate   The value for the test.
      */
@@ -102,7 +99,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
 
     /**
      *  Test method for
-     *  {@link Objects#requireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      */
     @Test
     final void testRequireNotBlankArgumentWithEmptyMessage()
@@ -115,7 +112,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
 
     /**
      *  Test method for
-     *  {@link Objects#requireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      */
     @SuppressWarnings( "SpellCheckingInspection" )
     @Test
@@ -130,7 +127,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
 
     /**
      *  Test method for
-     *  {@link Objects#requireNotBlankArgument(Object,String)}.
+     *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}.
      */
     @Test
     final void testRequireNotBlankArgumentWithNullMessage()

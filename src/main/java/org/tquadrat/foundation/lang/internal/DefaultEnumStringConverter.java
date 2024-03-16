@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,21 +18,19 @@
 
 package org.tquadrat.foundation.lang.internal;
 
-import static java.lang.String.format;
-import static java.util.Arrays.stream;
-import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.MountPoint;
+import org.tquadrat.foundation.lang.StringConverter;
 
 import java.io.Serial;
 import java.util.Collection;
 import java.util.List;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.MountPoint;
-import org.tquadrat.foundation.lang.StringConverter;
+import static java.lang.String.format;
+import static java.util.Arrays.stream;
+import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.lang.Objects.*;
 
 /**
  *  The default implementation of
@@ -59,12 +57,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *      implementation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $
+ *  @version $Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public class DefaultEnumStringConverter<T extends Enum<T>> implements StringConverter<T>
 {
@@ -124,7 +122,7 @@ public class DefaultEnumStringConverter<T extends Enum<T>> implements StringConv
         T retValue = null;
         if( nonNull( source ) )
         {
-            if( isNull( source ) || source.isEmpty() ) throw new IllegalArgumentException( format( MSG_UnknownValue, source ) );
+            if( source.isEmpty() ) throw new IllegalArgumentException( format( MSG_UnknownValue, source ) );
             retValue = stream( m_EnumType.getEnumConstants() )
                 .filter( constant -> source.toString().equals( constant.name() ) )
                 .findFirst()

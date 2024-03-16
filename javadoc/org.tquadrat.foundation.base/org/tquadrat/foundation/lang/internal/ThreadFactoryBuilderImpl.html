@@ -115,7 +115,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="../ThreadFactoryBuilder.html" title="interface in org.tquadrat.foundation.lang">ThreadFactoryBuilder</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-48">ThreadFactoryBuilderImpl</a></span>
@@ -127,7 +127,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $</dd>
+<dd>$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 
@@ -165,7 +165,9 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <div class="col-second even-row-color"><code><a href="ThreadFactoryBuilderImpl.ThreadFactoryImpl.html" class="type-name-link" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl.ThreadFactoryImpl</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The implementation of
-  <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadrat.foundation.lang"><code>ThreadFactoryBuilder</code></a>.</div>
+  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link"><code>ThreadFactory</code></a>
+  that is returned by
+  <a href="../ThreadFactoryBuilder.html#build()"><code>ThreadFactoryBuilder.build()</code></a>.</div>
 </div>
 </div>
 </section>
@@ -334,7 +336,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="m_ContextClassLoader">
 <h3>m_ContextClassLoader</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-220">m_ContextClassLoader</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-222">m_ContextClassLoader</a></span></div>
 <div class="block">The context
   <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link"><code>ClassLoader</code></a>
   for the new threads. The default is <code>null</code>.</div>
@@ -343,7 +345,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="m_InheritThreadLocals">
 <h3>m_InheritThreadLocals</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-227">m_InheritThreadLocals</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-229">m_InheritThreadLocals</a></span></div>
 <div class="block">If <code>true</code>, inherit initial values for inheritable
   thread-locals from the constructing thread, otherwise no initial
   values are inherited. The default is <code>true</code>.</div>
@@ -352,7 +354,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="m_IsDaemon">
 <h3>m_IsDaemon</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-233">m_IsDaemon</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-235">m_IsDaemon</a></span></div>
 <div class="block"><code>true</code> if the new threads are daemon thread, <code>false</code>
   otherwise. The default is <code>false</code>.</div>
 </section>
@@ -360,23 +362,24 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="m_NameFactory">
 <h3>m_NameFactory</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/IntFunction.html" title="class or interface in java.util.function" class="external-link">IntFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-239">m_NameFactory</a></span></div>
-<div class="block">The factory method for the thread names. The default returns
-  &quot;<code>Thread-#</code>&quot;, where &quot;#&quot; stands for a counter.</div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/IntFunction.html" title="class or interface in java.util.function" class="external-link">IntFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-242">m_NameFactory</a></span></div>
+<div class="block"><p>The factory method for the thread names. The default
+  returns &quot;<code>Thread-#</code>&quot;, where &quot;#&quot; stands for a
+  counter.</p></div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_Priority">
 <h3>m_Priority</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-245">m_Priority</a></span></div>
-<div class="block">The priority for the new threads. The default value of -1 indicates
-  that no priority will be set explicitly.</div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-248">m_Priority</a></span></div>
+<div class="block"><p>The priority for the new threads. The default value of -1
+  indicates that no priority will be set explicitly.</p></div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_StackSize">
 <h3>m_StackSize</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-251">m_StackSize</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-254">m_StackSize</a></span></div>
 <div class="block">The desired stack size for the new threads. The default value of zero
   indicates that this parameter is to be ignored.</div>
 </section>
@@ -384,14 +387,14 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="m_ThreadGroup">
 <h3>m_ThreadGroup</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ThreadGroup.html" title="class or interface in java.lang" class="external-link">ThreadGroup</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-256">m_ThreadGroup</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ThreadGroup.html" title="class or interface in java.lang" class="external-link">ThreadGroup</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-259">m_ThreadGroup</a></span></div>
 <div class="block">The thread group for the new threads. The default is <code>null</code>.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="m_UncaughtExceptionHandler">
 <h3>m_UncaughtExceptionHandler</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html" title="class or interface in java.lang" class="external-link">Thread.UncaughtExceptionHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-262">m_UncaughtExceptionHandler</a></span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html" title="class or interface in java.lang" class="external-link">Thread.UncaughtExceptionHandler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-265">m_UncaughtExceptionHandler</a></span></div>
 <div class="block">The uncaught exception handler for the new threads. The default is
   <code>null</code>.</div>
 </section>
@@ -407,7 +410,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>ThreadFactoryBuilderImpl</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-270">ThreadFactoryBuilderImpl</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-273">ThreadFactoryBuilderImpl</a></span>()</div>
 <div class="block">Creates a new instance of <code>ThreadFactoryBuilderImpl</code>.</div>
 </section>
 </li>
@@ -422,7 +425,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="build()">
 <h3>build</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link">ThreadFactory</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-278">build</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link">ThreadFactory</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-281">build</a></span>()</div>
 <div class="block">Creates the instance of
   <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ThreadFactory.html" title="class or interface in java.util.concurrent" class="external-link"><code>ThreadFactory</code></a>.</div>
 <dl class="notes">
@@ -436,7 +439,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setContextClassLoader(java.lang.ClassLoader)">
 <h3>setContextClassLoader</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-290">setContextClassLoader</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a>&nbsp;contextClassLoader)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-293">setContextClassLoader</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a>&nbsp;contextClassLoader)</span></div>
 <div class="block"><p>Sets the context class loader for the new threads created
   by the new thread factory.</p>
   <p>The context class loader allows the creator of the thread to provide
@@ -464,7 +467,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setInheritThreadLocals(boolean)">
 <h3>setInheritThreadLocals</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-302">setInheritThreadLocals</a></span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-305">setInheritThreadLocals</a></span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
 <div class="block"><p>Sets the flag that controls whether the new threads,
   created by the new thread factory, will suppress, or not, the
   inheriting of initial values for
@@ -495,7 +498,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setDaemon(boolean)">
 <h3>setDaemon</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-314">setDaemon</a></span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-317">setDaemon</a></span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
 <div class="block"><p>Sets the flag whether the new thread created by the new
   thread factory should be a daemon thread. Daemon threads will be
   aborted automatically when the last non-daemon thread terminates.</p>
@@ -521,7 +524,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setNameFactory(java.util.function.IntFunction)">
 <h3>setNameFactory</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-326">setNameFactory</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/IntFunction.html" title="class or interface in java.util.function" class="external-link">IntFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;nameFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-329">setNameFactory</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/IntFunction.html" title="class or interface in java.util.function" class="external-link">IntFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;nameFactory)</span></div>
 <div class="block"><p>Sets the factory for the name of the threads created by
   the new thread factory.</p>
   <p>The name factory method will be call with a numeric argument that is
@@ -543,7 +546,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setPriority(int)">
 <h3>setPriority</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-338">setPriority</a></span><wbr><span class="parameters">(int&nbsp;priority)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-341">setPriority</a></span><wbr><span class="parameters">(int&nbsp;priority)</span>
                                            throws <span class="exceptions"><a href="../../exception/ValidationException.html" title="class in org.tquadrat.foundation.exception">ValidationException</a></span></div>
 <div class="block"><p>Sets the priority for the new threads created by the new
   thread factory. Proper values are -1 (to indicate that the priority
@@ -581,7 +584,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setStackSize(long)">
 <h3>setStackSize</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-355">setStackSize</a></span><wbr><span class="parameters">(long&nbsp;stackSize)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-358">setStackSize</a></span><wbr><span class="parameters">(long&nbsp;stackSize)</span></div>
 <div class="block"><p>Sets the stack size for the new threads created by the new
   thread factory. The stack size is the approximate number of bytes of
   address space that the virtual machine is to allocate for the new
@@ -629,7 +632,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setThreadGroup(java.lang.ThreadGroup)">
 <h3>setThreadGroup</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-368">setThreadGroup</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ThreadGroup.html" title="class or interface in java.lang" class="external-link">ThreadGroup</a>&nbsp;threadGroup)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-371">setThreadGroup</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ThreadGroup.html" title="class or interface in java.lang" class="external-link">ThreadGroup</a>&nbsp;threadGroup)</span></div>
 <div class="block"><p>Sets the thread group for the new threads created by the
   new thread factory.</p>
   <p>If no thread group will be specified, the thread group for threads
@@ -659,7 +662,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="setUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)">
 <h3>setUncaughtExceptionHandler</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-380">setUncaughtExceptionHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html" title="class or interface in java.lang" class="external-link">Thread.UncaughtExceptionHandler</a>&nbsp;uncaughtExceptionHandler)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadFactoryBuilderImpl.html" title="class in org.tquadrat.foundation.lang.internal">ThreadFactoryBuilderImpl</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-383">setUncaughtExceptionHandler</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html" title="class or interface in java.lang" class="external-link">Thread.UncaughtExceptionHandler</a>&nbsp;uncaughtExceptionHandler)</span></div>
 <div class="block"><p>Sets the
   <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html" title="class or interface in java.lang" class="external-link"><code>UncaughtExceptionHandler</code></a>
   for the new threads created by the new thread factory.</p>
@@ -687,7 +690,7 @@ implements <a href="../ThreadFactoryBuilder.html" title="interface in org.tquadr
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-392">toString</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/ThreadFactoryBuilderImpl.html#line-395">toString</a></span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>

@@ -17,13 +17,13 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary The implementation of a tupel.}</p>
@@ -34,13 +34,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  left    The left value of the pair.
  *  @param  right   The right value of the pair.
  *
- *  @version $Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Pair<L,R>( L left, R right )
 {
@@ -60,6 +60,7 @@ public record Pair<L,R>( L left, R right )
      *
      *  @return A reference to this instance as an {@code Entry}.
      */
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final Map.Entry<L,R> asEntry()
     {
         @SuppressWarnings( "AnonymousInnerClass" )
@@ -95,7 +96,8 @@ public record Pair<L,R>( L left, R right )
      *  @param  newLeft The new left value; can be {@code null}.
      *  @return A new instance of {@code Pair}.
      */
-    public final Pair<L,R> left( final L newLeft ) { return new Pair<>( newLeft, right ); }
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
+    public final Pair<L,R> left(final L newLeft ) { return new Pair<>( newLeft, right ); }
 
     /**
      *  Creates a new instance of {@code Pair} with the left value from this
@@ -104,7 +106,8 @@ public record Pair<L,R>( L left, R right )
      *  @param  newRight The new right value; can be {@code null}.
      *  @return A new instance of {@code Pair}.
      */
-    public final Pair<L,R> right( final R newRight ) { return new Pair<>( left, newRight ); }
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
+    public final Pair<L,R> right(final R newRight ) { return new Pair<>( left, newRight ); }
 }
 //  record Pair
 

@@ -17,17 +17,15 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.*;
 
 /**
  *  Instances of this record are meant to be used as the return values for
@@ -53,7 +51,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  …</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: Status.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -65,7 +63,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -124,7 +122,7 @@ public record Status<V,C>( V result, C errorCode )
      *      otherwise.
      *
      *  @note As the result can be {@code null}, too (or the result of the
-     *      conversion is {@code null}, an empty return value does not
+     *      conversion is {@code null}), an empty return value does not
      *      necessarily indicate a failure.
      */
     public final <R> Optional<R> map( final Function<? super V,? extends R> conversion )

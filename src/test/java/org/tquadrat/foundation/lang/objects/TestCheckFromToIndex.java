@@ -18,12 +18,6 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static java.lang.String.format;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.Objects.checkFromToIndex;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -31,14 +25,18 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.helper.IntTupel3;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import static java.lang.String.format;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.Objects.checkFromToIndex;
+
 /**
  *  The tests for the method
  *  {@link org.tquadrat.foundation.lang.Objects#checkFromToIndex(int, int, int)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCheckFromToIndex.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestCheckFromToIndex.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCheckFromToIndex.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCheckFromToIndex.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestCheckFromToIndex" )
 public class TestCheckFromToIndex extends TestBaseClass
 {
@@ -61,7 +59,7 @@ public class TestCheckFromToIndex extends TestBaseClass
 
         final var fromIndex = arguments.v1();
         final var toIndex = arguments.v2();
-        final var length = arguments .v3();
+        final var length = arguments.v3();
 
         if( (fromIndex < 0) || (fromIndex > toIndex) || (toIndex > length) || (length < 0) )
         {

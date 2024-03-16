@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,14 +18,14 @@
 
 package org.tquadrat.foundation.exception;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.io.Serial;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
 /**
  *  Use the application error to signal the abort of an application.<br>
@@ -35,13 +35,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  logged or not. The flag is honoured by some methods in Foundation Logging.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $
+ *  @version $Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class ApplicationError extends Error
 {
@@ -184,11 +184,13 @@ public class ApplicationError extends Error
      *  @return {@code true} if the error condition or the causing
      *      exception were already logged, {@code false} otherwise.
      */
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final boolean isLogged() { return m_IsAlreadyLogged; }
 
     /**
      *  Sets the 'is logged' flag to {@code true}.
      */
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final void setLogged() { m_IsAlreadyLogged = true; }
 }
 //  class ApplicationError

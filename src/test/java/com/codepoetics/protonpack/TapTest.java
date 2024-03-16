@@ -40,7 +40,7 @@ import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.stream.StreamUtils;
 
-@ClassVersion( sourceVersion = "$Id: TapTest.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TapTest.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @DisplayName( "com.codepoetics.protonpack.TapTest" )
 public class TapTest
 {
@@ -81,6 +81,7 @@ public class TapTest
         final List<String> receivedBySecondTap = new ArrayList<>();
 
         final var tappedOriginal = StreamUtils.tap( source, receivedByFirstTap::add );
+        @SuppressWarnings( "StringToUpperCaseOrToLowerCaseWithoutLocale" )
         final var modified = tappedOriginal.map( String::toUpperCase );
         final var tappedModified = StreamUtils.tap( modified, receivedBySecondTap::add );
         final var collectedModified = tappedModified.collect( Collectors.toList() );

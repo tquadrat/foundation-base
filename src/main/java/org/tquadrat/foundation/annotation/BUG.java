@@ -44,13 +44,13 @@ import org.apiguardian.api.API;
  *  element.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: BUG.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: BUG.java 1118 2024-03-15 16:14:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: BUG.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: BUG.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( RUNTIME )
@@ -73,6 +73,7 @@ public @interface BUG
      *
      *  @return The BUG id.
      */
+    @SuppressWarnings( "NewMethodNamingConvention" )
     String id();
 }
 //  @interface BUG

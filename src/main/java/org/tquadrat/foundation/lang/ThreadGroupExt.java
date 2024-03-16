@@ -35,12 +35,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>This class is not final, to allow further modifications.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadGroupExt.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: ThreadGroupExt.java 1118 2024-03-15 16:14:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadGroupExt.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadGroupExt.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class ThreadGroupExt extends ThreadGroup
 {
@@ -53,10 +53,6 @@ public class ThreadGroupExt extends ThreadGroup
      *  for this thread group. It can be {@code null}.
      */
     private final UncaughtExceptionHandler m_UncaughtExceptionHandler;
-
-        /*------------------------*\
-    ====** Static Initialisations **===========================================
-        \*------------------------*/
 
         /*--------------*\
     ====** Constructors **=====================================================

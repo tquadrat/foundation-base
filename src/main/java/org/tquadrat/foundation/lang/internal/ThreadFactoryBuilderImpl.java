@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.ThreadFactoryBuilder;
  *  {@link ThreadFactoryBuilder}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
 {
@@ -54,15 +54,17 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         \*---------------*/
     /**
      *  The implementation of
-     *  {@link ThreadFactoryBuilder}.
+     *  {@link ThreadFactory}
+     *  that is returned by
+     *  {@link ThreadFactoryBuilder#build()}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $
+     *  @version $Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     private static final class ThreadFactoryImpl implements ThreadFactory
     {
@@ -233,14 +235,15 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     private boolean m_IsDaemon = false;
 
     /**
-     *  The factory method for the thread names. The default returns
-     *  &quot;{@code Thread-#}&quot;, where &quot;#&quot; stands for a counter.
+     *  <p>{@summary The factory method for the thread names.} The default
+     *  returns &quot;{@code Thread-#}&quot;, where &quot;#&quot; stands for a
+     *  counter.</p>
      */
     private IntFunction<String> m_NameFactory = "Thread-%d"::formatted;
 
     /**
-     *  The priority for the new threads. The default value of -1 indicates
-     *  that no priority will be set explicitly.
+     *  <p>{@summary The priority for the new threads.} The default value of -1
+     *  indicates that no priority will be set explicitly.</p>
      */
     private int m_Priority = -1;
 

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,14 +17,14 @@
 
 package org.tquadrat.foundation.logging;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.util.logging.Level;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
 
 /**
  *  This class provides alias names for the
@@ -32,18 +32,18 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <ul>
  *      <li>{@link Level#FINE}</li>
  *      <li>{@link Level#FINEST}</li>
- *      <li>{@link Level#ERROR}</li>
+ *      <li>{@link Level#SEVERE}</li>
  *  </ul>
  *  so that the log levels for the JDK logging are more aligned with those from
  *  Log4j.
  *
- *  @version $Id: LogLevel.java 1047 2023-02-16 00:19:01Z tquadrat $
+ *  @version $Id: LogLevel.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "ClassWithTooManyFields" )
-@ClassVersion( sourceVersion = "$Id: LogLevel.java 1047 2023-02-16 00:19:01Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LogLevel.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class LogLevel extends Level
 {
@@ -118,19 +118,19 @@ public class LogLevel extends Level
         \*------------------------*/
     /**
      *  {@code DEBUG} is the alias for
-     *  {@link FINE}.
+     *  {@link Level#FINE}.
      */
     public static final LogLevel DEBUG = new LogLevel( "DEBUG", FINE );
 
     /**
      *  {@code ERROR} is the alias for
-     *  {@link SEVERE}.
+     *  {@link Level#SEVERE}.
      */
     public static final LogLevel ERROR = new LogLevel( "ERROR", SEVERE );
 
     /**
      *  {@code TRACE} is the alias for
-     *  {@link FINEST}.
+     *  {@link Level#FINEST}.
      */
     public static final LogLevel TRACE = new LogLevel( "TRACE", FINEST );
 

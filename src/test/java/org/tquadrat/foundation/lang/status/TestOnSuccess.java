@@ -17,22 +17,6 @@
 
 package org.tquadrat.foundation.lang.status;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static java.util.Locale.ROOT;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-
-import java.util.ArrayList;
-import java.util.function.Consumer;
-import java.util.function.Function;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
@@ -41,6 +25,17 @@ import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.ErrorHandler;
 import org.tquadrat.foundation.lang.Status;
 import org.tquadrat.foundation.testutil.TestBaseClass;
+
+import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static java.util.Locale.ROOT;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
 
 /**
  *  Some tests for
@@ -207,7 +202,7 @@ public class TestOnSuccess extends TestBaseClass
         final var errorCode = new ValidationException();
         final var result = "result";
 
-        final var action = (Consumer<String>) _ -> { /* Does nothing */ };
+        final var action = (Consumer<String>) $ -> { /* Does nothing */ };
         final var conversion = (Function<String, String>) s -> isNull( s ) ? EMPTY_STRING : s.toUpperCase( ROOT );
         final var errorHandler = (ErrorHandler<RuntimeException>) e -> e;
 

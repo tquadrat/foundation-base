@@ -40,20 +40,16 @@ import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
  *    .build();</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilder.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilder.java 1118 2024-03-15 16:14:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ThreadFactoryBuilder
     permits ThreadFactoryBuilderImpl
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

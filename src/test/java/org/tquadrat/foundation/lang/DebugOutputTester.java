@@ -17,28 +17,25 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.System.err;
-import static java.lang.System.out;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.DebugOutput.ifDebug;
-import static org.tquadrat.foundation.lang.DebugOutput.ifTest;
-import static org.tquadrat.foundation.lang.DebugOutput.isDebug;
-import static org.tquadrat.foundation.lang.DebugOutput.isTest;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.PlaygroundClass;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
 
+import static java.lang.System.err;
+import static java.lang.System.out;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.DebugOutput.*;
+
 /**
  *  Playing around with
  *  {@link DebugOutput}.
  *
- *  @version $Id: DebugOutputTester.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: DebugOutputTester.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
 @PlaygroundClass
-@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutputTester.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutputTester
 {
@@ -65,11 +62,11 @@ public final class DebugOutputTester
             out.printf( "isDebug: %b%n", isDebug() );
             out.printf( "isTest : %b%n", isTest() );
 
-            ifDebug( _ -> "DebugOutput" );
-            ifTest( _ -> "TestOutput" );
+            ifDebug( $ -> "DebugOutput" );
+            ifTest( $ -> "TestOutput" );
 
-            ifDebug( () -> true, _ -> "DebugOutput" );
-            ifTest( () -> true, _ -> "TestOutput" );
+            ifDebug( () -> true, $ -> "DebugOutput" );
+            ifTest( () -> true, $ -> "TestOutput" );
 
             ifDebug( true, "DebugOutput: %s, %s"::formatted, "value1", "value2" );
             ifTest( true, "TestOutput: %s, %s"::formatted, "value1", "value2" );

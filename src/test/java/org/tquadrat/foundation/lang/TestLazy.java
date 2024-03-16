@@ -17,28 +17,22 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Supplier;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 
 /**
  *  Tests for the interface
@@ -47,9 +41,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.LazyImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestLazy.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestLazy.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestLazy.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestLazy.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.util.TestLazy" )
 public class TestLazy extends TestBaseClass
 {
@@ -107,7 +101,7 @@ public class TestLazy extends TestBaseClass
         assertNotNull( lazy );
         assertFalse( lazy.isPresent() );
 
-        lazy.ifPresent( _ -> fail( "Should not be called" ) );
+        lazy.ifPresent( $ -> fail( "Should not be called" ) );
 
         final Class<? extends Throwable> expectedException = IllegalStateException.class;
         try

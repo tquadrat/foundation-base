@@ -30,13 +30,13 @@
 <span class="source-line-no">017</span><span id="line-17"></span>
 <span class="source-line-no">018</span><span id="line-18">package org.tquadrat.foundation.lang;</span>
 <span class="source-line-no">019</span><span id="line-19"></span>
-<span class="source-line-no">020</span><span id="line-20">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">021</span><span id="line-21"></span>
-<span class="source-line-no">022</span><span id="line-22">import java.util.Map;</span>
-<span class="source-line-no">023</span><span id="line-23">import java.util.Map.Entry;</span>
-<span class="source-line-no">024</span><span id="line-24"></span>
-<span class="source-line-no">025</span><span id="line-25">import org.apiguardian.api.API;</span>
-<span class="source-line-no">026</span><span id="line-26">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">020</span><span id="line-20">import org.apiguardian.api.API;</span>
+<span class="source-line-no">021</span><span id="line-21">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">022</span><span id="line-22"></span>
+<span class="source-line-no">023</span><span id="line-23">import java.util.Map;</span>
+<span class="source-line-no">024</span><span id="line-24">import java.util.Map.Entry;</span>
+<span class="source-line-no">025</span><span id="line-25"></span>
+<span class="source-line-no">026</span><span id="line-26">import static org.apiguardian.api.API.Status.STABLE;</span>
 <span class="source-line-no">027</span><span id="line-27"></span>
 <span class="source-line-no">028</span><span id="line-28">/**</span>
 <span class="source-line-no">029</span><span id="line-29"> *  &lt;p&gt;{@summary The implementation of a tupel.}&lt;/p&gt;</span>
@@ -47,13 +47,13 @@
 <span class="source-line-no">034</span><span id="line-34"> *  @param  left    The left value of the pair.</span>
 <span class="source-line-no">035</span><span id="line-35"> *  @param  right   The right value of the pair.</span>
 <span class="source-line-no">036</span><span id="line-36"> *</span>
-<span class="source-line-no">037</span><span id="line-37"> *  @version $Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $</span>
+<span class="source-line-no">037</span><span id="line-37"> *  @version $Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $</span>
 <span class="source-line-no">038</span><span id="line-38"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">039</span><span id="line-39"> *  @UMLGraph.link</span>
 <span class="source-line-no">040</span><span id="line-40"> *  @since 0.1.0</span>
 <span class="source-line-no">041</span><span id="line-41"> */</span>
 <span class="source-line-no">042</span><span id="line-42">@SuppressWarnings( "NewClassNamingConvention" )</span>
-<span class="source-line-no">043</span><span id="line-43">@ClassVersion( sourceVersion = "$Id: Pair.java 1031 2022-04-07 22:43:02Z tquadrat $" )</span>
+<span class="source-line-no">043</span><span id="line-43">@ClassVersion( sourceVersion = "$Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $" )</span>
 <span class="source-line-no">044</span><span id="line-44">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">045</span><span id="line-45">public record Pair&lt;L,R&gt;( L left, R right )</span>
 <span class="source-line-no">046</span><span id="line-46">{</span>
@@ -73,57 +73,60 @@
 <span class="source-line-no">060</span><span id="line-60">     *</span>
 <span class="source-line-no">061</span><span id="line-61">     *  @return A reference to this instance as an {@code Entry}.</span>
 <span class="source-line-no">062</span><span id="line-62">     */</span>
-<span class="source-line-no">063</span><span id="line-63">    public final Map.Entry&lt;L,R&gt; asEntry()</span>
-<span class="source-line-no">064</span><span id="line-64">    {</span>
-<span class="source-line-no">065</span><span id="line-65">        @SuppressWarnings( "AnonymousInnerClass" )</span>
-<span class="source-line-no">066</span><span id="line-66">        final var retValue = new Entry&lt;L,R&gt;()</span>
-<span class="source-line-no">067</span><span id="line-67">        {</span>
-<span class="source-line-no">068</span><span id="line-68">            /**</span>
-<span class="source-line-no">069</span><span id="line-69">             *  {@inheritDoc}</span>
-<span class="source-line-no">070</span><span id="line-70">             */</span>
-<span class="source-line-no">071</span><span id="line-71">            @Override</span>
-<span class="source-line-no">072</span><span id="line-72">            public final L getKey() { return left(); }</span>
-<span class="source-line-no">073</span><span id="line-73"></span>
-<span class="source-line-no">074</span><span id="line-74">            /**</span>
-<span class="source-line-no">075</span><span id="line-75">             *  {@inheritDoc}</span>
-<span class="source-line-no">076</span><span id="line-76">             */</span>
-<span class="source-line-no">077</span><span id="line-77">            @Override</span>
-<span class="source-line-no">078</span><span id="line-78">            public final R getValue() { return right(); }</span>
-<span class="source-line-no">079</span><span id="line-79"></span>
-<span class="source-line-no">080</span><span id="line-80">            /**</span>
-<span class="source-line-no">081</span><span id="line-81">             *  {@inheritDoc}</span>
-<span class="source-line-no">082</span><span id="line-82">             */</span>
-<span class="source-line-no">083</span><span id="line-83">            @Override</span>
-<span class="source-line-no">084</span><span id="line-84">            public final R setValue( final R value ) { throw new UnsupportedOperationException( "setValue()" ); }</span>
-<span class="source-line-no">085</span><span id="line-85">        };</span>
-<span class="source-line-no">086</span><span id="line-86"></span>
-<span class="source-line-no">087</span><span id="line-87">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">088</span><span id="line-88">        return retValue;</span>
-<span class="source-line-no">089</span><span id="line-89">    }   //  asEntry()</span>
-<span class="source-line-no">090</span><span id="line-90"></span>
-<span class="source-line-no">091</span><span id="line-91">    /**</span>
-<span class="source-line-no">092</span><span id="line-92">     *  Creates a new instance of {@code Pair} with the right value from this</span>
-<span class="source-line-no">093</span><span id="line-93">     *  one and the given new left value.</span>
-<span class="source-line-no">094</span><span id="line-94">     *</span>
-<span class="source-line-no">095</span><span id="line-95">     *  @param  newLeft The new left value; can be {@code null}.</span>
-<span class="source-line-no">096</span><span id="line-96">     *  @return A new instance of {@code Pair}.</span>
-<span class="source-line-no">097</span><span id="line-97">     */</span>
-<span class="source-line-no">098</span><span id="line-98">    public final Pair&lt;L,R&gt; left( final L newLeft ) { return new Pair&lt;&gt;( newLeft, right ); }</span>
-<span class="source-line-no">099</span><span id="line-99"></span>
-<span class="source-line-no">100</span><span id="line-100">    /**</span>
-<span class="source-line-no">101</span><span id="line-101">     *  Creates a new instance of {@code Pair} with the left value from this</span>
-<span class="source-line-no">102</span><span id="line-102">     *  one and the given new right value.</span>
-<span class="source-line-no">103</span><span id="line-103">     *</span>
-<span class="source-line-no">104</span><span id="line-104">     *  @param  newRight The new right value; can be {@code null}.</span>
-<span class="source-line-no">105</span><span id="line-105">     *  @return A new instance of {@code Pair}.</span>
-<span class="source-line-no">106</span><span id="line-106">     */</span>
-<span class="source-line-no">107</span><span id="line-107">    public final Pair&lt;L,R&gt; right( final R newRight ) { return new Pair&lt;&gt;( left, newRight ); }</span>
-<span class="source-line-no">108</span><span id="line-108">}</span>
-<span class="source-line-no">109</span><span id="line-109">//  record Pair</span>
-<span class="source-line-no">110</span><span id="line-110"></span>
-<span class="source-line-no">111</span><span id="line-111">/*</span>
-<span class="source-line-no">112</span><span id="line-112"> *  End of File</span>
-<span class="source-line-no">113</span><span id="line-113"> */</span>
+<span class="source-line-no">063</span><span id="line-63">    @SuppressWarnings("PublicMethodNotExposedInInterface")</span>
+<span class="source-line-no">064</span><span id="line-64">    public final Map.Entry&lt;L,R&gt; asEntry()</span>
+<span class="source-line-no">065</span><span id="line-65">    {</span>
+<span class="source-line-no">066</span><span id="line-66">        @SuppressWarnings( "AnonymousInnerClass" )</span>
+<span class="source-line-no">067</span><span id="line-67">        final var retValue = new Entry&lt;L,R&gt;()</span>
+<span class="source-line-no">068</span><span id="line-68">        {</span>
+<span class="source-line-no">069</span><span id="line-69">            /**</span>
+<span class="source-line-no">070</span><span id="line-70">             *  {@inheritDoc}</span>
+<span class="source-line-no">071</span><span id="line-71">             */</span>
+<span class="source-line-no">072</span><span id="line-72">            @Override</span>
+<span class="source-line-no">073</span><span id="line-73">            public final L getKey() { return left(); }</span>
+<span class="source-line-no">074</span><span id="line-74"></span>
+<span class="source-line-no">075</span><span id="line-75">            /**</span>
+<span class="source-line-no">076</span><span id="line-76">             *  {@inheritDoc}</span>
+<span class="source-line-no">077</span><span id="line-77">             */</span>
+<span class="source-line-no">078</span><span id="line-78">            @Override</span>
+<span class="source-line-no">079</span><span id="line-79">            public final R getValue() { return right(); }</span>
+<span class="source-line-no">080</span><span id="line-80"></span>
+<span class="source-line-no">081</span><span id="line-81">            /**</span>
+<span class="source-line-no">082</span><span id="line-82">             *  {@inheritDoc}</span>
+<span class="source-line-no">083</span><span id="line-83">             */</span>
+<span class="source-line-no">084</span><span id="line-84">            @Override</span>
+<span class="source-line-no">085</span><span id="line-85">            public final R setValue( final R value ) { throw new UnsupportedOperationException( "setValue()" ); }</span>
+<span class="source-line-no">086</span><span id="line-86">        };</span>
+<span class="source-line-no">087</span><span id="line-87"></span>
+<span class="source-line-no">088</span><span id="line-88">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">089</span><span id="line-89">        return retValue;</span>
+<span class="source-line-no">090</span><span id="line-90">    }   //  asEntry()</span>
+<span class="source-line-no">091</span><span id="line-91"></span>
+<span class="source-line-no">092</span><span id="line-92">    /**</span>
+<span class="source-line-no">093</span><span id="line-93">     *  Creates a new instance of {@code Pair} with the right value from this</span>
+<span class="source-line-no">094</span><span id="line-94">     *  one and the given new left value.</span>
+<span class="source-line-no">095</span><span id="line-95">     *</span>
+<span class="source-line-no">096</span><span id="line-96">     *  @param  newLeft The new left value; can be {@code null}.</span>
+<span class="source-line-no">097</span><span id="line-97">     *  @return A new instance of {@code Pair}.</span>
+<span class="source-line-no">098</span><span id="line-98">     */</span>
+<span class="source-line-no">099</span><span id="line-99">    @SuppressWarnings("PublicMethodNotExposedInInterface")</span>
+<span class="source-line-no">100</span><span id="line-100">    public final Pair&lt;L,R&gt; left(final L newLeft ) { return new Pair&lt;&gt;( newLeft, right ); }</span>
+<span class="source-line-no">101</span><span id="line-101"></span>
+<span class="source-line-no">102</span><span id="line-102">    /**</span>
+<span class="source-line-no">103</span><span id="line-103">     *  Creates a new instance of {@code Pair} with the left value from this</span>
+<span class="source-line-no">104</span><span id="line-104">     *  one and the given new right value.</span>
+<span class="source-line-no">105</span><span id="line-105">     *</span>
+<span class="source-line-no">106</span><span id="line-106">     *  @param  newRight The new right value; can be {@code null}.</span>
+<span class="source-line-no">107</span><span id="line-107">     *  @return A new instance of {@code Pair}.</span>
+<span class="source-line-no">108</span><span id="line-108">     */</span>
+<span class="source-line-no">109</span><span id="line-109">    @SuppressWarnings("PublicMethodNotExposedInInterface")</span>
+<span class="source-line-no">110</span><span id="line-110">    public final Pair&lt;L,R&gt; right(final R newRight ) { return new Pair&lt;&gt;( left, newRight ); }</span>
+<span class="source-line-no">111</span><span id="line-111">}</span>
+<span class="source-line-no">112</span><span id="line-112">//  record Pair</span>
+<span class="source-line-no">113</span><span id="line-113"></span>
+<span class="source-line-no">114</span><span id="line-114">/*</span>
+<span class="source-line-no">115</span><span id="line-115"> *  End of File</span>
+<span class="source-line-no">116</span><span id="line-116"> */</span>
 
 
 

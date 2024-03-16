@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2020 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> * Copyright © 2002-2024 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *</span>
@@ -31,14 +31,14 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.exception;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">022</span><span id="line-22">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">023</span><span id="line-23">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
-<span class="source-line-no">024</span><span id="line-24"></span>
-<span class="source-line-no">025</span><span id="line-25">import java.io.Serial;</span>
-<span class="source-line-no">026</span><span id="line-26"></span>
-<span class="source-line-no">027</span><span id="line-27">import org.apiguardian.api.API;</span>
-<span class="source-line-no">028</span><span id="line-28">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">021</span><span id="line-21">import org.apiguardian.api.API;</span>
+<span class="source-line-no">022</span><span id="line-22">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">023</span><span id="line-23"></span>
+<span class="source-line-no">024</span><span id="line-24">import java.io.Serial;</span>
+<span class="source-line-no">025</span><span id="line-25"></span>
+<span class="source-line-no">026</span><span id="line-26">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">028</span><span id="line-28">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
 <span class="source-line-no">029</span><span id="line-29"></span>
 <span class="source-line-no">030</span><span id="line-30">/**</span>
 <span class="source-line-no">031</span><span id="line-31"> *  Use the application error to signal the abort of an application.&lt;br&gt;</span>
@@ -48,13 +48,13 @@
 <span class="source-line-no">035</span><span id="line-35"> *  logged or not. The flag is honoured by some methods in Foundation Logging.</span>
 <span class="source-line-no">036</span><span id="line-36"> *</span>
 <span class="source-line-no">037</span><span id="line-37"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">038</span><span id="line-38"> *  @version $Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $</span>
+<span class="source-line-no">038</span><span id="line-38"> *  @version $Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $</span>
 <span class="source-line-no">039</span><span id="line-39"> *  @since 0.0.5</span>
 <span class="source-line-no">040</span><span id="line-40"> *</span>
 <span class="source-line-no">041</span><span id="line-41"> *  @UMLGraph.link</span>
 <span class="source-line-no">042</span><span id="line-42"> */</span>
 <span class="source-line-no">043</span><span id="line-43">@SuppressWarnings( "ClassWithTooManyConstructors" )</span>
-<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1078 2023-10-19 14:39:47Z tquadrat $" )</span>
+<span class="source-line-no">044</span><span id="line-44">@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $" )</span>
 <span class="source-line-no">045</span><span id="line-45">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">046</span><span id="line-46">public class ApplicationError extends Error</span>
 <span class="source-line-no">047</span><span id="line-47">{</span>
@@ -197,18 +197,20 @@
 <span class="source-line-no">184</span><span id="line-184">     *  @return {@code true} if the error condition or the causing</span>
 <span class="source-line-no">185</span><span id="line-185">     *      exception were already logged, {@code false} otherwise.</span>
 <span class="source-line-no">186</span><span id="line-186">     */</span>
-<span class="source-line-no">187</span><span id="line-187">    public final boolean isLogged() { return m_IsAlreadyLogged; }</span>
-<span class="source-line-no">188</span><span id="line-188"></span>
-<span class="source-line-no">189</span><span id="line-189">    /**</span>
-<span class="source-line-no">190</span><span id="line-190">     *  Sets the 'is logged' flag to {@code true}.</span>
-<span class="source-line-no">191</span><span id="line-191">     */</span>
-<span class="source-line-no">192</span><span id="line-192">    public final void setLogged() { m_IsAlreadyLogged = true; }</span>
-<span class="source-line-no">193</span><span id="line-193">}</span>
-<span class="source-line-no">194</span><span id="line-194">//  class ApplicationError</span>
-<span class="source-line-no">195</span><span id="line-195"></span>
-<span class="source-line-no">196</span><span id="line-196">/*</span>
-<span class="source-line-no">197</span><span id="line-197"> *  End of File</span>
-<span class="source-line-no">198</span><span id="line-198"> */</span>
+<span class="source-line-no">187</span><span id="line-187">    @SuppressWarnings("PublicMethodNotExposedInInterface")</span>
+<span class="source-line-no">188</span><span id="line-188">    public final boolean isLogged() { return m_IsAlreadyLogged; }</span>
+<span class="source-line-no">189</span><span id="line-189"></span>
+<span class="source-line-no">190</span><span id="line-190">    /**</span>
+<span class="source-line-no">191</span><span id="line-191">     *  Sets the 'is logged' flag to {@code true}.</span>
+<span class="source-line-no">192</span><span id="line-192">     */</span>
+<span class="source-line-no">193</span><span id="line-193">    @SuppressWarnings("PublicMethodNotExposedInInterface")</span>
+<span class="source-line-no">194</span><span id="line-194">    public final void setLogged() { m_IsAlreadyLogged = true; }</span>
+<span class="source-line-no">195</span><span id="line-195">}</span>
+<span class="source-line-no">196</span><span id="line-196">//  class ApplicationError</span>
+<span class="source-line-no">197</span><span id="line-197"></span>
+<span class="source-line-no">198</span><span id="line-198">/*</span>
+<span class="source-line-no">199</span><span id="line-199"> *  End of File</span>
+<span class="source-line-no">200</span><span id="line-200"> */</span>
 
 
 

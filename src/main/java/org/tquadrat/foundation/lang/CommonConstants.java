@@ -17,8 +17,10 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.System.lineSeparator;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
 
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
@@ -30,10 +32,8 @@ import java.util.PropertyResourceBundle;
 import java.util.TimeZone;
 import java.util.function.Predicate;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import static java.lang.System.lineSeparator;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary This class provides a bunch of commonly used constants.}</p>
@@ -47,13 +47,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: CommonConstants.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"UnnecessaryUnicodeEscape"} )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -121,8 +121,10 @@ public final class CommonConstants
 
     //---* Numerical constants that are not in Math *--------------------------
     /**
-     *  The Gravity constant: 6.672E-11&nbsp;(N&nbsp;*&nbsp;m^2)/(kg^2). An
-     *  alternative unit for the constant is (m^3)/(kg&nbsp;*&nbsp;s^2).
+     *  The Gravity constant:
+     *  6.672E-11&nbsp;(N&nbsp;*&nbsp;m<sup>2</sup>)/(kg<sup>2</sup>). An
+     *  alternative unit for the constant is
+     *  (m<sup>3</sup>)/(kg&nbsp;*&nbsp;s<sup>2</sup>).
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final BigDecimal GRAVITY_CONSTANT = new BigDecimal( "6.672E-11" );
@@ -134,7 +136,7 @@ public final class CommonConstants
     public static final BigDecimal SPEED_OF_LIGHT =  new BigDecimal( "299792.458" );
 
     /**
-     *  The value for 1 G: 9.80665&nbsp;m/(s^2)
+     *  The value for 1 G: 9.80665&nbsp;m/(s<sup>2</sup>)
      */
     @API( status = STABLE, since = "0.0.5" )
     public static final BigDecimal STANDARD_G =  new BigDecimal( "9.80665" );

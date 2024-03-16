@@ -17,16 +17,16 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.tquadrat.foundation.lang.Objects.mapFromNull;
-
-import java.util.function.Supplier;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
+
+import java.util.function.Supplier;
+
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.tquadrat.foundation.lang.Objects.mapFromNull;
 
 /**
  *  Some tests for
@@ -83,8 +83,10 @@ public class TestMapFromNull extends TestBaseClass
         final var value = new Object();
 
         assertThrows( NullArgumentException.class, () -> mapFromNull( value, (Object) null ) );
+        //noinspection RedundantCast
         assertThrows( NullArgumentException.class, () -> mapFromNull( value, (Supplier<Object>) null ) );
         assertThrows( NullArgumentException.class, () -> mapFromNull( null, (Object) null ) );
+        //noinspection RedundantCast
         assertThrows( NullArgumentException.class, () -> mapFromNull( null, (Supplier<Object>) null ) );
     }   //  testMapFromNull_WithNullArguments()
 }

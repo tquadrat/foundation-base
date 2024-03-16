@@ -18,24 +18,24 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+
 /**
  *  The tests for the method
  *  {@link org.tquadrat.foundation.lang.Objects#equals(Object, Object)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestEquals.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestEquals.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestEquals.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestEquals.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestEquals" )
 public class TestEquals extends TestBaseClass
 {
@@ -51,6 +51,7 @@ public class TestEquals extends TestBaseClass
     {
         skipThreadTest();
 
+        //noinspection EqualsWithItself
         assertEquals( EMPTY_STRING.equals( EMPTY_STRING ), Objects.equals( EMPTY_STRING, EMPTY_STRING ) );
         assertEquals( EMPTY_STRING.equals( NULL_STRING ), Objects.equals( EMPTY_STRING, NULL_STRING ) );
         final var candidate = "null";

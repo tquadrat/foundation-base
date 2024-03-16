@@ -38,7 +38,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.stream.Indexed;
 import org.tquadrat.foundation.stream.StreamUtils;
 
-@ClassVersion( sourceVersion = "$Id: ZipTest.java 995 2022-01-23 01:09:35Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ZipTest.java 1118 2024-03-15 16:14:15Z tquadrat $" )
 @DisplayName( "com.codepoetics.protonpack.ZipTest" )
 public class ZipTest
 {
@@ -52,6 +52,7 @@ public class ZipTest
         final var streamA = Stream.of( "A", "B", "C" );
         final var streamB = Stream.of( "Apple", "Banana", "Carrot" );
 
+        //noinspection StandardVariableNames
         final var zipped = StreamUtils.zip( streamA, streamB, ( a, b ) -> a + " is for " + b ).collect( Collectors.toList() );
 
         assertThat( zipped, contains( "A is for Apple", "B is for Banana", "C is for Carrot" ) );
@@ -64,6 +65,7 @@ public class ZipTest
         final var streamA = Stream.of( "A", "B", "C", "D" );
         final var streamB = Stream.of( "Apple", "Banana", "Carrot" );
 
+        //noinspection StandardVariableNames
         final var zipped = StreamUtils.zip( streamA, streamB, ( a, b ) -> a + " is for " + b ).collect( Collectors.toList() );
 
         assertThat( zipped, contains( "A is for Apple", "B is for Banana", "C is for Carrot" ) );
@@ -76,6 +78,7 @@ public class ZipTest
         final var streamA = Stream.of( "A", "B", "C" );
         final var streamB = Stream.of( "Apple", "Banana", "Carrot", "Doughnut" );
 
+        //noinspection StandardVariableNames
         final var zipped = StreamUtils.zip( streamA, streamB, ( a, b ) -> a + " is for " + b ).collect( Collectors.toList() );
 
         assertThat( zipped, contains( "A is for Apple", "B is for Banana", "C is for Carrot" ) );

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -18,14 +18,7 @@
 
 package org.tquadrat.foundation.lang.helper;
 
-import static java.lang.Boolean.TRUE;
-import static java.util.Collections.emptyEnumeration;
-import static java.util.Collections.emptyList;
-import static java.util.Collections.emptyMap;
-import static java.util.Collections.emptySet;
-import static java.util.Collections.enumeration;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.time.Instant;
 import java.util.List;
@@ -37,16 +30,19 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static java.lang.Boolean.TRUE;
+import static java.util.Collections.*;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 
 /**
  *  The value providers for the unit tests in the base module.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueProviders.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: ValueProviders.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
 @SuppressWarnings( {"UtilityClassWithoutPrivateConstructor", "UtilityClass", "UtilityClassCanBeEnum", "unused"} )
-@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 public final class ValueProviders
 {
         /*-----------*\
@@ -101,8 +97,6 @@ public final class ValueProviders
      *
      *  @return A stream of values that are not {@code null} and not empty, but
      *      blank.
-     *
-     *  @see org.tquadrat.foundation.lang.objects.TestRequireNotBlankArgument#testRequireNotBlankArgument1WithBlankArgument(CharSequence)
      */
     static final Stream<CharSequence> blankTestArgumentProvider()
     {
@@ -164,10 +158,6 @@ public final class ValueProviders
      *  {@link org.tquadrat.foundation.lang.Objects}.
      *
      *  @return A stream of values that can be used as arguments for the tests.
-     *
-     *  @see org.tquadrat.foundation.lang.objects.TestCheckFromIndexSize#testCheckFromIndexSize(IntTupel3)
-     *  @see org.tquadrat.foundation.lang.objects.TestCheckFromToIndex#testCheckFromToIndex(IntTupel3)
-     *  @see org.tquadrat.foundation.lang.objects.TestCheckIndex#testCheckIndex(IntTupel3)
      */
     public static final Stream<IntTupel3> indexArgumentProvider()
     {
@@ -194,8 +184,6 @@ public final class ValueProviders
      *  not blank, not empty arguments.
      *
      *  @return A stream of values that are not {@code null}, not empty and not blank.
-     *
-     *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotBlankArgument1(CharSequence)
      */
     static final Stream<CharSequence> notBlankTestArgumentProvider()
     {
@@ -252,10 +240,7 @@ public final class ValueProviders
      *  @return A stream of values that are not {@code null}.
      *
      *  @see org.tquadrat.foundation.lang.objects.TestHashCode#testHashCode(Object)
-     *  @see org.tquadrat.foundation.lang.objects.TestIsNull#testIsNull(Object)
-     *  @see org.tquadrat.foundation.lang.objects.TestNonNull#testNonNull(Object)
      *  @see org.tquadrat.foundation.lang.objects.TestToString#testToStringObject(Object)
-     *  @see org.tquadrat.foundation.lang.objects.TestToString#testToStringObjectString(Object)
      */
     static final Stream<Object> nullTestArgumentProvider()
     {

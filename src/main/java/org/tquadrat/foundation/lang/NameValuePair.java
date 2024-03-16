@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2024 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,14 +17,14 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.util.Map.Entry;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
 /**
  *  An implementation of a name-value-pair.
@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      empty.
  *  @param  value   The value; can be {@code null}.
  *
- *  @version $Id: NameValuePair.java 1052 2023-03-06 06:30:36Z tquadrat $
+ *  @version $Id: NameValuePair.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1052 2023-03-06 06:30:36Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record NameValuePair<V>( String name, V value )
 {
@@ -80,7 +80,8 @@ public record NameValuePair<V>( String name, V value )
      *  @param  newValue    The new value; may be {@code null}.
      *  @return The new instance.
      */
-    public final NameValuePair<V> newValue( final V newValue ) { return new NameValuePair<>( name, newValue ); }
+    @SuppressWarnings("PublicMethodNotExposedInInterface")
+    public final NameValuePair<V> newValue(final V newValue ) { return new NameValuePair<>( name, newValue ); }
 }
 //  record NameValuePair
 

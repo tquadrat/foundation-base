@@ -108,10 +108,10 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="../StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;T&gt;</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $")
+<div class="type-signature"><span class="annotations"><a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-67">DefaultEnumStringConverter</a>&lt;T extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;T&gt;&gt;</span>
+</span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-65">DefaultEnumStringConverter</a>&lt;T extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;T&gt;&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../StringConverter.html" title="interface in org.tquadrat.foundation.lang">StringConverter</a>&lt;T&gt;</span></div>
 <div class="block">The default implementation of
@@ -137,7 +137,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: DefaultEnumStringConverter.java 1078 2023-10-19 14:39:47Z tquadrat $</dd>
+<dd>$Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.1.0</dd>
 <dt>See Also:</dt>
@@ -255,7 +255,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="MSG_UnknownValue">
 <h3>MSG_UnknownValue</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-78">MSG_UnknownValue</a></span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-76">MSG_UnknownValue</a></span></div>
 <div class="block">The error message for the name of an unknown class on the command line:
   "Unknown/invalid value: %1$s".</div>
 <dl class="notes">
@@ -271,7 +271,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="m_EnumType">
 <h3>m_EnumType</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-88">m_EnumType</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-86">m_EnumType</a></span></div>
 <div class="block">The data type of the property to set.</div>
 </section>
 </li>
@@ -286,7 +286,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.Class)">
 <h3>DefaultEnumStringConverter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-109">DefaultEnumStringConverter</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&nbsp;enumType)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-107">DefaultEnumStringConverter</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&nbsp;enumType)</span></div>
 <div class="block">Creates a new <code>EnumValueHandler</code> instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -306,7 +306,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <section class="detail" id="fromString(java.lang.CharSequence)">
 <h3>fromString</h3>
 <div class="member-signature"><span class="annotations"><a href="../../annotation/MountPoint.html" title="annotation interface in org.tquadrat.foundation.annotation">@MountPoint</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-120">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;source)</span>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-118">fromString</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;source)</span>
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
 <div class="block">Converts the given String to an object instance.</div>
 <dl class="notes">
@@ -327,7 +327,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="getSubjectClass()">
 <h3>getSubjectClass</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-143">getSubjectClass</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-141">getSubjectClass</a></span>()</div>
 <div class="block">Provides the subject class for this converter.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -339,7 +339,7 @@ implements <a href="../StringConverter.html" title="interface in org.tquadrat.fo
 <section class="detail" id="toString(T)">
 <h3 id="toString(java.lang.Enum)">toString</h3>
 <div class="member-signature"><span class="annotations"><a href="../../annotation/MountPoint.html" title="annotation interface in org.tquadrat.foundation.annotation">@MountPoint</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-149">toString</a></span><wbr><span class="parameters">(<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&nbsp;source)</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/internal/DefaultEnumStringConverter.html#line-147">toString</a></span><wbr><span class="parameters">(<a href="DefaultEnumStringConverter.html" title="type parameter in DefaultEnumStringConverter">T</a>&nbsp;source)</span></div>
 <div class="block">Converts the given object instance to a String.</div>
 <dl class="notes">
 <dt>Specified by:</dt>

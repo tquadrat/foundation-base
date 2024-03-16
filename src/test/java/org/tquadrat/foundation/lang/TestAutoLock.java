@@ -17,27 +17,20 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.concurrent.locks.ReentrantLock;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.locks.ReentrantLock;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *  Tests for the interface
@@ -46,9 +39,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $
+ *  @version $Id: TestAutoLock.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
 {
@@ -104,7 +97,7 @@ public class TestAutoLock extends TestBaseClass
             assertTrue( sourceLock.isHeldByCurrentThread() );
             assertTrue( sourceLock.isLocked() );
         }
-        catch( @SuppressWarnings( "unused" ) final InterruptedException _ ) { /* Deliberately ignored */ }
+        catch( @SuppressWarnings( "unused" ) final InterruptedException $ ) { /* Deliberately ignored */ }
 
         assertEquals( 0, sourceLock.getHoldCount() );
         assertFalse( sourceLock.isHeldByCurrentThread() );

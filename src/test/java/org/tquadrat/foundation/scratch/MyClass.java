@@ -17,13 +17,9 @@
 
 package org.tquadrat.foundation.scratch;
 
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -33,20 +29,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
 
 /**
  *  Comment
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MyClass.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: MyClass.java 1119 2024-03-16 09:03:57Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MyClass.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MyClass.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class MyClass
 {
@@ -193,6 +193,7 @@ public class MyClass
      */
     private final String formatData( final Data data, final ProcessContext context )
     {
+        @SuppressWarnings("UnnecessaryLocalVariable")
         final var retValue = EMPTY_STRING; // Do something with data
 
         //---* Done *------------------------------------------------
@@ -245,6 +246,7 @@ public class MyClass
         return retValue;
     }   //  obtainInputData()
 
+    @SuppressWarnings("UnnecessaryLocalVariable")
     public final String process() throws IOException
     {
         //---* Initialise the process context *----------------------

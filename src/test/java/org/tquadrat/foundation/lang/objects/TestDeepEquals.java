@@ -18,10 +18,6 @@
 
 package org.tquadrat.foundation.lang.objects;
 
-import static java.util.Collections.singletonList;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.tquadrat.foundation.lang.Objects.deepEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -29,14 +25,18 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.helper.IntTupel3;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
+import static java.util.Collections.singletonList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.tquadrat.foundation.lang.Objects.deepEquals;
+
 /**
  *  Some tests for the class
  *  {@link org.tquadrat.foundation.lang.Objects}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestDeepEquals.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestDeepEquals.java 1119 2024-03-16 09:03:57Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestDeepEquals.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestDeepEquals.java 1119 2024-03-16 09:03:57Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestDeepEquals" )
 public class TestDeepEquals extends TestBaseClass
 {
@@ -49,6 +49,7 @@ public class TestDeepEquals extends TestBaseClass
      *
      *  @param  value   The test arguments.
      */
+    @SuppressWarnings("EqualsWithItself")
     @ParameterizedTest
     @MethodSource( "org.tquadrat.foundation.lang.helper.ValueProviders#indexArgumentProvider" )
     final void testDeepEquals( final IntTupel3 value )
