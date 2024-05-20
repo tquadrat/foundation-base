@@ -17,10 +17,9 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import static java.lang.System.lineSeparator;
+import static org.apiguardian.api.API.Status.DEPRECATED;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
@@ -28,12 +27,15 @@ import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.PropertyResourceBundle;
 import java.util.TimeZone;
 import java.util.function.Predicate;
 
-import static java.lang.System.lineSeparator;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
 
 /**
  *  <p>{@summary This class provides a bunch of commonly used constants.}</p>
@@ -490,16 +492,26 @@ public final class CommonConstants
     //---* Timezones *---------------------------------------------------------
     /**
      *  The basic time zone (the time zone for the 'Universal Time Code').
+     *
+     *  @deprecated As the {@code java.util.Date} API is now obsolete, also the
+     *      related classes, like {@code java.util.TimeZone} should be used no
+     *      longer.
      */
+    @Deprecated( since = "0.4.4", forRemoval = true )
     @SuppressWarnings( "UseOfObsoleteDateTimeApi" )
-    @API( status = STABLE, since = "0.0.5" )
+    @API( status = DEPRECATED, since = "0.0.5" )
     public static final TimeZone UTC;
 
     /**
      *  The basic time zone (the time zone for the 'Universal Time Code').
+     *
+     *  @deprecated Use
+     *      {@link ZoneOffset#UTC}
+     *      instead.
      */
-    @API( status = STABLE, since = "0.0.6" )
-    public static final ZoneId ZONE_UTC = ZoneId.of( "UTC" );
+    @Deprecated( since = "0.4.4", forRemoval = false )
+    @API( status = DEPRECATED, since = "0.0.6" )
+    public static final ZoneId ZONE_UTC = ZoneOffset.UTC;
 
     //---* Constants that are useful in conjunction with XML *-----------------
     /**
