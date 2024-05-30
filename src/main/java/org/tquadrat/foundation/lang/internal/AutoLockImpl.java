@@ -35,17 +35,17 @@ import org.tquadrat.foundation.lang.Operation;
 
 /**
  *  The implementation of
- *  {@link AutoLockImpl}.
+ *  {@link AutoLock}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLockImpl.java 1096 2024-02-06 20:09:55Z tquadrat $
+ *  @version $Id: AutoLockImpl.java 1135 2024-05-28 21:32:48Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1096 2024-02-06 20:09:55Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1135 2024-05-28 21:32:48Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class AutoLockImpl implements AutoLock
 {
