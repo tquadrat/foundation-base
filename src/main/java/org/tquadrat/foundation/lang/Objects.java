@@ -69,14 +69,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1109 2024-03-02 04:59:57Z tquadrat $
+ *  @version $Id: Objects.java 1137 2024-05-31 00:14:04Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1109 2024-03-02 04:59:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1137 2024-05-31 00:14:04Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {
@@ -1080,9 +1080,13 @@ public final class Objects
     }   //  requireNonNullElseGet()
 
     /**
-     *  Applies the given validation on the given value, and if that fails, an
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, an
      *  {@link ValidationException}
-     *  with a default message is thrown.
+     *  with a default message is thrown.} The validation is also responsible
+     *  for the {@code null}-check; that means, the method
+     *  {@link Predicate#test(Object) test()}
+     *  of the validation may be called with {@code null} as the argument.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  arg The value to check; can be {@code null}.
@@ -1118,6 +1122,10 @@ public final class Objects
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
+     *  <p>The validation is also responsible for the {@code null}-check; that
+     *  means, the method
+     *  {@link Predicate#test(Object) test()}
+     *  of the validation may be called with {@code null} as the argument.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  arg The value to check; can be {@code null}.
