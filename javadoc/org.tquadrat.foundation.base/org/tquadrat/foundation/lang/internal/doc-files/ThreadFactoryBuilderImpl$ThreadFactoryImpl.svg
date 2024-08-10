@@ -6,8 +6,8 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='1836.000'
-     height='594.000'>
+     width='1944.000'
+     height='528.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,8 +118,8 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='172.000'
-                  width='1786.000'
+                  height='106.000'
+                  width='1894.000'
                   x='0.000'
                   y='0.000'/>
         </clipPath>
@@ -129,47 +129,35 @@
                    clip-path='url(#ID000001)'>
                     <rect x='0.000'
                           y='0.000'
-                          width='1786.000'
-                          height='172.000'
+                          width='1894.000'
+                          height='106.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
-                          x2='1786.000'
+                          x2='1894.000'
                           y2='17.000'
                           class='separator'/>
-                    <text x='842.000'
+                    <text x='896.000'
                           y='13.000'>ThreadFactoryImpl</text>
                     <line x1='0.000'
-                          y1='122.000'
-                          x2='1786.000'
-                          y2='122.000'
+                          y1='67.000'
+                          x2='1894.000'
+                          y2='67.000'
                           class='separator'/>
                     <text y='30.000'
-                          class='final'>- m_ContextClassLoader:java.lang.ClassLoader</text>
+                          class='final'>- m_Builder:java.lang.Thread.Builder</text>
                     <text y='41.000'
-                          class='final'>- m_InheritThreadLocals:boolean</text>
+                          class='final'>- m_ContextClassLoader:java.lang.ClassLoader</text>
                     <text y='52.000'
-                          class='final'>- m_IsDaemon:boolean</text>
-                    <text y='63.000'
                           class='final'>- m_NameCounter:java.util.concurrent.atomic.AtomicInteger</text>
-                    <text y='74.000'
+                    <text y='63.000'
                           class='final'>- m_NameFactory:java.util.function.IntFunction&lt;java.lang.String&gt;</text>
-                    <text y='85.000'
-                          class='final'>- m_Priority:int</text>
-                    <text y='96.000'
-                          class='final'>- m_StackSize:long</text>
-                    <text y='107.000'
-                          class='final'>- m_ThreadGroup:java.lang.ThreadGroup</text>
-                    <text y='118.000'
-                          class='final'>- m_UncaughtExceptionHandler:java.lang.Thread.UncaughtExceptionHandler</text>
                     <text x='5.000'
-                          y='135.000'>+ ThreadFactoryImpl(nameFactory:java.util.function.IntFunction&lt;java.lang.String&gt;,threadGroup:java.lang.ThreadGroup,stackSize:long,inheritThreadLocals:boolean,contextClassLoader:java.lang.ClassLoader,isDaemon:boolean,priority:int,uncaughtExceptionHandler:java.lang.Thread.UncaughtExceptionHandler)</text>
+                          y='80.000'>+ ThreadFactoryImpl(nameFactory:java.util.function.IntFunction&lt;java.lang.String&gt;,threadGroup:java.lang.ThreadGroup,stackSize:long,inheritThreadLocals:boolean,contextClassLoader:java.lang.ClassLoader,isDaemon:boolean,priority:int,uncaughtExceptionHandler:java.lang.Thread.UncaughtExceptionHandler,isVirtual:boolean)</text>
                     <text x='5.000'
-                          y='146.000'>- generateName():java.lang.String</text>
+                          y='91.000'>- generateName():java.lang.String</text>
                     <text x='5.000'
-                          y='157.000'>+ newThread(target:java.lang.Runnable):java.lang.Thread</text>
-                    <text x='5.000'
-                          y='168.000'>+ toString():java.lang.String</text>
+                          y='102.000'>+ newThread(target:java.lang.Runnable):java.lang.Thread</text>
                 </g>
             </g>
         </symbol>
@@ -270,15 +258,15 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M893.000,297.000 c0.000,-85.000,-434.000,0.000,-434.000,-85.000 v-15'
+          d='M947.000,297.000 c0.000,-85.000,-461.000,0.000,-461.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='implementation'
-          d='M943.000,297.000 c0.000,-195.000,434.000,0.000,434.000,-195.000 v-15'
+          d='M997.000,297.000 c0.000,-195.000,461.000,0.000,461.000,-195.000 v-15'
           marker-end='url(#implementation)'/>
-    <use x='337.000'
+    <use x='364.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
-    <use x='1213.000'
+    <use x='1294.000'
          y='25.000'
          xlink:href='#java.util.concurrent.ThreadFactory'/>
     <use x='25.000'

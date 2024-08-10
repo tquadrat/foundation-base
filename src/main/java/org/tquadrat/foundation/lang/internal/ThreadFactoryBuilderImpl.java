@@ -20,6 +20,8 @@ package org.tquadrat.foundation.lang.internal;
 import static java.lang.Thread.MAX_PRIORITY;
 import static java.lang.Thread.MIN_PRIORITY;
 import static java.lang.Thread.UncaughtExceptionHandler;
+import static java.lang.Thread.ofPlatform;
+import static java.lang.Thread.ofVirtual;
 import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
@@ -72,24 +74,16 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         ====** Attributes **===================================================
             \*------------*/
         /**
+         *  The thread builder.
+         */
+        private final Thread.Builder m_Builder;
+
+        /**
          *  The context
          *  {@link ClassLoader}
          *  for the new threads. Can be {@code null}.
          */
         private final ClassLoader m_ContextClassLoader;
-
-        /**
-         *  If {@code true}, inherit initial values for inheritable
-         *  thread-locals from the constructing thread, otherwise no initial
-         *  values are inherited.
-         */
-        private final boolean m_InheritThreadLocals;
-
-        /**
-         *  {@code true} if the new threads are daemon thread, {@code false}
-         *  otherwise.
-         */
-        private final boolean m_IsDaemon;
 
         /**
          *  The counter for the thread name.
@@ -100,29 +94,6 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
          *  The factory method for the thread names.
          */
         private final IntFunction<String> m_NameFactory;
-
-        /**
-         *  The priority for the new threads. A value of -1 indicates that no
-         *  priority will be set explicitly.
-         */
-        private final int m_Priority;
-
-        /**
-         *  The desired stack size for the new threads, or zero to indicate
-         *  that this parameter is to be ignored.
-         */
-        private final long m_StackSize;
-
-        /**
-         *  The thread group for the new threads. Can be {@code null}.
-         */
-        private final ThreadGroup m_ThreadGroup;
-
-        /**
-         *  The uncaught exception handler for the new threads; can be
-         *  {@code null}.
-         */
-        private final UncaughtExceptionHandler m_UncaughtExceptionHandler;
 
             /*--------------*\
         ====** Constructors **=================================================
@@ -146,18 +117,27 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
          *      indicates that no priority will be set explicitly.
          *  @param  uncaughtExceptionHandler    The handler for uncaught
          *      exceptions for the new threads; can be {@code null}.
+         *  @param  isVirtual   {@code true} if this factory creates virtual
+         *      threads, {@code false} if it creates platform threads.
          */
         @SuppressWarnings( {"BooleanParameter", "ConstructorWithTooManyParameters"} )
-        public ThreadFactoryImpl( final IntFunction<String> nameFactory, final ThreadGroup threadGroup, final long stackSize, final boolean inheritThreadLocals, final ClassLoader contextClassLoader, final boolean isDaemon, final int priority, final UncaughtExceptionHandler uncaughtExceptionHandler )
+        public ThreadFactoryImpl( final IntFunction<String> nameFactory, final ThreadGroup threadGroup, final long stackSize, final boolean inheritThreadLocals, final ClassLoader contextClassLoader, final boolean isDaemon, final int priority, final UncaughtExceptionHandler uncaughtExceptionHandler, final boolean isVirtual )
         {
             m_NameFactory = requireNonNullArgument( nameFactory, "nameFactory" );
-            m_ThreadGroup = threadGroup;
-            m_StackSize = stackSize;
-            m_InheritThreadLocals = inheritThreadLocals;
             m_ContextClassLoader = contextClassLoader;
-            m_IsDaemon = isDaemon;
-            m_Priority = priority;
-            m_UncaughtExceptionHandler = uncaughtExceptionHandler;
+
+            m_Builder = isVirtual ? ofVirtual() : ofPlatform();
+            m_Builder.uncaughtExceptionHandler( uncaughtExceptionHandler )
+                .inheritInheritableThreadLocals( inheritThreadLocals );
+            
+            if( !isVirtual )
+            {
+                final var builder = (Thread.Builder.OfPlatform) m_Builder;
+                builder.daemon( isDaemon )
+                    .stackSize( stackSize );
+                if( nonNull( threadGroup ) ) builder.group( threadGroup );
+                if( (MIN_PRIORITY <= priority) && (priority <= MAX_PRIORITY) ) builder.priority( priority );
+            }
         }   //  ThreadFactoryImpl()
 
             /*---------*\
@@ -176,38 +156,14 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         @Override
         public final Thread newThread( final Runnable target )
         {
-            final var retValue = new Thread( m_ThreadGroup, target, generateName(), m_StackSize, m_InheritThreadLocals );
+            m_Builder.name( generateName() );
+
+            final var retValue = m_Builder.unstarted( target );
             if( nonNull( m_ContextClassLoader ) ) retValue.setContextClassLoader( m_ContextClassLoader );
-            retValue.setDaemon( m_IsDaemon );
-            if( (MIN_PRIORITY <= m_Priority) && (m_Priority <= MAX_PRIORITY) ) retValue.setPriority( m_Priority );
-            if( nonNull( m_UncaughtExceptionHandler ) ) retValue.setUncaughtExceptionHandler( m_UncaughtExceptionHandler );
 
             //---* Done *------------------------------------------------------
             return retValue;
         }   //  newThread()
-
-        /**
-         *  {@inheritDoc}
-         */
-        @Override
-        public final String toString()
-        {
-            final var buffer = new StringJoiner( ", ", "%s[".formatted(  getClass().getName() ), "]" )
-                .add( "ContextClassLoader='%s'".formatted(  Objects.toString( m_ContextClassLoader ) ) )
-                .add( "InheritThreadLocals=%b".formatted(  m_InheritThreadLocals ) )
-                .add( "IsDaemon=%b".formatted(  m_IsDaemon ) )
-                .add( "NameFactory='%s' (returns \"%s\")".formatted(  Objects.toString( m_NameFactory ), m_NameFactory.apply( 1 ) ) )
-                .add( "Priority=%d".formatted(  m_Priority ) )
-                .add( "StackSize=%d byte".formatted(  m_StackSize ) )
-                .add( "ThreadGroup='%s' (name: %s)".formatted(  Objects.toString( m_ThreadGroup ), nonNull( m_ThreadGroup ) ? m_ThreadGroup.getName() : "n/a" ) )
-                .add( "UncaughtExceptionHandler='%s'".formatted(  Objects.toString( m_UncaughtExceptionHandler ) ) );
-
-            //---* Compose the return value *--------------------------------------
-            final var retValue = buffer.toString();
-
-            //---* Done *----------------------------------------------------------
-            return retValue;
-        }   //  toString()
     }
     //  class ThreadFactoryImpl
 
@@ -233,6 +189,14 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  otherwise. The default is {@code false}.
      */
     private boolean m_IsDaemon = false;
+
+    /**
+     *  Flag that determines whether this thread factory creates virtual
+     *  threads.
+     *
+     *  @since 0.4.5
+     */
+    private boolean m_IsVirtual = false;
 
     /**
      *  <p>{@summary The factory method for the thread names.} The default
@@ -281,7 +245,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     @Override
     public final ThreadFactory build()
     {
-        final var retValue = new ThreadFactoryImpl( m_NameFactory, m_ThreadGroup, m_StackSize, m_InheritThreadLocals, m_ContextClassLoader, m_IsDaemon, m_Priority, m_UncaughtExceptionHandler );
+        final var retValue = new ThreadFactoryImpl( m_NameFactory, m_ThreadGroup, m_StackSize, m_InheritThreadLocals, m_ContextClassLoader, m_IsDaemon, m_Priority, m_UncaughtExceptionHandler, m_IsVirtual );
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -388,6 +352,19 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         //---* Done *----------------------------------------------------------
         return this;
     }   //  setUncaughtExceptionHandler()
+
+    /**
+     *  {@inheritDoc}
+     */
+    @API( status = INTERNAL, since = "0.4.5" )
+    @Override
+    public final ThreadFactoryBuilderImpl setVirtual( final boolean flag )
+    {
+        m_IsVirtual = flag;
+
+        //---* Done *----------------------------------------------------------
+        return this;
+    }   //  setVirtual()
 
     /**
      *  {@inheritDoc}
