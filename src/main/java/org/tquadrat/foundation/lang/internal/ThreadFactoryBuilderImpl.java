@@ -42,12 +42,12 @@ import org.tquadrat.foundation.lang.ThreadFactoryBuilder;
  *  {@link ThreadFactoryBuilder}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
 {
@@ -61,12 +61,12 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  {@link ThreadFactoryBuilder#build()}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $
+     *  @version $Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1118 2024-03-15 16:14:15Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     private static final class ThreadFactoryImpl implements ThreadFactory
     {
@@ -129,7 +129,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
             m_Builder = isVirtual ? ofVirtual() : ofPlatform();
             m_Builder.uncaughtExceptionHandler( uncaughtExceptionHandler )
                 .inheritInheritableThreadLocals( inheritThreadLocals );
-            
+
             if( !isVirtual )
             {
                 final var builder = (Thread.Builder.OfPlatform) m_Builder;

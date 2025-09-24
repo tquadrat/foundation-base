@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2024 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,7 +17,6 @@
 
 package org.tquadrat.foundation.exception;
 
-import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
@@ -43,12 +42,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  as that is possible in general, but not in the particular context.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ImpossibleExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: ImpossibleExceptionError.java 1144 2024-09-08 22:35:47Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ImpossibleExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ImpossibleExceptionError.java 1144 2024-09-08 22:35:47Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class ImpossibleExceptionError extends UnexpectedExceptionError
 {
@@ -82,7 +81,7 @@ public final class ImpossibleExceptionError extends UnexpectedExceptionError
      */
     public ImpossibleExceptionError( final Throwable cause )
     {
-        super( format( MSG_ImpossibleException, requireNonNullArgument( cause, "cause" ).getClass().getName() ) , cause );
+        super( MSG_ImpossibleException.formatted( requireNonNullArgument( cause, "cause" ).getClass().getName() ) , cause );
     }   //  ImpossibleExceptionError()
 
     /**
@@ -95,7 +94,10 @@ public final class ImpossibleExceptionError extends UnexpectedExceptionError
      */
     public ImpossibleExceptionError( final String message, final Throwable cause )
     {
-        super( nonNull( message ) && !message.isEmpty() ? message : format( MSG_ImpossibleException, requireNonNullArgument( cause, "cause" ).getClass().getName() ), requireNonNullArgument( cause, "cause" ) );
+        /*
+         * StringUtils::isNotEmpty is not available here …
+         */
+        super( nonNull( message ) && !message.isEmpty() ? message : MSG_ImpossibleException.formatted( requireNonNullArgument( cause, "cause" ).getClass().getName() ), requireNonNullArgument( cause, "cause" ) );
     }   //  ImpossibleExceptionError()
 }
 //  class ImpossibleExceptionError
