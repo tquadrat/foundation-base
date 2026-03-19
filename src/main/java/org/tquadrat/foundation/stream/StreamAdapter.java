@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -44,6 +44,7 @@ import java.util.stream.Stream;
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.MountPoint;
+import org.tquadrat.foundation.annotation.NotRecord;
 
 /**
  *  This class allows to intercept the calls to the methods of
@@ -51,15 +52,16 @@ import org.tquadrat.foundation.annotation.MountPoint;
  *  delegate to the wrapped stream.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamAdapter.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: StreamAdapter.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream's elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StreamAdapter.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamAdapter.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.7" )
+@NotRecord
 public class StreamAdapter<T> implements Stream<T>
 {
         /*------------*\

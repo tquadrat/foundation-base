@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -49,13 +49,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1134 2024-05-20 16:53:16Z tquadrat $
+ *  @version $Id: CommonConstants.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"UnnecessaryUnicodeEscape"} )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1134 2024-05-20 16:53:16Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -87,7 +87,6 @@ public final class CommonConstants
     /**
      *  The non-breaking space character (&amp;#x00A0;/\u00A0).
      */
-    @SuppressWarnings( "SpellCheckingInspection" )
     @API( status = STABLE, since = "0.0.5" )
     public static final char CHAR_NBSP = '\u00A0';
 

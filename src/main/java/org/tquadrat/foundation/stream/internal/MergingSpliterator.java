@@ -26,8 +26,8 @@
 
 package org.tquadrat.foundation.stream.internal;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +37,9 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.NotRecord;
 
 /**
  *  An implementation of
@@ -47,7 +48,7 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MergingSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: MergingSpliterator.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type over which the merged streams stream.
@@ -56,8 +57,9 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MergingSpliterator.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
+@NotRecord
 public final class MergingSpliterator<T,O> implements Spliterator<O>
 {
         /*------------*\
@@ -164,7 +166,7 @@ public final class MergingSpliterator<T,O> implements Spliterator<O>
             final var unit = m_UnitSupplier.get();
 
             //---* We never do this in parallel, so fuck it *------------------
-            action.accept( mergeables.stream().reduce( unit, m_Merger, (l1,l2) -> l1 ) );
+            action.accept( mergeables.stream().reduce( unit, m_Merger, ( l1, _ ) -> l1 ) );
         }
 
         //---* Done *----------------------------------------------------------

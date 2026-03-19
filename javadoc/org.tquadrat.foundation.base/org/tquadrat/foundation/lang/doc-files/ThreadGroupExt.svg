@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='786.000'
-     height='932.000'>
+     height='899.000'>
     <defs>
         <style><![CDATA[
             line
@@ -161,7 +161,7 @@
         </symbol>
         <clipPath id='ID000002'>
             <rect class='externalClass'
-                  height='315.000'
+                  height='282.000'
                   width='442.000'
                   x='0.000'
                   y='0.000'/>
@@ -172,7 +172,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='442.000'
-                          height='315.000'
+                          height='282.000'
                           class='externalClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -223,21 +223,15 @@
                     <text x='5.000'
                           y='223.000'>+ enumerate(arg0:java.lang.ThreadGroup[],arg1:boolean):int</text>
                     <text x='5.000'
-                          y='234.000'>+ stop():void</text>
+                          y='234.000'>+ interrupt():void</text>
                     <text x='5.000'
-                          y='245.000'>+ interrupt():void</text>
+                          y='245.000'>+ destroy():void</text>
                     <text x='5.000'
-                          y='256.000'>+ suspend():void</text>
+                          y='256.000'>+ list():void</text>
                     <text x='5.000'
-                          y='267.000'>+ resume():void</text>
+                          y='267.000'>+ uncaughtException(arg0:java.lang.Thread,arg1:java.lang.Throwable):void</text>
                     <text x='5.000'
-                          y='278.000'>+ destroy():void</text>
-                    <text x='5.000'
-                          y='289.000'>+ list():void</text>
-                    <text x='5.000'
-                          y='300.000'>+ uncaughtException(arg0:java.lang.Thread,arg1:java.lang.Throwable):void</text>
-                    <text x='5.000'
-                          y='311.000'>+ toString():java.lang.String</text>
+                          y='278.000'>+ toString():java.lang.String</text>
                 </g>
             </g>
         </symbol>
@@ -338,7 +332,7 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M393.000,712.000 L393.000,612.000'
+          d='M393.000,679.000 L393.000,579.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
           d='M368.000,297.000 c0.000,-85.000,-221.000,0.000,-221.000,-85.000 v-15'
@@ -356,6 +350,6 @@
          y='297.000'
          xlink:href='#java.lang.ThreadGroup'/>
     <use x='34.000'
-         y='712.000'
+         y='679.000'
          xlink:href='#org.tquadrat.foundation.lang.ThreadGroupExt'/>
 </svg>

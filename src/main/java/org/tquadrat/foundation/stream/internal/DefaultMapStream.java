@@ -53,6 +53,7 @@ import java.util.stream.Stream;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.NotRecord;
 import org.tquadrat.foundation.stream.MapStream;
 
 /**
@@ -65,13 +66,14 @@ import org.tquadrat.foundation.stream.MapStream;
  *  @author Alexis Cartier (alexcrt)
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultMapStream.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: DefaultMapStream.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultMapStream.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultMapStream.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
+@NotRecord
 public final class DefaultMapStream<K,V> implements MapStream<K,V>
 {
         /*------------*\
@@ -226,7 +228,7 @@ public final class DefaultMapStream<K,V> implements MapStream<K,V>
      *  {@inheritDoc}
      */
     @Override
-    public final MapStream<K,V> limit( final long maxSize ) { return new DefaultMapStream<>( m_Delegate.limit( maxSize ) ); }
+    public final MapStream<K,V> limit( final long limit ) { return new DefaultMapStream<>( m_Delegate.limit( limit ) ); }
 
     /**
      *  {@inheritDoc}

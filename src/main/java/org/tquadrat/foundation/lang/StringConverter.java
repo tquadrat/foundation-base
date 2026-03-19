@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -48,10 +48,10 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  condition is weaker, as long as the result is equivalent to the original,
  *  as for numbers that can be represented as decimal, octal or
  *  hexadecimal.</p>
- *  <p>An implementation of {@code StringConverter} usually holds no state and
- *  it is possible to reuse an instance. Therefore it is recommended to provide
- *  a {@code public static final} field {@code INSTANCE} that is initialised
- *  with a reference for a single instance of the implementation.
+ *  <p>An implementation of {@code StringConverter} usually holds no state, and
+ *  it is possible to reuse an instance. Therefore, it is recommended to
+ *  provide a {@code public static final} field {@code INSTANCE} that is
+ *  initialised with a reference for a single instance of the implementation.
  *
  *  @note Both
  *      {@code fromString(CharSequence)} and {@code toString(Object)} will
@@ -87,7 +87,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      class must be visible for this module, too.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverter.java 1107 2024-03-01 15:33:11Z tquadrat $
+ *  @version $Id: StringConverter.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The Object type for the conversion.
@@ -95,7 +95,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: StringConverter.java 1107 2024-03-01 15:33:11Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverter.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface StringConverter<T> extends Serializable
 {

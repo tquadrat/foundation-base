@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2025 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -42,13 +42,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <T> The type of the operands and result of the operator.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBinaryOperator.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBinaryOperator<T> extends TCEBiFunction<T,T,T>
 {
@@ -63,7 +63,7 @@ public interface TCEBinaryOperator<T> extends TCEBiFunction<T,T,T>
      *  @return The function result.
      *  @throws Exception   Something went wrong.
      */
-    @SuppressWarnings( "ProhibitedExceptionDeclared" )
+    @SuppressWarnings( {"ProhibitedExceptionDeclared", "AbstractMethodOverridesAbstractMethod"} )
     @Override
     public T apply( T arg1, T arg2 ) throws Exception;
 }

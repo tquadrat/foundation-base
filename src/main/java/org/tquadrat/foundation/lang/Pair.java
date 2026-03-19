@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,13 +17,13 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary The implementation of a tupel.}</p>
@@ -34,13 +34,13 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  @param  left    The left value of the pair.
  *  @param  right   The right value of the pair.
  *
- *  @version $Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: Pair.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Pair.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Pair.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Pair<L,R>( L left, R right )
 {
@@ -60,7 +60,6 @@ public record Pair<L,R>( L left, R right )
      *
      *  @return A reference to this instance as an {@code Entry}.
      */
-    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final Map.Entry<L,R> asEntry()
     {
         @SuppressWarnings( "AnonymousInnerClass" )
@@ -96,7 +95,6 @@ public record Pair<L,R>( L left, R right )
      *  @param  newLeft The new left value; can be {@code null}.
      *  @return A new instance of {@code Pair}.
      */
-    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final Pair<L,R> left(final L newLeft ) { return new Pair<>( newLeft, right ); }
 
     /**
@@ -106,7 +104,6 @@ public record Pair<L,R>( L left, R right )
      *  @param  newRight The new right value; can be {@code null}.
      *  @return A new instance of {@code Pair}.
      */
-    @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final Pair<L,R> right(final R newRight ) { return new Pair<>( left, newRight ); }
 }
 //  record Pair

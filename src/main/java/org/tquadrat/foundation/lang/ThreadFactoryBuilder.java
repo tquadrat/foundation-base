@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
  *    .build();</code></pre>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilder.java 1143 2024-08-10 18:53:55Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilder.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1143 2024-08-10 18:53:55Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ThreadFactoryBuilder
     permits ThreadFactoryBuilderImpl
@@ -247,6 +247,7 @@ public sealed interface ThreadFactoryBuilder
      *
      *  @param  flag    {@code true} if the generated threads are virtual,
      *      otherwise {@code false}.
+     *  @return The builder.
      *
      *  @since 0.4.5
      */

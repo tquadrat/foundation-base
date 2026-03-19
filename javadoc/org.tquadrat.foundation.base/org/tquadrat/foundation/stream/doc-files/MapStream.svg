@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='1207.000'
-     height='2267.000'>
+     height='2278.000'>
     <defs>
         <style><![CDATA[
             line
@@ -323,7 +323,7 @@
                     <text x='5.000'
                           y='253.000'>+ iterator():java.util.Iterator&lt;java.util.Map.Entry&lt;K,V&gt;&gt;</text>
                     <text x='5.000'
-                          y='264.000'>+ limit(maxSize:long):org.tquadrat.foundation.stream.MapStream&lt;K,V&gt;</text>
+                          y='264.000'>+ limit(limit:long):org.tquadrat.foundation.stream.MapStream&lt;K,V&gt;</text>
                     <text x='5.000'
                           y='275.000'>+ map(mapper:java.util.function.Function&lt;? super java.util.Map.Entry&lt;K,V&gt;,? extends R&gt;):java.util.stream.Stream&lt;R&gt;</text>
                     <text x='5.000'
@@ -387,7 +387,7 @@
         </symbol>
         <clipPath id='ID000003'>
             <rect class='externalClass'
-                  height='579.000'
+                  height='590.000'
                   width='832.000'
                   x='0.000'
                   y='8.000'/>
@@ -398,7 +398,7 @@
                     <rect x='0.000'
                           y='8.000'
                           width='832.000'
-                          height='579.000'
+                          height='590.000'
                           class='externalClass'/>
                     <line x1='0.000'
                           y1='36.000'
@@ -497,63 +497,65 @@
                           y='363.000'
                           class='abstract'>+ reduce(arg0:U,arg1:java.util.function.BiFunction&lt;U,? super T,U&gt;,arg2:java.util.function.BinaryOperator&lt;U&gt;):U</text>
                     <text x='5.000'
-                          y='374.000'
-                          class='abstract'>+ collect(arg0:java.util.function.Supplier&lt;R&gt;,arg1:java.util.function.BiConsumer&lt;R,? super T&gt;,arg2:java.util.function.BiConsumer&lt;R,R&gt;):R</text>
+                          y='374.000'>&#x2A22; gather(arg0:java.util.stream.Gatherer&lt;? super T,?,R&gt;):java.util.stream.Stream&lt;R&gt;</text>
                     <text x='5.000'
                           y='385.000'
+                          class='abstract'>+ collect(arg0:java.util.function.Supplier&lt;R&gt;,arg1:java.util.function.BiConsumer&lt;R,? super T&gt;,arg2:java.util.function.BiConsumer&lt;R,R&gt;):R</text>
+                    <text x='5.000'
+                          y='396.000'
                           class='abstract'>+ collect(arg0:java.util.stream.Collector&lt;? super T,A,R&gt;):R</text>
                     <text x='5.000'
-                          y='396.000'>&#x2A22; toList():java.util.List&lt;T&gt;</text>
-                    <text x='5.000'
-                          y='407.000'
-                          class='abstract'>+ min(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                          y='407.000'>&#x2A22; toList():java.util.List&lt;T&gt;</text>
                     <text x='5.000'
                           y='418.000'
-                          class='abstract'>+ max(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
+                          class='abstract'>+ min(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
                     <text x='5.000'
                           y='429.000'
-                          class='abstract'>+ count():long</text>
+                          class='abstract'>+ max(arg0:java.util.Comparator&lt;? super T&gt;):java.util.Optional&lt;T&gt;</text>
                     <text x='5.000'
                           y='440.000'
-                          class='abstract'>+ anyMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                          class='abstract'>+ count():long</text>
                     <text x='5.000'
                           y='451.000'
-                          class='abstract'>+ allMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                          class='abstract'>+ anyMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
                     <text x='5.000'
                           y='462.000'
-                          class='abstract'>+ noneMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
+                          class='abstract'>+ allMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
                     <text x='5.000'
                           y='473.000'
-                          class='abstract'>+ findFirst():java.util.Optional&lt;T&gt;</text>
+                          class='abstract'>+ noneMatch(arg0:java.util.function.Predicate&lt;? super T&gt;):boolean</text>
                     <text x='5.000'
                           y='484.000'
-                          class='abstract'>+ findAny():java.util.Optional&lt;T&gt;</text>
+                          class='abstract'>+ findFirst():java.util.Optional&lt;T&gt;</text>
                     <text x='5.000'
                           y='495.000'
-                          class='abstract static'>+ builder():java.util.stream.Stream.Builder&lt;T&gt;</text>
+                          class='abstract'>+ findAny():java.util.Optional&lt;T&gt;</text>
                     <text x='5.000'
                           y='506.000'
-                          class='abstract static'>+ empty():java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ builder():java.util.stream.Stream.Builder&lt;T&gt;</text>
                     <text x='5.000'
                           y='517.000'
-                          class='abstract static'>+ of(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ empty():java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='528.000'
-                          class='abstract static'>+ ofNullable(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ of(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='539.000'
-                          class='abstract static'>+ of(arg0:T&#x2026;):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ ofNullable(arg0:T):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='550.000'
-                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ of(arg0:T&#x2026;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='561.000'
-                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.Predicate&lt;? super T&gt;,arg2:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='572.000'
-                          class='abstract static'>+ generate(arg0:java.util.function.Supplier&lt;? extends T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                          class='abstract static'>+ iterate(arg0:T,arg1:java.util.function.Predicate&lt;? super T&gt;,arg2:java.util.function.UnaryOperator&lt;T&gt;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='583.000'
+                          class='abstract static'>+ generate(arg0:java.util.function.Supplier&lt;? extends T&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                    <text x='5.000'
+                          y='594.000'
                           class='abstract static'>+ concat(arg0:java.util.stream.Stream&lt;? extends T&gt;,arg1:java.util.stream.Stream&lt;? extends T&gt;):java.util.stream.Stream&lt;T&gt;</text>
                 </g>
                 <g transform='translate(807.000 0.000)'>
@@ -691,10 +693,10 @@
         </symbol>
     </defs>
     <path class='implementation'
-          d='M591.000,1651.000 L591.000,1543.000'
+          d='M591.000,1662.000 L591.000,1554.000'
           marker-end='url(#implementation)'/>
     <path class='inheritance'
-          d='M591.000,1129.000 L591.000,1021.000'
+          d='M591.000,1140.000 L591.000,1032.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
           d='M591.000,442.000 L591.000,334.000'
@@ -712,9 +714,9 @@
          y='434.000'
          xlink:href='#java.util.stream.Stream'/>
     <use x='25.000'
-         y='1121.000'
+         y='1132.000'
          xlink:href='#org.tquadrat.foundation.stream.MapStream'/>
     <use x='64.000'
-         y='1643.000'
+         y='1654.000'
          xlink:href='#org.tquadrat.foundation.stream.internal.DefaultMapStream'/>
 </svg>

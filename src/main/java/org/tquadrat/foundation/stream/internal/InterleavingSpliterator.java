@@ -49,14 +49,14 @@ import org.tquadrat.foundation.stream.Selector;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: InterleavingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: InterleavingSpliterator.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the values to select from.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: InterleavingSpliterator.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class InterleavingSpliterator<T> implements Spliterator<T>
 {
@@ -136,7 +136,7 @@ public final class InterleavingSpliterator<T> implements Spliterator<T>
     @Override
     public final long getExactSizeIfKnown()
     {
-        final var retValue = Stream.of( m_Spliterators ).allMatch( spliterator -> spliterator.hasCharacteristics( Spliterator.SIZED ) )
+        final var retValue = Stream.of( m_Spliterators ).allMatch( spliterator -> spliterator.hasCharacteristics( SIZED ) )
             ? Stream.of( m_Spliterators ).mapToLong( Spliterator::getExactSizeIfKnown ).sum()
             : -1;
 

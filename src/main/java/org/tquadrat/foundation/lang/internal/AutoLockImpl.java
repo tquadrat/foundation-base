@@ -28,6 +28,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.NotRecord;
 import org.tquadrat.foundation.lang.Action;
 import org.tquadrat.foundation.lang.AutoLock;
 import org.tquadrat.foundation.lang.Constraint;
@@ -38,15 +39,16 @@ import org.tquadrat.foundation.lang.Operation;
  *  {@link AutoLock}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLockImpl.java 1135 2024-05-28 21:32:48Z tquadrat $
+ *  @version $Id: AutoLockImpl.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1135 2024-05-28 21:32:48Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
+@NotRecord
 public final class AutoLockImpl implements AutoLock
 {
         /*------------*\

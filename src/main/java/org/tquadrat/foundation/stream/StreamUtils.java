@@ -26,25 +26,36 @@
 
 package org.tquadrat.foundation.stream;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
-import org.tquadrat.foundation.stream.internal.*;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Spliterator;
-import java.util.function.*;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.BaseStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.exception.ValidationException;
+import org.tquadrat.foundation.stream.internal.AggregatingSpliterator;
+import org.tquadrat.foundation.stream.internal.InterleavingSpliterator;
+import org.tquadrat.foundation.stream.internal.MergingSpliterator;
+import org.tquadrat.foundation.stream.internal.SkipUntilSpliterator;
+import org.tquadrat.foundation.stream.internal.TakeWhileSpliterator;
+import org.tquadrat.foundation.stream.internal.UnfoldSpliterator;
+import org.tquadrat.foundation.stream.internal.ZippingSpliterator;
 
 /**
  *  Utility class providing static methods for performing various operations on
@@ -52,13 +63,13 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamUtils.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 public final class StreamUtils
 {
         /*--------------*\
@@ -73,12 +84,12 @@ public final class StreamUtils
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Aggregates items from source stream into list of items while supplied
-     *  predicate is {@code true} when evaluated on previous and current
-     *  item.<br>
-     *  <br>Can by seen as streaming alternative to
+     *  <p>{@summary Aggregates items from source stream into list of items
+     *  while supplied predicate is {@code true} when evaluated on previous and
+     *  current item.}</p>
+     *  <p>Can be seen as streaming alternative to
      *  {@link java.util.stream.Collectors#groupingBy(Function) Collectors.groupingBy()}
-     *  when source stream is sorted by key.
+     *  when source stream is sorted by key.</p>
      *
      *  @param  <T> The element type of the stream.
      *  @param  source  The source stream.
@@ -129,7 +140,7 @@ public final class StreamUtils
             throw new ValidationException( "Positive value expected for the size; it is %1$d".formatted( size ) );
         }
 
-        final var retValue = StreamSupport.stream( new AggregatingSpliterator<>( requireNonNullArgument( source, "source" ).spliterator(), (a,e) -> a.size() < size ), false );
+        final var retValue = StreamSupport.stream( new AggregatingSpliterator<>( requireNonNullArgument( source, "source" ).spliterator(), ( a, _ ) -> a.size() < size ), false );
 
         //---* Done *----------------------------------------------------------
         return retValue;

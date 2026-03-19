@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -25,6 +25,7 @@ import java.util.concurrent.locks.Lock;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.NotRecord;
 import org.tquadrat.foundation.lang.Action;
 import org.tquadrat.foundation.lang.AutoLock;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
@@ -36,13 +37,14 @@ import org.tquadrat.foundation.lang.Operation;
  *  The implementation of
  *  {@link LockExecutor}.
  *
- *  @version $Id: LockExecutorImpl.java 1097 2024-02-06 20:10:12Z tquadrat $
+ *  @version $Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1097 2024-02-06 20:10:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
+@NotRecord
 public final class LockExecutorImpl implements LockExecutor
 {
         /*------------*\
