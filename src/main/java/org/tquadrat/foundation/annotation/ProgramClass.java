@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -30,7 +30,7 @@ import org.apiguardian.api.API;
 /**
  *  <p>{@summary This is the marker annotation for a &quot;Main&quot; class.}
  *  That is a class that has a method</p>
- *  <pre><code>    public static final void main( String... )</code></pre>
+ *  <div class="source-container"><pre>public static final void main( String... )</pre></div>
  *  <p>and is meant either as the starting point of a larger application or as
  *  a standalone program.</p>
  *  <p>Particular the latter will have often just static methods – like

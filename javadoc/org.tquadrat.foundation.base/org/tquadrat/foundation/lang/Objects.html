@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-19T20:51:55.413837253Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-20T14:21:24.371380990Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -764,17 +764,17 @@ internally.</p></div>
 condition resolves to <code>false</code>.</p>
 <p>Basically, this method is a replacement for the code sequence
 below:</p>
-<pre><code>  …
+<div class="source-container"><pre>…
 if( !&lt;<i>condition</i>&gt; )
 {
     throw new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; );
 }
-…</code></pre>
+…</pre></div>
 <p>Code using this method may be easier to read than the <code>if</code>
 statement above:</p>
-<pre><code>  …
+<div class="source-container"><pre>…
 checkState( &lt;<i>condition</i>&gt;, () -&gt; new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; ) );
-…</code></pre></div>
+…</pre></div></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="checkState(boolean,java.util.function.Supplier)-type-param-E"><code>E</code> - The type of the exception that is thrown in case the
@@ -1019,7 +1019,7 @@ internally.</p></div>
 <div class="block"><p>Provides a replacement value if the given value is
 <code>null</code>.</p>
 <p>This is basically a shortcut to</p>
-<pre><code>Optional.ofNullable( value ).orElseGet( supplier )</code></pre></div>
+<div class="source-container"><pre>Optional.ofNullable( value ).orElseGet( supplier );</pre></div></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="mapFromNull(T,java.util.function.Supplier)-type-param-T"><code>T</code> - The type of the object to map.</span></dd>
@@ -1054,7 +1054,7 @@ internally.</p></div>
 <div class="block"><p>Provides a replacement value if the given value is
 <code>null</code>.</p>
 <p>This is basically a shortcut to</p>
-<pre><code>Optional.ofNullable( value ).orElse( replacement )</code></pre></div>
+<div class="source-container"><pre>Optional.ofNullable( value ).orElse( replacement );</pre></div></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="mapFromNull(T,T)-type-param-T"><code>T</code> - The type of the object to map.</span></dd>

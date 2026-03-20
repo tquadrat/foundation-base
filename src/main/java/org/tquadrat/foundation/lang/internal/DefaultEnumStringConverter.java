@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -33,25 +33,25 @@ import static org.apiguardian.api.API.Status.INTERNAL;
 import static org.tquadrat.foundation.lang.Objects.*;
 
 /**
- *  The default implementation of
+ *  <p>{@summary The default implementation of
  *  {@link StringConverter}
  *  for types that are derived from
- *  {@link Enum}.<br>
- *  <br>The implementation of
+ *  {@link Enum}.}</p>
+ *  <p>The implementation of
  *  {@link #fromString(CharSequence)}
  *  provided here uses
  *  {@link Class#getEnumConstants()}
- *  to find the {@code enum} value:
- *  <pre><code>  &hellip;
+ *  to find the {@code enum} value:</p>
+ *  <div class="source-container"><pre>&hellip;
  *  T result = stream( m_EnumType.getEnumConstants() )
  *      .filter( constant -&gt; value.equals( constant.name() ) )
  *      .findFirst()
  *      .orElseThrow( () -&gt; new IllegalArgumentException( &hellip; );
- *  &hellip;</code></pre>
- *  <br>The implementation of
+ *  &hellip;</pre></div>
+ *  <p>The implementation of
  *  {@link #toString(Enum)}
  *  in this class will return the value of
- *  {@link Enum#name()}.
+ *  {@link Enum#name()}.</p>
  *
  *  @param  <T> The concrete data type that is handled by this string converter
  *      implementation.

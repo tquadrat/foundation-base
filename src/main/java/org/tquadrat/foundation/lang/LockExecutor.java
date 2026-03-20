@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -30,12 +30,12 @@ import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
 /**
  *  <p>{@summary Allows to execute an operation with an obtained lock.}</p>
  *  <p>Use this class like below:</p>
- *  <pre><code>  …
+ *  <div class="source-container"><pre>…
  *  final var lock = new ReentrantLock();
  *  final var executor = LockExecutor.of( lock );
  *  …
  *  executor.execute( () -> doSomething() );
- *  …</code></pre>
+ *  …</pre></div>
  *
  *  @note   If your program is using {@code AutoLock}, you should use the
  *      corresponding methods from there.

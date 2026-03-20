@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2024 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -42,18 +42,18 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link java.util.function}
  *  do not declare any exception, for good reason. So the code below is not
  *  possible:</p>
- *  <pre><code>  &hellip;
+ *  <div class="source-container"><pre>&hellip;
  *  Appendable appendable = &hellip;
  *  Consumer appender = s -&gt; appendable.append( s );
  *  appender.accept( "&hellip;" );
- *  &hellip;</code></pre>
+ *  &hellip;</pre></div>
  *  <p>because
  *  {@link Appendable#append(CharSequence)}
  *  declares to throw an
  *  {@link java.io.IOException}.</p>
  *  <p>This class now is meant to wrap those exceptions and to allow them to
  *  bubble up to the caller:</p>
- *  <pre><code>  &hellip;
+ *  <div class="source-container"><pre>&hellip;
  *  Appendable appendable = &hellip;
  *  Consumer appender =
  *  {
@@ -75,7 +75,7 @@ import org.tquadrat.foundation.function.Functions;
  *  {
  *    throw (IOException) e.getCause();
  *  }
- *  &hellip;</code></pre>
+ *  &hellip;</pre></div>
  *  <p>When said above that the methods from the functional interfaces in the
  *  {@code java.util.function} <i>unfortunately</i> do not declare any
  *  exception, this was only focused on their use with code that may emit

@@ -22,7 +22,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-19T20:51:55.413837253Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-20T14:21:24.371380990Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -103,10 +103,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public sealed class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-68">UnexpectedExceptionError</a></span>
+</span><span class="modifiers">public sealed class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-71">UnexpectedExceptionError</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AssertionError.html" title="class or interface in java.lang" class="external-link">AssertionError</a></span>
 <span class="permits">permits <a href="ImpossibleExceptionError.html" title="class in org.tquadrat.foundation.exception">ImpossibleExceptionError</a></span></div>
-<div class="block">This implementation of
+<div class="block"><p>This implementation of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
 should be thrown in all cases where an unexpected exception was caught.
 Unlike an
@@ -122,20 +122,23 @@ interface
 &hellip;), instances of that class do support cloning and therefore that
 exception should not be thrown. Unfortunately, changes somewhere else in
 the source might prevent one of the attributes of the respective class from
-being cloned, so that exception could be thrown again &hellip;<br>
-<br>Another example could be this code sequence:<pre><code>  …
-File file = new File( … );
+being cloned, so that exception could be thrown again &hellip;</p>
+<p>Another example could be this code sequence:
+<div class="source-container"><pre>…
+final var file = new File( … );
 if( file.exists() )
 {
-    try( var inputStream = new FileInputStream( file ) )
+    try( final var inputStream = new FileInputStream( file ) )
     {
         …
     }
-    catch( FileNotFoundException e )
+    catch( final FileNotFoundException e )
     {
         throw new UnexpectedExceptionError( e );
     }
-}</code></pre></div>
+}</pre></div>
+<p>Although the code checked that the file exists, it could have vanished
+<i>unexpectedly</i> just before it was opened.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Author:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
@@ -234,7 +237,7 @@ if( file.exists() )
 <section class="detail" id="MSG_UnexpectedException">
 <h3>MSG_UnexpectedException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-79">MSG_UnexpectedException</a></span></div>
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-82">MSG_UnexpectedException</a></span></div>
 <div class="block">The message for this exception.</div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -259,7 +262,7 @@ if( file.exists() )
 <section class="detail" id="&lt;init&gt;(java.lang.Throwable)">
 <h3>UnexpectedExceptionError</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-101">UnexpectedExceptionError</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-104">UnexpectedExceptionError</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
 <div class="block">Creates a new instance of the Error. The message is a constant, only
 the causing exception can be given.</div>
 <dl class="notes">
@@ -273,7 +276,7 @@ the causing exception can be given.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.Throwable)">
 <h3>UnexpectedExceptionError</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-113">UnexpectedExceptionError</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/UnexpectedExceptionError.html#line-116">UnexpectedExceptionError</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
 <div class="block">Creates a new instance of the Error. This constructor should be used in
 cases where an enhanced message is useful or necessary.</div>

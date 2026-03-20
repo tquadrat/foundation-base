@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2024 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2026 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -55,18 +55,18 @@
 <span class="source-line-no">042</span><span id="line-42"> *  {@link java.util.function}</span>
 <span class="source-line-no">043</span><span id="line-43"> *  do not declare any exception, for good reason. So the code below is not</span>
 <span class="source-line-no">044</span><span id="line-44"> *  possible:&lt;/p&gt;</span>
-<span class="source-line-no">045</span><span id="line-45"> *  &lt;pre&gt;&lt;code&gt;  &amp;hellip;</span>
+<span class="source-line-no">045</span><span id="line-45"> *  &lt;div class="source-container"&gt;&lt;pre&gt;&amp;hellip;</span>
 <span class="source-line-no">046</span><span id="line-46"> *  Appendable appendable = &amp;hellip;</span>
 <span class="source-line-no">047</span><span id="line-47"> *  Consumer appender = s -&amp;gt; appendable.append( s );</span>
 <span class="source-line-no">048</span><span id="line-48"> *  appender.accept( "&amp;hellip;" );</span>
-<span class="source-line-no">049</span><span id="line-49"> *  &amp;hellip;&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="source-line-no">049</span><span id="line-49"> *  &amp;hellip;&lt;/pre&gt;&lt;/div&gt;</span>
 <span class="source-line-no">050</span><span id="line-50"> *  &lt;p&gt;because</span>
 <span class="source-line-no">051</span><span id="line-51"> *  {@link Appendable#append(CharSequence)}</span>
 <span class="source-line-no">052</span><span id="line-52"> *  declares to throw an</span>
 <span class="source-line-no">053</span><span id="line-53"> *  {@link java.io.IOException}.&lt;/p&gt;</span>
 <span class="source-line-no">054</span><span id="line-54"> *  &lt;p&gt;This class now is meant to wrap those exceptions and to allow them to</span>
 <span class="source-line-no">055</span><span id="line-55"> *  bubble up to the caller:&lt;/p&gt;</span>
-<span class="source-line-no">056</span><span id="line-56"> *  &lt;pre&gt;&lt;code&gt;  &amp;hellip;</span>
+<span class="source-line-no">056</span><span id="line-56"> *  &lt;div class="source-container"&gt;&lt;pre&gt;&amp;hellip;</span>
 <span class="source-line-no">057</span><span id="line-57"> *  Appendable appendable = &amp;hellip;</span>
 <span class="source-line-no">058</span><span id="line-58"> *  Consumer appender =</span>
 <span class="source-line-no">059</span><span id="line-59"> *  {</span>
@@ -88,7 +88,7 @@
 <span class="source-line-no">075</span><span id="line-75"> *  {</span>
 <span class="source-line-no">076</span><span id="line-76"> *    throw (IOException) e.getCause();</span>
 <span class="source-line-no">077</span><span id="line-77"> *  }</span>
-<span class="source-line-no">078</span><span id="line-78"> *  &amp;hellip;&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="source-line-no">078</span><span id="line-78"> *  &amp;hellip;&lt;/pre&gt;&lt;/div&gt;</span>
 <span class="source-line-no">079</span><span id="line-79"> *  &lt;p&gt;When said above that the methods from the functional interfaces in the</span>
 <span class="source-line-no">080</span><span id="line-80"> *  {@code java.util.function} &lt;i&gt;unfortunately&lt;/i&gt; do not declare any</span>
 <span class="source-line-no">081</span><span id="line-81"> *  exception, this was only focused on their use with code that may emit</span>

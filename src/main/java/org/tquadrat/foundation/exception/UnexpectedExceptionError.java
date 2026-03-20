@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,9 +28,9 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This implementation of
+ *  <p>{@summary This implementation of
  *  {@link Error}
- *  should be thrown in all cases where an unexpected exception was caught.
+ *  should be thrown in all cases where an unexpected exception was caught.}
  *  Unlike an
  *  {@link ImpossibleExceptionError},
  *  the exception is <i>possible</i>, but not expected – probably because the
@@ -44,20 +44,23 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  &hellip;), instances of that class do support cloning and therefore that
  *  exception should not be thrown. Unfortunately, changes somewhere else in
  *  the source might prevent one of the attributes of the respective class from
- *  being cloned, so that exception could be thrown again &hellip;<br>
- *  <br>Another example could be this code sequence:<pre><code>  …
- *  File file = new File( … );
+ *  being cloned, so that exception could be thrown again &hellip;</p>
+ *  <p>Another example could be this code sequence:
+ *  <div class="source-container"><pre>…
+ *  final var file = new File( … );
  *  if( file.exists() )
  *  {
- *      try( var inputStream = new FileInputStream( file ) )
+ *      try( final var inputStream = new FileInputStream( file ) )
  *      {
  *          …
  *      }
- *      catch( FileNotFoundException e )
+ *      catch( final FileNotFoundException e )
  *      {
  *          throw new UnexpectedExceptionError( e );
  *      }
- *  }</code></pre>
+ *  }</pre></div>
+ *  <p>Although the code checked that the file exists, it could have vanished
+ *  <i>unexpectedly</i> just before it was opened.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $

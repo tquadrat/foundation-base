@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2025 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -36,8 +36,8 @@ import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
  *  <p>The simplest use case to get a valid
  *  {@link ThreadFactory}
  *  instance is</p>
- *  <pre><code>final var threadFactory = ThreadFactoryBuilder.obtainBuilder()
- *    .build();</code></pre>
+ *  <div class="source-container"><pre>final var threadFactory = ThreadFactoryBuilder.obtainBuilder()
+ *    .build();</pre></div>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ThreadFactoryBuilder.java 1151 2025-10-01 21:32:15Z tquadrat $

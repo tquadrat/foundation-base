@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -56,7 +56,7 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *  sometimes, it would be nice to have that capability.</p>
  *  <p>Using the wrapper methods in this class, you can achieve that like
  *  this:</p>
- *  <pre><code>  &hellip;
+ *  <div class="source-container"><pre>&hellip;
  *  import static org.tquadrat.foundation.function.Functions.*;
  *  &hellip;
  *
@@ -74,7 +74,7 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *  {
  *    throw (IOException) e.getCause();
  *  }
- *  &hellip;</code></pre>
+ *  &hellip;</pre></div>
  *  <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
  *  <b>E</b>xception&quot;.</p>
  *

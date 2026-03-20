@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -114,7 +114,7 @@ public interface Stringer<T>
      *  implementation of
      *  {@link Object#toString()}}:
      *  it returns</p>
-     *  <pre><code>  o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</code></pre>.
+     *  <div class="source-container"><pre>o.getClass().getName() + "@" + Integer.toHexString( o.hashCode() );</pre></div>
      */
     @API( status = STABLE, since = "0.0.7" )
     public static final Stringer<? super Object> BASE_STRINGER = o -> isNull( o ) ? NULL_STRING : "%s@%x".formatted( o.getClass().getName(), o.hashCode() );

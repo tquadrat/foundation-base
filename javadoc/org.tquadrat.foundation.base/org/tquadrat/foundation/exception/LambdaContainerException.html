@@ -23,7 +23,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-19T20:51:55.413837253Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.0 API</p></div><p>Build: 2026-03-20T14:21:24.371380990Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -118,18 +118,18 @@ have not done that already.</p>
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/package-summary.html" class="external-link"><code>java.util.function</code></a>
 do not declare any exception, for good reason. So the code below is not
 possible:</p>
-<pre><code>  &hellip;
+<div class="source-container"><pre>&hellip;
 Appendable appendable = &hellip;
 Consumer appender = s -&gt; appendable.append( s );
 appender.accept( "&hellip;" );
-&hellip;</code></pre>
+&hellip;</pre></div>
 <p>because
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Appendable.html#append(java.lang.CharSequence)" title="class or interface in java.lang" class="external-link"><code>Appendable.append(CharSequence)</code></a>
 declares to throw an
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link"><code>IOException</code></a>.</p>
 <p>This class now is meant to wrap those exceptions and to allow them to
 bubble up to the caller:</p>
-<pre><code>  &hellip;
+<div class="source-container"><pre>&hellip;
 Appendable appendable = &hellip;
 Consumer appender =
 {
@@ -151,7 +151,7 @@ catch( LambdaContainerException e )
 {
   throw (IOException) e.getCause();
 }
-&hellip;</code></pre>
+&hellip;</pre></div>
 <p>When said above that the methods from the functional interfaces in the
 <code>java.util.function</code> <i>unfortunately</i> do not declare any
 exception, this was only focused on their use with code that may emit

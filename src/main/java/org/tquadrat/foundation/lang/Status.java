@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2024 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,10 +28,10 @@ import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.*;
 
 /**
- *  Instances of this record are meant to be used as the return values for
- *  methods that should either return a proper result, or an error code. <br>
- *  <br>A sample use case may look like this:
- *  <pre><code>  …
+ *  <p>{Instances of this record are meant to be used as the return values for
+ *  methods that should either return a proper result, or an error code.}</p>
+ *  <p>A sample use case may look like this:</p>
+ *  <div class="source-container"><pre>…
  *  public final Status&lt;Result,ErrorCode&gt; processInput( final InputStream input ) {…}
  *  …
  *
@@ -48,7 +48,7 @@ import static org.tquadrat.foundation.lang.Objects.*;
  *          return processInput( inputStream ).getOrElse( errorHandler );
  *      }
  *  }
- *  …</code></pre>
+ *  …</pre></div>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Status.java 1119 2024-03-16 09:03:57Z tquadrat $

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -198,17 +198,17 @@ public final class Objects
      *  condition resolves to {@code false}.}</p>
      *  <p>Basically, this method is a replacement for the code sequence
      *  below:</p>
-     *  <pre><code>  …
+     *  <div class="source-container"><pre>…
      *  if( !&lt;<i>condition</i>&gt; )
      *  {
      *      throw new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; );
      *  }
-     *  …</code></pre>
+     *  …</pre></div>
      *  <p>Code using this method may be easier to read than the {@code if}
      *  statement above:</p>
-     *  <pre><code>  …
+     *  <div class="source-container"><pre>…
      *  checkState( &lt;<i>condition</i>&gt;, () -> new &lt;<i>WhatEver</i>&gt;Exception( &lt;<i>WhatEverMessage</i>&gt; ) );
-     *  …</code></pre>
+     *  …</pre></div>
      *
      *  @param  <E> The type of the exception that is thrown in case the
      *      condition is not met.
@@ -374,7 +374,7 @@ public final class Objects
      *  <p>{@summary Provides a replacement value if the given value is
      *  {@code null}.}</p>
      *  <p>This is basically a shortcut to</p>
-     *  <pre><code>Optional.ofNullable( value ).orElseGet( supplier )</code></pre>
+     *  <div class="source-container"><pre>Optional.ofNullable( value ).orElseGet( supplier );</pre></div>
      *
      *  @param  <T> The type of the object to map.
      *  @param  value   The object to map; can be {@code null} (obviously).
@@ -404,7 +404,7 @@ public final class Objects
      *  <p>{@summary Provides a replacement value if the given value is
      *  {@code null}.}</p>
      *  <p>This is basically a shortcut to</p>
-     *  <pre><code>Optional.ofNullable( value ).orElse( replacement )</code></pre>
+     *  <div class="source-container"><pre>Optional.ofNullable( value ).orElse( replacement );</pre></div>
      *
      *  @param  <T> The type of the object to map.
      *  @param  value   The object to map; can be {@code null}.
