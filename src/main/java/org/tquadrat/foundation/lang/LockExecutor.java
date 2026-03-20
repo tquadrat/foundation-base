@@ -17,15 +17,15 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
-
-import java.util.Optional;
-import java.util.concurrent.locks.Lock;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
 import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
+
+import java.util.Optional;
+import java.util.concurrent.locks.Lock;
+
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary Allows to execute an operation with an obtained lock.}</p>
@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
  *  @note   If your program is using {@code AutoLock}, you should use the
  *      corresponding methods from there.
  *
- *  @version $Id: LockExecutor.java 1097 2024-02-06 20:10:12Z tquadrat $
+ *  @version $Id: LockExecutor.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutor.java 1097 2024-02-06 20:10:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutor.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface LockExecutor
     permits LockExecutorImpl

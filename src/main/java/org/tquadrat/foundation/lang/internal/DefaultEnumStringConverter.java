@@ -30,7 +30,9 @@ import java.util.List;
 import static java.lang.String.format;
 import static java.util.Arrays.stream;
 import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.lang.Objects.*;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  <p>{@summary The default implementation of
@@ -57,12 +59,12 @@ import static org.tquadrat.foundation.lang.Objects.*;
  *      implementation.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: DefaultEnumStringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DefaultEnumStringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public class DefaultEnumStringConverter<T extends Enum<T>> implements StringConverter<T>
 {

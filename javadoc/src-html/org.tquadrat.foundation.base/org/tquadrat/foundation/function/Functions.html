@@ -31,30 +31,30 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.function;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">022</span><span id="line-22"></span>
-<span class="source-line-no">023</span><span id="line-23">import java.util.function.BiConsumer;</span>
-<span class="source-line-no">024</span><span id="line-24">import java.util.function.BiFunction;</span>
-<span class="source-line-no">025</span><span id="line-25">import java.util.function.BinaryOperator;</span>
-<span class="source-line-no">026</span><span id="line-26">import java.util.function.Consumer;</span>
-<span class="source-line-no">027</span><span id="line-27">import java.util.function.Function;</span>
-<span class="source-line-no">028</span><span id="line-28">import java.util.function.Predicate;</span>
-<span class="source-line-no">029</span><span id="line-29">import java.util.function.Supplier;</span>
-<span class="source-line-no">030</span><span id="line-30"></span>
-<span class="source-line-no">031</span><span id="line-31">import org.apiguardian.api.API;</span>
-<span class="source-line-no">032</span><span id="line-32">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">033</span><span id="line-33">import org.tquadrat.foundation.annotation.UtilityClass;</span>
-<span class="source-line-no">034</span><span id="line-34">import org.tquadrat.foundation.exception.LambdaContainerException;</span>
-<span class="source-line-no">035</span><span id="line-35">import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;</span>
-<span class="source-line-no">036</span><span id="line-36">import org.tquadrat.foundation.function.tce.TCEBiConsumer;</span>
-<span class="source-line-no">037</span><span id="line-37">import org.tquadrat.foundation.function.tce.TCEBiFunction;</span>
-<span class="source-line-no">038</span><span id="line-38">import org.tquadrat.foundation.function.tce.TCEBinaryOperator;</span>
-<span class="source-line-no">039</span><span id="line-39">import org.tquadrat.foundation.function.tce.TCEConsumer;</span>
-<span class="source-line-no">040</span><span id="line-40">import org.tquadrat.foundation.function.tce.TCEFunction;</span>
-<span class="source-line-no">041</span><span id="line-41">import org.tquadrat.foundation.function.tce.TCEPredicate;</span>
-<span class="source-line-no">042</span><span id="line-42">import org.tquadrat.foundation.function.tce.TCESupplier;</span>
-<span class="source-line-no">043</span><span id="line-43">import org.tquadrat.foundation.function.tce.TCETriConsumer;</span>
-<span class="source-line-no">044</span><span id="line-44">import org.tquadrat.foundation.function.tce.TCETriFunction;</span>
+<span class="source-line-no">021</span><span id="line-21">import org.apiguardian.api.API;</span>
+<span class="source-line-no">022</span><span id="line-22">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">023</span><span id="line-23">import org.tquadrat.foundation.annotation.UtilityClass;</span>
+<span class="source-line-no">024</span><span id="line-24">import org.tquadrat.foundation.exception.LambdaContainerException;</span>
+<span class="source-line-no">025</span><span id="line-25">import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;</span>
+<span class="source-line-no">026</span><span id="line-26">import org.tquadrat.foundation.function.tce.TCEBiConsumer;</span>
+<span class="source-line-no">027</span><span id="line-27">import org.tquadrat.foundation.function.tce.TCEBiFunction;</span>
+<span class="source-line-no">028</span><span id="line-28">import org.tquadrat.foundation.function.tce.TCEBinaryOperator;</span>
+<span class="source-line-no">029</span><span id="line-29">import org.tquadrat.foundation.function.tce.TCEConsumer;</span>
+<span class="source-line-no">030</span><span id="line-30">import org.tquadrat.foundation.function.tce.TCEFunction;</span>
+<span class="source-line-no">031</span><span id="line-31">import org.tquadrat.foundation.function.tce.TCEPredicate;</span>
+<span class="source-line-no">032</span><span id="line-32">import org.tquadrat.foundation.function.tce.TCESupplier;</span>
+<span class="source-line-no">033</span><span id="line-33">import org.tquadrat.foundation.function.tce.TCETriConsumer;</span>
+<span class="source-line-no">034</span><span id="line-34">import org.tquadrat.foundation.function.tce.TCETriFunction;</span>
+<span class="source-line-no">035</span><span id="line-35"></span>
+<span class="source-line-no">036</span><span id="line-36">import java.util.function.BiConsumer;</span>
+<span class="source-line-no">037</span><span id="line-37">import java.util.function.BiFunction;</span>
+<span class="source-line-no">038</span><span id="line-38">import java.util.function.BinaryOperator;</span>
+<span class="source-line-no">039</span><span id="line-39">import java.util.function.Consumer;</span>
+<span class="source-line-no">040</span><span id="line-40">import java.util.function.Function;</span>
+<span class="source-line-no">041</span><span id="line-41">import java.util.function.Predicate;</span>
+<span class="source-line-no">042</span><span id="line-42">import java.util.function.Supplier;</span>
+<span class="source-line-no">043</span><span id="line-43"></span>
+<span class="source-line-no">044</span><span id="line-44">import static org.apiguardian.api.API.Status.STABLE;</span>
 <span class="source-line-no">045</span><span id="line-45"></span>
 <span class="source-line-no">046</span><span id="line-46">/**</span>
 <span class="source-line-no">047</span><span id="line-47"> *  &lt;p&gt;{@summary Some helper methods for the use with lambdas and functional</span>
@@ -92,13 +92,13 @@
 <span class="source-line-no">079</span><span id="line-79"> *  &lt;b&gt;E&lt;/b&gt;xception&amp;quot;.&lt;/p&gt;</span>
 <span class="source-line-no">080</span><span id="line-80"> *</span>
 <span class="source-line-no">081</span><span id="line-81"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">082</span><span id="line-82"> *  @version $Id: Functions.java 1060 2023-09-24 19:21:40Z tquadrat $</span>
+<span class="source-line-no">082</span><span id="line-82"> *  @version $Id: Functions.java 1163 2026-03-20 15:28:33Z tquadrat $</span>
 <span class="source-line-no">083</span><span id="line-83"> *  @since 0.0.5</span>
 <span class="source-line-no">084</span><span id="line-84"> *</span>
 <span class="source-line-no">085</span><span id="line-85"> *  @UMLGraph.link</span>
 <span class="source-line-no">086</span><span id="line-86"> */</span>
 <span class="source-line-no">087</span><span id="line-87">@UtilityClass</span>
-<span class="source-line-no">088</span><span id="line-88">@ClassVersion( sourceVersion = "$Id: Functions.java 1060 2023-09-24 19:21:40Z tquadrat $" )</span>
+<span class="source-line-no">088</span><span id="line-88">@ClassVersion( sourceVersion = "$Id: Functions.java 1163 2026-03-20 15:28:33Z tquadrat $" )</span>
 <span class="source-line-no">089</span><span id="line-89">public final class Functions</span>
 <span class="source-line-no">090</span><span id="line-90">{</span>
 <span class="source-line-no">091</span><span id="line-91">        /*--------------*\</span>

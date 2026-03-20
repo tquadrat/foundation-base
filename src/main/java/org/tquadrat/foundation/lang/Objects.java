@@ -18,10 +18,14 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.Integer.signum;
-import static java.util.Arrays.deepToString;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.BlankArgumentException;
+import org.tquadrat.foundation.exception.EmptyArgumentException;
+import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.exception.ValidationException;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -40,14 +44,10 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.BlankArgumentException;
-import org.tquadrat.foundation.exception.EmptyArgumentException;
-import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
+import static java.lang.Integer.signum;
+import static java.util.Arrays.deepToString;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 
 /**
  *  <p>{@summary This class consists of several utility methods working on
@@ -69,14 +69,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: Objects.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {

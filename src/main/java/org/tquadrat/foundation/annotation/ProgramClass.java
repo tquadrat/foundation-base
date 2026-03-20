@@ -17,15 +17,15 @@
 
 package org.tquadrat.foundation.annotation;
 
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.SOURCE;
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.apiguardian.api.API;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.SOURCE;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary This is the marker annotation for a &quot;Main&quot; class.}
@@ -38,10 +38,10 @@ import org.apiguardian.api.API;
  *  in some tools. This annotation allows to suppress these warnings.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ProgramClass.java 980 2022-01-06 15:29:19Z tquadrat $
+ *  @version $Id: ProgramClass.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: ProgramClass.java 980 2022-01-06 15:29:19Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ProgramClass.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( SOURCE )

@@ -17,16 +17,16 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.ValidationException;
+import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.function.IntFunction;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.ValidationException;
-import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary A builder for an implementation of
@@ -40,12 +40,12 @@ import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
  *    .build();</pre></div>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilder.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilder.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilder.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface ThreadFactoryBuilder
     permits ThreadFactoryBuilderImpl

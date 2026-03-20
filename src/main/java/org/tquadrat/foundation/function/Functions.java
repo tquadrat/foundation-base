@@ -18,16 +18,6 @@
 
 package org.tquadrat.foundation.function;
 
-import static org.apiguardian.api.API.Status.STABLE;
-
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.UtilityClass;
@@ -42,6 +32,16 @@ import org.tquadrat.foundation.function.tce.TCEPredicate;
 import org.tquadrat.foundation.function.tce.TCESupplier;
 import org.tquadrat.foundation.function.tce.TCETriConsumer;
 import org.tquadrat.foundation.function.tce.TCETriFunction;
+
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+import static org.apiguardian.api.API.Status.STABLE;
 
 /**
  *  <p>{@summary Some helper methods for the use with lambdas and functional
@@ -79,13 +79,13 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *  <b>E</b>xception&quot;.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Functions.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: Functions.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Functions.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Functions.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 public final class Functions
 {
         /*--------------*\

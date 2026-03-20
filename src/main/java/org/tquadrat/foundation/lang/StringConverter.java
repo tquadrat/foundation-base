@@ -17,18 +17,18 @@
 
 package org.tquadrat.foundation.lang;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.internal.StringConverterService.listInstances;
-import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForClass;
-import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForEnum;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Optional;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.internal.StringConverterService.listInstances;
+import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForClass;
+import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForEnum;
 
 /**
  *  <p>{@summary Defines the conversion between Strings and object instances,
@@ -87,7 +87,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      class must be visible for this module, too.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverter.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: StringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The Object type for the conversion.
@@ -95,7 +95,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: StringConverter.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface StringConverter<T> extends Serializable
 {

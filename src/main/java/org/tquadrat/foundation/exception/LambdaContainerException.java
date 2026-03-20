@@ -17,17 +17,17 @@
 
 package org.tquadrat.foundation.exception;
 
-import static java.util.Arrays.stream;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.function.Functions;
 
 import java.io.Serial;
 import java.util.Collection;
 import java.util.stream.Stream;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.function.Functions;
+import static java.util.Arrays.stream;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  <p>{@summary A &quot;container&quot; exception for exception thrown within
@@ -87,13 +87,13 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class LambdaContainerException extends CheckedExceptionWrapper
 {

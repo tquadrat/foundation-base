@@ -25,7 +25,9 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.*;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  <p>{Instances of this record are meant to be used as the return values for
@@ -51,7 +53,7 @@ import static org.tquadrat.foundation.lang.Objects.*;
  *  …</pre></div>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: Status.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -63,7 +65,7 @@ import static org.tquadrat.foundation.lang.Objects.*;
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {

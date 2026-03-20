@@ -18,13 +18,8 @@
 
 package org.tquadrat.foundation.lang;
 
-import static java.lang.String.format;
-import static java.util.function.Function.identity;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 import java.io.File;
 import java.net.URL;
@@ -32,8 +27,13 @@ import java.util.Formattable;
 import java.util.Optional;
 import java.util.function.Function;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static java.lang.String.format;
+import static java.util.function.Function.identity;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 /**
  *  <p>{@summary This interface defines a method to compose a String
@@ -92,14 +92,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see CommonConstants#NULL_STRING
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Stringer.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the argument value.
  */
-@ClassVersion( sourceVersion = "$Id: Stringer.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.1.0" )
 public interface Stringer<T>

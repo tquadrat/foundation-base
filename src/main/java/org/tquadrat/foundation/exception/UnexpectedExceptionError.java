@@ -17,15 +17,15 @@
 
 package org.tquadrat.foundation.exception;
 
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+
+import java.io.Serial;
+
 import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-
-import java.io.Serial;
-
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary This implementation of
@@ -63,12 +63,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <i>unexpectedly</i> just before it was opened.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: UnexpectedExceptionError.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1163 2026-03-20 15:28:33Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class UnexpectedExceptionError extends AssertionError
     permits ImpossibleExceptionError
