@@ -50,12 +50,12 @@
 <span class="source-line-no">037</span><span id="line-37"> *  The implementation of</span>
 <span class="source-line-no">038</span><span id="line-38"> *  {@link LockExecutor}.</span>
 <span class="source-line-no">039</span><span id="line-39"> *</span>
-<span class="source-line-no">040</span><span id="line-40"> *  @version $Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $</span>
+<span class="source-line-no">040</span><span id="line-40"> *  @version $Id: LockExecutorImpl.java 1185 2026-04-06 10:26:47Z tquadrat $</span>
 <span class="source-line-no">041</span><span id="line-41"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
 <span class="source-line-no">042</span><span id="line-42"> *  @UMLGraph.link</span>
 <span class="source-line-no">043</span><span id="line-43"> *  @since 0.1.0</span>
 <span class="source-line-no">044</span><span id="line-44"> */</span>
-<span class="source-line-no">045</span><span id="line-45">@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $" )</span>
+<span class="source-line-no">045</span><span id="line-45">@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1185 2026-04-06 10:26:47Z tquadrat $" )</span>
 <span class="source-line-no">046</span><span id="line-46">@API( status = INTERNAL, since = "0.1.0" )</span>
 <span class="source-line-no">047</span><span id="line-47">@NotRecord</span>
 <span class="source-line-no">048</span><span id="line-48">public final class LockExecutorImpl implements LockExecutor</span>
@@ -100,52 +100,52 @@
 <span class="source-line-no">087</span><span id="line-87">     * {@inheritDoc}</span>
 <span class="source-line-no">088</span><span id="line-88">     */</span>
 <span class="source-line-no">089</span><span id="line-89">    @Override</span>
-<span class="source-line-no">090</span><span id="line-90">    public void execute( final Action action ) throws ExecutionFailedException { m_Lock.execute( action ); }</span>
-<span class="source-line-no">091</span><span id="line-91"></span>
-<span class="source-line-no">092</span><span id="line-92">    /**</span>
-<span class="source-line-no">093</span><span id="line-93">     * {@inheritDoc}</span>
-<span class="source-line-no">094</span><span id="line-94">     */</span>
-<span class="source-line-no">095</span><span id="line-95">    @Override</span>
-<span class="source-line-no">096</span><span id="line-96">    public &lt;T&gt; Optional&lt;T&gt; execute( final Operation&lt;T&gt; operation ) throws ExecutionFailedException</span>
-<span class="source-line-no">097</span><span id="line-97">    {</span>
-<span class="source-line-no">098</span><span id="line-98">        final var retValue = m_Lock.execute( operation );</span>
-<span class="source-line-no">099</span><span id="line-99"></span>
-<span class="source-line-no">100</span><span id="line-100">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">101</span><span id="line-101">        return retValue;</span>
-<span class="source-line-no">102</span><span id="line-102">    }   //  execute()</span>
-<span class="source-line-no">103</span><span id="line-103"></span>
-<span class="source-line-no">104</span><span id="line-104">    /**</span>
-<span class="source-line-no">105</span><span id="line-105">     *  Creates a new {@code LockExecutor} from the given</span>
-<span class="source-line-no">106</span><span id="line-106">     *  {@link Lock}</span>
-<span class="source-line-no">107</span><span id="line-107">     *  instance.</span>
-<span class="source-line-no">108</span><span id="line-108">     *</span>
-<span class="source-line-no">109</span><span id="line-109">     *  @param  lock    The lock.</span>
-<span class="source-line-no">110</span><span id="line-110">     *  @return The new {@code LockExecutor}.</span>
-<span class="source-line-no">111</span><span id="line-111">     */</span>
-<span class="source-line-no">112</span><span id="line-112">    public static final LockExecutor of( final Lock lock )</span>
-<span class="source-line-no">113</span><span id="line-113">    {</span>
-<span class="source-line-no">114</span><span id="line-114">        final var autoLock = AutoLock.of( lock );</span>
-<span class="source-line-no">115</span><span id="line-115">        final var retValue = new LockExecutorImpl( autoLock );</span>
-<span class="source-line-no">116</span><span id="line-116"></span>
-<span class="source-line-no">117</span><span id="line-117">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">118</span><span id="line-118">        return retValue;</span>
-<span class="source-line-no">119</span><span id="line-119">    }   //  of()</span>
-<span class="source-line-no">120</span><span id="line-120"></span>
-<span class="source-line-no">121</span><span id="line-121">    /**</span>
-<span class="source-line-no">122</span><span id="line-122">     *  Creates a new {@code LockExecutor} from the given</span>
-<span class="source-line-no">123</span><span id="line-123">     *  {@link AutoLock}</span>
-<span class="source-line-no">124</span><span id="line-124">     *  instance.</span>
-<span class="source-line-no">125</span><span id="line-125">     *</span>
-<span class="source-line-no">126</span><span id="line-126">     *  @param  lock    The lock.</span>
-<span class="source-line-no">127</span><span id="line-127">     *  @return The new {@code LockExecutor}.</span>
-<span class="source-line-no">128</span><span id="line-128">     */</span>
-<span class="source-line-no">129</span><span id="line-129">    public static final LockExecutor of( final AutoLock lock )</span>
-<span class="source-line-no">130</span><span id="line-130">    {</span>
-<span class="source-line-no">131</span><span id="line-131">        final var retValue = new LockExecutorImpl( requireNonNullArgument( lock, "lock" ) );</span>
-<span class="source-line-no">132</span><span id="line-132"></span>
-<span class="source-line-no">133</span><span id="line-133">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">134</span><span id="line-134">        return retValue;</span>
-<span class="source-line-no">135</span><span id="line-135">    }   //  of()</span>
+<span class="source-line-no">090</span><span id="line-90">    public &lt;T&gt; Optional&lt;T&gt; execute( final Operation&lt;T&gt; operation ) throws ExecutionFailedException</span>
+<span class="source-line-no">091</span><span id="line-91">    {</span>
+<span class="source-line-no">092</span><span id="line-92">        final var retValue = m_Lock.execute( operation );</span>
+<span class="source-line-no">093</span><span id="line-93"></span>
+<span class="source-line-no">094</span><span id="line-94">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">095</span><span id="line-95">        return retValue;</span>
+<span class="source-line-no">096</span><span id="line-96">    }   //  execute()</span>
+<span class="source-line-no">097</span><span id="line-97"></span>
+<span class="source-line-no">098</span><span id="line-98">    /**</span>
+<span class="source-line-no">099</span><span id="line-99">     *  Creates a new {@code LockExecutor} from the given</span>
+<span class="source-line-no">100</span><span id="line-100">     *  {@link Lock}</span>
+<span class="source-line-no">101</span><span id="line-101">     *  instance.</span>
+<span class="source-line-no">102</span><span id="line-102">     *</span>
+<span class="source-line-no">103</span><span id="line-103">     *  @param  lock    The lock.</span>
+<span class="source-line-no">104</span><span id="line-104">     *  @return The new {@code LockExecutor}.</span>
+<span class="source-line-no">105</span><span id="line-105">     */</span>
+<span class="source-line-no">106</span><span id="line-106">    public static final LockExecutor of( final Lock lock )</span>
+<span class="source-line-no">107</span><span id="line-107">    {</span>
+<span class="source-line-no">108</span><span id="line-108">        final var autoLock = AutoLock.of( lock );</span>
+<span class="source-line-no">109</span><span id="line-109">        final var retValue = new LockExecutorImpl( autoLock );</span>
+<span class="source-line-no">110</span><span id="line-110"></span>
+<span class="source-line-no">111</span><span id="line-111">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">112</span><span id="line-112">        return retValue;</span>
+<span class="source-line-no">113</span><span id="line-113">    }   //  of()</span>
+<span class="source-line-no">114</span><span id="line-114"></span>
+<span class="source-line-no">115</span><span id="line-115">    /**</span>
+<span class="source-line-no">116</span><span id="line-116">     *  Creates a new {@code LockExecutor} from the given</span>
+<span class="source-line-no">117</span><span id="line-117">     *  {@link AutoLock}</span>
+<span class="source-line-no">118</span><span id="line-118">     *  instance.</span>
+<span class="source-line-no">119</span><span id="line-119">     *</span>
+<span class="source-line-no">120</span><span id="line-120">     *  @param  lock    The lock.</span>
+<span class="source-line-no">121</span><span id="line-121">     *  @return The new {@code LockExecutor}.</span>
+<span class="source-line-no">122</span><span id="line-122">     */</span>
+<span class="source-line-no">123</span><span id="line-123">    public static final LockExecutor of( final AutoLock lock )</span>
+<span class="source-line-no">124</span><span id="line-124">    {</span>
+<span class="source-line-no">125</span><span id="line-125">        final var retValue = new LockExecutorImpl( requireNonNullArgument( lock, "lock" ) );</span>
+<span class="source-line-no">126</span><span id="line-126"></span>
+<span class="source-line-no">127</span><span id="line-127">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">128</span><span id="line-128">        return retValue;</span>
+<span class="source-line-no">129</span><span id="line-129">    }   //  of()</span>
+<span class="source-line-no">130</span><span id="line-130"></span>
+<span class="source-line-no">131</span><span id="line-131">    /**</span>
+<span class="source-line-no">132</span><span id="line-132">     * {@inheritDoc}</span>
+<span class="source-line-no">133</span><span id="line-133">     */</span>
+<span class="source-line-no">134</span><span id="line-134">    @Override</span>
+<span class="source-line-no">135</span><span id="line-135">    public void perform( final Action action ) throws ExecutionFailedException { m_Lock.perform( action ); }</span>
 <span class="source-line-no">136</span><span id="line-136">}</span>
 <span class="source-line-no">137</span><span id="line-137">//  class LockExecutorImpl</span>
 <span class="source-line-no">138</span><span id="line-138"></span>

@@ -17,20 +17,27 @@
 
 package org.tquadrat.foundation.lang;
 
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.locks.ReentrantLock;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.concurrent.locks.ReentrantLock;
-
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *  Tests for the interface
@@ -39,9 +46,9 @@ import static org.junit.jupiter.api.Assertions.*;
  *  {@link org.tquadrat.foundation.lang.internal.AutoLockImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestAutoLock.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: TestAutoLock.java 1186 2026-04-06 11:24:14Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestAutoLock.java 1186 2026-04-06 11:24:14Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestAutoLock" )
 public class TestAutoLock extends TestBaseClass
 {
@@ -156,7 +163,7 @@ public class TestAutoLock extends TestBaseClass
         assertEquals( 0, result.get().length );
 
         //---* Close the stream, causing the exception below … *---------------
-        candidate.execute( inputStream::close );
+        candidate.perform( inputStream::close );
 
         final Throwable e = assertThrows( ExecutionFailedException.class, () -> candidate.execute( inputStream::readAllBytes ) );
         assertInstanceOf( IOException.class, e.getCause() );
@@ -183,7 +190,7 @@ public class TestAutoLock extends TestBaseClass
         assertThrows( expectedException, () -> candidate.evaluate( constraint ) );
 
         final Action action = null;
-        assertThrows( expectedException, () -> candidate.execute( action ) );
+        assertThrows( expectedException, () -> candidate.perform( action ) );
 
         final Operation<?> operation = null;
         assertThrows( expectedException, () -> candidate.execute( operation ) );

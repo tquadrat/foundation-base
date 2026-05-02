@@ -5,5 +5,6 @@ org.tquadrat.foundation.function
 org.tquadrat.foundation.function.tce
 org.tquadrat.foundation.lang
 org.tquadrat.foundation.lang.internal
+org.tquadrat.foundation.lang.value
 org.tquadrat.foundation.stream
 org.tquadrat.foundation.stream.internal

@@ -39,14 +39,14 @@ import org.tquadrat.foundation.lang.Operation;
  *  {@link AutoLock}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLockImpl.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: AutoLockImpl.java 1185 2026-04-06 10:26:47Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLockImpl.java 1185 2026-04-06 10:26:47Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @NotRecord
 public final class AutoLockImpl implements AutoLock
@@ -105,10 +105,14 @@ public final class AutoLockImpl implements AutoLock
     {
         requireNonNullArgument( constraint, "condition" );
         final boolean retValue;
-        try( final var ignore = lock() )
+        try( final var _ = lock() )
         {
             retValue = constraint.evaluate();
         }
+        /*
+         * Catching java.lang.Throwable is required here to wrap really all
+         * thrown exceptions into an ExecutionFailedException.
+         */
         catch( final Throwable t )
         {
             throw new ExecutionFailedException( t );
@@ -123,32 +127,18 @@ public final class AutoLockImpl implements AutoLock
      */
     @SuppressWarnings( "OverlyBroadCatchBlock" )
     @Override
-    public void execute( final Action action ) throws ExecutionFailedException
-    {
-        requireNonNullArgument( action, "action" );
-        try( final var ignore = lock() )
-        {
-            action.run();
-        }
-        catch( final Throwable t )
-        {
-            throw new ExecutionFailedException( t );
-        }
-    }   //  execute()
-
-    /**
-     * {@inheritDoc}
-     */
-    @SuppressWarnings( "OverlyBroadCatchBlock" )
-    @Override
     public <R> Optional<R> execute( final Operation<? extends R> verification ) throws ExecutionFailedException
     {
         requireNonNullArgument( verification, "operation" );
         final Optional<R> retValue;
-        try( final var ignore = lock() )
+        try( final var _ = lock() )
         {
             retValue = Optional.ofNullable( verification.get() );
         }
+        /*
+         * Catching java.lang.Throwable is required here to wrap really all
+         * thrown exceptions into an ExecutionFailedException.
+         */
         catch( final Throwable t )
         {
             throw new ExecutionFailedException( t );
@@ -195,6 +185,28 @@ public final class AutoLockImpl implements AutoLock
      */
     @Override
     public final Condition newCondition() { return m_Lock.newCondition(); }
+
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings( "OverlyBroadCatchBlock" )
+    @Override
+    public void perform( final Action action ) throws ExecutionFailedException
+    {
+        requireNonNullArgument( action, "action" );
+        try( final var _ = lock() )
+        {
+            action.run();
+        }
+        /*
+         * Catching java.lang.Throwable is required here to wrap really all
+         * thrown exceptions into an ExecutionFailedException.
+         */
+        catch( final Throwable t )
+        {
+            throw new ExecutionFailedException( t );
+        }
+    }   //  perform()
 }
 //  class AutoLock
 

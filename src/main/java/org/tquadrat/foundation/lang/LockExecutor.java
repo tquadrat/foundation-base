@@ -17,15 +17,15 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
-import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.util.Optional;
 import java.util.concurrent.locks.Lock;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.lang.AutoLock.ExecutionFailedException;
+import org.tquadrat.foundation.lang.internal.LockExecutorImpl;
 
 /**
  *  <p>{@summary Allows to execute an operation with an obtained lock.}</p>
@@ -40,12 +40,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  @note   If your program is using {@code AutoLock}, you should use the
  *      corresponding methods from there.
  *
- *  @version $Id: LockExecutor.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: LockExecutor.java 1185 2026-04-06 10:26:47Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutor.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutor.java 1185 2026-04-06 10:26:47Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface LockExecutor
     permits LockExecutorImpl
@@ -70,8 +70,20 @@ public sealed interface LockExecutor
      *  @param  action  The action.
      *  @throws ExecutionFailedException    The action failed for some
      *      reason.
+     *  @deprecated Use
+     *      {@link #perform(Action)}
+     *      instead; basically this method was renamed to avoid the unintended
+     *      use of
+     *      {@link #execute(Operation)}
+     *      when an
+     *      {@link Action}
+     *      should be used instead.
      */
-    public void execute( final Action action ) throws ExecutionFailedException;
+    @Deprecated( since = "0.25.3", forRemoval = true )
+    public default void execute( final Action action ) throws ExecutionFailedException
+    {
+        perform( action );
+    }   //  execute()
 
     /**
      *  Executes the given operation.
@@ -119,6 +131,21 @@ public sealed interface LockExecutor
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  of()
+
+    /**
+     *  <p>{@summary Performs the given action after obtaining the lock.}</p>
+     *  <p>This differs from
+     *  {@link #execute(Operation)}
+     *  as
+     *  {@link Action}
+     *  does not return something, and a warning regarding &quot;Result of
+     *  assignment expression used&quot; can be avoided in case the
+     *  {@code action} is used to set an attribute.</p>
+     *
+     *  @param  action  The action.
+     *  @throws ExecutionFailedException    The action failed for some reason.
+     */
+    public void perform( final Action action ) throws ExecutionFailedException;
 }
 //  interface LockExecutor
 

@@ -22,7 +22,7 @@
  *  @uses   org.tquadrat.foundation.lang.StringConverter    A service that
  *      converts object instances to String and vice versa.
  *
- *  @version $Id: module-info.java 1105 2024-02-28 12:58:46Z tquadrat $
+ *  @version $Id: module-info.java 1195 2026-04-15 21:33:40Z tquadrat $
  *
  *  @todo task.list
  */
@@ -37,6 +37,7 @@ module org.tquadrat.foundation.base
     exports org.tquadrat.foundation.function;
     exports org.tquadrat.foundation.function.tce;
     exports org.tquadrat.foundation.lang;
+    exports org.tquadrat.foundation.lang.value;
     exports org.tquadrat.foundation.stream;
 
     uses org.tquadrat.foundation.lang.StringConverter;

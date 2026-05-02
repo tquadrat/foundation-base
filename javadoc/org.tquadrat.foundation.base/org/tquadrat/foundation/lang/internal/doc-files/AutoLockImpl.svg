@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='642.000'
-     height='833.000'>
+     height='844.000'>
     <defs>
         <style><![CDATA[
             line
@@ -155,17 +155,17 @@
                     <text x='5.000'
                           y='80.000'>+ evaluate(constraint:org.tquadrat.foundation.lang.Constraint):boolean</text>
                     <text x='5.000'
-                          y='91.000'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
+                          y='91.000'>+ execute(verification:org.tquadrat.foundation.lang.Operation&lt;? extends R&gt;):java.util.Optional&lt;R&gt;</text>
                     <text x='5.000'
-                          y='102.000'>+ execute(verification:org.tquadrat.foundation.lang.Operation&lt;? extends R&gt;):java.util.Optional&lt;R&gt;</text>
+                          y='102.000'>+ getWrappedLockInstance():java.util.concurrent.locks.Lock</text>
                     <text x='5.000'
-                          y='113.000'>+ getWrappedLockInstance():java.util.concurrent.locks.Lock</text>
+                          y='113.000'>+ lock():org.tquadrat.foundation.lang.AutoLock</text>
                     <text x='5.000'
-                          y='124.000'>+ lock():org.tquadrat.foundation.lang.AutoLock</text>
+                          y='124.000'>+ lockInterruptibly():org.tquadrat.foundation.lang.AutoLock</text>
                     <text x='5.000'
-                          y='135.000'>+ lockInterruptibly():org.tquadrat.foundation.lang.AutoLock</text>
+                          y='135.000'>+ newCondition():java.util.concurrent.locks.Condition</text>
                     <text x='5.000'
-                          y='146.000'>+ newCondition():java.util.concurrent.locks.Condition</text>
+                          y='146.000'>+ perform(action:org.tquadrat.foundation.lang.Action):void</text>
                 </g>
             </g>
         </symbol>
@@ -227,7 +227,7 @@
         </symbol>
         <clipPath id='ID000003'>
             <rect class='otherClass'
-                  height='161.000'
+                  height='172.000'
                   width='574.000'
                   x='0.000'
                   y='0.000'/>
@@ -238,7 +238,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='574.000'
-                          height='161.000'
+                          height='172.000'
                           class='otherClass'/>
                     <line x1='0.000'
                           y1='28.000'
@@ -265,8 +265,7 @@
                           y='69.000'
                           class='abstract'>+ evaluate(constraint:org.tquadrat.foundation.lang.Constraint):boolean</text>
                     <text x='5.000'
-                          y='80.000'
-                          class='abstract'>+ execute(action:org.tquadrat.foundation.lang.Action):void</text>
+                          y='80.000'>&#x2A22; execute(action:org.tquadrat.foundation.lang.Action):void</text>
                     <text x='5.000'
                           y='91.000'
                           class='abstract'>+ execute(operation:org.tquadrat.foundation.lang.Operation&lt;? extends R&gt;):java.util.Optional&lt;R&gt;</text>
@@ -288,6 +287,9 @@
                     <text x='5.000'
                           y='157.000'
                           class='abstract static'>+ of(lock:java.util.concurrent.locks.Lock):org.tquadrat.foundation.lang.AutoLock</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='abstract'>+ perform(action:org.tquadrat.foundation.lang.Action):void</text>
                 </g>
             </g>
         </symbol>
@@ -332,10 +334,10 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M346.000,558.000 c0.000,-346.000,-185.500,0.000,-185.500,-346.000 v-15'
+          d='M346.000,569.000 c0.000,-357.000,-185.500,0.000,-185.500,-357.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='implementation'
-          d='M296.000,558.000 c0.000,-85.000,25.000,0.000,25.000,-85.000 v-15'
+          d='M296.000,569.000 c0.000,-85.000,25.000,0.000,25.000,-85.000 v-15'
           marker-end='url(#implementation)'/>
     <path class='inheritance'
           d='M321.000,297.000 c0.000,-195.000,160.500,0.000,160.500,-195.000 v-15'
@@ -350,6 +352,6 @@
          y='297.000'
          xlink:href='#org.tquadrat.foundation.lang.AutoLock'/>
     <use x='25.000'
-         y='558.000'
+         y='569.000'
          xlink:href='#org.tquadrat.foundation.lang.internal.AutoLockImpl'/>
 </svg>

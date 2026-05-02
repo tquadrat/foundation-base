@@ -68,14 +68,14 @@ import org.tquadrat.foundation.lang.internal.AutoLockImpl;
  *  unpredictable effects.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $
+ *  @version $Id: AutoLock.java 1185 2026-04-06 10:26:47Z tquadrat $
  *  @since 0.1.0
  *
  *  @see java.util.concurrent.locks.Lock
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoLock.java 1185 2026-04-06 10:26:47Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public sealed interface AutoLock extends AutoCloseable
     permits org.tquadrat.foundation.lang.internal.AutoLockImpl
@@ -86,13 +86,13 @@ public sealed interface AutoLock extends AutoCloseable
     /**
      *  <p>{@summary This exception is thrown when an operation fails.} The
      *
-     *  @version $Id: AutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $
+     *  @version $Id: AutoLock.java 1185 2026-04-06 10:26:47Z tquadrat $
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      *  @UMLGraph.link
      *  @since 0.1.0
      */
     @SuppressWarnings( "InnerClassOfInterface" )
-    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1097 2024-02-06 20:10:12Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoLock.java 1185 2026-04-06 10:26:47Z tquadrat $" )
     @API( status = STABLE, since = "0.1.0" )
     public static final class ExecutionFailedException extends RuntimeException
     {
@@ -146,8 +146,20 @@ public sealed interface AutoLock extends AutoCloseable
      *
      *  @param  action  The action.
      *  @throws ExecutionFailedException    The action failed for some reason.
+     *  @deprecated Use
+     *      {@link #perform(Action)}
+     *      instead; basically this method was renamed to avoid the unintended
+     *      use of
+     *      {@link #execute(Operation)}
+     *      when an
+     *      {@link Action}
+     *      should be used instead.
      */
-    public void execute( final Action action ) throws ExecutionFailedException;
+    @Deprecated( since = "0.25.3", forRemoval = true )
+    public default void execute( final Action action ) throws ExecutionFailedException
+    {
+        perform( action );
+    }   //  execute()
 
     /**
      *  Executes the given operation after obtaining the lock, and returns its
@@ -228,6 +240,21 @@ public sealed interface AutoLock extends AutoCloseable
      */
     @API( status = STABLE, since = "0.0.5" )
     public static AutoLock of( final Lock lock ) { return new AutoLockImpl( lock ); }
+
+    /**
+     *  <p>{@summary Performs the given action after obtaining the lock.}</p>
+     *  <p>This differs from
+     *  {@link #execute(Operation)}
+     *  as
+     *  {@link Action}
+     *  does not return something, and a warning regarding &quot;Result of
+     *  assignment expression used&quot; can be avoided in case the
+     *  {@code action} is used to set an attribute.</p>
+     *
+     *  @param  action  The action.
+     *  @throws ExecutionFailedException    The action failed for some reason.
+     */
+    public void perform( final Action action ) throws ExecutionFailedException;
 }
 //  interface AutoLock
 

@@ -39,9 +39,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.internal.LockExecutorImpl}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestLockExecutor.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestLockExecutor.java 1186 2026-04-06 11:24:14Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestLockExecutor.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestLockExecutor.java 1186 2026-04-06 11:24:14Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.TestLockExecutor" )
 public class TestLockExecutor extends TestBaseClass
 {
@@ -70,7 +70,7 @@ public class TestLockExecutor extends TestBaseClass
         assertNotNull( result );
 
         //---* Close the stream, causing the exception below … *---------------
-        candidate.execute( inputStream::close );
+        candidate.perform( inputStream::close );
 
         final Throwable e = assertThrows( ExecutionFailedException.class, () -> candidate.execute( inputStream::readAllBytes ) );
         assertInstanceOf( IOException.class, e.getCause() );
@@ -91,7 +91,7 @@ public class TestLockExecutor extends TestBaseClass
         final Class<? extends Throwable> expectedException = NullArgumentException.class;
 
         final Action action = null;
-        assertThrows( expectedException, () -> candidate.execute( action ) );
+        assertThrows( expectedException, () -> candidate.perform( action ) );
 
         final Operation<?> operation = null;
         assertThrows( expectedException, () -> candidate.execute( operation ) );

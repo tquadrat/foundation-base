@@ -37,12 +37,12 @@ import org.tquadrat.foundation.lang.Operation;
  *  The implementation of
  *  {@link LockExecutor}.
  *
- *  @version $Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: LockExecutorImpl.java 1185 2026-04-06 10:26:47Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LockExecutorImpl.java 1185 2026-04-06 10:26:47Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @NotRecord
 public final class LockExecutorImpl implements LockExecutor
@@ -82,12 +82,6 @@ public final class LockExecutorImpl implements LockExecutor
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  execute()
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void execute( final Action action ) throws ExecutionFailedException { m_Lock.execute( action ); }
 
     /**
      * {@inheritDoc}
@@ -133,6 +127,12 @@ public final class LockExecutorImpl implements LockExecutor
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  of()
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void perform( final Action action ) throws ExecutionFailedException { m_Lock.perform( action ); }
 }
 //  class LockExecutorImpl
 
