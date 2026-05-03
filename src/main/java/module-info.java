@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -21,8 +21,6 @@
  *
  *  @uses   org.tquadrat.foundation.lang.StringConverter    A service that
  *      converts object instances to String and vice versa.
- *
- *  @version $Id: module-info.java 1195 2026-04-15 21:33:40Z tquadrat $
  *
  *  @todo task.list
  */
