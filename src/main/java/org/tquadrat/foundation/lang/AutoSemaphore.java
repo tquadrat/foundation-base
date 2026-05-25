@@ -56,12 +56,12 @@ import org.tquadrat.foundation.lang.internal.TimeoutSemaphoreImpl;
  *  on such an instance, as it may behave unexpectedly.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoSemaphore.java 1250 2026-05-25 16:55:30Z tquadrat $
+ *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $
  *  @since 0.25.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )
 @API( status = STABLE, since = "0.25.2" )
 public sealed interface AutoSemaphore
     permits AutoSemaphoreImpl, TimeoutSemaphoreImpl
@@ -74,13 +74,13 @@ public sealed interface AutoSemaphore
      *  released when a {@code try-with-resources} block is left.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AutoSemaphore.java 1250 2026-05-25 16:55:30Z tquadrat $
+     *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )
     @API( status = STABLE, since = "0.25.2" )
     public sealed interface Token extends AutoCloseable
         permits AutoSemaphoreImpl.TokenImpl, TimeoutSemaphoreImpl.TokenImpl
@@ -210,7 +210,7 @@ public sealed interface AutoSemaphore
      *
      *  @return The token.
      */
-    public default AutoCloseable acquireTokenUninterruptibly() { return acquireTokenUninterruptibly( 1 ); }
+    public default Token acquireTokenUninterruptibly() { return acquireTokenUninterruptibly( 1 ); }
 
     /**
      *  <p>{@summary Acquires the given number of permits from this semaphore,
@@ -238,7 +238,7 @@ public sealed interface AutoSemaphore
      *  @throws IllegalArgumentException    The given number of permits to
      *      acquire is negative.
      */
-    public AutoCloseable acquireTokenUninterruptibly( final int permits ) throws IllegalArgumentException;
+    public Token acquireTokenUninterruptibly( final int permits ) throws IllegalArgumentException;
 
     /**
      *  Returns a reference to the raw semaphore.

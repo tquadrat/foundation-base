@@ -156,10 +156,10 @@
                           y='69.000'
                           class='abstract'>+ acquireToken(permits:int):java.lang.AutoCloseable</text>
                     <text x='5.000'
-                          y='80.000'>&#x2A22; acquireTokenUninterruptibly():java.lang.AutoCloseable</text>
+                          y='80.000'>&#x2A22; acquireTokenUninterruptibly():org.tquadrat.foundation.lang.AutoSemaphore.Token</text>
                     <text x='5.000'
                           y='91.000'
-                          class='abstract'>+ acquireTokenUninterruptibly(permits:int):java.lang.AutoCloseable</text>
+                          class='abstract'>+ acquireTokenUninterruptibly(permits:int):org.tquadrat.foundation.lang.AutoSemaphore.Token</text>
                     <text x='5.000'
                           y='102.000'
                           class='abstract'>+ getSemaphore():java.util.concurrent.Semaphore</text>
