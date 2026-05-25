@@ -56,12 +56,12 @@ import org.tquadrat.foundation.lang.internal.TimeoutSemaphoreImpl;
  *  on such an instance, as it may behave unexpectedly.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $
+ *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $
  *  @since 0.25.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )
 @API( status = STABLE, since = "0.25.2" )
 public sealed interface AutoSemaphore
     permits AutoSemaphoreImpl, TimeoutSemaphoreImpl
@@ -74,13 +74,13 @@ public sealed interface AutoSemaphore
      *  released when a {@code try-with-resources} block is left.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $
+     *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )
     @API( status = STABLE, since = "0.25.2" )
     public sealed interface Token extends AutoCloseable
         permits AutoSemaphoreImpl.TokenImpl, TimeoutSemaphoreImpl.TokenImpl
@@ -140,7 +140,7 @@ public sealed interface AutoSemaphore
      *  @return The token.
      *  @throws InterruptedException    The current thread was interrupted.
      */
-    public default AutoCloseable acquireToken() throws InterruptedException { return acquireToken( 1 ); }
+    public default Token acquireToken() throws InterruptedException { return acquireToken( 1 ); }
 
     /**
      *  <p>{@summary Acquires the given number of permits from this semaphore,
@@ -186,7 +186,7 @@ public sealed interface AutoSemaphore
      *  @throws IllegalArgumentException    The given number of permits to
      *      acquire is negative.
      */
-    public AutoCloseable acquireToken( final int permits ) throws InterruptedException, IllegalArgumentException;
+    public Token acquireToken( final int permits ) throws InterruptedException, IllegalArgumentException;
 
     /**
      *  <p>{@summary Acquires a permit from this semaphore, blocking until one

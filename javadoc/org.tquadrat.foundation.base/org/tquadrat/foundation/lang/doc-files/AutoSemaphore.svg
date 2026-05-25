@@ -151,10 +151,10 @@
                     <text x='5.000'
                           y='41.000'/>
                     <text x='5.000'
-                          y='58.000'>&#x2A22; acquireToken():java.lang.AutoCloseable</text>
+                          y='58.000'>&#x2A22; acquireToken():org.tquadrat.foundation.lang.AutoSemaphore.Token</text>
                     <text x='5.000'
                           y='69.000'
-                          class='abstract'>+ acquireToken(permits:int):java.lang.AutoCloseable</text>
+                          class='abstract'>+ acquireToken(permits:int):org.tquadrat.foundation.lang.AutoSemaphore.Token</text>
                     <text x='5.000'
                           y='80.000'>&#x2A22; acquireTokenUninterruptibly():org.tquadrat.foundation.lang.AutoSemaphore.Token</text>
                     <text x='5.000'

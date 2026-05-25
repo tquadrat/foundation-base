@@ -69,12 +69,12 @@
 <span class="source-line-no">056</span><span id="line-56"> *  on such an instance, as it may behave unexpectedly.&lt;/p&gt;</span>
 <span class="source-line-no">057</span><span id="line-57"> *</span>
 <span class="source-line-no">058</span><span id="line-58"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">059</span><span id="line-59"> *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $</span>
+<span class="source-line-no">059</span><span id="line-59"> *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $</span>
 <span class="source-line-no">060</span><span id="line-60"> *  @since 0.25.2</span>
 <span class="source-line-no">061</span><span id="line-61"> *</span>
 <span class="source-line-no">062</span><span id="line-62"> *  @UMLGraph.link</span>
 <span class="source-line-no">063</span><span id="line-63"> */</span>
-<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )</span>
+<span class="source-line-no">064</span><span id="line-64">@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )</span>
 <span class="source-line-no">065</span><span id="line-65">@API( status = STABLE, since = "0.25.2" )</span>
 <span class="source-line-no">066</span><span id="line-66">public sealed interface AutoSemaphore</span>
 <span class="source-line-no">067</span><span id="line-67">    permits AutoSemaphoreImpl, TimeoutSemaphoreImpl</span>
@@ -87,13 +87,13 @@
 <span class="source-line-no">074</span><span id="line-74">     *  released when a {@code try-with-resources} block is left.}&lt;/p&gt;</span>
 <span class="source-line-no">075</span><span id="line-75">     *</span>
 <span class="source-line-no">076</span><span id="line-76">     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">077</span><span id="line-77">     *  @version $Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $</span>
+<span class="source-line-no">077</span><span id="line-77">     *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $</span>
 <span class="source-line-no">078</span><span id="line-78">     *  @since 0.25.2</span>
 <span class="source-line-no">079</span><span id="line-79">     *</span>
 <span class="source-line-no">080</span><span id="line-80">     *  @UMLGraph.link</span>
 <span class="source-line-no">081</span><span id="line-81">     */</span>
 <span class="source-line-no">082</span><span id="line-82">    @SuppressWarnings( "NewClassNamingConvention" )</span>
-<span class="source-line-no">083</span><span id="line-83">    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1252 2026-05-25 20:55:17Z tquadrat $" )</span>
+<span class="source-line-no">083</span><span id="line-83">    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )</span>
 <span class="source-line-no">084</span><span id="line-84">    @API( status = STABLE, since = "0.25.2" )</span>
 <span class="source-line-no">085</span><span id="line-85">    public sealed interface Token extends AutoCloseable</span>
 <span class="source-line-no">086</span><span id="line-86">        permits AutoSemaphoreImpl.TokenImpl, TimeoutSemaphoreImpl.TokenImpl</span>
@@ -153,7 +153,7 @@
 <span class="source-line-no">140</span><span id="line-140">     *  @return The token.</span>
 <span class="source-line-no">141</span><span id="line-141">     *  @throws InterruptedException    The current thread was interrupted.</span>
 <span class="source-line-no">142</span><span id="line-142">     */</span>
-<span class="source-line-no">143</span><span id="line-143">    public default AutoCloseable acquireToken() throws InterruptedException { return acquireToken( 1 ); }</span>
+<span class="source-line-no">143</span><span id="line-143">    public default Token acquireToken() throws InterruptedException { return acquireToken( 1 ); }</span>
 <span class="source-line-no">144</span><span id="line-144"></span>
 <span class="source-line-no">145</span><span id="line-145">    /**</span>
 <span class="source-line-no">146</span><span id="line-146">     *  &lt;p&gt;{@summary Acquires the given number of permits from this semaphore,</span>
@@ -199,7 +199,7 @@
 <span class="source-line-no">186</span><span id="line-186">     *  @throws IllegalArgumentException    The given number of permits to</span>
 <span class="source-line-no">187</span><span id="line-187">     *      acquire is negative.</span>
 <span class="source-line-no">188</span><span id="line-188">     */</span>
-<span class="source-line-no">189</span><span id="line-189">    public AutoCloseable acquireToken( final int permits ) throws InterruptedException, IllegalArgumentException;</span>
+<span class="source-line-no">189</span><span id="line-189">    public Token acquireToken( final int permits ) throws InterruptedException, IllegalArgumentException;</span>
 <span class="source-line-no">190</span><span id="line-190"></span>
 <span class="source-line-no">191</span><span id="line-191">    /**</span>
 <span class="source-line-no">192</span><span id="line-192">     *  &lt;p&gt;{@summary Acquires a permit from this semaphore, blocking until one</span>
