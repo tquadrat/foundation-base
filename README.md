@@ -8,8 +8,8 @@ This library is the base for all the other *Foundation* libraries, although it i
     <dependency>
        <groupId>org.tquadrat.library</groupId>
        <artifactId>org.tquadrat.foundation.base</artifactId>
-       <version>0.25.10</version>
+       <version>0.25.11</version>
     </dependency>
     ```
 ---  
-Last updated: 2026-05-25T23:11:02.656288324+02:00[Europe/Berlin]   
+Last updated: 2026-05-27T20:05:12.335921877+02:00[Europe/Berlin]   

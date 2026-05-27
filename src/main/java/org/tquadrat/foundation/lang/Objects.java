@@ -18,14 +18,11 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.annotation.UtilityClass;
-import org.tquadrat.foundation.exception.BlankArgumentException;
-import org.tquadrat.foundation.exception.EmptyArgumentException;
-import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
+import static java.lang.Integer.signum;
+import static java.util.Arrays.deepToString;
+import static org.apiguardian.api.API.Status.DEPRECATED;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -36,6 +33,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.DoublePredicate;
 import java.util.function.Function;
 import java.util.function.IntPredicate;
@@ -44,10 +42,14 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-import static java.lang.Integer.signum;
-import static java.util.Arrays.deepToString;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.annotation.UtilityClass;
+import org.tquadrat.foundation.exception.BlankArgumentException;
+import org.tquadrat.foundation.exception.EmptyArgumentException;
+import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
+import org.tquadrat.foundation.exception.ValidationException;
 
 /**
  *  <p>{@summary This class consists of several utility methods working on
@@ -69,14 +71,14 @@ import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: Objects.java 1254 2026-05-27 18:05:02Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1254 2026-05-27 18:05:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {
@@ -1142,8 +1144,11 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
+     *  @deprecated Consider to migrate to
+     *      {@link #requireValidArgument(Object,String,Predicate,BiFunction)}.
      */
-    @API( status = STABLE, since = "0.1.0" )
+    @Deprecated( since = "0.25.11", forRemoval = true )
+    @API( status = DEPRECATED, since = "0.1.0" )
     public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
@@ -1152,6 +1157,50 @@ public final class Objects
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  {@code messageSupplier} that takes the {@code name} as the first
+     *  argument and the value ({@code arg}) as the second argument to compose
+     *  the message for the {@code ValidationException} in case the validation
+     *  failed.</p>
+     *  <p>The validation is also responsible for the {@code null}-check; that
+     *  means, the method
+     *  {@link Predicate#test(Object) test()}
+     *  of the validation may be called with {@code null} as the argument.</p>
+     *
+     *  @param  <T> The type of the value to check.
+     *  @param  arg The value to check; can be {@code null}.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.25.11
+     */
+    @API( status = STABLE, since = "0.25.11" )
+    public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<String,T,String> messageSupplier )
+    {
+        requireNotBlankArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name, arg ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1210,8 +1259,11 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
+     *  @deprecated Consider to migrate to
+     *      {@link #requireValidDoubleArgument(double,String,DoublePredicate,BiFunction)}
      */
-    @API( status = STABLE, since = "0.2.0" )
+    @API( status = DEPRECATED, since = "0.2.0" )
+    @Deprecated( since = "0.25.11", forRemoval = true )
     public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
@@ -1220,6 +1272,45 @@ public final class Objects
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidDoubleArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  {@code messageSupplier} that takes the {@code name} as the first
+     *  argument and the value ({@code arg}) as the second argument to compose
+     *  the message for the {@code ValidationException} in case the validation
+     *  failed.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.25.11
+     */
+    @API( status = STABLE, since = "0.25.11" )
+    public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final BiFunction<String,Double,String> messageSupplier )
+    {
+        requireNotBlankArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name, Double.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1278,8 +1369,11 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
+     *  @deprecated Consider the migration to
+     *      {@link #requireValidIntegerArgument(int,String,IntPredicate,BiFunction)}
      */
-    @API( status = STABLE, since = "0.2.0" )
+    @API( status = DEPRECATED, since = "0.2.0" )
+    @Deprecated( since = "0.25.11", forRemoval = true )
     public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
@@ -1288,6 +1382,45 @@ public final class Objects
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidIntegerArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  {@code messageSupplier} that takes the {@code name} as the first
+     *  argument and the value ({@code arg}) as the second argument to compose
+     *  the message for the {@code ValidationException} in case the validation
+     *  failed.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.25.11
+     */
+    @API( status = STABLE, since = "0.25.11" )
+    public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final BiFunction<String,Integer,String> messageSupplier )
+    {
+        requireNotBlankArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name, Integer.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1346,8 +1479,11 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
+     *  @deprecated Consider the migration to
+     *      {@link #requireValidLongArgument(long,String,LongPredicate,BiFunction)}.
      */
-    @API( status = STABLE, since = "0.2.0" )
+    @API( status = DEPRECATED, since = "0.2.0" )
+    @Deprecated( since = "0.25.11" )
     public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
@@ -1356,6 +1492,45 @@ public final class Objects
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidLongArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  {@code messageSupplier} that takes the {@code name} as the first
+     *  argument and the value ({@code arg}) as the second argument to compose
+     *  the message for the {@code ValidationException} in case the validation
+     *  failed.</p>
+     *
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code name}, {@code validation} or
+     *      {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.25.11
+     */
+    @API( status = STABLE, since = "0.25.11" )
+    public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final BiFunction<String,Long,String> messageSupplier )
+    {
+        requireNotBlankArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name, Long.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1418,8 +1593,11 @@ public final class Objects
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
+     *  @deprecated Consider the migration to
+     *      {@link #requireValidNonNullArgument(Object,String,Predicate,BiFunction)}
      */
-    @API( status = STABLE, since = "0.1.0" )
+    @API( status = DEPRECATED, since = "0.1.0" )
+    @Deprecated( since = "0.25.11", forRemoval = true )
     public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final UnaryOperator<String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
@@ -1428,6 +1606,46 @@ public final class Objects
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
             throw new ValidationException( messageSupplier.apply( name ) );
+        }
+
+        //---* Done *----------------------------------------------------------
+        return arg;
+    }   //  requireValidNonNullArgument()
+
+    /**
+     *  <p>{@summary Applies the given validation on the given value (that must
+     *  not be {@code null}), and if that fails, a
+     *  {@link ValidationException}
+     *  is thrown.} The message for the exception will be provided by the given
+     *  {@code messageSupplier} that takes the {@code name} as the first
+     *  argument and the value ({@code arg}) as the second argument to compose
+     *  the message for the {@code ValidationException} in case the validation
+     *  failed.</p>
+     *
+     *  @param  <T> The type of the value to check.
+     *  @param  arg The value to check.
+     *  @param  name    The name of the argument; this is used for the error
+     *      message.
+     *  @param  validation  The validation
+     *  @param  messageSupplier The function that generates the message for the
+     *      exception.
+     *  @return The value if the validation succeeds.
+     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws NullArgumentException   {@code arg}, {@code name},
+     *      {@code validation} or {@code messageProvider} is {@code null}.
+     *  @throws EmptyArgumentException  {@code name} is the empty String.
+     *
+     *  @since 0.25.11
+     */
+    @API( status = STABLE, since = "0.25.11" )
+    public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<String,T,String> messageSupplier )
+    {
+        requireNotBlankArgument( name, "name" );
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
+
+        if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
+        {
+            throw new ValidationException( messageSupplier.apply( name, arg ) );
         }
 
         //---* Done *----------------------------------------------------------
