@@ -71,14 +71,14 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  instead.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Objects.java 1254 2026-05-27 18:05:02Z tquadrat $
+ *  @version $Id: Objects.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
  *  @UMLGraph.link
  */
 @UtilityClass
 @SuppressWarnings( {"ClassWithTooManyMethods", "UseOfObsoleteDateTimeApi", "OverlyComplexClass"} )
-@ClassVersion( sourceVersion = "$Id: Objects.java 1254 2026-05-27 18:05:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Objects.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.1" )
 public final class Objects
 {
@@ -197,7 +197,7 @@ public final class Objects
 
     /**
      *  <p>{@summary Throws the exception provided by the given supplier if the
-     *  condition resolves to {@code false}.}</p>
+     *  condition resolves to {@false}.}</p>
      *  <p>Basically, this method is a replacement for the code sequence
      *  below:</p>
      *  <div class="source-container"><pre>…
@@ -227,13 +227,13 @@ public final class Objects
     /**
      *  <p>{@summary Returns 0 if the arguments are identical and
      *  {@code comparator.compare(a, b)} otherwise.}</p>
-     *  <p>Consequently, if both arguments are {@code null}, 0 is returned.</p>
+     *  <p>Consequently, if both arguments are {@null}, 0 is returned.</p>
      *  <p>Calls
      *  {@link java.util.Objects#compare(Object,Object,Comparator) java.util.Objects#compare()}
      *  internally, but different from that method, this implementation will
      *  throw a
      *  {@link NullArgumentException}
-     *  in case the {@code comparator} is {@code null}.</p>
+     *  in case the {@code comparator} is {@null}.</p>
      *
      *  @param  <T> The type of the objects being compared.
      *  @param  object  An object.
@@ -243,7 +243,7 @@ public final class Objects
      *      to compare the first two arguments.
      *  @return 0 if the arguments are identical and +1, 0, or -1, based on the
      *      return value of {@code c.compare(a, b)} otherwise.
-     *  @throws NullArgumentException   The {@code comparator} is {@code null}.
+     *  @throws NullArgumentException   The {@code comparator} is {@null}.
      *
      *  @see Comparable
      *  @see Comparator
@@ -260,9 +260,9 @@ public final class Objects
     }   //  compare()
 
     /**
-     *  <p>{@summary Returns {@code true} if the arguments are deeply equal to
-     *  each other and {@code false} otherwise.}</p>
-     *  <p>Two {@code null} values are deeply equal. If both arguments are
+     *  <p>{@summary Returns {@true} if the arguments are deeply equal to
+     *  each other and {@false} otherwise.}</p>
+     *  <p>Two {@null} values are deeply equal. If both arguments are
      *  arrays, the algorithm in
      *  {@link Arrays#deepEquals(Object[], Object[]) Arrays.deepEquals()}
      *  is used to determine equality. Otherwise, equality is determined by
@@ -276,8 +276,8 @@ public final class Objects
      *  @param  object  An object.
      *  @param  other   Another object to be compared with the first object for
      *      deep equality.
-     *  @return {@code true} if the arguments are deeply equal to each other
-     *      and {@code false} otherwise.
+     *  @return {@true} if the arguments are deeply equal to each other
+     *      and {@false} otherwise.
      *
      *  @see    Arrays#deepEquals(Object[],Object[])
      *  @see    Objects#equals(Object,Object)
@@ -289,10 +289,10 @@ public final class Objects
     public static final boolean deepEquals( final Object object, final Object other ) { return java.util.Objects.deepEquals( object, other ); }
 
     /**
-     *  <p>{@summary Returns {@code true} if the arguments are equal to each
-     *  other and {@code false} otherwise.}</p>
-     *  <p> Consequently, if both arguments are {@code null}, {@code true} is
-     *  returned and if exactly one argument is {@code null}, {@code false} is
+     *  <p>{@summary Returns {@true} if the arguments are equal to each
+     *  other and {@false} otherwise.}</p>
+     *  <p> Consequently, if both arguments are {@null}, {@true} is
+     *  returned and if exactly one argument is {@null}, {@false} is
      *  returned.  Otherwise, equality is determined by using the
      *  {@link Object#equals(Object) equals()}
      *  method of the first argument.</p>
@@ -303,8 +303,8 @@ public final class Objects
      *  @param  object  An object.
      *  @param  other   Another object to be compared with the first one for
      *      equality.
-     *  @return {@code true} if the arguments are equal to each other and
-     *      {@code false} otherwise.
+     *  @return {@true} if the arguments are equal to each other and
+     *      {@false} otherwise.
      *
      *  @see    Object#equals(Object)
      *
@@ -333,15 +333,15 @@ public final class Objects
     public static final int hash( final Object... values ) { return Arrays.hashCode( values ); }
 
     /**
-     *  <p>{@summary Returns the hash code of a non-{@code null} argument and 0
-     *  for a {@code null} argument.}</p>
+     *  <p>{@summary Returns the hash code of a non-{@null} argument and 0
+     *  for a {@null} argument.}</p>
      *  <p>Calls
      *  {@link java.util.Objects#hashCode(Object) java.util.Objects.hashCode(Object)}
      *  internally.</p>
      *
      *  @param o   An object.
-     *  @return The hash code of an argument that is not {@code null}, and 0
-     *      for a {@code null} argument,
+     *  @return The hash code of an argument that is not {@null}, and 0
+     *      for a {@null} argument,
      *
      *  @see    Object#hashCode
      *
@@ -351,8 +351,8 @@ public final class Objects
     public static final int hashCode( final Object o ) { return java.util.Objects.hashCode( o ); }
 
     /**
-     *  <p>{@summary Returns {@code true} if the provided reference is
-     *  {@code null}, otherwise returns {@code false}.}</p>
+     *  <p>{@summary Returns {@true} if the provided reference is
+     *  {@null}, otherwise returns {@false}.}</p>
      *  <p>This method can be used as a
      *  {@link java.util.function.Predicate},
      *  {@code filter(Objects::isNull)}.</p>
@@ -360,9 +360,9 @@ public final class Objects
      *  {@link java.util.Objects#isNull(Object) java.util.Objects.isNull()}
      *  internally.</p>
      *
-     *  @param  obj A reference to be checked against {@code null}.
-     *  @return {@code true} if the provided reference is {@code null},
-     *      otherwise {@code false}
+     *  @param  obj A reference to be checked against {@null}.
+     *  @return {@true} if the provided reference is {@null},
+     *      otherwise {@false}
      *
      *  @see    java.util.function.Predicate
      *  @see    org.tquadrat.foundation.lang.CommonConstants#IS_NULL
@@ -374,16 +374,16 @@ public final class Objects
 
     /**
      *  <p>{@summary Provides a replacement value if the given value is
-     *  {@code null}.}</p>
+     *  {@null}.}</p>
      *  <p>This is basically a shortcut to</p>
      *  <div class="source-container"><pre>Optional.ofNullable( value ).orElseGet( supplier );</pre></div>
      *
      *  @param  <T> The type of the object to map.
-     *  @param  value   The object to map; can be {@code null} (obviously).
+     *  @param  value   The object to map; can be {@null} (obviously).
      *  @param  supplier    The supplier for the replacement function.
-     *  @return The provided object if that is not {@code null}, or the result
+     *  @return The provided object if that is not {@null}, or the result
      *      from the supplier method. Keep in mind that this result can be
-     *      {@code null}!
+     *      {@null}!
      *
      *  @see Optional
      *  @see Optional#orElseGet(Supplier)
@@ -404,14 +404,14 @@ public final class Objects
 
     /**
      *  <p>{@summary Provides a replacement value if the given value is
-     *  {@code null}.}</p>
+     *  {@null}.}</p>
      *  <p>This is basically a shortcut to</p>
      *  <div class="source-container"><pre>Optional.ofNullable( value ).orElse( replacement );</pre></div>
      *
      *  @param  <T> The type of the object to map.
-     *  @param  value   The object to map; can be {@code null}.
-     *  @param  replacement  The replacement value; it may not be {@code null}.
-     *  @return The provided object if that is not {@code null}, or the
+     *  @param  value   The object to map; can be {@null}.
+     *  @param  replacement  The replacement value; it may not be {@null}.
+     *  @return The provided object if that is not {@null}, or the
      *      replacement value.
      *
      *  @see Optional
@@ -433,17 +433,17 @@ public final class Objects
 
     /**
      *  <p>{@summary Maps (converts) the given object instance by applying the
-     *  provided mapper if the instance is not {@code null}.}</p>
+     *  provided mapper if the instance is not {@null}.}</p>
      *  <p>The mapper function will not be called at all if the given instance
-     *  is {@code null}.</p>
+     *  is {@null}.</p>
      *
      *  @param  <T> The type of the object to map.
      *  @param  <R> The type of the result.
-     *  @param  o   The object to map; can be {@code null}.
+     *  @param  o   The object to map; can be {@null}.
      *  @param  mapper  The mapping function.
-     *  @return The result of the mapping, or {@code null} if the given object
-     *      instance was already {@code null}. Keep in mind that the result of
-     *      the mapping can be {@code null}!
+     *  @return The result of the mapping, or {@null} if the given object
+     *      instance was already {@null}. Keep in mind that the result of
+     *      the mapping can be {@null}!
      */
     public static final <T,R> R mapNonNull( final T o, final Function<T,? extends R> mapper )
     {
@@ -456,19 +456,19 @@ public final class Objects
 
     /**
      *  <p>{@summary Maps (converts) the given object instance by applying the
-     *  provided mapper if the instance is not {@code null} or returns the
+     *  provided mapper if the instance is not {@null} or returns the
      *  given default value.}</p>
      *  <p>The mapper function will not be called at all if the given instance
-     *  is {@code null}.</p>
+     *  is {@null}.</p>
      *
      *  @param  <T> The type of the object to map.
      *  @param  <R> The type of the result.
-     *  @param  o   The object to map; can be {@code null}.
+     *  @param  o   The object to map; can be {@null}.
      *  @param  mapper  The mapping function.
-     *  @param  defaultValue    The default value; can be {@code null}.
+     *  @param  defaultValue    The default value; can be {@null}.
      *  @return The result of the mapping, or the default value if the given
-     *      object instance is {@code null}. Keep in mind that the result of
-     *      the mapping can be {@code null}!
+     *      object instance is {@null}. Keep in mind that the result of
+     *      the mapping can be {@null}!
      */
     public static final <T,R> R mapNonNull( final T o, final Function<T,? extends R> mapper, final R defaultValue )
     {
@@ -480,8 +480,8 @@ public final class Objects
     }   //  mapNonNull()
 
     /**
-     *  <p>{@summary Returns {@code true} if the provided reference is not
-     *  {@code null}, otherwise returns {@code false}.}</p>
+     *  <p>{@summary Returns {@true} if the provided reference is not
+     *  {@null}, otherwise returns {@false}.}</p>
      *  <p>This method exists to be used as a
      *  {@link java.util.function.Predicate},
      *  {@code filter(Objects::nonNull)}</p>
@@ -489,9 +489,9 @@ public final class Objects
      *  {@link java.util.Objects#nonNull(Object) java.util.Objects.nonNull()}
      *  internally.</p>
      *
-     *  @param  obj A reference to be checked against {@code null}
-     *  @return {@code false} if the provided reference is {@code null},
-     *      otherwise {@code true}
+     *  @param  obj A reference to be checked against {@null}
+     *  @return {@false} if the provided reference is {@null},
+     *      otherwise {@true}
      *
      *  @see java.util.function.Predicate
      *  @see org.tquadrat.foundation.lang.CommonConstants#NON_NULL
@@ -508,7 +508,7 @@ public final class Objects
      *  is thrown.
      *
      *  @param  <T> The type of the value to check.
-     *  @param  obj The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@null}.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code obj} failed the validation.
@@ -534,12 +534,12 @@ public final class Objects
      *  with the specified message is thrown.
      *
      *  @param  <T> The type of the value to check.
-     *  @param  obj The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@null}.
      *  @param  message The message that is set to the thrown exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code obj} failed the validation.
-     *  @throws NullArgumentException   {@code message} is {@code null}.
+     *  @throws NullArgumentException   {@code message} is {@null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @since 0.1.0
@@ -572,14 +572,14 @@ public final class Objects
      *  the cost of just creating the String message directly.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  obj The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@null}.
      *  @param  messageSupplier The supplier of the detail message to be used
      *      in the event that {@code ValidationException} is thrown. If
-     *      {@code null} or if it returns {@code null}, no detail message is
+     *      {@null} or if it returns {@null}, no detail message is
      *      provided to the exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws NullArgumentException   The validation is {@code null}.
+     *  @throws NullArgumentException   The validation is {@null}.
      *  @throws ValidationException {@code obk} failed the validation.
      *
      *  @since 0.1.0
@@ -619,17 +619,17 @@ public final class Objects
      *  for the {@code messageSupplier}. That function is called with
      *  {@code obj} as the argument; this allows to add the invalid value to
      *  the exception detail message. The provided message supplier function
-     *  must accept {@code null} as a valid argument.</p>
+     *  must accept {@null} as a valid argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  obj The value to check; can be {@code null}.
+     *  @param  obj The value to check; can be {@null}.
      *  @param  messageSupplier The supplier of the detail message to be used
      *      in the event that a {@code ValidationException} is thrown. If
-     *      {@code null} or if it returns {@code null}, no detail message is
+     *      {@null} or if it returns {@null}, no detail message is
      *      provided.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws NullArgumentException   The validation is {@code null}.
+     *  @throws NullArgumentException   The validation is {@null}.
      *  @throws ValidationException {@code obj} failed the validation.
      *
      *  @since 0.1.0
@@ -651,15 +651,15 @@ public final class Objects
     }   //  require()
 
     /**
-     *  <p>{@summary Checks if the given value {@code obj} is {@code null} and
+     *  <p>{@summary Checks if the given value {@code obj} is {@null} and
      *  throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}.}</p>
+     *  if it is {@null}.}</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check.
-     *  @return The value if it is not {@code null}.
-     *  @throws NullArgumentException   {@code obj} is {@code null}.
+     *  @return The value if it is not {@null}.
+     *  @throws NullArgumentException   {@code obj} is {@null}.
      *
      *  @see java.util.Objects#requireNonNull(Object)
      *
@@ -676,17 +676,17 @@ public final class Objects
     }   //  requireNonNull()
 
     /**
-     *  <p>{@summary Checks if the given value {@code obj} is {@code null} and
+     *  <p>{@summary Checks if the given value {@code obj} is {@null} and
      *  throws a
      *  {@link ValidationException}
-     *  with the specified message if it is {@code null}.}</p>
+     *  with the specified message if it is {@null}.}</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check.
      *  @param  message The message that is set to the thrown exception.
-     *  @return The value if it is not {@code null}.
+     *  @return The value if it is not {@null}.
      *  @throws NullArgumentException   {@code message} or {@code obj} is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @see java.util.Objects#requireNonNull(Object,String)
@@ -705,14 +705,14 @@ public final class Objects
 
     /**
      *  <p>{@summary Checks that the specified object reference is not
-     *  {@code null} and throws a customized
+     *  {@null} and throws a customized
      *  {@link ValidationException}
      *  if it is.}</p>
      *  <p>Unlike the method
      *  {@link #requireNonNull(Object,String)},
      *  this method allows to defer the creation of the message until after the
      *  null check failed. While this may confer a performance advantage in the
-     *  non-{@code null} case, when deciding to call this method care should be
+     *  non-{@null} case, when deciding to call this method care should be
      *  taken that the costs of creating the message supplier are less than the
      *  cost of just creating the String message directly.</p>
      *
@@ -720,9 +720,9 @@ public final class Objects
      *  @param  obj The value to check.
      *  @param  messageSupplier The supplier of the detail message to be used
      *      in the event that a {@code NullArgumentException} is thrown. If
-     *      {@code null}, no detail message is provided.
-     *  @return The value if it is not {@code null}.
-     *  @throws ValidationException    {@code obj} is {@code null}
+     *      {@null}, no detail message is provided.
+     *  @return The value if it is not {@null}.
+     *  @throws ValidationException    {@code obj} is {@null}
      *
      *  @since 0.0.5
      */
@@ -742,16 +742,16 @@ public final class Objects
     }   //  requireNonNull()
 
     /**
-     *  Checks if the given argument {@code a} is {@code null} and throws a
+     *  Checks if the given argument {@code a} is {@null} and throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}.
+     *  if it is {@null}.
      *
      *  @param  <T> The type of the argument to check.
      *  @param  arg The argument to check.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
-     *  @return The argument if it is not {@code null}.
-     *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *  @return The argument if it is not {@null}.
+     *  @throws NullArgumentException   {@code arg} is {@null}.
      *
      *  @since 0.0.5
      */
@@ -769,20 +769,20 @@ public final class Objects
 
     /**
      *  <p>{@summary Checks if not both of the given arguments {@code arg} and
-     *  {@code otherArg} are {@code null} and throws a
+     *  {@code otherArg} are {@null} and throws a
      *  {@link NullArgumentException}
-     *  if both are {@code null}.} Otherwise, it returns {@code arg}.</p>
+     *  if both are {@null}.} Otherwise, it returns {@code arg}.</p>
      *
      *  @param  <T> The type of the first argument to check.
      *  @param  arg The first argument to check; it will be returned in case of
-     *      success, even if {@code null}.
+     *      success, even if {@null}.
      *  @param  otherArg    The other argument to check.
      *  @param  name    The name of the first argument; this is used for the
      *      error message.
      *  @param  otherName   The name of the other argument; this is used for
      *      the error message.
-     *  @return The first argument, even that might be {@code null}.
-     *  @throws NullArgumentException   Both arguments are {@code null}.
+     *  @return The first argument, even that might be {@null}.
+     *  @throws NullArgumentException   Both arguments are {@null}.
      *
      *  @since 0.0.7
      */
@@ -806,20 +806,20 @@ public final class Objects
 
     /**
      *  <p>{@summary Checks if the given String argument {@code arg} is
-     *  {@code null}, empty or blank and throws a
+     *  {@null}, empty or blank and throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}, an
+     *  if it is {@null}, an
      *  {@link EmptyArgumentException}
      *  if it is empty, or a
      *  {@link BlankArgumentException}
      *  if it is blank.}</p>
      *
      *  @param  <T> The type of the argument to check.
-     *  @param  arg The argument to check; may be {@code null}.
+     *  @param  arg The argument to check; may be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
-     *  @return The argument if it is not {@code null}, empty or blank.
-     *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *  @return The argument if it is not {@null}, empty or blank.
+     *  @throws NullArgumentException   {@code arg} is {@null}.
      *  @throws EmptyArgumentException   {@code arg} is empty.
      *  @throws BlankArgumentException   {@code arg} is blank.
      *
@@ -855,10 +855,10 @@ public final class Objects
     }   //  requireNotBlankArgument()
 
     /**
-     *  <p>{@summary Checks if the given argument {@code arg} is {@code null} or
+     *  <p>{@summary Checks if the given argument {@code arg} is {@null} or
      *  empty and throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}, or an
+     *  if it is {@null}, or an
      *  {@link EmptyArgumentException}
      *  if it is empty.}</p>
      *  <p>Strings, arrays, instances of
@@ -878,12 +878,12 @@ public final class Objects
      *  {@link java.util.Enumeration}
      *  does not provide an API for the check on emptiness
      *  ({@link java.util.Enumeration#hasMoreElements() hasMoreElements()}
-     *  will return {@code false} after all elements have been taken from
+     *  will return {@false} after all elements have been taken from
      *  the {@code Enumeration} instance), the result for arguments of this
      *  type has to be taken with caution.</p>
      *  <p>For instances of
      *  {@link java.util.stream.Stream},
-     *  this method will only check for {@code null} (like
+     *  this method will only check for {@null} (like
      *  {@link #requireNonNullArgument(Object,String)}.
      *  This is because any operation on the stream itself would render it
      *  unusable for later processing.</p>
@@ -901,11 +901,11 @@ public final class Objects
      *  was provided.</p>
      *
      *  @param  <T> The type of the argument to check.
-     *  @param  arg The argument to check; may be {@code null}.
+     *  @param  arg The argument to check; may be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
-     *  @return The argument if it is not {@code null} or empty.
-     *  @throws NullArgumentException   {@code arg} is {@code null}.
+     *  @return The argument if it is not {@null} or empty.
+     *  @throws NullArgumentException   {@code arg} is {@null}.
      *  @throws EmptyArgumentException   {@code arg} is empty.
      *
      *  @since 0.0.5
@@ -985,11 +985,11 @@ public final class Objects
     /**
      *  <p>{@summary Checks if the given argument {@code optional} of type
      *  {@link Optional}
-     *  is {@code null} or
+     *  is {@null} or
      *  {@linkplain Optional#empty() empty}
      *  and throws a
      *  {@link NullArgumentException}
-     *  if it is {@code null}, or a
+     *  if it is {@null}, or a
      *  {@link EmptyArgumentException}
      *  if it is empty.}</p>
      *  <p>Otherwise it returns the value of the {@code Optional}.</p>
@@ -998,15 +998,15 @@ public final class Objects
      *  with an instance of {@code Optional} as the argument to test.</p>
      *
      *  @param  <T> The type of the given {@code Optional} to check.
-     *  @param  optional    The argument to check; can be {@code null}.
+     *  @param  optional    The argument to check; can be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @return The value of the argument if {@code optional} is not
-     *      {@code null}
+     *      {@null}
      *      and not
      *      {@linkplain Optional#empty() empty}. This could be the empty
      *      string!
-     *  @throws NullArgumentException   {@code optional} is {@code null}.
+     *  @throws NullArgumentException   {@code optional} is {@null}.
      *  @throws EmptyArgumentException   {@code optional} is empty.
      *
      *  @since 0.0.5
@@ -1027,19 +1027,19 @@ public final class Objects
     }   //  requireNotEmptyArgument()
 
     /**
-     *  <p>{@summary Returns the first argument if it is not {@code null},
-     *  otherwise it returns the non-{@code null} second argument.}</p>
+     *  <p>{@summary Returns the first argument if it is not {@null},
+     *  otherwise it returns the non-{@null} second argument.}</p>
      *  <p>This implementation behaves different from that in
      *  {@link java.util.Objects#requireNonNullElse(Object,Object) java.util.Objects.requireNonNullElse(Object,Object)}
-     *  as it will always check that the default is not {@code null}.</p>
+     *  as it will always check that the default is not {@null}.</p>
      *
      *  @param <T>  The type of the references.
      *  @param  obj An object reference.
      *  @param  defaultObj  Another object reference to be returned if the
-     *      first argument is {@code null}.
-     *  @return The first argument if it is not {@code null}, otherwise the
-     *      second argument if it is not {@code null}.
-     *  @throws NullArgumentException   The {@code defaultObj} is {@code null}.
+     *      first argument is {@null}.
+     *  @return The first argument if it is not {@null}, otherwise the
+     *      second argument if it is not {@null}.
+     *  @throws NullArgumentException   The {@code defaultObj} is {@null}.
      *
      *  @see    java.util.Objects#requireNonNullElse(Object, Object)
      *
@@ -1052,26 +1052,26 @@ public final class Objects
     }   //  requireNonNullElse()
 
     /**
-     *  <p>{@summary Returns the first argument if it is not {@code null},
-     *  otherwise it returns the non-{@code null} value returned by
+     *  <p>{@summary Returns the first argument if it is not {@null},
+     *  otherwise it returns the non-{@null} value returned by
      *  {@link Supplier#get() supplier.get()}.}</p>
      *  <p>This implementation behaves different from that in
      *  {@link java.util.Objects#requireNonNullElseGet(Object,Supplier) java.util.Objects.requireNonNullElseGet(Object,Supplier)}
-     *  as it will always check that the supplier is not {@code null}.</p>
+     *  as it will always check that the supplier is not {@null}.</p>
      *
-     *  @note   Although the provided {@code Supplier} may not be {@code null},
-     *      it may <i>return</i> {@code null}.
+     *  @note   Although the provided {@code Supplier} may not be {@null},
+     *      it may <i>return</i> {@null}.
      *
      *  @param <T>  The type of the reference.
      *  @param  obj An object reference.
-     *  @param  supplier    The supplier of a non-{@code null} object of type
-     *      {code T} to return if the first argument is {@code null}.
-     *  @return The first argument if it is not {@code null}, otherwise the
+     *  @param  supplier    The supplier of a non-{@null} object of type
+     *      {code T} to return if the first argument is {@null}.
+     *  @return The first argument if it is not {@null}, otherwise the
      *      value returned by a call to {@code supplier.get()} if it is not
-     *      {@code null}.
-     *  @throws NullArgumentException   The {@code supplier} is {@code null}.
-     *  @throws NullPointerException    {@code obj} is {@code null} and the
-     *      return value of {@code supplier.get()} value is {@code null}, too.
+     *      {@null}.
+     *  @throws NullArgumentException   The {@code supplier} is {@null}.
+     *  @throws NullPointerException    {@code obj} is {@null} and the
+     *      return value of {@code supplier.get()} value is {@null}, too.
      *
      *  @since 0.0.5
      */
@@ -1087,19 +1087,19 @@ public final class Objects
      *  that fails, an
      *  {@link ValidationException}
      *  with a default message is thrown.} The validation is also responsible
-     *  for the {@code null}-check; that means, the method
+     *  for the {@null}-check; that means, the method
      *  {@link Predicate#test(Object) test()}
-     *  of the validation may be called with {@code null} as the argument.</p>
+     *  of the validation may be called with {@null} as the argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  arg The value to check; can be {@code null}.
+     *  @param  arg The value to check; can be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
@@ -1125,13 +1125,13 @@ public final class Objects
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
-     *  <p>The validation is also responsible for the {@code null}-check; that
+     *  <p>The validation is also responsible for the {@null}-check; that
      *  means, the method
      *  {@link Predicate#test(Object) test()}
-     *  of the validation may be called with {@code null} as the argument.</p>
+     *  of the validation may be called with {@null} as the argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  arg The value to check; can be {@code null}.
+     *  @param  arg The value to check; can be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
@@ -1140,7 +1140,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
@@ -1172,13 +1172,13 @@ public final class Objects
      *  argument and the value ({@code arg}) as the second argument to compose
      *  the message for the {@code ValidationException} in case the validation
      *  failed.</p>
-     *  <p>The validation is also responsible for the {@code null}-check; that
+     *  <p>The validation is also responsible for the {@null}-check; that
      *  means, the method
      *  {@link Predicate#test(Object) test()}
-     *  of the validation may be called with {@code null} as the argument.</p>
+     *  of the validation may be called with {@null} as the argument.</p>
      *
      *  @param  <T> The type of the value to check.
-     *  @param  arg The value to check; can be {@code null}.
+     *  @param  arg The value to check; can be {@null}.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
@@ -1187,7 +1187,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.25.11
@@ -1219,7 +1219,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1255,7 +1255,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1297,7 +1297,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.25.11
@@ -1329,7 +1329,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1365,7 +1365,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1407,7 +1407,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.25.11
@@ -1439,7 +1439,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
-     *      {@code null}.
+     *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1475,7 +1475,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.2.0
@@ -1517,7 +1517,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
-     *      {@code messageProvider} is {@code null}.
+     *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.25.11
@@ -1539,10 +1539,10 @@ public final class Objects
 
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
-     *  not be {@code null}), and if that fails, an
+     *  not be {@null}), and if that fails, an
      *  {@link ValidationException}
      *  with a default message is thrown.}</p>
-     *  <p>If the value is {@code null}, the validation is never triggered.</p>
+     *  <p>If the value is {@null}, the validation is never triggered.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  arg The value to check.
@@ -1552,7 +1552,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code a} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name} or
-     *      {@code validation} is {@code null}.
+     *      {@code validation} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
@@ -1573,7 +1573,7 @@ public final class Objects
 
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
-     *  not be {@code null}), and if that fails, a
+     *  not be {@null}), and if that fails, a
      *  {@link ValidationException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
@@ -1589,7 +1589,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name},
-     *      {@code validation} or {@code messageProvider} is {@code null}.
+     *      {@code validation} or {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.1.0
@@ -1614,7 +1614,7 @@ public final class Objects
 
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
-     *  not be {@code null}), and if that fails, a
+     *  not be {@null}), and if that fails, a
      *  {@link ValidationException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
@@ -1632,7 +1632,7 @@ public final class Objects
      *  @return The value if the validation succeeds.
      *  @throws ValidationException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name},
-     *      {@code validation} or {@code messageProvider} is {@code null}.
+     *      {@code validation} or {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
      *
      *  @since 0.25.11
@@ -1657,7 +1657,7 @@ public final class Objects
      *  {@link String},
      *  usually by calling its
      *  {@link Object#toString() toString()}
-     *  method.} If the value of the argument is {@code null}, the text
+     *  method.} If the value of the argument is {@null}, the text
      *  &quot;{@link org.tquadrat.foundation.lang.CommonConstants#NULL_STRING null}&quot;
      *  will be returned instead. Arrays will be converted to a String through
      *  calling the respective {@code toString()} method from
@@ -1669,7 +1669,7 @@ public final class Objects
      *  {@link java.util.Calendar}
      *  will be translated based on the default locale - whatever that is.
      *
-     *  @param  object  The object; may be {@code null}.
+     *  @param  object  The object; may be {@null}.
      *  @return The object's string representation.
      *
      *  @see java.util.Arrays#toString(boolean[])
@@ -1698,7 +1698,7 @@ public final class Objects
      *  {@link String},
      *  usually by calling its
      *  {@link Object#toString() toString()}
-     *  method.} If the value of the argument is {@code null}, the text
+     *  method.} If the value of the argument is {@null}, the text
      *  provided as the {@code nullDefault} argument will be returned
      *  instead.</p>
      *  <p>Arrays will be converted to a string through calling the respective
@@ -1713,9 +1713,9 @@ public final class Objects
      *  {@link java.util.Locale#getDefault() default locale}
      *  – whatever that is.</p>
      *
-     *  @param  object  The object; may be {@code null}.
+     *  @param  object  The object; may be {@null}.
      *  @param  nullDefault The text that should be returned if {@code object}
-     *      is {@code null}.
+     *      is {@null}.
      *  @return The object's string representation.
      *
      *  @see java.util.Arrays#toString(boolean[])
@@ -1794,16 +1794,16 @@ public final class Objects
      *  {@link String}
      *  using the given instance of
      *  {@link Stringer}.}
-     *  If the value of the argument is {@code null}, the text
+     *  If the value of the argument is {@null}, the text
      *  provided as the {@code nullDefault} argument will be returned
      *  instead.</p>
      *
      *  @param  <T> The type of the object.
-     *  @param  value   The object; may be {@code null}.
+     *  @param  value   The object; may be {@null}.
      *  @param  stringer    The method that is used to convert the given object
      *      to a String.
      *  @param  nullDefault The text that should be returned if {@code object}
-     *      is {@code null}.
+     *      is {@null}.
      *  @return The object's string representation.
      *
      *  @see    Stringer

@@ -46,14 +46,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AggregatingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: AggregatingSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <I> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AggregatingSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public class AggregatingSpliterator<I> implements Spliterator<List<I>>
 {
@@ -116,7 +116,7 @@ public class AggregatingSpliterator<I> implements Spliterator<List<I>>
      *  Checks whether the current element is on the current slide.
      *
      *  @param  currentElement  The current element.
-     *  @return {@code true} if the current element is on the current slide.
+     *  @return {@true} if the current element is on the current slide.
      */
     private boolean isSameSlide( final I currentElement )
     {

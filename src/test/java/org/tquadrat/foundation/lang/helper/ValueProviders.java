@@ -18,7 +18,14 @@
 
 package org.tquadrat.foundation.lang.helper;
 
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static java.lang.Boolean.TRUE;
+import static java.util.Collections.emptyEnumeration;
+import static java.util.Collections.emptyList;
+import static java.util.Collections.emptyMap;
+import static java.util.Collections.emptySet;
+import static java.util.Collections.enumeration;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 
 import java.time.Instant;
 import java.util.List;
@@ -30,19 +37,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.lang.Boolean.TRUE;
-import static java.util.Collections.*;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  The value providers for the unit tests in the base module.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueProviders.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: ValueProviders.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
 @SuppressWarnings( {"UtilityClassWithoutPrivateConstructor", "UtilityClass", "UtilityClassCanBeEnum", "unused"} )
-@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueProviders.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 public final class ValueProviders
 {
         /*-----------*\
@@ -95,7 +99,7 @@ public final class ValueProviders
      *  The argument provider for the methods that test on empty; provides
      *  empty arguments.
      *
-     *  @return A stream of values that are not {@code null} and not empty, but
+     *  @return A stream of values that are not {@null} and not empty, but
      *      blank.
      */
     static final Stream<CharSequence> blankTestArgumentProvider()
@@ -130,7 +134,7 @@ public final class ValueProviders
      *  The argument provider for the methods that test on empty; provides
      *  empty arguments.
      *
-     *  @return A stream of values that are not {@code null}, but empty.
+     *  @return A stream of values that are not {@null}, but empty.
      *
      *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotEmptyArgument1WithEmptyArgument(Object)
      */
@@ -183,7 +187,7 @@ public final class ValueProviders
      *  The argument provider for the methods that test on blank; provides
      *  not blank, not empty arguments.
      *
-     *  @return A stream of values that are not {@code null}, not empty and not blank.
+     *  @return A stream of values that are not {@null}, not empty and not blank.
      */
     static final Stream<CharSequence> notBlankTestArgumentProvider()
     {
@@ -205,7 +209,7 @@ public final class ValueProviders
      *  The argument provider for the methods that test on empty; provides
      *  not empty arguments.
      *
-     *  @return A stream of values that are not {@code null}, and not empty.
+     *  @return A stream of values that are not {@null}, and not empty.
      *
      *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotEmptyArgument1(Object)
      *  @see org.tquadrat.foundation.lang.objects.TestRequireNotEmptyArgument#testRequireNotEmptyArgument2(Object)
@@ -235,9 +239,9 @@ public final class ValueProviders
     }   //  notEmptyTestArgumentProvider()
 
     /**
-     *  The argument provider for the {@code null} test methods.
+     *  The argument provider for the {@null} test methods.
      *
-     *  @return A stream of values that are not {@code null}.
+     *  @return A stream of values that are not {@null}.
      *
      *  @see org.tquadrat.foundation.lang.objects.TestHashCode#testHashCode(Object)
      *  @see org.tquadrat.foundation.lang.objects.TestToString#testToStringObject(Object)

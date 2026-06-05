@@ -47,13 +47,13 @@ import org.tquadrat.foundation.lang.Objects;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Selectors.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: Selectors.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Selectors.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Selectors.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 public final class Selectors
 {
         /*--------------*\
@@ -71,8 +71,8 @@ public final class Selectors
      *  Returns a &quot;Round Robin&quot;
      *  {@link Selector}
      *  implementation. It will return always the next index for the given
-     *  array where the respective value is not {@code null}, or {@code null}
-     *  if the array contains only {@code null} values.
+     *  array where the respective value is not {@null}, or {@null}
+     *  if the array contains only {@null} values.
      *
      *  @param  <T> The type of the values to select from.
      *  @return The selector.
@@ -92,8 +92,8 @@ public final class Selectors
             /**
              *  {@inheritDoc}
              *
-             *  @return The array index of the selected value, or {@code null}
-             *      if all values in the provided array are {@code null}.
+             *  @return The array index of the selected value, or {@null}
+             *      if all values in the provided array are {@null}.
              */
             @SuppressWarnings( "MethodWithMultipleReturnPoints" )
             @Override
@@ -201,7 +201,7 @@ public final class Selectors
              *  {@inheritDoc}
              *
              *  @throws NoSuchElementException  All elements of the given array
-             *      are {@code null}.
+             *      are {@null}.
              */
             @SuppressWarnings( "OptionalGetWithoutIsPresent" )
             @Override

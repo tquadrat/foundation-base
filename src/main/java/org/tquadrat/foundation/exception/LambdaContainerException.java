@@ -17,17 +17,17 @@
 
 package org.tquadrat.foundation.exception;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.function.Functions;
+import static java.util.Arrays.stream;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.io.Serial;
 import java.util.Collection;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.stream;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.function.Functions;
 
 /**
  *  <p>{@summary A &quot;container&quot; exception for exception thrown within
@@ -87,13 +87,13 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *  {@link Functions}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "removal" )
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class LambdaContainerException extends CheckedExceptionWrapper
 {
@@ -158,7 +158,7 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
      *  Creates a new {@code LambdaContainerException} instance for the given
      *  exception.
      *
-     *  @param  e   The exception to wrap; <i>cannot</i> be {@code null}.
+     *  @param  e   The exception to wrap; <i>cannot</i> be {@null}.
      */
     public LambdaContainerException( final Exception e )
     {
@@ -172,8 +172,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
      *  Checks whether the contained Exception is somehow expected.
      *
      *  @param  expected    The expected exceptions.
-     *  @return {@code true} if the contained Exception is among the list of
-     *      expected exceptions, {@code false} otherwise.
+     *  @return {@true} if the contained Exception is among the list of
+     *      expected exceptions, {@false} otherwise.
      */
     public final boolean checkIfExpected( final Stream<Class<? extends Exception>> expected )
     {
@@ -188,8 +188,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
      *  Checks whether the contained Exception is somehow expected.
      *
      *  @param  expected    The expected exceptions.
-     *  @return {@code true} if the contained Exception is among the list of
-     *      expected exceptions, {@code false} otherwise.
+     *  @return {@true} if the contained Exception is among the list of
+     *      expected exceptions, {@false} otherwise.
      */
     public final boolean checkIfExpected( final Collection<Class<? extends Exception>> expected )
     {
@@ -203,8 +203,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
      *  Checks whether the contained Exception is somehow expected.
      *
      *  @param  expected    The expected exceptions.
-     *  @return {@code true} if the contained Exception is among the list of
-     *      expected exceptions, {@code false} otherwise.
+     *  @return {@true} if the contained Exception is among the list of
+     *      expected exceptions, {@false} otherwise.
      */
     @SafeVarargs
     public final boolean checkIfExpected( final Class<? extends Exception>... expected )

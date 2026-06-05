@@ -63,13 +63,13 @@ import org.tquadrat.foundation.stream.internal.ZippingSpliterator;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 public final class StreamUtils
 {
         /*--------------*\
@@ -85,7 +85,7 @@ public final class StreamUtils
         \*---------*/
     /**
      *  <p>{@summary Aggregates items from source stream into list of items
-     *  while supplied predicate is {@code true} when evaluated on previous and
+     *  while supplied predicate is {@true} when evaluated on previous and
      *  current item.}</p>
      *  <p>Can be seen as streaming alternative to
      *  {@link java.util.stream.Collectors#groupingBy(Function) Collectors.groupingBy()}
@@ -191,7 +191,7 @@ public final class StreamUtils
      *  Constructs a stream which interleaves the supplied streams, picking
      *  items using the supplied selector function.<br>
      *  <br>The selector function will be passed an array containing one value
-     *  from each stream, or {@code null} if that stream has no more values,
+     *  from each stream, or {@null} if that stream has no more values,
      *  and must return the integer index of the value to accept. That value
      *  will become part of the interleaved stream, and the source stream at
      *  that index will advance to the next value.<br>
@@ -224,7 +224,7 @@ public final class StreamUtils
      *  Constructs a stream which interleaves the supplied streams, picking
      *  items using the supplied selector function.<br>
      *  <br>The selector function will be passed an array containing one value
-     *  from each stream, or {@code null} if that stream has no more values,
+     *  from each stream, or {@null} if that stream has no more values,
      *  and must return the integer index of the value to accept. That value
      *  will become part of the interleaved stream, and the source stream at
      *  that index will advance to the next value.<br>

@@ -31,22 +31,22 @@
 <span class="source-line-no">018</span><span id="line-18"></span>
 <span class="source-line-no">019</span><span id="line-19">package org.tquadrat.foundation.lang;</span>
 <span class="source-line-no">020</span><span id="line-20"></span>
-<span class="source-line-no">021</span><span id="line-21">import org.apiguardian.api.API;</span>
-<span class="source-line-no">022</span><span id="line-22">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">023</span><span id="line-23"></span>
-<span class="source-line-no">024</span><span id="line-24">import java.io.File;</span>
-<span class="source-line-no">025</span><span id="line-25">import java.net.URL;</span>
-<span class="source-line-no">026</span><span id="line-26">import java.util.Formattable;</span>
-<span class="source-line-no">027</span><span id="line-27">import java.util.Optional;</span>
-<span class="source-line-no">028</span><span id="line-28">import java.util.function.Function;</span>
-<span class="source-line-no">029</span><span id="line-29"></span>
-<span class="source-line-no">030</span><span id="line-30">import static java.lang.String.format;</span>
-<span class="source-line-no">031</span><span id="line-31">import static java.util.function.Function.identity;</span>
-<span class="source-line-no">032</span><span id="line-32">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">033</span><span id="line-33">import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;</span>
-<span class="source-line-no">034</span><span id="line-34">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
-<span class="source-line-no">035</span><span id="line-35">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
-<span class="source-line-no">036</span><span id="line-36">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">021</span><span id="line-21">import static java.lang.String.format;</span>
+<span class="source-line-no">022</span><span id="line-22">import static java.util.function.Function.identity;</span>
+<span class="source-line-no">023</span><span id="line-23">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">024</span><span id="line-24">import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;</span>
+<span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
+<span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.Objects.nonNull;</span>
+<span class="source-line-no">027</span><span id="line-27">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">028</span><span id="line-28"></span>
+<span class="source-line-no">029</span><span id="line-29">import java.io.File;</span>
+<span class="source-line-no">030</span><span id="line-30">import java.net.URL;</span>
+<span class="source-line-no">031</span><span id="line-31">import java.util.Formattable;</span>
+<span class="source-line-no">032</span><span id="line-32">import java.util.Optional;</span>
+<span class="source-line-no">033</span><span id="line-33">import java.util.function.Function;</span>
+<span class="source-line-no">034</span><span id="line-34"></span>
+<span class="source-line-no">035</span><span id="line-35">import org.apiguardian.api.API;</span>
+<span class="source-line-no">036</span><span id="line-36">import org.tquadrat.foundation.annotation.ClassVersion;</span>
 <span class="source-line-no">037</span><span id="line-37"></span>
 <span class="source-line-no">038</span><span id="line-38">/**</span>
 <span class="source-line-no">039</span><span id="line-39"> *  &lt;p&gt;{@summary This interface defines a method to compose a String</span>
@@ -95,24 +95,24 @@
 <span class="source-line-no">082</span><span id="line-82"> *  {@link #toString(Object)}.&lt;/p&gt;</span>
 <span class="source-line-no">083</span><span id="line-83"> *</span>
 <span class="source-line-no">084</span><span id="line-84"> *  @note The method {@code toString(Object)} will &lt;i&gt;never&lt;/i&gt; return</span>
-<span class="source-line-no">085</span><span id="line-85"> *      {@code null}; if called with a {@code null} argument, it will return</span>
+<span class="source-line-no">085</span><span id="line-85"> *      {@null}; if called with a {@null} argument, it will return</span>
 <span class="source-line-no">086</span><span id="line-86"> *      the String &amp;quot;null&amp;quot;.&lt;br&gt;</span>
 <span class="source-line-no">087</span><span id="line-87"> *      This is different to the behaviour of the {@code toString(Object)}</span>
 <span class="source-line-no">088</span><span id="line-88"> *      method of an implementation of {@code StringConverter} that returns</span>
-<span class="source-line-no">089</span><span id="line-89"> *      {@code null} for a {@code null} argument.</span>
+<span class="source-line-no">089</span><span id="line-89"> *      {@null} for a {@null} argument.</span>
 <span class="source-line-no">090</span><span id="line-90"> *</span>
 <span class="source-line-no">091</span><span id="line-91"> *  @see org.tquadrat.foundation.lang.StringConverter#toString(Object)</span>
 <span class="source-line-no">092</span><span id="line-92"> *  @see CommonConstants#NULL_STRING</span>
 <span class="source-line-no">093</span><span id="line-93"> *</span>
 <span class="source-line-no">094</span><span id="line-94"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">095</span><span id="line-95"> *  @version $Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $</span>
+<span class="source-line-no">095</span><span id="line-95"> *  @version $Id: Stringer.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">096</span><span id="line-96"> *  @since 0.1.0</span>
 <span class="source-line-no">097</span><span id="line-97"> *</span>
 <span class="source-line-no">098</span><span id="line-98"> *  @UMLGraph.link</span>
 <span class="source-line-no">099</span><span id="line-99"> *</span>
 <span class="source-line-no">100</span><span id="line-100"> *  @param  &lt;T&gt; The type of the argument value.</span>
 <span class="source-line-no">101</span><span id="line-101"> */</span>
-<span class="source-line-no">102</span><span id="line-102">@ClassVersion( sourceVersion = "$Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $" )</span>
+<span class="source-line-no">102</span><span id="line-102">@ClassVersion( sourceVersion = "$Id: Stringer.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">103</span><span id="line-103">@FunctionalInterface</span>
 <span class="source-line-no">104</span><span id="line-104">@API( status = STABLE, since = "0.1.0" )</span>
 <span class="source-line-no">105</span><span id="line-105">public interface Stringer&lt;T&gt;</span>
@@ -253,12 +253,12 @@
 <span class="source-line-no">240</span><span id="line-240">     *  &lt;p&gt;A String converter cannot be used directly as a {@code Stringer}</span>
 <span class="source-line-no">241</span><span id="line-241">     *  because {@code Stringer}'s</span>
 <span class="source-line-no">242</span><span id="line-242">     *  {@link #toString(Object) toString()}</span>
-<span class="source-line-no">243</span><span id="line-243">     *  method will never return {@code null} (in case the argument is</span>
-<span class="source-line-no">244</span><span id="line-244">     *  {@code null}, it returns the</span>
+<span class="source-line-no">243</span><span id="line-243">     *  method will never return {@null} (in case the argument is</span>
+<span class="source-line-no">244</span><span id="line-244">     *  {@null}, it returns the</span>
 <span class="source-line-no">245</span><span id="line-245">     *  {@link CommonConstants#NULL_STRING NULL_STRING}),</span>
 <span class="source-line-no">246</span><span id="line-246">     *  while</span>
 <span class="source-line-no">247</span><span id="line-247">     *  {@link StringConverter#toString(Object) StringConverter.toString()}</span>
-<span class="source-line-no">248</span><span id="line-248">     *  returns {@code null} for a {@code null} argument.</span>
+<span class="source-line-no">248</span><span id="line-248">     *  returns {@null} for a {@null} argument.</span>
 <span class="source-line-no">249</span><span id="line-249">     *</span>
 <span class="source-line-no">250</span><span id="line-250">     *  @param  &lt;A&gt; The type of the input for the stringer.</span>
 <span class="source-line-no">251</span><span id="line-251">     *  @param  stringConverter The {@code StringConverter} instance.</span>
@@ -292,7 +292,7 @@
 <span class="source-line-no">279</span><span id="line-279">    /**</span>
 <span class="source-line-no">280</span><span id="line-280">     *  Returns a String representation of the given argument, or</span>
 <span class="source-line-no">281</span><span id="line-281">     *  {@link CommonConstants#NULL_STRING "null"}</span>
-<span class="source-line-no">282</span><span id="line-282">     *  if the given {@code value} is {@code null}.</span>
+<span class="source-line-no">282</span><span id="line-282">     *  if the given {@code value} is {@null}.</span>
 <span class="source-line-no">283</span><span id="line-283">     *</span>
 <span class="source-line-no">284</span><span id="line-284">     *  @param  value   The value.</span>
 <span class="source-line-no">285</span><span id="line-285">     *  @return The String representation.</span>

@@ -26,33 +26,33 @@
 
 package org.tquadrat.foundation.stream.internal;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.INTERNAL;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  An implementation of
  *  {@link Spliterator}
  *  that takes elements from a stream while the given
  *  {@link Predicate Predicate}
- *  returns {@code true}.
+ *  returns {@true}.
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TakeWhileSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: TakeWhileSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class TakeWhileSpliterator<T> implements Spliterator<T>
 {
@@ -65,7 +65,7 @@ public final class TakeWhileSpliterator<T> implements Spliterator<T>
     private final Predicate<T> m_Condition;
 
     /**
-     *  Flag that indicates whether the condition still returns {@code true}.
+     *  Flag that indicates whether the condition still returns {@true}.
      */
     private boolean m_ConditionHolds = true;
 

@@ -17,17 +17,17 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.nonNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{Instances of this record are meant to be used as the return values for
@@ -53,19 +53,19 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *  …</pre></div>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Status.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: Status.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  *
  *  @param  <V>  The type of the result value.
  *  @param  <C>  The type of the error code.
- *  @param  result  The result value; can be {@code null}.
- *  @param  errorCode   The error code; a value of {@code null} indicates a
+ *  @param  result  The result value; can be {@null}.
+ *  @param  errorCode   The error code; a value of {@null} indicates a
  *      success.
  */
 @SuppressWarnings( {"ProhibitedExceptionDeclared", "ProhibitedExceptionThrown"} )
-@ClassVersion( sourceVersion = "$Id: Status.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Status.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Status<V,C>( V result, C errorCode )
 {
@@ -97,7 +97,7 @@ public record Status<V,C>( V result, C errorCode )
     /**
      *  Returns whether this {@code Status} instance indicates a failure.
      *
-     *  @return {@code true} if the status indicates a failure, {@code false}
+     *  @return {@true} if the status indicates a failure, {@false}
      *      otherwise.
      */
     public final boolean isFailure() { return nonNull( errorCode ); }
@@ -105,7 +105,7 @@ public record Status<V,C>( V result, C errorCode )
     /**
      *  Returns whether this {@code Status} instance indicates a success.
      *
-     *  @return {@code true} if the status indicates a success, {@code false}
+     *  @return {@true} if the status indicates a success, {@false}
      *      otherwise.
      */
     public final boolean isSuccess() { return isNull( errorCode ); }
@@ -123,8 +123,8 @@ public record Status<V,C>( V result, C errorCode )
      *      {@linkplain Optional#empty() empty}
      *      otherwise.
      *
-     *  @note As the result can be {@code null}, too (or the result of the
-     *      conversion is {@code null}), an empty return value does not
+     *  @note As the result can be {@null}, too (or the result of the
+     *      conversion is {@null}), an empty return value does not
      *      necessarily indicate a failure.
      */
     public final <R> Optional<R> map( final Function<? super V,? extends R> conversion )

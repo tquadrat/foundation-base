@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,14 +28,14 @@ import java.lang.annotation.Target;
 import org.apiguardian.api.API;
 
 /**
- *  The marker annotation for methods that are meant to be overwritten in child
- *  classes.
+ *  <p>{@summary The marker annotation for methods that are meant to be
+ *  overwritten in child classes.}</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MountPoint.java 1042 2022-12-26 14:05:06Z tquadrat $
+ *  @version $Id: MountPoint.java 1259 2026-06-05 20:29:42Z tquadrat $
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: MountPoint.java 1042 2022-12-26 14:05:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MountPoint.java 1259 2026-06-05 20:29:42Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @Documented
 @Retention( SOURCE )
@@ -48,6 +48,16 @@ public @interface MountPoint
      *  @return The description of the mount point.
      */
     String value() default "";
+
+    /**
+     *  Flag that indicates whether an overriding implementation should call
+     *  the {@code super} implementation.
+     *
+     *  @return {@code true} if the {@code super} implementation should be
+     *      called, {@code false} (the default) if not.
+     */
+    @API( status = STABLE, since = "0.25.12" )
+    boolean shouldCallSuper() default false;
 }
 //  @interface MountPoint
 

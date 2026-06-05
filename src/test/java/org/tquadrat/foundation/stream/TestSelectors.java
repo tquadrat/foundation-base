@@ -41,7 +41,7 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  */
-@ClassVersion( sourceVersion = "$Id: TestSelectors.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestSelectors.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.stream.TestSelectors" )
 public class TestSelectors extends TestBaseClass
 {
@@ -51,7 +51,7 @@ public class TestSelectors extends TestBaseClass
     /**
      *  Tests the failure of
      *  {@link Selectors#takeMax(Comparator)}
-     *  for a {@code null} argument.
+     *  for a {@null} argument.
      *
      *  @throws Exception   Something unexpected went wrong.
      */
@@ -83,7 +83,7 @@ public class TestSelectors extends TestBaseClass
     /**
      *  Tests the failure of
      *  {@link Selectors#takeMin(Comparator)}
-     *  for a {@code null} argument.
+     *  for a {@null} argument.
      *
      *  @throws Exception   Something unexpected went wrong.
      */

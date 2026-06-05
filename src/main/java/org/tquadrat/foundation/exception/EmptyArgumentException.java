@@ -33,12 +33,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  argument is provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: EmptyArgumentException.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: EmptyArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: EmptyArgumentException.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: EmptyArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class EmptyArgumentException extends NullArgumentException
 {
@@ -65,7 +65,7 @@ public final class EmptyArgumentException extends NullArgumentException
      *  Creates a new instance of {@code EmptyArgumentException}.
      *
      *  @param  argName The name of the argument whose value was provided as
-     *      empty; if {@code null} or the empty String, a default message
+     *      empty; if {@null} or the empty String, a default message
      *      is used that does not use the name of the argument.
      */
     public EmptyArgumentException( final String argName )

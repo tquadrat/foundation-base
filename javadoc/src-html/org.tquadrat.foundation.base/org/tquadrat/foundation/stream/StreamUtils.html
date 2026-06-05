@@ -76,13 +76,13 @@
 <span class="source-line-no">063</span><span id="line-63"> *</span>
 <span class="source-line-no">064</span><span id="line-64"> *  @author Dominic Fox</span>
 <span class="source-line-no">065</span><span id="line-65"> *  @modified Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">066</span><span id="line-66"> *  @version $Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $</span>
+<span class="source-line-no">066</span><span id="line-66"> *  @version $Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">067</span><span id="line-67"> *  @since 0.0.7</span>
 <span class="source-line-no">068</span><span id="line-68"> *</span>
 <span class="source-line-no">069</span><span id="line-69"> *  @UMLGraph.link</span>
 <span class="source-line-no">070</span><span id="line-70"> */</span>
 <span class="source-line-no">071</span><span id="line-71">@UtilityClass</span>
-<span class="source-line-no">072</span><span id="line-72">@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1151 2025-10-01 21:32:15Z tquadrat $" )</span>
+<span class="source-line-no">072</span><span id="line-72">@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">073</span><span id="line-73">public final class StreamUtils</span>
 <span class="source-line-no">074</span><span id="line-74">{</span>
 <span class="source-line-no">075</span><span id="line-75">        /*--------------*\</span>
@@ -98,7 +98,7 @@
 <span class="source-line-no">085</span><span id="line-85">        \*---------*/</span>
 <span class="source-line-no">086</span><span id="line-86">    /**</span>
 <span class="source-line-no">087</span><span id="line-87">     *  &lt;p&gt;{@summary Aggregates items from source stream into list of items</span>
-<span class="source-line-no">088</span><span id="line-88">     *  while supplied predicate is {@code true} when evaluated on previous and</span>
+<span class="source-line-no">088</span><span id="line-88">     *  while supplied predicate is {@true} when evaluated on previous and</span>
 <span class="source-line-no">089</span><span id="line-89">     *  current item.}&lt;/p&gt;</span>
 <span class="source-line-no">090</span><span id="line-90">     *  &lt;p&gt;Can be seen as streaming alternative to</span>
 <span class="source-line-no">091</span><span id="line-91">     *  {@link java.util.stream.Collectors#groupingBy(Function) Collectors.groupingBy()}</span>
@@ -204,7 +204,7 @@
 <span class="source-line-no">191</span><span id="line-191">     *  Constructs a stream which interleaves the supplied streams, picking</span>
 <span class="source-line-no">192</span><span id="line-192">     *  items using the supplied selector function.&lt;br&gt;</span>
 <span class="source-line-no">193</span><span id="line-193">     *  &lt;br&gt;The selector function will be passed an array containing one value</span>
-<span class="source-line-no">194</span><span id="line-194">     *  from each stream, or {@code null} if that stream has no more values,</span>
+<span class="source-line-no">194</span><span id="line-194">     *  from each stream, or {@null} if that stream has no more values,</span>
 <span class="source-line-no">195</span><span id="line-195">     *  and must return the integer index of the value to accept. That value</span>
 <span class="source-line-no">196</span><span id="line-196">     *  will become part of the interleaved stream, and the source stream at</span>
 <span class="source-line-no">197</span><span id="line-197">     *  that index will advance to the next value.&lt;br&gt;</span>
@@ -237,7 +237,7 @@
 <span class="source-line-no">224</span><span id="line-224">     *  Constructs a stream which interleaves the supplied streams, picking</span>
 <span class="source-line-no">225</span><span id="line-225">     *  items using the supplied selector function.&lt;br&gt;</span>
 <span class="source-line-no">226</span><span id="line-226">     *  &lt;br&gt;The selector function will be passed an array containing one value</span>
-<span class="source-line-no">227</span><span id="line-227">     *  from each stream, or {@code null} if that stream has no more values,</span>
+<span class="source-line-no">227</span><span id="line-227">     *  from each stream, or {@null} if that stream has no more values,</span>
 <span class="source-line-no">228</span><span id="line-228">     *  and must return the integer index of the value to accept. That value</span>
 <span class="source-line-no">229</span><span id="line-229">     *  will become part of the interleaved stream, and the source stream at</span>
 <span class="source-line-no">230</span><span id="line-230">     *  that index will advance to the next value.&lt;br&gt;</span>

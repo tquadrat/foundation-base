@@ -27,20 +27,20 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary The implementation of a tupel.}</p>
- *  <p>Both values are allowed to be {@code null}.</p>
+ *  <p>Both values are allowed to be {@null}.</p>
  *
  *  @param  <L> The type for the left value.
  *  @param  <R> The type for the right value.
  *  @param  left    The left value of the pair.
  *  @param  right   The right value of the pair.
  *
- *  @version $Id: Pair.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: Pair.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: Pair.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Pair.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record Pair<L,R>( L left, R right )
 {
@@ -92,7 +92,7 @@ public record Pair<L,R>( L left, R right )
      *  Creates a new instance of {@code Pair} with the right value from this
      *  one and the given new left value.
      *
-     *  @param  newLeft The new left value; can be {@code null}.
+     *  @param  newLeft The new left value; can be {@null}.
      *  @return A new instance of {@code Pair}.
      */
     public final Pair<L,R> left(final L newLeft ) { return new Pair<>( newLeft, right ); }
@@ -101,7 +101,7 @@ public record Pair<L,R>( L left, R right )
      *  Creates a new instance of {@code Pair} with the left value from this
      *  one and the given new right value.
      *
-     *  @param  newRight The new right value; can be {@code null}.
+     *  @param  newRight The new right value; can be {@null}.
      *  @return A new instance of {@code Pair}.
      */
     public final Pair<L,R> right(final R newRight ) { return new Pair<>( left, newRight ); }

@@ -18,15 +18,6 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-
-import java.io.File;
-import java.net.URL;
-import java.util.Formattable;
-import java.util.Optional;
-import java.util.function.Function;
-
 import static java.lang.String.format;
 import static java.util.function.Function.identity;
 import static org.apiguardian.api.API.Status.STABLE;
@@ -34,6 +25,15 @@ import static org.tquadrat.foundation.lang.CommonConstants.NULL_STRING;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+
+import java.io.File;
+import java.net.URL;
+import java.util.Formattable;
+import java.util.Optional;
+import java.util.function.Function;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary This interface defines a method to compose a String
@@ -82,24 +82,24 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *  {@link #toString(Object)}.</p>
  *
  *  @note The method {@code toString(Object)} will <i>never</i> return
- *      {@code null}; if called with a {@code null} argument, it will return
+ *      {@null}; if called with a {@null} argument, it will return
  *      the String &quot;null&quot;.<br>
  *      This is different to the behaviour of the {@code toString(Object)}
  *      method of an implementation of {@code StringConverter} that returns
- *      {@code null} for a {@code null} argument.
+ *      {@null} for a {@null} argument.
  *
  *  @see org.tquadrat.foundation.lang.StringConverter#toString(Object)
  *  @see CommonConstants#NULL_STRING
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: Stringer.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the argument value.
  */
-@ClassVersion( sourceVersion = "$Id: Stringer.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Stringer.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.1.0" )
 public interface Stringer<T>
@@ -240,12 +240,12 @@ public interface Stringer<T>
      *  <p>A String converter cannot be used directly as a {@code Stringer}
      *  because {@code Stringer}'s
      *  {@link #toString(Object) toString()}
-     *  method will never return {@code null} (in case the argument is
-     *  {@code null}, it returns the
+     *  method will never return {@null} (in case the argument is
+     *  {@null}, it returns the
      *  {@link CommonConstants#NULL_STRING NULL_STRING}),
      *  while
      *  {@link StringConverter#toString(Object) StringConverter.toString()}
-     *  returns {@code null} for a {@code null} argument.
+     *  returns {@null} for a {@null} argument.
      *
      *  @param  <A> The type of the input for the stringer.
      *  @param  stringConverter The {@code StringConverter} instance.
@@ -279,7 +279,7 @@ public interface Stringer<T>
     /**
      *  Returns a String representation of the given argument, or
      *  {@link CommonConstants#NULL_STRING "null"}
-     *  if the given {@code value} is {@code null}.
+     *  if the given {@code value} is {@null}.
      *
      *  @param  value   The value.
      *  @return The String representation.

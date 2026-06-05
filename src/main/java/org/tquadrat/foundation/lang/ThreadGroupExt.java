@@ -35,12 +35,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>This class is not final, to allow further modifications.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadGroupExt.java 1118 2024-03-15 16:14:15Z tquadrat $
+ *  @version $Id: ThreadGroupExt.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadGroupExt.java 1118 2024-03-15 16:14:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadGroupExt.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class ThreadGroupExt extends ThreadGroup
 {
@@ -50,7 +50,7 @@ public class ThreadGroupExt extends ThreadGroup
     /**
      *  The
      *  {@link java.lang.Thread.UncaughtExceptionHandler}
-     *  for this thread group. It can be {@code null}.
+     *  for this thread group. It can be {@null}.
      */
     private final UncaughtExceptionHandler m_UncaughtExceptionHandler;
 
@@ -67,7 +67,7 @@ public class ThreadGroupExt extends ThreadGroup
      *
      *  @param  name    The name of the new thread group.
      *  @throws IllegalArgumentException    The {@code name} argument is either
-     *      {@code null}, empty or blank.
+     *      {@null}, empty or blank.
      *  @throws SecurityException   The current thread cannot create a thread
      *      in this thread group.
      */
@@ -87,8 +87,8 @@ public class ThreadGroupExt extends ThreadGroup
      *  @param  parent  The parent thread group.
      *  @param  name    The name of the new thread group.
      *  @throws IllegalArgumentException    The {@code name} argument is either
-     *      {@code null}, empty or blank, or the {@code parent} thread group
-     *      argument is {@code null}.
+     *      {@null}, empty or blank, or the {@code parent} thread group
+     *      argument is {@null}.
      *  @throws SecurityException   The current thread cannot create a thread
      *      in this thread group.
      */
@@ -109,8 +109,8 @@ public class ThreadGroupExt extends ThreadGroup
      *  @param  name    The name of the new thread group.
      *  @param  handler The handler for the uncaught exceptions.
      *  @throws IllegalArgumentException    The {@code name} argument is either
-     *      {@code null}, empty or blank, or the {@code handler} argument is
-     *      {@code null}.
+     *      {@null}, empty or blank, or the {@code handler} argument is
+     *      {@null}.
      *  @throws SecurityException   The current thread cannot create a thread
      *      in this thread group.
      */
@@ -131,8 +131,8 @@ public class ThreadGroupExt extends ThreadGroup
      *  @param  name    The name of the new thread group.
      *  @param  handler The handler for the uncaught exceptions.
      *  @throws IllegalArgumentException    The {@code name} argument is either
-     *      {@code null}, empty or blank, or one of the {@code parent} thread
-     *      group  or the {@code handler} arguments is {@code null}.
+     *      {@null}, empty or blank, or one of the {@code parent} thread
+     *      group  or the {@code handler} arguments is {@null}.
      *  @throws SecurityException   The current thread cannot create a thread
      *      in this thread group.
      */

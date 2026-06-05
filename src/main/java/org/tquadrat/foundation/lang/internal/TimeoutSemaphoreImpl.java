@@ -47,13 +47,13 @@ import org.tquadrat.foundation.lang.AutoSemaphore;
  *  that allows a timeout for the permits.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+ *  @version $Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.25.2
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "SerializableDeserializableClassInSecureContext" )
-@ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.25.2" )
 public final class TimeoutSemaphoreImpl extends Semaphore implements AutoSemaphore
 {
@@ -68,13 +68,13 @@ public final class TimeoutSemaphoreImpl extends Semaphore implements AutoSemapho
      *  @param  reaperExecutor The reference for the
      *     {@link TimeoutSemaphoreImpl#m_ReaperExecutor}.
      *
-     * @version $Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+     * @version $Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      * @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
      * @UMLGraph.link
      * @since 0.25.2
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.25.2" )
     private record Janitor( ScheduledExecutorService reaperExecutor ) implements Runnable
     {
@@ -97,13 +97,13 @@ public final class TimeoutSemaphoreImpl extends Semaphore implements AutoSemapho
      *  <p>{@summary The reaper thread.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+     *  @version $Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( {"resource", "NewClassNamingConvention"} )
-    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.25.2" )
     private final class Reaper extends TimerTask
     {
@@ -146,12 +146,12 @@ public final class TimeoutSemaphoreImpl extends Semaphore implements AutoSemapho
      *  expired.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+     *  @version $Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: TimeoutSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.25.2" )
     public final class TokenImpl implements AutoSemaphore.Token
     {
@@ -327,8 +327,8 @@ public final class TimeoutSemaphoreImpl extends Semaphore implements AutoSemapho
      *  @param  permits The initial number of permits available. This value may
      *      be negative, in which case releases must occur before any acquires
      *      will be granted.
-     *  @param  fair    {@code true} if this semaphore will guarantee first-in
-     *      first-out granting of permits under contention, else {@code false}.
+     *  @param  fair    {@true} if this semaphore will guarantee first-in
+     *      first-out granting of permits under contention, else {@false}.
      *  @param  timeout The timeout.
      */
     public TimeoutSemaphoreImpl( final int permits, final boolean fair, final Duration timeout )

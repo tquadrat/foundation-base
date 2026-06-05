@@ -33,12 +33,12 @@ import org.tquadrat.foundation.lang.AutoSemaphore;
  *  {@link Semaphore}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+ *  @version $Id: AutoSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.25.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.4.8" )
 public final class AutoSemaphoreImpl extends Semaphore implements AutoSemaphore
 {
@@ -50,12 +50,12 @@ public final class AutoSemaphoreImpl extends Semaphore implements AutoSemaphore
      *  {@link AutoSemaphore.Token}.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AutoSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $
+     *  @version $Id: AutoSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: AutoSemaphoreImpl.java 1250 2026-05-25 16:55:30Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoSemaphoreImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.25.2" )
     public final class TokenImpl implements AutoSemaphore.Token
     {
@@ -134,8 +134,8 @@ public final class AutoSemaphoreImpl extends Semaphore implements AutoSemaphore
      *  @param  permits The initial number of permits available. This value may
      *      be negative, in which case releases must occur before any acquires
      *      will be granted.
-     *  @param  fair    {@code true} if this semaphore will guarantee first-in
-     *      first-out granting of permits under contention, else {@code false}.
+     *  @param  fair    {@true} if this semaphore will guarantee first-in
+     *      first-out granting of permits under contention, else {@false}.
      */
     public AutoSemaphoreImpl( final int permits, final boolean fair )
     {

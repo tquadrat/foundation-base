@@ -31,12 +31,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: BlankArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $
+ *  @version $Id: BlankArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: BlankArgumentException.java 1025 2022-03-11 16:26:00Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: BlankArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class BlankArgumentException extends NullArgumentException
 {
@@ -63,7 +63,7 @@ public final class BlankArgumentException extends NullArgumentException
      *  Creates a new instance of {@code BlankArgumentException}.
      *
      *  @param  argName The name of the argument whose value was provided as
-     *      blank; if {@code null} or the empty String, a default message
+     *      blank; if {@null} or the empty String, a default message
      *      is used that does not use the name of the argument.
      */
     public BlankArgumentException( final String argName )

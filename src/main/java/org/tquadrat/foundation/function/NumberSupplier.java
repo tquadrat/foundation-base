@@ -40,12 +40,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.Supplier
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NumberSupplier.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: NumberSupplier.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface NumberSupplier extends Supplier<Number>
@@ -62,7 +62,7 @@ public interface NumberSupplier extends Supplier<Number>
     /**
      *  Gets a result.
      *
-     *  @return The result; may be {@code null}.
+     *  @return The result; may be {@null}.
      */
     public Number getAsNumber();
 }

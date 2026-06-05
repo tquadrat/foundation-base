@@ -17,20 +17,20 @@
 
 package org.tquadrat.foundation.lang.value;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
-
-import java.io.Serial;
-import java.math.BigDecimal;
-import java.util.function.BiPredicate;
-
 import static java.lang.String.format;
 import static java.util.Locale.ROOT;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.hash;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+
+import java.io.Serial;
+import java.math.BigDecimal;
+import java.util.function.BiPredicate;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 
 /**
  *  <p>{@summary An abstract base implementation for the interface
@@ -42,11 +42,11 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *  that takes the
  *  {@linkplain Dimension unit}
  *  with that the instance is initialised, and the value, converted to the base
- *  unit. It returns {@code true} if the given combination is valid, otherwise
- *  it returns {@code false}.</p>
+ *  unit. It returns {@true} if the given combination is valid, otherwise
+ *  it returns {@false}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueBase.java 1195 2026-04-15 21:33:40Z tquadrat $
+ *  @version $Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.25.1
  *
  *  @param  <D> The dimension.
@@ -54,7 +54,7 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ValueBase.java 1195 2026-04-15 21:33:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public abstract non-sealed class ValueBase<D extends Dimension, I extends DimensionedValue<D>> implements DimensionedValue<D>
 {
@@ -109,7 +109,7 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
      *  @param  unit   The unit.
      *  @param  value   The value; only absolute (positive) values are allowed,
      *      a sign will be stripped.
-     *  @param  validator   The validator function; can be {@code null}.
+     *  @param  validator   The validator function; can be {@null}.
      */
     protected ValueBase( final D unit, final BigDecimal value, final BiPredicate<D,BigDecimal> validator )
     {

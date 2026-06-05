@@ -49,13 +49,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
  *  </ul>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CommonConstants.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: CommonConstants.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( {"UnnecessaryUnicodeEscape"} )
-@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CommonConstants.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @UtilityClass
 public final class CommonConstants
 {
@@ -849,8 +849,8 @@ public final class CommonConstants
 
     //---* Lambdas *-----------------------------------------------------------
     /**
-     *  Returns {@code true} if the provided reference is {@code null}
-     *  otherwise returns {@code false}.
+     *  Returns {@true} if the provided reference is {@null}
+     *  otherwise returns {@false}.
      *
      *  @see Objects#isNull(Object)
      *  @see Predicate
@@ -859,8 +859,8 @@ public final class CommonConstants
     public static final Predicate<? extends Object> IS_NULL = Objects::isNull;
 
     /**
-     *  Returns {@code true} if the provided reference is non-{@code null}
-     *  otherwise returns {@code false}.
+     *  Returns {@true} if the provided reference is non-{@null}
+     *  otherwise returns {@false}.
      *
      *  @see Objects#nonNull(Object)
      *  @see Predicate

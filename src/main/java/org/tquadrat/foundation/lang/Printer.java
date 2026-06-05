@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -29,13 +29,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>This is a functional interface whose functional method is
  *  {@link #printf(Locale,String,Object...)}.</p>
  *
- *  @version $Id: Printer.java 1005 2022-02-03 12:40:52Z tquadrat $
+ *  @version $Id: Printer.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
+@SuppressWarnings( "NewClassNamingConvention" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Printer.java 1005 2022-02-03 12:40:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Printer.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface Printer
 {

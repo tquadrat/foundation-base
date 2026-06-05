@@ -35,13 +35,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  context.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: IllegalOperationException.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: IllegalOperationException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: IllegalOperationException.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: IllegalOperationException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class IllegalOperationException extends RuntimeException
 {
@@ -160,7 +160,7 @@ public class IllegalOperationException extends RuntimeException
      *      method.
      *  @param  cause   The cause, which is saved for later retrieval by the
      *     {@link #getCause()}
-     *     method. A {@code null} value is <i>not</i> permitted!
+     *     method. A {@null} value is <i>not</i> permitted!
      */
     public IllegalOperationException( final String operationName, final Throwable cause )
     {
@@ -181,7 +181,7 @@ public class IllegalOperationException extends RuntimeException
      *      method.
      *  @param  cause   The cause, which is saved for later retrieval by the
      *     {@link #getCause()}
-     *     method. A {@code null} value is <i>not</i> permitted!
+     *     method. A {@null} value is <i>not</i> permitted!
      */
     public IllegalOperationException( final Method operation, final Throwable cause )
     {
@@ -205,7 +205,7 @@ public class IllegalOperationException extends RuntimeException
      *  @param  explanation The additional explanation.
      *  @param  cause   The cause, which is saved for later retrieval by the
      *     {@link #getCause()}
-     *     method. A {@code null} value is <i>not</i> permitted!
+     *     method. A {@null} value is <i>not</i> permitted!
      */
     public IllegalOperationException( final String operationName, final String explanation, final Throwable cause )
     {
@@ -232,7 +232,7 @@ public class IllegalOperationException extends RuntimeException
      *  @param  explanation The additional explanation.
      *  @param  cause   The cause, which is saved for later retrieval by the
      *     {@link #getCause()}
-     *     method. A {@code null} value is <i>not</i> permitted!
+     *     method. A {@null} value is <i>not</i> permitted!
      */
     public IllegalOperationException( final Method operation, final String explanation, final Throwable cause )
     {

@@ -36,9 +36,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link org.tquadrat.foundation.lang.Objects#compare(Object, Object, java.util.Comparator)}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestCompare.java 1061 2023-09-25 16:32:43Z tquadrat $
+ *  @version $Id: TestCompare.java 1258 2026-06-04 18:33:06Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestCompare.java 1061 2023-09-25 16:32:43Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestCompare.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestCompare" )
 public class TestCompare extends TestBaseClass
 {
@@ -61,7 +61,7 @@ public class TestCompare extends TestBaseClass
     }   //  testCompare()
 
     /**
-     *  Test with {@code null} arguments.
+     *  Test with {@null} arguments.
      */
     @Test
     final void testNullComparator()

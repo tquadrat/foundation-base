@@ -39,33 +39,33 @@
 <span class="source-line-no">026</span><span id="line-26"></span>
 <span class="source-line-no">027</span><span id="line-27">package org.tquadrat.foundation.stream.internal;</span>
 <span class="source-line-no">028</span><span id="line-28"></span>
-<span class="source-line-no">029</span><span id="line-29">import org.apiguardian.api.API;</span>
-<span class="source-line-no">030</span><span id="line-30">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">029</span><span id="line-29">import static org.apiguardian.api.API.Status.INTERNAL;</span>
+<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
 <span class="source-line-no">031</span><span id="line-31"></span>
 <span class="source-line-no">032</span><span id="line-32">import java.util.Spliterator;</span>
 <span class="source-line-no">033</span><span id="line-33">import java.util.function.Consumer;</span>
 <span class="source-line-no">034</span><span id="line-34">import java.util.function.Predicate;</span>
 <span class="source-line-no">035</span><span id="line-35"></span>
-<span class="source-line-no">036</span><span id="line-36">import static org.apiguardian.api.API.Status.INTERNAL;</span>
-<span class="source-line-no">037</span><span id="line-37">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">036</span><span id="line-36">import org.apiguardian.api.API;</span>
+<span class="source-line-no">037</span><span id="line-37">import org.tquadrat.foundation.annotation.ClassVersion;</span>
 <span class="source-line-no">038</span><span id="line-38"></span>
 <span class="source-line-no">039</span><span id="line-39">/**</span>
 <span class="source-line-no">040</span><span id="line-40"> *  An implementation of</span>
 <span class="source-line-no">041</span><span id="line-41"> *  {@link Spliterator}</span>
 <span class="source-line-no">042</span><span id="line-42"> *  that takes elements from a stream while the given</span>
 <span class="source-line-no">043</span><span id="line-43"> *  {@link Predicate Predicate}</span>
-<span class="source-line-no">044</span><span id="line-44"> *  returns {@code true}.</span>
+<span class="source-line-no">044</span><span id="line-44"> *  returns {@true}.</span>
 <span class="source-line-no">045</span><span id="line-45"> *</span>
 <span class="source-line-no">046</span><span id="line-46"> *  @author Dominic Fox</span>
 <span class="source-line-no">047</span><span id="line-47"> *  @modified Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">048</span><span id="line-48"> *  @version $Id: TakeWhileSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $</span>
+<span class="source-line-no">048</span><span id="line-48"> *  @version $Id: TakeWhileSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">049</span><span id="line-49"> *  @since 0.0.7</span>
 <span class="source-line-no">050</span><span id="line-50"> *</span>
 <span class="source-line-no">051</span><span id="line-51"> *  @param  &lt;T&gt; The type of the stream elements.</span>
 <span class="source-line-no">052</span><span id="line-52"> *</span>
 <span class="source-line-no">053</span><span id="line-53"> *  @UMLGraph.link</span>
 <span class="source-line-no">054</span><span id="line-54"> */</span>
-<span class="source-line-no">055</span><span id="line-55">@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1119 2024-03-16 09:03:57Z tquadrat $" )</span>
+<span class="source-line-no">055</span><span id="line-55">@ClassVersion( sourceVersion = "$Id: TakeWhileSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">056</span><span id="line-56">@API( status = INTERNAL, since = "0.0.7" )</span>
 <span class="source-line-no">057</span><span id="line-57">public final class TakeWhileSpliterator&lt;T&gt; implements Spliterator&lt;T&gt;</span>
 <span class="source-line-no">058</span><span id="line-58">{</span>
@@ -78,7 +78,7 @@
 <span class="source-line-no">065</span><span id="line-65">    private final Predicate&lt;T&gt; m_Condition;</span>
 <span class="source-line-no">066</span><span id="line-66"></span>
 <span class="source-line-no">067</span><span id="line-67">    /**</span>
-<span class="source-line-no">068</span><span id="line-68">     *  Flag that indicates whether the condition still returns {@code true}.</span>
+<span class="source-line-no">068</span><span id="line-68">     *  Flag that indicates whether the condition still returns {@true}.</span>
 <span class="source-line-no">069</span><span id="line-69">     */</span>
 <span class="source-line-no">070</span><span id="line-70">    private boolean m_ConditionHolds = true;</span>
 <span class="source-line-no">071</span><span id="line-71"></span>

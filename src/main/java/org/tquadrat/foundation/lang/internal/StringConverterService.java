@@ -46,12 +46,12 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  service methods.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverterService.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: StringConverterService.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class StringConverterService
@@ -126,7 +126,7 @@ public final class StringConverterService
      *  Returns an instance of {@code StringConverter} for the given
      *  {@link Class}.
      *  If there is no converter for the given type, or the type is
-     *  {@code null}, the return value is
+     *  {@null}, the return value is
      *  {@link Optional#empty()}.
      *
      *  @param  <C> The class a converter is needed for.

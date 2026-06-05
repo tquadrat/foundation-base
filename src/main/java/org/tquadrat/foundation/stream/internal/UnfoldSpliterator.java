@@ -48,14 +48,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnfoldSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: UnfoldSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.7
  *
  *  @param  <T> The type of the stream elements.
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UnfoldSpliterator.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnfoldSpliterator.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.7" )
 public final class UnfoldSpliterator<T> implements Spliterator<T>
 {
@@ -79,7 +79,7 @@ public final class UnfoldSpliterator<T> implements Spliterator<T>
     /**
      *  Creates a new {@code UnfoldSpliterator} instance.
      *
-     *  @param  seed    The initial value;may be {@code null}.
+     *  @param  seed    The initial value;may be {@null}.
      *  @param  generator   The generator.
      */
     private UnfoldSpliterator( final T seed, final Function<T,Optional<T>> generator )
@@ -114,7 +114,7 @@ public final class UnfoldSpliterator<T> implements Spliterator<T>
      *  Factory for instances of {@code UnfoldSpliterator}.
      *
      *  @param  <T> The type of the stream elements.
-     *  @param  seed    The initial value;may be {@code null}.
+     *  @param  seed    The initial value;may be {@null}.
      *  @param  generator   The generator.
      *  @return The new instance.
      */

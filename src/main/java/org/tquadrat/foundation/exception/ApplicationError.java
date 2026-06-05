@@ -18,14 +18,14 @@
 
 package org.tquadrat.foundation.exception;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-
-import java.io.Serial;
-
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+
+import java.io.Serial;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  Use the application error to signal the abort of an application.<br>
@@ -35,13 +35,13 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *  logged or not. The flag is honoured by some methods in Foundation Logging.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: ApplicationError.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyConstructors" )
-@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ApplicationError.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class ApplicationError extends Error
 {
@@ -72,7 +72,7 @@ public class ApplicationError extends Error
         \*--------------*/
     /**
      *  Creates a new {@code ApplicationError} instance. The 'isLogged' flag
-     *  is set to {@code false}.
+     *  is set to {@false}.
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -90,8 +90,8 @@ public class ApplicationError extends Error
      *      the
      *      {@link #getMessage()}
      *      method.
-     *  @param  isLogged    {@code true} if the error condition or the
-     *      causing exception was already logged, {@code false} if it
+     *  @param  isLogged    {@true} if the error condition or the
+     *      causing exception was already logged, {@false} if it
      *      still has to be logged.
      */
     public ApplicationError( final String message, final boolean isLogged )
@@ -103,13 +103,13 @@ public class ApplicationError extends Error
 
     /**
      *  Creates a new {@code ApplicationError} instance. The '{@code isLogged}'
-     *  flag is set to {@code false}.
+     *  flag is set to {@false}.
      *
      *  @param  cause   The cause (which is saved for later retrieval by the
      *      {@link #getCause()}
      *      method). Different from
      *      {@link Error#Error(Throwable)}
-     *      is {@code null} not a valid value.
+     *      is {@null} not a valid value.
      *
      *  @see Error#Error(Throwable)
      */
@@ -122,9 +122,9 @@ public class ApplicationError extends Error
      *      {@link #getCause()}
      *      method). Different from
      *      {@link Error#Error(Throwable)}
-     *      is {@code null} not a valid value.
-     *  @param  isLogged    {@code true} if the error condition or the
-     *      causing exception was already logged, {@code false} if it
+     *      is {@null} not a valid value.
+     *  @param  isLogged    {@true} if the error condition or the
+     *      causing exception was already logged, {@false} if it
      *      still has to be logged.
      */
     public ApplicationError( final Throwable cause, final boolean isLogged )
@@ -136,7 +136,7 @@ public class ApplicationError extends Error
 
     /**
      *  Creates a new {@code ApplicationError} instance. The '{@code isLogged}'
-     *  flag is set to {@code false}.
+     *  flag is set to {@false}.
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -146,7 +146,7 @@ public class ApplicationError extends Error
      *      {@link #getCause()}
      *      method). Different from
      *      {@link Error#Error(Throwable)}
-     *      is {@code null} not a valid value.
+     *      is {@null} not a valid value.
      *
      *  @see Error#Error(String, Throwable)
      */
@@ -163,9 +163,9 @@ public class ApplicationError extends Error
      *      {@link #getCause()}
      *      method). Different from
      *      {@link Error#Error(Throwable)}
-     *      is {@code null} not a valid value.
-     *  @param  isLogged    {@code true} if the error condition or the
-     *      causing exception was already logged, {@code false} if it
+     *      is {@null} not a valid value.
+     *  @param  isLogged    {@true} if the error condition or the
+     *      causing exception was already logged, {@false} if it
      *      still has to be logged.
      */
     public ApplicationError( final String message, final Throwable cause, final boolean isLogged )
@@ -181,14 +181,14 @@ public class ApplicationError extends Error
     /**
      *  Returns the 'is logged' flag.
      *
-     *  @return {@code true} if the error condition or the causing
-     *      exception were already logged, {@code false} otherwise.
+     *  @return {@true} if the error condition or the causing
+     *      exception were already logged, {@false} otherwise.
      */
     @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final boolean isLogged() { return m_IsAlreadyLogged; }
 
     /**
-     *  Sets the 'is logged' flag to {@code true}.
+     *  Sets the 'is logged' flag to {@true}.
      */
     @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final void setLogged() { m_IsAlreadyLogged = true; }

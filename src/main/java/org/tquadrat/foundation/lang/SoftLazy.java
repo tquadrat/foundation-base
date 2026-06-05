@@ -32,15 +32,15 @@ import org.tquadrat.foundation.lang.internal.SoftLazyImpl;
  *  <br>The initializer method that is provided to
  *  {@link #use(Supplier)}
  *  must return the same result for each invocation, and this may not be
- *  {@code null}.
+ *  {@null}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: SoftLazy.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: SoftLazy.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The type of the cached data.
  */
-@ClassVersion( sourceVersion = "$Id: SoftLazy.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: SoftLazy.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed interface SoftLazy<T>
     permits org.tquadrat.foundation.lang.internal.SoftLazyImpl

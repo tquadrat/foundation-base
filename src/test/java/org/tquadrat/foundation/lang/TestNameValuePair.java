@@ -42,11 +42,11 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  Tests for the class
  *  {@link NameValuePair}.
  *
- *  @version $Id: TestNameValuePair.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: TestNameValuePair.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: TestNameValuePair.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestNameValuePair.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 @DisplayName( "org.tquadrat.foundation.lang.TestNameValuePair" )
 public class TestNameValuePair extends TestBaseClass
@@ -57,7 +57,7 @@ public class TestNameValuePair extends TestBaseClass
     /**
      *  An implementation of
      *  {@link java.util.Map.Entry}
-     *  that allows {@code null} for key and value.
+     *  that allows {@null} for key and value.
      */
     private static class NVPTestEntry implements Map.Entry<String,Instant>
     {

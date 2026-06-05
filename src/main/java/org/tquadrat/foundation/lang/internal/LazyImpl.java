@@ -55,14 +55,14 @@ import org.tquadrat.foundation.lang.Objects;
  *  <p>{@link #toString()} do not force the initialisation.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LazyImpl.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: LazyImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  *
  *  @param  <T> The type of the value for this instance of {@code Lazy}.
  */
-@ClassVersion( sourceVersion = "$Id: LazyImpl.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LazyImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class LazyImpl<T> implements Lazy<T>
 {
@@ -80,14 +80,14 @@ public final class LazyImpl<T> implements Lazy<T>
 
     /**
      *  The supplier for the value of this {@code Lazy} instance. It will be
-     *  set to {@code null} after
+     *  set to {@null} after
      *  {@link #m_Value}
      *  is initialised.
      */
     private Supplier<T> m_Supplier;
 
     /**
-     *  The value of this {@code Lazy} instance; it is {@code null} if it was
+     *  The value of this {@code Lazy} instance; it is {@null} if it was
      *  not yet initialised.
      */
     private T m_Value;
@@ -117,7 +117,7 @@ public final class LazyImpl<T> implements Lazy<T>
      *  objects, given that {@code T} is either cloneable itself or
      *  immutable.</p>
      *
-     *  @param  value   The value; can be {@code null}.
+     *  @param  value   The value; can be {@null}.
      *
      *  @see Object#clone()
      */

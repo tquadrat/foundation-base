@@ -17,18 +17,18 @@
 
 package org.tquadrat.foundation.lang;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Optional;
-
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.internal.StringConverterService.listInstances;
 import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForClass;
 import static org.tquadrat.foundation.lang.internal.StringConverterService.retrieveConverterForEnum;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Optional;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary Defines the conversion between Strings and object instances,
@@ -55,7 +55,7 @@ import static org.tquadrat.foundation.lang.internal.StringConverterService.retri
  *
  *  @note Both
  *      {@code fromString(CharSequence)} and {@code toString(Object)} will
- *      return {@code null} if called with a {@code null} argument.
+ *      return {@null} if called with a {@null} argument.
  *
  *  @note Usually the {@code java.util.Locale.ROOT} locale is used when locale
  *      specific conversion or parsing is required; this means in particular
@@ -87,7 +87,7 @@ import static org.tquadrat.foundation.lang.internal.StringConverterService.retri
  *      class must be visible for this module, too.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $
+ *  @version $Id: StringConverter.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @param  <T> The Object type for the conversion.
@@ -95,7 +95,7 @@ import static org.tquadrat.foundation.lang.internal.StringConverterService.retri
  *  @UMLGraph.link
  */
 @SuppressWarnings( "InterfaceMayBeAnnotatedFunctional" )
-@ClassVersion( sourceVersion = "$Id: StringConverter.java 1163 2026-03-20 15:28:33Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverter.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public interface StringConverter<T> extends Serializable
 {
@@ -121,7 +121,7 @@ public interface StringConverter<T> extends Serializable
      *  Returns an instance of {@code StringConverter} for the given
      *  {@link Class}.
      *  If there is no converter for the given type, or the type is
-     *  {@code null}, the return value is
+     *  {@null}, the return value is
      *  {@link Optional#empty()}.
      *
      *  @param  <C> The class a converter is needed for.
@@ -157,9 +157,9 @@ public interface StringConverter<T> extends Serializable
      *  Converts the given String to an object instance.
      *
      *  @param  source  The String representation for the object instance;
-     *      can be {@code null}.
-     *  @return The resulting object instance; will be {@code null} if
-     *      {@code source} was already {@code null}.
+     *      can be {@null}.
+     *  @return The resulting object instance; will be {@null} if
+     *      {@code source} was already {@null}.
      *  @throws IllegalArgumentException    The format of the given String is
      *      invalid and cannot be parsed into the object instance.
      */
@@ -173,13 +173,13 @@ public interface StringConverter<T> extends Serializable
      *      might exist for {@code T}, it cannot be used to implement this
      *      method;
      *      {@link org.tquadrat.foundation.lang.Stringer#toString(Object)}
-     *      will never return {@code null} (if implemented accordingly), for a
-     *      {@code null} argument, it will return the String &quot;null&quot;.
+     *      will never return {@null} (if implemented accordingly), for a
+     *      {@null} argument, it will return the String &quot;null&quot;.
      *      That contradicts the contract for this method.
      *
-     *  @param  source  The object to convert; can be {@code null}.
-     *  @return The resulting String; will be {@code null} if {@code source}
-     *      was already {@code null}.
+     *  @param  source  The object to convert; can be {@null}.
+     *  @return The resulting String; will be {@null} if {@code source}
+     *      was already {@null}.
      */
     public default String toString( final T source )
     {

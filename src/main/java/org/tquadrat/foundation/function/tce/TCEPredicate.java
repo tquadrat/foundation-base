@@ -39,13 +39,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the predicate.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEPredicate.java 1118 2024-03-15 16:14:15Z tquadrat $
+ *  @version $Id: TCEPredicate.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 1118 2024-03-15 16:14:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEPredicate<T>
 {
@@ -56,8 +56,8 @@ public interface TCEPredicate<T>
      *  Evaluates this predicate on the given argument.
      *
      *  @param  arg The input argument
-     *  @return {@code true} if the input argument matches the predicate,
-     *      otherwise {@code false}.
+     *  @return {@true} if the input argument matches the predicate,
+     *      otherwise {@false}.
      *  @throws Exception   Something went wrong.
      */
     @SuppressWarnings( {"ProhibitedExceptionDeclared"} )

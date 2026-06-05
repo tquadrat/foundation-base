@@ -56,12 +56,12 @@ import org.tquadrat.foundation.lang.internal.TimeoutSemaphoreImpl;
  *  on such an instance, as it may behave unexpectedly.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $
+ *  @version $Id: AutoSemaphore.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.25.2
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.25.2" )
 public sealed interface AutoSemaphore
     permits AutoSemaphoreImpl, TimeoutSemaphoreImpl
@@ -74,13 +74,13 @@ public sealed interface AutoSemaphore
      *  released when a {@code try-with-resources} block is left.}</p>
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $
+     *  @version $Id: AutoSemaphore.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.25.2
      *
      *  @UMLGraph.link
      */
     @SuppressWarnings( "NewClassNamingConvention" )
-    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1253 2026-05-25 21:11:51Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: AutoSemaphore.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = STABLE, since = "0.25.2" )
     public sealed interface Token extends AutoCloseable
         permits AutoSemaphoreImpl.TokenImpl, TimeoutSemaphoreImpl.TokenImpl
@@ -265,8 +265,8 @@ public sealed interface AutoSemaphore
      *  @param  permits The initial number of permits available. This value may
      *      be negative, in which case releases must occur before any acquires
      *      will be granted.
-     *  @param  fair    {@code true} if this semaphore will guarantee first-in
-     *      first-out granting of permits under contention, else {@code false}.
+     *  @param  fair    {@true} if this semaphore will guarantee first-in
+     *      first-out granting of permits under contention, else {@false}.
      *  @return The new {@code AutoSemaphore} instance.
      */
     public static AutoSemaphore of( final int permits, final boolean fair ) { return new AutoSemaphoreImpl( permits, fair ); }
@@ -291,8 +291,8 @@ public sealed interface AutoSemaphore
      *  @param  permits The initial number of permits available. This value may
      *      be negative, in which case releases must occur before any acquires
      *      will be granted.
-     *  @param  fair    {@code true} if this semaphore will guarantee first-in
-     *      first-out granting of permits under contention, else {@code false}.
+     *  @param  fair    {@true} if this semaphore will guarantee first-in
+     *      first-out granting of permits under contention, else {@false}.
      *  @param  duration    The timeout for a permit; after the given period of
      *      time, an acquired permit will be released automatically.
      *  @return The new {@code AutoSemaphore} instance.

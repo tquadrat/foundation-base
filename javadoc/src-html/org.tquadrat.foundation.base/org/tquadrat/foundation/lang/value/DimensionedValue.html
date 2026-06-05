@@ -30,27 +30,27 @@
 <span class="source-line-no">017</span><span id="line-17"></span>
 <span class="source-line-no">018</span><span id="line-18">package org.tquadrat.foundation.lang.value;</span>
 <span class="source-line-no">019</span><span id="line-19"></span>
-<span class="source-line-no">020</span><span id="line-20">import org.apiguardian.api.API;</span>
-<span class="source-line-no">021</span><span id="line-21">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">022</span><span id="line-22">import org.tquadrat.foundation.exception.UnexpectedExceptionError;</span>
-<span class="source-line-no">023</span><span id="line-23"></span>
-<span class="source-line-no">024</span><span id="line-24">import java.io.Serializable;</span>
-<span class="source-line-no">025</span><span id="line-25">import java.lang.reflect.Constructor;</span>
-<span class="source-line-no">026</span><span id="line-26">import java.lang.reflect.InvocationTargetException;</span>
-<span class="source-line-no">027</span><span id="line-27">import java.math.BigDecimal;</span>
-<span class="source-line-no">028</span><span id="line-28">import java.math.MathContext;</span>
-<span class="source-line-no">029</span><span id="line-29">import java.util.Formattable;</span>
-<span class="source-line-no">030</span><span id="line-30">import java.util.Formatter;</span>
-<span class="source-line-no">031</span><span id="line-31">import java.util.IllegalFormatException;</span>
-<span class="source-line-no">032</span><span id="line-32">import java.util.Locale;</span>
-<span class="source-line-no">033</span><span id="line-33"></span>
-<span class="source-line-no">034</span><span id="line-34">import static java.lang.String.format;</span>
-<span class="source-line-no">035</span><span id="line-35">import static java.math.RoundingMode.HALF_EVEN;</span>
-<span class="source-line-no">036</span><span id="line-36">import static java.util.FormattableFlags.LEFT_JUSTIFY;</span>
-<span class="source-line-no">037</span><span id="line-37">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">038</span><span id="line-38">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
-<span class="source-line-no">039</span><span id="line-39">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">040</span><span id="line-40">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
+<span class="source-line-no">020</span><span id="line-20">import static java.lang.String.format;</span>
+<span class="source-line-no">021</span><span id="line-21">import static java.math.RoundingMode.HALF_EVEN;</span>
+<span class="source-line-no">022</span><span id="line-22">import static java.util.FormattableFlags.LEFT_JUSTIFY;</span>
+<span class="source-line-no">023</span><span id="line-23">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">024</span><span id="line-24">import static org.tquadrat.foundation.lang.Objects.isNull;</span>
+<span class="source-line-no">025</span><span id="line-25">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">026</span><span id="line-26">import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;</span>
+<span class="source-line-no">027</span><span id="line-27"></span>
+<span class="source-line-no">028</span><span id="line-28">import java.io.Serializable;</span>
+<span class="source-line-no">029</span><span id="line-29">import java.lang.reflect.Constructor;</span>
+<span class="source-line-no">030</span><span id="line-30">import java.lang.reflect.InvocationTargetException;</span>
+<span class="source-line-no">031</span><span id="line-31">import java.math.BigDecimal;</span>
+<span class="source-line-no">032</span><span id="line-32">import java.math.MathContext;</span>
+<span class="source-line-no">033</span><span id="line-33">import java.util.Formattable;</span>
+<span class="source-line-no">034</span><span id="line-34">import java.util.Formatter;</span>
+<span class="source-line-no">035</span><span id="line-35">import java.util.IllegalFormatException;</span>
+<span class="source-line-no">036</span><span id="line-36">import java.util.Locale;</span>
+<span class="source-line-no">037</span><span id="line-37"></span>
+<span class="source-line-no">038</span><span id="line-38">import org.apiguardian.api.API;</span>
+<span class="source-line-no">039</span><span id="line-39">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">040</span><span id="line-40">import org.tquadrat.foundation.exception.UnexpectedExceptionError;</span>
 <span class="source-line-no">041</span><span id="line-41"></span>
 <span class="source-line-no">042</span><span id="line-42">/**</span>
 <span class="source-line-no">043</span><span id="line-43"> *  &lt;p&gt;{@summary The definition for a value with a dimension.}&lt;/p&gt;</span>
@@ -71,7 +71,7 @@
 <span class="source-line-no">058</span><span id="line-58"> *  {@code final}.&lt;/p&gt;</span>
 <span class="source-line-no">059</span><span id="line-59"> *</span>
 <span class="source-line-no">060</span><span id="line-60"> *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">061</span><span id="line-61"> *  @version $Id: DimensionedValue.java 1195 2026-04-15 21:33:40Z tquadrat $</span>
+<span class="source-line-no">061</span><span id="line-61"> *  @version $Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">062</span><span id="line-62"> *  @since 0.15.1</span>
 <span class="source-line-no">063</span><span id="line-63"> *</span>
 <span class="source-line-no">064</span><span id="line-64"> *  @param  &lt;D&gt; The dimension.</span>
@@ -79,7 +79,7 @@
 <span class="source-line-no">066</span><span id="line-66"> *  @UMLGraph.link</span>
 <span class="source-line-no">067</span><span id="line-67"> */</span>
 <span class="source-line-no">068</span><span id="line-68">@SuppressWarnings( "ClassWithTooManyMethods" )</span>
-<span class="source-line-no">069</span><span id="line-69">@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1195 2026-04-15 21:33:40Z tquadrat $" )</span>
+<span class="source-line-no">069</span><span id="line-69">@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">070</span><span id="line-70">@API( status = STABLE, since = "0.25.1" )</span>
 <span class="source-line-no">071</span><span id="line-71">public sealed interface DimensionedValue&lt;D extends Dimension&gt; extends Cloneable, Comparable&lt;DimensionedValue&lt;D&gt;&gt;, Formattable, Serializable</span>
 <span class="source-line-no">072</span><span id="line-72">    permits ValueBase</span>
@@ -241,7 +241,7 @@
 <span class="source-line-no">228</span><span id="line-228">     *  base dimension, are equals.&lt;/p&gt;</span>
 <span class="source-line-no">229</span><span id="line-229">     *</span>
 <span class="source-line-no">230</span><span id="line-230">     *  @param  o   The other value.</span>
-<span class="source-line-no">231</span><span id="line-231">     *  @return {@code true} if they are equal, {@code false} if not.</span>
+<span class="source-line-no">231</span><span id="line-231">     *  @return {@true} if they are equal, {@false} if not.</span>
 <span class="source-line-no">232</span><span id="line-232">     *</span>
 <span class="source-line-no">233</span><span id="line-233">     *  @see Dimension#baseUnit()</span>
 <span class="source-line-no">234</span><span id="line-234">     */</span>
@@ -255,14 +255,14 @@
 <span class="source-line-no">242</span><span id="line-242">     *  {@linkplain Dimension#unitSymbol() unit symbol},</span>
 <span class="source-line-no">243</span><span id="line-243">     *  too.&lt;/p&gt;</span>
 <span class="source-line-no">244</span><span id="line-244">     *</span>
-<span class="source-line-no">245</span><span id="line-245">     *  @note In case the {@code formatter} argument is {@code null}, this</span>
+<span class="source-line-no">245</span><span id="line-245">     *  @note In case the {@code formatter} argument is {@null}, this</span>
 <span class="source-line-no">246</span><span id="line-246">     *      method throws a {@code NullPointerException} and &lt;i&gt;not&lt;/i&gt; the</span>
 <span class="source-line-no">247</span><span id="line-247">     *      usual {@code NullArgumentException}, because this method is usually</span>
 <span class="source-line-no">248</span><span id="line-248">     *      called by instances of {@code java.util.Formatter}, and those do</span>
 <span class="source-line-no">249</span><span id="line-249">     *      not know about our special exceptions.</span>
 <span class="source-line-no">250</span><span id="line-250">     *</span>
 <span class="source-line-no">251</span><span id="line-251">     *  @throws NullPointerException    The {@code formatter} argument is</span>
-<span class="source-line-no">252</span><span id="line-252">     *      {@code null}.</span>
+<span class="source-line-no">252</span><span id="line-252">     *      {@null}.</span>
 <span class="source-line-no">253</span><span id="line-253">     *</span>
 <span class="source-line-no">254</span><span id="line-254">     *  @see Formatter</span>
 <span class="source-line-no">255</span><span id="line-255">     */</span>
@@ -514,9 +514,9 @@
 <span class="source-line-no">501</span><span id="line-501">     *  @param  precision – The number of digits for the mantissa of the value.</span>
 <span class="source-line-no">502</span><span id="line-502">     *      If {@code precision} is -1 then there is no explicit limit on the</span>
 <span class="source-line-no">503</span><span id="line-503">     *      size of the mantissa.</span>
-<span class="source-line-no">504</span><span id="line-504">     *  @param  useNiceUnit {@code true} if the method</span>
+<span class="source-line-no">504</span><span id="line-504">     *  @param  useNiceUnit {@true} if the method</span>
 <span class="source-line-no">505</span><span id="line-505">     *      {@link Dimension#unitSymbolForPrinting() unitSymbolForPrinting()}</span>
-<span class="source-line-no">506</span><span id="line-506">     *      should be used to retrieve the unit symbol, {@code false} if the</span>
+<span class="source-line-no">506</span><span id="line-506">     *      should be used to retrieve the unit symbol, {@false} if the</span>
 <span class="source-line-no">507</span><span id="line-507">     *      usual one is sufficient.</span>
 <span class="source-line-no">508</span><span id="line-508">     *  @return The String representation for this value.</span>
 <span class="source-line-no">509</span><span id="line-509">     */</span>
@@ -579,9 +579,9 @@
 <span class="source-line-no">566</span><span id="line-566">     *</span>
 <span class="source-line-no">567</span><span id="line-567">     *  @param  locale  The locale to use.</span>
 <span class="source-line-no">568</span><span id="line-568">     *  @param  format  The format String.</span>
-<span class="source-line-no">569</span><span id="line-569">     *  @param  useNiceUnit {@code true} if the method</span>
+<span class="source-line-no">569</span><span id="line-569">     *  @param  useNiceUnit {@true} if the method</span>
 <span class="source-line-no">570</span><span id="line-570">     *      {@link Dimension#unitSymbolForPrinting() unitSymbolForPrinting()}</span>
-<span class="source-line-no">571</span><span id="line-571">     *      should be used to retrieve the unit symbol, {@code false} if the</span>
+<span class="source-line-no">571</span><span id="line-571">     *      should be used to retrieve the unit symbol, {@false} if the</span>
 <span class="source-line-no">572</span><span id="line-572">     *      usual one is sufficient.</span>
 <span class="source-line-no">573</span><span id="line-573">     *  @return The String representation for this value.</span>
 <span class="source-line-no">574</span><span id="line-574">     *  @throws IllegalFormatException  The provided format String is invalid.</span>

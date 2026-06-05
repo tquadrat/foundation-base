@@ -30,16 +30,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  An implementation of a name-value-pair.
  *
  *  @param  <V> The type of the value.
- *  @param  name    The name; may not be {@code null}, and it may not be
+ *  @param  name    The name; may not be {@null}, and it may not be
  *      empty.
- *  @param  value   The value; can be {@code null}.
+ *  @param  value   The value; can be {@null}.
  *
- *  @version $Id: NameValuePair.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: NameValuePair.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
-@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NameValuePair.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public record NameValuePair<V>( String name, V value )
 {
@@ -49,9 +49,9 @@ public record NameValuePair<V>( String name, V value )
     /**
      *  Creates a new instance of {@code NameValuePair}.
      *
-     *  @param  name    The name; may not be {@code null}, and it may not be
+     *  @param  name    The name; may not be {@null}, and it may not be
      *      empty.
-     *  @param  value   The value; can be {@code null}.
+     *  @param  value   The value; can be {@null}.
      */
     public NameValuePair
     {
@@ -77,7 +77,7 @@ public record NameValuePair<V>( String name, V value )
      *  Creates a new instance of {@code NameValuePair} that takes the name
      *  from this instance and assigns the given new value.
      *
-     *  @param  newValue    The new value; may be {@code null}.
+     *  @param  newValue    The new value; may be {@null}.
      *  @return The new instance.
      */
     public final NameValuePair<V> newValue(final V newValue ) { return new NameValuePair<>( name, newValue ); }

@@ -17,9 +17,13 @@
 
 package org.tquadrat.foundation.lang.value;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import static java.lang.String.format;
+import static java.math.RoundingMode.HALF_EVEN;
+import static java.util.FormattableFlags.LEFT_JUSTIFY;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
 
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
@@ -31,13 +35,9 @@ import java.util.Formatter;
 import java.util.IllegalFormatException;
 import java.util.Locale;
 
-import static java.lang.String.format;
-import static java.math.RoundingMode.HALF_EVEN;
-import static java.util.FormattableFlags.LEFT_JUSTIFY;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 
 /**
  *  <p>{@summary The definition for a value with a dimension.}</p>
@@ -58,7 +58,7 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *  {@code final}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DimensionedValue.java 1195 2026-04-15 21:33:40Z tquadrat $
+ *  @version $Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.15.1
  *
  *  @param  <D> The dimension.
@@ -66,7 +66,7 @@ import static org.tquadrat.foundation.lang.Objects.requireNotEmptyArgument;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1195 2026-04-15 21:33:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public sealed interface DimensionedValue<D extends Dimension> extends Cloneable, Comparable<DimensionedValue<D>>, Formattable, Serializable
     permits ValueBase
@@ -228,7 +228,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      *  base dimension, are equals.</p>
      *
      *  @param  o   The other value.
-     *  @return {@code true} if they are equal, {@code false} if not.
+     *  @return {@true} if they are equal, {@false} if not.
      *
      *  @see Dimension#baseUnit()
      */
@@ -242,14 +242,14 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      *  {@linkplain Dimension#unitSymbol() unit symbol},
      *  too.</p>
      *
-     *  @note In case the {@code formatter} argument is {@code null}, this
+     *  @note In case the {@code formatter} argument is {@null}, this
      *      method throws a {@code NullPointerException} and <i>not</i> the
      *      usual {@code NullArgumentException}, because this method is usually
      *      called by instances of {@code java.util.Formatter}, and those do
      *      not know about our special exceptions.
      *
      *  @throws NullPointerException    The {@code formatter} argument is
-     *      {@code null}.
+     *      {@null}.
      *
      *  @see Formatter
      */
@@ -501,9 +501,9 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      *  @param  precision – The number of digits for the mantissa of the value.
      *      If {@code precision} is -1 then there is no explicit limit on the
      *      size of the mantissa.
-     *  @param  useNiceUnit {@code true} if the method
+     *  @param  useNiceUnit {@true} if the method
      *      {@link Dimension#unitSymbolForPrinting() unitSymbolForPrinting()}
-     *      should be used to retrieve the unit symbol, {@code false} if the
+     *      should be used to retrieve the unit symbol, {@false} if the
      *      usual one is sufficient.
      *  @return The String representation for this value.
      */
@@ -566,9 +566,9 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      *
      *  @param  locale  The locale to use.
      *  @param  format  The format String.
-     *  @param  useNiceUnit {@code true} if the method
+     *  @param  useNiceUnit {@true} if the method
      *      {@link Dimension#unitSymbolForPrinting() unitSymbolForPrinting()}
-     *      should be used to retrieve the unit symbol, {@code false} if the
+     *      should be used to retrieve the unit symbol, {@false} if the
      *      usual one is sufficient.
      *  @return The String representation for this value.
      *  @throws IllegalFormatException  The provided format String is invalid.

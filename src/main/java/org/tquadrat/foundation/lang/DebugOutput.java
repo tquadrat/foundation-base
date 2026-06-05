@@ -44,13 +44,13 @@ import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledE
 /**
  *  <p>{@summary Some functions for DEBUG and TEST output to the console.}</p>
  *
- *  @version $Id: DebugOutput.java 1084 2024-01-03 15:31:20Z tquadrat $
+ *  @version $Id: DebugOutput.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @UMLGraph.link
  *  @since 0.1.0
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1084 2024-01-03 15:31:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DebugOutput.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class DebugOutput
 {
@@ -201,13 +201,13 @@ public final class DebugOutput
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
      *  is set and the given
      *  {@link BooleanSupplier condition}
-     *  resolves to {@code true}, execute the given
+     *  resolves to {@true}, execute the given
      *  {@link Function}
      *  and call the specified
      *  {@link Printer}
      *  to write result.
      *
-     *  @param  condition   Only if {@code true}, there will be an output.
+     *  @param  condition   Only if {@true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
      *
@@ -232,14 +232,14 @@ public final class DebugOutput
      *  If the
      *  {@linkplain System#getProperty(String) System property}
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_DEBUG}
-     *  is set and the given condition resolves to {@code true}, execute the
+     *  is set and the given condition resolves to {@true}, execute the
      *  given
      *  {@link Function}
      *  and call the specified
      *  {@link Printer}
      *  to write the result.
      *
-     *  @param  condition   Only if {@code true}, there will be an output.
+     *  @param  condition   Only if {@true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
      *
@@ -346,13 +346,13 @@ public final class DebugOutput
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
      *  is set and the given
      *  {@link BooleanSupplier condition}
-     *  resolves to {@code true}, execute the given
+     *  resolves to {@true}, execute the given
      *  {@link Function}
      *  and call the specified
      *  {@link Printer}
      *  to write the result.
      *
-     *  @param  condition   Only if {@code true}, there will be an output.
+     *  @param  condition   Only if {@true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
      *
@@ -377,14 +377,14 @@ public final class DebugOutput
      *  If the
      *  {@linkplain System#getProperty(String) System property}
      *  {@value org.tquadrat.foundation.lang.CommonConstants#PROPERTY_IS_TEST}
-     *  is set and the given condition resolves to {@code true}, execute the
+     *  is set and the given condition resolves to {@true}, execute the
      *  given
      *  {@link Supplier}
      *  and call the specified
      *  {@link Printer}
      *  to write the result.
      *
-     *  @param  condition   Only if {@code true}, there will be an output.
+     *  @param  condition   Only if {@true}, there will be an output.
      *  @param  supplier    The {@code Supplier} for the output.
      *  @param  args    Optional argument for the {@code supplier}.
      *
@@ -433,7 +433,7 @@ public final class DebugOutput
     /**
      *  Returns the DEBUG flag.
      *
-     *  @return {@code true} if the DEBUG flag is set, {@code false} otherwise.
+     *  @return {@true} if the DEBUG flag is set, {@false} otherwise.
      *
      *  @see CommonConstants#PROPERTY_IS_DEBUG
      */
@@ -442,7 +442,7 @@ public final class DebugOutput
     /**
      *  Returns the TEST flag.
      *
-     *  @return {@code true} if the TEST flag is set, {@code false} otherwise.
+     *  @return {@true} if the TEST flag is set, {@false} otherwise.
      *
      *  @see CommonConstants#PROPERTY_IS_TEST
      */

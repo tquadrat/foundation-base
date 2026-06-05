@@ -42,12 +42,12 @@ import org.tquadrat.foundation.lang.ThreadFactoryBuilder;
  *  {@link ThreadFactoryBuilder}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $
+ *  @version $Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
 {
@@ -61,12 +61,12 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  {@link ThreadFactoryBuilder#build()}.
      *
      *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $
+     *  @version $Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1143 2024-08-10 18:53:55Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     @API( status = INTERNAL, since = "0.1.0" )
     private static final class ThreadFactoryImpl implements ThreadFactory
     {
@@ -81,7 +81,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         /**
          *  The context
          *  {@link ClassLoader}
-         *  for the new threads. Can be {@code null}.
+         *  for the new threads. Can be {@null}.
          */
         private final ClassLoader m_ContextClassLoader;
 
@@ -103,22 +103,22 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
          *
          *  @param  nameFactory The factory method for the thread names.
          *  @param  threadGroup The thread group for the new thread; can be
-         *      {@code null}.
+         *      {@null}.
          *  @param  stackSize   The desired stack size for the new threads, or
          *      zero to indicate that this parameter is to be ignored.
-         *  @param  inheritThreadLocals If {@code true}, inherit initial values
+         *  @param  inheritThreadLocals If {@true}, inherit initial values
          *      for inheritable thread-locals from the constructing thread,
          *      otherwise no initial values are inherited.
          *  @param  contextClassLoader  The context class loader for the new
-         *      threads; can be {@code null}.
-         *  @param  isDaemon    {@code true} if the new threads are daemon
-         *      threads, {@code false} otherwise.
+         *      threads; can be {@null}.
+         *  @param  isDaemon    {@true} if the new threads are daemon
+         *      threads, {@false} otherwise.
          *  @param  priority    The priority for the new threads. A value of -1
          *      indicates that no priority will be set explicitly.
          *  @param  uncaughtExceptionHandler    The handler for uncaught
-         *      exceptions for the new threads; can be {@code null}.
-         *  @param  isVirtual   {@code true} if this factory creates virtual
-         *      threads, {@code false} if it creates platform threads.
+         *      exceptions for the new threads; can be {@null}.
+         *  @param  isVirtual   {@true} if this factory creates virtual
+         *      threads, {@false} if it creates platform threads.
          */
         @SuppressWarnings( {"BooleanParameter", "ConstructorWithTooManyParameters"} )
         public ThreadFactoryImpl( final IntFunction<String> nameFactory, final ThreadGroup threadGroup, final long stackSize, final boolean inheritThreadLocals, final ClassLoader contextClassLoader, final boolean isDaemon, final int priority, final UncaughtExceptionHandler uncaughtExceptionHandler, final boolean isVirtual )
@@ -173,20 +173,20 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     /**
      *  The context
      *  {@link ClassLoader}
-     *  for the new threads. The default is {@code null}.
+     *  for the new threads. The default is {@null}.
      */
     private ClassLoader m_ContextClassLoader = null;
 
     /**
-     *  If {@code true}, inherit initial values for inheritable
+     *  If {@true}, inherit initial values for inheritable
      *  thread-locals from the constructing thread, otherwise no initial
-     *  values are inherited. The default is {@code true}.
+     *  values are inherited. The default is {@true}.
      */
     private boolean m_InheritThreadLocals = true;
 
     /**
-     *  {@code true} if the new threads are daemon thread, {@code false}
-     *  otherwise. The default is {@code false}.
+     *  {@true} if the new threads are daemon thread, {@false}
+     *  otherwise. The default is {@false}.
      */
     private boolean m_IsDaemon = false;
 
@@ -218,13 +218,13 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     private long m_StackSize = 0;
 
     /**
-     *  The thread group for the new threads. The default is {@code null}.
+     *  The thread group for the new threads. The default is {@null}.
      */
     private ThreadGroup m_ThreadGroup = null;
 
     /**
      *  The uncaught exception handler for the new threads. The default is
-     *  {@code null}.
+     *  {@null}.
      */
     private UncaughtExceptionHandler m_UncaughtExceptionHandler = null;
 

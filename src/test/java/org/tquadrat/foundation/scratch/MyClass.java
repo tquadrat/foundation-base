@@ -17,9 +17,13 @@
 
 package org.tquadrat.foundation.scratch;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,24 +33,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.exception.UnexpectedExceptionError;
 
 /**
  *  Comment
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MyClass.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: MyClass.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MyClass.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MyClass.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class MyClass
 {
@@ -155,9 +155,9 @@ public class MyClass
     /**
      *  Creates a new instance of {@code MyClass}.
      *
-     *  @param  dataSupplier    The data supplier method; can be {@code null}.
-     *  @param  filter  The filter method; can be {@code null}.
-     *  @param  formatter   The formatter method; can be {@code null}.
+     *  @param  dataSupplier    The data supplier method; can be {@null}.
+     *  @param  filter  The filter method; can be {@null}.
+     *  @param  formatter   The formatter method; can be {@null}.
      */
     public MyClass( final DataSupplier dataSupplier, final BiFunction<Data,ProcessContext,Data> filter, final BiFunction<Data,ProcessContext,String> formatter )
     {

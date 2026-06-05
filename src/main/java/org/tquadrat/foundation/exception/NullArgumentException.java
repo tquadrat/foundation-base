@@ -30,16 +30,16 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 /**
  *  This is a specialized implementation for the
  *  {@link IllegalArgumentException}
- *  that should be used instead of the latter in cases where {@code null} is
+ *  that should be used instead of the latter in cases where {@null} is
  *  provided as an illegal argument value.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullArgumentException.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: NullArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class NullArgumentException extends ValidationException
     permits BlankArgumentException, EmptyArgumentException
@@ -67,7 +67,7 @@ public sealed class NullArgumentException extends ValidationException
      *  Creates a new instance of {@code NullArgumentException}.
      *
      *  @param  argName The name of the argument whose value was provided as
-     *      {@code null}; if {@code null} or the empty String, a
+     *      {@null}; if {@null} or the empty String, a
      *      default message is used that does not use the name of the argument.
      */
     public NullArgumentException( final String argName )
@@ -79,9 +79,9 @@ public sealed class NullArgumentException extends ValidationException
      *  Creates a new instance of {@code NullArgumentException}.
      *
      *  @param  argName1    The name of the first argument whose value was
-     *      provided as {@code null}.
+     *      provided as {@null}.
      *  @param  argName2    The name of the second argument whose value was
-     *      provided as {@code null}.
+     *      provided as {@null}.
      *
      *  @see org.tquadrat.foundation.lang.Objects#requireNonNullArgument(Object, Object, String, String)
      */
@@ -98,7 +98,7 @@ public sealed class NullArgumentException extends ValidationException
      *  {@link EmptyArgumentException}.</p>
      *
      *  @param  argName The name of the argument whose value was provided as
-     *      {@code null}; if {@code null} or the empty String, a
+     *      {@null}; if {@null} or the empty String, a
      *      default message is used that does not use the name of the argument.
      *  @param  msgName The regular message.
      *  @param  msgNone The default message.
