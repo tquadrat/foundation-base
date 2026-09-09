@@ -30,7 +30,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.12 API</p></div><p>Build: 2026-06-05T20:55:36.127801096Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.12 API</p></div><p>Build: 2026-09-09T09:33:45.520525252Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -124,8 +124,8 @@ where the enum values are the units, and as such they should provide a
 method to retrieve an <code>enum</code> value (a unit) by the respective
 <a href="#unitSymbol()">symbol</a>.</p></div>
 <dl class="notes">
-<dt><span class="simpleTagLabel">Author:</span></dt>
-  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
+<dt>Extauthor:</dt>
+<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
 <dt>Version:</dt>
 <dd>$Id: Dimension.java 1195 2026-04-15 21:33:40Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -369,9 +369,9 @@ from this unit to the base unit.</p></div>
     <ul>
 
 <li><code>toString()</code> should be implemented to return the result of
-    
+    <code>unitSymbol()</code>
     instead of
-    , as it would be the default for <code>enum</code>s.</li>
+    <code>Enum.name()</code>, as it would be the default for <code>enum</code>s.</li>
     </ul>
   </dd>
 </dl>

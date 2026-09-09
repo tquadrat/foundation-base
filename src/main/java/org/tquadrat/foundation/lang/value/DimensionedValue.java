@@ -58,7 +58,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  {@code final}.</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: DimensionedValue.java 1286 2026-09-09 09:43:11Z tquadrat $
  *  @since 0.15.1
  *
  *  @param  <D> The dimension.
@@ -66,7 +66,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1286 2026-09-09 09:43:11Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public sealed interface DimensionedValue<D extends Dimension> extends Cloneable, Comparable<DimensionedValue<D>>, Formattable, Serializable
     permits ValueBase
@@ -356,7 +356,6 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      */
     public default DimensionedValue<D> newInstance( final D dimension, final BigDecimal value )
     {
-        @SuppressWarnings( "UnusedAssignment" )
         DimensionedValue<D> retValue = null;
 
         try

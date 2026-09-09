@@ -27,7 +27,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.12 API</p></div><p>Build: 2026-06-05T20:55:36.127801096Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.12 API</p></div><p>Build: 2026-09-09T09:33:45.520525252Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -136,7 +136,7 @@ initialised with a reference for a single instance of the implementation.</div>
 
 <li>Both
     <code>fromString(CharSequence)</code> and <code>toString(Object)</code> will
-    return  if called with a  argument.</li>
+    return <code>null</code> if called with a <code>null</code> argument.</li>
 <li>Usually the <code>java.util.Locale.ROOT</code> locale is used when locale
     specific conversion or parsing is required; this means in particular
     that numbers will use the decimal point as separator.</li>
@@ -157,15 +157,14 @@ initialised with a reference for a single instance of the implementation.</div>
     that case it is required that the implementation of
     <code>StringConverter</code> provides a method
     <code>public Collection&lt;Class&lt;?&gt;&gt; getSubjectClass()</code> that returns the
-    respective classes.<br>
+    respective classes.
     This is definitely required, when the concrete implementation of the
     string converter is derived from an abstract base class; this abstract
     class must be visible for this module, too.</li>
     </ul>
   </dd>
-
-<dt><span class="simpleTagLabel">Author:</span></dt>
-  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
+<dt>Extauthor:</dt>
+<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
 <dt>Version:</dt>
 <dd>$Id: StringConverter.java 1258 2026-06-04 18:33:06Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -391,12 +390,12 @@ default implementation.</div>
     <ul>
 
 <li>Even if an implementation of
-    
+    <code>org.tquadrat.foundation.lang.Stringer</code>
     might exist for <code>T</code>, it cannot be used to implement this
     method;
-    
-    will never return  (if implemented accordingly), for a
-     argument, it will return the String &quot;null&quot;.
+    <code>org.tquadrat.foundation.lang.Stringer.toString(Object)</code>
+    will never return <code>null</code> (if implemented accordingly), for a
+    <code>null</code> argument, it will return the String null.
     That contradicts the contract for this method.</li>
     </ul>
   </dd>

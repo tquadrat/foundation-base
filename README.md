@@ -12,4 +12,4 @@ This library is the base for all the other *Foundation* libraries, although it i
     </dependency>
     ```
 ---  
-Last updated: 2026-06-05T22:56:22.949848199+02:00[Europe/Berlin]   
+Last updated: 2026-09-09T11:34:29.429462053+02:00[Europe/Berlin]   
