@@ -71,18 +71,18 @@
 <span class="source-line-no">058</span><span id="line-58">import org.tquadrat.foundation.stream.internal.ZippingSpliterator;</span>
 <span class="source-line-no">059</span><span id="line-59"></span>
 <span class="source-line-no">060</span><span id="line-60">/**</span>
-<span class="source-line-no">061</span><span id="line-61"> *  Utility class providing static methods for performing various operations on</span>
-<span class="source-line-no">062</span><span id="line-62"> *  Streams.</span>
+<span class="source-line-no">061</span><span id="line-61"> *  &lt;p&gt;{@summary Utility class providing static methods for performing various</span>
+<span class="source-line-no">062</span><span id="line-62"> *  operations on Streams.}&lt;/p&gt;</span>
 <span class="source-line-no">063</span><span id="line-63"> *</span>
 <span class="source-line-no">064</span><span id="line-64"> *  @author Dominic Fox</span>
 <span class="source-line-no">065</span><span id="line-65"> *  @modified Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">066</span><span id="line-66"> *  @version $Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
+<span class="source-line-no">066</span><span id="line-66"> *  @version $Id: StreamUtils.java 1290 2026-09-26 13:17:45Z tquadrat $</span>
 <span class="source-line-no">067</span><span id="line-67"> *  @since 0.0.7</span>
 <span class="source-line-no">068</span><span id="line-68"> *</span>
 <span class="source-line-no">069</span><span id="line-69"> *  @UMLGraph.link</span>
 <span class="source-line-no">070</span><span id="line-70"> */</span>
 <span class="source-line-no">071</span><span id="line-71">@UtilityClass</span>
-<span class="source-line-no">072</span><span id="line-72">@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
+<span class="source-line-no">072</span><span id="line-72">@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1290 2026-09-26 13:17:45Z tquadrat $" )</span>
 <span class="source-line-no">073</span><span id="line-73">public final class StreamUtils</span>
 <span class="source-line-no">074</span><span id="line-74">{</span>
 <span class="source-line-no">075</span><span id="line-75">        /*--------------*\</span>
@@ -268,11 +268,11 @@
 <span class="source-line-no">255</span><span id="line-255">    }   //  interleave()</span>
 <span class="source-line-no">256</span><span id="line-256"></span>
 <span class="source-line-no">257</span><span id="line-257">    /**</span>
-<span class="source-line-no">258</span><span id="line-258">     *  Constructs a stream which merges together values from the supplied</span>
-<span class="source-line-no">259</span><span id="line-259">     *  streams, somewhat in the manner of the stream constructed by</span>
-<span class="source-line-no">260</span><span id="line-260">     *  {@link #zip(java.util.stream.BaseStream, java.util.stream.BaseStream, java.util.function.BiFunction)},</span>
+<span class="source-line-no">258</span><span id="line-258">     *  &lt;p&gt;{@summary Constructs a stream which merges together values from the</span>
+<span class="source-line-no">259</span><span id="line-259">     *  supplied streams, somewhat in the manner of the stream constructed by</span>
+<span class="source-line-no">260</span><span id="line-260">     *  {@link #zip(BaseStream,BaseStream,BiFunction)},</span>
 <span class="source-line-no">261</span><span id="line-261">     *  but for an arbitrary number of streams and using a merger to merge the</span>
-<span class="source-line-no">262</span><span id="line-262">     *  values from multiple streams into an accumulator.</span>
+<span class="source-line-no">262</span><span id="line-262">     *  values from multiple streams into an accumulator.}&lt;/p&gt;</span>
 <span class="source-line-no">263</span><span id="line-263">     *</span>
 <span class="source-line-no">264</span><span id="line-264">     *  @param  &lt;T&gt; The type over which the merged streams stream.</span>
 <span class="source-line-no">265</span><span id="line-265">     *  @param  &lt;O&gt; The type of the accumulator, over which the constructed</span>
@@ -426,95 +426,130 @@
 <span class="source-line-no">413</span><span id="line-413">    }   //  takeWhile()</span>
 <span class="source-line-no">414</span><span id="line-414"></span>
 <span class="source-line-no">415</span><span id="line-415">    /**</span>
-<span class="source-line-no">416</span><span id="line-416">     *  Taps a stream so that as each item in the stream is released from the</span>
-<span class="source-line-no">417</span><span id="line-417">     *  underlying spliterator, it is also sent to the tap.</span>
-<span class="source-line-no">418</span><span id="line-418">     *</span>
-<span class="source-line-no">419</span><span id="line-419">     *  @param  &lt;T&gt; The type over which the stream streams.</span>
-<span class="source-line-no">420</span><span id="line-420">     *  @param  source  The source stream.</span>
-<span class="source-line-no">421</span><span id="line-421">     *  @param  tap The tap which will consume each item that passes through</span>
-<span class="source-line-no">422</span><span id="line-422">     *      the stream.</span>
-<span class="source-line-no">423</span><span id="line-423">     * @return A tapped stream.</span>
-<span class="source-line-no">424</span><span id="line-424">     */</span>
-<span class="source-line-no">425</span><span id="line-425">    @API( status = STABLE, since = "0.0.7" )</span>
-<span class="source-line-no">426</span><span id="line-426">    public static &lt;T&gt; Stream&lt;T&gt; tap( final Stream&lt;T&gt; source, final Consumer&lt;? super T&gt; tap )</span>
-<span class="source-line-no">427</span><span id="line-427">    {</span>
-<span class="source-line-no">428</span><span id="line-428">        final var retValue = source.peek( tap );</span>
-<span class="source-line-no">429</span><span id="line-429"></span>
-<span class="source-line-no">430</span><span id="line-430">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">431</span><span id="line-431">        return retValue;</span>
-<span class="source-line-no">432</span><span id="line-432">    }   //  tap()</span>
-<span class="source-line-no">433</span><span id="line-433"></span>
-<span class="source-line-no">434</span><span id="line-434">    /**</span>
-<span class="source-line-no">435</span><span id="line-435">     *  Constructs a stream which takes the seed value and applies the</span>
-<span class="source-line-no">436</span><span id="line-436">     *  generator to create the next value, feeding each new value back into</span>
-<span class="source-line-no">437</span><span id="line-437">     *  the generator to create subsequent values. If the generator returns</span>
-<span class="source-line-no">438</span><span id="line-438">     *  {@link Optional#empty()},</span>
-<span class="source-line-no">439</span><span id="line-439">     *  then the stream has no more values.</span>
-<span class="source-line-no">440</span><span id="line-440">     *</span>
-<span class="source-line-no">441</span><span id="line-441">     *  @param  &lt;T&gt; The type over which the stream streams.</span>
-<span class="source-line-no">442</span><span id="line-442">     *  @param  seed    The seed value.</span>
-<span class="source-line-no">443</span><span id="line-443">     *  @param  generator   The generator to use to create new values.</span>
-<span class="source-line-no">444</span><span id="line-444">     *  @return An unfolding stream.</span>
-<span class="source-line-no">445</span><span id="line-445">     */</span>
-<span class="source-line-no">446</span><span id="line-446">    @API( status = STABLE, since = "0.0.7" )</span>
-<span class="source-line-no">447</span><span id="line-447">    public static &lt;T&gt; Stream&lt;T&gt; unfold( final T seed, final Function&lt;T,Optional&lt;T&gt;&gt; generator )</span>
-<span class="source-line-no">448</span><span id="line-448">    {</span>
-<span class="source-line-no">449</span><span id="line-449">        final var retValue = StreamSupport.stream( UnfoldSpliterator.over( seed, generator ), false );</span>
-<span class="source-line-no">450</span><span id="line-450"></span>
-<span class="source-line-no">451</span><span id="line-451">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">452</span><span id="line-452">        return retValue;</span>
-<span class="source-line-no">453</span><span id="line-453">    }   //  unfold()</span>
-<span class="source-line-no">454</span><span id="line-454"></span>
-<span class="source-line-no">455</span><span id="line-455">    /**</span>
-<span class="source-line-no">456</span><span id="line-456">     *  Zips together the &amp;quot;left&amp;quot; and &amp;quot;right&amp;quot; streams until</span>
-<span class="source-line-no">457</span><span id="line-457">     *  either runs out of values.&lt;br&gt;</span>
-<span class="source-line-no">458</span><span id="line-458">     *  &lt;br&gt;Each pair of values is combined into a single value using the</span>
-<span class="source-line-no">459</span><span id="line-459">     *  supplied combiner function.</span>
-<span class="source-line-no">460</span><span id="line-460">     *</span>
-<span class="source-line-no">461</span><span id="line-461">     *  @param  &lt;L&gt; The type over which the &amp;quot;left&amp;quot; stream is</span>
-<span class="source-line-no">462</span><span id="line-462">     *      streaming.</span>
-<span class="source-line-no">463</span><span id="line-463">     *  @param  &lt;R&gt; The type over which the &amp;quot;right&amp;quot; stream is</span>
-<span class="source-line-no">464</span><span id="line-464">     *      streaming.</span>
-<span class="source-line-no">465</span><span id="line-465">     *  @param  &lt;O&gt; The type created by the combiner out of pairs of</span>
-<span class="source-line-no">466</span><span id="line-466">     *      &amp;quot;left&amp;quot; and &amp;quot;right&amp;quot; values, over which the</span>
-<span class="source-line-no">467</span><span id="line-467">     *      resulting stream streams.</span>
-<span class="source-line-no">468</span><span id="line-468">     *  @param  lefts   The &amp;quot;left&amp;quot; stream to zip.</span>
-<span class="source-line-no">469</span><span id="line-469">     *  @param  rights  The &amp;quot;right&amp;quot; stream to zip.</span>
-<span class="source-line-no">470</span><span id="line-470">     *  @param  combiner    The function to combine &amp;quot;left&amp;quot; and</span>
-<span class="source-line-no">471</span><span id="line-471">     *      &amp;quot;right&amp;quot; values.</span>
-<span class="source-line-no">472</span><span id="line-472">     *  @return A stream of zipped values.</span>
-<span class="source-line-no">473</span><span id="line-473">     */</span>
-<span class="source-line-no">474</span><span id="line-474">    @API( status = STABLE, since = "0.0.7" )</span>
-<span class="source-line-no">475</span><span id="line-475">    public static &lt;L,R,O&gt; Stream&lt;O&gt; zip( final BaseStream&lt;L, Stream&lt;L&gt;&gt; lefts, final BaseStream&lt;R, Stream&lt;R&gt;&gt; rights, final BiFunction&lt;L,R,O&gt; combiner )</span>
-<span class="source-line-no">476</span><span id="line-476">    {</span>
-<span class="source-line-no">477</span><span id="line-477">        final var retValue = StreamSupport.stream( ZippingSpliterator.zipping( lefts.spliterator(), rights.spliterator(), combiner ), false );</span>
-<span class="source-line-no">478</span><span id="line-478"></span>
-<span class="source-line-no">479</span><span id="line-479">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">480</span><span id="line-480">        return retValue;</span>
-<span class="source-line-no">481</span><span id="line-481">    }   //  zip()</span>
-<span class="source-line-no">482</span><span id="line-482"></span>
-<span class="source-line-no">483</span><span id="line-483">    /**</span>
-<span class="source-line-no">484</span><span id="line-484">     *  Zips the source stream together with the stream of indices to provide a</span>
-<span class="source-line-no">485</span><span id="line-485">     *  stream of indexed values.</span>
-<span class="source-line-no">486</span><span id="line-486">     *</span>
-<span class="source-line-no">487</span><span id="line-487">     *  @param &lt;T&gt; The type over which the source stream is streaming.</span>
-<span class="source-line-no">488</span><span id="line-488">     *  @param  source  The source stream.</span>
-<span class="source-line-no">489</span><span id="line-489">     *  @return A stream of indexed values.</span>
-<span class="source-line-no">490</span><span id="line-490">     */</span>
-<span class="source-line-no">491</span><span id="line-491">    @API( status = STABLE, since = "0.0.7" )</span>
-<span class="source-line-no">492</span><span id="line-492">    public static &lt;T&gt; Stream&lt;Indexed&lt;T&gt;&gt; zipWithIndex( final BaseStream&lt;T, Stream&lt;T&gt;&gt; source )</span>
-<span class="source-line-no">493</span><span id="line-493">    {</span>
-<span class="source-line-no">494</span><span id="line-494">        final var retValue = zip( indices().boxed(), source, Indexed::index );</span>
-<span class="source-line-no">495</span><span id="line-495"></span>
-<span class="source-line-no">496</span><span id="line-496">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">497</span><span id="line-497">        return retValue;</span>
-<span class="source-line-no">498</span><span id="line-498">    }   //  zipWithIndex()</span>
-<span class="source-line-no">499</span><span id="line-499">}</span>
-<span class="source-line-no">500</span><span id="line-500">//  class StreamUtils</span>
-<span class="source-line-no">501</span><span id="line-501"></span>
-<span class="source-line-no">502</span><span id="line-502">/*</span>
-<span class="source-line-no">503</span><span id="line-503"> *  End of File</span>
-<span class="source-line-no">504</span><span id="line-504"> */</span>
+<span class="source-line-no">416</span><span id="line-416">     *  &lt;p&gt;{@summary Taps a stream so that as each item in the stream is</span>
+<span class="source-line-no">417</span><span id="line-417">     *  released from the underlying spliterator, it is also sent to the</span>
+<span class="source-line-no">418</span><span id="line-418">     *  tap.}&lt;/p&gt;</span>
+<span class="source-line-no">419</span><span id="line-419">     *  &lt;p&gt;This behaves same as</span>
+<span class="source-line-no">420</span><span id="line-420">     *  {@link Stream#peek(Consumer)}.&lt;/p&gt;</span>
+<span class="source-line-no">421</span><span id="line-421">     *</span>
+<span class="source-line-no">422</span><span id="line-422">     *  @param  &lt;T&gt; The type over which the stream streams.</span>
+<span class="source-line-no">423</span><span id="line-423">     *  @param  source  The source stream.</span>
+<span class="source-line-no">424</span><span id="line-424">     *  @param  tap The tap which will consume each item that passes through</span>
+<span class="source-line-no">425</span><span id="line-425">     *      the stream.</span>
+<span class="source-line-no">426</span><span id="line-426">     * @return A tapped stream.</span>
+<span class="source-line-no">427</span><span id="line-427">     */</span>
+<span class="source-line-no">428</span><span id="line-428">    @API( status = STABLE, since = "0.0.7" )</span>
+<span class="source-line-no">429</span><span id="line-429">    public static &lt;T&gt; Stream&lt;T&gt; tap( final Stream&lt;T&gt; source, final Consumer&lt;? super T&gt; tap )</span>
+<span class="source-line-no">430</span><span id="line-430">    {</span>
+<span class="source-line-no">431</span><span id="line-431">        final var retValue = source.peek( requireNonNullArgument( tap, "tap" ) );</span>
+<span class="source-line-no">432</span><span id="line-432"></span>
+<span class="source-line-no">433</span><span id="line-433">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">434</span><span id="line-434">        return retValue;</span>
+<span class="source-line-no">435</span><span id="line-435">    }   //  tap()</span>
+<span class="source-line-no">436</span><span id="line-436"></span>
+<span class="source-line-no">437</span><span id="line-437">    /**</span>
+<span class="source-line-no">438</span><span id="line-438">     *  &lt;p&gt;{@summary Taps a stream so that as each item in the stream is</span>
+<span class="source-line-no">439</span><span id="line-439">     *  released from the underlying spliterator and matches the given filter,</span>
+<span class="source-line-no">440</span><span id="line-440">     *  it is also sent to the tap.}&lt;/p&gt;</span>
+<span class="source-line-no">441</span><span id="line-441">     *  &lt;p&gt;This is somehow working like a conditional</span>
+<span class="source-line-no">442</span><span id="line-442">     *  {@link Stream#peek(Consumer)}.&lt;/p&gt;</span>
+<span class="source-line-no">443</span><span id="line-443">     *</span>
+<span class="source-line-no">444</span><span id="line-444">     *  @param  &lt;T&gt; The type over which the stream streams.</span>
+<span class="source-line-no">445</span><span id="line-445">     *  @param  source  The source stream.</span>
+<span class="source-line-no">446</span><span id="line-446">     *  @param  filter  The filter for the values.</span>
+<span class="source-line-no">447</span><span id="line-447">     *  @param  tap The tap which will consume each item that passes through</span>
+<span class="source-line-no">448</span><span id="line-448">     *      the stream and matches the given filter.</span>
+<span class="source-line-no">449</span><span id="line-449">     *  @return A tapped stream.</span>
+<span class="source-line-no">450</span><span id="line-450">     *</span>
+<span class="source-line-no">451</span><span id="line-451">     *  @author Thomas Thrien - thomas.thrien@tquadrat.org</span>
+<span class="source-line-no">452</span><span id="line-452">     */</span>
+<span class="source-line-no">453</span><span id="line-453">    @API( status = STABLE, since = "0.25.13" )</span>
+<span class="source-line-no">454</span><span id="line-454">    public static &lt;T&gt; Stream&lt;T&gt; tap( final Stream&lt;T&gt; source, final Predicate&lt;? super T&gt; filter, final Consumer&lt;? super T&gt; tap )</span>
+<span class="source-line-no">455</span><span id="line-455">    {</span>
+<span class="source-line-no">456</span><span id="line-456">        final Consumer&lt;T&gt; peek = v -&gt;</span>
+<span class="source-line-no">457</span><span id="line-457">        {</span>
+<span class="source-line-no">458</span><span id="line-458">            if( requireNonNullArgument( filter, "filter" ).test( v ) ) requireNonNullArgument( tap, "tap" ).accept( v );</span>
+<span class="source-line-no">459</span><span id="line-459">        };</span>
+<span class="source-line-no">460</span><span id="line-460">        final var retValue = source.peek( peek );</span>
+<span class="source-line-no">461</span><span id="line-461"></span>
+<span class="source-line-no">462</span><span id="line-462">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">463</span><span id="line-463">        return retValue;</span>
+<span class="source-line-no">464</span><span id="line-464">    }   //  tap()</span>
+<span class="source-line-no">465</span><span id="line-465"></span>
+<span class="source-line-no">466</span><span id="line-466">    /**</span>
+<span class="source-line-no">467</span><span id="line-467">     *  &lt;p&gt;{@summary Constructs a stream which takes the seed value and applies</span>
+<span class="source-line-no">468</span><span id="line-468">     *  the generator to create the next value, feeding each new value back</span>
+<span class="source-line-no">469</span><span id="line-469">     *  into the generator to create subsequent values.} If the generator</span>
+<span class="source-line-no">470</span><span id="line-470">     *  returns</span>
+<span class="source-line-no">471</span><span id="line-471">     *  {@link Optional#empty()},</span>
+<span class="source-line-no">472</span><span id="line-472">     *  then the stream has no more values.&lt;/p&gt;</span>
+<span class="source-line-no">473</span><span id="line-473">     *</span>
+<span class="source-line-no">474</span><span id="line-474">     *  @param  &lt;T&gt; The type over which the stream streams.</span>
+<span class="source-line-no">475</span><span id="line-475">     *  @param  seed    The seed value.</span>
+<span class="source-line-no">476</span><span id="line-476">     *  @param  generator   The generator to use to create new values.</span>
+<span class="source-line-no">477</span><span id="line-477">     *  @return An unfolding stream.</span>
+<span class="source-line-no">478</span><span id="line-478">     */</span>
+<span class="source-line-no">479</span><span id="line-479">    @API( status = STABLE, since = "0.0.7" )</span>
+<span class="source-line-no">480</span><span id="line-480">    public static &lt;T&gt; Stream&lt;T&gt; unfold( final T seed, final Function&lt;T,Optional&lt;T&gt;&gt; generator )</span>
+<span class="source-line-no">481</span><span id="line-481">    {</span>
+<span class="source-line-no">482</span><span id="line-482">        final var retValue = StreamSupport.stream( UnfoldSpliterator.over( seed, generator ), false );</span>
+<span class="source-line-no">483</span><span id="line-483"></span>
+<span class="source-line-no">484</span><span id="line-484">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">485</span><span id="line-485">        return retValue;</span>
+<span class="source-line-no">486</span><span id="line-486">    }   //  unfold()</span>
+<span class="source-line-no">487</span><span id="line-487"></span>
+<span class="source-line-no">488</span><span id="line-488">    /**</span>
+<span class="source-line-no">489</span><span id="line-489">     *  &lt;p&gt;{@summary Zips together the &amp;quot;left&amp;quot; and &amp;quot;right&amp;quot;</span>
+<span class="source-line-no">490</span><span id="line-490">     *  streams until either runs out of values.}&lt;/p&gt;</span>
+<span class="source-line-no">491</span><span id="line-491">     *  &lt;p&gt;Each pair of values is combined into a single value using the</span>
+<span class="source-line-no">492</span><span id="line-492">     *  supplied combiner function.&lt;/p&gt;</span>
+<span class="source-line-no">493</span><span id="line-493">     *  &lt;p&gt;This may look like this:&lt;/p&gt;</span>
+<span class="source-line-no">494</span><span id="line-494">     *  &lt;p&gt;{@include ${javadoc}/org/tquadrat/foundation/stream/StreamUtils/zipSample.java:SOURCE}&lt;/p&gt;</span>
+<span class="source-line-no">495</span><span id="line-495">     *</span>
+<span class="source-line-no">496</span><span id="line-496">     *  @param  &lt;L&gt; The type over which the &amp;quot;left&amp;quot; stream is</span>
+<span class="source-line-no">497</span><span id="line-497">     *      streaming.</span>
+<span class="source-line-no">498</span><span id="line-498">     *  @param  &lt;R&gt; The type over which the &amp;quot;right&amp;quot; stream is</span>
+<span class="source-line-no">499</span><span id="line-499">     *      streaming.</span>
+<span class="source-line-no">500</span><span id="line-500">     *  @param  &lt;O&gt; The type created by the combiner out of pairs of</span>
+<span class="source-line-no">501</span><span id="line-501">     *      &amp;quot;left&amp;quot; and &amp;quot;right&amp;quot; values, over which the</span>
+<span class="source-line-no">502</span><span id="line-502">     *      resulting stream streams.</span>
+<span class="source-line-no">503</span><span id="line-503">     *  @param  lefts   The &amp;quot;left&amp;quot; stream to zip.</span>
+<span class="source-line-no">504</span><span id="line-504">     *  @param  rights  The &amp;quot;right&amp;quot; stream to zip.</span>
+<span class="source-line-no">505</span><span id="line-505">     *  @param  combiner    The function to combine &amp;quot;left&amp;quot; and</span>
+<span class="source-line-no">506</span><span id="line-506">     *      &amp;quot;right&amp;quot; values.</span>
+<span class="source-line-no">507</span><span id="line-507">     *  @return A stream of zipped values.</span>
+<span class="source-line-no">508</span><span id="line-508">     */</span>
+<span class="source-line-no">509</span><span id="line-509">    @API( status = STABLE, since = "0.0.7" )</span>
+<span class="source-line-no">510</span><span id="line-510">    public static &lt;L,R,O&gt; Stream&lt;O&gt; zip( final BaseStream&lt;L, Stream&lt;L&gt;&gt; lefts, final BaseStream&lt;R, Stream&lt;R&gt;&gt; rights, final BiFunction&lt;L,R,O&gt; combiner )</span>
+<span class="source-line-no">511</span><span id="line-511">    {</span>
+<span class="source-line-no">512</span><span id="line-512">        final var retValue = StreamSupport.stream( ZippingSpliterator.zipping( lefts.spliterator(), rights.spliterator(), combiner ), false );</span>
+<span class="source-line-no">513</span><span id="line-513"></span>
+<span class="source-line-no">514</span><span id="line-514">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">515</span><span id="line-515">        return retValue;</span>
+<span class="source-line-no">516</span><span id="line-516">    }   //  zip()</span>
+<span class="source-line-no">517</span><span id="line-517"></span>
+<span class="source-line-no">518</span><span id="line-518">    /**</span>
+<span class="source-line-no">519</span><span id="line-519">     *  Zips the source stream together with the stream of indices to provide a</span>
+<span class="source-line-no">520</span><span id="line-520">     *  stream of indexed values.</span>
+<span class="source-line-no">521</span><span id="line-521">     *</span>
+<span class="source-line-no">522</span><span id="line-522">     *  @param &lt;T&gt; The type over which the source stream is streaming.</span>
+<span class="source-line-no">523</span><span id="line-523">     *  @param  source  The source stream.</span>
+<span class="source-line-no">524</span><span id="line-524">     *  @return A stream of indexed values.</span>
+<span class="source-line-no">525</span><span id="line-525">     */</span>
+<span class="source-line-no">526</span><span id="line-526">    @API( status = STABLE, since = "0.0.7" )</span>
+<span class="source-line-no">527</span><span id="line-527">    public static &lt;T&gt; Stream&lt;Indexed&lt;T&gt;&gt; zipWithIndex( final BaseStream&lt;T, Stream&lt;T&gt;&gt; source )</span>
+<span class="source-line-no">528</span><span id="line-528">    {</span>
+<span class="source-line-no">529</span><span id="line-529">        final var retValue = zip( indices().boxed(), source, Indexed::index );</span>
+<span class="source-line-no">530</span><span id="line-530"></span>
+<span class="source-line-no">531</span><span id="line-531">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">532</span><span id="line-532">        return retValue;</span>
+<span class="source-line-no">533</span><span id="line-533">    }   //  zipWithIndex()</span>
+<span class="source-line-no">534</span><span id="line-534">}</span>
+<span class="source-line-no">535</span><span id="line-535">//  class StreamUtils</span>
+<span class="source-line-no">536</span><span id="line-536"></span>
+<span class="source-line-no">537</span><span id="line-537">/*</span>
+<span class="source-line-no">538</span><span id="line-538"> *  End of File</span>
+<span class="source-line-no">539</span><span id="line-539"> */</span>
 
 
 

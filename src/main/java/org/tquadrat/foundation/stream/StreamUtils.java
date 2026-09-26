@@ -58,18 +58,18 @@ import org.tquadrat.foundation.stream.internal.UnfoldSpliterator;
 import org.tquadrat.foundation.stream.internal.ZippingSpliterator;
 
 /**
- *  Utility class providing static methods for performing various operations on
- *  Streams.
+ *  <p>{@summary Utility class providing static methods for performing various
+ *  operations on Streams.}</p>
  *
  *  @author Dominic Fox
  *  @modified Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: StreamUtils.java 1290 2026-09-26 13:17:45Z tquadrat $
  *  @since 0.0.7
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StreamUtils.java 1290 2026-09-26 13:17:45Z tquadrat $" )
 public final class StreamUtils
 {
         /*--------------*\
@@ -255,11 +255,11 @@ public final class StreamUtils
     }   //  interleave()
 
     /**
-     *  Constructs a stream which merges together values from the supplied
-     *  streams, somewhat in the manner of the stream constructed by
-     *  {@link #zip(java.util.stream.BaseStream, java.util.stream.BaseStream, java.util.function.BiFunction)},
+     *  <p>{@summary Constructs a stream which merges together values from the
+     *  supplied streams, somewhat in the manner of the stream constructed by
+     *  {@link #zip(BaseStream,BaseStream,BiFunction)},
      *  but for an arbitrary number of streams and using a merger to merge the
-     *  values from multiple streams into an accumulator.
+     *  values from multiple streams into an accumulator.}</p>
      *
      *  @param  <T> The type over which the merged streams stream.
      *  @param  <O> The type of the accumulator, over which the constructed
@@ -413,8 +413,11 @@ public final class StreamUtils
     }   //  takeWhile()
 
     /**
-     *  Taps a stream so that as each item in the stream is released from the
-     *  underlying spliterator, it is also sent to the tap.
+     *  <p>{@summary Taps a stream so that as each item in the stream is
+     *  released from the underlying spliterator, it is also sent to the
+     *  tap.}</p>
+     *  <p>This behaves same as
+     *  {@link Stream#peek(Consumer)}.</p>
      *
      *  @param  <T> The type over which the stream streams.
      *  @param  source  The source stream.
@@ -425,18 +428,48 @@ public final class StreamUtils
     @API( status = STABLE, since = "0.0.7" )
     public static <T> Stream<T> tap( final Stream<T> source, final Consumer<? super T> tap )
     {
-        final var retValue = source.peek( tap );
+        final var retValue = source.peek( requireNonNullArgument( tap, "tap" ) );
 
         //---* Done *----------------------------------------------------------
         return retValue;
     }   //  tap()
 
     /**
-     *  Constructs a stream which takes the seed value and applies the
-     *  generator to create the next value, feeding each new value back into
-     *  the generator to create subsequent values. If the generator returns
+     *  <p>{@summary Taps a stream so that as each item in the stream is
+     *  released from the underlying spliterator and matches the given filter,
+     *  it is also sent to the tap.}</p>
+     *  <p>This is somehow working like a conditional
+     *  {@link Stream#peek(Consumer)}.</p>
+     *
+     *  @param  <T> The type over which the stream streams.
+     *  @param  source  The source stream.
+     *  @param  filter  The filter for the values.
+     *  @param  tap The tap which will consume each item that passes through
+     *      the stream and matches the given filter.
+     *  @return A tapped stream.
+     *
+     *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+     */
+    @API( status = STABLE, since = "0.25.13" )
+    public static <T> Stream<T> tap( final Stream<T> source, final Predicate<? super T> filter, final Consumer<? super T> tap )
+    {
+        final Consumer<T> peek = v ->
+        {
+            if( requireNonNullArgument( filter, "filter" ).test( v ) ) requireNonNullArgument( tap, "tap" ).accept( v );
+        };
+        final var retValue = source.peek( peek );
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  tap()
+
+    /**
+     *  <p>{@summary Constructs a stream which takes the seed value and applies
+     *  the generator to create the next value, feeding each new value back
+     *  into the generator to create subsequent values.} If the generator
+     *  returns
      *  {@link Optional#empty()},
-     *  then the stream has no more values.
+     *  then the stream has no more values.</p>
      *
      *  @param  <T> The type over which the stream streams.
      *  @param  seed    The seed value.
@@ -453,10 +486,12 @@ public final class StreamUtils
     }   //  unfold()
 
     /**
-     *  Zips together the &quot;left&quot; and &quot;right&quot; streams until
-     *  either runs out of values.<br>
-     *  <br>Each pair of values is combined into a single value using the
-     *  supplied combiner function.
+     *  <p>{@summary Zips together the &quot;left&quot; and &quot;right&quot;
+     *  streams until either runs out of values.}</p>
+     *  <p>Each pair of values is combined into a single value using the
+     *  supplied combiner function.</p>
+     *  <p>This may look like this:</p>
+     *  <p>{@include ${javadoc}/org/tquadrat/foundation/stream/StreamUtils/zipSample.java:SOURCE}</p>
      *
      *  @param  <L> The type over which the &quot;left&quot; stream is
      *      streaming.

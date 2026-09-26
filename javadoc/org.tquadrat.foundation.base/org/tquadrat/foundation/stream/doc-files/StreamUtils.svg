@@ -7,7 +7,7 @@
      version='1.1'
      baseProfile='full'
      width='1308.000'
-     height='660.000'>
+     height='671.000'>
     <defs>
         <style><![CDATA[
             line
@@ -118,7 +118,7 @@
         </marker>
         <clipPath id='ID000001'>
             <rect class='focusClass'
-                  height='238.000'
+                  height='249.000'
                   width='1258.000'
                   x='0.000'
                   y='0.000'/>
@@ -130,7 +130,7 @@
                     <rect x='0.000'
                           y='0.000'
                           width='1258.000'
-                          height='238.000'
+                          height='249.000'
                           class='focusClass'/>
                     <line x1='0.000'
                           y1='17.000'
@@ -192,12 +192,15 @@
                           class='static'>+ tap(source:java.util.stream.Stream&lt;T&gt;,tap:java.util.function.Consumer&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='212.000'
-                          class='static'>+ unfold(seed:T,generator:java.util.function.Function&lt;T,java.util.Optional&lt;T&gt;&gt;):java.util.stream.Stream&lt;T&gt;</text>
+                          class='static'>+ tap(source:java.util.stream.Stream&lt;T&gt;,filter:java.util.function.Predicate&lt;? super T&gt;,tap:java.util.function.Consumer&lt;? super T&gt;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='223.000'
-                          class='static'>+ zip(lefts:java.util.stream.BaseStream&lt;L,java.util.stream.Stream&lt;L&gt;&gt;,rights:java.util.stream.BaseStream&lt;R,java.util.stream.Stream&lt;R&gt;&gt;,combiner:java.util.function.BiFunction&lt;L,R,O&gt;):java.util.stream.Stream&lt;O&gt;</text>
+                          class='static'>+ unfold(seed:T,generator:java.util.function.Function&lt;T,java.util.Optional&lt;T&gt;&gt;):java.util.stream.Stream&lt;T&gt;</text>
                     <text x='5.000'
                           y='234.000'
+                          class='static'>+ zip(lefts:java.util.stream.BaseStream&lt;L,java.util.stream.Stream&lt;L&gt;&gt;,rights:java.util.stream.BaseStream&lt;R,java.util.stream.Stream&lt;R&gt;&gt;,combiner:java.util.function.BiFunction&lt;L,R,O&gt;):java.util.stream.Stream&lt;O&gt;</text>
+                    <text x='5.000'
+                          y='245.000'
                           class='static'>+ zipWithIndex(source:java.util.stream.BaseStream&lt;T,java.util.stream.Stream&lt;T&gt;&gt;):java.util.stream.Stream&lt;org.tquadrat.foundation.stream.Indexed&lt;T&gt;&gt;</text>
                 </g>
             </g>
