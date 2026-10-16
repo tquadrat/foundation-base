@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -29,12 +29,12 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This implementation of
+ *  <p>{@summary This implementation of
  *  {@link RuntimeException}
  *  will be thrown when an attempted operation is not valid for the current
- *  context.
+ *  context.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: IllegalOperationException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
@@ -51,13 +51,18 @@ public class IllegalOperationException extends RuntimeException
     /**
      *  The message for the illegal attempt to perform an operation: {@value}.
      */
-    public static final String MSG_IllegalOperation = "Illegal attempt to perform the operation '%s'";
+    public static final String MSG_IllegalOperation = """
+        Illegal attempt to perform the operation '%s'\
+        """;
 
     /**
      *  The message for the illegal attempt to perform an operation, enhanced
      *  with an explanation: {@value}.
      */
-    public static final String MSG_IllegalOperationWithExplanation = "Illegal attempt to perform the operation '%s' (Reason: %s)";
+    @SuppressWarnings( "FieldNamingConvention" )
+    public static final String MSG_IllegalOperationWithExplanation = """
+        Illegal attempt to perform the operation '%s' (Reason: %s)\
+        """;
 
         /*------------------------*\
     ====** Static Initialisations **===========================================
@@ -74,10 +79,10 @@ public class IllegalOperationException extends RuntimeException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Constructs a new {@code IllegalOperationException} with a detail
-     *  message composed of the given operation name. The cause is not
-     *  initialized, and may subsequently be initialized by a call to
-     *  {@link #initCause}.
+     *  <p>{@summary Constructs a new {@class} with a detail message composed
+     *  of the given operation name.} The cause is not initialised, and may
+     *  subsequently be initialised by a call to
+     *  {@link #initCause}.</p>
      *
      *  @param  operationName   The name of the illegally attempted operation;
      *      usually, this is the method name. The detail message constructed
@@ -91,10 +96,10 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  Constructs a new {@code IllegalOperationException} with a detail
-     *  message composed of the name of the given operation. The cause is not
-     *  initialized, and may subsequently be initialized by a call to
-     *  {@link #initCause}.
+     *  <p>{@summary Constructs a new {@class} with a detail message composed
+     *  of the name of the given operation.} The cause is not initialised, and
+     *  may subsequently be initialised by a call to
+     *  {@link #initCause}.</p>
      *
      *  @param  operation   The illegally attempted operation. The detail
      *      message constructed from its name is saved for later retrieval by
@@ -108,10 +113,9 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  <p>{@summary Constructs a new {@code IllegalOperationException} with a
-     *  detail message composed of the given operation name and the given
-     *  explanation.} The cause is not initialized, and may subsequently be
-     *  initialized by a call to
+     *  <p>{@summary Constructs a new {@class} with a detail message composed
+     *  of the given operation name and the given explanation.} The cause is
+     *  not initialised, and may subsequently be initialised by a call to
      *  {@link #initCause}.</p>
      *  <p>The detail message constructed from the operation name and the
      *  explanation is saved for later retrieval by the
@@ -128,10 +132,10 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  <p>{@summary Constructs a new {@code IllegalOperationException} with a
-     *  detail message composed of the name of the given operation name and the
-     *  given explanation.} The cause is not initialized, and may subsequently
-     *  be initialized by a call to
+     *  <p>{@summary Constructs a new {@class} with a detail message composed
+     *  of the name of the given operation name and the given explanation.} The
+     *  cause is not initialised, and may subsequently be initialised by a call
+     *  to
      *  {@link #initCause}.</p>
      *  <p>The detail message constructed from the operation name and the
      *  explanation is saved for later retrieval by the
@@ -147,8 +151,9 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  Constructs a new {@code IllegalOperationException} with a detail
-     *  message composed of the given operation name, and the cause.
+     *  <p>{@summary Constructs a new {@code IllegalOperationException} with a
+     *  detail message composed of the given operation name, and the
+     *  cause.}</p>
      *
      *  @note   The detail message associated with {@code cause} is <i>not</i>
      *      automatically incorporated in this exception's detail message.
@@ -168,8 +173,8 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  Constructs a new {@code IllegalOperationException} with a detail
-     *  message composed of the name of the given operation, and the cause.
+     *  <p>{@summary Constructs a new {@class} with a detail message composed
+     *  of the name of the given operation, and the cause.}</p>
      *
      *  @note   The detail message associated with {@code cause} is <i>not</i>
      *      automatically incorporated in this exception's detail message.
@@ -189,9 +194,9 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  <p>{@summary Constructs a new {@code IllegalOperationException} with
-     *  the cause and a detail message composed of the given operation name and
-     *  the given explanation.}</p>
+     *  <p>{@summary Constructs a new {@class} with the cause and a detail
+     *  message composed of the given operation name and the given
+     *  explanation.}</p>
      *  <p>The detail message constructed from the operation name and the
      *  explanation is saved for later retrieval by the
      *  {@link #getMessage()}
@@ -217,9 +222,9 @@ public class IllegalOperationException extends RuntimeException
     }   //  IllegalOperationException()
 
     /**
-     *  <p>{@summary Constructs a new {@code IllegalOperationException} with
-     *  the cause and a detail message composed of the name of the given
-     *  operation and the given explanation.}</p>
+     *  <p>{@summary Constructs a new {@class} with the cause and a detail
+     *  message composed of the name of the given operation and the given
+     *  explanation.}</p>
      *  <p>The detail message constructed from the operation name and the
      *  explanation is saved for later retrieval by the
      *  {@link #getMessage()}

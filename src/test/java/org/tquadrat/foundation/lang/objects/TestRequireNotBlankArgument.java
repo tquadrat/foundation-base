@@ -134,7 +134,7 @@ public class TestRequireNotBlankArgument extends TestBaseClass
     {
         skipThreadTest();
 
-        final var exception = assertThrows( NullArgumentException.class, () -> requireNotBlankArgument( "value", EMPTY_STRING ) );
+        final var exception = assertThrows( NullArgumentException.class, () -> requireNotBlankArgument( "value", null ) );
         assertTrue( exception.getMessage().contains ( "name" ) );
     }   //  testRequireNotBlankArgumentWithNullMessage()
 }

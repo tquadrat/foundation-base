@@ -62,7 +62,7 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
  *  <p>Although the code checked that the file exists, it could have vanished
  *  <i>unexpectedly</i> just before it was opened.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: UnexpectedExceptionError.java 1163 2026-03-20 15:28:33Z tquadrat $
  *  @since 0.0.5
  *
@@ -96,8 +96,8 @@ public sealed class UnexpectedExceptionError extends AssertionError
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of the Error. The message is a constant, only
-     *  the causing exception can be given.
+     *  <p>{@summary {@constructor}} The message is a constant, only
+     *  the causing exception can be given.</p>
      *
      *  @param  cause   The causing exception.
      */
@@ -107,8 +107,8 @@ public sealed class UnexpectedExceptionError extends AssertionError
     }   //  UnexpectedExceptionError()
 
     /**
-     *  Creates a new instance of the Error. This constructor should be used in
-     *  cases where an enhanced message is useful or necessary.
+     *  <p>{@summary {@constructor}} This constructor should be used in
+     *  cases where an enhanced message is useful or necessary.</p>
      *
      *  @param  message The message for the error.
      *  @param  cause   The causing exception.

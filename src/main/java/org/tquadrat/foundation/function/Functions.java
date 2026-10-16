@@ -92,7 +92,7 @@ public final class Functions
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  No instance allowed for this class.
+     * <p>{@summary {@noInstance}}</p>
      */
     private Functions() { throw new PrivateConstructorForStaticClassCalledError( Functions.class ); }
 

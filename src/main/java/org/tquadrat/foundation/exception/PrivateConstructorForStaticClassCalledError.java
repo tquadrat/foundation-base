@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -26,14 +26,14 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This implementation of
+ *  <p>{@summary This implementation of
  *  {@link Error}
  *  should be called from {@code private} constructors of static classes
  *  (classes that does not allow any instances because they have only static
- *  methods or constants). The message that is stored with the error is the
- *  name of the respective class.
+ *  methods or constants).} The message that is stored with the error is the
+ *  name of the respective class.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: PrivateConstructorForStaticClassCalledError.java 820 2020-12-29 20:34:22Z tquadrat $
  *  @since 0.0.5
  *
@@ -60,14 +60,14 @@ public class PrivateConstructorForStaticClassCalledError extends AssertionError
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code ErrorPrivateConstructorForStaticClassCalled} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  message Should be the name of the respective static class.
      */
     public PrivateConstructorForStaticClassCalledError( final String message ) { super( requireNonNullArgument( message, "message" ) ); }
 
     /**
-     *  Creates a new {@code ErrorPrivateConstructorForStaticClassCalled} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  theClass    The respective static class.
      */

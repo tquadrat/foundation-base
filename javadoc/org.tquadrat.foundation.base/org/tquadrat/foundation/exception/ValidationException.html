@@ -22,7 +22,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-09-26T13:07:31.214007373Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-10-16T10:09:33.704674381Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CharSequenceTooLongException.html" title="class in org.tquadrat.foundation.exception">CharSequenceTooLongException</a>, <a href="NullArgumentException.html" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code></dd>
+<dd><code><a href="CharSequenceTooLongException.html" title="class in org.tquadrat.foundation.exception">CharSequenceTooLongException</a>, <a href="InvalidArgumentException.html" title="class in org.tquadrat.foundation.exception">InvalidArgumentException</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -109,13 +109,13 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html#line-40">ValidationException</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
-<div class="block">This is a specialized implementation for the
+<div class="block"><p>This is a specialised implementation for the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
 that is meant as the root for a hierarchy of exceptions caused by
-validation errors.</div>
+validation errors.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: ValidationException.java 1023 2022-03-05 23:56:16Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -176,20 +176,20 @@ validation errors.</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ValidationException</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block">Creates a new instance of <code>ValidationException</code>.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">ValidationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block">Creates a new instance of <code>ValidationException</code>.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.Throwable)" class="member-name-link">ValidationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block">Creates a new instance of <code>ValidationException</code>.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.Throwable)" class="member-name-link">ValidationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block">Creates a new instance of <code>ValidationException</code>.</div>
 </div>
 </div>
 </section>
@@ -245,7 +245,7 @@ validation errors.</div>
 <h3>ValidationException</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html#line-69">ValidationException</a></span>()</div>
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block"><p>Creates a new instance of <code>ValidationException</code>.</p></div>
 </div>
 </section>
 </li>
@@ -254,7 +254,7 @@ validation errors.</div>
 <h3>ValidationException</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html#line-80">ValidationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span></div>
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block"><p>Creates a new instance of <code>ValidationException</code>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>message</code> - The message that provides details on the failed
@@ -269,7 +269,7 @@ validation errors.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html#line-92">ValidationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block"><p>Creates a new instance of <code>ValidationException</code>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>message</code> - The message that provides details on the failed
@@ -284,7 +284,7 @@ validation errors.</div>
 <h3>ValidationException</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/ValidationException.html#line-102">ValidationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block">Creates a new <code>ValidationException</code> instance.</div>
+<div class="block"><p>Creates a new instance of <code>ValidationException</code>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cause</code> - The exception that is related to the validation error.</dd>

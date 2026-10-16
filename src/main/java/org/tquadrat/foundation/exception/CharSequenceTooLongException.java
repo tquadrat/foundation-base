@@ -58,7 +58,7 @@ public final class CharSequenceTooLongException extends ValidationException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of {@code CharSequenceTooLongException}.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  argName The name of the argument whose value was too long.
      *  @param  maxLength   The maximum length.
@@ -69,7 +69,7 @@ public final class CharSequenceTooLongException extends ValidationException
     }   //  CharSequenceTooLongException()
 
     /**
-     *  Creates a new instance of {@code CharSequenceTooLongException}.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  maxLength   The maximum length.
      */

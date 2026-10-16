@@ -30,7 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.function.Functions;
 
 /**
- *  <p>{@summary A &quot;container&quot; exception for exception thrown within
+ *  <p>{@summary A &quot;container&quot; exception for exceptions thrown within
  *  lambda expressions.}</p>
  *  <p>When a method that emits a checked exception is called inside a lambda
  *  function, this has to be caught <i>inside</i> that function; it is not
@@ -81,18 +81,17 @@ import org.tquadrat.foundation.function.Functions;
  *  exception, this was only focused on their use with code that may emit
  *  checked exceptions. But in fact it is a good thing that the methods in
  *  these interfaces do not declare any exceptions, as this would have polluted
- *  any of the APIs that make use of these functional interfaces. And using the
+ *  all the APIs that make use of these functional interfaces. And using the
  *  pattern above would be an alternative. Another would be the methods
  *  provided in the class
  *  {@link Functions}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@SuppressWarnings( "removal" )
 @ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class LambdaContainerException extends CheckedExceptionWrapper
@@ -101,8 +100,14 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     ====** Inner Classes **====================================================
         \*---------------*/
     /**
-     *  The exception that is thrown when the container holds an unexpected
-     *  exception.
+     *  <p>{@summary The exception that is thrown when the container holds an unexpected
+     *  exception.}</p>
+     *
+     *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+     *  @version $Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $
+     *  @since 0.1.0
+     *
+     *  @UMLGraph.link
      */
     private final class UnexpectedException extends RuntimeException
     {
@@ -119,7 +124,7 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
         ====** Constructors **=================================================
             \*--------------*/
         /**
-         *  Creates a new {@code UnexpectedException} instance.
+         *  <p>{@summary {@constructor}}</p>
          */
         public UnexpectedException()
         {
@@ -155,8 +160,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code LambdaContainerException} instance for the given
-     *  exception.
+     *  <p>{@summary Creates a new {@class} instance for the given
+     *  exception.}</p>
      *
      *  @param  e   The exception to wrap; <i>cannot</i> be {@null}.
      */
@@ -169,7 +174,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Checks whether the contained Exception is somehow expected.
+     *  <p>{@summary Checks whether the contained Exception is somehow
+     *  expected.}</p>
      *
      *  @param  expected    The expected exceptions.
      *  @return {@true} if the contained Exception is among the list of
@@ -185,7 +191,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     }   //  checkIfExpected()
 
     /**
-     *  Checks whether the contained Exception is somehow expected.
+     *  <p>{@summary Checks whether the contained Exception is somehow
+     *  expected.}</p>
      *
      *  @param  expected    The expected exceptions.
      *  @return {@true} if the contained Exception is among the list of
@@ -200,7 +207,8 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     }   //  checkIfExpected()
 
     /**
-     *  Checks whether the contained Exception is somehow expected.
+     *  <p>{@summary Checks whether the contained Exception is somehow
+     *  expected.}</p>
      *
      *  @param  expected    The expected exceptions.
      *  @return {@true} if the contained Exception is among the list of
@@ -216,10 +224,10 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
     }   //  checkIfExpected()
 
     /**
-     *  Returns the contained Exception if it is of the given type; otherwise
-     *  a
+     *  <p>{@summary Returns the contained Exception if it is of the given
+     *  type; otherwise a
      *  {@link RuntimeException}
-     *  is thrown.
+     *  is thrown.}</p>
      *
      *  @param  <T> The expected Exception type.
      *  @param  exceptionType   The expected type.

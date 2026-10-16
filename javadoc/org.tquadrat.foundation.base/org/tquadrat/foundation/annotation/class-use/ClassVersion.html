@@ -19,7 +19,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-09-26T13:07:31.214007373Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-10-16T10:09:33.704674381Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -189,16 +189,13 @@ method.</div>
 <div class="col-first even-row-color"><code>class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../../exception/ApplicationError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">ApplicationError</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Use the application error to signal the abort of an application.<br>
-<br>This implementation of
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
-allows to set a flag that indicates whether this instance was already
-logged or not.</div>
+<div class="block">Use the application error to signal the abort of an
+application.</div>
 </div>
 <div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="../../exception/BlankArgumentException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">BlankArgumentException</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">This is a specialized implementation for the
+<div class="block">This is a specialised implementation for the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
 that should be used instead of the latter in cases where a blank String is
 provided as an illegal argument value.</div>
@@ -221,10 +218,10 @@ constraints, like the column definition of a database.</div>
 <div class="col-first even-row-color"><code>final class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../../exception/EmptyArgumentException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">EmptyArgumentException</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">This is a specialized implementation for the
+<div class="block">This is a specialised implementation for the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
 that should be used instead of the latter in cases where an empty String,
-array or
+an empty array or an empty
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>
 argument is provided as an illegal argument value.</div>
 </div>
@@ -244,48 +241,55 @@ context.</div>
 should be thrown in all cases where an exception was caught that seemed to
 be impossible to be thrown.</div>
 </div>
-<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../exception/LambdaContainerException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a></code></div>
+<div class="col-first odd-row-color"><code>(package private) class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../exception/InvalidArgumentException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">InvalidArgumentException</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A &quot;container&quot; exception for exception thrown within
+<div class="block">This is the common base class for specialised implementations
+of
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../exception/LambdaContainerException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">LambdaContainerException</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">A &quot;container&quot; exception for exceptions thrown within
 lambda expressions.</div>
 </div>
-<div class="col-first even-row-color"><code>class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../exception/NullArgumentException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">This is a specialized implementation for the
+<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../exception/NullArgumentException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">NullArgumentException</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">This is a specialised implementation for the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
 that should be used instead of the latter in cases where <code>null</code> is
 provided as an illegal argument value.</div>
 </div>
-<div class="col-first odd-row-color"><code>class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../exception/PrivateConstructorForStaticClassCalledError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">PrivateConstructorForStaticClassCalledError</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../exception/PrivateConstructorForStaticClassCalledError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">PrivateConstructorForStaticClassCalledError</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">This implementation of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
 should be called from <code>private</code> constructors of static classes
 (classes that does not allow any instances because they have only static
 methods or constants).</div>
 </div>
-<div class="col-first even-row-color"><code>class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../exception/UnexpectedExceptionError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">UnexpectedExceptionError</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../exception/UnexpectedExceptionError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">UnexpectedExceptionError</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">This implementation of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
 should be thrown in all cases where an unexpected exception was caught.</div>
 </div>
-<div class="col-first odd-row-color"><code>final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../../exception/UnsupportedEnumError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">UnsupportedEnumError</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">This is a specialized implementation for
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../exception/UnsupportedEnumError.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">UnsupportedEnumError</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">This is a specialised implementation for
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>
 that is to be thrown especially from the <code>default</code> branch of a
 <code>switch</code> statement that uses an <code>enum</code> type as selector.</div>
 </div>
-<div class="col-first even-row-color"><code>class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../../exception/ValidationException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">ValidationException</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">This is a specialized implementation for the
+<div class="col-first odd-row-color"><code>class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../exception/ValidationException.html" class="type-name-link" title="class in org.tquadrat.foundation.exception">ValidationException</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">This is a specialised implementation for the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link"><code>IllegalArgumentException</code></a>
 that is meant as the root for a hierarchy of exceptions caused by
 validation errors.</div>

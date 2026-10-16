@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,12 +28,12 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This is a specialized implementation for
+ *  <p>{@summary This is a specialised implementation for
  *  {@link Error}
  *  that is to be thrown especially from the {@code default} branch of a
- *  {@code switch} statement that uses an {@code enum} type as selector.
+ *  {@code switch} statement that uses an {@code enum} type as selector.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: UnsupportedEnumError.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
@@ -66,7 +66,7 @@ public final class UnsupportedEnumError extends Error
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of this class.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param <T>  The type of the enum.
      *  @param  value   The unsupported value.
@@ -77,7 +77,7 @@ public final class UnsupportedEnumError extends Error
     }   //  UnsupportedEnumError()
 
     /**
-     *  Creates a new instance of this class.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  type    The class of the enum.
      *  @param  value   The unsupported value.

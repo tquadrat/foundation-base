@@ -23,7 +23,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-09-26T13:07:31.214007373Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.13 API</p></div><p>Build: 2026-10-16T10:09:33.704674381Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -109,13 +109,13 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
 </span><span class="modifiers">public class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-43">IllegalOperationException</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></span></div>
-<div class="block">This implementation of
+<div class="block"><p>This implementation of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>
 will be thrown when an attempted operation is not valid for the current
-context.</div>
+context.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: IllegalOperationException.java 1258 2026-06-04 18:33:06Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -182,55 +182,54 @@ with an explanation: "Illegal attempt to perform the operation \'%s\' (Reason: %
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.reflect.Method)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the name of the given operation.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.reflect.Method,java.lang.String)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a
-detail message composed of the name of the given operation name and the
-given explanation.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation name and the given explanation.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.reflect.Method,java.lang.String,java.lang.Throwable)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with
-the cause and a detail message composed of the name of the given
-operation and the given explanation.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with the cause and a detail
+message composed of the name of the given operation and the given
+explanation.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.reflect.Method,java.lang.Throwable)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the name of the given operation, and the cause.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation, and the cause.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the given operation name.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the given operation name.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a
-detail message composed of the given operation name and the given
-explanation.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the given operation name and the given explanation.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.Throwable)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with
-the cause and a detail message composed of the given operation name and
-the given explanation.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with the cause and a detail
+message composed of the given operation name and the given
+explanation.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.Throwable)" class="member-name-link">IllegalOperationException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the given operation name, and the cause.</div>
+<div class="block">Constructs a new <code>IllegalOperationException</code> with a
+detail message composed of the given operation name, and the
+cause.</div>
 </div>
 </div>
 </section>
@@ -277,7 +276,7 @@ message composed of the given operation name, and the cause.</div>
 <section class="detail" id="MSG_IllegalOperationWithExplanation">
 <h3>MSG_IllegalOperationWithExplanation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-60">MSG_IllegalOperationWithExplanation</a></span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-62">MSG_IllegalOperationWithExplanation</a></span></div>
 <div class="block">The message for the illegal attempt to perform an operation, enhanced
 with an explanation: "Illegal attempt to perform the operation \'%s\' (Reason: %s)".</div>
 <dl class="notes">
@@ -303,11 +302,11 @@ with an explanation: "Illegal attempt to perform the operation \'%s\' (Reason: %
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-88">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName)</span></div>
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the given operation name. The cause is not
-initialized, and may subsequently be initialized by a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-93">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName)</span></div>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the given operation name. The cause is not initialised, and may
+subsequently be initialised by a call to
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>operationName</code> - The name of the illegally attempted operation;
@@ -323,11 +322,11 @@ initialized, and may subsequently be initialized by a call to
 <section class="detail" id="&lt;init&gt;(java.lang.reflect.Method)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-105">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation)</span></div>
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the name of the given operation. The cause is not
-initialized, and may subsequently be initialized by a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-110">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation)</span></div>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation. The cause is not initialised, and
+may subsequently be initialised by a call to
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>operation</code> - The illegally attempted operation. The detail
@@ -343,12 +342,11 @@ initialized, and may subsequently be initialized by a call to
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-125">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-129">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation)</span></div>
-<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a
-detail message composed of the given operation name and the given
-explanation. The cause is not initialized, and may subsequently be
-initialized by a call to
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the given operation name and the given explanation. The cause is
+not initialised, and may subsequently be initialised by a call to
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</p>
 <p>The detail message constructed from the operation name and the
 explanation is saved for later retrieval by the
@@ -367,12 +365,12 @@ method.</p></div>
 <section class="detail" id="&lt;init&gt;(java.lang.reflect.Method,java.lang.String)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-144">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-148">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation)</span></div>
-<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a
-detail message composed of the name of the given operation name and the
-given explanation. The cause is not initialized, and may subsequently
-be initialized by a call to
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation name and the given explanation. The
+cause is not initialised, and may subsequently be initialised by a call
+to
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#initCause(java.lang.Throwable)" title="class or interface in java.lang" class="external-link"><code>Throwable.initCause(Throwable)</code></a>.</p>
 <p>The detail message constructed from the operation name and the
 explanation is saved for later retrieval by the
@@ -390,10 +388,11 @@ method.</p></div>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.Throwable)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-165">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-170">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the given operation name, and the cause.</div>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a
+detail message composed of the given operation name, and the
+cause.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Note:</span></dt>
   <dd>
@@ -420,10 +419,10 @@ message composed of the given operation name, and the cause.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.reflect.Method,java.lang.Throwable)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-186">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-191">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block">Constructs a new <code>IllegalOperationException</code> with a detail
-message composed of the name of the given operation, and the cause.</div>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with a detail message composed
+of the name of the given operation, and the cause.</p></div>
 <dl class="notes">
 <dt><span class="simpleTagLabel">Note:</span></dt>
   <dd>
@@ -450,12 +449,12 @@ message composed of the name of the given operation, and the cause.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.String,java.lang.Throwable)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-210">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-215">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;operationName,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with
-the cause and a detail message composed of the given operation name and
-the given explanation.</p>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with the cause and a detail
+message composed of the given operation name and the given
+explanation.</p>
 <p>The detail message constructed from the operation name and the
 explanation is saved for later retrieval by the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#getMessage()" title="class or interface in java.lang" class="external-link"><code>Throwable.getMessage()</code></a>
@@ -484,12 +483,12 @@ method.</p></div>
 <section class="detail" id="&lt;init&gt;(java.lang.reflect.Method,java.lang.String,java.lang.Throwable)">
 <h3>IllegalOperationException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-237">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/exception/IllegalOperationException.html#line-242">IllegalOperationException</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a>&nbsp;operation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;explanation,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;cause)</span></div>
-<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with
-the cause and a detail message composed of the name of the given
-operation and the given explanation.</p>
+<div class="block"><p>Constructs a new <code>IllegalOperationException</code> with the cause and a detail
+message composed of the name of the given operation and the given
+explanation.</p>
 <p>The detail message constructed from the operation name and the
 explanation is saved for later retrieval by the
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html#getMessage()" title="class or interface in java.lang" class="external-link"><code>Throwable.getMessage()</code></a>

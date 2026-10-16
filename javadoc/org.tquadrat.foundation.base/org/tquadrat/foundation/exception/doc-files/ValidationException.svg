@@ -6,8 +6,8 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='1134.000'
-     height='1657.000'>
+     width='1152.000'
+     height='1646.000'>
     <defs>
         <style><![CDATA[
             line
@@ -164,49 +164,6 @@
         </symbol>
         <clipPath id='ID000002'>
             <rect class='otherClass'
-                  height='95.000'
-                  width='604.000'
-                  x='0.000'
-                  y='0.000'/>
-        </clipPath>
-        <symbol id='org.tquadrat.foundation.exception.NullArgumentException'>
-            <g>
-                <g clip-path='url(#ID000002)'>
-                    <rect x='0.000'
-                          y='0.000'
-                          width='604.000'
-                          height='95.000'
-                          class='otherClass'/>
-                    <line x1='0.000'
-                          y1='28.000'
-                          x2='604.000'
-                          y2='28.000'
-                          class='separator'/>
-                    <text x='275.600'
-                          y='13.000'
-                          class='stereotype'>&#xAB;Exception&#xBB;</text>
-                    <text x='239.000'
-                          y='24.000'>NullArgumentException</text>
-                    <line x1='0.000'
-                          y1='45.000'
-                          x2='604.000'
-                          y2='45.000'
-                          class='separator'/>
-                    <text y='41.000'
-                          class='static final'>- serialVersionUID:long</text>
-                    <text x='5.000'
-                          y='58.000'>+ NullArgumentException()</text>
-                    <text x='5.000'
-                          y='69.000'>+ NullArgumentException(argName:java.lang.String)</text>
-                    <text x='5.000'
-                          y='80.000'>+ NullArgumentException(argName1:java.lang.String,argName2:java.lang.String)</text>
-                    <text x='5.000'
-                          y='91.000'># NullArgumentException(argName:java.lang.String,msgName:java.lang.String,msgNone:java.lang.String)</text>
-                </g>
-            </g>
-        </symbol>
-        <clipPath id='ID000003'>
-            <rect class='otherClass'
                   height='84.000'
                   width='430.000'
                   x='0.000'
@@ -214,7 +171,7 @@
         </clipPath>
         <symbol id='org.tquadrat.foundation.exception.CharSequenceTooLongException'>
             <g>
-                <g clip-path='url(#ID000003)'>
+                <g clip-path='url(#ID000002)'>
                     <rect x='0.000'
                           y='0.000'
                           width='430.000'
@@ -244,6 +201,44 @@
                     <text x='5.000'
                           y='80.000'
                           class='static'>- checkLength(maxLength:int):int</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='otherClass'
+                  height='62.000'
+                  width='622.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.exception.InvalidArgumentException'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='622.000'
+                          height='62.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='622.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='296.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='239.000'
+                          y='24.000'
+                          class='abstract'>InvalidArgumentException</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='622.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>- serialVersionUID:long</text>
+                    <text x='5.000'
+                          y='58.000'># InvalidArgumentException(argName:java.lang.String,msgName:java.lang.String,msgNone:java.lang.String)</text>
                 </g>
             </g>
         </symbol>
@@ -541,54 +536,54 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M327.000,1437.000 c0.000,-85.000,225.000,0.000,225.000,-85.000 v-15'
+          d='M240.000,1437.000 c0.000,-85.000,321.000,0.000,321.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M894.000,1437.000 c0.000,-85.000,-312.000,0.000,-312.000,-85.000 v-15'
+          d='M816.000,1437.000 c0.000,-85.000,-225.000,0.000,-225.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M567.000,1231.000 L567.000,1131.000'
+          d='M576.000,1231.000 L576.000,1131.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M567.000,1036.000 L567.000,936.000'
+          d='M576.000,1036.000 L576.000,936.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M567.000,830.000 L567.000,730.000'
+          d='M576.000,830.000 L576.000,730.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M567.000,635.000 L567.000,535.000'
+          d='M576.000,635.000 L576.000,535.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M542.000,297.000 c0.000,-85.000,-258.500,0.000,-258.500,-85.000 v-15'
+          d='M551.000,297.000 c0.000,-85.000,-263.000,0.000,-263.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='implementation'
-          d='M592.000,297.000 c0.000,-195.000,258.500,0.000,258.500,-195.000 v-15'
+          d='M601.000,297.000 c0.000,-195.000,263.000,0.000,263.000,-195.000 v-15'
           marker-end='url(#implementation)'/>
-    <use x='161.500'
+    <use x='166.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
-    <use x='809.500'
+    <use x='823.000'
          y='25.000'
          xlink:href='#java.io.Serializable'/>
-    <use x='307.000'
+    <use x='316.000'
          y='297.000'
          xlink:href='#java.lang.Throwable'/>
-    <use x='307.000'
+    <use x='316.000'
          y='635.000'
          xlink:href='#java.lang.Exception'/>
-    <use x='286.000'
+    <use x='295.000'
          y='830.000'
          xlink:href='#java.lang.RuntimeException'/>
-    <use x='340.000'
+    <use x='349.000'
          y='1036.000'
          xlink:href='#java.lang.IllegalArgumentException'/>
-    <use x='343.000'
+    <use x='352.000'
          y='1231.000'
          xlink:href='#org.tquadrat.foundation.exception.ValidationException'/>
     <use x='25.000'
          y='1437.000'
-         xlink:href='#org.tquadrat.foundation.exception.NullArgumentException'/>
-    <use x='679.000'
-         y='1437.000'
          xlink:href='#org.tquadrat.foundation.exception.CharSequenceTooLongException'/>
+    <use x='505.000'
+         y='1437.000'
+         xlink:href='#org.tquadrat.foundation.exception.InvalidArgumentException'/>
 </svg>

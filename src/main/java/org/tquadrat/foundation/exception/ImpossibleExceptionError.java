@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -22,26 +22,27 @@ import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import java.io.Serial;
+import java.io.UnsupportedEncodingException;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This implementation of
+ *  <p>{@summary This implementation of
  *  {@link Error}
  *  should be thrown in all cases where an exception was caught that seemed to
- *  be impossible to be thrown. An example for this is the method
- *  {@link java.lang.String#getBytes(java.lang.String) String::getBytes(&nbsp;encoding&nbsp;)}
+ *  be impossible to be thrown.} An example for this is the method
+ *  {@link String#getBytes(String) String::getBytes(&nbsp;encoding&nbsp;)}
  *  for the <code>encoding&nbsp;==&nbsp;&quot;UTF-8&quot;</code> that should
  *  never throw an
- *  {@link java.io.UnsupportedEncodingException UnsupportedEncodingException}
+ *  {@link UnsupportedEncodingException UnsupportedEncodingException}
  *  because the encoding {@code UTF-8} is mandatory for all implementations of
- *  Java.<br>
- *  <br>This is different from the
+ *  Java.</p>
+ *  <p>This is different from the
  *  {@link UnexpectedExceptionError}
- *  as that is possible in general, but not in the particular context.
+ *  as that is possible in general, but not in the particular context.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ImpossibleExceptionError.java 1144 2024-09-08 22:35:47Z tquadrat $
  *  @since 0.0.5
  *
@@ -74,8 +75,8 @@ public final class ImpossibleExceptionError extends UnexpectedExceptionError
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of {@code ImpossibleExceptionError}. The message
-     *  is a constant, only the causing exception can be given.
+     *  <p>{@summary {@constructor}} The message
+     *  is a constant, only the causing exception can be given.</p>
      *
      *  @param  cause   The causing exception.
      */
@@ -85,9 +86,9 @@ public final class ImpossibleExceptionError extends UnexpectedExceptionError
     }   //  ImpossibleExceptionError()
 
     /**
-     *  Creates a new instance of {@code ImpossibleExceptionError}. This
+     *  <p>{@summary {@constructor}} This
      *  constructor should be used in cases where an enhanced message is useful
-     *  or necessary.
+     *  or necessary.</p>
      *
      *  @param  message The message for the error.
      *  @param  cause   The causing exception.

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -26,12 +26,12 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This is a specialized implementation for the
+ *  <p>{@summary This is a specialised implementation for the
  *  {@link IllegalArgumentException}
  *  that is meant as the root for a hierarchy of exceptions caused by
- *  validation errors.
+ *  validation errors.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ValidationException.java 1023 2022-03-05 23:56:16Z tquadrat $
  *  @since 0.0.5
  *
@@ -64,7 +64,7 @@ public class ValidationException extends IllegalArgumentException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code ValidationException} instance.
+     *  <p>{@summary {@constructor}}</p>
      */
     public ValidationException()
     {
@@ -72,7 +72,7 @@ public class ValidationException extends IllegalArgumentException
     }   //  ValidationException()
 
     /**
-     *  Creates a new {@code ValidationException} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  message The message that provides details on the failed
      *      validation.
@@ -83,7 +83,7 @@ public class ValidationException extends IllegalArgumentException
     }   //  ValidationException()
 
     /**
-     *  Creates a new {@code ValidationException} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  message The message that provides details on the failed
      *      validation.
@@ -95,7 +95,7 @@ public class ValidationException extends IllegalArgumentException
     }   //  ValidationException()
 
     /**
-     *  Creates a new {@code ValidationException} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  cause   The exception that is related to the validation error.
      */

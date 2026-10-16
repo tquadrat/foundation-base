@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2022 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -25,12 +25,12 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This is a specialized implementation for the
+ *  <p>{@summary This is a specialised implementation for the
  *  {@link IllegalArgumentException}
  *  that should be used instead of the latter in cases where a blank String is
- *  provided as an illegal argument value.
+ *  provided as an illegal argument value.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: BlankArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
@@ -38,7 +38,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: BlankArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
-public final class BlankArgumentException extends NullArgumentException
+public final class BlankArgumentException extends InvalidArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
@@ -55,12 +55,12 @@ public final class BlankArgumentException extends NullArgumentException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of {@code BlankArgumentException}.
+     *  <p>{@summary {@constructor}}</p>
      */
     public BlankArgumentException() { this( null ); }
 
     /**
-     *  Creates a new instance of {@code BlankArgumentException}.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  argName The name of the argument whose value was provided as
      *      blank; if {@null} or the empty String, a default message

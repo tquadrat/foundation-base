@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2020 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -30,7 +30,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <p>Use this wrapper to emit a checked exception as a
  *  {@link RuntimeException}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: CheckedExceptionWrapper.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.2.3
  *
@@ -57,8 +57,7 @@ public sealed class CheckedExceptionWrapper extends RuntimeException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code CheckedExceptionWrapper} instance for the given
-     *  exception.
+     *  <p>{@summary Creates a new {@class} instance for the given exception.}</p>
      *
      *  @param  e   The exception to wrap; <i>cannot</i> be {@null}.
      */

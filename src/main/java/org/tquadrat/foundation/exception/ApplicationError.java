@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -28,13 +28,15 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  Use the application error to signal the abort of an application.<br>
- *  <br>This implementation of
+ *  <p>{@summary Use the application error to signal the abort of an
+ *  application.}</p>
+ *  <p>This implementation of
  *  {@link Error}
  *  allows to set a flag that indicates whether this instance was already
- *  logged or not. The flag is honoured by some methods in Foundation Logging.
+ *  logged or not. The flag is honoured by some methods in Foundation
+ *  Logging.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ApplicationError.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
@@ -49,11 +51,12 @@ public class ApplicationError extends Error
     ====** Attributes **=======================================================
         \*------------*/
     /**
-     *  A flag that indicates if the causing exception or the error condition
-     *  was already logged.
+     *  <p>{@summary A flag that indicates if the causing exception or the
+     *  error condition was already logged.}</p>
      *
      *  @serial
      */
+    @SuppressWarnings( "UnusedAssignment" )
     private boolean m_IsAlreadyLogged = false;
 
         /*------------------------*\
@@ -71,8 +74,8 @@ public class ApplicationError extends Error
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code ApplicationError} instance. The 'isLogged' flag
-     *  is set to {@false}.
+     *  <p>{@summary {@constructor}} The 'isLogged' flag is set to
+     *  {@false}.</p>
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -84,7 +87,7 @@ public class ApplicationError extends Error
     public ApplicationError( final String message ) { this( message, false ); }
 
     /**
-     *  Creates a new {@code ApplicationError} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -102,8 +105,8 @@ public class ApplicationError extends Error
     }   //  ApplicationError()
 
     /**
-     *  Creates a new {@code ApplicationError} instance. The '{@code isLogged}'
-     *  flag is set to {@false}.
+     *  <p>{@summary {@constructor}} The 'isLogged' flag is set to
+     *  {@false}.</p>
      *
      *  @param  cause   The cause (which is saved for later retrieval by the
      *      {@link #getCause()}
@@ -116,7 +119,7 @@ public class ApplicationError extends Error
     public ApplicationError( final Throwable cause ) { this( cause, false ); }
 
     /**
-     *  Creates a new {@code ApplicationError} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  cause   The cause (which is saved for later retrieval by the
      *      {@link #getCause()}
@@ -135,8 +138,8 @@ public class ApplicationError extends Error
     }   //  ApplicationError()
 
     /**
-     *  Creates a new {@code ApplicationError} instance. The '{@code isLogged}'
-     *  flag is set to {@false}.
+     *  <p>{@summary {@constructor}} The 'isLogged' flag is set to
+     *  {@false}.</p>
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -153,7 +156,7 @@ public class ApplicationError extends Error
     public ApplicationError( final String message, final Throwable cause ) { this( message, cause, false ); }
 
     /**
-     *  Creates a new {@code ApplicationError} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  message The detail message. It is saved for later retrieval by
      *      the
@@ -179,7 +182,7 @@ public class ApplicationError extends Error
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Returns the 'is logged' flag.
+     *  <p>{@summary Returns the 'is logged' flag.}</p>
      *
      *  @return {@true} if the error condition or the causing
      *      exception were already logged, {@false} otherwise.
@@ -188,7 +191,7 @@ public class ApplicationError extends Error
     public final boolean isLogged() { return m_IsAlreadyLogged; }
 
     /**
-     *  Sets the 'is logged' flag to {@true}.
+     *  <p>{@summary Sets the 'is logged' flag to {@true}.}</p>
      */
     @SuppressWarnings("PublicMethodNotExposedInInterface")
     public final void setLogged() { m_IsAlreadyLogged = true; }

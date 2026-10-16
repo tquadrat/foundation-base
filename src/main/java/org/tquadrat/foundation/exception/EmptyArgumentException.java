@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -20,19 +20,20 @@ package org.tquadrat.foundation.exception;
 import static org.apiguardian.api.API.Status.STABLE;
 
 import java.io.Serial;
+import java.util.Collection;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This is a specialized implementation for the
+ *  <p>{@summary This is a specialised implementation for the
  *  {@link IllegalArgumentException}
  *  that should be used instead of the latter in cases where an empty String,
- *  array or
- *  {@link java.util.Collection}
- *  argument is provided as an illegal argument value.
+ *  an empty array or an empty
+ *  {@link Collection}
+ *  argument is provided as an illegal argument value.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: EmptyArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
@@ -40,7 +41,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: EmptyArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public final class EmptyArgumentException extends NullArgumentException
+public final class EmptyArgumentException extends InvalidArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
@@ -57,12 +58,12 @@ public final class EmptyArgumentException extends NullArgumentException
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new instance of {@code EmptyArgumentException}.
+     *  <p>{@summary {@constructor}}</p>
      */
     public EmptyArgumentException() { this( null ); }
 
     /**
-     *  Creates a new instance of {@code EmptyArgumentException}.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  argName The name of the argument whose value was provided as
      *      empty; if {@null} or the empty String, a default message
