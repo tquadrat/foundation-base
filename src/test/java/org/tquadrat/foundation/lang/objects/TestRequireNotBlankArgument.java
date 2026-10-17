@@ -18,6 +18,14 @@
 
 package org.tquadrat.foundation.lang.objects;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,19 +36,14 @@ import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.requireNotBlankArgument;
-
 /**
  *  The tests for the method
  *  {@link org.tquadrat.foundation.lang.Objects#requireNotBlankArgument(CharSequence,String)}
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestRequireNotBlankArgument.java 1119 2024-03-16 09:03:57Z tquadrat $
+ *  @version $Id: TestRequireNotBlankArgument.java 1293 2026-10-16 13:12:15Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestRequireNotBlankArgument.java 1119 2024-03-16 09:03:57Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestRequireNotBlankArgument.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @DisplayName( "org.tquadrat.foundation.lang.objects.TestRequireNotBlankArgument" )
 public class TestRequireNotBlankArgument extends TestBaseClass
 {

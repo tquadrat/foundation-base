@@ -34,14 +34,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  name of the respective class.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: PrivateConstructorForStaticClassCalledError.java 820 2020-12-29 20:34:22Z tquadrat $
+ *  @version $Id: PrivateConstructorForStaticClassCalledError.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  *
  *  @see AssertionError
  */
-@ClassVersion( sourceVersion = "$Id: PrivateConstructorForStaticClassCalledError.java 820 2020-12-29 20:34:22Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: PrivateConstructorForStaticClassCalledError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class PrivateConstructorForStaticClassCalledError extends AssertionError
 {

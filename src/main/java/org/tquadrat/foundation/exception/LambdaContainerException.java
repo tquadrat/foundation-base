@@ -87,12 +87,12 @@ import org.tquadrat.foundation.function.Functions;
  *  {@link Functions}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: LambdaContainerException.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: LambdaContainerException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public final class LambdaContainerException extends CheckedExceptionWrapper
 {
@@ -104,7 +104,7 @@ public final class LambdaContainerException extends CheckedExceptionWrapper
      *  exception.}</p>
      *
      *  @author Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: LambdaContainerException.java 1258 2026-06-04 18:33:06Z tquadrat $
+     *  @version $Id: LambdaContainerException.java 1293 2026-10-16 13:12:15Z tquadrat $
      *  @since 0.1.0
      *
      *  @UMLGraph.link

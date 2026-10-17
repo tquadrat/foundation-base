@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  constraints, like the column definition of a database.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CharSequenceTooLongException.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: CharSequenceTooLongException.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: CharSequenceTooLongException.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CharSequenceTooLongException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class CharSequenceTooLongException extends ValidationException
 {

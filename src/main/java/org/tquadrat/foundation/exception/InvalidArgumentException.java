@@ -19,8 +19,6 @@ package org.tquadrat.foundation.exception;
 
 import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.MAINTAINED;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 
 import java.io.Serial;
@@ -34,12 +32,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link IllegalArgumentException}.}
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NullArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: InvalidArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.25.13
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: InvalidArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = MAINTAINED, since = "0.25.13" )
 abstract sealed class InvalidArgumentException extends ValidationException
     permits BlankArgumentException, EmptyArgumentException, NullArgumentException

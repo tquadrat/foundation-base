@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2022 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -30,6 +30,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.ElementType.TYPE_PARAMETER;
 import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
@@ -48,10 +49,14 @@ import org.apiguardian.api.API;
  *  @since 0.1.0
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated Replaced by
+ *      {@link CR}.
  */
 @SuppressWarnings( "NewClassNamingConvention" )
 @ClassVersion( sourceVersion = "$Id: BUG.java 1118 2024-03-15 16:14:15Z tquadrat $" )
-@API( status = STABLE, since = "0.1.0" )
+@API( status = DEPRECATED, since = "0.1.0" )
+@Deprecated( since = "0.25.14", forRemoval = true )
 @Documented
 @Retention( RUNTIME )
 @Target( {ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, RECORD_COMPONENT, TYPE, TYPE_PARAMETER, TYPE_USE} )

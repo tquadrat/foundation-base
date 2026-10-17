@@ -32,12 +32,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  validation errors.}</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValidationException.java 1023 2022-03-05 23:56:16Z tquadrat $
+ *  @version $Id: ValidationException.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ValidationException.java 1023 2022-03-05 23:56:16Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValidationException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class ValidationException extends IllegalArgumentException
 {

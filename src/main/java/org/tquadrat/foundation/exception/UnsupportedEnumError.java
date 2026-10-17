@@ -34,12 +34,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@code switch} statement that uses an {@code enum} type as selector.}</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnsupportedEnumError.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: UnsupportedEnumError.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UnsupportedEnumError.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnsupportedEnumError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class UnsupportedEnumError extends Error
 {

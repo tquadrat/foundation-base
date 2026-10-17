@@ -16,19 +16,26 @@
  */
 
 /**
- *  Some specialised annotations that are either meant to support change
+ *  <p>Some specialised annotations that are either meant to support change
  *  management and field support (like
- *  {@link org.tquadrat.foundation.annotation.ClassVersion ClassVersion})
- *  or to provide other advanced functionality. <br>
- *  <br>The marker annotations
+ *  {@link org.tquadrat.foundation.annotation.ClassVersion &#64;ClassVersion})
+ *  or to provide other advanced functionality.</p>
+ *  <p>The marker annotations</p>
  *      <ul>
- *          <li>{@link org.tquadrat.foundation.annotation.MountPoint}</li>
- *          <li>{@link org.tquadrat.foundation.annotation.PlaygroundClass}</li>
- *          <li>{@link org.tquadrat.foundation.annotation.UtilityClass}</li>
+ *          <li>{@link org.tquadrat.foundation.annotation.MountPoint &#64;MountPoint}</li>
+ *          <li>{@link org.tquadrat.foundation.annotation.NotRecord &#64;NotRecord}</li>
+ *          <li>{@link org.tquadrat.foundation.annotation.PlaygroundClass &#64;PlaygroundClass}</li>
+ *          <li>{@link org.tquadrat.foundation.annotation.ProgramClass &#64;ProgramClass}</li>
+ *          <li>{@link org.tquadrat.foundation.annotation.UtilityClass &#64;UtilityClass}</li>
  *      </ul>
- *  were introduced mainly to satisfy the inspections of IntelliJ IDEA; they
+ *  <p>were introduced mainly to satisfy the inspections of IntelliJ IDEA; they
  *  can be configured to ignore some 'smells' when a class or method is
- *  annotated in some way.
+ *  annotated in some way.</p>
+ *  <p>The annotation
+ *  {@link org.tquadrat.foundation.annotation.CR &#64;CR}
+ *  together with the container
+ *  {@link org.tquadrat.foundation.annotation.ChangeRequestList ChangeRequestList}
+ *  are meant to support the change management.</p>
  */
 @API( status = STABLE, since = "0.0.1" )
 package org.tquadrat.foundation.annotation;
