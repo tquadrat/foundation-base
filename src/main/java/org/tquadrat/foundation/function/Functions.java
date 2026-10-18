@@ -75,10 +75,14 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *    throw (IOException) e.getCause();
  *  }
  *  &hellip;</pre></div>
+ *  <p>A
+ *  {@link RuntimeException}
+ *  that might be thrown by a wrapped function will not be packaged into a
+ *  {@link LambdaContainerException}.</p>
  *  <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
  *  <b>E</b>xception&quot;.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Functions.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
@@ -100,14 +104,14 @@ public final class Functions
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEBiConsumer}
      *  to an instance of
      *  {@link BiConsumer}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T1> The type of the first argument taken by the consumer.
      *  @param  <T2> The type of the second argument taken by the consumer.
@@ -123,6 +127,7 @@ public final class Functions
             {
                 consumer.accept( arg1, arg2 );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -134,14 +139,14 @@ public final class Functions
     }   //  wrapBiConsumer()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEBiFunction}
      *  to an instance of
      *  {@link BiFunction}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T1>    The type of the first argument to the function.
      *  @param  <T2>    The type of the second argument to the function.
@@ -158,6 +163,7 @@ public final class Functions
             {
                 return function.apply( arg1, arg2 );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -169,14 +175,14 @@ public final class Functions
     }   //  wrapBiFunction()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEBinaryOperator}
      *  to an instance of
      *  {@link BinaryOperator}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T> The type of the operands and result of the operator.
      *  @param  function    The function to wrap.
@@ -191,6 +197,7 @@ public final class Functions
             {
                 return function.apply( arg1, arg2 );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -202,14 +209,14 @@ public final class Functions
     }   //  wrapBinaryOperator()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEConsumer}
      *  to an instance of
      *  {@link Consumer}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T> The type of arguments taken by the consumer.
      *  @param  consumer    The consumer to wrap.
@@ -224,6 +231,7 @@ public final class Functions
             {
                 consumer.accept( arg );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -235,14 +243,14 @@ public final class Functions
     }   //  wrapConsumer()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEFunction}
      *  to an instance of
      *  {@link Function}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T> The type of the input to the function.
      *  @param  <R> The type of the result of the function.
@@ -258,6 +266,7 @@ public final class Functions
             {
                 return function.apply( arg );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -269,14 +278,14 @@ public final class Functions
     }   //  wrapFunction()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCEPredicate}
      *  to an instance of
      *  {@link Predicate}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T> The type of the input to the predicate.
      *  @param  predicate   The predicate to wrap.
@@ -291,6 +300,7 @@ public final class Functions
             {
                 return predicate.test( arg );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -302,14 +312,14 @@ public final class Functions
     }   //  wrapPredicate()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCESupplier}
      *  to an instance of
      *  {@link Supplier}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T> The type of results supplied by the supplier.
      *  @param  supplier    The supplier to wrap.
@@ -324,6 +334,7 @@ public final class Functions
             {
                 return supplier.get();
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -335,14 +346,14 @@ public final class Functions
     }   //  wrapSupplier()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCETriConsumer}
      *  to an instance of
      *  {@link TriConsumer}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T1> The type of the first argument taken by the consumer.
      *  @param  <T2> The type of the second argument taken by the consumer.
@@ -359,6 +370,7 @@ public final class Functions
             {
                 consumer.accept( arg1, arg2, arg3 );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );
@@ -370,14 +382,14 @@ public final class Functions
     }   //  wrapTriConsumer()
 
     /**
-     *  Wraps an instance of
+     *  <p>{@summary Wraps an instance of
      *  {@link TCETriFunction}
      *  to an instance of
      *  {@link TriFunction}
      *  that throws an instance of
      *  {@link LambdaContainerException}
      *  with the causing exception, in case the wrapped instance emitted a
-     *  {@linkplain Exception checked exception}.
+     *  {@linkplain Exception checked exception}.}</p>
      *
      *  @param  <T1> The type of the first argument taken by the function.
      *  @param  <T2> The type of the second argument taken by the function.
@@ -395,6 +407,7 @@ public final class Functions
             {
                 return function.apply( arg1, arg2, arg3 );
             }
+            catch( final RuntimeException e ) { throw e; }
             catch( final Exception e )
             {
                 throw new LambdaContainerException( e );

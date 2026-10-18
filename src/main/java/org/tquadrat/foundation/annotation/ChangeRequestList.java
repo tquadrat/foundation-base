@@ -32,7 +32,6 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.apiguardian.api.API.Status.STABLE;
 
-import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -44,12 +43,12 @@ import org.apiguardian.api.API;
  *  annotations.}</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: FixList.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: ChangeRequestList.java 1294 2026-10-17 15:40:42Z tquadrat $
  *  @since 0.25.14
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: FixList.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ChangeRequestList.java 1294 2026-10-17 15:40:42Z tquadrat $" )
 @API( status = STABLE, since = "0.25.14" )
 @Retention( RUNTIME )
 @Target( {ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, RECORD_COMPONENT, TYPE, TYPE_PARAMETER, TYPE_USE} )

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -42,7 +42,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.Consumer
  *  @see java.util.function.BiConsumer
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TriConsumer.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
@@ -57,7 +57,7 @@ public interface TriConsumer<A,B,C>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Performs this operation on the given arguments.
+     *  <p>{@summary Performs this operation on the given arguments.}</p>
      *
      *  @param  firstInput  The first input argument.
      *  @param  secondInput The second input argument.

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2025 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,28 +20,31 @@ package org.tquadrat.foundation.function.tce;
 
 import static org.apiguardian.api.API.Status.STABLE;
 
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
- *  {@link java.util.function.BinaryOperator}
+ *  <p>{@summary The TCE version of the interface
+ *  {@link BinaryOperator}
  *  that represents an operation upon two operands of the same type, producing
- *  a result of the same type as the operands. This is a specialisation of
- *  {@link java.util.function.BiFunction}
- *  for the case where the operands and the result are all the same type.<br>
- *  <br>Different from the method
- *  {@link java.util.function.BinaryOperator#apply(Object, Object) BinaryOperator.apply()}
+ *  a result of the same type as the operands.} This is a specialisation of
+ *  {@link BiFunction}
+ *  for the case where the operands and the result are all the same type.</p>
+ *  <p>Different from the method
+ *  {@link BinaryOperator#apply(Object,Object) BinaryOperator.apply()}
  *  the method
  *  {@link #apply(Object,Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #apply(Object,Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #apply(Object,Object)}.</p>
  *
  *  @param  <T> The type of the operands and result of the operator.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
@@ -56,7 +59,7 @@ public interface TCEBinaryOperator<T> extends TCEBiFunction<T,T,T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Applies this function to the given arguments.
+     *  <p>{@summary Applies this function to the given arguments.}</p>
      *
      *  @param  arg1    The first function argument.
      *  @param  arg2    The second function argument.

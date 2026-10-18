@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,27 +20,29 @@ package org.tquadrat.foundation.function.tce;
 
 import static org.apiguardian.api.API.Status.STABLE;
 
+import java.util.function.Function;
+
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
- *  {@link java.util.function.Function}
+ *  <p>{@summary The TCE version of the interface
+ *  {@link Function}
  *  that represents a function that accepts one argument and produces a
- *  result. <br>
- *  <br>Different from the method
+ *  result.}</p>
+ *  <p>Different from the method
  *  {@link java.util.function.Function#apply(Object) Function.apply()}
  *  the method
  *  {@link #apply(Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #apply(Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #apply(Object)}.</p>
  *
  *  @param <T> The type of the input to the function.
  *  @param <R> The type of the result of the function.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEFunction.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
@@ -55,7 +57,7 @@ public interface TCEFunction<T,R>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Applies this function to the given argument.
+     *  <p>{@summary Applies this function to the given argument.}</p>
      *
      *  @param  arg The function argument.
      *  @return The function result.

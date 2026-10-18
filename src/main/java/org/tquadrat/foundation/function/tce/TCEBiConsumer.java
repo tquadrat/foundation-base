@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -43,7 +43,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T1> The type of the first argument to the operation.
  *  @param <T2> The type of the second argument to the operation.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEBiConsumer.java 1020 2022-02-27 21:26:03Z tquadrat $
  *  @since 0.0.5
  *
@@ -59,7 +59,7 @@ public interface TCEBiConsumer<T1,T2>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Performs this operation on the given argument.
+     *  <p>{@summary Performs this operation on the given argument.}</p>
      *
      *  @param  arg1    The first input argument
      *  @param  arg2    The second input argument

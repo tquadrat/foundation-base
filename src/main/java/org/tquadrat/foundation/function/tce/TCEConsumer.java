@@ -20,27 +20,29 @@ package org.tquadrat.foundation.function.tce;
 
 import static org.apiguardian.api.API.Status.STABLE;
 
+import java.util.function.Consumer;
+
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
- *  {@link java.util.function.Consumer}
+ *  <p>{@summary The TCE version of the interface
+ *  {@link Consumer}
  *  that represents an operation that accepts a single input argument and
- *  returns no result. Unlike most other functional interfaces,
- *  {@code Consumer} is expected to operate via side effects.<br>
- *  <br>Different from the method
+ *  returns no result.} Unlike most other functional interfaces,
+ *  {@code Consumer} is expected to operate via side effects.</p>
+ *  <p>Different from the method
  *  {@link java.util.function.Consumer#accept(Object) Consumer.accept()}
  *  the method
  *  {@link #accept(Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #accept(Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #accept(Object)}.</p>
  *
  *  @param <T> The type of the input to the operation.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
@@ -55,7 +57,7 @@ public interface TCEConsumer<T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Performs this operation on the given argument.
+     *  <p>{@summary Performs this operation on the given argument.}</p>
      *
      *  @param  arg The input argument
      *  @throws Exception   Something went wrong.

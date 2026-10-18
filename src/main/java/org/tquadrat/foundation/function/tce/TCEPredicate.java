@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2024 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,25 +20,27 @@ package org.tquadrat.foundation.function.tce;
 
 import static org.apiguardian.api.API.Status.STABLE;
 
+import java.util.function.Predicate;
+
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
- *  {@link java.util.function.Predicate}
- *  that represents a predicate (boolean-valued function) of one argument. <br>
- *  <br>Different from the method
+ *  <p>{@summary The TCE version of the interface
+ *  {@link Predicate}
+ *  that represents a predicate (boolean-valued function) of one argument.}</p>
+ *  <p>Different from the method
  *  {@link java.util.function.Predicate#test(Object) Predicate.test()}
  *  the method
  *  {@link #test(Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #test(Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #test(Object)}.</p>
  *
  *  @param <T> The type of the input to the predicate.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEPredicate.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
@@ -53,14 +55,14 @@ public interface TCEPredicate<T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Evaluates this predicate on the given argument.
+     *  <p>{@summary Evaluates this predicate on the given argument.}</p>
      *
      *  @param  arg The input argument
      *  @return {@true} if the input argument matches the predicate,
      *      otherwise {@false}.
      *  @throws Exception   Something went wrong.
      */
-    @SuppressWarnings( {"ProhibitedExceptionDeclared"} )
+    @SuppressWarnings( {"ProhibitedExceptionDeclared", "BooleanMethodNameMustStartWithQuestion"} )
     public boolean test( T arg ) throws Exception;
 }
 //  interface TCEPredicate

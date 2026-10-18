@@ -29,7 +29,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-17T15:15:57.856915448Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-18T10:54:01.199747565Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -105,7 +105,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="annotations"><a href="../annotation/UtilityClass.html" title="annotation interface in org.tquadrat.foundation.annotation">@UtilityClass</a>
 <a href="../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: Functions.java 1293 2026-10-16 13:12:15Z tquadrat $")
-</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-87">Functions</a></span>
+</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-91">Functions</a></span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block"><p>Some helper methods for the use with lambdas and functional
 interfaces.</p>
@@ -138,11 +138,15 @@ catch( LambdaContainerException e )
   throw (IOException) e.getCause();
 }
 &hellip;</pre></div>
+<p>A
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>
+that might be thrown by a wrapped function will not be packaged into a
+<a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>.</p>
 <p>&quot;<i>TCE</i>&quot; stands for &quot;<b>T</b>hrows <b>C</b>hecked
 <b>E</b>xception&quot;.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: Functions.java 1293 2026-10-16 13:12:15Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -327,7 +331,7 @@ with the causing exception, in case the wrapped instance emitted a
 <section class="detail" id="&lt;init&gt;()">
 <h3>Functions</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-97">Functions</a></span>()</div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-101">Functions</a></span>()</div>
 <div class="block"><p>No instance allowed for this class!</p></div>
 </div>
 </section>
@@ -346,15 +350,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-117">wrapBiConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiConsumer</a>&lt;? super T1, ? super T2&gt;&nbsp;consumer)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;T1,<wbr>T2&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-121">wrapBiConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiConsumer</a>&lt;? super T1, ? super T2&gt;&nbsp;consumer)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEBiConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBiConsumer</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link"><code>BiConsumer</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapBiConsumer(org.tquadrat.foundation.function.tce.TCEBiConsumer)-type-param-T1"><code>T1</code> - The type of the first argument taken by the consumer.</span></dd>
@@ -373,15 +377,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-152">wrapBiFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;? super T1, ? super T2, ? extends R&gt;&nbsp;function)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;T1,<wbr>T2,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-157">wrapBiFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;? super T1, ? super T2, ? extends R&gt;&nbsp;function)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBiFunction</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link"><code>BiFunction</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapBiFunction(org.tquadrat.foundation.function.tce.TCEBiFunction)-type-param-T1"><code>T1</code> - The type of the first argument to the function.</span></dd>
@@ -401,15 +405,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-185">wrapBinaryOperator</a></span><wbr><span class="parameters">(<a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce">TCEBinaryOperator</a>&lt;T&gt;&nbsp;function)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link">BinaryOperator</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-191">wrapBinaryOperator</a></span><wbr><span class="parameters">(<a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce">TCEBinaryOperator</a>&lt;T&gt;&nbsp;function)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEBinaryOperator.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEBinaryOperator</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link"><code>BinaryOperator</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapBinaryOperator(org.tquadrat.foundation.function.tce.TCEBinaryOperator)-type-param-T"><code>T</code> - The type of the operands and result of the operator.</span></dd>
@@ -427,15 +431,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-218">wrapConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEConsumer</a>&lt;? super T&gt;&nbsp;consumer)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-225">wrapConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCEConsumer</a>&lt;? super T&gt;&nbsp;consumer)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEConsumer</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapConsumer(org.tquadrat.foundation.function.tce.TCEConsumer)-type-param-T"><code>T</code> - The type of arguments taken by the consumer.</span></dd>
@@ -453,15 +457,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-252">wrapFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super T, ? extends R&gt;&nbsp;function)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-260">wrapFunction</a></span><wbr><span class="parameters">(<a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super T, ? extends R&gt;&nbsp;function)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEFunction</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapFunction(org.tquadrat.foundation.function.tce.TCEFunction)-type-param-T"><code>T</code> - The type of the input to the function.</span></dd>
@@ -480,15 +484,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-285">wrapPredicate</a></span><wbr><span class="parameters">(<a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce">TCEPredicate</a>&lt;? super T&gt;&nbsp;predicate)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-294">wrapPredicate</a></span><wbr><span class="parameters">(<a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce">TCEPredicate</a>&lt;? super T&gt;&nbsp;predicate)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCEPredicate.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCEPredicate</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapPredicate(org.tquadrat.foundation.function.tce.TCEPredicate)-type-param-T"><code>T</code> - The type of the input to the predicate.</span></dd>
@@ -506,15 +510,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-318">wrapSupplier</a></span><wbr><span class="parameters">(<a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce">TCESupplier</a>&lt;? extends T&gt;&nbsp;supplier)</span></div>
-<div class="block">Wraps an instance of
+</span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-328">wrapSupplier</a></span><wbr><span class="parameters">(<a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce">TCESupplier</a>&lt;? extends T&gt;&nbsp;supplier)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCESupplier.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCESupplier</code></a>
 to an instance of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapSupplier(org.tquadrat.foundation.function.tce.TCESupplier)-type-param-T"><code>T</code> - The type of results supplied by the supplier.</span></dd>
@@ -533,15 +537,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2,<wbr>T3&gt;</span>
-<span class="return-type"><a href="TriConsumer.html" title="interface in org.tquadrat.foundation.function">TriConsumer</a>&lt;T1,<wbr>T2,<wbr>T3&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-353">wrapTriConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCETriConsumer</a>&lt;? super T1, ? super T2, ? super T3&gt;&nbsp;consumer)</span></div>
-<div class="block">Wraps an instance of
+<span class="return-type"><a href="TriConsumer.html" title="interface in org.tquadrat.foundation.function">TriConsumer</a>&lt;T1,<wbr>T2,<wbr>T3&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-364">wrapTriConsumer</a></span><wbr><span class="parameters">(<a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce">TCETriConsumer</a>&lt;? super T1, ? super T2, ? super T3&gt;&nbsp;consumer)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCETriConsumer.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCETriConsumer</code></a>
 to an instance of
 <a href="TriConsumer.html" title="interface in org.tquadrat.foundation.function"><code>TriConsumer</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapTriConsumer(org.tquadrat.foundation.function.tce.TCETriConsumer)-type-param-T1"><code>T1</code> - The type of the first argument taken by the consumer.</span></dd>
@@ -562,15 +566,15 @@ with the causing exception, in case the wrapped instance emitted a
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public static final</span>&nbsp;<span class="type-parameters">&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;</span>
-<span class="return-type"><a href="TriFunction.html" title="interface in org.tquadrat.foundation.function">TriFunction</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-389">wrapTriFunction</a></span><wbr><span class="parameters">(<a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;? super T1, ? super T2, ? super T3, ? extends R&gt;&nbsp;function)</span></div>
-<div class="block">Wraps an instance of
+<span class="return-type"><a href="TriFunction.html" title="interface in org.tquadrat.foundation.function">TriFunction</a>&lt;T1,<wbr>T2,<wbr>T3,<wbr>R&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/Functions.html#line-401">wrapTriFunction</a></span><wbr><span class="parameters">(<a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;? super T1, ? super T2, ? super T3, ? extends R&gt;&nbsp;function)</span></div>
+<div class="block"><p>Wraps an instance of
 <a href="tce/TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce"><code>TCETriFunction</code></a>
 to an instance of
 <a href="TriFunction.html" title="interface in org.tquadrat.foundation.function"><code>TriFunction</code></a>
 that throws an instance of
 <a href="../exception/LambdaContainerException.html" title="class in org.tquadrat.foundation.exception"><code>LambdaContainerException</code></a>
 with the causing exception, in case the wrapped instance emitted a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="wrapTriFunction(org.tquadrat.foundation.function.tce.TCETriFunction)-type-param-T1"><code>T1</code> - The type of the first argument taken by the function.</span></dd>

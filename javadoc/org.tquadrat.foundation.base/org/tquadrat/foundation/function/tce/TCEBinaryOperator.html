@@ -21,7 +21,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-17T15:15:57.856915448Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-18T10:54:01.199747565Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -90,25 +90,25 @@ loadScripts(document, 'script');</script>
 <a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBinaryOperator.html#line-50">TCEBinaryOperator</a>&lt;T&gt;</span><span class="extends-implements">
+</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBinaryOperator.html#line-53">TCEBinaryOperator</a>&lt;T&gt;</span><span class="extends-implements">
 extends <a href="TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;T,<wbr>T,<wbr>T&gt;</span></div>
-<div class="block">The TCE version of the interface
+<div class="block"><p>The TCE version of the interface
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BinaryOperator.html" title="class or interface in java.util.function" class="external-link"><code>BinaryOperator</code></a>
 that represents an operation upon two operands of the same type, producing
 a result of the same type as the operands. This is a specialisation of
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link"><code>BiFunction</code></a>
-for the case where the operands and the result are all the same type.<br>
-<br>Different from the method
+for the case where the operands and the result are all the same type.</p>
+<p>Different from the method
 <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html#apply(T,U)" title="class or interface in java.util.function" class="external-link"><code>BinaryOperator.apply()</code></a>
 the method
 <a href="#apply(T,T)"><code>apply(Object,Object)</code></a>
 of this interface declares to throw a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.<br>
-<br>This is a functional interface whose functional method is
-<a href="#apply(T,T)"><code>apply(Object,Object)</code></a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p>
+<p>This is a functional interface whose functional method is
+<a href="#apply(T,T)"><code>apply(Object,Object)</code></a>.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -171,10 +171,10 @@ of this interface declares to throw a
 <section class="detail" id="apply(T,T)">
 <h3 id="apply(java.lang.Object,java.lang.Object)">apply</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBinaryOperator.html#line-66">apply</a></span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>&nbsp;arg1,
+<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCEBinaryOperator.html#line-69">apply</a></span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>&nbsp;arg1,
  <a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>&nbsp;arg2)</span>
  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<div class="block">Applies this function to the given arguments.</div>
+<div class="block"><p>Applies this function to the given arguments.</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="TCEBiFunction.html#apply(T1,T2)">apply</a></code>&nbsp;in interface&nbsp;<code><a href="TCEBiFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEBiFunction</a>&lt;<a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>,<wbr><a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>,<wbr><a href="#type-param-T" title="type parameter in TCEBinaryOperator">T</a>&gt;</code></dd>

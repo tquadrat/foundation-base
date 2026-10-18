@@ -31,7 +31,6 @@ import static java.lang.annotation.ElementType.TYPE_PARAMETER;
 import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.apiguardian.api.API.Status.DEPRECATED;
-import static org.apiguardian.api.API.Status.STABLE;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -45,7 +44,7 @@ import org.apiguardian.api.API;
  *  annotations.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: FixList.java 1035 2022-12-07 15:09:56Z tquadrat $
+ *  @version $Id: FixList.java 1294 2026-10-17 15:40:42Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
@@ -55,7 +54,7 @@ import org.apiguardian.api.API;
  *      and
  *      {@link ChangeRequestList}
  */
-@ClassVersion( sourceVersion = "$Id: FixList.java 1035 2022-12-07 15:09:56Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: FixList.java 1294 2026-10-17 15:40:42Z tquadrat $" )
 @API( status = DEPRECATED, since = "0.1.0" )
 @Deprecated( since = "0.25.14", forRemoval = true )
 @Documented

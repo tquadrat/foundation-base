@@ -57,7 +57,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  <p>All concrete (non-abstract) implementations of this interface should be
  *  {@code final}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: DimensionedValue.java 1286 2026-09-09 09:43:11Z tquadrat $
  *  @since 0.15.1
  *
@@ -75,9 +75,9 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     ====** Constants **========================================================
         \*-----------*/
     /**
-     *  The
+     *  <p>{@summary The
      *  {@link MathContext}
-     *  that is used for all the operations with dimensioned values.
+     *  that is used for all the operations with dimensioned values.}</p>
      */
     public static final MathContext MATH_CONTEXT = new MathContext( 128, HALF_EVEN );
 
@@ -85,7 +85,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Returns the base unit of the dimension for the value.
+     *  <p>{@summary Returns the base unit of the dimension for the value.}</p>
      *
      *  @return The base unit.
      */
@@ -111,7 +111,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     public BigDecimal baseValue();
 
     /**
-     *  Creates a new copy of this value.
+     *  <p>{@summary Creates a new copy of this value.}</p>
      *
      *  @return The copy.
      */
@@ -132,7 +132,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  compareTo()
 
     /**
-     *  Converts this value to the given unit and returns the numerical value.
+     *  <p>{@summary Converts this value to the given unit and returns the
+     *  numerical value.}</p>
      *
      *  @param  unit    The unit.
      *  @return The numerical value of this instance, based on the provided
@@ -150,7 +151,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  convert()
 
     /**
-     *  Creates a new copy of this value.
+     *  <p>{@summary Creates a new copy of this value.}</p>
      *
      *  @return The copy.
      *
@@ -159,7 +160,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     public DimensionedValue<D> copy();
 
     /**
-     *  Creates a new copy of this value.
+     *  <p>{@summary Creates a new copy of this value.}</p>
      *
      *  @param  unit    The unit for the new copy.
      *  @return The copy.
@@ -169,8 +170,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     public DimensionedValue<D> copy( final D unit );
 
     /**
-     *  Divides the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Divides the value by a dimension-less value and returns
+     *  the result without changing this instance.}</p>
      *
      *  @param  divisor The divisor.
      *  @return The new value.
@@ -185,8 +186,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  divide()
 
     /**
-     *  Divides the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Divides the value by a dimension-less value and returns
+     *  the result without changing this instance.}</p>
      *
      *  @param  divisor The divisor.
      *  @return The new value.
@@ -201,8 +202,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  divide()
 
     /**
-     *  Divides the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Divides the value by a dimension-less value and returns
+     *  the result without changing this instance.}</p>
      *
      *  @param  divisor The divisor; it must be possible to parse the given
      *      String into a
@@ -259,12 +260,12 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     {
         if( isNull( formatter ) ) throw new NullPointerException( "formatter is null" );
 
-        var string = toString( width, precision ).trim();
-        final var len = string.length();
+        var s = toString( width, precision ).trim();
+        final var len = s.length();
 
         if( ((flags & LEFT_JUSTIFY) == LEFT_JUSTIFY) && (width > len) )
         {
-            string = string.concat( " ".repeat( width - len ) );
+            s = s.concat( " ".repeat( width - len ) );
         }
 
         /*
@@ -273,11 +274,11 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
          * Appendable.append(). Using Formatter.format() assumes that Formatter
          * knows ...
          */
-        formatter.format( "%s", string );
+        formatter.format( "%s", s );
     }   //  formatTo()
 
     /**
-     *  Returns the unit for the value.
+     *  <p>{@summary Returns the unit for the value.}</p>
      *
      *  @return The unit.
      */
@@ -295,8 +296,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     public int hashCode();
 
     /**
-     *  Multiplies the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Multiplies the value by a dimension-less value and returns
+     *  the result without changing this instance.}</p>
      *
      *  @param  multiplicand The multiplier.
      *  @return The new value.
@@ -311,8 +312,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  multiply()
 
     /**
-     *  Multiplies the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Multiplies the value by a dimension-less value and returns
+     *  the result without changing this instance.}</p>
      *
      *  @param  multiplicand The multiplier.
      *  @return The new value.
@@ -327,8 +328,8 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  multiply()
 
     /**
-     *  Multiplies the value by a dimension-less value and returns the result
-     *  without changing this instance.
+     *  <p>{@summary Multiplies the value by a dimension-less value and returns the result
+     *  without changing this instance.}</p>
      *
      *  @param  multiplicand The multiplier; it must be possible to parse the
      *      given String into a
@@ -348,7 +349,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  multiply()
 
     /**
-     *  Creates an instance for the class.
+     *  <p>{@summary Creates an instance for the class.}</p>
      *
      *  @param  dimension   The dimension for the new instance.
      *  @param  value   The value for the new instance.
@@ -356,7 +357,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
      */
     public default DimensionedValue<D> newInstance( final D dimension, final BigDecimal value )
     {
-        DimensionedValue<D> retValue = null;
+        final DimensionedValue<D> retValue;
 
         try
         {
@@ -386,22 +387,22 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  newInstance()
 
     /**
-     *  Applies another unit for the value. This does not affect the results
-     *  of
+     *  <p>{@summary Applies another unit for the value.} This does not affect
+     *  the results of
      *  {@link #equals(Object)},
      *  {@link #hashCode()}}
      *  and
      *  {@link #compareTo(DimensionedValue)},
      *  nor that of
-     *  {@link #baseValue()}.
+     *  {@link #baseValue()}.</p>
      *
      *  @param  unit    The new unit.
      */
     public void setUnit( D unit );
 
     /**
-     *  Creates a new instance with the sum of this and the given value, and
-     *  returns that.
+     *  <p>{@summary Creates a new instance with the sum of this and the given
+     *  value, and returns that.}</p>
      *
      *  @param  unit    The unit for the new instance.
      *  @param  summand The value to add.
@@ -417,8 +418,9 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  sum()
 
     /**
-     *  Creates a new instance with the sum of this and the given value, and
-     *  returns that. The unit for the new instance is that of this instance.
+     *  <p>{@summary Creates a new instance with the sum of this and the given
+     *  value, and returns that. The unit for the new instance is that of this
+     *  instance.}</p>
      *
      *  @param  summand The value to add.
      *  @return The instance with the sum.
@@ -584,7 +586,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
     }   //  toString()
 
     /**
-     *  Returns the numerical value.
+     *  <p>{@summary Returns the numerical value.}</p>
      *
      *  @return The numerical value, based on current dimension.
      */

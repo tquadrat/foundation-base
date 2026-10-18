@@ -41,7 +41,7 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  method to retrieve an {@code enum} value (a unit) by the respective
  *  {@linkplain #unitSymbol() symbol}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Dimension.java 1195 2026-04-15 21:33:40Z tquadrat $
  *  @since 0.25.1
  *
@@ -55,7 +55,7 @@ public interface Dimension extends Serializable
     ====** Constants **========================================================
         \*-----------*/
     /**
-     *  Message: Unknown Unit.
+     *  <p>{@summary Message: Unknown Unit.}</p>
      */
     public static final String MSG_UnknownUnit = "Unknown unit: %s";
 
@@ -91,8 +91,8 @@ public interface Dimension extends Serializable
     public UnaryOperator<BigDecimal> fromBase();
 
     /**
-     *  Returns the default precision for this unit that is used when the
-     *  respective value is converted to a String.
+     *  <p>{@summary Returns the default precision for this unit that is used
+     *  when the respective value is converted to a String.}</p>
      *
      *  @return The mantissa length for a value with this unit.
      */
@@ -107,7 +107,7 @@ public interface Dimension extends Serializable
     public UnaryOperator<BigDecimal> toBase();
 
     /**
-     *  Returns the internal name of the dimension.
+     *  <p>{@summary Returns the internal name of the dimension.}</p>
      *
      *  @return The internal name.
      */

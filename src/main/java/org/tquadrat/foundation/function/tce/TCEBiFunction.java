@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2021 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -45,7 +45,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <T2>    The type of the second argument to the function.
  *  @param  <R> The type of the result of the function.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCEBiFunction.java 884 2021-03-22 18:02:51Z tquadrat $
  *  @since 0.0.5
  *
@@ -60,7 +60,7 @@ public interface TCEBiFunction<T1,T2,R>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Applies this function to the given arguments.
+     *  <p>{@summary Applies this function to the given arguments.}</p>
      *
      *  @param  arg1    The first function argument.
      *  @param  arg2    The second function argument.

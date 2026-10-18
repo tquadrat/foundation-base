@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -23,27 +23,28 @@ import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
+import org.tquadrat.foundation.function.TriFunction;
 
 /**
- *  The TCE version of the interface
- *  {@link org.tquadrat.foundation.function.TriFunction}
+ *  <p>{@summary The TCE version of the interface
+ *  {@link TriFunction}
  *  that represents a function that accepts three arguments and produces a
- *  result.<br>
- *  <br>Different from the method
- *  {@link org.tquadrat.foundation.function.TriFunction#apply(Object, Object, Object) Function.apply()}
+ *  result.}</p>
+ *  <p>Different from the method
+ *  {@link TriFunction#apply(Object, Object, Object) Function.apply()}
  *  the method
  *  {@link #apply(Object, Object, Object)}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #apply(Object, Object, Object)}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #apply(Object, Object, Object)}.</p>
  *
  *  @param  <A> The type of the first argument to the function.
  *  @param  <B> The type of the second argument to the function.
  *  @param  <C> The type of the third argument to the function.
  *  @param  <R> The type of the result of the function.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCETriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
@@ -59,7 +60,7 @@ public interface TCETriFunction<A,B,C,R>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Applies this function to the given arguments.
+     *  <p>{@summary Applies this function to the given arguments.}</p>
      *
      *  @param  firstArgument   The first function argument.
      *  @param  secondArgument  The second function argument.
@@ -71,10 +72,10 @@ public interface TCETriFunction<A,B,C,R>
     public R apply( final A firstArgument, final B secondArgument, final C thirdArgument ) throws Exception;
 
     /**
-     *  Returns a composed function that first applies this function to its
-     *  input, and then applies the after function to the result. If evaluation
-     *  of either function throws an exception, it is relayed to the caller of
-     *  the composed function.
+     *  <p>{@summary Returns a composed function that first applies this
+     *  function to its input, and then applies the {@code after} function to
+     *  the result.} If evaluation of either function throws an exception, it
+     *  is relayed to the caller of the composed function.</p>
      *
      *  @param  <R1>    The type of the output of the {@code after} function,
      *      and of the composed function.
@@ -92,7 +93,7 @@ public interface TCETriFunction<A,B,C,R>
 
         //---* Done *----------------------------------------------------------
         return retValue;
-    }   //  andThem()
+    }   //  andThen()
 }
 //  interface TCETriFunction
 

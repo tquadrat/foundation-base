@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -43,7 +43,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.Function
  *  @see java.util.function.BiFunction
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $
  *  @since 0.0.5
  *
@@ -58,7 +58,7 @@ public interface TriFunction<A,B,C,R>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Applies this function to the given arguments.
+     *  <p>{@summary Applies this function to the given arguments.}</p>
      *
      *  @param  firstArgument   The first function argument.
      *  @param  secondArgument  The second function argument.
@@ -68,10 +68,10 @@ public interface TriFunction<A,B,C,R>
     public R apply( final A firstArgument, final B secondArgument, final C thirdArgument );
 
     /**
-     *  Returns a composed function that first applies this function to its
-     *  input, and then applies the after function to the result. If evaluation
-     *  of either function throws an exception, it is relayed to the caller of
-     *  the composed function.
+     *  <p>{@summary Returns a composed function that first applies this
+     *  function to its input, and then applies the {@code after} function to
+     *  the result.} If evaluation of either function throws an exception, it
+     *  is relayed to the caller of the composed function.</p>
      *
      *  @param  <R1>    The type of the output of the {@code after} function,
      *      and of the composed function.

@@ -8,7 +8,6 @@
 <meta name="description" content="declaration: module: org.tquadrat.foundation.base, package: org.tquadrat.foundation.lang.value, interface: DimensionWithLinearConversion">
 <meta name="generator" content="javadoc/ClassWriter">
 <meta name="keywords" content="org.tquadrat.foundation.lang.value.DimensionWithLinearConversion interface">
-<meta name="keywords" content="MSG_UnknownUnit">
 <meta name="keywords" content="factor()">
 <meta name="keywords" content="fromBase()">
 <meta name="keywords" content="toBase()">
@@ -24,7 +23,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-17T15:15:57.856915448Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-18T10:54:01.199747565Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -63,11 +62,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
-<ol class="toc-list">
-<li><a href="#MSG_UnknownUnit" tabindex="0">MSG_UnknownUnit</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#factor()" tabindex="0">factor()</a></li>
@@ -110,8 +104,8 @@ method to retrieve an <code>enum</code> value (a unit) by the respective
 <p>It is a generalisation for dimensions that are converted by simple
 division or multiplication of a factor, as for length or speed.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: DimensionWithLinearConversion.java 1195 2026-04-15 21:33:40Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -143,17 +137,9 @@ division or multiplication of a factor, as for length or speed.</p></div>
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MSG_UnknownUnit" class="member-name-link">MSG_UnknownUnit</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Message: Unknown Unit.</div>
-</div>
-</div>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-org.tquadrat.foundation.lang.value.Dimension">Fields inherited from interface&nbsp;<a href="Dimension.html#field-summary" title="interface in org.tquadrat.foundation.lang.value">Dimension</a></h3>
+<code><a href="Dimension.html#MSG_UnknownUnit">MSG_UnknownUnit</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
@@ -197,31 +183,6 @@ from this unit to the base unit.</div>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="MSG_UnknownUnit">
-<h3>MSG_UnknownUnit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-62">MSG_UnknownUnit</a></span></div>
-<div class="block">Message: Unknown Unit.</div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../../../../constant-values.html#org.tquadrat.foundation.lang.value.DimensionWithLinearConversion.MSG_UnknownUnit">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -231,7 +192,7 @@ from this unit to the base unit.</div>
 <section class="detail" id="factor()">
 <h3>factor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-79">factor</a></span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-71">factor</a></span>()</div>
 <div class="block"><p>Returns the factor that is used to convert a value from
 this unit to the base unit.</p>
 <p>For length, if you have to convert a Centimeter value to Meter, you
@@ -255,7 +216,7 @@ will divide that by 100 or multiply it with a <i>factor</i> of
 <section class="detail" id="fromBase()">
 <h3>fromBase</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-84">fromBase</a></span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-76">fromBase</a></span>()</div>
 <div class="block"><p>Returns the conversion that is used to convert a value
 from the base unit to this unit.</p></div>
 <dl class="notes">
@@ -271,7 +232,7 @@ from the base unit to this unit.</p></div>
 <section class="detail" id="toBase()">
 <h3>toBase</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-99">toBase</a></span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link">BigDecimal</a>&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/lang/value/DimensionWithLinearConversion.html#line-91">toBase</a></span>()</div>
 <div class="block"><p>Returns the conversion that is used to convert a value
 from this unit to the base unit.</p></div>
 <dl class="notes">

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -33,7 +33,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  whose functional method is
  *  {@link #get()}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $
  *  @since 0.0.5
  *
@@ -41,6 +41,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
+@SuppressWarnings( "NewClassNamingConvention" )
 @FunctionalInterface
 @ClassVersion( sourceVersion = "$Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
@@ -50,7 +51,7 @@ public interface Getter<T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Returns a value.
+     *  <p>{@summary Returns a value.}</p>
      *
      *  @return The value.
      */

@@ -22,7 +22,7 @@ loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
-<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-17T15:15:57.856915448Z[UTC]</p>      </div>
+<header role="banner"><div style="overflow:auto;"><img src="../../../../../../resources/tquadrat_logo.jpg" alt="tquadrat.org"style="float:right;"><div style="font-family:sans-serif;font-size:40px;font-weight:bold;padding-left:30px;"><p>tquadrat's <i>Foundation</i> Library<br>org.tquadrat.foundation.base 0.25.14 API</p></div><p>Build: 2026-10-18T10:54:01.199747565Z[UTC]</p>      </div>
 <nav role="navigation">
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="top-nav" id="navbar-top">
@@ -91,22 +91,22 @@ loadScripts(document, 'script');</script>
 <a href="../../annotation/ClassVersion.html" title="annotation interface in org.tquadrat.foundation.annotation">@ClassVersion</a>(<a href="../../annotation/ClassVersion.html#sourceVersion()">sourceVersion</a>="$Id: TCETriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-52">TCETriFunction</a>&lt;A,<wbr>B,<wbr>C,<wbr>R&gt;</span></div>
-<div class="block">The TCE version of the interface
+</span><span class="modifiers">public interface </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-53">TCETriFunction</a>&lt;A,<wbr>B,<wbr>C,<wbr>R&gt;</span></div>
+<div class="block"><p>The TCE version of the interface
 <a href="../TriFunction.html" title="interface in org.tquadrat.foundation.function"><code>TriFunction</code></a>
 that represents a function that accepts three arguments and produces a
-result.<br>
-<br>Different from the method
+result.</p>
+<p>Different from the method
 <a href="../TriFunction.html#apply(A,B,C)"><code>Function.apply()</code></a>
 the method
 <a href="#apply(A,B,C)"><code>apply(Object, Object, Object)</code></a>
 of this interface declares to throw a
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.<br>
-<br>This is a functional interface whose functional method is
-<a href="#apply(A,B,C)"><code>apply(Object, Object, Object)</code></a>.</div>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">checked exception</a>.</p>
+<p>This is a functional interface whose functional method is
+<a href="#apply(A,B,C)"><code>apply(Object, Object, Object)</code></a>.</p></div>
 <dl class="notes">
-<dt>Extauthor:</dt>
-<dd>Thomas Thrien - thomas.thrien@tquadrat.org</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+  <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
 <dd>$Id: TCETriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $</dd>
 <dt>Since:</dt>
@@ -148,8 +148,9 @@ of this interface declares to throw a
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;R1&gt;&nbsp;<a href="TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a><wbr>&lt;<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>,<wbr><a href="#type-param-B" title="type parameter in TCETriFunction">B</a>,<wbr><a href="#type-param-C" title="type parameter in TCETriFunction">C</a>,<wbr>R1&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#andThen(org.tquadrat.foundation.function.tce.TCEFunction)" class="member-name-link">andThen</a><wbr>(<a href="TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super <a href="#type-param-R" title="type parameter in TCETriFunction">R</a>, ? extends R1&gt;&nbsp;after)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Returns a composed function that first applies this function to its
-input, and then applies the after function to the result.</div>
+<div class="block">Returns a composed function that first applies this
+function to its input, and then applies the <code>after</code> function to
+the result.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-R" title="type parameter in TCETriFunction">R</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#apply(A,B,C)" class="member-name-link">apply</a><wbr>(<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>&nbsp;firstArgument,
@@ -176,11 +177,11 @@ input, and then applies the after function to the result.</div>
 <section class="detail" id="apply(A,B,C)">
 <h3 id="apply(java.lang.Object,java.lang.Object,java.lang.Object)">apply</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-R" title="type parameter in TCETriFunction">R</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-70">apply</a></span><wbr><span class="parameters">(<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>&nbsp;firstArgument,
+<div class="member-signature"><span class="return-type"><a href="#type-param-R" title="type parameter in TCETriFunction">R</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-71">apply</a></span><wbr><span class="parameters">(<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>&nbsp;firstArgument,
  <a href="#type-param-B" title="type parameter in TCETriFunction">B</a>&nbsp;secondArgument,
  <a href="#type-param-C" title="type parameter in TCETriFunction">C</a>&nbsp;thirdArgument)</span>
  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<div class="block">Applies this function to the given arguments.</div>
+<div class="block"><p>Applies this function to the given arguments.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>firstArgument</code> - The first function argument.</dd>
@@ -200,11 +201,11 @@ input, and then applies the after function to the result.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.1.0")
-</span><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R1&gt;</span>&nbsp;<span class="return-type"><a href="TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>,<wbr><a href="#type-param-B" title="type parameter in TCETriFunction">B</a>,<wbr><a href="#type-param-C" title="type parameter in TCETriFunction">C</a>,<wbr>R1&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-87">andThen</a></span><wbr><span class="parameters">(<a href="TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super <a href="#type-param-R" title="type parameter in TCETriFunction">R</a>, ? extends R1&gt;&nbsp;after)</span></div>
-<div class="block">Returns a composed function that first applies this function to its
-input, and then applies the after function to the result. If evaluation
-of either function throws an exception, it is relayed to the caller of
-the composed function.</div>
+</span><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R1&gt;</span>&nbsp;<span class="return-type"><a href="TCETriFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCETriFunction</a>&lt;<a href="#type-param-A" title="type parameter in TCETriFunction">A</a>,<wbr><a href="#type-param-B" title="type parameter in TCETriFunction">B</a>,<wbr><a href="#type-param-C" title="type parameter in TCETriFunction">C</a>,<wbr>R1&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.base/org/tquadrat/foundation/function/tce/TCETriFunction.html#line-88">andThen</a></span><wbr><span class="parameters">(<a href="TCEFunction.html" title="interface in org.tquadrat.foundation.function.tce">TCEFunction</a>&lt;? super <a href="#type-param-R" title="type parameter in TCETriFunction">R</a>, ? extends R1&gt;&nbsp;after)</span></div>
+<div class="block"><p>Returns a composed function that first applies this
+function to its input, and then applies the <code>after</code> function to
+the result. If evaluation of either function throws an exception, it
+is relayed to the caller of the composed function.</p></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="andThen(org.tquadrat.foundation.function.tce.TCEFunction)-type-param-R1"><code>R1</code> - The type of the output of the <code>after</code> function,

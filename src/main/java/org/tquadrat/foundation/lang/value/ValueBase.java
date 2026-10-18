@@ -45,7 +45,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  unit. It returns {@true} if the given combination is valid, otherwise
  *  it returns {@false}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.25.1
  *
@@ -54,6 +54,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *
  *  @UMLGraph.link
  */
+@SuppressWarnings( "SerializableDeserializableClassInSecureContext" )
 @ClassVersion( sourceVersion = "$Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public abstract non-sealed class ValueBase<D extends Dimension, I extends DimensionedValue<D>> implements DimensionedValue<D>
@@ -62,7 +63,7 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
     ====** Constants **========================================================
         \*-----------*/
     /**
-     *  The default validator.
+     *  <p>{@summary The default validator.}</p>
      */
     @SuppressWarnings( "rawtypes" )
     protected static final BiPredicate DEFAULT_VALIDATOR = ( _, _ ) -> true;
@@ -71,21 +72,21 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
     ====** Attributes **=======================================================
         \*------------*/
     /**
-     *  The unit for the value.
+     *  <p>{@summary The unit for the value.}</p>
      *
      *  @serial
      */
     private D m_Unit;
 
     /**
-     *  The validation function.
+     *  <p>{@summary The validation function.}</p>
      *
      *  @serial
      */
     private final BiPredicate<D,BigDecimal> m_Validator;
 
     /**
-     *  The numerical value for this instance.
+     *  <p>{@summary The numerical value for this instance.}</p>
      *
      *  @serial
      */
@@ -95,7 +96,10 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
     ====** Static Initialisations **===========================================
         \*------------------------*/
     /**
-     *  The serial version UID for objects of this class: {@value}.
+     *  <p>{@summary The serial version UID for objects of this class:
+     *  {@value}.}</p>
+     *
+     *  @hidden
      */
     @Serial
     private static final long serialVersionUID = -2075489505691464486L;
@@ -104,7 +108,7 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  Creates a new {@code ValueBase} instance.
+     *  <p>{@summary {@constructor}}</p>
      *
      *  @param  unit   The unit.
      *  @param  value   The value; only absolute (positive) values are allowed,

@@ -43,7 +43,7 @@ import static org.tquadrat.foundation.lang.value.DimensionedValue.MATH_CONTEXT;
  *  <p>It is a generalisation for dimensions that are converted by simple
  *  division or multiplication of a factor, as for length or speed.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: DimensionWithLinearConversion.java 1195 2026-04-15 21:33:40Z tquadrat $
  *  @since 0.25.1
  *
@@ -53,14 +53,6 @@ import static org.tquadrat.foundation.lang.value.DimensionedValue.MATH_CONTEXT;
 @API( status = STABLE, since = "0.25.1" )
 public interface DimensionWithLinearConversion extends Dimension
 {
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-    /**
-     *  Message: Unknown Unit.
-     */
-    public static final String MSG_UnknownUnit = "Unknown unit: %s";
-
         /*---------*\
     ====** Methods **==========================================================
         \*---------*/

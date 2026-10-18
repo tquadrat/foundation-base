@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -33,7 +33,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  interface
  *  {@link java.util.function.Consumer}.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
@@ -41,6 +41,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @UMLGraph.link
  */
+@SuppressWarnings( "NewClassNamingConvention" )
 @FunctionalInterface
 @ClassVersion( sourceVersion = "$Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
@@ -50,7 +51,7 @@ public interface Setter<T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Takes the given argument and stores it somewhere.
+     *  <p>{@summary Takes the given argument and stores it somewhere.}</p>
      *
      *  @param  value   The value to store.
      */

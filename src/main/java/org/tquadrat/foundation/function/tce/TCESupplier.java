@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2020 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -20,27 +20,29 @@ package org.tquadrat.foundation.function.tce;
 
 import static org.apiguardian.api.API.Status.STABLE;
 
+import java.util.function.Supplier;
+
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  The TCE version of the interface
- *  {@link java.util.function.Supplier}
- *  that represents a supplier of results. <br>
- *  <br>Different from the method
+ *  <p>{@summary The TCE version of the interface
+ *  {@link Supplier}
+ *  that represents a supplier of results.}</p>
+ *  <p>Different from the method
  *  {@link java.util.function.Supplier#get() Supplier.get()}
  *  the method
  *  {@link #get()}
  *  of this interface declares to throw a
- *  {@linkplain Exception checked exception}.<br>
- *  <br>As for the original interface, there is no requirement that a new or
- *  distinct result be returned each time the supplier is invoked.<br>
- *  <br>This is a functional interface whose functional method is
- *  {@link #get()}.
+ *  {@linkplain Exception checked exception}.</p>
+ *  <p>As for the original interface, there is no requirement that a new or
+ *  distinct result be returned each time the supplier is invoked.</p>
+ *  <p>This is a functional interface whose functional method is
+ *  {@link #get()}.</p>
  *
  *  @param <T> The type of results supplied by this supplier.
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TCESupplier.java 993 2022-01-19 22:26:20Z tquadrat $
  *  @since 0.0.5
  *
@@ -55,7 +57,7 @@ public interface TCESupplier<T>
     ====** Methods **==========================================================
         \*---------*/
     /**
-     *  Returns a result.
+     *  <p>{@summary Returns a result.}</p>
      *
      *  @return The result.
      *  @throws Exception   Something went wrong.
