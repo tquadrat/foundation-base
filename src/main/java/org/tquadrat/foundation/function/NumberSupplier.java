@@ -40,12 +40,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.Supplier
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: NumberSupplier.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: NumberSupplier.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: NumberSupplier.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface NumberSupplier extends Supplier<Number>

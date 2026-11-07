@@ -46,13 +46,13 @@ import org.tquadrat.foundation.function.TriConsumer;
  *  @param <T3> The type of the third argument to the operation.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCETriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TCETriConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCETriConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCETriConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCETriConsumer<T1,T2,T3>
 {

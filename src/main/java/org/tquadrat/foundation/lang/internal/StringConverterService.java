@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  *
@@ -37,13 +37,13 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.UtilityClass;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 import org.tquadrat.foundation.lang.StringConverter;
 
 /**
- *  The implementation for the
+ *  <p>{@summary The implementation for the
  *  {@link StringConverter}
- *  service methods.
+ *  service methods.}</p>
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: StringConverterService.java 1258 2026-06-04 18:33:06Z tquadrat $
@@ -60,7 +60,7 @@ public final class StringConverterService
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  No instance allowed for this class.
+     *  <p>{@summary {@noInstance}}</p>
      */
     private StringConverterService() { throw new PrivateConstructorForStaticClassCalledError( StringConverterService.class ); }
 
@@ -196,6 +196,7 @@ public final class StringConverterService
         {
             try
             {
+                @SuppressWarnings( "LocalVariableNamingConvention" )
                 final var getSubjectClassMethod = converterClass.getMethod( METHOD_NAME_GetSubjectClass );
                 retValue = (Collection<Class<?>>) getSubjectClassMethod.invoke( converter );
             }
@@ -207,7 +208,7 @@ public final class StringConverterService
         }
         catch( final NoSuchMethodException | SecurityException | IllegalAccessException | InvocationTargetException e )
         {
-            throw new UnexpectedExceptionError( e );
+            throw new UnlikelyExceptionError( e );
         }
 
         //---* Done *----------------------------------------------------------

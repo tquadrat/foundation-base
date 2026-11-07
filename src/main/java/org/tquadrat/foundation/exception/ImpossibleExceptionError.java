@@ -39,8 +39,8 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  because the encoding {@code UTF-8} is mandatory for all implementations of
  *  Java.</p>
  *  <p>This is different from the
- *  {@link UnexpectedExceptionError}
- *  as that is possible in general, but not in the particular context.</p>
+ *  {@link UnlikelyExceptionError}
+ *  as that is possible in general, but unlikely in the particular context.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ImpossibleExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $
@@ -50,7 +50,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: ImpossibleExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public final class ImpossibleExceptionError extends UnexpectedExceptionError
+public final class ImpossibleExceptionError extends UnlikelyExceptionError
 {
         /*-----------*\
     ====** Constants **========================================================

@@ -45,13 +45,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <T> The type of the operands and result of the operator.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: TCEBinaryOperator.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBinaryOperator.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBinaryOperator<T> extends TCEBiFunction<T,T,T>
 {

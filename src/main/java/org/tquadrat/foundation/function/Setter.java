@@ -34,7 +34,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link java.util.function.Consumer}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: Setter.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The value type.
@@ -43,7 +43,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @SuppressWarnings( "NewClassNamingConvention" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Setter.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Setter.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface Setter<T>
 {

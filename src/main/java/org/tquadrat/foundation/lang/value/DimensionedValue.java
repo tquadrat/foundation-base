@@ -37,7 +37,7 @@ import java.util.Locale;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 
 /**
  *  <p>{@summary The definition for a value with a dimension.}</p>
@@ -58,7 +58,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  {@code final}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DimensionedValue.java 1286 2026-09-09 09:43:11Z tquadrat $
+ *  @version $Id: DimensionedValue.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.15.1
  *
  *  @param  <D> The dimension.
@@ -66,7 +66,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1286 2026-09-09 09:43:11Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public sealed interface DimensionedValue<D extends Dimension> extends Cloneable, Comparable<DimensionedValue<D>>, Formattable, Serializable
     permits ValueBase
@@ -379,7 +379,7 @@ public sealed interface DimensionedValue<D extends Dimension> extends Cloneable,
         }
         catch( final NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | InvocationTargetException e )
         {
-            throw new UnexpectedExceptionError( e );
+            throw new UnlikelyExceptionError( e );
         }
 
         //---* Done *----------------------------------------------------------

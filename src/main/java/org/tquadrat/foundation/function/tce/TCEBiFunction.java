@@ -46,13 +46,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param  <R> The type of the result of the function.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBiFunction.java 884 2021-03-22 18:02:51Z tquadrat $
+ *  @version $Id: TCEBiFunction.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBiFunction.java 884 2021-03-22 18:02:51Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBiFunction.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBiFunction<T1,T2,R>
 {

@@ -41,13 +41,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the predicate.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEPredicate.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: TCEPredicate.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEPredicate.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEPredicate<T>
 {

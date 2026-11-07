@@ -18,6 +18,7 @@
 package org.tquadrat.foundation.exception;
 
 import static java.lang.String.format;
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
@@ -67,11 +68,15 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @since 0.0.5
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated Basically, this exception was renamed to
+ *      {@link UnlikelyExceptionError}
+ *      because that name matches the intention better than the original name.
  */
 @ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
-@API( status = STABLE, since = "0.0.5" )
-public sealed class UnexpectedExceptionError extends AssertionError
-    permits ImpossibleExceptionError
+@API( status = DEPRECATED, since = "0.0.5" )
+@Deprecated( since = "0.25.15", forRemoval = true )
+/*public*/ final class UnexpectedExceptionError extends AssertionError
 {
         /*-----------*\
     ====** Constants **========================================================

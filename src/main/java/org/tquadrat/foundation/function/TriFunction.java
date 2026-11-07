@@ -44,12 +44,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.BiFunction
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: TriFunction.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TriFunction.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface TriFunction<A,B,C,R>

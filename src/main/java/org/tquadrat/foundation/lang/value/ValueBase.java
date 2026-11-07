@@ -30,7 +30,7 @@ import java.util.function.BiPredicate;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 
 /**
  *  <p>{@summary An abstract base implementation for the interface
@@ -46,7 +46,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  it returns {@false}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: ValueBase.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.25.1
  *
  *  @param  <D> The dimension.
@@ -55,7 +55,7 @@ import org.tquadrat.foundation.exception.UnexpectedExceptionError;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "SerializableDeserializableClassInSecureContext" )
-@ClassVersion( sourceVersion = "$Id: ValueBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueBase.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public abstract non-sealed class ValueBase<D extends Dimension, I extends DimensionedValue<D>> implements DimensionedValue<D>
 {
@@ -177,7 +177,7 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
         }
         catch( final CloneNotSupportedException e )
         {
-            throw new UnexpectedExceptionError( e );
+            throw new UnlikelyExceptionError( e );
         }
 
         //---* Done *----------------------------------------------------------
@@ -269,7 +269,7 @@ public abstract non-sealed class ValueBase<D extends Dimension, I extends Dimens
         if( !m_Validator.test( m_Unit, requireNonNullArgument( value, "value" ) ) )
         {
             //noinspection CallToNumericToString
-            throw new IllegalArgumentException( "Value %s is invalide".formatted( value.toString() ) );
+            throw new IllegalArgumentException( "Value %s is invalid".formatted( value.toString() ) );
         }
 
         //---* Done *----------------------------------------------------------

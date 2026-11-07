@@ -58,13 +58,13 @@
 <span class="source-line-no">045</span><span id="line-45"> *  annotated program elements.&lt;/p&gt;</span>
 <span class="source-line-no">046</span><span id="line-46"> *</span>
 <span class="source-line-no">047</span><span id="line-47"> *  @author Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">048</span><span id="line-48"> *  @version $Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $</span>
+<span class="source-line-no">048</span><span id="line-48"> *  @version $Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $</span>
 <span class="source-line-no">049</span><span id="line-49"> *  @since 0.25.14</span>
 <span class="source-line-no">050</span><span id="line-50"> *</span>
 <span class="source-line-no">051</span><span id="line-51"> *  @UMLGraph.link</span>
 <span class="source-line-no">052</span><span id="line-52"> */</span>
 <span class="source-line-no">053</span><span id="line-53">@SuppressWarnings( "NewClassNamingConvention" )</span>
-<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $" )</span>
+<span class="source-line-no">054</span><span id="line-54">@ClassVersion( sourceVersion = "$Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $" )</span>
 <span class="source-line-no">055</span><span id="line-55">@API( status = STABLE, since = "0.25.14" )</span>
 <span class="source-line-no">056</span><span id="line-56">@Retention( RUNTIME )</span>
 <span class="source-line-no">057</span><span id="line-57">@Target( {ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, RECORD_COMPONENT, TYPE, TYPE_PARAMETER, TYPE_USE} )</span>
@@ -78,12 +78,12 @@
 <span class="source-line-no">065</span><span id="line-65">     *  &lt;p&gt;{@summary Types of change requests.}&lt;/p&gt;</span>
 <span class="source-line-no">066</span><span id="line-66">     *</span>
 <span class="source-line-no">067</span><span id="line-67">     *  @author Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">068</span><span id="line-68">     *  @version $Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $</span>
+<span class="source-line-no">068</span><span id="line-68">     *  @version $Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $</span>
 <span class="source-line-no">069</span><span id="line-69">     *  @since 0.25.14</span>
 <span class="source-line-no">070</span><span id="line-70">     *</span>
 <span class="source-line-no">071</span><span id="line-71">     *  @UMLGraph.link</span>
 <span class="source-line-no">072</span><span id="line-72">     */</span>
-<span class="source-line-no">073</span><span id="line-73">    @ClassVersion( sourceVersion = "$Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $" )</span>
+<span class="source-line-no">073</span><span id="line-73">    @ClassVersion( sourceVersion = "$Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $" )</span>
 <span class="source-line-no">074</span><span id="line-74">    @API( status = STABLE, since = "0.25.14" )</span>
 <span class="source-line-no">075</span><span id="line-75">    public enum CRType</span>
 <span class="source-line-no">076</span><span id="line-76">    {</span>
@@ -127,50 +127,51 @@
 <span class="source-line-no">114</span><span id="line-114">         *  particular change. Use the new version as the</span>
 <span class="source-line-no">115</span><span id="line-115">         *  {@linkplain #id() id}.&lt;/p&gt;</span>
 <span class="source-line-no">116</span><span id="line-116">         */</span>
-<span class="source-line-no">117</span><span id="line-117">    }</span>
-<span class="source-line-no">118</span><span id="line-118">    //  enum CRType</span>
-<span class="source-line-no">119</span><span id="line-119"></span>
-<span class="source-line-no">120</span><span id="line-120">        /*------------*\</span>
-<span class="source-line-no">121</span><span id="line-121">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">122</span><span id="line-122">        \*------------*/</span>
-<span class="source-line-no">123</span><span id="line-123">    /**</span>
-<span class="source-line-no">124</span><span id="line-124">     *  &lt;p&gt;{@summary An optional comment regarding the change.}&lt;/p&gt;</span>
-<span class="source-line-no">125</span><span id="line-125">     *</span>
-<span class="source-line-no">126</span><span id="line-126">     *  @return The comment.</span>
-<span class="source-line-no">127</span><span id="line-127">     */</span>
-<span class="source-line-no">128</span><span id="line-128">    String comment() default "";</span>
-<span class="source-line-no">129</span><span id="line-129"></span>
-<span class="source-line-no">130</span><span id="line-130">    /**</span>
-<span class="source-line-no">131</span><span id="line-131">     *  &lt;p&gt;{@summary The date when the change was applied, in the format</span>
-<span class="source-line-no">132</span><span id="line-132">     *  &amp;quot;YYYY-mm-dd&amp;quot;.} Will be ignored if empty.&lt;/p&gt;</span>
-<span class="source-line-no">133</span><span id="line-133">     *</span>
-<span class="source-line-no">134</span><span id="line-134">     *  @return The change date.</span>
-<span class="source-line-no">135</span><span id="line-135">     *</span>
-<span class="source-line-no">136</span><span id="line-136">     *  @see java.util.Formatter</span>
-<span class="source-line-no">137</span><span id="line-137">     */</span>
-<span class="source-line-no">138</span><span id="line-138">    String date() default "";</span>
-<span class="source-line-no">139</span><span id="line-139"></span>
-<span class="source-line-no">140</span><span id="line-140">    /**</span>
-<span class="source-line-no">141</span><span id="line-141">     *  &lt;p&gt;{@summary The id for the change request as provided by the</span>
-<span class="source-line-no">142</span><span id="line-142">     *  respective tracking system.}&lt;/p&gt;</span>
-<span class="source-line-no">143</span><span id="line-143">     *</span>
-<span class="source-line-no">144</span><span id="line-144">     *  @return The change request id.</span>
-<span class="source-line-no">145</span><span id="line-145">     */</span>
-<span class="source-line-no">146</span><span id="line-146">    @SuppressWarnings( "NewMethodNamingConvention" )</span>
-<span class="source-line-no">147</span><span id="line-147">    String id();</span>
-<span class="source-line-no">148</span><span id="line-148"></span>
-<span class="source-line-no">149</span><span id="line-149">    /**</span>
-<span class="source-line-no">150</span><span id="line-150">     *  &lt;p&gt;{@summary The type for the change request.}&lt;/p&gt;</span>
-<span class="source-line-no">151</span><span id="line-151">     *</span>
-<span class="source-line-no">152</span><span id="line-152">     *  @return The type of the change request.</span>
-<span class="source-line-no">153</span><span id="line-153">     */</span>
-<span class="source-line-no">154</span><span id="line-154">    CRType type() default CRType.CR;</span>
-<span class="source-line-no">155</span><span id="line-155">}</span>
-<span class="source-line-no">156</span><span id="line-156">//  @interface BUG</span>
-<span class="source-line-no">157</span><span id="line-157"></span>
-<span class="source-line-no">158</span><span id="line-158">/*</span>
-<span class="source-line-no">159</span><span id="line-159"> *  End of File</span>
-<span class="source-line-no">160</span><span id="line-160"> */</span>
+<span class="source-line-no">117</span><span id="line-117">        VERSION</span>
+<span class="source-line-no">118</span><span id="line-118">    }</span>
+<span class="source-line-no">119</span><span id="line-119">    //  enum CRType</span>
+<span class="source-line-no">120</span><span id="line-120"></span>
+<span class="source-line-no">121</span><span id="line-121">        /*------------*\</span>
+<span class="source-line-no">122</span><span id="line-122">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">123</span><span id="line-123">        \*------------*/</span>
+<span class="source-line-no">124</span><span id="line-124">    /**</span>
+<span class="source-line-no">125</span><span id="line-125">     *  &lt;p&gt;{@summary An optional comment regarding the change.}&lt;/p&gt;</span>
+<span class="source-line-no">126</span><span id="line-126">     *</span>
+<span class="source-line-no">127</span><span id="line-127">     *  @return The comment.</span>
+<span class="source-line-no">128</span><span id="line-128">     */</span>
+<span class="source-line-no">129</span><span id="line-129">    String comment() default "";</span>
+<span class="source-line-no">130</span><span id="line-130"></span>
+<span class="source-line-no">131</span><span id="line-131">    /**</span>
+<span class="source-line-no">132</span><span id="line-132">     *  &lt;p&gt;{@summary The date when the change was applied, in the format</span>
+<span class="source-line-no">133</span><span id="line-133">     *  &amp;quot;YYYY-mm-dd&amp;quot;.} Will be ignored if empty.&lt;/p&gt;</span>
+<span class="source-line-no">134</span><span id="line-134">     *</span>
+<span class="source-line-no">135</span><span id="line-135">     *  @return The change date.</span>
+<span class="source-line-no">136</span><span id="line-136">     *</span>
+<span class="source-line-no">137</span><span id="line-137">     *  @see java.util.Formatter</span>
+<span class="source-line-no">138</span><span id="line-138">     */</span>
+<span class="source-line-no">139</span><span id="line-139">    String date() default "";</span>
+<span class="source-line-no">140</span><span id="line-140"></span>
+<span class="source-line-no">141</span><span id="line-141">    /**</span>
+<span class="source-line-no">142</span><span id="line-142">     *  &lt;p&gt;{@summary The id for the change request as provided by the</span>
+<span class="source-line-no">143</span><span id="line-143">     *  respective tracking system.}&lt;/p&gt;</span>
+<span class="source-line-no">144</span><span id="line-144">     *</span>
+<span class="source-line-no">145</span><span id="line-145">     *  @return The change request id.</span>
+<span class="source-line-no">146</span><span id="line-146">     */</span>
+<span class="source-line-no">147</span><span id="line-147">    @SuppressWarnings( "NewMethodNamingConvention" )</span>
+<span class="source-line-no">148</span><span id="line-148">    String id();</span>
+<span class="source-line-no">149</span><span id="line-149"></span>
+<span class="source-line-no">150</span><span id="line-150">    /**</span>
+<span class="source-line-no">151</span><span id="line-151">     *  &lt;p&gt;{@summary The type for the change request.}&lt;/p&gt;</span>
+<span class="source-line-no">152</span><span id="line-152">     *</span>
+<span class="source-line-no">153</span><span id="line-153">     *  @return The type of the change request.</span>
+<span class="source-line-no">154</span><span id="line-154">     */</span>
+<span class="source-line-no">155</span><span id="line-155">    CRType type() default CRType.CR;</span>
+<span class="source-line-no">156</span><span id="line-156">}</span>
+<span class="source-line-no">157</span><span id="line-157">//  @interface BUG</span>
+<span class="source-line-no">158</span><span id="line-158"></span>
+<span class="source-line-no">159</span><span id="line-159">/*</span>
+<span class="source-line-no">160</span><span id="line-160"> *  End of File</span>
+<span class="source-line-no">161</span><span id="line-161"> */</span>
 
 
 

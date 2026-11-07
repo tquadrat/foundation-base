@@ -45,14 +45,14 @@ import org.tquadrat.foundation.function.TriFunction;
  *  @param  <R> The type of the result of the function.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCETriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: TCETriFunction.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCETriFunction.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCETriFunction<A,B,C,R>
 {

@@ -44,14 +44,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T2> The type of the second argument to the operation.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEBiConsumer.java 1020 2022-02-27 21:26:03Z tquadrat $
+ *  @version $Id: TCEBiConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ProhibitedExceptionDeclared" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 1020 2022-02-27 21:26:03Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEBiConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEBiConsumer<T1,T2>
 {

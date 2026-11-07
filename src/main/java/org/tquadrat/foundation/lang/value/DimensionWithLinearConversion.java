@@ -17,14 +17,14 @@
 
 package org.tquadrat.foundation.lang.value;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.value.DimensionedValue.MATH_CONTEXT;
 
 import java.math.BigDecimal;
 import java.util.function.UnaryOperator;
 
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.value.DimensionedValue.MATH_CONTEXT;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary The implementations of this interface are used to give
@@ -44,12 +44,12 @@ import static org.tquadrat.foundation.lang.value.DimensionedValue.MATH_CONTEXT;
  *  division or multiplication of a factor, as for length or speed.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DimensionWithLinearConversion.java 1195 2026-04-15 21:33:40Z tquadrat $
+ *  @version $Id: DimensionWithLinearConversion.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.25.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: DimensionWithLinearConversion.java 1195 2026-04-15 21:33:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DimensionWithLinearConversion.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public interface DimensionWithLinearConversion extends Dimension
 {

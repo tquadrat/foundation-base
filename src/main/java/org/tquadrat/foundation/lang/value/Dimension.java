@@ -17,14 +17,14 @@
 
 package org.tquadrat.foundation.lang.value;
 
-import org.apiguardian.api.API;
-import org.tquadrat.foundation.annotation.ClassVersion;
+import static org.apiguardian.api.API.Status.STABLE;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.function.UnaryOperator;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
  *  <p>{@summary The implementations of this interface are used to give
@@ -42,12 +42,12 @@ import static org.apiguardian.api.API.Status.STABLE;
  *  {@linkplain #unitSymbol() symbol}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Dimension.java 1195 2026-04-15 21:33:40Z tquadrat $
+ *  @version $Id: Dimension.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.25.1
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: Dimension.java 1195 2026-04-15 21:33:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Dimension.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public interface Dimension extends Serializable
 {

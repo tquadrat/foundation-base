@@ -1,0 +1,128 @@
+/*
+ * ============================================================================
+ * Copyright © 2002-2026 by Thomas Thrien.
+ * All Rights Reserved.
+ * ============================================================================
+ * Licensed to the public under the agreements of the GNU Lesser General Public
+ * License, version 3.0 (the "License"). You may obtain a copy of the License at
+ *
+ *      http://www.gnu.org/licenses/lgpl.html
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+
+package org.tquadrat.foundation.exception;
+
+import static java.lang.String.format;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.lang.Objects.nonNull;
+import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
+
+import java.io.Serial;
+
+import org.apiguardian.api.API;
+import org.tquadrat.foundation.annotation.ClassVersion;
+
+/**
+ *  <p>{@summary This implementation of
+ *  {@link Error}
+ *  should be thrown in all cases where an <i>unlikely</i> exception was
+ *  caught.}
+ *  Different from an
+ *  {@link ImpossibleExceptionError},
+ *  the exception is <i>possible</i>, but <i>unlikely</i> – probably because
+ *  the programmer has taken (at least thought to have &hellip;) appropriate
+ *  precautions against its occurrence. An example for this could be an
+ *  implementation of
+ *  {@link Object#clone() clone()}
+ *  for a particular class: with implementing that method (and declaring the
+ *  interface
+ *  {@link Cloneable}
+ *  &hellip;), instances of that class do support cloning and therefore that
+ *  exception should not be thrown. Unfortunately, changes somewhere else in
+ *  the source might prevent one of the attributes of the respective class from
+ *  being cloned, so that exception could be thrown again &hellip;</p>
+ *  <p>Another example could be this code sequence:
+ *  <div class="source-container"><pre>…
+ *  final var file = new File( … );
+ *  if( file.exists() )
+ *  {
+ *      try( final var inputStream = new FileInputStream( file ) )
+ *      {
+ *          …
+ *      }
+ *      catch( final FileNotFoundException e )
+ *      {
+ *          throw new UnexpectedExceptionError( e );
+ *      }
+ *  }</pre></div>
+ *  <p>Although the code checked that the file exists, it could have vanished
+ *  just before it was opened.</p>
+ *  <p>Previously, this error was named {@code UnexpectedExceptionError}, but
+ *  the current name apparently fits better with the intention.</p>
+ *
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @version $Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $
+ *  @since 0.25.15
+ *
+ *  @UMLGraph.link
+ */
+@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
+@API( status = STABLE, since = "0.0.5" )
+public sealed class UnlikelyExceptionError extends AssertionError
+    permits ImpossibleExceptionError
+{
+        /*-----------*\
+    ====** Constants **========================================================
+        \*-----------*/
+    /**
+     *  The message for this exception.
+     */
+    private static final String MSG_UnexpectedException = "The Exception '%1$s' was not expected to occur in this context";
+
+        /*------------------------*\
+    ====** Static Initialisations **===========================================
+        \*------------------------*/
+    /**
+     *  The serial version UID for objects of this class: {@value}.
+     *
+     *  @hidden
+     */
+    @Serial
+    private static final long serialVersionUID = 2233464685783981770L;
+
+        /*--------------*\
+    ====** Constructors **=====================================================
+        \*--------------*/
+    /**
+     *  <p>{@summary {@constructor}} The message is a constant, only
+     *  the causing exception can be given.</p>
+     *
+     *  @param  cause   The causing exception.
+     */
+    public UnlikelyExceptionError( final Throwable cause )
+    {
+        super( format( MSG_UnexpectedException, requireNonNullArgument( cause, "cause" ).getClass().getName() ) , cause );
+    }   //  UnexpectedExceptionError()
+
+    /**
+     *  <p>{@summary {@constructor}} This constructor should be used in
+     *  cases where an enhanced message is useful or necessary.</p>
+     *
+     *  @param  message The message for the error.
+     *  @param  cause   The causing exception.
+     */
+    public UnlikelyExceptionError( final String message, final Throwable cause )
+    {
+        super( nonNull( message ) && !message.isEmpty() ? message : format( MSG_UnexpectedException, requireNonNullArgument( cause, "cause" ).getClass().getName() ), requireNonNullArgument( cause, "cause" ) );
+    }   //  UnexpectedExceptionError()
+}
+//  class UnexpectedExceptionError
+
+/*
+ *  End of File
+ */

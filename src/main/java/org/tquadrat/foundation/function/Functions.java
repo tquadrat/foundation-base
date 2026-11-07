@@ -83,13 +83,13 @@ import org.tquadrat.foundation.function.tce.TCETriFunction;
  *  <b>E</b>xception&quot;.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Functions.java 1293 2026-10-16 13:12:15Z tquadrat $
+ *  @version $Id: Functions.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @UtilityClass
-@ClassVersion( sourceVersion = "$Id: Functions.java 1293 2026-10-16 13:12:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Functions.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 public final class Functions
 {
         /*--------------*\

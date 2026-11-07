@@ -45,13 +45,13 @@ import org.apiguardian.api.API;
  *  annotated program elements.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $
+ *  @version $Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $
  *  @since 0.25.14
  *
  *  @UMLGraph.link
  */
 @SuppressWarnings( "NewClassNamingConvention" )
-@ClassVersion( sourceVersion = "$Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $" )
 @API( status = STABLE, since = "0.25.14" )
 @Retention( RUNTIME )
 @Target( {ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, RECORD_COMPONENT, TYPE, TYPE_PARAMETER, TYPE_USE} )
@@ -65,12 +65,12 @@ public @interface CR
      *  <p>{@summary Types of change requests.}</p>
      *
      *  @author Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $
+     *  @version $Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $
      *  @since 0.25.14
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: CR.java 1294 2026-10-17 15:40:42Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: CR.java 1296 2026-10-18 12:37:32Z tquadrat $" )
     @API( status = STABLE, since = "0.25.14" )
     public enum CRType
     {
@@ -114,6 +114,7 @@ public @interface CR
          *  particular change. Use the new version as the
          *  {@linkplain #id() id}.</p>
          */
+        VERSION
     }
     //  enum CRType
 

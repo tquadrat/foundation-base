@@ -35,7 +35,7 @@ import java.util.function.BiFunction;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 
 /**
  *  Comment
@@ -78,7 +78,7 @@ public class MyClass
             }
             catch( final CloneNotSupportedException e )
             {
-                throw new UnexpectedExceptionError( e );
+                throw new UnlikelyExceptionError( e );
             }
 
             //---* Done *----------------------------------------------------------

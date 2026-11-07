@@ -43,12 +43,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @see java.util.function.BiConsumer
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TriConsumer.java 1060 2023-09-24 19:21:40Z tquadrat $
+ *  @version $Id: TriConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: TriConsumer.java 1060 2023-09-24 19:21:40Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TriConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @FunctionalInterface
 @API( status = STABLE, since = "0.0.5" )
 public interface TriConsumer<A,B,C>

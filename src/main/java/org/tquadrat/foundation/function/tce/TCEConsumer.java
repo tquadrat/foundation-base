@@ -43,13 +43,13 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @param <T> The type of the input to the operation.
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TCEConsumer.java 993 2022-01-19 22:26:20Z tquadrat $
+ *  @version $Id: TCEConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: TCEConsumer.java 993 2022-01-19 22:26:20Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TCEConsumer.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface TCEConsumer<T>
 {

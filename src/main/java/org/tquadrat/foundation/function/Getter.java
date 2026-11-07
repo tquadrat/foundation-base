@@ -34,7 +34,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  {@link #get()}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $
+ *  @version $Id: Getter.java 1295 2026-10-18 12:34:27Z tquadrat $
  *  @since 0.0.5
  *
  *  @param  <T> The value type.
@@ -43,7 +43,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @SuppressWarnings( "NewClassNamingConvention" )
 @FunctionalInterface
-@ClassVersion( sourceVersion = "$Id: Getter.java 1031 2022-04-07 22:43:02Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: Getter.java 1295 2026-10-18 12:34:27Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public interface Getter<T>
 {

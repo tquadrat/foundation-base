@@ -21,8 +21,9 @@ import static java.lang.String.format;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 import static org.tquadrat.foundation.lang.Objects.requireValidDoubleArgument;
 
-import org.tquadrat.foundation.exception.UnexpectedExceptionError;
+import org.tquadrat.foundation.exception.UnlikelyExceptionError;
 
+@SuppressWarnings( "NewClassNamingConvention" )
 public record Length( Dimension dimension, double value ) implements Cloneable, Comparable<Length>
 {
         /*---------------*\
@@ -83,7 +84,7 @@ public record Length( Dimension dimension, double value ) implements Cloneable, 
         }
         catch( final CloneNotSupportedException e )
         {
-            throw new UnexpectedExceptionError( e );
+            throw new UnlikelyExceptionError( e );
         }
 
         //---* Done *------------------------------------------------
