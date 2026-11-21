@@ -41,12 +41,12 @@ import org.tquadrat.foundation.exception.UnlikelyExceptionError;
  *  Comment
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MyClass.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @version $Id: MyClass.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MyClass.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MyClass.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
 public class MyClass
 {

@@ -45,13 +45,13 @@ import org.tquadrat.foundation.lang.StringConverter;
  *  {@link StringConverter}
  *  service methods.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: StringConverterService.java 1258 2026-06-04 18:33:06Z tquadrat $
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @version $Id: StringConverterService.java 1298 2026-11-18 23:33:19Z tquadrat $
  *  @since 0.1.0
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1258 2026-06-04 18:33:06Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: StringConverterService.java 1298 2026-11-18 23:33:19Z tquadrat $" )
 @API( status = INTERNAL, since = "0.1.0" )
 @UtilityClass
 public final class StringConverterService
@@ -84,8 +84,8 @@ public final class StringConverterService
     }   //  listInstances()
 
     /**
-     *  Loads the known instances of
-     *  {@link StringConverter}.
+     *  <p>{@summary Loads the known instances of
+     *  {@link StringConverter}.}</p>
      *
      *  @return The registry with the converters.
      */
@@ -107,7 +107,7 @@ public final class StringConverterService
                 final var providerMethod = converter.getClass().getMethod( METHOD_NAME_Provider );
                 effectiveConverter = (StringConverter<?>) providerMethod.invoke( null );
             }
-            catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException ignored )
+            catch( final NoSuchMethodException | IllegalAccessException | InvocationTargetException _ )
             {
                 effectiveConverter = converter;
             }
@@ -196,11 +196,10 @@ public final class StringConverterService
         {
             try
             {
-                @SuppressWarnings( "LocalVariableNamingConvention" )
                 final var getSubjectClassMethod = converterClass.getMethod( METHOD_NAME_GetSubjectClass );
                 retValue = (Collection<Class<?>>) getSubjectClassMethod.invoke( converter );
             }
-            catch( final NoSuchMethodException ignored )
+            catch( final NoSuchMethodException _ )
             {
                 final var fromStringMethod = converterClass.getMethod( "fromString", CharSequence.class );
                 retValue = List.of( fromStringMethod.getReturnType() );

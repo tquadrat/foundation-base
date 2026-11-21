@@ -19,7 +19,6 @@ package org.tquadrat.foundation.exception;
 
 import static java.lang.String.format;
 import static org.apiguardian.api.API.Status.DEPRECATED;
-import static org.apiguardian.api.API.Status.STABLE;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
 
@@ -64,7 +63,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  <i>unexpectedly</i> just before it was opened.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $
+ *  @version $Id: UnexpectedExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
@@ -73,7 +72,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *      {@link UnlikelyExceptionError}
  *      because that name matches the intention better than the original name.
  */
-@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = DEPRECATED, since = "0.0.5" )
 @Deprecated( since = "0.25.15", forRemoval = true )
 /*public*/ final class UnexpectedExceptionError extends AssertionError

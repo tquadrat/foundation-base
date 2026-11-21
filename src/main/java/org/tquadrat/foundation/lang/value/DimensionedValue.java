@@ -58,7 +58,7 @@ import org.tquadrat.foundation.exception.UnlikelyExceptionError;
  *  {@code final}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: DimensionedValue.java 1295 2026-10-18 12:34:27Z tquadrat $
+ *  @version $Id: DimensionedValue.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.15.1
  *
  *  @param  <D> The dimension.
@@ -66,7 +66,7 @@ import org.tquadrat.foundation.exception.UnlikelyExceptionError;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "ClassWithTooManyMethods" )
-@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1295 2026-10-18 12:34:27Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: DimensionedValue.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public sealed interface DimensionedValue<D extends Dimension> extends Cloneable, Comparable<DimensionedValue<D>>, Formattable, Serializable
     permits ValueBase

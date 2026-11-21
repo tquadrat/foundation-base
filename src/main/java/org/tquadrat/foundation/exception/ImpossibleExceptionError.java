@@ -43,12 +43,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  as that is possible in general, but unlikely in the particular context.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ImpossibleExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $
+ *  @version $Id: ImpossibleExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ImpossibleExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ImpossibleExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class ImpossibleExceptionError extends UnlikelyExceptionError
 {

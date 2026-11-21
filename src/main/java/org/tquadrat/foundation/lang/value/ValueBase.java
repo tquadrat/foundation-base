@@ -46,7 +46,7 @@ import org.tquadrat.foundation.exception.UnlikelyExceptionError;
  *  it returns {@false}.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ValueBase.java 1295 2026-10-18 12:34:27Z tquadrat $
+ *  @version $Id: ValueBase.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.25.1
  *
  *  @param  <D> The dimension.
@@ -55,7 +55,7 @@ import org.tquadrat.foundation.exception.UnlikelyExceptionError;
  *  @UMLGraph.link
  */
 @SuppressWarnings( "SerializableDeserializableClassInSecureContext" )
-@ClassVersion( sourceVersion = "$Id: ValueBase.java 1295 2026-10-18 12:34:27Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ValueBase.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.25.1" )
 public abstract non-sealed class ValueBase<D extends Dimension, I extends DimensionedValue<D>> implements DimensionedValue<D>
 {

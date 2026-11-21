@@ -66,12 +66,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  the current name apparently fits better with the intention.</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $
+ *  @version $Id: UnlikelyExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $
  *  @since 0.25.15
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: UnexpectedExceptionError.java 1293 2026-10-16 13:12:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: UnlikelyExceptionError.java 1297 2026-11-07 17:15:43Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public sealed class UnlikelyExceptionError extends AssertionError
     permits ImpossibleExceptionError
