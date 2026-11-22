@@ -26,27 +26,11 @@ import org.tquadrat.foundation.exception.WrapperException;
  *  for testing purposes.}</p>
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: WrapperTestException.java 1299 2026-11-21 11:18:41Z tquadrat $
+ *  @version $Id: WrapperTestException.java 1301 2026-11-22 10:56:12Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: WrapperTestException.java 1299 2026-11-21 11:18:41Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: WrapperTestException.java 1301 2026-11-22 10:56:12Z tquadrat $" )
 public class WrapperTestException extends WrapperException
 {
-        /*---------------*\
-    ====** Inner Classes **====================================================
-        \*---------------*/
-
-        /*-----------*\
-    ====** Constants **========================================================
-        \*-----------*/
-
-        /*------------*\
-    ====** Attributes **=======================================================
-        \*------------*/
-
-        /*------------------------*\
-    ====** Static Initialisations **===========================================
-        \*------------------------*/
-
         /*--------------*\
     ====** Constructors **=====================================================
         \*--------------*/
@@ -54,9 +38,6 @@ public class WrapperTestException extends WrapperException
      * <p>{@summary Constructs a new instance of this
      * {@code WrapperTestException} with the specified detail message and
      * cause.}</p>
-     * <p>Note that the detail message associated with {@code cause} is
-     * <i>not</i> automatically incorporated in this exception's detail
-     * message.
      *
      * @param message The detail message that is saved for later
      *     retrieval by the
@@ -66,7 +47,7 @@ public class WrapperTestException extends WrapperException
      *     {@link #getCause()}
      *     method.
      */
-    public WrapperTestException( final String message, final Throwable cause ) { super( message, cause ); }   //  WrapperTestException()
+    public WrapperTestException( final String message, final Throwable cause ) { super( message, cause, false ); }   //  WrapperTestException()
 
     /**
      * <p>{@summary Constructs a new instance of this
@@ -76,7 +57,42 @@ public class WrapperTestException extends WrapperException
      *     {@link #getCause()}
      *     method.
      */
-    public WrapperTestException( final Throwable cause ) { super( cause ); }
+    public WrapperTestException( final Throwable cause ) { super( null, cause, false ); }
+
+    /**
+     * <p>{@summary Constructs a new instance of {@class} with the specified
+     * detail message, cause, and whether the stack trace should be
+     * retrieved.}</p>
+     * <p>If {@code retrieveStacktrace} is {@false}, the instance is a pure
+     * wrapper or container for other exceptions; consequently {@code cause}
+     * cannot be {@null} if {@code retrieveStacktrace} is {@false}. In that
+     * case, if {@code cause} is an instance of {@class}, it will be replaced
+     * by
+     * {@linkplain Throwable#getCause() its cause}
+     * if that is not {@null}. In that case, the additional information is
+     * merged, too.</p>
+     * <p>If {@code message} is {@null} and {@code cause} is an instance of
+     * {@class}, the internal message of {@code cause} is used instead.</p>
+     * <p>If {@code message} is {@null} and {@code cause} is another exception
+     * type, the result of
+     * {@link Throwable#toString() cause::toString}
+     * is used as the detailed message for the new instance.</p>
+     *
+     * @param message The detail message that is saved for later
+     *     retrieval by the
+     *     {@link #getMessage()}
+     *     method. It can be {@null}.
+     * @param cause The cause that is saved for later retrieval by the
+     *     {@link #getCause()}
+     *     method.
+     * @param retrieveStacktrace {@true} if the stack trace will be
+     *     retrieved and is writable, {@false} if the instance should behave
+     *     like a <i>regular</i> exception.
+     */
+    protected WrapperTestException( final String message, final Throwable cause, final boolean retrieveStacktrace )
+    {
+        super( message, cause, retrieveStacktrace );
+    }   //  WrapperTestException()
 }
 //  class WrapperTestException
 
