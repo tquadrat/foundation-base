@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2024 by Thomas Thrien.
+ *  Copyright © 2002-2026 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -33,15 +33,14 @@ import java.util.function.IntFunction;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.lang.ThreadFactoryBuilder;
 
 /**
- *  The implementation of
- *  {@link ThreadFactoryBuilder}.
+ *  <p>{@summary The implementation of
+ *  {@link ThreadFactoryBuilder}.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.1.0
  *
@@ -55,12 +54,12 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     ====** Inner Classes **====================================================
         \*---------------*/
     /**
-     *  The implementation of
+     *  <p>{@summary The implementation of
      *  {@link ThreadFactory}
      *  that is returned by
-     *  {@link ThreadFactoryBuilder#build()}.
+     *  {@link ThreadFactoryBuilder#build()}.}</p>
      *
-     *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+     *  @author Thomas Thrien - thomas.thrien@tquadrat.org
      *  @version $Id: ThreadFactoryBuilderImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.1.0
      *
@@ -99,7 +98,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
         ====** Constructors **=================================================
             \*--------------*/
         /**
-         *  Creates a new instance of {@code ThreadFactoryImpl}.
+         *  <p>{@summary {@constructor}}</p>
          *
          *  @param  nameFactory The factory method for the thread names.
          *  @param  threadGroup The thread group for the new thread; can be
@@ -171,9 +170,9 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     ====** Attributes **=======================================================
         \*------------*/
     /**
-     *  The context
+     *  <p>{@summary The context
      *  {@link ClassLoader}
-     *  for the new threads. The default is {@null}.
+     *  for the new threads. The default is {@null}.}</p>
      */
     private ClassLoader m_ContextClassLoader = null;
 
@@ -303,11 +302,11 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
      *  {@inheritDoc}
      */
     @Override
-    public final ThreadFactoryBuilderImpl setPriority( final int priority ) throws ValidationException
+    public final ThreadFactoryBuilderImpl setPriority( final int priority ) throws IllegalArgumentException
     {
         if( (priority != -1) && !((MIN_PRIORITY <= priority) && (priority <= MAX_PRIORITY)) )
         {
-            throw new ValidationException( "Priority value '%3$d' is invalid; it has to be -1, or in the range from %1$d to %2$d, included"
+            throw new IllegalArgumentException( "Priority value '%3$d' is invalid; it has to be -1, or in the range from %1$d to %2$d, included"
                 .formatted( MIN_PRIORITY, MAX_PRIORITY, priority ) );
         }
         m_Priority = priority;
@@ -322,7 +321,7 @@ public final class ThreadFactoryBuilderImpl implements ThreadFactoryBuilder
     @Override
     public final ThreadFactoryBuilderImpl setStackSize( final long stackSize )
     {
-        if( stackSize < 0 ) throw new ValidationException( "stackSize is less than zero" );
+        if( stackSize < 0 ) throw new IllegalArgumentException( "stackSize is less than zero" );
         m_StackSize = stackSize;
 
         //---* Done *----------------------------------------------------------

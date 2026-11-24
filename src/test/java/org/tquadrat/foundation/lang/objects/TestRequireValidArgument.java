@@ -17,24 +17,28 @@
 
 package org.tquadrat.foundation.lang.objects;
 
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static org.apiguardian.api.API.Status.STABLE;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.isNull;
+import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
+
+import java.util.function.Predicate;
+
 import org.apiguardian.api.API;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.testutil.TestBaseClass;
-
-import java.util.function.Predicate;
-
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static org.apiguardian.api.API.Status.STABLE;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
-import static org.tquadrat.foundation.lang.Objects.isNull;
-import static org.tquadrat.foundation.lang.Objects.requireValidArgument;
 
 /**
  *  Some tests for the method
@@ -79,7 +83,7 @@ public class TestRequireValidArgument extends TestBaseClass
 
         final var name = "name";
 
-        final Class<? extends Throwable> expectedException = ValidationException.class;
+        final Class<? extends Throwable> expectedException = IllegalArgumentException.class;
 
         String actual;
 

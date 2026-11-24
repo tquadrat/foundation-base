@@ -34,7 +34,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.Status;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
@@ -61,7 +60,7 @@ public class TestMap extends TestBaseClass
     {
         skipThreadTest();
 
-        final var errorCode = new ValidationException();
+        final var errorCode = new IllegalArgumentException();
 
         final var candidate = new Status<String,Throwable>( null, errorCode );
         assertNotNull( candidate.errorCode() );
@@ -104,7 +103,7 @@ public class TestMap extends TestBaseClass
 
         final Class<? extends Throwable> expectedException = NullArgumentException.class;
 
-        final var errorCode = new ValidationException();
+        final var errorCode = new IllegalArgumentException();
         final var result = "result";
 
         var candidate = new Status<String,Throwable>( null, errorCode );

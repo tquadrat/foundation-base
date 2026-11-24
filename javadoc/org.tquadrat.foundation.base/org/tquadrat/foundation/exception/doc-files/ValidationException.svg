@@ -6,8 +6,8 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version='1.1'
      baseProfile='full'
-     width='1152.000'
-     height='1646.000'>
+     width='672.000'
+     height='1624.000'>
     <defs>
         <style><![CDATA[
             line
@@ -164,48 +164,6 @@
         </symbol>
         <clipPath id='ID000002'>
             <rect class='otherClass'
-                  height='84.000'
-                  width='430.000'
-                  x='0.000'
-                  y='0.000'/>
-        </clipPath>
-        <symbol id='org.tquadrat.foundation.exception.CharSequenceTooLongException'>
-            <g>
-                <g clip-path='url(#ID000002)'>
-                    <rect x='0.000'
-                          y='0.000'
-                          width='430.000'
-                          height='84.000'
-                          class='otherClass'/>
-                    <line x1='0.000'
-                          y1='28.000'
-                          x2='430.000'
-                          y2='28.000'
-                          class='separator'/>
-                    <text x='188.600'
-                          y='13.000'
-                          class='stereotype'>&#xAB;Exception&#xBB;</text>
-                    <text x='131.000'
-                          y='24.000'>CharSequenceTooLongException</text>
-                    <line x1='0.000'
-                          y1='45.000'
-                          x2='430.000'
-                          y2='45.000'
-                          class='separator'/>
-                    <text y='41.000'
-                          class='static final'>- serialVersionUID:long</text>
-                    <text x='5.000'
-                          y='58.000'>+ CharSequenceTooLongException(argName:java.lang.String,maxLength:int)</text>
-                    <text x='5.000'
-                          y='69.000'>+ CharSequenceTooLongException(maxLength:int)</text>
-                    <text x='5.000'
-                          y='80.000'
-                          class='static'>- checkLength(maxLength:int):int</text>
-                </g>
-            </g>
-        </symbol>
-        <clipPath id='ID000003'>
-            <rect class='otherClass'
                   height='62.000'
                   width='622.000'
                   x='0.000'
@@ -213,7 +171,7 @@
         </clipPath>
         <symbol id='org.tquadrat.foundation.exception.InvalidArgumentException'>
             <g>
-                <g clip-path='url(#ID000003)'>
+                <g clip-path='url(#ID000002)'>
                     <rect x='0.000'
                           y='0.000'
                           width='622.000'
@@ -242,7 +200,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000004'>
+        <clipPath id='ID000003'>
             <rect class='externalClass'
                   height='95.000'
                   width='454.000'
@@ -251,7 +209,7 @@
         </clipPath>
         <symbol id='java.lang.IllegalArgumentException'>
             <g>
-                <g clip-path='url(#ID000004)'>
+                <g clip-path='url(#ID000003)'>
                     <rect x='0.000'
                           y='0.000'
                           width='454.000'
@@ -285,7 +243,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000005'>
+        <clipPath id='ID000004'>
             <rect class='externalClass'
                   height='106.000'
                   width='562.000'
@@ -294,7 +252,7 @@
         </clipPath>
         <symbol id='java.lang.RuntimeException'>
             <g>
-                <g clip-path='url(#ID000005)'>
+                <g clip-path='url(#ID000004)'>
                     <rect x='0.000'
                           y='0.000'
                           width='562.000'
@@ -330,7 +288,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000006'>
+        <clipPath id='ID000005'>
             <rect class='externalClass'
                   height='95.000'
                   width='520.000'
@@ -339,7 +297,7 @@
         </clipPath>
         <symbol id='java.lang.Exception'>
             <g>
-                <g clip-path='url(#ID000006)'>
+                <g clip-path='url(#ID000005)'>
                     <rect x='0.000'
                           y='0.000'
                           width='520.000'
@@ -372,7 +330,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000007'>
+        <clipPath id='ID000006'>
             <rect class='externalClass'
                   height='238.000'
                   width='520.000'
@@ -381,7 +339,7 @@
         </clipPath>
         <symbol id='java.lang.Throwable'>
             <g>
-                <g clip-path='url(#ID000007)'>
+                <g clip-path='url(#ID000006)'>
                     <rect x='0.000'
                           y='0.000'
                           width='520.000'
@@ -440,7 +398,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000008'>
+        <clipPath id='ID000007'>
             <rect class='externalClass'
                   height='172.000'
                   width='244.000'
@@ -449,7 +407,7 @@
         </clipPath>
         <symbol id='java.lang.Object'>
             <g>
-                <g clip-path='url(#ID000008)'>
+                <g clip-path='url(#ID000007)'>
                     <rect x='0.000'
                           y='0.000'
                           width='244.000'
@@ -496,7 +454,7 @@
                 </g>
             </g>
         </symbol>
-        <clipPath id='ID000009'>
+        <clipPath id='ID000008'>
             <rect class='externalClass'
                   height='62.000'
                   width='82.000'
@@ -505,7 +463,7 @@
         </clipPath>
         <symbol id='java.io.Serializable'>
             <g>
-                <g clip-path='url(#ID000009)'>
+                <g clip-path='url(#ID000008)'>
                     <rect x='0.000'
                           y='0.000'
                           width='82.000'
@@ -536,54 +494,48 @@
         </symbol>
     </defs>
     <path class='inheritance'
-          d='M240.000,1437.000 c0.000,-85.000,321.000,0.000,321.000,-85.000 v-15'
+          d='M336.000,1437.000 L336.000,1337.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M816.000,1437.000 c0.000,-85.000,-225.000,0.000,-225.000,-85.000 v-15'
+          d='M336.000,1231.000 L336.000,1131.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M576.000,1231.000 L576.000,1131.000'
+          d='M336.000,1036.000 L336.000,936.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M576.000,1036.000 L576.000,936.000'
+          d='M336.000,830.000 L336.000,730.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M576.000,830.000 L576.000,730.000'
+          d='M336.000,635.000 L336.000,535.000'
           marker-end='url(#inheritance)'/>
     <path class='inheritance'
-          d='M576.000,635.000 L576.000,535.000'
-          marker-end='url(#inheritance)'/>
-    <path class='inheritance'
-          d='M551.000,297.000 c0.000,-85.000,-263.000,0.000,-263.000,-85.000 v-15'
+          d='M311.000,297.000 c0.000,-85.000,-143.000,0.000,-143.000,-85.000 v-15'
           marker-end='url(#inheritance)'/>
     <path class='implementation'
-          d='M601.000,297.000 c0.000,-195.000,263.000,0.000,263.000,-195.000 v-15'
+          d='M361.000,297.000 c0.000,-195.000,143.000,0.000,143.000,-195.000 v-15'
           marker-end='url(#implementation)'/>
-    <use x='166.000'
+    <use x='46.000'
          y='25.000'
          xlink:href='#java.lang.Object'/>
-    <use x='823.000'
+    <use x='463.000'
          y='25.000'
          xlink:href='#java.io.Serializable'/>
-    <use x='316.000'
+    <use x='76.000'
          y='297.000'
          xlink:href='#java.lang.Throwable'/>
-    <use x='316.000'
+    <use x='76.000'
          y='635.000'
          xlink:href='#java.lang.Exception'/>
-    <use x='295.000'
+    <use x='55.000'
          y='830.000'
          xlink:href='#java.lang.RuntimeException'/>
-    <use x='349.000'
+    <use x='109.000'
          y='1036.000'
          xlink:href='#java.lang.IllegalArgumentException'/>
-    <use x='352.000'
+    <use x='112.000'
          y='1231.000'
          xlink:href='#org.tquadrat.foundation.exception.ValidationException'/>
     <use x='25.000'
-         y='1437.000'
-         xlink:href='#org.tquadrat.foundation.exception.CharSequenceTooLongException'/>
-    <use x='505.000'
          y='1437.000'
          xlink:href='#org.tquadrat.foundation.exception.InvalidArgumentException'/>
 </svg>

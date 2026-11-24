@@ -18,7 +18,7 @@
 package org.tquadrat.foundation.exception;
 
 import static java.lang.String.format;
-import static org.apiguardian.api.API.Status.MAINTAINED;
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 
 import java.io.Serial;
@@ -36,11 +36,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @since 0.25.13
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated This class will be removed without a replacement.
  */
 @ClassVersion( sourceVersion = "$Id: InvalidArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
-@API( status = MAINTAINED, since = "0.25.13" )
-abstract sealed class InvalidArgumentException extends ValidationException
-    permits BlankArgumentException, EmptyArgumentException, NullArgumentException
+@API( status = DEPRECATED, since = "0.25.13" )
+@Deprecated( since = "0.25.16", forRemoval = true )
+abstract /* sealed */ class InvalidArgumentException extends ValidationException
+    /* permits BlankArgumentException, EmptyArgumentException, NullArgumentException */
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================

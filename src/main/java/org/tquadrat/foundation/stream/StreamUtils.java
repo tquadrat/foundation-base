@@ -1,6 +1,7 @@
 /*
  * ============================================================================
  * Copyright © 2014 by Dominic Fox.
+ * Copyright for the modifications © 2018-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * The MIT License (MIT)
@@ -48,7 +49,6 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.annotation.UtilityClass;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.stream.internal.AggregatingSpliterator;
 import org.tquadrat.foundation.stream.internal.InterleavingSpliterator;
 import org.tquadrat.foundation.stream.internal.MergingSpliterator;
@@ -76,7 +76,7 @@ public final class StreamUtils
     ====** Constructors **=====================================================
         \*--------------*/
     /**
-     *  No instance allowed for this class.
+     *  <p>{@summary {@noInstance}}</p>
      */
     private StreamUtils() { throw new PrivateConstructorForStaticClassCalledError( StreamUtils.class ); }
 
@@ -119,8 +119,8 @@ public final class StreamUtils
     }   //  aggregate()
 
     /**
-     *  Aggregates items from the source stream into a list of items with fixed
-     *  size.
+     *  <p>{@summary Aggregates items from the source stream into a list of items with fixed
+     *  size.}</p>
      *
      *  @param  <T> The element type of the stream.
      *  @param  source  The source stream.
@@ -137,7 +137,7 @@ public final class StreamUtils
     {
         if( size <= 0 )
         {
-            throw new ValidationException( "Positive value expected for the size; it is %1$d".formatted( size ) );
+            throw new IllegalArgumentException( "Positive value expected for the size; it is %1$d".formatted( size ) );
         }
 
         final var retValue = StreamSupport.stream( new AggregatingSpliterator<>( requireNonNullArgument( source, "source" ).spliterator(), ( a, _ ) -> a.size() < size ), false );

@@ -18,6 +18,8 @@
 package org.tquadrat.foundation.exception;
 
 import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.exception.NullArgumentException.UNKNOWN_PARAM_NAME;
+import static org.tquadrat.foundation.lang.Objects.mapFromEmpty;
 
 import java.io.Serial;
 
@@ -38,13 +40,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: BlankArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.1.0" )
-public final class BlankArgumentException extends InvalidArgumentException
+public final class BlankArgumentException extends IllegalArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
         \*------------------------*/
     /**
-     *  The serial version UID for objects of this class: {@value}.
+     *  <p>{@summary The serial version UID for objects of this class:
+     *  {@value}.}</p>
      *
      *  @hidden
      */
@@ -57,18 +60,20 @@ public final class BlankArgumentException extends InvalidArgumentException
     /**
      *  <p>{@summary {@constructor}}</p>
      */
-    public BlankArgumentException() { this( null ); }
+    public BlankArgumentException() { super( "Argument must not be blank" ); }
 
     /**
      *  <p>{@summary {@constructor}}</p>
      *
-     *  @param  argName The name of the argument whose value was provided as
-     *      blank; if {@null} or the empty String, a default message
-     *      is used that does not use the name of the argument.
+     *  @param  argName The name of the parameter whose value was provided as
+     *      blank; if {@null} or the empty String, a default is used as the
+     *      name of the parameter.
      */
     public BlankArgumentException( final String argName )
     {
-        super( argName, "Argument '%1$s' must not be blank", "Argument must not be blank" );
+        super( """
+            Argument "%1$s" must not be blank\
+            """.formatted( mapFromEmpty( argName, UNKNOWN_PARAM_NAME ) ) );
     }   //  BlankArgumentException()
 }
 //  class BlankArgumentException

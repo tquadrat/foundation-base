@@ -30,7 +30,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.ErrorHandler;
 import org.tquadrat.foundation.lang.Status;
 import org.tquadrat.foundation.testutil.TestBaseClass;
@@ -58,7 +57,7 @@ public class TestGetOrElse extends TestBaseClass
     {
         skipThreadTest();
 
-        final var errorCode = new ValidationException();
+        final var errorCode = new IllegalArgumentException();
         final Class<? extends RuntimeException> expectedException = errorCode.getClass();
 
         final var candidate = new Status<String,RuntimeException>( null, errorCode );
@@ -112,7 +111,7 @@ public class TestGetOrElse extends TestBaseClass
     {
         skipThreadTest();
 
-        final var errorCode = new ValidationException();
+        final var errorCode = new IllegalArgumentException();
 
         final var candidate1 = new Status<String,RuntimeException>( null, errorCode );
         assertNotNull( candidate1.errorCode() );

@@ -61,12 +61,12 @@ import org.tquadrat.foundation.lang.Objects;
  *      {@code retrieveStack} to {@false}).
  *
  *  @author Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: WrapperException.java 1301 2026-11-22 10:56:12Z tquadrat $
+ *  @version $Id: WrapperException.java 1302 2026-11-22 12:43:26Z tquadrat $
  *  @since 0.25.16
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: WrapperException.java 1301 2026-11-22 10:56:12Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: WrapperException.java 1302 2026-11-22 12:43:26Z tquadrat $" )
 @API( status = STABLE, since = "0.25.16" )
 public abstract class WrapperException extends RuntimeException
 {
@@ -117,10 +117,11 @@ public abstract class WrapperException extends RuntimeException
      *      method. It can be {@null}.
      *  @param  cause   The cause that is saved for later retrieval by the
      *     {@link #getCause()}
-     *     method.
-     *  @param retrieveStacktrace   {@true} if the stack trace will be
-     *      retrieved and is writable, {@false} if the instance should behave
-     *      like a <i>regular</i> exception.
+     *     method. It can be {@null}.
+     * @param retrieveStacktrace {@code true} if the stack trace will be
+     *     retrieved and is writable and the instance should behave like
+     *     a <i>regular</i> exception, {@code false} if the instance
+     *     should be a pure container.
      */
     protected WrapperException( final String message, final Throwable cause, final boolean retrieveStacktrace )
     {

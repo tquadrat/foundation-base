@@ -17,7 +17,7 @@
 
 package org.tquadrat.foundation.exception;
 
-import static org.apiguardian.api.API.Status.STABLE;
+import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.tquadrat.foundation.lang.Objects.isNull;
 
 import java.io.Serial;
@@ -36,9 +36,15 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  @since 0.0.5
  *
  *  @UMLGraph.link
+ *
+ *  @deprecated This class is seen as obsolete it will be removed without a
+ *      replacement. If a base class for validation exceptions is needed, use
+ *      directly
+ *      {@link IllegalArgumentException}.
  */
 @ClassVersion( sourceVersion = "$Id: ValidationException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
-@API( status = STABLE, since = "0.0.5" )
+@API( status = DEPRECATED, since = "0.0.5" )
+@Deprecated( since = "0.25.16", forRemoval = true )
 public class ValidationException extends IllegalArgumentException
 {
         /*-----------*\

@@ -18,6 +18,8 @@
 package org.tquadrat.foundation.exception;
 
 import static org.apiguardian.api.API.Status.STABLE;
+import static org.tquadrat.foundation.exception.NullArgumentException.UNKNOWN_PARAM_NAME;
+import static org.tquadrat.foundation.lang.Objects.mapFromEmpty;
 
 import java.io.Serial;
 import java.util.Collection;
@@ -41,13 +43,14 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: EmptyArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public final class EmptyArgumentException extends InvalidArgumentException
+public final class EmptyArgumentException extends IllegalArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
         \*------------------------*/
     /**
-     *  The serial version UID for objects of this class: {@value}.
+     *  <p>{@summary The serial version UID for objects of this class:
+     *  {@value}.}</p>
      *
      *  @hidden
      */
@@ -60,18 +63,20 @@ public final class EmptyArgumentException extends InvalidArgumentException
     /**
      *  <p>{@summary {@constructor}}</p>
      */
-    public EmptyArgumentException() { this( null ); }
+    public EmptyArgumentException() { super( "Argument must not be empty" ); }
 
     /**
      *  <p>{@summary {@constructor}}</p>
      *
-     *  @param  argName The name of the argument whose value was provided as
-     *      empty; if {@null} or the empty String, a default message
-     *      is used that does not use the name of the argument.
+     *  @param  argName The name of the parameter whose value was provided as
+     *      empty;; if {@null} or the empty String, a default is used as the
+     *      name of the parameter.
      */
     public EmptyArgumentException( final String argName )
     {
-        super( argName, "Argument '%1$s' must not be empty", "Argument must not be empty" );
+        super( """
+            Argument "%1$s" must not be empty
+            """.formatted( mapFromEmpty( argName, UNKNOWN_PARAM_NAME ) ) );
     }   //  EmptyArgumentException()
 }
 //  class EmptyArgumentException

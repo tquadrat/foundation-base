@@ -25,7 +25,6 @@ import java.util.function.IntFunction;
 
 import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.internal.ThreadFactoryBuilderImpl;
 
 /**
@@ -92,7 +91,7 @@ public sealed interface ThreadFactoryBuilder
      *  {@linkplain InheritableThreadLocal inheritable thread-local variables}
      *  from the constructing thread.} This allows for finer grain control over
      *  inheritable thread-locals. Care must be taken when setting the flag to
-     *  {@false}, as it may lead to unexpected behavior if the new thread
+     *  {@false}, as it may lead to unexpected behaviour if the new thread
      *  executes code that expects a specific thread-local value to be
      *  inherited.</p>
      *  <p>If not set, the value for the new threads will be {@true}.</p>
@@ -154,11 +153,11 @@ public sealed interface ThreadFactoryBuilder
      *
      *  @param  priority    The priority value.
      *  @return The builder.
-     *  @throws ValidationException The given value is not valid.
+     *  @throws IllegalArgumentException The given value is not valid.
      *
      *  @see Thread#setPriority(int)
      */
-    public ThreadFactoryBuilder setPriority( final int priority ) throws ValidationException;
+    public ThreadFactoryBuilder setPriority( final int priority ) throws IllegalArgumentException;
 
     /**
      *  <p>{@summary Sets the stack size for the new threads created by the new

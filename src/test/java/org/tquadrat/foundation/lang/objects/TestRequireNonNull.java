@@ -35,7 +35,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.lang.Objects;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
@@ -65,7 +64,7 @@ public class TestRequireNonNull extends TestBaseClass
     {
         skipThreadTest();
 
-        assertThrows( ValidationException.class, () -> requireNonNull( null ) );
+        assertThrows( IllegalArgumentException.class, () -> requireNonNull( null ) );
     }   //  testRequireNonNull()
 
     /**
@@ -93,7 +92,7 @@ public class TestRequireNonNull extends TestBaseClass
         skipThreadTest();
 
         final var message = "message";
-        assertThrows( ValidationException.class, () -> requireNonNull( null, message ) );
+        assertThrows( IllegalArgumentException.class, () -> requireNonNull( null, message ) );
     }   //  testRequireNonNullWithMessage()
 
     /**
@@ -166,9 +165,9 @@ public class TestRequireNonNull extends TestBaseClass
     {
         skipThreadTest();
 
-        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> "message" ) );
-        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> "message" ) );
-        assertThrows( ValidationException.class, () -> requireNonNull( null, () -> null ) );
+        assertThrows( IllegalArgumentException.class, () -> requireNonNull( null, () -> "message" ) );
+        assertThrows( IllegalArgumentException.class, () -> requireNonNull( null, () -> "message" ) );
+        assertThrows( IllegalArgumentException.class, () -> requireNonNull( null, () -> null ) );
     }   //  testRequireNonNullWithSupplier()
 
     /**

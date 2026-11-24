@@ -14,54 +14,54 @@
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
 <span class="source-line-no">003</span><span id="line-3"> * Copyright © 2014 by Dominic Fox.</span>
-<span class="source-line-no">004</span><span id="line-4"> * All Rights Reserved.</span>
-<span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
-<span class="source-line-no">006</span><span id="line-6"> * The MIT License (MIT)</span>
-<span class="source-line-no">007</span><span id="line-7"> *</span>
-<span class="source-line-no">008</span><span id="line-8"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span>
-<span class="source-line-no">009</span><span id="line-9"> * of this software and associated documentation files (the "Software"), to</span>
-<span class="source-line-no">010</span><span id="line-10"> * deal in the Software without restriction, including without limitation the</span>
-<span class="source-line-no">011</span><span id="line-11"> * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
-<span class="source-line-no">012</span><span id="line-12"> * sell copies of the Software, and to permit persons to whom the Software is</span>
-<span class="source-line-no">013</span><span id="line-13"> * furnished to do so, subject to the following conditions:</span>
-<span class="source-line-no">014</span><span id="line-14"> *</span>
-<span class="source-line-no">015</span><span id="line-15"> * The above copyright notice and this permission notice shall be included in</span>
-<span class="source-line-no">016</span><span id="line-16"> * all copies or substantial portions of the Software.</span>
-<span class="source-line-no">017</span><span id="line-17"> *</span>
-<span class="source-line-no">018</span><span id="line-18"> * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
-<span class="source-line-no">019</span><span id="line-19"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
-<span class="source-line-no">020</span><span id="line-20"> * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE</span>
-<span class="source-line-no">021</span><span id="line-21"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
-<span class="source-line-no">022</span><span id="line-22"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
-<span class="source-line-no">023</span><span id="line-23"> * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
-<span class="source-line-no">024</span><span id="line-24"> * IN THE SOFTWARE.</span>
-<span class="source-line-no">025</span><span id="line-25"> */</span>
-<span class="source-line-no">026</span><span id="line-26"></span>
-<span class="source-line-no">027</span><span id="line-27">package org.tquadrat.foundation.stream;</span>
-<span class="source-line-no">028</span><span id="line-28"></span>
-<span class="source-line-no">029</span><span id="line-29">import static org.apiguardian.api.API.Status.STABLE;</span>
-<span class="source-line-no">030</span><span id="line-30">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
-<span class="source-line-no">031</span><span id="line-31"></span>
-<span class="source-line-no">032</span><span id="line-32">import java.util.ArrayList;</span>
-<span class="source-line-no">033</span><span id="line-33">import java.util.List;</span>
-<span class="source-line-no">034</span><span id="line-34">import java.util.Optional;</span>
-<span class="source-line-no">035</span><span id="line-35">import java.util.Spliterator;</span>
-<span class="source-line-no">036</span><span id="line-36">import java.util.function.BiFunction;</span>
-<span class="source-line-no">037</span><span id="line-37">import java.util.function.BiPredicate;</span>
-<span class="source-line-no">038</span><span id="line-38">import java.util.function.Consumer;</span>
-<span class="source-line-no">039</span><span id="line-39">import java.util.function.Function;</span>
-<span class="source-line-no">040</span><span id="line-40">import java.util.function.Predicate;</span>
-<span class="source-line-no">041</span><span id="line-41">import java.util.function.Supplier;</span>
-<span class="source-line-no">042</span><span id="line-42">import java.util.stream.BaseStream;</span>
-<span class="source-line-no">043</span><span id="line-43">import java.util.stream.LongStream;</span>
-<span class="source-line-no">044</span><span id="line-44">import java.util.stream.Stream;</span>
-<span class="source-line-no">045</span><span id="line-45">import java.util.stream.StreamSupport;</span>
-<span class="source-line-no">046</span><span id="line-46"></span>
-<span class="source-line-no">047</span><span id="line-47">import org.apiguardian.api.API;</span>
-<span class="source-line-no">048</span><span id="line-48">import org.tquadrat.foundation.annotation.ClassVersion;</span>
-<span class="source-line-no">049</span><span id="line-49">import org.tquadrat.foundation.annotation.UtilityClass;</span>
-<span class="source-line-no">050</span><span id="line-50">import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;</span>
-<span class="source-line-no">051</span><span id="line-51">import org.tquadrat.foundation.exception.ValidationException;</span>
+<span class="source-line-no">004</span><span id="line-4"> * Copyright for the modifications © 2018-2026 by Thomas Thrien.</span>
+<span class="source-line-no">005</span><span id="line-5"> * All Rights Reserved.</span>
+<span class="source-line-no">006</span><span id="line-6"> * ============================================================================</span>
+<span class="source-line-no">007</span><span id="line-7"> * The MIT License (MIT)</span>
+<span class="source-line-no">008</span><span id="line-8"> *</span>
+<span class="source-line-no">009</span><span id="line-9"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="source-line-no">010</span><span id="line-10"> * of this software and associated documentation files (the "Software"), to</span>
+<span class="source-line-no">011</span><span id="line-11"> * deal in the Software without restriction, including without limitation the</span>
+<span class="source-line-no">012</span><span id="line-12"> * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span>
+<span class="source-line-no">013</span><span id="line-13"> * sell copies of the Software, and to permit persons to whom the Software is</span>
+<span class="source-line-no">014</span><span id="line-14"> * furnished to do so, subject to the following conditions:</span>
+<span class="source-line-no">015</span><span id="line-15"> *</span>
+<span class="source-line-no">016</span><span id="line-16"> * The above copyright notice and this permission notice shall be included in</span>
+<span class="source-line-no">017</span><span id="line-17"> * all copies or substantial portions of the Software.</span>
+<span class="source-line-no">018</span><span id="line-18"> *</span>
+<span class="source-line-no">019</span><span id="line-19"> * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="source-line-no">020</span><span id="line-20"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="source-line-no">021</span><span id="line-21"> * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="source-line-no">022</span><span id="line-22"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="source-line-no">023</span><span id="line-23"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span>
+<span class="source-line-no">024</span><span id="line-24"> * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span>
+<span class="source-line-no">025</span><span id="line-25"> * IN THE SOFTWARE.</span>
+<span class="source-line-no">026</span><span id="line-26"> */</span>
+<span class="source-line-no">027</span><span id="line-27"></span>
+<span class="source-line-no">028</span><span id="line-28">package org.tquadrat.foundation.stream;</span>
+<span class="source-line-no">029</span><span id="line-29"></span>
+<span class="source-line-no">030</span><span id="line-30">import static org.apiguardian.api.API.Status.STABLE;</span>
+<span class="source-line-no">031</span><span id="line-31">import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;</span>
+<span class="source-line-no">032</span><span id="line-32"></span>
+<span class="source-line-no">033</span><span id="line-33">import java.util.ArrayList;</span>
+<span class="source-line-no">034</span><span id="line-34">import java.util.List;</span>
+<span class="source-line-no">035</span><span id="line-35">import java.util.Optional;</span>
+<span class="source-line-no">036</span><span id="line-36">import java.util.Spliterator;</span>
+<span class="source-line-no">037</span><span id="line-37">import java.util.function.BiFunction;</span>
+<span class="source-line-no">038</span><span id="line-38">import java.util.function.BiPredicate;</span>
+<span class="source-line-no">039</span><span id="line-39">import java.util.function.Consumer;</span>
+<span class="source-line-no">040</span><span id="line-40">import java.util.function.Function;</span>
+<span class="source-line-no">041</span><span id="line-41">import java.util.function.Predicate;</span>
+<span class="source-line-no">042</span><span id="line-42">import java.util.function.Supplier;</span>
+<span class="source-line-no">043</span><span id="line-43">import java.util.stream.BaseStream;</span>
+<span class="source-line-no">044</span><span id="line-44">import java.util.stream.LongStream;</span>
+<span class="source-line-no">045</span><span id="line-45">import java.util.stream.Stream;</span>
+<span class="source-line-no">046</span><span id="line-46">import java.util.stream.StreamSupport;</span>
+<span class="source-line-no">047</span><span id="line-47"></span>
+<span class="source-line-no">048</span><span id="line-48">import org.apiguardian.api.API;</span>
+<span class="source-line-no">049</span><span id="line-49">import org.tquadrat.foundation.annotation.ClassVersion;</span>
+<span class="source-line-no">050</span><span id="line-50">import org.tquadrat.foundation.annotation.UtilityClass;</span>
+<span class="source-line-no">051</span><span id="line-51">import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;</span>
 <span class="source-line-no">052</span><span id="line-52">import org.tquadrat.foundation.stream.internal.AggregatingSpliterator;</span>
 <span class="source-line-no">053</span><span id="line-53">import org.tquadrat.foundation.stream.internal.InterleavingSpliterator;</span>
 <span class="source-line-no">054</span><span id="line-54">import org.tquadrat.foundation.stream.internal.MergingSpliterator;</span>
@@ -89,7 +89,7 @@
 <span class="source-line-no">076</span><span id="line-76">    ====** Constructors **=====================================================</span>
 <span class="source-line-no">077</span><span id="line-77">        \*--------------*/</span>
 <span class="source-line-no">078</span><span id="line-78">    /**</span>
-<span class="source-line-no">079</span><span id="line-79">     *  No instance allowed for this class.</span>
+<span class="source-line-no">079</span><span id="line-79">     *  &lt;p&gt;{@summary {@noInstance}}&lt;/p&gt;</span>
 <span class="source-line-no">080</span><span id="line-80">     */</span>
 <span class="source-line-no">081</span><span id="line-81">    private StreamUtils() { throw new PrivateConstructorForStaticClassCalledError( StreamUtils.class ); }</span>
 <span class="source-line-no">082</span><span id="line-82"></span>
@@ -132,8 +132,8 @@
 <span class="source-line-no">119</span><span id="line-119">    }   //  aggregate()</span>
 <span class="source-line-no">120</span><span id="line-120"></span>
 <span class="source-line-no">121</span><span id="line-121">    /**</span>
-<span class="source-line-no">122</span><span id="line-122">     *  Aggregates items from the source stream into a list of items with fixed</span>
-<span class="source-line-no">123</span><span id="line-123">     *  size.</span>
+<span class="source-line-no">122</span><span id="line-122">     *  &lt;p&gt;{@summary Aggregates items from the source stream into a list of items with fixed</span>
+<span class="source-line-no">123</span><span id="line-123">     *  size.}&lt;/p&gt;</span>
 <span class="source-line-no">124</span><span id="line-124">     *</span>
 <span class="source-line-no">125</span><span id="line-125">     *  @param  &lt;T&gt; The element type of the stream.</span>
 <span class="source-line-no">126</span><span id="line-126">     *  @param  source  The source stream.</span>
@@ -150,7 +150,7 @@
 <span class="source-line-no">137</span><span id="line-137">    {</span>
 <span class="source-line-no">138</span><span id="line-138">        if( size &lt;= 0 )</span>
 <span class="source-line-no">139</span><span id="line-139">        {</span>
-<span class="source-line-no">140</span><span id="line-140">            throw new ValidationException( "Positive value expected for the size; it is %1$d".formatted( size ) );</span>
+<span class="source-line-no">140</span><span id="line-140">            throw new IllegalArgumentException( "Positive value expected for the size; it is %1$d".formatted( size ) );</span>
 <span class="source-line-no">141</span><span id="line-141">        }</span>
 <span class="source-line-no">142</span><span id="line-142"></span>
 <span class="source-line-no">143</span><span id="line-143">        final var retValue = StreamSupport.stream( new AggregatingSpliterator&lt;&gt;( requireNonNullArgument( source, "source" ).spliterator(), ( a, _ ) -&gt; a.size() &lt; size ), false );</span>

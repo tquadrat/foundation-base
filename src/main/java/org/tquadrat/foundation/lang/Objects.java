@@ -49,7 +49,6 @@ import org.tquadrat.foundation.exception.BlankArgumentException;
 import org.tquadrat.foundation.exception.EmptyArgumentException;
 import org.tquadrat.foundation.exception.NullArgumentException;
 import org.tquadrat.foundation.exception.PrivateConstructorForStaticClassCalledError;
-import org.tquadrat.foundation.exception.ValidationException;
 
 /**
  *  <p>{@summary This class consists of several utility methods working on
@@ -67,10 +66,10 @@ import org.tquadrat.foundation.exception.ValidationException;
  *  <p>If a method from {@code java.util.Objects} would throw a
  *  {@link NullPointerException},
  *  the method with the same name from this class would throw a
- *  {@link ValidationException}
+ *  {@link IllegalArgumentException}
  *  instead.</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: Objects.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.1
  *
@@ -221,7 +220,8 @@ public final class Objects
     @SuppressWarnings( "CheckedExceptionClass" )
     public static final <E extends Exception> void checkState( final boolean condition, final Supplier<E> exception ) throws E
     {
-        if( !condition ) throw requireNonNullArgument( exception, "exception" ).get();
+        requireNonNullArgument( exception, "exception" );
+        if( !condition ) throw exception.get();
     }   //  checkState()
 
     /**
@@ -230,8 +230,8 @@ public final class Objects
      *  <p>Consequently, if both arguments are {@null}, 0 is returned.</p>
      *  <p>Calls
      *  {@link java.util.Objects#compare(Object,Object,Comparator) java.util.Objects#compare()}
-     *  internally, but different from that method, this implementation will
-     *  throw a
+     *  internally, but different from that method, this implementation throws
+     *  a
      *  {@link NullArgumentException}
      *  in case the {@code comparator} is {@null}.</p>
      *
@@ -373,6 +373,56 @@ public final class Objects
     public static final boolean isNull( final Object obj ) { return java.util.Objects.isNull( obj ); }
 
     /**
+     *  <p>{@summary Provides a replacement value if the given string value is
+     *  {@null} or empty.}</p>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  value   The object to map; can be {@null} (obviously).
+     *  @param  supplier    The supplier for the replacement function.
+     *  @return The provided object if that is not {@null} and not empty, or
+     *      the result from the supplier method. Keep in mind that this result
+     *      can be {@null} or empty!
+     *
+     *  @since 0.25.16
+     */
+    @API( status = STABLE, since = "0.25.16" )
+    public static final <T extends CharSequence> T mapFromEmpty( final T value, final Supplier<? extends T> supplier )
+    {
+        requireNonNullArgument( supplier, "supplier" );
+        final var retValue = isNull( value ) || value.isEmpty()
+            ? supplier.get()
+            : value;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapFromEmpty()
+
+    /**
+     *  <p>{@summary Provides a replacement value if the given string value is
+     *  {@null} or empty.}</p>
+     *
+     *  @param  <T> The type of the object to map.
+     *  @param  value   The object to map; can be {@null} (obviously).
+     *  @param  replacement  The replacement value; it may not be {@null} or
+     *      empty.
+     *  @return The provided object if that is not {@null}, or the
+     *      replacement value.
+     *
+     *  @since 0.25.16
+     */
+    @API( status = STABLE, since = "0.25.16" )
+    public static final <T extends CharSequence> T mapFromEmpty( final T value, final T replacement )
+    {
+        requireNotEmptyArgument( replacement, "replacement" );
+        final var retValue = isNull( value )
+             ? replacement
+             : value;
+
+        //---* Done *----------------------------------------------------------
+        return retValue;
+    }   //  mapFromEmpty()
+
+    /**
      *  <p>{@summary Provides a replacement value if the given value is
      *  {@null}.}</p>
      *  <p>This is basically a shortcut to</p>
@@ -504,24 +554,24 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.
      *
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check; can be {@null}.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code obj} failed the validation.
+     *  @throws IllegalArgumentException {@code obj} failed the validation.
      *
      *  @since 0.1.0
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T obj, final Predicate<? super T> validation ) throws ValidationException
+    public static final <T> T require( final T obj, final Predicate<? super T> validation ) throws IllegalArgumentException
     {
         if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
-            throw new ValidationException();
+            throw new IllegalArgumentException();
         }
 
         //---* Done *----------------------------------------------------------
@@ -530,7 +580,7 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with the specified message is thrown.
      *
      *  @param  <T> The type of the value to check.
@@ -538,20 +588,20 @@ public final class Objects
      *  @param  message The message that is set to the thrown exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code obj} failed the validation.
+     *  @throws IllegalArgumentException {@code obj} failed the validation.
      *  @throws NullArgumentException   {@code message} is {@null}.
      *  @throws EmptyArgumentException  {@code message} is the empty String.
      *
      *  @since 0.1.0
      */
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T obj, final String message, final Predicate<? super T> validation ) throws ValidationException, NullArgumentException, EmptyArgumentException
+    public static final <T> T require( final T obj, final String message, final Predicate<? super T> validation ) throws IllegalArgumentException, NullArgumentException, EmptyArgumentException
     {
         requireNotEmptyArgument( message, "message" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
-            throw new ValidationException( message );
+            throw new IllegalArgumentException( message );
         }
 
         //---* Done *----------------------------------------------------------
@@ -561,7 +611,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a customized
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.}</p>
      *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
@@ -574,25 +624,25 @@ public final class Objects
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check; can be {@null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that {@code ValidationException} is thrown. If
+     *      in the event that {@code IllegalArgumentException} is thrown. If
      *      {@null} or if it returns {@null}, no detail message is
      *      provided to the exception.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws NullArgumentException   The validation is {@null}.
-     *  @throws ValidationException {@code obk} failed the validation.
+     *  @throws IllegalArgumentException {@code obk} failed the validation.
      *
      *  @since 0.1.0
      */
     @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T obj, final Supplier<String> messageSupplier, final Predicate<? super T> validation ) throws ValidationException
+    public static final <T> T require( final T obj, final Supplier<String> messageSupplier, final Predicate<? super T> validation ) throws IllegalArgumentException
     {
         if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
             final var exception = nonNull( messageSupplier )
-                ? new ValidationException( messageSupplier.get() )
-                : new ValidationException();
+                ? new IllegalArgumentException( messageSupplier.get() )
+                : new IllegalArgumentException();
             throw exception;
         }
 
@@ -603,7 +653,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a customized
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.}</p>
      *  <p>Unlike the method
      *  {@link #require(Object,String,Predicate)},
@@ -613,7 +663,7 @@ public final class Objects
      *  that the costs the creation of the message supplier are less than the
      *  cost of just creating the String message directly.</p>
      *  <p>This implementation is different from
-     *  {@link #requireNonNull(Object, Supplier)}
+     *  {@link #requireNonNull(Object,Supplier)}
      *  as it takes an instance of
      *  {@link Function}
      *  for the {@code messageSupplier}. That function is called with
@@ -624,26 +674,23 @@ public final class Objects
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check; can be {@null}.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that a {@code ValidationException} is thrown. If
+     *      in the event that a {@code IllegalArgumentException} is thrown. If
      *      {@null} or if it returns {@null}, no detail message is
      *      provided.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
      *  @throws NullArgumentException   The validation is {@null}.
-     *  @throws ValidationException {@code obj} failed the validation.
+     *  @throws IllegalArgumentException {@code obj} failed the validation.
      *
      *  @since 0.1.0
      */
-    @SuppressWarnings( "NewExceptionWithoutArguments" )
     @API( status = STABLE, since = "0.1.0" )
-    public static final <T> T require( final T obj, final Function<? super T,String> messageSupplier, final Predicate<? super T> validation ) throws ValidationException
+    public static final <T> T require( final T obj, final Function<? super T,String> messageSupplier, final Predicate<? super T> validation ) throws IllegalArgumentException
     {
+        requireNonNullArgument( messageSupplier, "messageSupplier" );
         if( !requireNonNullArgument( validation, "validation" ).test( obj ) )
         {
-            final var exception = nonNull( messageSupplier )
-                ? new ValidationException( messageSupplier.apply( obj ) )
-                : new NullArgumentException();
-            throw exception;
+            throw new IllegalArgumentException( messageSupplier.apply( obj ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -678,7 +725,7 @@ public final class Objects
     /**
      *  <p>{@summary Checks if the given value {@code obj} is {@null} and
      *  throws a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with the specified message if it is {@null}.}</p>
      *
      *  @param  <T> The type of the value to check.
@@ -694,10 +741,10 @@ public final class Objects
      *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull( final T obj, final String message ) throws ValidationException, NullArgumentException, EmptyArgumentException
+    public static final <T> T requireNonNull( final T obj, final String message ) throws IllegalArgumentException, NullArgumentException, EmptyArgumentException
     {
         requireNotEmptyArgument( message, "message" );
-        if( isNull( obj ) ) throw new ValidationException( message );
+        if( isNull( obj ) ) throw new IllegalArgumentException( message );
 
         //---* Done *----------------------------------------------------------
         return obj;
@@ -706,7 +753,7 @@ public final class Objects
     /**
      *  <p>{@summary Checks that the specified object reference is not
      *  {@null} and throws a customized
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  if it is.}</p>
      *  <p>Unlike the method
      *  {@link #requireNonNull(Object,String)},
@@ -714,27 +761,25 @@ public final class Objects
      *  null check failed. While this may confer a performance advantage in the
      *  non-{@null} case, when deciding to call this method care should be
      *  taken that the costs of creating the message supplier are less than the
-     *  cost of just creating the String message directly.</p>
+     *  cost of just creating the String message.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  obj The value to check.
      *  @param  messageSupplier The supplier of the detail message to be used
-     *      in the event that a {@code NullArgumentException} is thrown. If
+     *      in the event that a {@code IllegalArgumentException} is thrown. If
      *      {@null}, no detail message is provided.
      *  @return The value if it is not {@null}.
-     *  @throws ValidationException    {@code obj} is {@null}
+     *  @throws IllegalArgumentException    {@code obj} is {@null}
      *
      *  @since 0.0.5
      */
     @API( status = STABLE, since = "0.0.5" )
-    public static final <T> T requireNonNull( final T obj, final Supplier<String> messageSupplier) throws ValidationException
+    public static final <T> T requireNonNull( final T obj, final Supplier<String> messageSupplier) throws IllegalArgumentException
     {
         if( isNull( obj ) )
         {
-            final var message = nonNull( messageSupplier ) ? messageSupplier.get() : null;
-            @SuppressWarnings( "NewExceptionWithoutArguments" )
-            final var exception = isNull( message ) ? new NullArgumentException() : new ValidationException( message );
-            throw exception;
+            final var message = isNull( messageSupplier ) ? messageSupplier.get() : null;
+            throw new IllegalArgumentException( message );
         }
 
         //---* Done *----------------------------------------------------------
@@ -742,13 +787,14 @@ public final class Objects
     }   //  requireNonNull()
 
     /**
-     *  Checks if the given argument {@code a} is {@null} and throws a
+     *  <p>{@summary Checks if the given argument {@code a} is {@null} and
+     *  throws a
      *  {@link NullArgumentException}
-     *  if it is {@null}.
+     *  if it is {@null}.}</p>
      *
      *  @param  <T> The type of the argument to check.
      *  @param  arg The argument to check.
-     *  @param  name    The name of the argument; this is used for the error
+     *  @param  name    The name of the parameter; this is used for the error
      *      message.
      *  @return The argument if it is not {@null}.
      *  @throws NullArgumentException   {@code arg} is {@null}.
@@ -777,9 +823,9 @@ public final class Objects
      *  @param  arg The first argument to check; it will be returned in case of
      *      success, even if {@null}.
      *  @param  otherArg    The other argument to check.
-     *  @param  name    The name of the first argument; this is used for the
+     *  @param  name    The name of the first parameter; this is used for the
      *      error message.
-     *  @param  otherName   The name of the other argument; this is used for
+     *  @param  otherName   The name of the other parameter; this is used for
      *      the error message.
      *  @return The first argument, even that might be {@null}.
      *  @throws NullArgumentException   Both arguments are {@null}.
@@ -816,7 +862,7 @@ public final class Objects
      *
      *  @param  <T> The type of the argument to check.
      *  @param  arg The argument to check; may be {@null}.
-     *  @param  name    The name of the argument; this is used for the error
+     *  @param  name    The name of the parameter; this is used for the error
      *      message.
      *  @return The argument if it is not {@null}, empty or blank.
      *  @throws NullArgumentException   {@code arg} is {@null}.
@@ -884,7 +930,7 @@ public final class Objects
      *  <p>For instances of
      *  {@link java.util.stream.Stream},
      *  this method will only check for {@null} (like
-     *  {@link #requireNonNullArgument(Object,String)}.
+     *  {@link #requireNonNullArgument(Object,String)}).
      *  This is because any operation on the stream itself would render it
      *  unusable for later processing.</p>
      *  <p>In case the argument is of type
@@ -1041,7 +1087,9 @@ public final class Objects
      *      second argument if it is not {@null}.
      *  @throws NullArgumentException   The {@code defaultObj} is {@null}.
      *
-     *  @see    java.util.Objects#requireNonNullElse(Object, Object)
+     *  @see    java.util.Objects#requireNonNullElse(Object,Object)
+     *  @see    #mapFromNull(Object,Object)
+     *  @see    #mapFromNull(Object,Supplier)
      *
      *  @since 0.0.5
      */
@@ -1073,6 +1121,8 @@ public final class Objects
      *  @throws NullPointerException    {@code obj} is {@null} and the
      *      return value of {@code supplier.get()} value is {@null}, too.
      *
+     *  @see    #mapFromNull(Object,Supplier)
+     *
      *  @since 0.0.5
      */
     @SuppressWarnings( "ProhibitedExceptionDeclared" )
@@ -1085,7 +1135,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with a default message is thrown.} The validation is also responsible
      *  for the {@null}-check; that means, the method
      *  {@link Predicate#test(Object) test()}
@@ -1097,7 +1147,7 @@ public final class Objects
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
      *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1111,7 +1161,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
+            throw new IllegalArgumentException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1121,7 +1171,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
@@ -1138,7 +1188,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1156,7 +1206,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1166,12 +1216,12 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
      *  argument and the value ({@code arg}) as the second argument to compose
-     *  the message for the {@code ValidationException} in case the validation
-     *  failed.</p>
+     *  the message for the {@code IllegalArgumentException} in case the
+     *  validation failed.</p>
      *  <p>The validation is also responsible for the {@null}-check; that
      *  means, the method
      *  {@link Predicate#test(Object) test()}
@@ -1185,7 +1235,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1193,14 +1243,14 @@ public final class Objects
      *  @since 0.25.11
      */
     @API( status = STABLE, since = "0.25.11" )
-    public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<String,T,String> messageSupplier )
+    public static final <T> T requireValidArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<? super String,? super T,String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name, arg ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name, arg ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1209,7 +1259,7 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with a default message is thrown.
      *
      *  @param  arg The value to check.
@@ -1217,7 +1267,7 @@ public final class Objects
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
      *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1231,7 +1281,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
+            throw new IllegalArgumentException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1241,7 +1291,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
@@ -1253,7 +1303,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1271,7 +1321,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1281,12 +1331,12 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
      *  argument and the value ({@code arg}) as the second argument to compose
-     *  the message for the {@code ValidationException} in case the validation
-     *  failed.</p>
+     *  the message for the {@code IllegalArgumentException} in case the
+     *  validation failed.</p>
      *
      *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
@@ -1295,7 +1345,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1303,14 +1353,14 @@ public final class Objects
      *  @since 0.25.11
      */
     @API( status = STABLE, since = "0.25.11" )
-    public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final BiFunction<String,Double,String> messageSupplier )
+    public static final double requireValidDoubleArgument( final double arg, final String name, final DoublePredicate validation, final BiFunction<? super String,? super Double,String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name, Double.valueOf( arg ) ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name, Double.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1319,7 +1369,7 @@ public final class Objects
 
     /**
      *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with a default message is thrown.
      *
      *  @param  arg The value to check.
@@ -1327,7 +1377,7 @@ public final class Objects
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
      *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1341,7 +1391,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
+            throw new IllegalArgumentException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1351,7 +1401,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
@@ -1363,7 +1413,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1381,7 +1431,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1391,12 +1441,12 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
      *  argument and the value ({@code arg}) as the second argument to compose
-     *  the message for the {@code ValidationException} in case the validation
-     *  failed.</p>
+     *  the message for the {@code IllegalArgumentException} in case the
+     *  validation failed.</p>
      *
      *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
@@ -1405,7 +1455,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1413,14 +1463,14 @@ public final class Objects
      *  @since 0.25.11
      */
     @API( status = STABLE, since = "0.25.11" )
-    public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final BiFunction<String,Integer,String> messageSupplier )
+    public static final int requireValidIntegerArgument( final int arg, final String name, final IntPredicate validation, final BiFunction<? super String,? super Integer,String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name, Integer.valueOf( arg ) ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name, Integer.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1428,16 +1478,17 @@ public final class Objects
     }   //  requireValidIntegerArgument()
 
     /**
-     *  Applies the given validation on the given value, and if that fails, an
-     *  {@link ValidationException}
-     *  with a default message is thrown.
+     *  <p>{@summary Applies the given validation on the given value, and if
+     *  that fails, an
+     *  {@link IllegalArgumentException}
+     *  with a default message is thrown.}</p>
      *
      *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name} or {@code validation} is
      *      {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1451,7 +1502,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
+            throw new IllegalArgumentException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1461,7 +1512,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
@@ -1473,7 +1524,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1491,7 +1542,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1501,12 +1552,12 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value, and if
      *  that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
      *  argument and the value ({@code arg}) as the second argument to compose
-     *  the message for the {@code ValidationException} in case the validation
-     *  failed.</p>
+     *  the message for the {@code IllegalArgumentException} in case the
+     *  validation failed.</p>
      *
      *  @param  arg The value to check.
      *  @param  name    The name of the argument; this is used for the error
@@ -1515,7 +1566,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code name}, {@code validation} or
      *      {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1523,14 +1574,14 @@ public final class Objects
      *  @since 0.25.11
      */
     @API( status = STABLE, since = "0.25.11" )
-    public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final BiFunction<String,Long,String> messageSupplier )
+    public static final long requireValidLongArgument( final long arg, final String name, final LongPredicate validation, final BiFunction<? super String,? super Long,String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( arg ) )
         {
-            throw new ValidationException( messageSupplier.apply( name, Long.valueOf( arg ) ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name, Long.valueOf( arg ) ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1540,7 +1591,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
      *  not be {@null}), and if that fails, an
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  with a default message is thrown.}</p>
      *  <p>If the value is {@null}, the validation is never triggered.</p>
      *
@@ -1550,7 +1601,7 @@ public final class Objects
      *      message.
      *  @param  validation  The validation
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code a} failed the validation.
+     *  @throws IllegalArgumentException {@code a} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name} or
      *      {@code validation} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1564,7 +1615,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
-            throw new ValidationException( "Validation failed for '%s'".formatted( name ) );
+            throw new IllegalArgumentException( "Validation failed for '%s'".formatted( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1574,7 +1625,7 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
      *  not be {@null}), and if that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  message supplier that takes the name of the argument as an
      *  argument.</p>
@@ -1587,7 +1638,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name},
      *      {@code validation} or {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1605,7 +1656,7 @@ public final class Objects
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
-            throw new ValidationException( messageSupplier.apply( name ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1615,12 +1666,12 @@ public final class Objects
     /**
      *  <p>{@summary Applies the given validation on the given value (that must
      *  not be {@null}), and if that fails, a
-     *  {@link ValidationException}
+     *  {@link IllegalArgumentException}
      *  is thrown.} The message for the exception will be provided by the given
      *  {@code messageSupplier} that takes the {@code name} as the first
      *  argument and the value ({@code arg}) as the second argument to compose
-     *  the message for the {@code ValidationException} in case the validation
-     *  failed.</p>
+     *  the message for the {@code IllegalArgumentException} in case the
+     *  validation failed.</p>
      *
      *  @param  <T> The type of the value to check.
      *  @param  arg The value to check.
@@ -1630,7 +1681,7 @@ public final class Objects
      *  @param  messageSupplier The function that generates the message for the
      *      exception.
      *  @return The value if the validation succeeds.
-     *  @throws ValidationException {@code arg} failed the validation.
+     *  @throws IllegalArgumentException {@code arg} failed the validation.
      *  @throws NullArgumentException   {@code arg}, {@code name},
      *      {@code validation} or {@code messageProvider} is {@null}.
      *  @throws EmptyArgumentException  {@code name} is the empty String.
@@ -1638,14 +1689,14 @@ public final class Objects
      *  @since 0.25.11
      */
     @API( status = STABLE, since = "0.25.11" )
-    public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<String,T,String> messageSupplier )
+    public static final <T> T requireValidNonNullArgument( final T arg, final String name, final Predicate<? super T> validation, final BiFunction<? super String,? super T,String> messageSupplier )
     {
         requireNotBlankArgument( name, "name" );
         requireNonNullArgument( messageSupplier, "messageSupplier" );
 
         if( !requireNonNullArgument( validation, "validation" ).test( requireNonNullArgument( arg, "name" ) ) )
         {
-            throw new ValidationException( messageSupplier.apply( name, arg ) );
+            throw new IllegalArgumentException( messageSupplier.apply( name, arg ) );
         }
 
         //---* Done *----------------------------------------------------------
@@ -1663,7 +1714,7 @@ public final class Objects
      *  calling the respective {@code toString()} method from
      *  {@link java.util.Arrays}
      *  (this distinguishes this implementation from
-     *  {link java.util.Objects#toString(Object, String) java.util.Objects.toString()}).
+     *  {@link java.util.Objects#toString(Object,String) java.util.Objects.toString()}).
      *  Values of type
      *  {@link java.util.Date} or
      *  {@link java.util.Calendar}
@@ -1705,7 +1756,7 @@ public final class Objects
      *  {@code toString()} method from
      *  {@link java.util.Arrays}
      *  (this distinguishes this implementation from
-     *  {link java.util.Objects#toString(Object,String) java.util.Objects.toString(Object,String)}).</p>
+     *  {@link java.util.Objects#toString(Object,String) java.util.Objects.toString(Object,String)}).</p>
      *  <p>Values of type
      *  {@link java.util.Date} or
      *  {@link java.util.Calendar}

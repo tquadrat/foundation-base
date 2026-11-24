@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Copyright © 2002-2023 by Thomas Thrien.
+ * Copyright © 2002-2026 by Thomas Thrien.
  * All Rights Reserved.
  * ============================================================================
  * Licensed to the public under the agreements of the GNU Lesser General Public
@@ -26,14 +26,14 @@ import org.apiguardian.api.API;
 import org.tquadrat.foundation.annotation.ClassVersion;
 
 /**
- *  This is a specialized implementation for the
+ *  <p>{@summary This is a specialised implementation for the
  *  {@link IllegalArgumentException}
  *  that should be used instead of the latter in cases where a
  *  {@link CharSequence}
  *  provided as a method argument is too long according to some external
- *  constraints, like the column definition of a database.
+ *  constraints, like the column definition of a database.}</p>
  *
- *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
+ *  @author Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: CharSequenceTooLongException.java 1293 2026-10-16 13:12:15Z tquadrat $
  *  @since 0.0.5
  *
@@ -41,7 +41,7 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: CharSequenceTooLongException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public final class CharSequenceTooLongException extends ValidationException
+public final class CharSequenceTooLongException extends IllegalArgumentException
 {
         /*------------------------*\
     ====** Static Initialisations **===========================================
@@ -86,11 +86,11 @@ public final class CharSequenceTooLongException extends ValidationException
      *
      *  @param  maxLength   The provided legal length for a text.
      *  @return The given value.
-     *  @throws ValidationException The given value was less than 1.
+     *  @throws IllegalArgumentException The given value was less than 1.
      */
-    private static int checkLength( final int maxLength ) throws ValidationException
+    private static int checkLength( final int maxLength ) throws IllegalArgumentException
     {
-        if( maxLength <= 0 ) throw new ValidationException( "The given maximum length is 0 or less than 0: %d".formatted( maxLength ) );
+        if( maxLength <= 0 ) throw new IllegalArgumentException( "The given maximum length is 0 or less than 0: %d".formatted( maxLength ) );
 
         //---* Done *----------------------------------------------------------
         return maxLength;

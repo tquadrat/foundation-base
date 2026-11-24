@@ -18,7 +18,7 @@
 package org.tquadrat.foundation.exception;
 
 import static org.apiguardian.api.API.Status.STABLE;
-import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
+import static org.tquadrat.foundation.lang.Objects.mapFromEmpty;
 
 import java.io.Serial;
 
@@ -39,16 +39,25 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  */
 @ClassVersion( sourceVersion = "$Id: NullArgumentException.java 1293 2026-10-16 13:12:15Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
-public final class NullArgumentException extends InvalidArgumentException
+public final class NullArgumentException extends IllegalArgumentException
 {
+        /*-----------*\
+    ====** Constants **========================================================
+        \*-----------*/
+    /**
+     *  <p>{@summary The replacement text for an unknown parameter name:
+     *  {@value}.}</p>
+     */
+    public static final String UNKNOWN_PARAM_NAME = "<unknown>";
+
         /*------------------------*\
     ====** Static Initialisations **===========================================
         \*------------------------*/
-
     /**
-     * The serial version UID for objects of this class: {@value}.
+     *  <p>{@summary The serial version UID for objects of this class: {
+     *  @value}.}</p>
      *
-     * @hidden
+     *  @hidden
      */
     @Serial
     private static final long serialVersionUID = 1174360235354917591L;
@@ -56,37 +65,40 @@ public final class NullArgumentException extends InvalidArgumentException
         /*--------------*\
     ====** Constructors **=====================================================
         \*--------------*/
-
     /**
-     * <p>{@summary {@constructor}}</p>
+     *  <p>{@summary {@constructor}}</p>
      */
-    public NullArgumentException() {this( null );}
+    public NullArgumentException() { super( "Argument must not be null" ); }
 
     /**
-     * <p>{@summary {@constructor}}</p>
+     *  <p>{@summary {@constructor}}</p>
      *
-     * @param argName The name of the argument whose value was provided as
-     *     {@null}; if {@null} or the empty String, a
-     *     default message is used that does not use the name of the argument.
+     *  @param argName The name of the parameter whose value was provided as
+     *      {@null}; if {@null} or the empty String, a default is used as the
+     *      name of the parameter.
      */
     public NullArgumentException( final String argName )
     {
-        super( argName, "Argument '%1$s' must not be null", "Argument must not be null" );
+        super( """
+            Argument "%1$s" must not be null\
+            """.formatted( mapFromEmpty( argName, UNKNOWN_PARAM_NAME ) ) );
     }   //  NullArgumentException()
 
     /**
-     * <p>{@summary {@constructor}}</p>
+     *  <p>{@summary {@constructor}}</p>
      *
-     * @param argName1 The name of the first argument whose value was
-     *     provided as {@null}.
-     * @param argName2 The name of the second argument whose value was
-     *     provided as {@null}.
-     * @see org.tquadrat.foundation.lang.Objects#requireNonNullArgument(Object, Object, String, String)
+     *  @param argName1 The name of the first parameter whose value was
+     *      provided as {@null}.
+     *  @param argName2 The name of the second parameter whose value was
+     *      provided as {@null}.
+     *  @see org.tquadrat.foundation.lang.Objects#requireNonNullArgument(Object, Object, String, String)
      */
     @API( status = STABLE, since = "0.0.7" )
     public NullArgumentException( final String argName1, final String argName2 )
     {
-        super( "'%s' and '%s'".formatted( argName1, argName2 ), "Arguments %s are both null", EMPTY_STRING );
+        super( """
+            Arguments "%1$s" and "%2$s" are both null\
+            """.formatted( mapFromEmpty( argName1, UNKNOWN_PARAM_NAME ), mapFromEmpty( argName2, UNKNOWN_PARAM_NAME ) ) );
     }   //  NullArgumentException()
 }
 //  class NullArgumentException
